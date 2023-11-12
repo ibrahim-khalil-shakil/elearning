@@ -17,7 +17,7 @@
 
 </head>
 
-<body>
+
 
     <!--**********************************
         Main wrapper start
@@ -477,6 +477,6 @@
     <script src="{{asset('public/vendor/svganimation/svg.animation.js')}}"></script>
     <script src="{{asset('js/styleSwitcher.js')}}"></script>
 
-</body>
+
 
 </html>
