@@ -1,15 +1,15 @@
 @extends('layouts.app')
+@section('title', 'Dashboard')
 
 @section('content')
-
-<body>
+<div id="main-wrapper">
     <!--**********************************
                 Content body start
             ***********************************-->
     <div class="content-body">
         <!-- row -->
         <div class="container-fluid">
-    
+
             <div class="row">
                 <div class="col-xl-3 col-xxl-3 col-sm-6">
                     <div class="widget-stat card bg-primary overflow-hidden">
@@ -530,9 +530,9 @@
             </div>
         </div>
     </div>
-    <!--**********************************
+</div>
+<!--**********************************
                 Content body end
             ***********************************-->
-</body>
-    
+
 @endsection

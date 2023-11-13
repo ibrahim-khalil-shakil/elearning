@@ -22,10 +22,11 @@ class AuthenticationController extends Controller
         try {
             $user = new User;
             $user->name_en = $request->name;
-            $user->contact_en = $request->contact;
+            $user->contact_en = $request->contact_en;
             $user->email = $request->email;
             $user->password = Hash::make($request->password);
             $user->role_id = 4;
+            // dd($request->all()); 
             if ($user->save())
                 return redirect('login')->with('success', 'Successfully Registered');
             else
@@ -46,7 +47,7 @@ class AuthenticationController extends Controller
         try {
             $user = User::where('contact_en', $request->username)->orWhere('email', $request->username)->first();
             if ($user) {
-                if (Hash::check($request->password, $request->username)) {
+                if (Hash::check($request->password, $user->password)) {
                     $this->setSession($user);
                     return redirect()->route('dashboard')->with('success', 'Successfully Logged In');
                 } else

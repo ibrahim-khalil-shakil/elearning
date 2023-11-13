@@ -2,7 +2,7 @@
 
 //Two way encryption method to encrypt sll data from url
 
-function encryption($action, $string)
+function encryptor($action, $string)
 {
     $output = false;
 
