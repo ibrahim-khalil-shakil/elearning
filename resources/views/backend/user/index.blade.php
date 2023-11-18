@@ -23,9 +23,9 @@
             </div>
             <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item active"><a href="javascript:void(0);">Users</a></li>
-                    <li class="breadcrumb-item active"><a href="javascript:void(0);">All User</a></li>
+                    <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Home</a></li>
+                    <li class="breadcrumb-item active"><a href="{{route('user.index')}}">Users</a></li>
+                    <li class="breadcrumb-item active"><a href="{{route('user.index')}}">All User</a></li>
                 </ol>
             </div>
         </div>
@@ -45,7 +45,7 @@
                         <div class="card">
                             <div class="card-header">
                                 <h4 class="card-title">All Students List </h4>
-                                <a href="add-student.html" class="btn btn-primary">+ Add new</a>
+                                <a href="{{route('user.create')}}" class="btn btn-primary">+ Add new</a>
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
@@ -73,8 +73,8 @@
                                                 <td>@if($d->status==1){{__('Active')}} @else{{__('Inactive')}} @endif
                                                 </td>
                                                 <td>
-                                                    <a href="{{route('user.edit', encryptor('encrypt',$d->id))}}" class="btn btn-sm btn-primary"><i
-                                                            class="la la-pencil"></i></a>
+                                                    <a href="{{route('user.edit', encryptor('encrypt',$d->id))}}"
+                                                        class="btn btn-sm btn-primary"><i class="la la-pencil"></i></a>
                                                     <a href="javascript:void(0);" class="btn btn-sm btn-danger"><i
                                                             class="la la-trash-o"></i></a>
                                                 </td>
@@ -102,7 +102,8 @@
                                             </button>
                                             <div class="dropdown-menu dropdown-menu-right border py-0">
                                                 <div class="py-2">
-                                                    <a class="dropdown-item" href="javascript:void(0);">Edit</a>
+                                                    <a class="dropdown-item"
+                                                        href="{{route('user.edit', encryptor('encrypt',$d->id))}}">Edit</a>
                                                     <a class="dropdown-item text-danger"
                                                         href="javascript:void(0);">Delete</a>
                                                 </div>
@@ -112,7 +113,8 @@
                                     <div class="card-body pt-2">
                                         <div class="text-center">
                                             <div class="profile-photo">
-                                                <img src="{{asset('public/uploads/users/'.$d->image)}}" width="100" height="100" class="rounded-circle" alt="">
+                                                <img src="{{asset('public/uploads/users/'.$d->image)}}" width="100"
+                                                    height="100" class="rounded-circle" alt="">
                                             </div>
                                             <h3 class="mt-4 mb-1">{{$d->name_en}}</h3>
                                             <p class="text-muted">{{$d->role?->type}}</p>

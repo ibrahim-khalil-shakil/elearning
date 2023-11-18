@@ -18,8 +18,8 @@
             </div>
             <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item active"><a href="javascript:void(0);">User</a></li>
+                    <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Home</a></li>
+                    <li class="breadcrumb-item active"><a href="{{route('user.index')}}">Users</a></li>
                     <li class="breadcrumb-item active"><a href="javascript:void(0);">Edit User</a></li>
                 </ol>
             </div>
@@ -32,7 +32,8 @@
                         <h5 class="card-title">Basic Info</h5>
                     </div>
                     <div class="card-body">
-                        <form action="{{route('user.update', encryptor('encrypt', $user->id))}}" method="post" enctype="multipart/form-data">
+                        <form action="{{route('user.update', encryptor('encrypt', $user->id))}}" method="post"
+                            enctype="multipart/form-data">
                             @csrf
                             @method('PATCH')
                             <input type="hidden" name="uptoken" value="{{encryptor('encrypt',$user->id)}}">
@@ -74,7 +75,8 @@
                                 <div class="col-lg-6 col-md-6 col-sm-12">
                                     <div class="form-group">
                                         <label class="form-label">Email</label>
-                                        <input type="email" class="form-control" name="emailAddress" value="{{old('emailAddress', $user->email)}}">
+                                        <input type="email" class="form-control" name="emailAddress"
+                                            value="{{old('emailAddress', $user->email)}}">
                                     </div>
                                     @if($errors->has('emailAddress'))
                                     <span class="text-danger"> {{ $errors->first('emailAddress') }}</span>
@@ -85,7 +87,8 @@
                                         <label class="form-label">Role</label>
                                         <select class="form-control" name="roleId">
                                             @forelse ($role as $r)
-                                            <option value="{{$r->id}} {{old('roleId', $user->role_id)==$r->id?'selected':''}}">
+                                            <option value="{{$r->id}}" {{old('roleId', $user->
+                                                role_id)==$r->id?'selected':''}}>
                                                 {{$r->type}}</option>
                                             @empty
                                             <option value="">No Role Found</option>
@@ -100,8 +103,10 @@
                                     <div class="form-group">
                                         <label class="form-label">Full Access</label>
                                         <select class="form-control" name="fullAccess">
-                                            <option value="0" @if(old('fullAccess', $user->full_access)==0) selected @endif>No</option>
-                                            <option value="1" @if(old('fullAccess', $user->full_access)==1) selected @endif>Yes</option>
+                                            <option value="0" @if(old('fullAccess', $user->full_access)==0) selected
+                                                @endif>No</option>
+                                            <option value="1" @if(old('fullAccess', $user->full_access)==1) selected
+                                                @endif>Yes</option>
                                         </select>
                                     </div>
                                 </div>
@@ -109,8 +114,10 @@
                                     <div class="form-group">
                                         <label class="form-label">Status</label>
                                         <select class="form-control" name="status">
-                                            <option value="1" @if(old('status', $user->status)==1) selected @endif>Active</option>
-                                            <option value="0" @if(old('status', $user->status)==0) selected @endif>Inactive</option>
+                                            <option value="1" @if(old('status', $user->status)==1) selected
+                                                @endif>Active</option>
+                                            <option value="0" @if(old('status', $user->status)==0) selected
+                                                @endif>Inactive</option>
                                         </select>
                                     </div>
                                 </div>

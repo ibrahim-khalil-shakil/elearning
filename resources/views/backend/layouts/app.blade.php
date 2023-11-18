@@ -203,18 +203,29 @@
                     </li>
                     <li><a class="ai-icon" href="event-management.html" aria-expanded="false">
                             <i class="la la-calendar"></i>
-                            <span class="nav-text">Event Management</span>
+                            <span class="nav-text">Exam Management</span>
                         </a>
                     </li>
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="la la-user"></i>
-                            <span class="nav-text">Professors</span>
+                            <i class="la la-user-plus"></i>
+                            <span class="nav-text">Users</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="all-professors.html">All Professor</a></li>
-                            <li><a href="add-professor.html">Add Professor</a></li>
-                            <li><a href="edit-professor.html">Edit Professor</a></li>
-                            <li><a href="professor-profile.html">Professor Profile</a></li>
+                            <li><a href="{{route('user.index')}}">All User</a></li>
+                            <li><a href="{{route('user.create')}}">Add User</a></li>
+                            <li><a href="{{route('user.index')}}">Edit User</a></li>
+                            <li><a href="{{route('user.index')}}">User Profile</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                            <i class="la la-user"></i>
+                            <span class="nav-text">Instructors</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="all-professors.html">All Instructor</a></li>
+                            <li><a href="add-professor.html">Add Instructor</a></li>
+                            <li><a href="edit-professor.html">Edit Instructor</a></li>
+                            <li><a href="professor-profile.html">Instructor Profile</a></li>
                         </ul>
                     </li>
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">
@@ -241,54 +252,54 @@
                     </li>
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">
                             <i class="la la-book"></i>
-                            <span class="nav-text">Library</span>
+                            <span class="nav-text">Contents</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="all-library.html">All Library</a></li>
-                            <li><a href="add-library.html">Add Library</a></li>
-                            <li><a href="edit-library.html">Edit Library</a></li>
+                            <li><a href="all-library.html">All Content</a></li>
+                            <li><a href="add-library.html">Add Content</a></li>
+                            <li><a href="edit-library.html">Edit Content</a></li>
                         </ul>
                     </li>
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">
                             <i class="la la-building"></i>
-                            <span class="nav-text">Departments</span>
+                            <span class="nav-text">Quizzes</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="all-departments.html">All Departments</a></li>
-                            <li><a href="add-departments.html">Add Departments</a></li>
-                            <li><a href="edit-departments.html">Edit Departments</a></li>
+                            <li><a href="all-departments.html">All Quiz</a></li>
+                            <li><a href="add-departments.html">Add Quiz</a></li>
+                            <li><a href="edit-departments.html">Edit Quiz</a></li>
                         </ul>
                     </li>
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">
                             <i class="la la-users"></i>
-                            <span class="nav-text">Staff</span>
+                            <span class="nav-text">Progresses</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="all-staff.html">All Staff</a></li>
-                            <li><a href="add-staff.html">Add Staff</a></li>
-                            <li><a href="edit-staff.html">Edit Staff</a></li>
-                            <li><a href="staff-profile.html">Staff Profile</a></li>
+                            <li><a href="all-staff.html">All Progress</a></li>
+                            <li><a href="add-staff.html">Add Progress</a></li>
+                            <li><a href="edit-staff.html">Edit Progress</a></li>
+                            <li><a href="staff-profile.html">Progress Profile</a></li>
                         </ul>
                     </li>
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">
                             <i class="la la-gift"></i>
-                            <span class="nav-text">Holiday</span>
+                            <span class="nav-text">Task</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="all-holiday.html">All Holiday</a></li>
-                            <li><a href="add-holiday.html">Add Holiday</a></li>
-                            <li><a href="edit-holiday.html">Edit Holiday</a></li>
-                            <li><a href="holiday-calendar.html">Holiday Calendar</a></li>
+                            <li><a href="all-holiday.html">All Task</a></li>
+                            <li><a href="add-holiday.html">Add Task</a></li>
+                            <li><a href="edit-holiday.html">Edit Task</a></li>
+                            <li><a href="holiday-calendar.html">Task Calendar</a></li>
                         </ul>
                     </li>
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">
                             <i class="la la-dollar"></i>
-                            <span class="nav-text">Fees</span>
+                            <span class="nav-text">Payments</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="fees-collection.html">Fees Collection</a></li>
-                            <li><a href="add-fees.html">Add Fees</a></li>
-                            <li><a href="fees-receipt.html">Fees Receipt</a></li>
+                            <li><a href="fees-collection.html">Fees Payment</a></li>
+                            <li><a href="add-fees.html">Add Payment</a></li>
+                            <li><a href="fees-receipt.html">Fees Payment</a></li>
                         </ul>
                     </li>
                     <li class="nav-label">Apps</li>

@@ -59,7 +59,7 @@ class UserController extends Controller
             else
                 return redirect()->back()->withInput()->with('error', 'Please Try again');
         } catch (Exception $e) {
-            dd($e);
+            // dd($e);
             return redirect()->back()->withInput()->with('error', 'Please try again');
         }
     }

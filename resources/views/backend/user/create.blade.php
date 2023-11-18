@@ -18,9 +18,9 @@
             </div>
             <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item active"><a href="javascript:void(0);">User</a></li>
-                    <li class="breadcrumb-item active"><a href="javascript:void(0);">Add User</a></li>
+                    <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Home</a></li>
+                    <li class="breadcrumb-item active"><a href="{{route('user.index')}}">Users</a></li>
+                    <li class="breadcrumb-item active"><a href="{{route('user.create')}}">Add User</a></li>
                 </ol>
             </div>
         </div>
@@ -38,7 +38,8 @@
                                 <div class="col-lg-6 col-md-6 col-sm-12">
                                     <div class="form-group">
                                         <label class="form-label">Name</label>
-                                        <input type="text" class="form-control" name="userName_en" value="{{old('userName_en')}}">
+                                        <input type="text" class="form-control" name="userName_en"
+                                            value="{{old('userName_en')}}">
                                     </div>
                                     @if($errors->has('userName_en'))
                                     <span class="text-danger"> {{ $errors->first('userName_en') }}</span>
@@ -47,13 +48,15 @@
                                 <div class="col-lg-6 col-md-6 col-sm-12">
                                     <div class="form-group">
                                         <label class="form-label">নাম (বাংলায়)</label>
-                                        <input type="text" class="form-control" name="userName_bn" value="{{old('userName_bn')}}">
+                                        <input type="text" class="form-control" name="userName_bn"
+                                            value="{{old('userName_bn')}}">
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12">
                                     <div class="form-group">
                                         <label class="form-label">Phone Number</label>
-                                        <input type="tel" class="form-control" name="contactNumber_en" value="{{old('contactNumber_en')}}">
+                                        <input type="tel" class="form-control" name="contactNumber_en"
+                                            value="{{old('contactNumber_en')}}">
                                     </div>
                                     @if($errors->has('contactNumber_en'))
                                     <span class="text-danger"> {{ $errors->first('contactNumber_en') }}</span>
@@ -62,13 +65,18 @@
                                 <div class="col-lg-6 col-md-6 col-sm-12">
                                     <div class="form-group">
                                         <label class="form-label">ফোন নাম্বার (বাংলায়)</label>
-                                        <input type="tel" class="form-control" name="contactNumber_bn" value="{{old('contactNumber_bn')}}">
+                                        <input type="tel" class="form-control" name="contactNumber_bn"
+                                            value="{{old('contactNumber_bn')}}">
                                     </div>
+                                    @if($errors->has('contactNumber_bn'))
+                                    <span class="text-danger"> {{ $errors->first('contactNumber_bn') }}</span>
+                                    @endif
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12">
                                     <div class="form-group">
                                         <label class="form-label">Email</label>
-                                        <input type="email" class="form-control" name="emailAddress" value="{{old('emailAddress')}}">
+                                        <input type="email" class="form-control" name="emailAddress"
+                                            value="{{old('emailAddress')}}">
                                     </div>
                                     @if($errors->has('emailAddress'))
                                     <span class="text-danger"> {{ $errors->first('emailAddress') }}</span>
@@ -79,7 +87,7 @@
                                         <label class="form-label">Role</label>
                                         <select class="form-control" name="roleId">
                                             @forelse ($role as $r)
-                                            <option value="{{$r->id}} {{old('roleId')==$r->id?selected:''}}">
+                                            <option value="{{$r->id}}" {{old('roleId')==$r->id?'selected':''}}>
                                                 {{$r->type}}</option>
                                             @empty
                                             <option value="">No Role Found</option>
@@ -108,12 +116,6 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12">
-                                    <label class="form-label">Image</label>
-                                    <div class="form-group fallback w-100">
-                                        <input type="file" class="dropify" data-default-file="" name="image">
-                                    </div>
-                                </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12">
                                     <div class="form-group">
                                         <label class="form-label">Password</label>
@@ -122,6 +124,12 @@
                                     @if($errors->has('password'))
                                     <span class="text-danger"> {{ $errors->first('password') }}</span>
                                     @endif
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <label class="form-label">Image</label>
+                                    <div class="form-group fallback w-100">
+                                        <input type="file" class="dropify" data-default-file="" name="image">
+                                    </div>
                                 </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12">
                                     <button type="submit" class="btn btn-primary">Submit</button>
