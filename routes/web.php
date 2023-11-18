@@ -24,7 +24,7 @@ Route::get('/logout', [auth::class, 'signOut'])->name('logOut');
 
 Route::middleware(['checkrole'])->group(function () {
     Route::get('/dashboard', [dashboard::class, 'index'])->name('dashboard');
-    Route::resource('/user', user::class)->except(['update', 'store']);
+    Route::resource('/user', user::class);
 });
 
 
