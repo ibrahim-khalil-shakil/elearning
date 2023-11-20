@@ -7,14 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>{{ENV('APP_NAME')}} | @yield('title')</title>
-    <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('public/images/favicon.png')}}">
-    <link rel="stylesheet" href="{{asset('public/vendor/jqvmap/css/jqvmap.min.css')}}">
-    <link rel="stylesheet" href="{{asset('public/vendor/chartist/css/chartist.min.css')}}">
-    <link rel="stylesheet" href="{{asset('public/vendor/bootstrap-select/dist/css/bootstrap-select.min.css')}}">
-    <link rel="stylesheet" href="{{asset('public/css/style.css')}}">
-    <link rel="stylesheet" href="{{asset('public/css/skin-2.css')}}">
-
+    
     @stack('styles')
 
 </head>
@@ -25,13 +18,13 @@
     <!--**********************************
         Main wrapper start
     ***********************************-->
-    <div id="main-wrapper">
+    <div id="main-wrapper"> 
 
         <!--**********************************
             Nav header start
         ***********************************-->
         <div class="nav-header">
-            <a href="index.html" class="brand-logo">
+            <a href="{{route('home')}}" class="brand-logo">
                 <img class="logo-abbr" src="{{asset('public/images/logo-white.png')}}" alt="">
                 <img class="logo-compact" src="{{asset('public/images/logo-text-white.png')}}" alt="">
                 <span class="fw-bold fs-3"> eLEARNING </span>
@@ -139,10 +132,10 @@
                             </li>
                             <li class="nav-item dropdown header-profile">
                                 <a class="nav-link" href="#" role="button" data-toggle="dropdown">
-                                    <img src="{{asset('public/images/profile/education/pic1.jpg')}}" width="20" alt="">
+                                    <img src="{{asset('public/uploads/users/'.request()->session()->get('image'))}}" width="20" alt="">
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right">
-                                    <a href="app-profile.html" class="dropdown-item ai-icon">
+                                    <a href="{{route('userProfile')}}" class="dropdown-item ai-icon">
                                         <svg id="icon-user1" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
                                             viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round" class="feather feather-user">
@@ -237,6 +230,17 @@
                             <li><a href="add-student.html">Add Students</a></li>
                             <li><a href="edit-student.html">Edit Students</a></li>
                             <li><a href="about-student.html">About Students</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                            <i class="la la-laptop"></i>
+                            <span class="nav-text">Course Category</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="{{route('courseCategory.index')}}">All Categories</a></li>
+                            <li><a href="{{route('courseCategory.create')}}">Add Categories</a></li>
+                            <li><a href="{{route('courseCategory.index')}}">Edit Categories</a></li>
+                            <li><a href="{{route('courseCategory.index')}}">About Categories</a></li>
                         </ul>
                     </li>
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">
@@ -468,30 +472,25 @@
         Scripts
     ***********************************-->
     <!-- Required vendors -->
-    <script src="{{asset('public/vendor/global/global.min.js')}}"></script>
-    <script src="{{asset('public/vendor/bootstrap-select/dist/js/bootstrap-select.min.js')}}"></script>
-    <script src="{{asset('public/js/custom.min.js')}}"></script>
-    <script src="{{asset('public/js/dlabnav-init.js')}}"></script>
 
     @stack('scripts')
-
-    <!-- Chart ChartJS plugin files -->
-    <script src="{{asset('public/vendor/chart.js/Chart.bundle.min.js')}}"></script>
-
-    <!-- Chart piety plugin files -->
-    <script src="{{asset('public/vendor/peity/jquery.peity.min.js')}}"></script>
-
-    <!-- Chart sparkline plugin files -->
-    <script src="{{asset('public/vendor/jquery-sparkline/jquery.sparkline.min.js')}}"></script>
-
-    <!-- Demo scripts -->
-    <script src="{{asset('public/js/dashboard/dashboard-3.js')}}"></script>
-
-    <!-- Svganimation scripts -->
-    <script src="{{asset('public/vendor/svganimation/vivus.min.js')}}"></script>
-    <script src="{{asset('public/vendor/svganimation/svg.animation.js')}}"></script>
-    <script src="{{asset('js/styleSwitcher.js')}}"></script>
-
+    {{-- TOASTER --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" />
+    <script>
+        @if(Session::has('success'))  
+    				toastr.success("{{ Session::get('success') }}");  
+    		@endif  
+    		@if(Session::has('info'))  
+    				toastr.info("{{ Session::get('info') }}");  
+    		@endif  
+    		@if(Session::has('warning'))  
+    				toastr.warning("{{ Session::get('warning') }}");  
+    		@endif  
+    		@if(Session::has('error'))  
+    				toastr.error("{{ Session::get('error') }}");  
+    		@endif  
+    </script>
 </body>
 
 </html>

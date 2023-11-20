@@ -1,6 +1,17 @@
 @extends('backend.layouts.app')
 @section('title', 'Add User')
 
+@push('styles')
+<!-- Favicon icon -->
+<link rel="icon" type="image/png" sizes="16x16" href="{{asset('public/images/favicon.png')}}">
+<link rel="stylesheet" href="{{asset('public/vendor/bootstrap-select/dist/css/bootstrap-select.min.css')}}">
+<link rel="stylesheet" href="{{asset('public/css/style.css')}}">
+
+<!-- Pick date -->
+<link rel="stylesheet" href="{{asset('public/vendor/pickadate/themes/default.css')}}">
+<link rel="stylesheet" href="{{asset('public/vendor/pickadate/themes/default.date.css')}}">
+@endpush
+
 @section('content')
 
 <!--**********************************
@@ -149,3 +160,27 @@
         ***********************************-->
 
 @endsection
+
+@push('scripts')
+<!--**********************************
+        Scripts
+    ***********************************-->
+<!-- Required vendors -->
+<script src="{{asset('public/vendor/global/global.min.js')}}"></script>
+<script src="{{asset('public/vendor/bootstrap-select/dist/js/bootstrap-select.min.js')}}"></script>
+<script src="{{asset('public/js/custom.min.js')}}"></script>
+<script src="{{asset('public/js/dlabnav-init.js')}}"></script>
+
+<!-- Svganimation scripts -->
+<script src="{{asset('public/vendor/svganimation/vivus.min.js')}}"></script>
+<script src="{{asset('public/vendor/svganimation/svg.animation.js')}}"></script>
+<script src="{{asset('public/js/styleSwitcher.js')}}"></script>
+
+<!-- pickdate -->
+<script src="{{asset('public/vendor/pickadate/picker.js')}}"></script>
+<script src="{{asset('public/vendor/pickadate/picker.time.js')}}"></script>
+<script src="{{asset('public/vendor/pickadate/picker.date.js')}}"></script>
+
+<!-- Pickdate -->
+<script src="{{asset('public/js/plugins-init/pickadate-init.js')}}"></script>
+@endpush

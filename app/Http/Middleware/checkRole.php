@@ -22,7 +22,7 @@ class checkRole
         } else {
             $user = User::find(currentUserId());
             if (!$user) {
-                return redirecty()->route('logOut');
+                return redirect()->route('logOut');
             } else if ($user->full_access == "1") {
                 return $next($request);
             } else {

@@ -1,5 +1,5 @@
 @extends('backend.layouts.app')
-@section('title', 'User List')
+@section('title', 'Category List')
 
 @push('styles')
 <!-- Favicon icon -->
@@ -22,15 +22,15 @@
         <div class="row page-titles mx-0">
             <div class="col-sm-6 p-md-0">
                 <div class="welcome-text">
-                    <h4>User List</h4>
+                    <h4>Category List</h4>
                 </div>
             </div>
             <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Home</a></li>
-                    <li class="breadcrumb-item active"><a href="{{route('user.index')}}">Users</a></li>
-                    <li class="breadcrumb-item active"><a href="{{route('user.index')}}">All User</a></li>
-                </ol>
+                    <li class="breadcrumb-item active"><a href="{{route('courseCategory.index')}}">Categories</a></li>
+                    <li class="breadcrumb-item active"><a href="{{route('courseCategory.index')}}">All Category</a></li>
+                </ol> 
             </div>
         </div>
 
@@ -48,8 +48,8 @@
                     <div id="list-view" class="tab-pane fade active show col-lg-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">All Students List </h4>
-                                <a href="{{route('user.create')}}" class="btn btn-primary">+ Add new</a>
+                                <h4 class="card-title">All Categories List </h4>
+                                <a href="{{route('courseCategory.create')}}" class="btn btn-primary">+ Add new</a>
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
@@ -57,32 +57,31 @@
                                         <thead>
                                             <tr>
                                                 <th>{{__('#')}}</th>
-                                                <th>{{__('Name')}}</th>
-                                                <th>{{__('Email')}}</th>
-                                                <th>{{__('Contact')}}</th>
-                                                <th>{{__('Role')}}</th>
+                                                <th>{{__('Category Name')}}</th>
                                                 <th>{{__('Status')}}</th>
+                                                <th>{{__('Category Image')}}</th>
                                                 <th>{{__('Action')}}</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             @forelse ($data as $d)
                                             <tr>
-                                                <td><img class="rounded-circle" width="35" height="35"
-                                                        src="{{asset('public/uploads/users/'.$d->image)}}" alt=""></td>
-                                                <td><strong>{{$d->name_en}}</strong></td>
-                                                <td>{{$d->email}}</td>
-                                                <td>{{$d->contact_en}}</td>
-                                                <td>{{$d->role?->type}}</td>
-                                                <td>@if($d->status==1){{__('Active')}} @else{{__('Inactive')}} @endif
-                                                </td>
+                                                <td><strong>{{$d->id}}</strong></td>
+                                                <td><strong>{{$d->category_name}}</strong></td>
                                                 <td>
-                                                    <a href="{{route('user.edit', encryptor('encrypt',$d->id))}}"
+                                                    @if($d->category_status==1){{__('Active')}} @else{{__('Inactive')}} @endif
+                                                </td>
+                                                <td><img class="rounded" width="200" height="100"
+                                                        src="{{asset('public/uploads/courseCategories/'.$d->category_image)}}"
+                                                        alt=""></td>
+                                                <td>
+                                                    <a href="{{route('courseCategory.edit', $d->id)}}"
                                                         class="btn btn-sm btn-primary"><i class="la la-pencil"></i></a>
-                                                    <a href="javascript:void(0);" class="btn btn-sm btn-danger" onclick="$('#form{{$d->id}}').submit()"><i
+                                                    <a href="javascript:void(0);" class="btn btn-sm btn-danger"
+                                                        onclick="$('#form{{$d->id}}').submit()"><i
                                                             class="la la-trash-o"></i></a>
                                                     <form id="form{{$d->id}}"
-                                                        action="{{route('user.destroy', encryptor('encrypt',$d->id))}}"
+                                                        action="{{route('courseCategory.destroy', $d->id)}}"
                                                         method="post">
                                                         @csrf
                                                         @method('DELETE')
@@ -91,7 +90,7 @@
                                             </tr>
                                             @empty
                                             <tr>
-                                                <th colspan="7" class="text-center">No User Found</th>
+                                                <th colspan="7" class="text-center">No Category Found</th>
                                             </tr>
                                             @endforelse
                                         </tbody>
@@ -103,7 +102,7 @@
                     <div id="grid-view" class="tab-pane fade col-lg-12">
                         <div class="row">
                             @forelse ($data as $d)
-                            <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-12">
                                 <div class="card card-profile">
                                     <div class="card-header justify-content-end pb-0">
                                         <div class="dropdown">
@@ -123,21 +122,16 @@
                                     <div class="card-body pt-2">
                                         <div class="text-center">
                                             <div class="profile-photo">
-                                                <img src="{{asset('public/uploads/users/'.$d->image)}}" width="100"
-                                                    height="100" class="rounded-circle" alt="">
+                                                <img src="{{asset('public/uploads/courseCategories/'.$d->category_image)}}"  class="w-100" alt="">
                                             </div>
-                                            <h3 class="mt-4 mb-1">{{$d->name_en}}</h3>
-                                            <p class="text-muted">{{$d->role?->type}}</p>
+                                            <h3 class="mt-4 mb-1">{{$d->category_name}}</h3>
                                             <ul class="list-group mb-3 list-group-flush">
                                                 <li class="list-group-item px-0 d-flex justify-content-between">
                                                     <span>#Sl.</span><strong>{{$d->id}}</strong>
                                                 </li>
                                                 <li class="list-group-item px-0 d-flex justify-content-between">
-                                                    <span class="mb-0">Phone No.
-                                                        :</span><strong>{{$d->contact_en}}</strong>
-                                                </li>
-                                                <li class="list-group-item px-0 d-flex justify-content-between">
-                                                    <span class="mb-0">Email:</span><strong>{{$d->email}}</strong>
+                                                    <span class="mb-0">Status.
+                                                        :</span><strong>@if($d->category_status==1){{__('Active')}} @else{{__('Inactive')}} @endif</strong>
                                                 </li>
                                                 <li class="list-group-item px-0 d-flex justify-content-between">
                                                     <span class="mb-0">Created At.
@@ -151,11 +145,11 @@
                                 </div>
                             </div>
                             @empty
-                            <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-12">
                                 <div class="card card-profile">
                                     <div class="card-body pt-2">
                                         <div class="text-center">
-                                            <p class="mt-3 px-4">User Not Found</p>
+                                            <p class="mt-3 px-4">Category Not Found</p>
                                         </div>
                                     </div>
                                 </div>

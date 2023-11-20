@@ -10,8 +10,9 @@ use App\Http\Requests\Backend\User\AddNewRequest;
 use App\Http\Requests\Backend\User\UpdateRequest;
 use Exception;
 use Illuminate\Support\Facades\Hash;
+use File;
 
-class UserController extends Controller
+class UserController extends Controller 
 {
     /**
      * Display a listing of the resource.
@@ -120,8 +121,16 @@ class UserController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy($id)
     {
-        //
+       $data=User::findOrFail(encryptor('decrypt',$id));
+       $image_path=public_path('uploads/users/').$data->image;
+
+       if($data->delete()){
+        if(File::exists($image_path))
+        File::delete($image_path);
+
+        return redirect()->back();
+       }
     }
 }

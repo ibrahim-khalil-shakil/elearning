@@ -33,7 +33,7 @@ class AuthenticationController extends Controller
             else
                 return redirect('login')->with('danger', 'Please Try Again');
         } catch (Exception $e) {
-            dd($e);
+            // dd($e);
             return redirect('login')->with('danger', 'Please Try Again');
         }
     }
@@ -56,7 +56,7 @@ class AuthenticationController extends Controller
             } else
                 return redirect()->route('login')->with('error', 'Username or Password is wrong!');
         } catch (Exception $e) {
-            dd($e);
+            // dd($e);
             return redirect()->route('login')->with('error', 'Username or Password is wrong!');
         }
     }
@@ -66,8 +66,8 @@ class AuthenticationController extends Controller
         return request()->session()->put(
             [
                 'userId' => encryptor('encrypt', $user->id),
-                'userName' => encryptor('encrypt', $user->name),
-                'userId' => encryptor('encrypt', $user->id),
+                'userName' => encryptor('encrypt', $user->name_en),
+                'emailAddress' => encryptor('encrypt', $user->email),
                 'role_id'=> encryptor('encrypt',$user->role_id),
                 'accessType'=> encryptor('encrypt',$user->full_access),
                 'role' => encryptor('encrypt', $user->role->type),
@@ -83,4 +83,9 @@ class AuthenticationController extends Controller
         request()->session()->flush();
         return redirect('login')->with('danger', 'Succesfully Logged Out');
     }
-}
+
+public function show(User $data)
+    {
+        return view('backend.user.profile', compact('data')); 
+    }
+}  
