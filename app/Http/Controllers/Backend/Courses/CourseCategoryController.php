@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Backend\Courses;
 
+use App\Http\Controllers\Controller;
 use App\Models\CourseCategory;
 use Illuminate\Http\Request;
 use App\Http\Requests\Backend\CourseCategory\AddNewRequest;
@@ -16,7 +17,7 @@ class CourseCategoryController extends Controller
     public function index()
     {
         $data = CourseCategory::paginate(10);
-        return view('courseCategory.index', compact('data'));
+        return view('backend.courses.courseCategory.index', compact('data'));
     }
 
     /**
@@ -24,7 +25,7 @@ class CourseCategoryController extends Controller
      */
     public function create()
     {
-        return view('courseCategory.create');
+        return view('backend.courses.courseCategory.create');
     }
 
     /**
@@ -43,7 +44,7 @@ class CourseCategoryController extends Controller
                 $data->category_image = $imageName;
             }
             if ($data->save())
-                return redirect()->route('courseCategory.index')->with('success', 'Data Saved');
+                return redirect()->route('backend.courses.courseCategory.index')->with('success', 'Data Saved');
             else
                 return redirect()->back()->withInput()->with('error', 'Please try again');
         } catch (Exception $e) {
@@ -66,7 +67,7 @@ class CourseCategoryController extends Controller
     public function edit($id)
     {
         $data = CourseCategory::findOrFail($id);
-        return view('courseCategory.edit', compact('data'));
+        return view('backend.courses.courseCategory.edit', compact('data'));
     }
 
     /**
@@ -85,7 +86,7 @@ class CourseCategoryController extends Controller
                 $data->category_image = $imageName;
             }
             if ($data->save())
-                return redirect()->route('courseCategory.index')->with('success', 'Data Saved');
+                return redirect()->route('backend.courses.courseCategory.index')->with('success', 'Data Saved');
             else
                 return redirect()->back()->withInput()->with('error', 'Please try again');
         } catch (Exception $e) {

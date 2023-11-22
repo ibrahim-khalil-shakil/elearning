@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Backend\AuthenticationController as auth;
 use App\Http\Controllers\Backend\UserController as user;
 use App\Http\Controllers\Backend\DashboardController as dashboard;
-use App\Http\Controllers\CourseCategoryController as courseCategory;
+use App\Http\Controllers\Backend\Courses\CourseCategoryController as courseCategory;
 
 /*
 |--------------------------------------------------------------------------

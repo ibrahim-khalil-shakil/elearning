@@ -5,8 +5,8 @@ namespace App\Http\Middleware;
 use Closure;
 use App\Models\User; //custom
 use Illuminate\Http\Request;
-use Symfony\Component\HttpFoundation\Response;
 use Session; //custom
+use App\Models\Permission; //custom
 
 class checkRole
 {
@@ -15,7 +15,7 @@ class checkRole
      *
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
-    public function handle(Request $request, Closure $next): Response
+    public function handle(Request $request, Closure $next)
     {
         if (!Session::has('userId') || Session::has('userId') == null) {
             return redirect()->route('logOut');
