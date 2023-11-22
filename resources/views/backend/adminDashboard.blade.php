@@ -2,19 +2,13 @@
 @section('title', 'Admin Dashboard')
 
 @push('styles')
-<!-- Favicon icon -->
-<link rel="icon" type="image/png" sizes="16x16" href="{{asset('public/images/favicon.png')}}">
 <link rel="stylesheet" href="{{asset('public/vendor/jqvmap/css/jqvmap.min.css')}}">
 <link rel="stylesheet" href="{{asset('public/vendor/chartist/css/chartist.min.css')}}">
-<link rel="stylesheet" href="{{asset('public/vendor/bootstrap-select/dist/css/bootstrap-select.min.css')}}">
-<link rel="stylesheet" href="{{asset('public/css/style.css')}}">
 <link rel="stylesheet" href="{{asset('public/css/skin-2.css')}}">
 @endpush
 
 @section('content')
-<!--**********************************
-                Content body start
-            ***********************************-->
+
 <div class="content-body">
     <!-- row -->
     <div class="container-fluid">
@@ -538,22 +532,10 @@
         </div>
     </div>
 </div>
-<!--**********************************
-                Content body end
-            ***********************************-->
 
 @endsection
 
 @push('scripts')
-<!--**********************************
-        Scripts
-    ***********************************-->
-<!-- Required vendors -->
-<script src="{{asset('public/vendor/global/global.min.js')}}"></script>
-<script src="{{asset('public/vendor/bootstrap-select/dist/js/bootstrap-select.min.js')}}"></script>
-<script src="{{asset('public/js/custom.min.js')}}"></script>
-<script src="{{asset('public/js/dlabnav-init.js')}}"></script>
-
 <!-- Chart ChartJS plugin files -->
 <script src="{{asset('public/vendor/chart.js/Chart.bundle.min.js')}}"></script>
 
@@ -565,9 +547,4 @@
 
 <!-- Demo scripts -->
 <script src="{{asset('public/js/dashboard/dashboard-3.js')}}"></script>
-
-<!-- Svganimation scripts -->
-<script src="{{asset('public/vendor/svganimation/vivus.min.js')}}"></script>
-<script src="{{asset('public/vendor/svganimation/svg.animation.js')}}"></script>
-<script src="{{asset('public/js/styleSwitcher.js')}}"></script>
 @endpush

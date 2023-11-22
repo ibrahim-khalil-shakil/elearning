@@ -7,8 +7,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>{{ENV('APP_NAME')}} | @yield('title')</title>
+
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('public/images/favicon.png')}}">
+    <link rel="stylesheet" href="{{asset('public/vendor/bootstrap-select/dist/css/bootstrap-select.min.css')}}">
+    <link rel="stylesheet" href="{{asset('public/css/style.css')}}">
     
-    @stack('styles')
+    @stack('styles') 
 
 </head>
 
@@ -440,8 +445,15 @@
             Sidebar end
         ***********************************-->
 
+        <!--**********************************
+            Content body start
+        ***********************************-->
+
         @yield('content')
 
+        <!--**********************************
+            Content body end
+        ***********************************-->
 
         <!--**********************************
             Footer start
@@ -472,6 +484,15 @@
         Scripts
     ***********************************-->
     <!-- Required vendors -->
+    <script src="{{asset('public/vendor/global/global.min.js')}}"></script>
+    <script src="{{asset('public/vendor/bootstrap-select/dist/js/bootstrap-select.min.js')}}"></script>
+    <script src="{{asset('public/js/custom.min.js')}}"></script>
+    <script src="{{asset('public/js/dlabnav-init.js')}}"></script>
+    
+    <!-- Svganimation scripts -->
+    <script src="{{asset('public/vendor/svganimation/vivus.min.js')}}"></script>
+    <script src="{{asset('public/vendor/svganimation/svg.animation.js')}}"></script>
+    <script src="{{asset('public/js/styleSwitcher.js')}}"></script>
 
     @stack('scripts')
     {{-- TOASTER --}}

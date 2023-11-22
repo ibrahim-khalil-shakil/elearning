@@ -16,9 +16,6 @@
 
 @section('content')
 
-<!--**********************************
-            Content body start
-        ***********************************-->
 <div class="content-body">
     <!-- row -->
     <div class="container-fluid">
@@ -162,27 +159,10 @@
 
     </div>
 </div>
-<!--**********************************
-            Content body end
-        ***********************************-->
 
 @endsection
 
 @push('scripts')
-<!--**********************************
-        Scripts
-    ***********************************-->
-<!-- Required vendors -->
-<script src="{{asset('public/vendor/global/global.min.js')}}"></script>
-<script src="{{asset('public/vendor/bootstrap-select/dist/js/bootstrap-select.min.js')}}"></script>
-<script src="{{asset('public/js/custom.min.js')}}"></script>
-<script src="{{asset('public/js/dlabnav-init.js')}}"></script>
-
-<!-- Svganimation scripts -->
-<script src="{{asset('public/vendor/svganimation/vivus.min.js')}}"></script>
-<script src="{{asset('public/vendor/svganimation/svg.animation.js')}}"></script>
-<script src="{{asset('public/js/styleSwitcher.js')}}"></script>
-
 <!-- pickdate -->
 <script src="{{asset('public/vendor/pickadate/picker.js')}}"></script>
 <script src="{{asset('public/vendor/pickadate/picker.time.js')}}"></script>
@@ -190,4 +170,4 @@
 
 <!-- Pickdate -->
 <script src="{{asset('public/js/plugins-init/pickadate-init.js')}}"></script>
-@endpush
+@endpush 

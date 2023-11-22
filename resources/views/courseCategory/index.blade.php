@@ -2,12 +2,8 @@
 @section('title', 'Category List')
 
 @push('styles')
-<!-- Favicon icon -->
-<link rel="icon" type="image/png" sizes="16x16" href="{{asset('public/images/favicon.png')}}">
-<link rel="stylesheet" href="{{asset('public/vendor/bootstrap-select/dist/css/bootstrap-select.min.css')}}">
 <!-- Datatable -->
 <link href="{{asset('public/vendor/datatables/css/jquery.dataTables.min.css')}}" rel="stylesheet">
-<link rel="stylesheet" href="{{asset('public/css/style.css')}}">
 @endpush
 
 @section('content')
@@ -170,21 +166,7 @@
 @endsection
 
 @push('scripts')
-<!--**********************************
-        Scripts
-    ***********************************-->
-<!-- Required vendors -->
-<script src="{{asset('public/vendor/global/global.min.js')}}"></script>
-<script src="{{asset('public/vendor/bootstrap-select/dist/js/bootstrap-select.min.js')}}"></script>
-<script src="{{asset('public/js/custom.min.js')}}"></script>
-<script src="{{asset('public/js/dlabnav-init.js')}}"></script>
-
 <!-- Datatable -->
 <script src="{{asset('public/vendor/datatables/js/jquery.dataTables.min.js')}}"></script>
 <script src="{{asset('public/js/plugins-init/datatables.init.js')}}"></script>
-
-<!-- Svganimation scripts -->
-<script src="{{asset('public/vendor/svganimation/vivus.min.js')}}"></script>
-<script src="{{asset('public/vendor/svganimation/svg.animation.js')}}"></script>
-<script src="{{asset('public/js/styleSwitcher.js')}}"></script>
 @endpush

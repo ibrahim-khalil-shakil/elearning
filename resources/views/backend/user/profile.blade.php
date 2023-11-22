@@ -4,9 +4,6 @@
 
 @section('content')
 
-<!--**********************************
-            Content body start
-        ***********************************-->
 <div class="content-body">
     <div class="container-fluid">
         <div class="row page-titles mx-0">
@@ -406,8 +403,9 @@
         </div>
     </div>
 </div>
-<!--**********************************
-            Content body end
-        ***********************************-->
 
 @endsection
+
+@push('scripts')
+
+@endpush
