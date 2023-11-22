@@ -44,7 +44,7 @@ class CourseCategoryController extends Controller
                 $data->category_image = $imageName;
             }
             if ($data->save())
-                return redirect()->route('backend.courses.courseCategory.index')->with('success', 'Data Saved');
+                return redirect()->route('courseCategory.index')->with('success', 'Data Saved');
             else
                 return redirect()->back()->withInput()->with('error', 'Please try again');
         } catch (Exception $e) {
@@ -86,11 +86,11 @@ class CourseCategoryController extends Controller
                 $data->category_image = $imageName;
             }
             if ($data->save())
-                return redirect()->route('backend.courses.courseCategory.index')->with('success', 'Data Saved');
+                return redirect()->route('courseCategory.index')->with('success', 'Data Saved');
             else
                 return redirect()->back()->withInput()->with('error', 'Please try again');
         } catch (Exception $e) {
-            // dd($e);
+            dd($e);
             return redirect()->back()->withInput()->with('error', 'Please try again');
         }
     }
