@@ -52,65 +52,60 @@
             <div class="col-lg-12">
                 <div class="row tab-content">
                     <div id="list-view" class="tab-pane fade active show col-lg-12">
-                        <div class="card px-3 rounded">
-                            <div class="card-header">
-                                <h4 class="card-title">{{$role->type}}</h4>
-                            </div>
-                            <div class="card-body">
-                                @php
-                                $routes=array();
-                                $auto_accept=array('GET',"DELETE");
-                                $permissions=array();
-                                foreach($permission as $perm){
-                                $permissions[$perm->name]=$perm->name;
-                                }
-                                @endphp
-                                @foreach(Illuminate\Support\Facades\Route::getRoutes() as $v)
-                                @if($v->getPrefix()=="/admin")
-                                @php
-                                $rl=explode('.',$v->getName());
-                                if(isset($rl[1]))
-                                $routes[$rl[0]][]=array("method"=>$v->methods[0],"function"=>$rl[1]);
-                                @endphp
-                                @endif
-                                @endforeach
-                                <div class="basic-form">
-                                    <form action="{{route('permission.save',encryptor('encrypt',$role->id))}}" method="post"
-                                        enctype="multipart/form-data">
-                                        @csrf
-                                        @forelse($routes as $k=>$r)
-                                        <input type="checkbox" onchange="checkAll(this)" class="form-check-input">
-                                        <strong>{{__($k)}}</strong>
-                                        <div class="form-group">
-                                            <div class="form-check form-check-inline">
-                                                @if($r)
-                                                @foreach($r as $name)
-                                                @if(in_array($name['method'],$auto_accept))
-                                                <label class="form-check-label">
-                                                    @if(in_array($k.'.'.$name['function'],$permissions))
-                                                    <input type="checkbox" checked name="permission[]" value="{{$k.'.'.$name['function']}}">
-                                                    {{__($name['function'])}}
-                                                    @else
-                                                    <input type="checkbox" name="permission[]" value="{{$k.'.'.$name['function']}}">
-                                                    {{__($name['function'])}}
-                                                    @endif
-                                                </label>
+                        <div class="card px-3">
+                            <h4>{{$role->type}}</h4>
+                            @php
+                            $routes=array();
+                            $auto_accept=array('GET',"DELETE");
+                            $permissions=array();
+                            foreach($permission as $perm){
+                            $permissions[$perm->name]=$perm->name;
+                            }
+                            @endphp
+                            @foreach(Illuminate\Support\Facades\Route::getRoutes() as $v)
+                            @if($v->getPrefix()=="/admin")
+                            @php
+                            $rl=explode('.',$v->getName());
+                            if(isset($rl[1]))
+                            $routes[$rl[0]][]=array("method"=>$v->methods[0],"function"=>$rl[1]);
+                            @endphp
+                            @endif
+                            @endforeach
+                            <form action="{{route('permission.save',encryptor('encrypt',$role->id))}}" method="post">
+                                @csrf
+                                <div class="row">
+                                    @forelse($routes as $k=>$r)
+                                    <div class="col-6 col-sm-3 col-md-2">
+                                        <input type="checkbox" onchange="checkAll(this)"> {{__($k)}}
+                                        @if($r)
+                                        <ul class="list-group">
+                                            @foreach($r as $name)
+                                            @if(in_array($name['method'],$auto_accept))
+                                            <li class="list-group-item">
+                                                @if(in_array($k.'.'.$name['function'],$permissions))
+                                                <input type="checkbox" checked name="permission[]" value="{{$k.'.'.$name['function']}}">
+                                                {{__($name['function'])}}
+                                                @else
+                                                <input type="checkbox" name="permission[]" value="{{$k.'.'.$name['function']}}">
+                                                {{__($name['function'])}}
                                                 @endif
-                                                @endforeach
-                        
-                                            </div>
+                                            </li>
                                             @endif
-                                        </div>
-                                        @empty
+                                            @endforeach
+                                        </ul>
+                                        @endif
+                                    </div>
+                                    @empty
                         
-                                        @endforelse
-                                        <div class="col-lg-12 col-md-12 col-sm-12">
-                                            <button type="submit" class="btn btn-primary">Submit</button>
-                                            <button type="submit" class="btn btn-light">Cencel</button>
-                                        </div>
-                                    </form>
+                                    @endforelse
                                 </div>
-                            </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <button type="submit" class="btn btn-primary"> Save</button>
+                                    </div>
+                                </div>
+                            </form>
+                        
                         </div>
                     </div>
                     {{-- <div id="grid-view" class="tab-pane fade col-lg-12">
