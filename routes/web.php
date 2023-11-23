@@ -24,20 +24,20 @@ Route::post('/register', [auth::class, 'signUpStore'])->name('register.store');
 Route::get('/login', [auth::class, 'signInForm'])->name('login');
 Route::post('/login', [auth::class, 'signInCheck'])->name('login.check');
 Route::get('/logout', [auth::class, 'signOut'])->name('logOut');
+Route::get('userProfile', [auth::class, 'show'])->name('userProfile');
 
-Route::resource('/courseCategory', courseCategory::class);
 
 Route::middleware(['checkauth'])->prefix('admin')->group(function () {
     Route::get('/dashboard', [dashboard::class, 'index'])->name('dashboard');
 });
 
 Route::middleware(['checkrole'])->prefix('admin')->group(function () {
-    Route::resource('/user', user::class);
-    Route::get('/userProfile', [auth::class, 'show'])->name('userProfile');
     Route::resource('user',user::class);
     Route::resource('role',role::class);
     Route::get('permission/{role}',[permission::class,'index'])->name('permission.list');
     Route::post('permission/{role}',[permission::class,'save'])->name('permission.save');
+    Route::resource('courseCategory', courseCategory::class);
+
 });
 
 

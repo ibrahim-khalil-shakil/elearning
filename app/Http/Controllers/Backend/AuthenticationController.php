@@ -89,6 +89,6 @@ class AuthenticationController extends Controller
 
     public function show(User $data)
     {
-        return view('backend.user.profile', compact('data'));
+        return view('backend.user.userProfile', compact('data'));
     }
 }
