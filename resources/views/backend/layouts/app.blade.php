@@ -195,9 +195,9 @@
                             <span class="nav-text">Dashboard</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="index.html">Dashboard 1</a></li>
-                            <li><a href="index-2.html">Dashboard 2</a></li>
-                            <li><a href="index-3.html">Dashboard 3</a></li>
+                            <li><a href="{{route('dashboard')}}">Dashboard 1</a></li>
+                            <li><a href="{{route('dashboard')}}">Dashboard 2</a></li>
+                            <li><a href="{{route('dashboard')}}">Dashboard 3</a></li>
                         </ul>
                     </li>
                     <li><a class="ai-icon" href="event-management.html" aria-expanded="false">
@@ -513,6 +513,8 @@
     				toastr.error("{{ Session::get('error') }}");  
     		@endif  
     </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" />
+    {!! Toastr::message() !!}
 </body>
 
 </html>

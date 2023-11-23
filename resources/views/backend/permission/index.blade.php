@@ -52,13 +52,11 @@
             <div class="col-lg-12">
                 <div class="row tab-content">
                     <div id="list-view" class="tab-pane fade active show col-lg-12">
-                        <div class="card">
+                        <div class="card px-3 rounded">
                             <div class="card-header">
-                                <h4 class="card-title">All Role List </h4>
-                                <a href="{{route('role.create')}}" class="btn btn-primary">+ Add new</a>
+                                <h4 class="card-title">{{$role->type}}</h4>
                             </div>
                             <div class="card-body">
-                                <h4>{{$role->type}}</h4>
                                 @php
                                 $routes=array();
                                 $auto_accept=array('GET',"DELETE");
@@ -76,43 +74,42 @@
                                 @endphp
                                 @endif
                                 @endforeach
-                                <form action="{{route('permission.save',encryptor('encrypt',$role->id))}}" method="post"
-                                    enctype="multipart/form-data">
-                                    @csrf
-                                    <div class="row">
+                                <div class="basic-form">
+                                    <form action="{{route('permission.save',encryptor('encrypt',$role->id))}}" method="post"
+                                        enctype="multipart/form-data">
+                                        @csrf
                                         @forelse($routes as $k=>$r)
-                                        <div class="col-lg-6 col-md-6 col-sm-12">
-                                            <input type="checkbox" onchange="checkAll(this)"> {{__($k)}}
-                                            @if($r)
-                                            <ul class="list-group">
+                                        <input type="checkbox" onchange="checkAll(this)" class="form-check-input">
+                                        <strong>{{__($k)}}</strong>
+                                        <div class="form-group">
+                                            <div class="form-check form-check-inline">
+                                                @if($r)
                                                 @foreach($r as $name)
                                                 @if(in_array($name['method'],$auto_accept))
-                                                <li class="list-group-item">
+                                                <label class="form-check-label">
                                                     @if(in_array($k.'.'.$name['function'],$permissions))
-                                                    <input type="checkbox" checked name="permission[]"
-                                                        value="{{$k.'.'.$name['function']}}">
+                                                    <input type="checkbox" checked name="permission[]" value="{{$k.'.'.$name['function']}}">
                                                     {{__($name['function'])}}
                                                     @else
-                                                    <input type="checkbox" name="permission[]"
-                                                        value="{{$k.'.'.$name['function']}}">
+                                                    <input type="checkbox" name="permission[]" value="{{$k.'.'.$name['function']}}">
                                                     {{__($name['function'])}}
                                                     @endif
-                                                </li>
+                                                </label>
                                                 @endif
                                                 @endforeach
-                                            </ul>
+                        
+                                            </div>
                                             @endif
                                         </div>
                                         @empty
-
+                        
                                         @endforelse
                                         <div class="col-lg-12 col-md-12 col-sm-12">
                                             <button type="submit" class="btn btn-primary">Submit</button>
                                             <button type="submit" class="btn btn-light">Cencel</button>
                                         </div>
-                                    </div>
-                                </form>
-
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -204,3 +201,4 @@
 </script>
 
 @endpush
+
