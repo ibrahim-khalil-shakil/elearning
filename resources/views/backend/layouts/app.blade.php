@@ -12,8 +12,8 @@
     <link rel="icon" type="image/png" sizes="16x16" href="{{asset('public/images/favicon.png')}}">
     <link rel="stylesheet" href="{{asset('public/vendor/bootstrap-select/dist/css/bootstrap-select.min.css')}}">
     <link rel="stylesheet" href="{{asset('public/css/style.css')}}">
-    
-    @stack('styles') 
+
+    @stack('styles')
 
 </head>
 
@@ -23,7 +23,7 @@
     <!--**********************************
         Main wrapper start
     ***********************************-->
-    <div id="main-wrapper"> 
+    <div id="main-wrapper">
 
         <!--**********************************
             Nav header start
@@ -137,7 +137,8 @@
                             </li>
                             <li class="nav-item dropdown header-profile">
                                 <a class="nav-link" href="#" role="button" data-toggle="dropdown">
-                                    <img src="{{asset('public/uploads/users/'.request()->session()->get('image'))}}" width="20" alt="">
+                                    <img src="{{asset('public/uploads/users/'.request()->session()->get('image'))}}"
+                                        width="20" alt="">
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right">
                                     <a href="{{route('userProfile')}}" class="dropdown-item ai-icon">
@@ -488,7 +489,7 @@
     <script src="{{asset('public/vendor/bootstrap-select/dist/js/bootstrap-select.min.js')}}"></script>
     <script src="{{asset('public/js/custom.min.js')}}"></script>
     <script src="{{asset('public/js/dlabnav-init.js')}}"></script>
-    
+
     <!-- Svganimation scripts -->
     <script src="{{asset('public/vendor/svganimation/vivus.min.js')}}"></script>
     <script src="{{asset('public/vendor/svganimation/svg.animation.js')}}"></script>
