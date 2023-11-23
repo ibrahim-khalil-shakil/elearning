@@ -52,7 +52,7 @@
             <div class="col-lg-12">
                 <div class="row tab-content">
                     <div id="list-view" class="tab-pane fade active show col-lg-12">
-                        <div class="card px-3">
+                        <div class="card px-3 pb-3">
                             <h4>{{$role->type}}</h4>
                             @php
                             $routes=array();
@@ -73,7 +73,7 @@
                             @endforeach
                             <form action="{{route('permission.save',encryptor('encrypt',$role->id))}}" method="post">
                                 @csrf
-                                <div class="row">
+                                <div class="row p-2">
                                     @forelse($routes as $k=>$r)
                                     <div class="col-6 col-sm-3 col-md-2">
                                         <input type="checkbox" onchange="checkAll(this)"> {{__($k)}}

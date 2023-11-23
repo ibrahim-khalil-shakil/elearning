@@ -1,0 +1,8 @@
+{
+    "index": "List",
+    "create": "Add",
+    "edit": "Update",
+    "destroy": "Delete",
+    "show": "Show",
+    "list": "List"
+}
