@@ -5,6 +5,8 @@ use App\Http\Controllers\Backend\AuthenticationController as auth;
 use App\Http\Controllers\Backend\UserController as user;
 use App\Http\Controllers\Backend\DashboardController as dashboard;
 use App\Http\Controllers\Backend\Courses\CourseCategoryController as courseCategory;
+use App\Http\Controllers\Backend\RoleController as role;
+use App\Http\Controllers\Backend\PermissionController as permission;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,11 +27,17 @@ Route::get('/logout', [auth::class, 'signOut'])->name('logOut');
 
 Route::resource('/courseCategory', courseCategory::class);
 
-
-Route::middleware(['checkrole'])->group(function () {
+Route::middleware(['checkauth'])->prefix('admin')->group(function () {
     Route::get('/dashboard', [dashboard::class, 'index'])->name('dashboard');
+});
+
+Route::middleware(['checkrole'])->prefix('admin')->group(function () {
     Route::resource('/user', user::class);
     Route::get('/userProfile', [auth::class, 'show'])->name('userProfile');
+    Route::resource('user',user::class);
+    Route::resource('role',role::class);
+    Route::get('permission/{role}',[permission::class,'index'])->name('permission.list');
+    Route::post('permission/{role}',[permission::class,'save'])->name('permission.save');
 });
 
 
@@ -43,3 +51,4 @@ Route::get('/home', function () {
 // Route::get('/dashboard', function () {
 //     return view('welcome');
 // })->name('dashboard');
+  

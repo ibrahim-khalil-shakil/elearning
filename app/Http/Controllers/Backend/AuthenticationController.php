@@ -48,11 +48,14 @@ class AuthenticationController extends Controller
         try {
             $user = User::where('contact_en', $request->username)->orWhere('email', $request->username)->first();
             if ($user) {
-                if (Hash::check($request->password, $user->password)) {
-                    $this->setSession($user);
-                    return redirect()->route('dashboard')->with('success', 'Successfully Logged In');
+                if ($user->status == 1) {
+                    if (Hash::check($request->password, $user->password)) {
+                        $this->setSession($user);
+                        return redirect()->route('dashboard')->with('success', 'Successfully Logged In');
+                    } else
+                        return redirect()->route('login')->with('error', 'Username or Password is wrong!');
                 } else
-                    return redirect()->route('login')->with('error', 'Username or Password is wrong!');
+                    return redirect()->route('login')->with('error', 'You are not an active user! Please contact to Authority');
             } else
                 return redirect()->route('login')->with('error', 'Username or Password is wrong!');
         } catch (Exception $e) {
@@ -68,8 +71,8 @@ class AuthenticationController extends Controller
                 'userId' => encryptor('encrypt', $user->id),
                 'userName' => encryptor('encrypt', $user->name_en),
                 'emailAddress' => encryptor('encrypt', $user->email),
-                'role_id'=> encryptor('encrypt',$user->role_id),
-                'accessType'=> encryptor('encrypt',$user->full_access),
+                'role_id' => encryptor('encrypt', $user->role_id),
+                'accessType' => encryptor('encrypt', $user->full_access),
                 'role' => encryptor('encrypt', $user->role->type),
                 'roleIdentitiy' => encryptor('encrypt', $user->role->identity),
                 'language' => encryptor('encrypt', $user->language),
@@ -84,8 +87,8 @@ class AuthenticationController extends Controller
         return redirect('login')->with('danger', 'Succesfully Logged Out');
     }
 
-public function show(User $data)
+    public function show(User $data)
     {
-        return view('backend.user.profile', compact('data')); 
+        return view('backend.user.profile', compact('data'));
     }
-}  
+}

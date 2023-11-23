@@ -1,5 +1,5 @@
 @extends('backend.layouts.app')
-@section('title', 'User List')
+@section('title', trans('Role List'))
 
 @push('styles')
 <!-- Datatable -->
@@ -15,14 +15,14 @@
         <div class="row page-titles mx-0">
             <div class="col-sm-6 p-md-0">
                 <div class="welcome-text">
-                    <h4>User List</h4>
+                    <h4>Role List</h4>
                 </div>
             </div>
             <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Home</a></li>
-                    <li class="breadcrumb-item active"><a href="{{route('user.index')}}">Users</a></li>
-                    <li class="breadcrumb-item active"><a href="{{route('user.index')}}">All User</a></li>
+                    <li class="breadcrumb-item active"><a href="{{route('role.index')}}">Roles</a></li>
+                    <li class="breadcrumb-item active"><a href="{{route('role.index')}}">All Role</a></li>
                 </ol>
             </div>
         </div>
@@ -41,8 +41,8 @@
                     <div id="list-view" class="tab-pane fade active show col-lg-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">All Students List </h4>
-                                <a href="{{route('user.create')}}" class="btn btn-primary">+ Add new</a>
+                                <h4 class="card-title">All Role List </h4>
+                                <a href="{{route('role.create')}}" class="btn btn-primary">+ Add new</a>
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
@@ -51,31 +51,26 @@
                                             <tr>
                                                 <th>{{__('#')}}</th>
                                                 <th>{{__('Name')}}</th>
-                                                <th>{{__('Email')}}</th>
-                                                <th>{{__('Contact')}}</th>
-                                                <th>{{__('Role')}}</th>
-                                                <th>{{__('Status')}}</th>
+                                                <th>{{__('Identity')}}</th>
                                                 <th>{{__('Action')}}</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             @forelse ($data as $d)
                                             <tr>
-                                                <td><img class="rounded-circle" width="35" height="35"
-                                                        src="{{asset('public/uploads/users/'.$d->image)}}" alt=""></td>
-                                                <td><strong>{{$d->name_en}}</strong></td>
-                                                <td>{{$d->email}}</td>
-                                                <td>{{$d->contact_en}}</td>
-                                                <td>{{$d->role?->name}}</td>
-                                                <td>@if($d->status==1){{__('Active')}} @else{{__('Inactive')}} @endif
-                                                </td>
+                                                <td>{{++$loop->index}}</td>
+                                                <td><strong>{{$d->name}}</strong></td>
+                                                <td>{{$d->identity}}</td>
                                                 <td>
-                                                    <a href="{{route('user.edit', encryptor('encrypt',$d->id))}}"
+                                                    <a href="{{route('role.edit', encryptor('encrypt',$d->id))}}"
                                                         class="btn btn-sm btn-primary"><i class="la la-pencil"></i></a>
-                                                    <a href="javascript:void(0);" class="btn btn-sm btn-danger" onclick="$('#form{{$d->id}}').submit()"><i
+                                                    <a href="{{route('permission.list', encryptor('encrypt',$d->id))}}"
+                                                        class="btn btn-sm btn-primary"><i class="la la-unlock"></i></a>
+                                                    <a href="javascript:void(0);" class="btn btn-sm btn-danger"
+                                                        onclick="$('#form{{$d->id}}').submit()"><i
                                                             class="la la-trash-o"></i></a>
                                                     <form id="form{{$d->id}}"
-                                                        action="{{route('user.destroy', encryptor('encrypt',$d->id))}}"
+                                                        action="{{route('role.destroy', encryptor('encrypt',$d->id))}}"
                                                         method="post">
                                                         @csrf
                                                         @method('DELETE')

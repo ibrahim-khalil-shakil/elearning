@@ -261,12 +261,12 @@
                     </li>
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">
                             <i class="la la-book"></i>
-                            <span class="nav-text">Contents</span>
+                            <span class="nav-text">Roles</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="all-library.html">All Content</a></li>
-                            <li><a href="add-library.html">Add Content</a></li>
-                            <li><a href="edit-library.html">Edit Content</a></li>
+                            <li><a href="{{route('role.index')}}">All Role</a></li>
+                            <li><a href="{{route('role.create')}}">Add Role</a></li>
+                            <li><a href="{{route('role.index')}}">Edit Role</a></li>
                         </ul>
                     </li>
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">

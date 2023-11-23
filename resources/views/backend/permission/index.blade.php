@@ -1,5 +1,5 @@
 @extends('backend.layouts.app')
-@section('title', 'User List')
+@section('title', trans('Permission List'))
 
 @push('styles')
 <!-- Datatable -->
@@ -8,6 +8,19 @@
 
 @section('content')
 
+<style>
+    .list-group-collapse li>ul li:first-child {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+
+    .list-group-collapse li>ul {
+        margin-left: 16px;
+        margin-right: 16px;
+        margin-bottom: 11px;
+    }
+</style>
+
 <div class="content-body">
     <!-- row -->
     <div class="container-fluid">
@@ -15,14 +28,14 @@
         <div class="row page-titles mx-0">
             <div class="col-sm-6 p-md-0">
                 <div class="welcome-text">
-                    <h4>User List</h4>
+                    <h4>Permission List</h4>
                 </div>
             </div>
             <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Home</a></li>
-                    <li class="breadcrumb-item active"><a href="{{route('user.index')}}">Users</a></li>
-                    <li class="breadcrumb-item active"><a href="{{route('user.index')}}">All User</a></li>
+                    <li class="breadcrumb-item active"><a href="{{route('role.index')}}">Permissions</a></li>
+                    <li class="breadcrumb-item active"><a href="{{route('role.index')}}">All Permission</a></li>
                 </ol>
             </div>
         </div>
@@ -41,59 +54,69 @@
                     <div id="list-view" class="tab-pane fade active show col-lg-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">All Students List </h4>
-                                <a href="{{route('user.create')}}" class="btn btn-primary">+ Add new</a>
+                                <h4 class="card-title">All Role List </h4>
+                                <a href="{{route('role.create')}}" class="btn btn-primary">+ Add new</a>
                             </div>
                             <div class="card-body">
-                                <div class="table-responsive">
-                                    <table id="example3" class="display" style="min-width: 845px">
-                                        <thead>
-                                            <tr>
-                                                <th>{{__('#')}}</th>
-                                                <th>{{__('Name')}}</th>
-                                                <th>{{__('Email')}}</th>
-                                                <th>{{__('Contact')}}</th>
-                                                <th>{{__('Role')}}</th>
-                                                <th>{{__('Status')}}</th>
-                                                <th>{{__('Action')}}</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            @forelse ($data as $d)
-                                            <tr>
-                                                <td><img class="rounded-circle" width="35" height="35"
-                                                        src="{{asset('public/uploads/users/'.$d->image)}}" alt=""></td>
-                                                <td><strong>{{$d->name_en}}</strong></td>
-                                                <td>{{$d->email}}</td>
-                                                <td>{{$d->contact_en}}</td>
-                                                <td>{{$d->role?->name}}</td>
-                                                <td>@if($d->status==1){{__('Active')}} @else{{__('Inactive')}} @endif
-                                                </td>
-                                                <td>
-                                                    <a href="{{route('user.edit', encryptor('encrypt',$d->id))}}"
-                                                        class="btn btn-sm btn-primary"><i class="la la-pencil"></i></a>
-                                                    <a href="javascript:void(0);" class="btn btn-sm btn-danger" onclick="$('#form{{$d->id}}').submit()"><i
-                                                            class="la la-trash-o"></i></a>
-                                                    <form id="form{{$d->id}}"
-                                                        action="{{route('user.destroy', encryptor('encrypt',$d->id))}}"
-                                                        method="post">
-                                                        @csrf
-                                                        @method('DELETE')
-                                                    </form>
-                                                </td>
-                                            </tr>
-                                            @empty
-                                            <tr>
-                                                <th colspan="7" class="text-center">No User Found</th>
-                                            </tr>
-                                            @endforelse
-                                        </tbody>
-                                    </table>
-                                </div>
+                                <h4>{{$role->type}}</h4>
+                                @php
+                                $routes=array();
+                                $auto_accept=array('GET',"DELETE");
+                                $permissions=array();
+                                foreach($permission as $perm){
+                                $permissions[$perm->name]=$perm->name;
+                                }
+                                @endphp
+                                @foreach(Illuminate\Support\Facades\Route::getRoutes() as $v)
+                                @if($v->getPrefix()=="/admin")
+                                @php
+                                $rl=explode('.',$v->getName());
+                                if(isset($rl[1]))
+                                $routes[$rl[0]][]=array("method"=>$v->methods[0],"function"=>$rl[1]);
+                                @endphp
+                                @endif
+                                @endforeach
+                                <form action="{{route('permission.save',encryptor('encrypt',$role->id))}}" method="post"
+                                    enctype="multipart/form-data">
+                                    @csrf
+                                    <div class="row">
+                                        @forelse($routes as $k=>$r)
+                                        <div class="col-lg-6 col-md-6 col-sm-12">
+                                            <input type="checkbox" onchange="checkAll(this)"> {{__($k)}}
+                                            @if($r)
+                                            <ul class="list-group">
+                                                @foreach($r as $name)
+                                                @if(in_array($name['method'],$auto_accept))
+                                                <li class="list-group-item">
+                                                    @if(in_array($k.'.'.$name['function'],$permissions))
+                                                    <input type="checkbox" checked name="permission[]"
+                                                        value="{{$k.'.'.$name['function']}}">
+                                                    {{__($name['function'])}}
+                                                    @else
+                                                    <input type="checkbox" name="permission[]"
+                                                        value="{{$k.'.'.$name['function']}}">
+                                                    {{__($name['function'])}}
+                                                    @endif
+                                                </li>
+                                                @endif
+                                                @endforeach
+                                            </ul>
+                                            @endif
+                                        </div>
+                                        @empty
+
+                                        @endforelse
+                                        <div class="col-lg-12 col-md-12 col-sm-12">
+                                            <button type="submit" class="btn btn-primary">Submit</button>
+                                            <button type="submit" class="btn btn-light">Cencel</button>
+                                        </div>
+                                    </div>
+                                </form>
+
                             </div>
                         </div>
                     </div>
-                    <div id="grid-view" class="tab-pane fade col-lg-12">
+                    {{-- <div id="grid-view" class="tab-pane fade col-lg-12">
                         <div class="row">
                             @forelse ($data as $d)
                             <div class="col-lg-4 col-md-6 col-sm-6 col-12">
@@ -155,7 +178,7 @@
                             </div>
                             @endforelse
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>
@@ -169,5 +192,15 @@
 <!-- Datatable -->
 <script src="{{asset('public/vendor/datatables/js/jquery.dataTables.min.js')}}"></script>
 <script src="{{asset('public/js/plugins-init/datatables.init.js')}}"></script>
+
+<script>
+    function checkAll(e){
+        if($(e).prop('checked')==true)
+            $(e).next('.list-group').find('input').attr('checked','checked');
+        else
+            $(e).next('.list-group').find('input').removeAttr('checked','checked');
+    }
+
+</script>
 
 @endpush

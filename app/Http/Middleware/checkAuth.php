@@ -3,8 +3,10 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use App\Models\User; //custom
 use Illuminate\Http\Request;
-use Symfony\Component\HttpFoundation\Response;
+use Session; //custom
+use App\Models\Permission; //custom
 
 class checkAuth
 {
@@ -13,8 +15,17 @@ class checkAuth
      *
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
-    public function handle(Request $request, Closure $next): Response
+    public function handle(Request $request, Closure $next)
     {
-        return $next($request);
+        if (!Session::has('userId') || Session::has('userId') == null) {
+            return redirect()->route('logOut');
+        } else {
+            $user = User::where('status', 1)->where('id', currentUserId())->first();
+            if (!$user)
+                return redirect()->route('logOut');
+            else
+                return $next($request);
+        }
+        return redirect()->route('logOut');
     }
 }
