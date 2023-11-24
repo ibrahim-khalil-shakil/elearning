@@ -31,8 +31,8 @@
         <div class="nav-header">
             <a href="{{route('home')}}" class="brand-logo">
                 <img class="logo-abbr" src="{{asset('public/images/logo-white.png')}}" alt="">
-                <img class="logo-compact" src="{{asset('public/images/logo-text-white.png')}}" alt="">
-                <span class="fw-bold fs-3"> eLEARNING </span>
+                <img class="logo-compact" src="{{asset('public/images/d-logo.png')}}" alt="">
+                <img class="brand-title" src="{{asset('public/images/d-logo.png')}}" alt="">
             </a>
 
             <div class="nav-control">
@@ -136,7 +136,7 @@
                                 </div>
                             </li>
                             <li class="nav-item dropdown header-profile">
-                                <a class="nav-link" href="#" role="button" data-toggle="dropdown">
+                                <a class="nav-link" title="Profile Info" href="#" role="button" data-toggle="dropdown">
                                     <img src="{{asset('public/uploads/users/'.request()->session()->get('image'))}}"
                                         width="20" alt="">
                                 </a>

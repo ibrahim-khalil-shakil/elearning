@@ -99,7 +99,7 @@
                                             @forelse ($role as $r)
                                             <option value="{{$r->id}}" {{old('roleId', $user->
                                                 role_id)==$r->id?'selected':''}}>
-                                                {{$r->type}}</option>
+                                                {{$r->name}}</option>
                                             @empty
                                             <option value="">No Role Found</option>
                                             @endforelse

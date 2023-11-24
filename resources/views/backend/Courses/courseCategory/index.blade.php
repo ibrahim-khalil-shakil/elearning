@@ -26,7 +26,7 @@
                     <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Home</a></li>
                     <li class="breadcrumb-item active"><a href="{{route('courseCategory.index')}}">Categories</a></li>
                     <li class="breadcrumb-item active"><a href="{{route('courseCategory.index')}}">All Category</a></li>
-                </ol> 
+                </ol>
             </div>
         </div>
 
@@ -65,16 +65,21 @@
                                                 <td><strong>{{$d->id}}</strong></td>
                                                 <td><strong>{{$d->category_name}}</strong></td>
                                                 <td>
-                                                    @if($d->category_status==1){{__('Active')}} @else{{__('Inactive')}} @endif
+                                                    <span class="badge {{$d->category_status==1?"
+                                                        badge-success":"badge-danger"}}">@if($d->category_status==1){{__('Active')}}
+                                                        @else{{__('Inactive')}}@endif</span>
                                                 </td>
-                                                <td><img class="rounded" width="200" height="100"
+                                                <td>
+                                                    <img class="rounded" width="200" height="100"
                                                         src="{{asset('public/uploads/courseCategories/'.$d->category_image)}}"
-                                                        alt=""></td>
+                                                        alt="">
+                                                </td>
                                                 <td>
                                                     <a href="{{route('courseCategory.edit', $d->id)}}"
-                                                        class="btn btn-sm btn-primary"><i class="la la-pencil"></i></a>
+                                                        class="btn btn-sm btn-primary" title="Edit"><i
+                                                            class="la la-pencil"></i></a>
                                                     <a href="javascript:void(0);" class="btn btn-sm btn-danger"
-                                                        onclick="$('#form{{$d->id}}').submit()"><i
+                                                        title="Delete" onclick="$('#form{{$d->id}}').submit()"><i
                                                             class="la la-trash-o"></i></a>
                                                     <form id="form{{$d->id}}"
                                                         action="{{route('courseCategory.destroy', $d->id)}}"
@@ -118,7 +123,8 @@
                                     <div class="card-body pt-2">
                                         <div class="text-center">
                                             <div class="profile-photo">
-                                                <img src="{{asset('public/uploads/courseCategories/'.$d->category_image)}}"  class="w-100" alt="">
+                                                <img src="{{asset('public/uploads/courseCategories/'.$d->category_image)}}"
+                                                    class="w-100" alt="">
                                             </div>
                                             <h3 class="mt-4 mb-1">{{$d->category_name}}</h3>
                                             <ul class="list-group mb-3 list-group-flush">
@@ -126,12 +132,14 @@
                                                     <span>#Sl.</span><strong>{{$d->id}}</strong>
                                                 </li>
                                                 <li class="list-group-item px-0 d-flex justify-content-between">
-                                                    <span class="mb-0">Status.
-                                                        :</span><strong>@if($d->category_status==1){{__('Active')}} @else{{__('Inactive')}} @endif</strong>
+                                                    <span class="mb-0">Status:</span>
+                                                    <strong><span class="badge {{$d->category_status==1?"
+                                                        badge-success":"badge-danger"}}">@if($d->category_status==1){{__('Active')}}
+                                                    @else{{__('Inactive')}} @endif</span></strong>
                                                 </li>
                                                 <li class="list-group-item px-0 d-flex justify-content-between">
-                                                    <span class="mb-0">Created At.
-                                                        :</span><strong>{{$d->created_at}}</strong>
+                                                    <span class="mb-0">Created At :</span>
+                                                    <strong>{{$d->created_at}}</strong>
                                                 </li>
                                             </ul>
                                             <a class="btn btn-outline-primary btn-rounded mt-3 px-4"

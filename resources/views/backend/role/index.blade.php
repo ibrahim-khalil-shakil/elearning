@@ -63,11 +63,13 @@
                                                 <td>{{$d->identity}}</td>
                                                 <td>
                                                     <a href="{{route('role.edit', encryptor('encrypt',$d->id))}}"
-                                                        class="btn btn-sm btn-primary"><i class="la la-pencil"></i></a>
+                                                        class="btn btn-sm btn-primary" title="Edit"><i
+                                                            class="la la-pencil"></i></a>
                                                     <a href="{{route('permission.list', encryptor('encrypt',$d->id))}}"
-                                                        class="btn btn-sm btn-primary"><i class="la la-unlock"></i></a>
+                                                        class="btn btn-sm btn-dark" title="Permissions"><i
+                                                            class="la la-unlock"></i></a>
                                                     <a href="javascript:void(0);" class="btn btn-sm btn-danger"
-                                                        onclick="$('#form{{$d->id}}').submit()"><i
+                                                        title="Delete" onclick="$('#form{{$d->id}}').submit()"><i
                                                             class="la la-trash-o"></i></a>
                                                     <form id="form{{$d->id}}"
                                                         action="{{route('role.destroy', encryptor('encrypt',$d->id))}}"

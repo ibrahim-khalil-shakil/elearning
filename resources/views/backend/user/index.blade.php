@@ -54,6 +54,7 @@
                                                 <th>{{__('Email')}}</th>
                                                 <th>{{__('Contact')}}</th>
                                                 <th>{{__('Role')}}</th>
+                                                <th>{{__('Full Access')}}</th>
                                                 <th>{{__('Status')}}</th>
                                                 <th>{{__('Action')}}</th>
                                             </tr>
@@ -67,12 +68,22 @@
                                                 <td>{{$d->email}}</td>
                                                 <td>{{$d->contact_en}}</td>
                                                 <td>{{$d->role?->name}}</td>
-                                                <td>@if($d->status==1){{__('Active')}} @else{{__('Inactive')}} @endif
+                                                <td>
+                                                    <span class="badge {{$d->full_access==1?"
+                                                        badge-info":"badge-warning"}}">@if($d->full_access==1){{__('Yes')}}
+                                                        @else{{__('No')}} @endif</span>
+                                                </td>
+                                                <td>
+                                                    <span class="badge {{$d->status==1?"
+                                                        badge-success":"badge-danger"}}">@if($d->status==1){{__('Active')}}
+                                                        @else{{__('Inactive')}} @endif</span>
                                                 </td>
                                                 <td>
                                                     <a href="{{route('user.edit', encryptor('encrypt',$d->id))}}"
-                                                        class="btn btn-sm btn-primary"><i class="la la-pencil"></i></a>
-                                                    <a href="javascript:void(0);" class="btn btn-sm btn-danger" onclick="$('#form{{$d->id}}').submit()"><i
+                                                        class="btn btn-sm btn-primary" title="Edit"><i
+                                                            class="la la-pencil"></i></a>
+                                                    <a href="javascript:void(0);" class="btn btn-sm btn-danger"
+                                                        title="Delete" onclick="$('#form{{$d->id}}').submit()"><i
                                                             class="la la-trash-o"></i></a>
                                                     <form id="form{{$d->id}}"
                                                         action="{{route('user.destroy', encryptor('encrypt',$d->id))}}"
@@ -120,21 +131,27 @@
                                                     height="100" class="rounded-circle" alt="">
                                             </div>
                                             <h3 class="mt-4 mb-1">{{$d->name_en}}</h3>
-                                            <p class="text-muted">{{$d->role?->type}}</p>
+                                            <p class="text-muted">{{$d->role?->name}}</p>
                                             <ul class="list-group mb-3 list-group-flush">
                                                 <li class="list-group-item px-0 d-flex justify-content-between">
-                                                    <span>#Sl.</span><strong>{{$d->id}}</strong>
+                                                    <span>Phone No. :</span>
+                                                    <strong>{{$d->contact_en}}</strong>
                                                 </li>
                                                 <li class="list-group-item px-0 d-flex justify-content-between">
-                                                    <span class="mb-0">Phone No.
-                                                        :</span><strong>{{$d->contact_en}}</strong>
+                                                    <span class="mb-0">Email :</span>
+                                                    <strong>{{$d->email}}</strong>
                                                 </li>
                                                 <li class="list-group-item px-0 d-flex justify-content-between">
-                                                    <span class="mb-0">Email:</span><strong>{{$d->email}}</strong>
+                                                    <span class="mb-0">Status :</span>
+                                                    <span class="badge {{$d->status==1?"
+                                                        badge-success":"badge-danger"}}">@if($d->status==1){{__('Active')}}
+                                                        @else{{__('Inactive')}} @endif</span>
                                                 </li>
                                                 <li class="list-group-item px-0 d-flex justify-content-between">
-                                                    <span class="mb-0">Created At.
-                                                        :</span><strong>{{$d->created_at}}</strong>
+                                                    <span class="mb-0">Full Access :</span>
+                                                    <span class="badge {{$d->full_access==1?"
+                                                        badge-info":"badge-warning"}}">@if($d->full_access==1){{__('Yes')}}
+                                                        @else{{__('No')}} @endif</span>
                                                 </li>
                                             </ul>
                                             <a class="btn btn-outline-primary btn-rounded mt-3 px-4"
