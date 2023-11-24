@@ -1,0 +1,20 @@
+get permission migration file
+get model>permission.php
+get middleware> checkauth.php and 
+checkrole.php (replace with the new one)
+
+go to kernel.php
+copy checkrole and make it checkauth.
+
+authentication controller (replace with the new one)
+rolecontroller (replace with the new one)
+permission controller (replace with the new one)
+
+controller.php (replace with the new one)
+
+request>backend>permission folder (replace with the new one)
+
+view>backend> get persmission and role folder and apply according to theme
+
+web.php
+adjust it

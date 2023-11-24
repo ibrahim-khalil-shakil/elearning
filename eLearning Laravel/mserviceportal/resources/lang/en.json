@@ -1,0 +1,6 @@
+{
+    "index": "List",
+    "create": "Add New",
+    "edit": "Update",
+    "destroy": "Delete"
+}
