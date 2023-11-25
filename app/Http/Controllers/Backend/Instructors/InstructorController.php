@@ -5,6 +5,10 @@ namespace App\Http\Controllers\Backend\Instructors;
 use App\Http\Controllers\Controller;
 use App\Models\Instructor;
 use Illuminate\Http\Request;
+use App\Models\Role;
+use Illuminate\Support\Facades\Hash;
+use Exception;
+use File;
 
 class InstructorController extends Controller
 {
@@ -13,7 +17,8 @@ class InstructorController extends Controller
      */
     public function index()
     {
-        //
+        $instructor = Instructor::paginate(10);
+        return view('backend.instructor.index', compact('instructor'));
     }
 
     /**
@@ -21,7 +26,8 @@ class InstructorController extends Controller
      */
     public function create()
     {
-        //
+        $role = Role::get();
+        return view('backend.instructor.create', compact('role'));
     }
 
     /**
@@ -29,7 +35,33 @@ class InstructorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try {
+            $instructor = new Instructor;
+            $instructor->name_en = $request->fullName_en;
+            $instructor->name_bn = $request->fullName_bn;
+            $instructor->contact_en = $request->contactNumber_en;
+            $instructor->contact_bn = $request->contactNumber_bn;
+            $instructor->email = $request->emailAddress;
+            $instructor->role_id = $request->roleId;
+            $instructor->bio = $request->bio;
+            $instructor->status = $request->status;
+            $instructor->password = Hash::make($request->fullName_bn);
+            $instructor->language = 'en';
+            $instructor->access_block = $request->access_block;
+
+            if ($request->hasFile('image')) {
+                $imageName = rand(111, 999) . time() . '.' . $request->image->extension();
+                $request->image->move(public_path('uploads/instructors'), $imageName);
+                $instructor->image = $imageName;
+            }
+            if ($instructor->save())
+                return redirect()->route('instructor.index')->with('success', 'Data Saved');
+            else
+                return redirect()->back()->withInput()->with('error', 'Please try again');
+        } catch (Exception $e) {
+            dd($e);
+            return redirect()->back()->withInput()->with('error', 'Please try again');
+        }
     }
 
     /**
@@ -59,8 +91,16 @@ class InstructorController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Instructor $instructor)
+    public function destroy($id)
     {
-        //
+        $data=Instructor::findOrFail(encryptor('decrypt',$id));
+        $image_path=public_path('uploads/instructors').$data->image;
+
+        if($data->delete()){
+            if(File::exists($image_path))
+            File::delete($image_path);
+
+            return redirect()->back();
+        }
     }
 }

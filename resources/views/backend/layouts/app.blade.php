@@ -221,10 +221,10 @@
                             <span class="nav-text">Instructors</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="all-professors.html">All Instructor</a></li>
-                            <li><a href="add-professor.html">Add Instructor</a></li>
-                            <li><a href="edit-professor.html">Edit Instructor</a></li>
-                            <li><a href="professor-profile.html">Instructor Profile</a></li>
+                            <li><a href="{{route('instructor.index')}}">All Instructor</a></li>
+                            <li><a href="{{route('instructor.create')}}">Add Instructor</a></li>
+                            <li><a href="{{route('instructor.index')}}">Edit Instructor</a></li>
+                            <li><a href="{{route('instructor.index')}}">Instructor Profile</a></li>
                         </ul>
                     </li>
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">

@@ -10,10 +10,17 @@ class Role extends Model
     use HasFactory;
 
     // relation with user
-    public function users(){
+    public function users()
+    {
         return $this->hasMany(User::class);
     }
-    public function students(){
+    public function students()
+    {
         return $this->hasMany(Student::class);
+    }
+
+    public function instructors()
+    {
+        $this->hasMany(Instructor::class);
     }
 }

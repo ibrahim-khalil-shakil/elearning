@@ -1,5 +1,5 @@
 @extends('backend.layouts.app')
-@section('title', 'Student List')
+@section('title', 'Instructor List')
 
 @push('styles')
 <!-- Datatable -->
@@ -15,14 +15,14 @@
         <div class="row page-titles mx-0">
             <div class="col-sm-6 p-md-0">
                 <div class="welcome-text">
-                    <h4>Student List</h4>
+                    <h4>Instructor List</h4>
                 </div>
             </div>
             <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Home</a></li>
-                    <li class="breadcrumb-item active"><a href="{{route('student.index')}}">Students</a></li>
-                    <li class="breadcrumb-item active"><a href="{{route('student.index')}}">All Student</a></li>
+                    <li class="breadcrumb-item active"><a href="{{route('instructor.index')}}">Instructors</a></li>
+                    <li class="breadcrumb-item active"><a href="{{route('instructor.index')}}">All Instructor</a></li>
                 </ol>
             </div>
         </div>
@@ -41,8 +41,8 @@
                     <div id="list-view" class="tab-pane fade active show col-lg-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">All Students List </h4>
-                                <a href="{{route('student.create')}}" class="btn btn-primary">+ Add new</a>
+                                <h4 class="card-title">All Instructors List </h4>
+                                <a href="{{route('instructor.create')}}" class="btn btn-primary">+ Add new</a>
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
@@ -54,37 +54,37 @@
                                                 <th>{{__('Email')}}</th>
                                                 <th>{{__('Contact')}}</th>
                                                 <th>{{__('Role')}}</th>
-                                                <th>{{__('Gender')}}</th>
+                                                <th>{{__('Bio')}}</th>
                                                 <th>{{__('Status')}}</th>
                                                 <th>{{__('Action')}}</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @forelse ($data as $d)
+                                            @forelse ($instructor as $d)
                                             <tr>
-                                                <td><img class="rounded-circle" width="35" height="35"
-                                                        src="{{asset('public/uploads/students/'.$d->image)}}" alt=""></td>
+                                                <td>
+                                                    <img class="rounded-circle" width="35" height="35"
+                                                        src="{{asset('public/uploads/instructors/'.$d->image)}}" alt="">
+                                                </td>
                                                 <td><strong>{{$d->name_en}}</strong></td>
                                                 <td>{{$d->email}}</td>
                                                 <td>{{$d->contact_en}}</td>
                                                 <td>{{$d->role?->name}}</td>
-                                                <td>
-                                                   {{ $d->gender == 'male' ? __('Male') : ($d->gender == 'female' ? __('Female') : __('Other')) }}
-                                                </td>
+                                                <td>{{$d->contact_en}}</td>
                                                 <td>
                                                     <span class="badge {{$d->status==1?"
                                                         badge-success":"badge-danger"}}">@if($d->status==1){{__('Active')}}
                                                         @else{{__('Inactive')}} @endif</span>
                                                 </td>
                                                 <td>
-                                                    <a href="{{route('student.edit', encryptor('encrypt',$d->id))}}"
+                                                    <a href="{{route('instructor.edit', encryptor('encrypt',$d->id))}}"
                                                         class="btn btn-sm btn-primary" title="Edit"><i
                                                             class="la la-pencil"></i></a>
                                                     <a href="javascript:void(0);" class="btn btn-sm btn-danger"
                                                         title="Delete" onclick="$('#form{{$d->id}}').submit()"><i
                                                             class="la la-trash-o"></i></a>
                                                     <form id="form{{$d->id}}"
-                                                        action="{{route('student.destroy', encryptor('encrypt',$d->id))}}"
+                                                        action="{{route('instructor.destroy', encryptor('encrypt',$d->id))}}"
                                                         method="post">
                                                         @csrf
                                                         @method('DELETE')
@@ -93,7 +93,7 @@
                                             </tr>
                                             @empty
                                             <tr>
-                                                <th colspan="7" class="text-center">No Student Found</th>
+                                                <th colspan="7" class="text-center">No Instructor Found</th>
                                             </tr>
                                             @endforelse
                                         </tbody>
@@ -104,7 +104,7 @@
                     </div>
                     <div id="grid-view" class="tab-pane fade col-lg-12">
                         <div class="row">
-                            @forelse ($data as $d)
+                            @forelse ($instructor as $d)
                             <div class="col-lg-4 col-md-6 col-sm-6 col-12">
                                 <div class="card card-profile">
                                     <div class="card-header justify-content-end pb-0">
@@ -115,7 +115,7 @@
                                             <div class="dropdown-menu dropdown-menu-right border py-0">
                                                 <div class="py-2">
                                                     <a class="dropdown-item"
-                                                        href="{{route('student.edit', encryptor('encrypt',$d->id))}}">Edit</a>
+                                                        href="{{route('instructor.edit', encryptor('encrypt',$d->id))}}">Edit</a>
                                                     <a class="dropdown-item text-danger"
                                                         href="javascript:void(0);">Delete</a>
                                                 </div>
@@ -125,7 +125,7 @@
                                     <div class="card-body pt-2">
                                         <div class="text-center">
                                             <div class="profile-photo">
-                                                <img src="{{asset('public/uploads/students/'.$d->image)}}" width="100"
+                                                <img src="{{asset('public/uploads/instructors/'.$d->image)}}" width="100"
                                                     height="100" class="rounded-circle" alt="">
                                             </div>
                                             <h3 class="mt-4 mb-1">{{$d->name_en}}</h3>
@@ -140,10 +140,6 @@
                                                     <strong>{{$d->email}}</strong>
                                                 </li>
                                                 <li class="list-group-item px-0 d-flex justify-content-between">
-                                                    <span class="mb-0">Gender :</span>
-                                                    <strong>{{$d->gender}}</strong>
-                                                </li>
-                                                <li class="list-group-item px-0 d-flex justify-content-between">
                                                     <span class="mb-0">Status :</span>
                                                     <span class="badge {{$d->status==1?"
                                                         badge-success":"badge-danger"}}">@if($d->status==1){{__('Active')}}
@@ -151,7 +147,7 @@
                                                 </li>
                                             </ul>
                                             <a class="btn btn-outline-primary btn-rounded mt-3 px-4"
-                                                href="about-student.html">Read More</a>
+                                                href="about-instructor.html">Read More</a>
                                         </div>
                                     </div>
                                 </div>
@@ -161,7 +157,7 @@
                                 <div class="card card-profile">
                                     <div class="card-body pt-2">
                                         <div class="text-center">
-                                            <p class="mt-3 px-4">Student Not Found</p>
+                                            <p class="mt-3 px-4">Instructor Not Found</p>
                                         </div>
                                     </div>
                                 </div>

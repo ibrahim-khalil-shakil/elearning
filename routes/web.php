@@ -8,6 +8,7 @@ use App\Http\Controllers\Backend\Courses\CourseCategoryController as courseCateg
 use App\Http\Controllers\Backend\RoleController as role;
 use App\Http\Controllers\Backend\PermissionController as permission;
 use App\Http\Controllers\Backend\Students\StudentController as student;
+use App\Http\Controllers\Backend\Instructors\InstructorController as instructor;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,6 +40,7 @@ Route::middleware(['checkrole'])->prefix('admin')->group(function () {
     Route::post('permission/{role}',[permission::class,'save'])->name('permission.save');
     Route::resource('courseCategory', courseCategory::class);
     Route::resource('student', student::class);
+    Route::resource('instructor', instructor::class);
 
 });
 

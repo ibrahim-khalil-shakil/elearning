@@ -1,5 +1,5 @@
 @extends('backend.layouts.app')
-@section('title', 'Add Student')
+@section('title', 'Add Instructor')
 
 @push('styles')
 <!-- Pick date -->
@@ -16,14 +16,14 @@
         <div class="row page-titles mx-0">
             <div class="col-sm-6 p-md-0">
                 <div class="welcome-text">
-                    <h4>Add Student</h4>
+                    <h4>Add Instructor</h4>
                 </div>
             </div>
             <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Home</a></li>
-                    <li class="breadcrumb-item active"><a href="{{route('student.index')}}">Students</a></li>
-                    <li class="breadcrumb-item active"><a href="{{route('student.create')}}">Add Student</a></li>
+                    <li class="breadcrumb-item active"><a href="{{route('instructor.index')}}">Instructors</a></li>
+                    <li class="breadcrumb-item active"><a href="{{route('instructor.create')}}">Add Instructor</a></li>
                 </ol>
             </div>
         </div>
@@ -35,7 +35,7 @@
                         <h5 class="card-title">Basic Info</h5>
                     </div>
                     <div class="card-body">
-                        <form action="{{route('student.store')}}" method="post" enctype="multipart/form-data">
+                        <form action="{{route('instructor.store')}}" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="row">
                                 <div class="col-lg-6 col-md-6 col-sm-12">
@@ -103,22 +103,12 @@
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12">
                                     <div class="form-group">
-                                        <label class="form-label">Date of Birth</label>
-                                        <input type="date" name="birthDate" value="{{old('birthDate')}}" class="form-control" id="">
+                                        <label class="form-label">Bio</label>
+                                        <textarea class="form-control" name="bio" value="{{old('bio')}}"></textarea>
                                     </div>
-                                    @if($errors->has('birthDate'))
-                                    <span class="text-danger"> {{ $errors->first('birthDate') }}</span>
+                                    @if($errors->has('bio'))
+                                    <span class="text-danger"> {{ $errors->first('bio') }}</span>
                                     @endif
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-12">
-                                    <div class="form-group">
-                                        <label class="form-label">Gender</label>
-                                        <select class="form-control" name="gender">
-                                            <option value="male" @if(old('gender')=='male') selected @endif>Male</option>
-                                            <option value="female" @if(old('gender')=='female') selected @endif>Fenale</option>
-                                            <option value="other" @if(old('gender')=='other') selected @endif>Other</option>
-                                        </select>
-                                    </div>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12">
                                     <div class="form-group">

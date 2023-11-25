@@ -9,6 +9,7 @@ use App\Models\Role;
 use Exception;
 use Illuminate\Support\Facades\Hash;
 use File;
+use Carbon\Carbon;
 
 class StudentController extends Controller
 {
@@ -36,10 +37,6 @@ class StudentController extends Controller
     public function store(Request $request)
     {
         try {
-            $request->merge([
-                'birthDate' => \Carbon\Carbon::createFromFormat('d F, Y', $request->birthDate)->format('Y-m-d'),
-            ]);
-
             $student = new Student();
             $student->name_en = $request->fullName_en;
             $student->name_bn = $request->fullName_bn;
@@ -83,7 +80,8 @@ class StudentController extends Controller
     public function edit($id)
     {
         $role = Role::get();
-        $student = Student::findOrFail(encryptor('decrypt', $id)); 
+        $student = Student::findOrFail(encryptor('decrypt', $id));
+
         return view('backend.student.edit', compact('role', 'student'));
     }
 
@@ -93,9 +91,6 @@ class StudentController extends Controller
     public function update(Request $request, $id)
     {
         try {
-            // $request->merge([
-            //     'birthDate' => \Carbon\Carbon::createFromFormat('d F, Y', $request->birthDate)->format('Y-m-d'),
-            // ]);
 
             $student = Student::findOrFail(encryptor('decrypt', $id));
             $student->name_en = $request->fullName_en;
