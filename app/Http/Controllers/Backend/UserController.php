@@ -12,7 +12,7 @@ use Exception;
 use Illuminate\Support\Facades\Hash;
 use File;
 
-class UserController extends Controller 
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -78,9 +78,9 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-       $role=Role::get();
-       $user=User::findOrFail(encryptor('decrypt',$id));
-       return view('backend.user.edit',compact('role','user'));
+        $role = Role::get();
+        $user = User::findOrFail(encryptor('decrypt', $id));
+        return view('backend.user.edit', compact('role', 'user'));
     }
 
     /**
@@ -89,7 +89,7 @@ class UserController extends Controller
     public function update(UpdateRequest $request, $id)
     {
         try {
-            $data = User::findOrFail(encryptor('decrypt',$id));
+            $data = User::findOrFail(encryptor('decrypt', $id));
             $data->name_en = $request->userName_en;
             $data->name_bn = $request->userName_bn;
             $data->email = $request->emailAddress;
@@ -100,8 +100,8 @@ class UserController extends Controller
             $data->full_access = $request->fullAccess;
             $data->status = $request->status;
 
-            if($request->password)
-            $data->password = Hash::make($request->password);
+            if ($request->password)
+                $data->password = Hash::make($request->password);
 
             if ($request->hasFile('image')) {
                 $imageName = rand(111, 999) . time() . '.' . $request->image->extension();
@@ -123,14 +123,14 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-       $data=User::findOrFail(encryptor('decrypt',$id));
-       $image_path=public_path('uploads/users/').$data->image;
+        $data = User::findOrFail(encryptor('decrypt', $id));
+        $image_path = public_path('uploads/users/') . $data->image;
 
-       if($data->delete()){
-        if(File::exists($image_path))
-        File::delete($image_path);
+        if ($data->delete()) {
+            if (File::exists($image_path))
+                File::delete($image_path);
 
-        return redirect()->back();
-       }
+            return redirect()->back();
+        }
     }
 }

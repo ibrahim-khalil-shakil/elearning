@@ -43,7 +43,7 @@
                                             <div class="profile-name">
                                                 <h4 class="text-primary mb-0">{{ encryptor('decrypt', request()->session()->get('userName')) }}</h4>
                                                 <p>{{ encryptor('decrypt', request()->session()->get('role')) }}</p>
-                                            </div>
+                                            </div> 
                                         </div>
                                         <div class="col-xl-4 col-sm-6 border-right-1">
                                             <div class="profile-email">

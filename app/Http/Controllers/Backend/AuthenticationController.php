@@ -73,7 +73,7 @@ class AuthenticationController extends Controller
                 'emailAddress' => encryptor('encrypt', $user->email),
                 'role_id' => encryptor('encrypt', $user->role_id),
                 'accessType' => encryptor('encrypt', $user->full_access),
-                'role' => encryptor('encrypt', $user->role->type),
+                'role' => encryptor('encrypt', $user->role->name),
                 'roleIdentitiy' => encryptor('encrypt', $user->role->identity),
                 'language' => encryptor('encrypt', $user->language),
                 'image' => $user->image ?? 'No Image Found'

@@ -1,18 +1,11 @@
 @extends('backend.layouts.app')
-@section('title', 'Edit User')
+@section('title', 'Edit Student')
 
 @push('styles')
-<!-- Favicon icon -->
-<link rel="icon" type="image/png" sizes="16x16" href="{{asset('public/images/favicon.png')}}">
-<link rel="stylesheet" href="{{asset('public/vendor/bootstrap-select/dist/css/bootstrap-select.min.css')}}">
-<link rel="stylesheet" href="{{asset('public/css/style.css')}}">
-
 <!-- Pick date -->
 <link rel="stylesheet" href="{{asset('public/vendor/pickadate/themes/default.css')}}">
 <link rel="stylesheet" href="{{asset('public/vendor/pickadate/themes/default.date.css')}}">
 @endpush
-
-@section('content')
 
 @section('content')
 
@@ -23,14 +16,14 @@
         <div class="row page-titles mx-0">
             <div class="col-sm-6 p-md-0">
                 <div class="welcome-text">
-                    <h4>Add User</h4>
+                    <h4>Edit Student</h4>
                 </div>
             </div>
             <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Home</a></li>
-                    <li class="breadcrumb-item active"><a href="{{route('user.index')}}">Users</a></li>
-                    <li class="breadcrumb-item active"><a href="javascript:void(0);">Edit User</a></li>
+                    <li class="breadcrumb-item active"><a href="{{route('student.index')}}">Students</a></li>
+                    <li class="breadcrumb-item active"><a href="javascript:void(0);">Edit Student</a></li>
                 </ol>
             </div>
         </div>
@@ -42,34 +35,33 @@
                         <h5 class="card-title">Basic Info</h5>
                     </div>
                     <div class="card-body">
-                        <form action="{{route('user.update', encryptor('encrypt', $user->id))}}" method="post"
-                            enctype="multipart/form-data">
+                        <form action="{{route('student.update',encryptor('encrypt', $student->id))}}" method="post" enctype="multipart/form-data">
                             @csrf
                             @method('PATCH')
-                            <input type="hidden" name="uptoken" value="{{encryptor('encrypt',$user->id)}}">
+                            <input type="hidden" name="uptoken" value="{{encryptor('encrypt',$student->id)}}">
                             <div class="row">
                                 <div class="col-lg-6 col-md-6 col-sm-12">
                                     <div class="form-group">
                                         <label class="form-label">Name</label>
-                                        <input type="text" class="form-control" name="userName_en"
-                                            value="{{old('userName_en', $user->name_en)}}">
+                                        <input type="text" class="form-control" name="fullName_en"
+                                            value="{{old('fullName_en',$student->name_en)}}">
                                     </div>
-                                    @if($errors->has('userName_en'))
-                                    <span class="text-danger"> {{ $errors->first('userName_en') }}</span>
+                                    @if($errors->has('fullName_en'))
+                                    <span class="text-danger"> {{ $errors->first('fullName_en') }}</span>
                                     @endif
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12">
                                     <div class="form-group">
                                         <label class="form-label">নাম (বাংলায়)</label>
-                                        <input type="text" class="form-control" name="userName_bn"
-                                            value="{{old('userName_bn', $user->name_bn)}}">
+                                        <input type="text" class="form-control" name="fullName_bn"
+                                            value="{{old('fullName_bn',$student->name_bn)}}">
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12">
                                     <div class="form-group">
                                         <label class="form-label">Phone Number</label>
                                         <input type="tel" class="form-control" name="contactNumber_en"
-                                            value="{{old('contactNumber_en', $user->contact_en)}}">
+                                            value="{{old('contactNumber_en',$student->contact_en)}}">
                                     </div>
                                     @if($errors->has('contactNumber_en'))
                                     <span class="text-danger"> {{ $errors->first('contactNumber_en') }}</span>
@@ -79,14 +71,17 @@
                                     <div class="form-group">
                                         <label class="form-label">ফোন নাম্বার (বাংলায়)</label>
                                         <input type="tel" class="form-control" name="contactNumber_bn"
-                                            value="{{old('contactNumber_bn', $user->contact_bn)}}">
+                                            value="{{old('contactNumber_bn',$student->contact_bn)}}">
                                     </div>
+                                    @if($errors->has('contactNumber_bn'))
+                                    <span class="text-danger"> {{ $errors->first('contactNumber_bn') }}</span>
+                                    @endif
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12">
                                     <div class="form-group">
                                         <label class="form-label">Email</label>
                                         <input type="email" class="form-control" name="emailAddress"
-                                            value="{{old('emailAddress', $user->email)}}">
+                                            value="{{old('emailAddress',$student->email)}}">
                                     </div>
                                     @if($errors->has('emailAddress'))
                                     <span class="text-danger"> {{ $errors->first('emailAddress') }}</span>
@@ -97,8 +92,7 @@
                                         <label class="form-label">Role</label>
                                         <select class="form-control" name="roleId">
                                             @forelse ($role as $r)
-                                            <option value="{{$r->id}}" {{old('roleId', $user->role_id) ==
-                                                $r->id?'selected':''}}>
+                                            <option value="{{$r->id}}" {{old('roleId', $student->role_id)==$r->id?'selected':''}}>
                                                 {{$r->name}}</option>
                                             @empty
                                             <option value="">No Role Found</option>
@@ -111,12 +105,24 @@
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12">
                                     <div class="form-group">
-                                        <label class="form-label">Full Access</label>
-                                        <select class="form-control" name="fullAccess">
-                                            <option value="0" @if(old('fullAccess', $user->full_access)==0) selected
-                                                @endif>No</option>
-                                            <option value="1" @if(old('fullAccess', $user->full_access)==1) selected
-                                                @endif>Yes</option>
+                                        <label class="form-label">Date of Birth</label>
+                                        <input name="birthDate" value="{{old('birthDate',$student->date_of_birth)}}"
+                                            class="datepicker-default form-control" id="datepicker1">
+                                    </div>
+                                    @if($errors->has('birthDate'))
+                                    <span class="text-danger"> {{ $errors->first('birthDate') }}</span>
+                                    @endif
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <div class="form-group">
+                                        <label class="form-label">Gender</label>
+                                        <select class="form-control" name="gender">
+                                            <option value="male" @if(old('gender',$student->gender)=='male' ) selected @endif>Male
+                                            </option>
+                                            <option value="female" @if(old('gender',$student->gender)=='female' ) selected @endif>Fenale
+                                            </option>
+                                            <option value="other" @if(old('gender',$student->gender)=='other' ) selected @endif>Other
+                                            </option>
                                         </select>
                                     </div>
                                 </div>
@@ -124,17 +130,9 @@
                                     <div class="form-group">
                                         <label class="form-label">Status</label>
                                         <select class="form-control" name="status">
-                                            <option value="1" @if(old('status', $user->status)==1) selected
-                                                @endif>Active</option>
-                                            <option value="0" @if(old('status', $user->status)==0) selected
-                                                @endif>Inactive</option>
+                                            <option value="1" @if(old('status',$student->status)==1) selected @endif>Active</option>
+                                            <option value="0" @if(old('status',$student->status)==0) selected @endif>Inactive</option>
                                         </select>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12">
-                                    <label class="form-label">Image</label>
-                                    <div class="form-group fallback w-100">
-                                        <input type="file" class="dropify" data-default-file="" name="image">
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12">
@@ -145,6 +143,12 @@
                                     @if($errors->has('password'))
                                     <span class="text-danger"> {{ $errors->first('password') }}</span>
                                     @endif
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <label class="form-label">Image</label>
+                                    <div class="form-group fallback w-100">
+                                        <input type="file" class="dropify" data-default-file="" name="image">
+                                    </div>
                                 </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12">
                                     <button type="submit" class="btn btn-primary">Submit</button>
