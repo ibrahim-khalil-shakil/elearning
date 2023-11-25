@@ -47,7 +47,7 @@ class StudentController extends Controller
             $student->contact_bn = $request->contactNumber_bn;
             $student->email = $request->emailAddress;
             $student->role_id = $request->roleId;
-            $student->birthDate = \Carbon\Carbon::parse($student->birthDate)->format('d F, Y');
+            $student->date_of_birth = $request->birthDate;
             $student->gender = $request->gender;
             $student->status = $request->status;
             $student->password = Hash::make($request->password);
@@ -93,9 +93,9 @@ class StudentController extends Controller
     public function update(Request $request, $id)
     {
         try {
-            $request->merge([
-                'birthDate' => \Carbon\Carbon::createFromFormat('d F, Y', $request->birthDate)->format('Y-m-d'),
-            ]);
+            // $request->merge([
+            //     'birthDate' => \Carbon\Carbon::createFromFormat('d F, Y', $request->birthDate)->format('Y-m-d'),
+            // ]);
 
             $student = Student::findOrFail(encryptor('decrypt', $id));
             $student->name_en = $request->fullName_en;
@@ -104,7 +104,7 @@ class StudentController extends Controller
             $student->contact_bn = $request->contactNumber_bn;
             $student->email = $request->emailAddress;
             $student->role_id = $request->roleId;
-            $student->birthDate = \Carbon\Carbon::createFromFormat('d F, Y', $request->input('birthDate'))->format('Y-m-d');
+            $student->date_of_birth = $request->birthDate;
             $student->gender = $request->gender;
             $student->status = $request->status;
             $student->password = Hash::make($request->password);
