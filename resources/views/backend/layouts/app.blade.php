@@ -190,19 +190,9 @@
             <div class="dlabnav-scroll">
                 <ul class="metismenu" id="menu">
                     <li class="nav-label first">Main Menu</li>
-                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                    <li><a class="ai-icon" href="{{route('dashboard')}}" aria-expanded="false">
                             <i class="la la-home"></i>
                             <span class="nav-text">Dashboard</span>
-                        </a>
-                        <ul aria-expanded="false">
-                            <li><a href="{{route('dashboard')}}">Dashboard 1</a></li>
-                            <li><a href="{{route('dashboard')}}">Dashboard 2</a></li>
-                            <li><a href="{{route('dashboard')}}">Dashboard 3</a></li>
-                        </ul>
-                    </li>
-                    <li><a class="ai-icon" href="event-management.html" aria-expanded="false">
-                            <i class="la la-calendar"></i>
-                            <span class="nav-text">Exam Management</span>
                         </a>
                     </li>
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">
@@ -212,8 +202,15 @@
                         <ul aria-expanded="false">
                             <li><a href="{{route('user.index')}}">All User</a></li>
                             <li><a href="{{route('user.create')}}">Add User</a></li>
-                            <li><a href="{{route('user.index')}}">Edit User</a></li>
-                            <li><a href="{{route('user.index')}}">User Profile</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                            <i class="la la-user-md"></i>
+                            <span class="nav-text">Roles</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="{{route('role.index')}}">All Role</a></li>
+                            <li><a href="{{route('role.create')}}">Add Role</a></li>
                         </ul>
                     </li>
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">
@@ -223,8 +220,6 @@
                         <ul aria-expanded="false">
                             <li><a href="{{route('instructor.index')}}">All Instructor</a></li>
                             <li><a href="{{route('instructor.create')}}">Add Instructor</a></li>
-                            <li><a href="{{route('instructor.index')}}">Edit Instructor</a></li>
-                            <li><a href="{{route('instructor.index')}}">Instructor Profile</a></li>
                         </ul>
                     </li>
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">
@@ -234,40 +229,24 @@
                         <ul aria-expanded="false">
                             <li><a href="{{route('student.index')}}">All Students</a></li>
                             <li><a href="{{route('student.create')}}">Add Students</a></li>
-                            <li><a href="{{route('student.index')}}">Edit Students</a></li>
-                            <li><a href="{{route('student.index')}}">About Students</a></li>
                         </ul>
                     </li>
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="la la-laptop"></i>
+                            <i class="la la-list"></i>
                             <span class="nav-text">Course Category</span>
                         </a>
                         <ul aria-expanded="false">
                             <li><a href="{{route('courseCategory.index')}}">All Categories</a></li>
                             <li><a href="{{route('courseCategory.create')}}">Add Categories</a></li>
-                            <li><a href="{{route('courseCategory.index')}}">Edit Categories</a></li>
-                            <li><a href="{{route('courseCategory.index')}}">About Categories</a></li>
                         </ul>
                     </li>
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="la la-graduation-cap"></i>
+                            <i class="la la-book"></i>
                             <span class="nav-text">Courses</span>
                         </a>
                         <ul aria-expanded="false">
                             <li><a href="{{route('course.index')}}">All Courses</a></li>
                             <li><a href="{{route('course.create')}}">Add Courses</a></li>
-                            <li><a href="{{route('course.index')}}">Edit Courses</a></li>
-                            <li><a href="{{route('course.index')}}">About Courses</a></li>
-                        </ul>
-                    </li>
-                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="la la-book"></i>
-                            <span class="nav-text">Roles</span>
-                        </a>
-                        <ul aria-expanded="false">
-                            <li><a href="{{route('role.index')}}">All Role</a></li>
-                            <li><a href="{{route('role.create')}}">Add Role</a></li>
-                            <li><a href="{{route('role.index')}}">Edit Role</a></li>
                         </ul>
                     </li>
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">
@@ -396,6 +375,11 @@
                             <i class="la la-desktop"></i>
                             <span class="nav-text">Widget</span>
                         </a></li>
+                        <li><a class="ai-icon" href="javascript:void()" aria-expanded="false">
+                                <i class="la la-calendar"></i>
+                                <span class="nav-text">Exam Management</span>
+                            </a>
+                        </li>
                     <li class="nav-label">Forms</li>
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">
                             <i class="la la-file-text"></i>
