@@ -53,7 +53,7 @@
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12">
                                     <div class="form-group">
-                                        <label class="form-label">Title (বাংলায়)</label>
+                                        <label class="form-label">টাইটেল (বাংলায়)</label>
                                         <input type="text" class="form-control" name="courseTitle_bn"
                                             value="{{old('courseTitle_bn',$course->title_bn)}}">
                                     </div>
@@ -61,8 +61,8 @@
                                 <div class="col-lg-6 col-md-6 col-sm-12">
                                     <div class="form-group">
                                         <label class="form-label">Description</label>
-                                        <input type="text" class="form-control" name="courseDescription_en"
-                                            value="{{old('courseDescription_en',$course->description_en)}}">
+                                        <textarea class="form-control"
+                                            name="courseDescription_en">{{old('courseDescription_en',$course->description_en)}}</textarea>
                                     </div>
                                     @if($errors->has('courseDescription_en'))
                                     <span class="text-danger"> {{ $errors->first('courseDescription_en') }}</span>
@@ -70,9 +70,9 @@
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12">
                                     <div class="form-group">
-                                        <label class="form-label">Description (বাংলায়)</label>
-                                        <input type="text" class="form-control" name="courseDescription_bn"
-                                            value="{{old('courseDescription_bn',$course->description_bn)}}">
+                                        <label class="form-label">বিস্তারিত (বাংলায়)</label>
+                                        <textarea class="form-control"
+                                            name="courseDescription_bn">{{old('courseDescription_bn',$course->description_bn)}}</textarea>
                                     </div>
                                     @if($errors->has('courseDescription_bn'))
                                     <span class="text-danger"> {{ $errors->first('courseDescription_bn') }}</span>
@@ -155,7 +155,7 @@
                                 <div class="col-lg-6 col-md-6 col-sm-12">
                                     <div class="form-group">
                                         <label class="form-label">Difficulty</label>
-                                        <select class="form-control" name="courseType">
+                                        <select class="form-control" name="courseDifficulty">
                                             <option value="beginner" @if(old('courseDifficulty', $course->
                                                 difficulty)=='beginner' ) selected @endif>Beginner
                                             </option>
@@ -175,10 +175,20 @@
                                     <div class="form-group">
                                         <label class="form-label">Prerequisites</label>
                                         <textarea class="form-control"
-                                            name="prerequisites">{{old('prerequisites',$course->prerequisites)}}</textarea>
+                                            name="prerequisites_en">{{old('prerequisites_en',$course->prerequisites_en)}}</textarea>
                                     </div>
-                                    @if($errors->has('prerequisites'))
-                                    <span class="text-danger"> {{ $errors->first('prerequisites') }}</span>
+                                    @if($errors->has('prerequisites_en'))
+                                    <span class="text-danger"> {{ $errors->first('prerequisites_en') }}</span>
+                                    @endif
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <div class="form-group">
+                                        <label class="form-label">পূর্বশর্ত (বাংলায়)</label>
+                                        <textarea class="form-control"
+                                            name="prerequisites_bn">{{old('prerequisites_bn',$course->prerequisites_bn)}}</textarea>
+                                    </div>
+                                    @if($errors->has('prerequisites_bn'))
+                                    <span class="text-danger"> {{ $errors->first('prerequisites_bn') }}</span>
                                     @endif
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12">
@@ -191,15 +201,6 @@
                                                 @endif>Inactive</option>
                                         </select>
                                     </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-12">
-                                    <div class="form-group">
-                                        <label class="form-label">Password</label>
-                                        <input type="password" class="form-control" name="password">
-                                    </div>
-                                    @if($errors->has('password'))
-                                    <span class="text-danger"> {{ $errors->first('password') }}</span>
-                                    @endif
                                 </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12">
                                     <label class="form-label">Image</label>

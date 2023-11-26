@@ -22,7 +22,8 @@ return new class extends Migration
             $table->enum('type', ['free', 'paid', 'subscription'])->default('paid');
             $table->decimal('price', 10, 2)->default(0.00)->nullable();
             $table->decimal('subscription_price', 10, 2)->nullable();
-            $table->text('prerequisites')->nullable();
+            $table->text('prerequisites_en')->nullable();
+            $table->text('prerequisites_bn')->nullable();
             $table->enum('difficulty', ['beginner', 'intermediate', 'advanced'])->nullable();
             $table->string('image')->nullable();
             $table->boolean('status')->default(1)->comment('1 active, 0 inactive');
