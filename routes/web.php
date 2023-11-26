@@ -9,6 +9,7 @@ use App\Http\Controllers\Backend\RoleController as role;
 use App\Http\Controllers\Backend\PermissionController as permission;
 use App\Http\Controllers\Backend\Students\StudentController as student;
 use App\Http\Controllers\Backend\Instructors\InstructorController as instructor;
+use App\Http\Controllers\Backend\Courses\CourseController as course;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,14 +35,14 @@ Route::middleware(['checkauth'])->prefix('admin')->group(function () {
 });
 
 Route::middleware(['checkrole'])->prefix('admin')->group(function () {
-    Route::resource('user',user::class);
-    Route::resource('role',role::class);
-    Route::get('permission/{role}',[permission::class,'index'])->name('permission.list');
-    Route::post('permission/{role}',[permission::class,'save'])->name('permission.save');
-    Route::resource('courseCategory', courseCategory::class);
+    Route::resource('user', user::class);
+    Route::resource('role', role::class);
     Route::resource('student', student::class);
     Route::resource('instructor', instructor::class);
-
+    Route::resource('courseCategory', courseCategory::class);
+    Route::resource('course', course::class);
+    Route::get('permission/{role}', [permission::class, 'index'])->name('permission.list');
+    Route::post('permission/{role}', [permission::class, 'save'])->name('permission.save');
 });
 
 
@@ -55,4 +56,3 @@ Route::get('/home', function () {
 // Route::get('/dashboard', function () {
 //     return view('welcome');
 // })->name('dashboard');
-  

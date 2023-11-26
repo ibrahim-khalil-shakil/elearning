@@ -70,7 +70,7 @@
                                                 <td>{{$d->email}}</td>
                                                 <td>{{$d->contact_en}}</td>
                                                 <td>{{$d->role?->name}}</td>
-                                                <td>{{$d->contact_en}}</td>
+                                                <td>{{$d->bio}}</td>
                                                 <td>
                                                     <span class="badge {{$d->status==1?"
                                                         badge-success":"badge-danger"}}">@if($d->status==1){{__('Active')}}

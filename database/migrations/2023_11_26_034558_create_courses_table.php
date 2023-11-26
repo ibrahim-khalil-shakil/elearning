@@ -19,9 +19,8 @@ return new class extends Migration
             $table->text('description_bn')->nullable();
             $table->unsignedBigInteger('category_id')->index();
             $table->unsignedBigInteger('instructor_id')->index();
-            $table->decimal('price', 10, 2)->default(0.00);
-            $table->boolean('is_free')->default(false);
-            $table->boolean('is_subscription_based')->default(false);
+            $table->enum('type', ['free', 'paid', 'subscription'])->default('paid');
+            $table->decimal('price', 10, 2)->default(0.00)->nullable();
             $table->decimal('subscription_price', 10, 2)->nullable();
             $table->text('prerequisites')->nullable();
             $table->enum('difficulty', ['beginner', 'intermediate', 'advanced'])->nullable();
@@ -41,7 +40,7 @@ return new class extends Migration
      * Reverse the migrations.
      */
     public function down(): void
-    { 
+    {
         Schema::dropIfExists('courses');
     }
 };

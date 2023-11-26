@@ -75,17 +75,45 @@ class InstructorController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Instructor $instructor)
+    public function edit($id)
     {
-        //
+        $role = Role::get();
+        $instructor = Instructor::findOrFail(encryptor('decrypt', $id));
+        return view('backend.instructor.edit', compact('role', 'instructor'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Instructor $instructor)
+    public function update(Request $request, $id)
     {
-        //
+        try {
+            $instructor = Instructor::findOrFail(encryptor('decrypt', $id));
+            $instructor->name_en = $request->fullName_en;
+            $instructor->name_bn = $request->fullName_bn;
+            $instructor->contact_en = $request->contactNumber_en;
+            $instructor->contact_bn = $request->contactNumber_bn;
+            $instructor->email = $request->emailAddress;
+            $instructor->role_id = $request->roleId;
+            $instructor->bio = $request->bio;
+            $instructor->status = $request->status;
+            $instructor->password = Hash::make($request->fullName_bn);
+            $instructor->language = 'en';
+            $instructor->access_block = $request->access_block;
+
+            if ($request->hasFile('image')) {
+                $imageName = rand(111, 999) . time() . '.' . $request->image->extension();
+                $request->image->move(public_path('uploads/instructors'), $imageName);
+                $instructor->image = $imageName;
+            }
+            if ($instructor->save())
+                return redirect()->route('instructor.index')->with('success', 'Data Saved');
+            else
+                return redirect()->back()->withInput()->with('error', 'Please try again');
+        } catch (Exception $e) {
+            dd($e);
+            return redirect()->back()->withInput()->with('error', 'Please try again');
+        }
     }
 
     /**
@@ -93,12 +121,12 @@ class InstructorController extends Controller
      */
     public function destroy($id)
     {
-        $data=Instructor::findOrFail(encryptor('decrypt',$id));
-        $image_path=public_path('uploads/instructors').$data->image;
+        $data = Instructor::findOrFail(encryptor('decrypt', $id));
+        $image_path = public_path('uploads/instructors') . $data->image;
 
-        if($data->delete()){
-            if(File::exists($image_path))
-            File::delete($image_path);
+        if ($data->delete()) {
+            if (File::exists($image_path))
+                File::delete($image_path);
 
             return redirect()->back();
         }

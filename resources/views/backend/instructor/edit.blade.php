@@ -1,5 +1,5 @@
 @extends('backend.layouts.app')
-@section('title', 'Edit Student')
+@section('title', 'Edit Instructor')
 
 @push('styles')
 <!-- Pick date -->
@@ -16,14 +16,14 @@
         <div class="row page-titles mx-0">
             <div class="col-sm-6 p-md-0">
                 <div class="welcome-text">
-                    <h4>Edit Student</h4>
+                    <h4>Edit Instructor</h4>
                 </div>
             </div>
             <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Home</a></li>
-                    <li class="breadcrumb-item active"><a href="{{route('student.index')}}">Students</a></li>
-                    <li class="breadcrumb-item active"><a href="javascript:void(0);">Edit Student</a></li>
+                    <li class="breadcrumb-item active"><a href="{{route('instructor.index')}}">Instructors</a></li>
+                    <li class="breadcrumb-item active"><a href="javascript:void(0);">Edit Instructor</a></li>
                 </ol>
             </div>
         </div>
@@ -35,16 +35,17 @@
                         <h5 class="card-title">Basic Info</h5>
                     </div>
                     <div class="card-body">
-                        <form action="{{route('student.update',encryptor('encrypt', $student->id))}}" method="post" enctype="multipart/form-data">
+                        <form action="{{route('instructor.update',encryptor('encrypt', $instructor->id))}}"
+                            method="post" enctype="multipart/form-data">
                             @csrf
                             @method('PATCH')
-                            <input type="hidden" name="uptoken" value="{{encryptor('encrypt',$student->id)}}">
+                            <input type="hidden" name="uptoken" value="{{encryptor('encrypt',$instructor->id)}}">
                             <div class="row">
                                 <div class="col-lg-6 col-md-6 col-sm-12">
                                     <div class="form-group">
                                         <label class="form-label">Name</label>
                                         <input type="text" class="form-control" name="fullName_en"
-                                            value="{{old('fullName_en',$student->name_en)}}">
+                                            value="{{old('fullName_en',$instructor->name_en)}}">
                                     </div>
                                     @if($errors->has('fullName_en'))
                                     <span class="text-danger"> {{ $errors->first('fullName_en') }}</span>
@@ -54,14 +55,14 @@
                                     <div class="form-group">
                                         <label class="form-label">নাম (বাংলায়)</label>
                                         <input type="text" class="form-control" name="fullName_bn"
-                                            value="{{old('fullName_bn',$student->name_bn)}}">
+                                            value="{{old('fullName_bn',$instructor->name_bn)}}">
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12">
                                     <div class="form-group">
                                         <label class="form-label">Phone Number</label>
                                         <input type="tel" class="form-control" name="contactNumber_en"
-                                            value="{{old('contactNumber_en',$student->contact_en)}}">
+                                            value="{{old('contactNumber_en',$instructor->contact_en)}}">
                                     </div>
                                     @if($errors->has('contactNumber_en'))
                                     <span class="text-danger"> {{ $errors->first('contactNumber_en') }}</span>
@@ -71,7 +72,7 @@
                                     <div class="form-group">
                                         <label class="form-label">ফোন নাম্বার (বাংলায়)</label>
                                         <input type="tel" class="form-control" name="contactNumber_bn"
-                                            value="{{old('contactNumber_bn',$student->contact_bn)}}">
+                                            value="{{old('contactNumber_bn',$instructor->contact_bn)}}">
                                     </div>
                                     @if($errors->has('contactNumber_bn'))
                                     <span class="text-danger"> {{ $errors->first('contactNumber_bn') }}</span>
@@ -81,7 +82,7 @@
                                     <div class="form-group">
                                         <label class="form-label">Email</label>
                                         <input type="email" class="form-control" name="emailAddress"
-                                            value="{{old('emailAddress',$student->email)}}">
+                                            value="{{old('emailAddress',$instructor->email)}}">
                                     </div>
                                     @if($errors->has('emailAddress'))
                                     <span class="text-danger"> {{ $errors->first('emailAddress') }}</span>
@@ -92,7 +93,8 @@
                                         <label class="form-label">Role</label>
                                         <select class="form-control" name="roleId">
                                             @forelse ($role as $r)
-                                            <option value="{{$r->id}}" {{old('roleId', $student->role_id)==$r->id?'selected':''}}>
+                                            <option value="{{$r->id}}" {{old('roleId', $instructor->
+                                                role_id)==$r->id?'selected':''}}>
                                                 {{$r->name}}</option>
                                             @empty
                                             <option value="">No Role Found</option>
@@ -105,33 +107,21 @@
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12">
                                     <div class="form-group">
-                                        <label class="form-label">Date of Birth</label>
-                                        <input type="date" name="birthDate" value="{{old('birthDate',$student->date_of_birth)}}"
-                                            class="form-control" id="">
+                                        <label class="form-label">Bio</label>
+                                        <textarea class="form-control" name="bio">{{old('bio',$instructor->bio)}}</textarea>
                                     </div>
-                                    @if($errors->has('birthDate'))
-                                    <span class="text-danger"> {{ $errors->first('birthDate') }}</span>
+                                    @if($errors->has('bio'))
+                                    <span class="text-danger"> {{ $errors->first('bio') }}</span>
                                     @endif
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-12">
-                                    <div class="form-group">
-                                        <label class="form-label">Gender</label>
-                                        <select class="form-control" name="gender">
-                                            <option value="male" @if(old('gender',$student->gender)=='male' ) selected @endif>Male
-                                            </option>
-                                            <option value="female" @if(old('gender',$student->gender)=='female' ) selected @endif>Fenale
-                                            </option>
-                                            <option value="other" @if(old('gender',$student->gender)=='other' ) selected @endif>Other
-                                            </option>
-                                        </select>
-                                    </div>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12">
                                     <div class="form-group">
                                         <label class="form-label">Status</label>
                                         <select class="form-control" name="status">
-                                            <option value="1" @if(old('status',$student->status)==1) selected @endif>Active</option>
-                                            <option value="0" @if(old('status',$student->status)==0) selected @endif>Inactive</option>
+                                            <option value="1" @if(old('status',$instructor->status)==1) selected
+                                                @endif>Active</option>
+                                            <option value="0" @if(old('status',$instructor->status)==0) selected
+                                                @endif>Inactive</option>
                                         </select>
                                     </div>
                                 </div>

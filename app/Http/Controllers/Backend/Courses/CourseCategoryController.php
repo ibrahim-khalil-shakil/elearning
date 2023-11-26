@@ -17,7 +17,7 @@ class CourseCategoryController extends Controller
     public function index()
     {
         $data = CourseCategory::paginate(10);
-        return view('backend.courses.courseCategory.index', compact('data'));
+        return view('backend.course.courseCategory.index', compact('data'));
     }
 
     /**
@@ -25,7 +25,7 @@ class CourseCategoryController extends Controller
      */
     public function create()
     {
-        return view('backend.courses.courseCategory.create');
+        return view('backend.course.courseCategory.create');
     }
 
     /**
@@ -67,7 +67,7 @@ class CourseCategoryController extends Controller
     public function edit($id)
     {
         $data = CourseCategory::findOrFail($id);
-        return view('backend.courses.courseCategory.edit', compact('data'));
+        return view('backend.course.courseCategory.edit', compact('data'));
     }
 
     /**
