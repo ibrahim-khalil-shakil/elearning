@@ -11597,7 +11597,7 @@ html[dir="rtl"] [direction="rtl"][data-sidebar-style="compact"]:not([data-layout
           text-decoration: none;
           color: #7356f1; }
         .dlabnav .metismenu ul a:before {
-          content: "";
+          
           width: 10px;
           position: absolute;
           left: -5px;

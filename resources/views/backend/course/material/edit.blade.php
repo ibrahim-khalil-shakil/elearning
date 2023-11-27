@@ -45,7 +45,7 @@
                                     <div class="form-group">
                                         <label class="form-label">Title</label>
                                         <input type="text" class="form-control" name="materialTitle"
-                                            value="{{old('materialTitle',$material->title_en)}}">
+                                            value="{{old('materialTitle',$material->title)}}">
                                     </div>
                                     @if($errors->has('materialTitle'))
                                     <span class="text-danger"> {{ $errors->first('materialTitle') }}</span>
@@ -91,7 +91,7 @@
                                     <div class="form-group">
                                         <label class="form-label">Content Url</label>
                                         <textarea class="form-control"
-                                            name="contentURL">{{old('contentURL',$material->contentURL)}}</textarea>
+                                            name="contentURL">{{old('contentURL',$material->content_url)}}</textarea>
                                     </div>
                                     @if($errors->has('contentURL'))
                                     <span class="text-danger"> {{ $errors->first('contentURL') }}</span>

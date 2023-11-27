@@ -14,7 +14,7 @@ class MaterialController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index() 
     {
         $material = Material::paginate(10);
         return view('backend.course.material.index', compact('material'));

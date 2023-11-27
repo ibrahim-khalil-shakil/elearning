@@ -64,10 +64,10 @@
                                             <tr>
                                                 <td>{{$m->id}}</td>
                                                 <td>{{$m->title}}</td>
-                                                <td>{{$m->course?->title_en}}</td>
+                                                <td>{{$m->course?->title_en}}</td> 
                                                 <td>
-                                                    {{ $m->type == 'video' ? __('Video') : ($d->type == 'Document' ?
-                                                    __('Paid') : __('Quiz')) }}
+                                                    {{ $m->type == 'video' ? __('Video') : ($m->type == 'document' ?
+                                                    __('Document') : __('Quiz')) }}
                                                 </td>
                                                 <td>{{$m->content_url}}</td>
                                                 <td>
