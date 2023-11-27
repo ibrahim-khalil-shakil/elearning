@@ -133,6 +133,25 @@
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12">
                                     <div class="form-group">
+                                        <label class="form-label">Difficulty</label>
+                                        <select class="form-control" name="courseDifficulty">
+                                            <option value="beginner" @if(old('courseDifficulty', $course->
+                                                difficulty)=='beginner' ) selected @endif>Beginner
+                                            </option>
+                                            <option value="intermediate" @if(old('courseDifficulty', $course->
+                                                difficulty)=='intermediate' ) selected @endif>Intermediate
+                                            </option>
+                                            <option value="advanced" @if(old('courseDifficulty', $course->
+                                                difficulty)=='advanced' )
+                                                selected @endif>Advanced</option>
+                                        </select>
+                                    </div>
+                                    @if($errors->has('courseDifficulty'))
+                                    <span class="text-danger"> {{ $errors->first('courseDifficulty') }}</span>
+                                    @endif
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <div class="form-group">
                                         <label class="form-label">Price</label>
                                         <input type="number" class="form-control" name="coursePrice"
                                             value="{{old('coursePrice', $course->price)}}">
@@ -154,21 +173,24 @@
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12">
                                     <div class="form-group">
-                                        <label class="form-label">Difficulty</label>
-                                        <select class="form-control" name="courseDifficulty">
-                                            <option value="beginner" @if(old('courseDifficulty', $course->
-                                                difficulty)=='beginner' ) selected @endif>Beginner
-                                            </option>
-                                            <option value="intermediate" @if(old('courseDifficulty', $course->
-                                                difficulty)=='intermediate' ) selected @endif>Intermediate
-                                            </option>
-                                            <option value="advanced" @if(old('courseDifficulty', $course->
-                                                difficulty)=='advanced' )
-                                                selected @endif>Advanced</option>
-                                        </select>
+                                        <label class="form-label">Start From</label>
+                                        <input type="date" class="form-control" name="start_from"
+                                            value="{{old('start_from')}}">
                                     </div>
-                                    @if($errors->has('courseDifficulty'))
-                                    <span class="text-danger"> {{ $errors->first('courseDifficulty') }}</span>
+                                    @if($errors->has('start_from'))
+                                    <span class="text-danger"> {{ $errors->first('start_from',
+                                        $course->start_from) }}</span>
+                                    @endif
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <div class="form-group">
+                                        <label class="form-label">Duration</label>
+                                        <input type="number" class="form-control" name="duration"
+                                            value="{{old('duration')}}">
+                                    </div>
+                                    @if($errors->has('duration'))
+                                    <span class="text-danger"> {{ $errors->first('duration',
+                                        $course->duration) }}</span>
                                     @endif
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12">

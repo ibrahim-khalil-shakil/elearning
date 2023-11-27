@@ -120,6 +120,18 @@
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12">
                                     <div class="form-group">
+                                        <label class="form-label">Difficulty</label>
+                                        <select class="form-control" name="courseDifficulty">
+                                            <option value="beginner" @if(old('courseDifficulty')=='beginner' ) selected @endif>Beginner</option>
+                                            <option value="intermediate" @if(old('courseDifficulty')=='intermediate' ) selected @endif>Intermediate
+                                            </option>
+                                            <option value="advanced" @if(old('courseDifficulty')=='advanced' ) selected @endif>Advanced
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <div class="form-group">
                                         <label class="form-label">Price</label>
                                         <input type="number" class="form-control" name="coursePrice"
                                             value="{{old('coursePrice')}}">
@@ -140,17 +152,23 @@
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12">
                                     <div class="form-group">
-                                        <label class="form-label">Difficulty</label>
-                                        <select class="form-control" name="courseDifficulty">
-                                            <option value="beginner" @if(old('courseDifficulty')=='beginner' ) selected
-                                                @endif>Beginner</option>
-                                            <option value="intermediate" @if(old('courseDifficulty')=='intermediate' )
-                                                selected @endif>Intermediate</option>
-                                            <option value="advanced" @if(old('courseDifficulty')=='advanced' ) selected
-                                                @endif>Advanced
-                                            </option>
-                                        </select>
+                                        <label class="form-label">Start From</label>
+                                        <input type="date" class="form-control" name="start_from"
+                                            value="{{old('start_from')}}">
                                     </div>
+                                    @if($errors->has('start_from'))
+                                    <span class="text-danger"> {{ $errors->first('start_from') }}</span>
+                                    @endif
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <div class="form-group">
+                                        <label class="form-label">Duration</label>
+                                        <input type="number" class="form-control" name="duration"
+                                            value="{{old('duration')}}">
+                                    </div>
+                                    @if($errors->has('duration'))
+                                    <span class="text-danger"> {{ $errors->first('duration') }}</span>
+                                    @endif
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12">
                                     <div class="form-group">
@@ -180,6 +198,15 @@
                                             <option value="0" @if(old('status')==0) selected @endif>Inactive</option>
                                         </select>
                                     </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <div class="form-group">
+                                        <label class="form-label">Course Code</label>
+                                        <input type="text" class="form-control" name="course_code" value="{{old('course_code')}}">
+                                    </div>
+                                    @if($errors->has('course_code'))
+                                    <span class="text-danger"> {{ $errors->first('course_code') }}</span>
+                                    @endif
                                 </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12">
                                     <label class="form-label">Image</label>

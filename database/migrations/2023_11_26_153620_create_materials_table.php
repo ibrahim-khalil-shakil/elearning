@@ -22,9 +22,9 @@ return new class extends Migration
 
             $table->foreign('course_id')->references('id')->on('courses')->onDelete('cascade');
         });
-    }
+    } 
 
-    /**
+    /** 
      * Reverse the migrations.
      */
     public function down(): void

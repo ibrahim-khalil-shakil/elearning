@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Backend\Courses;
 use App\Http\Controllers\Controller;
 use App\Models\Course;
 use Illuminate\Http\Request;
-use App\Models\CourseCategory;
+use App\Models\CourseCategory; 
 use App\Models\Instructor;
 use Exception;
 use File;
@@ -47,7 +47,10 @@ class CourseController extends Controller
             $course->type = $request->courseType;
             $course->price = $request->coursePrice;
             $course->subscription_price = $request->subscriptionPrice;
+            $course->start_from = $request->start_from;
+            $course->duration = $request->duration;
             $course->difficulty = $request->courseDifficulty;
+            $course->course_code = $request->course_code;
             $course->prerequisites_en = $request->prerequisites_en;
             $course->prerequisites_bn = $request->prerequisites_bn;
             $course->status = $request->status;
@@ -87,7 +90,7 @@ class CourseController extends Controller
         return view('backend.course.edit', compact('courseCategory', 'instructor', 'course'));
     }
 
-    /**
+    /** 
      * Update the specified resource in storage.
      */
     public function update(Request $request, $id)
@@ -103,7 +106,10 @@ class CourseController extends Controller
             $course->type = $request->courseType;
             $course->price = $request->coursePrice;
             $course->subscription_price = $request->subscriptionPrice;
+            $course->start_from = $request->start_from;
+            $course->duration = $request->duration;
             $course->difficulty = $request->courseDifficulty;
+            $course->course_code = $request->course_code;
             $course->prerequisites_en = $request->prerequisites_en;
             $course->prerequisites_bn = $request->prerequisites_bn;
             $course->status = $request->status;
