@@ -104,7 +104,8 @@ class CourseController extends Controller
             $course->price = $request->coursePrice;
             $course->subscription_price = $request->subscriptionPrice;
             $course->difficulty = $request->courseDifficulty;
-            $course->prerequisites = $request->prerequisites;
+            $course->prerequisites_en = $request->prerequisites_en;
+            $course->prerequisites_bn = $request->prerequisites_bn;
             $course->status = $request->status;
             $course->language = 'en';
 

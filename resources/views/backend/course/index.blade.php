@@ -64,7 +64,7 @@
                                             <ul class="list-group mb-3 list-group-flush">
                                                 <li class="list-group-item px-0 d-flex justify-content-between">
                                                     <span>Difficulty</span>
-                                                    <strong>{{ $d->difficulty == 'beginner' ? __('Beginner') : ($d->gender == 'intermediate' ? __('Intermediate') : __('Advanced')) }}</strong>
+                                                    <strong>{{ $d->difficulty == 'beginner' ? __('Beginner') : ($d->difficulty == 'intermediate' ? __('Intermediate') : __('Advanced')) }}</strong>
                                                 </li>
                                                 <li class="list-group-item px-0 d-flex justify-content-between">
                                                     <span class="mb-0">Instructor :</span>
