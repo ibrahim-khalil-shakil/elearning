@@ -1,19 +1,22 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Backend\Quizzes;
 
-use App\Models\Quiz;
+use App\Models\Question;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Quiz;
+use Exception;
 
-class QuizController extends Controller
+class QuestionController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        $question = Question::paginate(10);
+        return view('backend.quiz.question.index', compact('question'));
     }
 
     /**
@@ -35,7 +38,7 @@ class QuizController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Quiz $quiz)
+    public function show(Question $question)
     {
         //
     }
@@ -43,7 +46,7 @@ class QuizController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Quiz $quiz)
+    public function edit(Question $question)
     {
         //
     }
@@ -51,7 +54,7 @@ class QuizController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Quiz $quiz)
+    public function update(Request $request, Question $question)
     {
         //
     }
@@ -59,7 +62,7 @@ class QuizController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Quiz $quiz)
+    public function destroy(Question $question)
     {
         //
     }

@@ -1,22 +1,22 @@
 <?php
 
-namespace App\Http\Controllers\Backend\Courses;
+namespace App\Http\Controllers\Backend\Quizzes;
 
-use App\Models\Material;
+use App\Models\Quiz;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Course;
 use Exception;
 
-class MaterialController extends Controller
+class QuizController extends Controller
 {
-    /**
+    /**  
      * Display a listing of the resource.
      */
-    public function index() 
+    public function index()
     {
-        $material = Material::paginate(10);
-        return view('backend.course.material.index', compact('material'));
+        $quiz = Quiz::paginate(10);
+        return view('backend.quiz.index', compact('quiz'));
     }
 
     /**
@@ -25,7 +25,7 @@ class MaterialController extends Controller
     public function create()
     {
         $course = Course::get();
-        return view('backend.course.material.create', compact('course'));
+        return view('backend.quiz.create', compact('course'));
     }
 
     /**
@@ -34,15 +34,13 @@ class MaterialController extends Controller
     public function store(Request $request)
     {
         try {
-            $material = new Material;
-            $material->title = $request->materialTitle;
-            $material->course_id = $request->courseId;
-            $material->type = $request->materialType;
-            $material->content_url = $request->contentURL;
+            $quiz = new Quiz;
+            $quiz->title = $request->quizTitle;
+            $quiz->course_id = $request->courseId;
 
-            if ($material->save()) {
-                $this->notice::success('Data Saved'); 
-                return redirect()->route('material.index');
+            if ($quiz->save()) {
+                $this->notice::success('Data Saved');
+                return redirect()->route('quiz.index');
             } else {
                 $this->notice::error('Please try again');
                 return redirect()->back()->withInput();
@@ -57,7 +55,7 @@ class MaterialController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Material $material)
+    public function show(Quiz $quiz)
     {
         //
     }
@@ -68,25 +66,23 @@ class MaterialController extends Controller
     public function edit($id)
     {
         $course = Course::get();
-        $material = Material::findOrFail(encryptor('decrypt', $id));
-        return view('backend.course.material.edit', compact('course', 'material'));
+        $quiz = Quiz::findOrFail(encryptor('decrypt', $id));
+        return view('backend.quiz.edit', compact('course', 'quiz'));
     }
 
-    /** 
+    /**
      * Update the specified resource in storage.
      */
     public function update(Request $request, $id)
     {
         try {
-            $material = Material::findOrFail(encryptor('decrypt', $id));
-            $material->title = $request->materialTitle;
-            $material->course_id = $request->courseId;
-            $material->type = $request->materialType;
-            $material->content_url = $request->contentURL;
+            $quiz = Quiz::findOrFail(encryptor('decrypt', $id));
+            $quiz->title = $request->quizTitle;
+            $quiz->course_id = $request->courseId;
 
-            if ($material->save()) {
+            if ($quiz->save()) {
                 $this->notice::success('Data Saved');
-                return redirect()->route('material.index');
+                return redirect()->route('quiz.index');
             } else {
                 $this->notice::error('Please try again');
                 return redirect()->back()->withInput();
@@ -103,7 +99,7 @@ class MaterialController extends Controller
      */
     public function destroy($id)
     {
-        $data = Material::findOrFail(encryptor('decrypt', $id));
+        $data = Quiz::findOrFail(encryptor('decrypt', $id));
         if ($data->delete()) {
             $this->notice::error('Data Deleted!');
             return redirect()->back();

@@ -235,8 +235,8 @@
                             <span class="nav-text">Payments</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="javascript:void()"><i class="las la-circle"></i>Course Payment</a></li>
-                            <li><a href="javascript:void()"><i class="las la-circle"></i>subscription Payment</a></li>
+                            <li><a href="javascript:void()"><i class="las la-circle"></i>Course Fees</a></li>
+                            <li><a href="javascript:void()"><i class="las la-circle"></i>Subscription Fees</a></li>
                         </ul>
                     </li>
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">
@@ -244,6 +244,7 @@
                             <span class="nav-text">Quizzes</span>
                         </a>
                         <ul aria-expanded="false">
+                            <li><a href="{{route('quiz.index')}}"><i class="las la-circle"></i>All Quizzes</a></li>
                             <li><a href="javascript:void()"><i class="las la-circle"></i>Questions</a></li>
                             <li><a href="javascript:void()"><i class="las la-circle"></i>Answers</a></li>
                         </ul>
