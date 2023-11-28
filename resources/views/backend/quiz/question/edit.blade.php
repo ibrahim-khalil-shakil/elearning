@@ -62,7 +62,7 @@
                                     <div class="form-group">
                                         <label class="form-label">Qestion Type</label>
                                         <select class="form-control" name="questionType">
-                                            <option value="video" @if(old('questionType', $question->type)=='video' ) selected
+                                            <option value="multiple_choice" @if(old('questionType', $question->type)=='multiple_choice' ) selected
                                                 @endif>Multiple Choice
                                             </option>
                                             <option value="true_false" @if(old('questionType', $question->type)=='true_false' ) selected

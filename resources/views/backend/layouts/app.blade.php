@@ -231,22 +231,14 @@
                         </ul>
                     </li>
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="las la-money-check"></i>
-                            <span class="nav-text">Payments</span>
-                        </a>
-                        <ul aria-expanded="false">
-                            <li><a href="javascript:void()"><i class="las la-circle"></i>Course Fees</a></li>
-                            <li><a href="javascript:void()"><i class="las la-circle"></i>Subscription Fees</a></li>
-                        </ul>
-                    </li>
-                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">
                             <i class="las la-tasks"></i>
                             <span class="nav-text">Quizzes</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="{{route('quiz.index')}}"><i class="las la-circle"></i>All Quizzes</a></li>
-                            <li><a href="{{route('question.index')}}"><i class="las la-circle"></i>Questions</a></li>
-                            <li><a href="javascript:void()"><i class="las la-circle"></i>Answers</a></li>
+                            <li><a href="{{route('quiz.index')}}"><i class="las la-icons"></i>All Quizzes</a></li>
+                            <li><a href="{{route('question.index')}}"><i class="las la-question-circle"></i>Questions</a></li>
+                            <li><a href="{{route('option.index')}}"><i class="las la-stream"></i>Options</a></li>
+                            <li><a href="{{route('answer.index')}}"><i class="las la-font"></i>Answers</a></li>
                         </ul>
                     </li>
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">
@@ -254,18 +246,26 @@
                             <span class="nav-text">Reviews</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="javascript:void()"><i class="las la-circle"></i>All Review</a></li>
-                            <li><a href="javascript:void()"><i class="las la-circle"></i>Ratings</a></li>
+                            <li><a href="{{route('review.index')}}"><i class="las la-wave-square"></i>All Review</a></li>
+                            <li><a href="{{route('review.index')}}"><i class="las la-star"></i>Ratings</a></li>
                         </ul>
                     </li>
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="las la-users"></i>
+                            <i class="las la-comment"></i>
                             <span class="nav-text">Forum</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="javascript:void()">Discussion</a></li>
-                            <li><a href="javascript:void()">Comments</a></li>
-                            <li><a href="javascript:void()">Messages</a></li>
+                            <li><a href="{{route('discussion.index')}}"><i class="las la-comment-alt"></i>Discussion</a></li>
+                            <li><a href="{{route('message.index')}}"><i class="las la-envelope"></i>Messages</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                            <i class="las la-money-check"></i>
+                            <span class="nav-text">Payments</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="javascript:void()"><i class="las la-money-bill"></i>Course Fees</a></li>
+                            <li><a href="javascript:void()"><i class="lab la-gg-circle"></i>Subscription Fees</a></li>
                         </ul>
                     </li>
                 </ul>

@@ -18,7 +18,7 @@ class CourseController extends Controller
     public function index()
     {
         $course = Course::paginate(10);
-        return view('backend.course.index', compact('course'));
+        return view('backend.course.courses.index', compact('course'));
     }
 
     /**
@@ -28,7 +28,7 @@ class CourseController extends Controller
     {
         $courseCategory = CourseCategory::get();
         $instructor = Instructor::get();
-        return view('backend.course.create', compact('courseCategory', 'instructor'));
+        return view('backend.course.courses.create', compact('courseCategory', 'instructor'));
     }
 
     /**
@@ -87,7 +87,7 @@ class CourseController extends Controller
         $courseCategory = CourseCategory::get();
         $instructor = Instructor::get();
         $course = Course::findOrFail(encryptor('decrypt', $id));
-        return view('backend.course.edit', compact('courseCategory', 'instructor', 'course'));
+        return view('backend.course.courses.edit', compact('courseCategory', 'instructor', 'course'));
     }
 
     /** 

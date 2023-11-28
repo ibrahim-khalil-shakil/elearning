@@ -16,7 +16,7 @@ class QuizController extends Controller
     public function index()
     {
         $quiz = Quiz::paginate(10);
-        return view('backend.quiz.index', compact('quiz'));
+        return view('backend.quiz.quizzes.index', compact('quiz'));
     }
 
     /**
@@ -25,7 +25,7 @@ class QuizController extends Controller
     public function create()
     {
         $course = Course::get();
-        return view('backend.quiz.create', compact('course'));
+        return view('backend.quiz.quizzes.create', compact('course'));
     }
 
     /**
@@ -67,7 +67,7 @@ class QuizController extends Controller
     {
         $course = Course::get();
         $quiz = Quiz::findOrFail(encryptor('decrypt', $id));
-        return view('backend.quiz.edit', compact('course', 'quiz'));
+        return view('backend.quiz.quizzes.edit', compact('course', 'quiz'));
     }
 
     /**

@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Backend\Quizzes;
 
 use App\Models\Answer;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
+ 
 class AnswerController extends Controller
 {
     /**
@@ -13,8 +13,8 @@ class AnswerController extends Controller
      */
     public function index()
     {
-        $answer = Quiz::paginate(10);
-        return view('backend.quiz.answer.index');
+        $answer = Answer::paginate(10);
+        return view('backend.quiz.answer.index',compact('answer'));
 
     }
 

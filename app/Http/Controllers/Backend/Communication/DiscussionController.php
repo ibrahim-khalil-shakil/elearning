@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Backend\Communication;
 
 use App\Models\Discussion;
 use App\Http\Controllers\Controller;
@@ -13,7 +13,8 @@ class DiscussionController extends Controller
      */
     public function index()
     {
-        //
+        $discussion = Discussion::paginate(10);
+        return view('backend.communication.discussion.index', compact('discussion')); 
     }
 
     /**

@@ -17,7 +17,7 @@ return new class extends Migration
             $table->unsignedBigInteger('course_id')->index();
             $table->integer('rating');
             $table->text('comment')->nullable();
-            $table->timestamps();
+            $table->timestamps(); 
             $table->softDeletes();
 
             $table->foreign('student_id')->references('id')->on('students')->onDelete('cascade');

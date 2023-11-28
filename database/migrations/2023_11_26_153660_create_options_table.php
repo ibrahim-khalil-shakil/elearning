@@ -7,19 +7,18 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration
 {
     /**
-     * Run the migrations. 
+     * Run the migrations.
      */
     public function up(): void
     {
-        Schema::create('answers', function (Blueprint $table) {
+        Schema::create('options', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('student_id')->index();
-            $table->unsignedBigInteger('question_id')->index(); 
-            $table->text('answer')->nullable();
+            $table->unsignedBigInteger('question_id')->index();
+            $table->string('option_text');
+            $table->boolean('is_correct')->default(false);
             $table->timestamps();
             $table->softDeletes();
 
-            $table->foreign('student_id')->references('id')->on('students')->onDelete('cascade');
             $table->foreign('question_id')->references('id')->on('questions')->onDelete('cascade');
         });
     }
@@ -29,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('answers');
+        Schema::dropIfExists('options');
     }
 };

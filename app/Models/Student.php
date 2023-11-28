@@ -13,4 +13,14 @@ class Student extends Model
     {
         return $this->belongsTo(Role::class);
     }
+
+    public function answer()
+    {
+        return $this->hasMany(Answer::class);
+    }
+
+    public function review()
+    {
+        return $this->hasMany(Review::class);
+    }
 }

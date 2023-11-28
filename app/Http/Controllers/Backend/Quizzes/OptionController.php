@@ -1,22 +1,22 @@
 <?php
 
-namespace App\Http\Controllers\Backend\Quizzes; 
+namespace App\Http\Controllers\Backend\Quizzes;
 
-use App\Models\Question;
+use App\Models\Option;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Quiz;
+use App\Models\Question;
 use Exception;
 
-class QuestionController extends Controller
+class OptionController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $question = Question::paginate(10);
-        return view('backend.quiz.question.index', compact('question'));
+        $option = Option::paginate(20);
+        return view('backend.quiz.option.index', compact('option'));
     }
 
     /**
@@ -24,8 +24,8 @@ class QuestionController extends Controller
      */
     public function create()
     {
-        $quiz = Quiz::get();
-        return view('backend.quiz.question.create', compact('quiz'));
+        $question = Question::get();
+        return view('backend.quiz.option.create', compact('question'));
     }
 
     /**
@@ -34,14 +34,14 @@ class QuestionController extends Controller
     public function store(Request $request)
     {
         try {
-            $question = new Question;
-            $question->quiz_id = $request->quizId;
-            $question->type = $request->questionType;
-            $question->content = $request->questionContent;
+            $option = new Option;
+            $option->question_id = $request->questionId;
+            $option->option_text = $request->optionText;
+            $option->is_correct = $request->is_correct;
 
-            if ($question->save()) {
+            if ($option->save()) {
                 $this->notice::success('Data Saved');
-                return redirect()->route('question.index');
+                return redirect()->route('option.index');
             } else {
                 $this->notice::error('Please try again');
                 return redirect()->back()->withInput();
@@ -56,7 +56,7 @@ class QuestionController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Question $question)
+    public function show(Option $option)
     {
         //
     }
@@ -66,9 +66,9 @@ class QuestionController extends Controller
      */
     public function edit($id)
     {
-        $quiz = Quiz::get();
-        $question = Question::findOrFail(encryptor('decrypt',$id));
-        return view('backend.quiz.question.edit', compact('quiz', 'question'));
+        $question = Question::get();
+        $option = Option::findOrFail(encryptor('decrypt', $id));
+        return view('backend.quiz.option.edit', compact('question', 'option'));
     }
 
     /**
@@ -77,14 +77,14 @@ class QuestionController extends Controller
     public function update(Request $request, $id)
     {
         try {
-            $question = Question::findOrFail(encryptor('decrypt', $id));
-            $question->quiz_id = $request->quizId;
-            $question->type = $request->questionType;
-            $question->content = $request->questionContent;
+            $option = Option::findOrFail(encryptor('decrypt', $id));
+            $option->question_id = $request->questionId;
+            $option->option_text = $request->optionText;
+            $option->is_correct = $request->is_correct;
 
-            if ($question->save()) {
+            if ($option->save()) {
                 $this->notice::success('Data Saved');
-                return redirect()->route('question.index');
+                return redirect()->route('option.index');
             } else {
                 $this->notice::error('Please try again');
                 return redirect()->back()->withInput();
@@ -101,7 +101,7 @@ class QuestionController extends Controller
      */
     public function destroy($id)
     {
-        $data = Question::findOrFail(encryptor('decrypt', $id));
+        $data = Option::findOrFail(encryptor('decrypt', $id));
         if ($data->delete()) {
             $this->notice::error('Data Deleted!');
             return redirect()->back();

@@ -1,5 +1,5 @@
 @extends('backend.layouts.app')
-@section('title', 'Answer List')
+@section('title', 'Option List')
 
 @push('styles')
 <!-- Datatable -->
@@ -15,14 +15,14 @@
         <div class="row page-titles mx-0">
             <div class="col-sm-6 p-md-0">
                 <div class="welcome-text">
-                    <h4>Answer List</h4>
+                    <h4>Option List</h4>
                 </div>
             </div>
             <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Home</a></li>
-                    <li class="breadcrumb-item active"><a href="{{route('answer.index')}}">Answers</a></li>
-                    <li class="breadcrumb-item active"><a href="{{route('answer.index')}}">All Answer</a>
+                    <li class="breadcrumb-item active"><a href="{{route('option.index')}}">Options</a></li>
+                    <li class="breadcrumb-item active"><a href="{{route('option.index')}}">All Option</a>
                     </li>
                 </ol>
             </div>
@@ -43,7 +43,8 @@
                     <div id="list-view" class="tab-pane fade active show col-lg-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">All Answers List </h4>
+                                <h4 class="card-title">All Options List </h4>
+                                <a href="{{route('option.create')}}" class="btn btn-primary">+ Add new</a>
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
@@ -51,28 +52,31 @@
                                         <thead>
                                             <tr>
                                                 <th>{{__('#')}}</th>
-                                                <th>{{__('Student')}}</th>
                                                 <th>{{__('Question')}}</th>
-                                                <th>{{__('Answer')}}</th>
-                                                <th>{{__('Action')}}</th> 
+                                                <th>{{__('Option')}}</th>
+                                                <th>{{__('Is Correct')}}</th>
+                                                <th>{{__('Action')}}</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @forelse ($answer as $a)
+                                            @forelse ($option as $o)
                                             <tr>
-                                                <td>{{$a->id}}</td>
-                                                <td>{{$a->student?->name_en}}</td>
-                                                <td>{{$a->question?->content}}</td>
-                                                <td>{{$a->answer}}</td>
+                                                <td>{{$o->id}}</td>
+                                                <td>{{$o->question?->content}}</td>
+                                                <td>{{$o->option_text}}</td>
                                                 <td>
-                                                    <a href="{{route('answer.edit', encryptor('encrypt',$a->id))}}"
+                                                    <span class="badge {{$o->is_correct==1?"
+                                                        badge-success":"badge-danger"}}">{{ $o->is_correct == 1 ? 'Correct' : 'Wrong' }}</span>
+                                                </td>
+                                                <td>
+                                                    <a href="{{route('option.edit', encryptor('encrypt',$o->id))}}"
                                                         class="btn btn-sm btn-primary" title="Edit"><i
                                                             class="la la-pencil"></i></a>
                                                     <a href="javascript:void(0);" class="btn btn-sm btn-danger"
-                                                        title="Delete" onclick="$('#form{{$a->id}}').submit()"><i
+                                                        title="Delete" onclick="$('#form{{$o->id}}').submit()"><i
                                                             class="la la-trash-o"></i></a>
-                                                    <form id="form{{$a->id}}"
-                                                        action="{{route('answer.destroy', encryptor('encrypt',$a->id))}}"
+                                                    <form id="form{{$o->id}}"
+                                                        action="{{route('option.destroy', encryptor('encrypt',$o->id))}}"
                                                         method="post">
                                                         @csrf
                                                         @method('DELETE')
@@ -81,7 +85,7 @@
                                             </tr>
                                             @empty
                                             <tr>
-                                                <th colspan="5" class="text-center"><h1>No Answer Found</h1></th>
+                                                <th colspan="4" class="text-center">No Option Found</th>
                                             </tr>
                                             @endforelse
                                         </tbody>

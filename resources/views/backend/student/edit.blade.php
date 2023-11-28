@@ -35,7 +35,8 @@
                         <h5 class="card-title">Basic Info</h5>
                     </div>
                     <div class="card-body">
-                        <form action="{{route('student.update',encryptor('encrypt', $student->id))}}" method="post" enctype="multipart/form-data">
+                        <form action="{{route('student.update',encryptor('encrypt', $student->id))}}" method="post"
+                            enctype="multipart/form-data">
                             @csrf
                             @method('PATCH')
                             <input type="hidden" name="uptoken" value="{{encryptor('encrypt',$student->id)}}">
@@ -92,7 +93,8 @@
                                         <label class="form-label">Role</label>
                                         <select class="form-control" name="roleId">
                                             @forelse ($role as $r)
-                                            <option value="{{$r->id}}" {{old('roleId', $student->role_id)==$r->id?'selected':''}}>
+                                            <option value="{{$r->id}}" {{old('roleId', $student->
+                                                role_id)==$r->id?'selected':''}}>
                                                 {{$r->name}}</option>
                                             @empty
                                             <option value="">No Role Found</option>
@@ -106,8 +108,9 @@
                                 <div class="col-lg-6 col-md-6 col-sm-12">
                                     <div class="form-group">
                                         <label class="form-label">Date of Birth</label>
-                                        <input type="date" name="birthDate" value="{{old('birthDate',$student->date_of_birth)}}"
-                                            class="form-control" id="">
+                                        <input type="date" name="birthDate"
+                                            value="{{old('birthDate',$student->date_of_birth)}}" class="form-control"
+                                            id="">
                                     </div>
                                     @if($errors->has('birthDate'))
                                     <span class="text-danger"> {{ $errors->first('birthDate') }}</span>
@@ -117,11 +120,14 @@
                                     <div class="form-group">
                                         <label class="form-label">Gender</label>
                                         <select class="form-control" name="gender">
-                                            <option value="male" @if(old('gender',$student->gender)=='male' ) selected @endif>Male
+                                            <option value="male" @if(old('gender',$student->gender)=='male' ) selected
+                                                @endif>Male
                                             </option>
-                                            <option value="female" @if(old('gender',$student->gender)=='female' ) selected @endif>Fenale
+                                            <option value="female" @if(old('gender',$student->gender)=='female' )
+                                                selected @endif>Fenale
                                             </option>
-                                            <option value="other" @if(old('gender',$student->gender)=='other' ) selected @endif>Other
+                                            <option value="other" @if(old('gender',$student->gender)=='other' ) selected
+                                                @endif>Other
                                             </option>
                                         </select>
                                     </div>
@@ -130,8 +136,10 @@
                                     <div class="form-group">
                                         <label class="form-label">Status</label>
                                         <select class="form-control" name="status">
-                                            <option value="1" @if(old('status',$student->status)==1) selected @endif>Active</option>
-                                            <option value="0" @if(old('status',$student->status)==0) selected @endif>Inactive</option>
+                                            <option value="1" @if(old('status',$student->status)==1) selected
+                                                @endif>Active</option>
+                                            <option value="0" @if(old('status',$student->status)==0) selected
+                                                @endif>Inactive</option>
                                         </select>
                                     </div>
                                 </div>

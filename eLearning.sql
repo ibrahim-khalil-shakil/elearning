@@ -139,12 +139,21 @@ CREATE TABLE questions (
     FOREIGN KEY (quiz_id) REFERENCES quizzes(id)
 );
 
+-- Introduced a new table for multiple-choice options
+CREATE TABLE options (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    question_id INT,
+    option_text VARCHAR(255) NOT NULL,
+    is_correct BOOLEAN DEFAULT false,
+    FOREIGN KEY (question_id) REFERENCES questions(id)
+);
+
 -- User_answers table stores user responses to quiz questions
 CREATE TABLE user_answers (
     id INT PRIMARY KEY AUTO_INCREMENT,
     student_id INT,
     question_id INT,
-    answer TEXT,
+    answer TEXT, 
     is_correct BOOLEAN,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (student_id) REFERENCES students(id),
