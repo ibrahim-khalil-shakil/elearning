@@ -61,7 +61,7 @@
                             foreach($permission as $perm){
                             $permissions[$perm->name]=$perm->name;
                             }
-                            @endphp
+                            @endphp 
                             @foreach(Illuminate\Support\Facades\Route::getRoutes() as $v)
                             @if($v->getPrefix()=="/admin")
                             @php

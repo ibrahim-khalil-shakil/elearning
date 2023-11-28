@@ -36,7 +36,7 @@ class PermissionController extends Controller
     {
         //
     }
-
+ 
     public function save(SaveRequest $request, $role)
     {
         try {
