@@ -24,7 +24,8 @@ class QuestionController extends Controller
      */
     public function create()
     {
-        //
+        $quiz = Quiz::get();
+        return view('backend.quiz.question.create', compact('quiz'));
     }
 
     /**
@@ -32,7 +33,24 @@ class QuestionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try {
+            $question = new Question;
+            $question->quiz_id = $request->quizId;
+            $question->type = $request->questionType;
+            $question->content = $request->questionContent;
+
+            if ($question->save()) {
+                $this->notice::success('Data Saved');
+                return redirect()->route('question.index');
+            } else {
+                $this->notice::error('Please try again');
+                return redirect()->back()->withInput();
+            }
+        } catch (Exception $e) {
+            dd($e);
+            $this->notice::error('Please try again');
+            return redirect()->back()->withInput();
+        }
     }
 
     /**
@@ -46,24 +64,47 @@ class QuestionController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Question $question)
+    public function edit($id)
     {
-        //
+        $quiz = Quiz::get();
+        $question = Question::findOrFail(encryptor('decrypt',$id));
+        return view('backend.quiz.question.create', compact('quiz'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Question $question)
+    public function update(Request $request, $id)
     {
-        //
+        try {
+            $question = Question::findOrFail(encryptor('decrypt', $id));
+            $question->quiz_id = $request->quizId;
+            $question->type = $request->questionType;
+            $question->content = $request->questionContent;
+
+            if ($question->save()) {
+                $this->notice::success('Data Saved');
+                return redirect()->route('question.index');
+            } else {
+                $this->notice::error('Please try again');
+                return redirect()->back()->withInput();
+            }
+        } catch (Exception $e) {
+            dd($e);
+            $this->notice::error('Please try again');
+            return redirect()->back()->withInput();
+        }
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Question $question)
+    public function destroy($id)
     {
-        //
+        $data = Question::findOrFail(encryptor('decrypt', $id));
+        if ($data->delete()) {
+            $this->notice::error('Data Deleted!');
+            return redirect()->back();
+        }
     }
 }

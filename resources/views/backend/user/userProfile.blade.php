@@ -51,12 +51,6 @@
                                                 <p>Email</p>
                                             </div>
                                         </div>
-                                        <!-- <div class="col-xl-4 col-sm-4 prf-col">
-                                                    <div class="profile-call">
-                                                        <h4 class="text-muted">(+1) 321-837-1030</h4>
-                                                        <p>Phone No.</p>
-                                                    </div>
-                                                </div> -->
                                     </div>
                                 </div>
                             </div>
