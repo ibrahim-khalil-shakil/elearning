@@ -13,7 +13,9 @@ class AnswerController extends Controller
      */
     public function index()
     {
-        //
+        $answer = Quiz::paginate(10);
+        return view('backend.quiz.answer.index');
+
     }
 
     /**
