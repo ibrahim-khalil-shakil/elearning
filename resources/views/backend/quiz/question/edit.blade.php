@@ -1,5 +1,5 @@
 @extends('backend.layouts.app')
-@section('title', 'Edit Course Material Material')
+@section('title', 'Edit Question')
 
 @push('styles')
 <!-- Pick date -->
@@ -16,14 +16,14 @@
         <div class="row page-titles mx-0">
             <div class="col-sm-6 p-md-0">
                 <div class="welcome-text">
-                    <h4>Edit Course Material</h4>
+                    <h4>Edit Question</h4>
                 </div>
             </div>
             <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Home</a></li>
-                    <li class="breadcrumb-item active"><a href="{{route('material.index')}}">Course Materials</a></li>
-                    <li class="breadcrumb-item active"><a href="javascript:void(0);">Edit Course Material</a></li>
+                    <li class="breadcrumb-item active"><a href="{{route('question.index')}}">Questions</a></li>
+                    <li class="breadcrumb-item active"><a href="javascript:void(0);">Edit Question</a></li>
                 </ol>
             </div>
         </div>
@@ -35,66 +35,56 @@
                         <h5 class="card-title">Basic Info</h5>
                     </div>
                     <div class="card-body">
-                        <form action="{{route('material.update',encryptor('encrypt', $material->id))}}" method="post"
+                        <form action="{{route('question.update',encryptor('encrypt', $question->id))}}" method="post"
                             enctype="multipart/form-data">
                             @csrf
                             @method('PATCH')
-                            <input type="hidden" name="uptoken" value="{{encryptor('encrypt',$material->id)}}">
+                            <input type="hidden" name="uptoken" value="{{encryptor('encrypt',$question->id)}}">
                             <div class="row">
                                 <div class="col-lg-6 col-md-6 col-sm-12">
                                     <div class="form-group">
-                                        <label class="form-label">Title</label>
-                                        <input type="text" class="form-control" name="materialTitle"
-                                            value="{{old('materialTitle',$material->title)}}">
-                                    </div>
-                                    @if($errors->has('materialTitle'))
-                                    <span class="text-danger"> {{ $errors->first('materialTitle') }}</span>
-                                    @endif
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-12">
-                                    <div class="form-group">
-                                        <label class="form-label">Course</label>
-                                        <select class="form-control" name="courseId">
-                                            @forelse ($course as $c)
-                                            <option value="{{$c->id}}" {{old('courseId', $material->course_id) ==
-                                                $c->id?'selected':''}}>
-                                                {{$c->title_en}}</option>
+                                        <label class="form-label">Quiz</label>
+                                        <select class="form-control" name="quizId">
+                                            @forelse ($quiz as $q)
+                                            <option value="{{$q->id}}" {{old('quizId', $question->quiz_id) ==
+                                                $q->id?'selected':''}}>
+                                                {{$q->title}}</option>
                                             @empty
-                                            <option value="">No Course Material Material Found</option>
+                                            <option value="">No Quiz Found</option>
                                             @endforelse
                                         </select>
                                     </div>
-                                    @if($errors->has('courseId'))
-                                    <span class="text-danger"> {{ $errors->first('courseId') }}</span>
+                                    @if($errors->has('quizId'))
+                                    <span class="text-danger"> {{ $errors->first('quizId') }}</span>
                                     @endif
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12">
                                     <div class="form-group">
-                                        <label class="form-label">Material Type</label>
-                                        <select class="form-control" name="materialType">
-                                            <option value="video" @if(old('materialType', $material->type)=='video' ) selected
-                                                @endif>Video
+                                        <label class="form-label">Qestion Type</label>
+                                        <select class="form-control" name="questionType">
+                                            <option value="video" @if(old('questionType', $question->type)=='video' ) selected
+                                                @endif>Multiple Choice
                                             </option>
-                                            <option value="document" @if(old('materialType', $material->type)=='document' ) selected
-                                                @endif>Document
+                                            <option value="true_false" @if(old('questionType', $question->type)=='true_false' ) selected
+                                                @endif>True False
                                             </option>
-                                            <option value="quiz" @if(old('materialType', $material->type)
-                                                =='quiz' )
-                                                selected @endif>Quiz</option>
+                                            <option value="short_answer" @if(old('questionType', $question->type)
+                                                =='short_answer' )
+                                                selected @endif>Short Answer</option>
                                         </select>
                                     </div>
-                                    @if($errors->has('materialType'))
-                                    <span class="text-danger"> {{ $errors->first('materialType') }}</span>
+                                    @if($errors->has('questionType'))
+                                    <span class="text-danger"> {{ $errors->first('questionType') }}</span>
                                     @endif
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12">
                                     <div class="form-group">
-                                        <label class="form-label">Content Url</label>
+                                        <label class="form-label">Question Content</label>
                                         <textarea class="form-control"
-                                            name="contentURL">{{old('contentURL',$material->content_url)}}</textarea>
+                                            name="questionContent">{{old('questionContent',$question->content)}}</textarea>
                                     </div>
-                                    @if($errors->has('contentURL'))
-                                    <span class="text-danger"> {{ $errors->first('contentURL') }}</span>
+                                    @if($errors->has('questionContent'))
+                                    <span class="text-danger"> {{ $errors->first('questionContent') }}</span>
                                     @endif
                                 </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12">

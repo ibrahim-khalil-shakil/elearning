@@ -67,7 +67,7 @@
                                                     {{ $q->type == 'multiple_choice' ? __('Multiple Choice') : ($q->type == 'true_false' ?
                                                     __('True False') : __('Short Answer')) }}
                                                 </td>
-                                                <td>{{$q->questionContent}}</td>
+                                                <td>{{$q->content}}</td>
                                                 <td>
                                                     <a href="{{route('question.edit', encryptor('encrypt',$q->id))}}"
                                                         class="btn btn-sm btn-primary" title="Edit"><i

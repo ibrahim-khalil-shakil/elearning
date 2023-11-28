@@ -43,9 +43,9 @@
                                     <div class="form-group">
                                         <label class="form-label">Quiz</label>
                                         <select class="form-control" name="quizId">
-                                            @forelse ($short_answer as $q)
+                                            @forelse ($quiz as $q)
                                             <option value="{{$q->id}}" {{old('quizId')==$q->id?'selected':''}}>
-                                                {{$q->quizTitle}}</option>
+                                                {{$q->title}}</option>
                                             @empty
                                             <option value="">No Quiz Found</option>
                                             @endforelse

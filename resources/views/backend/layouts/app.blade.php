@@ -245,7 +245,7 @@
                         </a>
                         <ul aria-expanded="false">
                             <li><a href="{{route('quiz.index')}}"><i class="las la-circle"></i>All Quizzes</a></li>
-                            <li><a href="javascript:void()"><i class="las la-circle"></i>Questions</a></li>
+                            <li><a href="{{route('question.index')}}"><i class="las la-circle"></i>Questions</a></li>
                             <li><a href="javascript:void()"><i class="las la-circle"></i>Answers</a></li>
                         </ul>
                     </li>

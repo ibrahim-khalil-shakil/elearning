@@ -12,6 +12,7 @@ use App\Http\Controllers\Backend\Instructors\InstructorController as instructor;
 use App\Http\Controllers\Backend\Courses\CourseController as course;
 use App\Http\Controllers\Backend\Courses\MaterialController as material;
 use App\Http\Controllers\Backend\Quizzes\QuizController as quiz;
+use App\Http\Controllers\Backend\Quizzes\QuestionController as question;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,6 +46,7 @@ Route::middleware(['checkrole'])->prefix('admin')->group(function () {
     Route::resource('course', course::class);
     Route::resource('material', material::class);
     Route::resource('quiz', quiz::class);
+    Route::resource('question', question::class);
     Route::get('permission/{role}', [permission::class, 'index'])->name('permission.list');
     Route::post('permission/{role}', [permission::class, 'save'])->name('permission.save');
 });

@@ -68,7 +68,7 @@ class QuestionController extends Controller
     {
         $quiz = Quiz::get();
         $question = Question::findOrFail(encryptor('decrypt',$id));
-        return view('backend.quiz.question.create', compact('quiz'));
+        return view('backend.quiz.question.edit', compact('quiz', 'question'));
     }
 
     /**
