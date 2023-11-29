@@ -1,0 +1,73 @@
+.sidebar-filter {
+  .accordion {
+    &-header {
+      padding: 15px 0px;
+    }
+
+    &-button {
+      padding: 0px;
+      font-size: 20px;
+      color: #42414b;
+      box-shadow: none;
+      font-weight: 600;
+      line-height: 30px;
+      text-transform: capitalize;
+      background-color: transparent;
+      justify-content: space-between;
+      &:not(.collapsed) {
+        color: inherit !important;
+        background-color: transparent;
+      }
+    }
+
+    &-item {
+      border: 0px;
+      overflow: hidden;
+      padding: 0px 24px;
+      border-radius: 5px;
+      margin-bottom: 30px;
+      background-color: rgba(255, 255, 255, 0.5);
+    }
+
+    &-body {
+      padding: 30px 0px;
+      border-top: 1px solid rgba(143, 143, 163, 0.5);
+
+      &__item {
+        display: flex;
+        margin-bottom: 15px;
+        align-items: center;
+        justify-content: space-between;
+        &:nth-last-child(1) {
+          margin-bottom: 0px;
+        }
+        .check-box {
+          display: flex;
+          align-items: center;
+          .checkbox-primary[type='checkbox'] {
+            cursor: pointer;
+            overflow: hidden;
+            margin-right: 8px;
+            border-radius: 3px;
+            position: relative;
+            border: 2px solid #8f8fa3;
+          }
+
+          label {
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 24px;
+            color: #666575;
+            text-transform: capitalize;
+          }
+        }
+        .check-details {
+          font-size: 14px;
+          color: #8f8fa3;
+          line-height: 21px;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}

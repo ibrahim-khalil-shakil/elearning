@@ -1,0 +1,128 @@
+.events-location {
+  &-map {
+    iframe {
+      width: 378px;
+      height: 378px;
+      border-radius: 5px;
+    }
+  }
+
+  &-text {
+    padding-left: 10px;
+    margin-bottom: 24px;
+
+    .text-item {
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+
+      &-start {
+        margin-right: 12px;
+
+        .icon-image {
+          width: 70px;
+          height: 70px;
+          background-color: rgba($color: #1089ff, $alpha: 0.1);
+          border-radius: 5px;
+          color: #1089ff;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .email-bg {
+          background-color: rgba($color: #ff7a1a, $alpha: 0.1);
+          color: #ff7a1a;
+        }
+
+        .phone-bg {
+          background-color: rgba($color: #00af91, $alpha: 0.1);
+          color: #00af91;
+        }
+      }
+
+      &-end {
+        p {
+          font-size: 12px;
+          letter-spacing: 2px;
+          margin-bottom: 5px;
+          color: #8f8fa3;
+          text-transform: uppercase;
+          font-family: 'Poppins', sans-serif;
+          font-weight: 500;
+        }
+
+        h6 {
+          &.font-para--lg {
+            color: #202029;
+          }
+          &.font-para--lg,
+          &.font-title--card {
+            font-weight: 400;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Responsive
+// extra Small devices 420px
+@media (max-width: 420px) {
+  .events-location-map iframe {
+    width: 100%;
+  }
+
+  .events-location-text {
+    padding-left: 0;
+  }
+}
+
+// Small devices 420px - 574px
+@media (min-width: 420px) and (max-width: 574px) {
+  .events-location-text {
+    padding-left: 0;
+  }
+}
+
+// Small devices 575px - 767px
+@media (min-width: 575px) and (max-width: 767px) {
+  .events-location-text {
+    padding-left: 0;
+  }
+}
+
+// Medium devices 768px - 991px
+@media (min-width: 768px) and (max-width: 991px) {
+  .events-location-text {
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 991px) {
+  .events-location-map iframe {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  .events-location-map iframe {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .events-location-text {
+    padding-left: 0;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 574px) {
+  .events-location-map iframe {
+    width: 100%;
+    height: 300px;
+    margin-bottom: 20px;
+  }
+}

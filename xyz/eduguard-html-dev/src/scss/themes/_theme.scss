@@ -1,0 +1,315 @@
+// Common Class ==> Bootstrap Class Customization
+// Margin & Padding
+.mt-35 {
+  margin-top: 35px;
+}
+.py-80 {
+  padding: 80px 0px;
+}
+.mb-40 {
+  margin-bottom: 40px;
+}
+.mb-100 {
+  margin-bottom: 100px;
+}
+.mb-60 {
+  margin-bottom: 60px;
+}
+// Text Color
+.text-primary {
+  color: color(primary) !important;
+}
+.text-secondary {
+  color: color(gray) !important;
+}
+.text-black-second {
+  color: color(black-second) !important;
+}
+.text-black-50 {
+  color: #25252e !important;
+}
+.text-lowblack {
+  color: color(lowBlack) !important;
+}
+.dark-text {
+  color: color(dark) !important;
+}
+
+// Background color
+.bg-primary {
+  background-color: color(primary) !important;
+}
+.bg-secondary {
+  background-color: color(ash) !important;
+}
+
+// Border
+.border-default {
+  border: 2px solid #ebebf2 !important;
+}
+.border-primary {
+  border-color: color(primary) !important;
+}
+
+.border-danger {
+  border-color: rgba(241, 67, 54, 0.2) !important;
+}
+
+.border-secondary-primary {
+  border-color: rgba(3, 169, 244, 0.2) !important;
+}
+.border-lowBlack {
+  border-color: rgba(144, 143, 165, 0.4) !important;
+}
+
+// Border Radious
+.rounded-1 {
+  border-radius: 5px !important;
+}
+.rounded-2 {
+  border-radius: 10px !important;
+}
+.rounded-3 {
+  border-radius: 15px !important;
+}
+
+// Badge
+.badge {
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// Checkout Tab
+.checkout-tab {
+  .nav {
+    border-bottom: 1px solid color(ash);
+    align-items: center;
+    padding-bottom: 20px;
+
+    .nav-item {
+      width: 50%;
+
+      .nav-link.active {
+        position: relative;
+        width: 100%;
+        &::after {
+          position: absolute;
+          content: '';
+          bottom: -22px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 100%;
+          height: 2px;
+          background-color: #0264ed;
+        }
+
+        h6 {
+          color: #25252e;
+        }
+
+        svg {
+          path {
+            stroke: #25252e;
+          }
+        }
+      }
+
+      .nav-link {
+        width: 100%;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        h6 {
+          font-size: 14px;
+          line-height: 21px;
+          color: #908fa5;
+          font-family: 'Poppins', sans-serif;
+        font-weight: 500;
+          margin-top: 10px;
+        }
+
+        border: none;
+        background-color: transparent;
+        margin: auto;
+      }
+    }
+  }
+
+  .tab-pane {
+    form {
+      label {
+        font-size: 14px;
+        line-height: 21px;
+        color: #202029;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 500;
+        margin-bottom: 10px;
+      }
+
+      input {
+        border-color: color(lowBlack);
+        padding: 15px 0px 15px 20px;
+        &:focus {
+          box-shadow: none;
+          border-color: $primary;
+        }
+      }
+
+      input[type='checkbox'] {
+        width: 24px;
+        height: 24px;
+        border-radius: 3px;
+        border: 3px solid color(gray);
+      }
+
+      .form-check-label {
+        color: color(gray);
+      }
+
+      .btn {
+        width: 100%;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+// Section Padding
+.section-padding {
+  padding: 120px 0px;
+}
+.section-padding-bottom-lg {
+  padding-bottom: 150px;
+}
+.section-padding-m {
+  padding: 100px 0px;
+}
+.section-padding-sm {
+  padding: 60px 0px;
+}
+.section-padding-bottom {
+  padding-bottom: 100px;
+}
+.section-pb-sm {
+  padding-bottom: 80px;
+}
+
+// Signup With
+.signup-with {
+  height: 50px;
+  width: 145px;
+}
+
+// Responsive
+// extra Small devices 420px
+@media (max-width: 420px) {
+  .section-padding-m,
+  .section-padding-bottom,
+  .section-padding {
+    padding: 30px 0px;
+  }
+  .section-pb-sm {
+    padding-bottom: 30px;
+  }
+  .py-80 {
+    padding: 40px 0px;
+  }
+  .mb-40 {
+    margin-bottom: 20px;
+  }
+  .mb-100 {
+    margin-bottom: 0;
+  }
+  //   . {
+  //     font-size: 14px !important;
+  //   }
+}
+
+// Small devices 420px - 574px
+@media (min-width: 420px) and (max-width: 574px) {
+  .section-padding-m,
+  .section-padding-bottom,
+  .section-padding {
+    padding: 30px 0px;
+  }
+  .section-pb-sm {
+    padding-bottom: 30px;
+  }
+  .py-80 {
+    padding: 40px 0px;
+  }
+  .mb-40 {
+    margin-bottom: 20px;
+  }
+  .mb-100 {
+    margin-bottom: 0;
+  }
+}
+
+// Small devices 575px - 767px
+@media (min-width: 575px) and (max-width: 767px) {
+  .section-padding-m,
+  .section-padding {
+    padding: 40px 0px;
+  }
+  .section-padding-bottom {
+    padding: 35px 0px;
+  }
+  .section-pb-sm {
+    padding-bottom: 40px;
+  }
+  .py-80 {
+    padding: 50px 0px;
+  }
+  .mb-40 {
+    margin-bottom: 25px;
+  }
+  .mb-100 {
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 991px) {
+  .section-padding-bottom-lg {
+    padding-bottom: 60px;
+  }
+}
+
+// Medium devices 768px - 991px
+@media (min-width: 768px) and (max-width: 991px) {
+  .section-padding-m,
+  .section-padding {
+    padding: 50px 0px;
+  }
+  .section-padding-bottom {
+    padding: 40px 0px;
+  }
+  .section-pb-sm {
+    padding-bottom: 40px;
+  }
+  .py-80 {
+    padding: 50px 0px;
+  }
+  .mb-40 {
+    margin-bottom: 30px;
+  }
+  .mb-100 {
+    margin-bottom: 0;
+  }
+}
+
+// large devices 992px - 1169px
+@media (min-width: 992px) and (max-width: 1200px) {
+  .section-padding-m,
+  .section-padding {
+    padding: 80px 0px;
+  }
+  .mb-100 {
+    margin-bottom: 0;
+  }
+}

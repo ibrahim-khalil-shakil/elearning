@@ -1,0 +1,29 @@
+.section {
+  &__overlay {
+    span {
+      position: absolute;
+      z-index: -1;
+      img {
+        pointer-events: none;
+      }
+    }
+    &--01 {
+      top: -10%;
+      left: 0;
+    }
+    &--02 {
+      right: 5%;
+      bottom: 10%;
+    }
+  }
+}
+
+@media (max-width: 575px) {
+  .section__overlay--01 {
+    display: none;
+  }
+  .section__overlay--02 {
+    bottom: 0;
+    right: 0;
+  }
+}

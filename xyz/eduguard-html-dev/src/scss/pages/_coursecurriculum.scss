@@ -1,0 +1,156 @@
+// curriculum-accordion Starts Here
+.course-curriculum-area {
+  .curriculum-area {
+    margin-bottom: 30px;
+
+    &-top {
+      width: 100%;
+      border: none;
+      display: flex;
+      padding: 20px 24px;
+      border-radius: 8px;
+      align-items: center;
+      background-color: white;
+      justify-content: space-between;
+      border-bottom-left-radius: 0px;
+      border-bottom-right-radius: 0px;
+      @include max(767px) {
+        padding: 20px 12px;
+      }
+      &.collapsed {
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+      }
+      &-start {
+        display: flex;
+
+        p {
+          color: #42414b;
+          margin-left: 10px;
+        }
+      }
+
+      &-end {
+        display: flex;
+        align-items: center;
+
+        @include max(575px) {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .total-lesson {
+          display: flex;
+          overflow: hidden;
+          margin-right: 20px;
+          align-items: center;
+          @include max(767px) {
+            margin-right: 4px;
+          }
+          @include max(575px) {
+            margin-right: 0px;
+            margin-bottom: 8px;
+          }
+          p {
+            font-size: 14px;
+            line-height: 21px;
+            color: #42414b;
+            white-space: nowrap;
+            margin-left: 5px;
+          }
+        }
+
+        .total-hours {
+          display: flex;
+          align-items: center;
+
+          p {
+            color: #42414b !important;
+            font-size: 14px !important;
+            margin-left: 5px;
+          }
+        }
+      }
+
+      &:not(.collapsed) {
+        .curriculum-area-top-start {
+          p {
+            color: #0264ed !important;
+          }
+        }
+      }
+    }
+
+    &-bottom {
+      background-color: white;
+      padding: 12px 24px;
+      padding-bottom: 24px;
+      border-top: 1px solid #ebebf2;
+      border-bottom-left-radius: 8px;
+      border-bottom-right-radius: 8px;
+      transition: all 0.2s linear;
+      @include max(767px) {
+        padding: 12px;
+      }
+      .curriculum-description {
+        display: flex;
+        padding: 12px 24px;
+        align-items: center;
+        border: 1px solid transparent;
+        justify-content: space-between;
+        border-bottom: 1px solid #ebebf2;
+        @include max(767px) {
+          padding: 12px;
+        }
+        &.active,
+        &:hover {
+          border: 1px solid rgba(16, 137, 255, 0.4) !important;
+          border-radius: 4px !important;
+        }
+        &-start {
+          p {
+            display: flex;
+            align-items: center;
+
+            a {
+              margin-right: 8px;
+              font-size: 14px !important;
+              color: #8f8fa3;
+
+              svg {
+                color: #1089ff;
+              }
+            }
+          }
+        }
+
+        &-end {
+          display: flex;
+          align-items: center;
+
+          p {
+            margin-right: 40px;
+            font-size: 14px !important;
+          }
+
+          svg {
+            color: rgba($color: #8f8fa3, $alpha: 0.4);
+          }
+        }
+      }
+    }
+  }
+}
+
+// Responsive
+// extra Small devices 420px
+@media (max-width: 574px) {
+  .course-curriculum-area .curriculum-area-bottom .curriculum-description {
+    flex-direction: column;
+    align-items: flex-start !important;
+  }
+
+  .course-curriculum-area .curriculum-area-bottom .curriculum-description-end {
+    display: none;
+  }
+}

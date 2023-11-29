@@ -1,0 +1,39 @@
+.brands {
+  &__titleContent {
+    p {
+      font-family: 'Poppins', sans-serif;
+        font-weight: 400;
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .brands {
+    padding-bottom: 0px;
+  }
+}
+
+@media (max-width: 767px) {
+  .brands {
+    &__titleContent {
+      h4 {
+        font-size: 28px !important;
+        line-height: 38px !important;
+      }
+      p {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 400;
+      }
+    }
+  }
+}
+@media (min-width: 320px) and (max-width: 574px) {
+  .brands {
+    &__titleContent {
+      h4 {
+        font-size: 18px !important;
+        line-height: 28px !important;
+      }
+    }
+  }
+}

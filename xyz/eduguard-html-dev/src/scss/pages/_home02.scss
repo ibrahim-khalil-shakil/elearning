@@ -1,0 +1,1049 @@
+// Banner Starts Here
+
+.brand-area-image {
+  display: flex !important;
+  align-items: center;
+  height: 60px;
+}
+
+.banner-two {
+  &-start {
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    p {
+      max-width: 525px;
+      color: #666575;
+      font-size: 20px;
+      line-height: 28px;
+      margin-bottom: 30px;
+    }
+  }
+
+  &-end {
+    position: relative;
+    z-index: -1;
+    .image {
+      img {
+        position: relative;
+        z-index: 5;
+        border-radius: 10px;
+        border: 5px solid #ffffff;
+        filter: drop-shadow(0px 36px 70px rgba(10, 9, 86, 0.14));
+      }
+    }
+
+    .image-shapes {
+      img {
+        position: absolute;
+        z-index: 1;
+      }
+
+      .shape01 {
+        top: -110px;
+        left: -65px;
+      }
+
+      .shape02 {
+        top: -60px;
+        right: -60px;
+      }
+
+      .shape03 {
+        bottom: -60px;
+        right: -40px;
+      }
+    }
+  }
+}
+
+.home-top-feature {
+  position: relative;
+  margin-top: -150px;
+  @include max(991px) {
+    margin-top: 0px;
+    padding-top: 50px;
+  }
+}
+
+.banner-input {
+  display: flex;
+  width: 575px;
+  height: 75px;
+  padding-left: 50px;
+  padding-right: 10px;
+  position: relative;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 6px;
+  background: #ffffff;
+  box-shadow: 0px 32px 60px rgba(2, 100, 237, 0.08);
+  @include max(767px) {
+    width: 100%;
+  }
+
+  @include max(575px) {
+    height: auto;
+    padding: 18px;
+    flex-direction: column;
+  }
+  .main-input {
+    margin-left: 13px;
+    width: 315px;
+    @include max(575px) {
+      margin: 0px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+    @include max(480px) {
+      width: 100%;
+    }
+    svg {
+      top: 50%;
+      left: 30px;
+      color: #42414b;
+      position: absolute;
+      transform: translateY(-50%);
+      @include max(575px) {
+        position: static;
+        order: 1;
+        top: auto;
+        left: auto;
+        margin-right: 15px;
+        transform: translateY(0px);
+      }
+    }
+
+    input {
+      width: inherit;
+      border: none;
+      font-size: 16px;
+      line-height: 24px;
+      padding-left: 5px;
+      padding-right: 15px;
+      &::placeholder {
+        color: #8f8fa3;
+      }
+      @include max(575px) {
+        padding: 0px;
+        order: 2;
+      }
+    }
+  }
+
+  .search-button {
+    @include max(575px) {
+      width: 100%;
+    }
+    .button {
+      width: inherit;
+    }
+  }
+}
+// Intro Featured Starts Here
+.intro-featured {
+  padding-bottom: 100px;
+  margin-top: -150px;
+  z-index: 999;
+  position: relative;
+
+  .successful-instructor-feature {
+    cursor: pointer;
+
+    &:hover {
+      .successful-instructor-feature-image {
+        &.first-bg {
+          background-color: #00af91 !important;
+        }
+
+        &.second-bg {
+          background-color: #1089ff !important;
+        }
+
+        &.third-bg {
+          background-color: #ff7a1a !important;
+          color: white !important;
+        }
+      }
+    }
+  }
+
+  .successful-instructor-feature-image {
+    &.first-bg {
+      background-color: rgba(0, 175, 145, 0.1);
+      color: #00af91;
+    }
+
+    &.second-bg {
+      background-color: rgba(16, 137, 255, 0.1);
+      color: #1089ff;
+    }
+
+    &.third-bg {
+      background-color: rgba(255, 122, 26, 0.1);
+      color: #ff7a1a;
+    }
+  }
+}
+
+// Featured Categories Starts Here
+.featured-categories {
+  overflow: hidden;
+  h3 {
+    color: #202029 !important;
+    margin-bottom: 50px;
+  }
+
+  .category {
+    transition: 0.3s all linear;
+
+    &:hover {
+      .category__tittle {
+        a {
+          color: #0264ed;
+        }
+      }
+    }
+
+    &__img {
+      a {
+        display: block;
+      }
+    }
+  }
+
+  .btn-primary {
+    margin-top: 50px;
+  }
+}
+
+// Popular Courses Starts Here
+.featured-popular-courses {
+  &-heading {
+    .main-heading {
+      h3 {
+        color: #202029;
+      }
+    }
+
+    .nav-button {
+      .nav-pills {
+        border-bottom: 1px solid white;
+      }
+
+      .active {
+        color: #202029 !important;
+        position: relative;
+
+        &::after {
+          position: absolute;
+          content: '';
+          background-color: #0264ed;
+          height: 3px;
+          width: 100%;
+          border-radius: 70px;
+          bottom: 0px;
+          left: 0px;
+        }
+      }
+
+      .nav-link {
+        border: none;
+        font-size: 14px;
+        color: #666575;
+        padding-left: 0px;
+        padding-right: 0px;
+        margin-right: 24px;
+        background-color: transparent;
+      }
+    }
+  }
+
+  &-shape {
+    img {
+      position: absolute;
+    }
+
+    .shape-01 {
+      top: -25px;
+      right: 85px;
+    }
+
+    .shape-02 {
+      top: 350px;
+      left: 0;
+    }
+
+    .shape-03 {
+      bottom: 175px;
+      right: 85px;
+    }
+  }
+
+  .button {
+    margin-top: 30px;
+  }
+
+  .contentCard {
+    margin-bottom: 24px;
+  }
+}
+
+// Students Says Starts Here
+.students-says {
+  .testimonial__wrapper_title {
+    margin-bottom: 30px;
+
+    h3 {
+      color: #202029 !important;
+      margin-bottom: 40px;
+    }
+  }
+
+  .testimonial__wrapper_item p {
+    color: #666575 !important;
+    font-style: normal !important;
+  }
+
+  .testimonial__wrapper_item-author .author__img {
+    width: 64px;
+    height: 64px;
+
+    img {
+      max-width: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+  }
+
+  .testimonial__wrapper_item-author .author__name h6 {
+    color: #202029 !important;
+  }
+}
+
+// Brands Area Starts Here
+.brands-area-two {
+  padding-top: 40px;
+  padding-bottom: 100px;
+  &-heading {
+    max-width: 430px;
+
+    h4 {
+      color: #202029;
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 30px;
+      margin-bottom: 12px;
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 21px;
+      color: #8f8fa3;
+    }
+  }
+}
+
+// Instructor Featured Area Starts Here
+.best-instructor-featured {
+  h3 {
+    color: #202029 !important;
+  }
+  .ourinstructor__wrapper {
+    .slider-arrows {
+      .prev-arrow,
+      .next-arrow {
+        border-color: #ebebf2;
+      }
+    }
+  }
+}
+
+// Latest Events Featured Starts Here
+.latest-events-featured {
+  z-index: 1;
+  &.le-2 {
+    background-color: #fff;
+    .slider-arrows {
+      .prev-arrow,
+      .next-arrow {
+        border: 1px solid #ebebf2;
+      }
+    }
+  }
+  h3 {
+    color: #202029 !important;
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  .latest-events-shape {
+    img {
+      position: absolute;
+      user-select: none;
+      pointer-events: none;
+      &.shape-01 {
+        top: 0px;
+        left: 0px;
+      }
+
+      &.shape-02 {
+        bottom: 30px;
+        right: 0px;
+      }
+    }
+  }
+}
+
+// Get Started Starts Here
+.get-started {
+  background: rgba($color: #ebebf2, $alpha: 0.6);
+
+  &-area {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+
+    &::after {
+      position: absolute;
+      content: '';
+      width: 1px;
+      height: 150px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgba($color: #8f8fa3, $alpha: 0.4);
+    }
+  }
+
+  &-item {
+    max-width: 500px;
+
+    h6 {
+      color: #42414b;
+      margin-bottom: 10px;
+    }
+
+    p {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+// Get Started Ends Here
+.green-btn {
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 16px 24px;
+  border-radius: 3px;
+  background: #00af91;
+  text-transform: uppercase;
+  transition: 0.3s all linear;
+
+  &:hover {
+    color: white;
+    background: #0264ed;
+    box-shadow: 0px 10px 20px rgba(2, 100, 237, 0.25);
+  }
+}
+
+// Responsive
+@media (max-width: 1200px) {
+  // Homepage-01 Banner
+
+  .latest-events-featured .latest-events-shape img.shape-02 {
+    bottom: 0px;
+  }
+
+  .latest-events-featured .slider-arrows .slick-arrow {
+    top: auto;
+    bottom: -90px;
+  }
+  .brands-area-two-heading {
+    margin-top: 15px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  .featured-popular-courses-shape .shape-02,
+  .featured-popular-courses-shape .shape-03 {
+    display: none;
+  }
+
+  .testimonial__wrapper_title h3 {
+    font-size: 35px;
+  }
+
+  .get-started-area {
+    align-items: flex-start !important;
+  }
+
+  .get-started-item {
+    width: 48%;
+  }
+
+  .brand-area-image {
+    display: flex !important;
+  }
+}
+
+@media (max-width: 991px) {
+  // Homepage-01
+  .main-banner-end {
+    display: flex;
+    justify-content: center;
+    img {
+      height: 450px;
+      object-fit: cover;
+    }
+  }
+  .latest-events-featured .latest-events-shape img.shape-02 {
+    bottom: 30px;
+  }
+
+  // Homepage 03 = > Testimonial
+  .testimonial.students-says .testimonial__wrapper {
+    margin-left: 0px;
+  }
+  .students-says .testimonial__wrapper_title h3,
+  .students-says .testimonial__wrapper_title .h3 {
+    margin-bottom: 15px !important;
+  }
+  .students-says .testimonial__img .play-video {
+    right: 220px;
+  }
+  .testimonial__img .rectangle {
+    bottom: -15px;
+    left: -35px;
+  }
+  .testimonial__img .dot {
+    left: -45px;
+    bottom: auto;
+    top: -55px;
+  }
+}
+
+// Medium devices 768px - 991px
+@media (min-width: 768px) and (max-width: 991px) {
+  .banner-two {
+    clip-path: none !important;
+
+    &-start {
+      p {
+        font-size: 16px;
+      }
+    }
+
+    &-end {
+      .image-shapes {
+        display: none;
+      }
+    }
+  }
+
+  .intro-featured {
+    margin-top: 0 !important;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  .featured-categories {
+    h3 {
+      margin-bottom: 0;
+    }
+
+    .category__img {
+      margin-top: 25px;
+    }
+
+    .category__img img {
+      width: 100%;
+    }
+
+    .btn-primary {
+      margin-top: 20px;
+    }
+  }
+
+  .featured-popular-courses {
+    &-shape {
+      display: none;
+    }
+
+    &-heading {
+      margin-bottom: 20px;
+      flex-direction: column;
+
+      .main-heading {
+        text-align: center;
+      }
+    }
+
+    .tab-content .btn-primary {
+      margin-top: 20px;
+    }
+  }
+
+  .students-says {
+    .testimonial__img {
+      margin-bottom: 0;
+      height: auto;
+      width: 100%;
+      margin-left: 0;
+    }
+
+    .testimonial__wrapper {
+      margin-left: 0;
+    }
+
+    .testimonial__wrapper_title {
+      margin-bottom: 15px;
+      margin-top: 20px;
+    }
+
+    .testimonial__wrapper_item-author .author__img img {
+      width: auto !important;
+      height: auto !important;
+    }
+
+    .testimonial__wrapper_item-author {
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    .testimonial__wrapper_item p {
+      font-size: 14px !important;
+    }
+  }
+
+  .brand-area-image {
+    display: flex !important;
+  }
+
+  .brands-area-two {
+    padding-top: 0;
+  }
+
+  .get-started {
+    &-area {
+      flex-direction: column;
+
+      &::after {
+        display: none !important;
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  // Testimonial => Homepage 02
+  .students-says .testimonial__img .play-video {
+    right: 50%;
+    transform: translate(-50%, -50%) !important;
+  }
+  .students-says .testimonial__img {
+    margin-bottom: 15px !important;
+  }
+  .students-says .testimonial__item p {
+    font-size: 14px;
+    line-height: 24px;
+  }
+  .students-says .testimonial__user-info h6,
+  .testimonial__user-info .h6 {
+    font-size: 14px;
+    line-height: 14px;
+  }
+  .students-says .testimonial__user-info span {
+    font-size: 12px;
+    line-height: 12px;
+  }
+  .students-says .testimonial__item-star li svg {
+    height: 18px;
+  }
+  .students-says .testimonial__item-star li {
+    margin-right: 0px;
+  }
+}
+
+// Small devices 575px - 767px
+@media (min-width: 575px) and (max-width: 767px) {
+  .banner-two {
+    clip-path: none !important;
+
+    &-end {
+      .image-shapes {
+        display: none;
+      }
+    }
+  }
+
+  .intro-featured {
+    margin-top: 0 !important;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  .featured-categories {
+    h3 {
+      margin-bottom: 0;
+    }
+
+    .category__img {
+      margin-top: 25px;
+    }
+
+    .category__img img {
+      width: 100%;
+    }
+
+    .btn-primary {
+      margin-top: 20px;
+    }
+  }
+
+  .featured-popular-courses {
+    &-shape {
+      display: none;
+    }
+
+    &-heading {
+      margin-bottom: 20px;
+      flex-direction: column;
+
+      .main-heading {
+        text-align: center;
+      }
+    }
+
+    .tab-content .btn-primary {
+      margin-top: 20px;
+    }
+  }
+
+  .students-says {
+    .testimonial__img {
+      margin-bottom: 0;
+      height: auto;
+      width: 100%;
+      margin-left: 0;
+    }
+
+    .testimonial__wrapper {
+      margin-left: 0;
+    }
+
+    .testimonial__wrapper_title {
+      margin-bottom: 15px;
+      margin-top: 20px;
+    }
+
+    .testimonial__wrapper_item-author .author__img img {
+      width: auto !important;
+      height: auto !important;
+    }
+
+    .testimonial__wrapper_item-author {
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    .testimonial__wrapper_item p {
+      font-size: 14px !important;
+    }
+  }
+
+  .brand-area-image {
+    display: flex !important;
+  }
+
+  .brands-area-two {
+    padding-top: 0;
+  }
+
+  .latest-events-featured h3 {
+    margin-bottom: 20px;
+  }
+
+  .get-started {
+    &-area {
+      flex-direction: column;
+
+      &::after {
+        display: none !important;
+      }
+    }
+  }
+
+  // Testimonial => Homepag -02
+
+  .testimonial__img .rectangle {
+    left: auto;
+    right: 0px;
+  }
+  .testimonial__img .dot {
+    left: auto;
+    right: 0;
+  }
+}
+
+// extra Small devices 420px
+@media (max-width: 420px) {
+  .banner-two {
+    clip-path: none !important;
+
+    &-end {
+      .image-shapes {
+        display: none;
+      }
+    }
+  }
+
+  .intro-featured {
+    margin-top: 0 !important;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  .featured-categories {
+    h3 {
+      margin-bottom: 0;
+    }
+
+    .category__img {
+      margin-top: 25px;
+    }
+
+    .category__img img {
+      width: 100%;
+    }
+
+    .btn-primary {
+      margin-top: 20px;
+    }
+  }
+
+  .featured-popular-courses {
+    &-shape {
+      display: none;
+    }
+
+    &-heading {
+      margin-bottom: 20px;
+      flex-direction: column;
+
+      .main-heading {
+        text-align: center;
+      }
+    }
+
+    .tab-content .btn-primary {
+      margin-top: 20px;
+    }
+  }
+
+  .students-says {
+    .testimonial__img {
+      height: auto;
+      width: 100%;
+      margin-left: 0;
+
+      .rectangle,
+      .dot {
+        display: none;
+      }
+    }
+
+    .testimonial__wrapper_title {
+      margin-bottom: 15px;
+      margin-top: 0px;
+    }
+
+    .testimonial__wrapper_item-author .author__img img {
+      width: auto !important;
+      height: auto !important;
+    }
+
+    .testimonial__wrapper_item-author {
+      flex-direction: column;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    .testimonial__wrapper_item p {
+      font-size: 14px !important;
+    }
+  }
+
+  .banner-two-start p {
+    font-size: 16px !important;
+  }
+
+  .brands-area-two {
+    padding-top: 0;
+  }
+
+  .latest-events-featured h3 {
+    margin-bottom: 20px;
+  }
+
+  .get-started {
+    &-area {
+      flex-direction: column;
+
+      &::after {
+        display: none !important;
+      }
+    }
+  }
+
+  .brand-area-image {
+    display: flex !important;
+  }
+}
+
+// Small devices 420px - 574px
+@media (min-width: 420px) and (max-width: 574px) {
+  .banner-two {
+    clip-path: none !important;
+
+    &-end {
+      .image-shapes {
+        display: none;
+      }
+    }
+  }
+
+  .intro-featured {
+    margin-top: 0 !important;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  .featured-categories {
+    h3 {
+      margin-bottom: 0;
+    }
+
+    .category__img {
+      margin-top: 25px;
+    }
+
+    .category__img img {
+      width: 100%;
+    }
+
+    .btn-primary {
+      margin-top: 20px;
+    }
+  }
+
+  .featured-popular-courses {
+    &-shape {
+      display: none;
+    }
+
+    &-heading {
+      margin-bottom: 20px;
+      flex-direction: column;
+
+      .main-heading {
+        text-align: center;
+      }
+    }
+
+    .tab-content .btn-primary {
+      margin-top: 20px;
+    }
+  }
+
+  .students-says {
+    .testimonial__img {
+      height: auto;
+      width: 100%;
+      margin-left: 0;
+
+      .rectangle,
+      .dot {
+        display: none;
+      }
+    }
+
+    .testimonial__wrapper {
+      margin-left: 0;
+    }
+
+    .testimonial__wrapper_title {
+      margin-bottom: 15px;
+      margin-top: 20px;
+    }
+
+    .testimonial__wrapper_item-author .author__img img {
+      width: auto !important;
+      height: auto !important;
+    }
+
+    .testimonial__wrapper_item-author {
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    .testimonial__wrapper_item p {
+      font-size: 14px !important;
+    }
+  }
+
+  .brand-area-image {
+    display: flex !important;
+  }
+
+  .brands-area-two {
+    padding-top: 0;
+  }
+
+  .latest-events-featured h3 {
+    margin-bottom: 20px;
+  }
+
+  .get-started {
+    &-area {
+      flex-direction: column;
+
+      &::after {
+        display: none !important;
+      }
+    }
+  }
+}
+
+@media (min-width: 320px) and (max-width: 574px) {
+  .featured-popular-courses-heading .nav-button .nav-pills {
+    justify-content: center;
+  }
+  .latest-events-shape {
+    display: none;
+  }
+  .testimonial__wrapper {
+    padding-left: 0px;
+  }
+  .students-says .testimonial__wrapper_item-author {
+    align-items: flex-start;
+  }
+  .students-says .testimonial__wrapper_item-author .author__name h6,
+  .students-says .testimonial__wrapper_item-author .author__name .h6 {
+    font-size: 18px !important;
+    line-height: 28px !important;
+  }
+  .students-says .testimonial__wrapper_item-author .review {
+    margin-left: 75px;
+  }
+
+  // Testimonial => Homepage 02
+  .students-says .testimonial__img .play-video {
+    right: 65px;
+  }
+}

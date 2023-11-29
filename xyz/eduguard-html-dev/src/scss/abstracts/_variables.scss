@@ -1,0 +1,32 @@
+// color
+$colors: (
+  black: #191922,
+  black-second: #202029,
+  lightBlack: #35343e,
+  light: #c4c4c4,
+  gray: #666575,
+  lowBlack: #908fa5,
+  ash: #ebebf2,
+  primary: #1089ff,
+  secondary: #0264ed,
+  tertiary: #ff7a1a,
+  warning: #ffc91b,
+  danger: #f15c4c,
+  success: #00af91,
+  dark: #42414b,
+);
+
+// colors
+$success: #00af91;
+$danger: #f15c4c;
+$black50: #908fa5;
+$black90: #35343e;
+$white: #fff;
+$warning: #ffc91b;
+$primary: #1089ff;
+$black: #191922;
+$tertiary: #ff7a1a;
+
+@function color($color-name) {
+  @return map-get($map: $colors, $key: $color-name);
+}

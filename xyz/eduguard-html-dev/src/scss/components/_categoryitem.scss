@@ -1,0 +1,128 @@
+.categories {
+  .category {
+    margin: 50px 15px;
+    margin-top: 0px;
+  }
+}
+
+.categoryitem {
+  padding: 140px 0;
+}
+.category {
+  &__img {
+    img {
+      border-radius: 6px;
+    }
+  }
+  &__tittle {
+    background-color: white;
+    margin: 0 20px;
+    margin-top: -50px;
+    text-align: center;
+    position: relative;
+    padding: 20px 0;
+    border-radius: 4px;
+    transition: 0.3s;
+    border: 1px solid #ebebf2;
+    h6 {
+      font-size: 20px;
+      line-height: 30px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      a {
+        color: #42414b;
+      }
+    }
+    span {
+      font-size: 14px;
+      line-height: 1.5;
+      color: color(lowBlack);
+    }
+  }
+  &:hover {
+    .category {
+      &__tittle {
+        border: transparent;
+        box-shadow: 0px 24px 50px rgba(9, 8, 78, 0.1);
+        h6 {
+          color: color(primary);
+        }
+      }
+    }
+  }
+}
+
+/*------------------------*/
+/*-------RESPOSIVE---------*/
+/*-------------------------*/
+
+@media (max-width: 991px) {
+  .category__tittle h6,
+  .category__tittle .h6 {
+    font-size: 24px !important;
+    line-height: 34px !important;
+  }
+}
+
+// Medium devices 768px - 991px
+@media (min-width: 768px) and (max-width: 991px) {
+  .categoryitem {
+    padding: 50px 0;
+
+    .category {
+      margin-bottom: 40px;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .category__tittle h6,
+  .category__tittle .h6,
+  .category__tittle .h6 {
+    font-size: 18px !important;
+    line-height: 28px !important;
+  }
+}
+
+// Small devices 575px - 767px
+@media (min-width: 575px) and (max-width: 767px) {
+  .categoryitem {
+    padding: 50px 0;
+
+    .category {
+      margin-bottom: 30px;
+      &__tittle {
+        h6 {
+          font-size: 18px;
+        }
+        span {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}
+
+// Small devices 420px - 574px
+@media (min-width: 420px) and (max-width: 574px) {
+  .categoryitem {
+    padding: 50px 0;
+
+    .category {
+      margin-bottom: 30px;
+      &__tittle {
+        padding: 25px 0;
+        h6 {
+          font-size: 20px;
+        }
+        span {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+
+// extra Small devices 420px
+@media (max-width: 420px) {
+}

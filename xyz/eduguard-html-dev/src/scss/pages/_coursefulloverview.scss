@@ -1,0 +1,37 @@
+// Course Full Overview Starts Here
+.coursefull-overview-area {
+  &-wizard {
+    max-width: 815px;
+    margin-bottom: 20px;
+
+    h6 {
+      color: #42414b !important;
+      margin-bottom: 10px;
+    }
+
+    &-list {
+      margin-top: 8px;
+
+      .list-icon {
+        svg {
+          stroke: #202029;
+        }
+
+        &-dot {
+          width: 5px;
+          height: 5px;
+          background-color: #666575;
+          border-radius: 50%;
+        }
+      }
+
+      .list-text {
+        margin-left: 10px;
+
+        p {
+          color: #666575 !important;
+        }
+      }
+    }
+  }
+}

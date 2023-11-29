@@ -1,0 +1,107 @@
+.mentor {
+  &:hover {
+    .mentor__img {
+      .list-inline {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+    .mentor__title {
+      h6 {
+        a {
+          color: rgba(2, 100, 237, 1);
+        }
+      }
+    }
+  }
+
+  &__img {
+    position: relative;
+    width: 100%;
+    height: 270px;
+    overflow: hidden;
+    border-radius: 5px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    img {
+      width: inherit;
+      height: inherit;
+      object-fit: cover;
+    }
+  }
+
+  &__title {
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ebebf2;
+    h6 {
+      font-size: 20px;
+      line-height: 1.5;
+      font-weight: 600;
+    }
+    p {
+      color: color(lowBlack);
+      font-size: 14px;
+      line-height: 1.5;
+    }
+  }
+
+  .mentor__img {
+    position: relative;
+
+    .list-inline {
+      z-index: 1;
+      position: absolute;
+      left: 50%;
+      bottom: 0px;
+      transform: translate(-50%);
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding-bottom: 25px;
+      background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0) 55.21%,
+        rgba(0, 0, 0, 0.8) 100%
+      );
+      border-radius: 6px;
+      transition: all 0.2s linear;
+      opacity: 0;
+      visibility: hidden;
+      li {
+        margin-right: 10px;
+        &:nth-last-child(1) {
+          margin-right: 0px;
+        }
+        a {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 36px;
+          width: 36px;
+          border-radius: 3px;
+          background-color: white;
+          transition: 0.3s all linear;
+          &:hover {
+            background-color: color(primary);
+            svg {
+              path {
+                transition: 0.3s all linear;
+                fill: white;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  &__title {
+    h6 {
+      a {
+        color: #42414b;
+      }
+    }
+  }
+}

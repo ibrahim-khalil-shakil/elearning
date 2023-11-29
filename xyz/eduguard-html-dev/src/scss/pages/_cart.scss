@@ -1,0 +1,228 @@
+.cart-area {
+  padding-top: 50px;
+  &__label {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+    margin-bottom: 30px;
+    text-transform: capitalize;
+  }
+
+  .cart-wizard-area {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: #fff;
+    .image {
+      width: 200px;
+      height: 175px;
+      flex-shrink: 0;
+      overflow: hidden;
+
+      img {
+        width: inherit;
+        height: inherit;
+        object-fit: cover;
+      }
+    }
+
+    .text {
+      padding: 0px 20px;
+      h6 {
+        font-weight: 500;
+        font-size: 20px;
+
+        a {
+          color: #202029;
+        }
+      }
+
+      p {
+        font-size: 16px;
+        line-height: 24px;
+        color: #8f8fa3;
+        margin-top: 7px;
+        margin-bottom: 10px;
+
+        a {
+          color: #8f8fa3;
+        }
+      }
+
+      .bottom-wizard {
+        p {
+          color: #202029 !important;
+
+          font-weight: 500;
+          font-size: 18px !important;
+
+          span {
+            color: #8f8fa3 !important;
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+
+  .summery-wizard {
+    background-color: #ffffff;
+    padding: 40px 30px;
+    border-radius: 5px;
+
+    &-text {
+      padding: 12px 0px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba($color: #8f8fa3, $alpha: 0.3);
+
+      h6 {
+        color: #666575 !important;
+
+        font-weight: 500;
+        font-size: 16px !important;
+      }
+    }
+
+    form {
+      label {
+        color: #202029;
+
+        font-weight: 500;
+        font-size: 14px;
+        margin-bottom: 5px;
+      }
+
+      .cart-input {
+        position: relative;
+
+        input {
+          height: 56px;
+          border-radius: 4px;
+          border-color: rgba($color: #8f8fa3, $alpha: 0.3);
+
+          &:focus {
+            box-shadow: none !important;
+          }
+        }
+
+        .sm-button {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          right: 5px;
+          height: 43px;
+          width: 85px;
+          background-color: #00af91;
+          border: 1px solid transparent;
+          border-radius: 4px;
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+.total-wizard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 12px;
+  margin-bottom: 30px !important;
+
+  p.font-title--card {
+    font-weight: 400;
+  }
+}
+
+// Responsive
+
+@media (max-width: 1200px) {
+  .cart-area {
+    padding-top: 0px;
+  }
+  .cart-area .cart-wizard-area .text {
+    width: 100%;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  .cart-area {
+    .cart-wizard-area {
+      .image {
+        display: none;
+      }
+
+      .text {
+        border-radius: 5px;
+
+        h6 {
+          font-size: 18px;
+        }
+      }
+    }
+
+    form label {
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .cart-area {
+    .cart-wizard-area {
+      .text h6 {
+        margin-left: 0px;
+      }
+    }
+  }
+
+  .cart-area .cart-wizard-area .text {
+    max-width: 100%;
+  }
+}
+
+// Medium devices 768px - 991px
+@media (min-width: 768px) and (max-width: 991px) {
+  .cart-area {
+    form label {
+      margin-top: 10px;
+      margin-bottom: 10px !important;
+    }
+  }
+}
+
+// extra Small devices 420px
+@media (max-width: 767px) {
+  .cart-area {
+    .cart-wizard-area {
+      flex-direction: column;
+      align-items: flex-start;
+      .image {
+        display: none;
+      }
+
+      .text {
+        border-radius: 5px !important;
+      }
+    }
+
+    form label {
+      margin-top: 10px;
+      margin-bottom: 10px !important;
+    }
+  }
+
+  .cart-area .summery-wizard {
+    padding: 20px 15px;
+  }
+
+  .cart-area .cart-wizard-area .text p {
+    font-size: 14px;
+    line-height: 24px;
+  }
+}

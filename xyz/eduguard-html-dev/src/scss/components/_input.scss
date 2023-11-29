@@ -1,0 +1,23 @@
+.inputForm {
+  position: relative;
+
+  input {
+    padding: 16px 20px;
+    border: 1px solid #8f8fa3;
+    &::placeholder {
+      font-size: 16px;
+      line-height: 24px;
+      color: #666575;
+    }
+    &:focus {
+      outline: none;
+      box-shadow: none;
+    }
+  }
+  button {
+    position: absolute;
+    top: 50%;
+    right: 6px;
+    transform: translateY(-50%);
+  }
+}

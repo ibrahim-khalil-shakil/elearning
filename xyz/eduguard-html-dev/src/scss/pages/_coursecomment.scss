@@ -1,0 +1,78 @@
+// Lesson Comments Starts Here
+.lesson-comments {
+  max-width: 800px;
+
+  .feedback-comment form {
+    margin-top: 10px;
+  }
+}
+
+// Responsive
+
+@media (max-width: 420px) {
+  .lesson-comments {
+    .students-feedback {
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .students-feedback-heading {
+      align-items: flex-start !important;
+    }
+  }
+}
+
+// Small devices 420px - 574px
+@media (min-width: 420px) and (max-width: 574px) {
+  .lesson-comments {
+    .students-feedback {
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .students-feedback-heading {
+      align-items: flex-start !important;
+    }
+  }
+}
+
+// Small devices 575px - 767px
+@media (min-width: 575px) and (max-width: 767px) {
+  .lesson-comments {
+    .students-feedback {
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .students-feedback-heading {
+      align-items: flex-start !important;
+    }
+  }
+}
+
+// Medium devices 768px - 991px
+@media (min-width: 768px) and (max-width: 991px) {
+  .lesson-comments {
+    .students-feedback {
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .students-feedback-heading {
+      align-items: flex-start !important;
+    }
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  .lesson-comments {
+    .students-feedback {
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .students-feedback-heading {
+      align-items: flex-start !important;
+    }
+  }
+}

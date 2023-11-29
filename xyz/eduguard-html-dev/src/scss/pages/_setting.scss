@@ -1,0 +1,111 @@
+.white-bg {
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 5px;
+}
+
+.students-info-form {
+  form {
+    margin-top: 10px;
+
+    button {
+      text-transform: uppercase;
+    }
+
+    label {
+      color: #202029;
+      font-family: 'Poppins', sans-serif;
+        font-weight: 500;
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+
+    input {
+      height: 56px !important;
+      margin-bottom: 16px;
+      border: 1px solid rgba($color: #8f8fa3, $alpha: 0.3) !important;
+      border-radius: 4px !important;
+
+      &:focus {
+        box-shadow: none !important;
+      }
+    }
+
+    .input-with-icon {
+      position: relative;
+
+      .input-icon {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 22px;
+        color: #8f8fa3;
+      }
+    }
+  }
+}
+
+.change-image-wizard {
+  .image {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 20px;
+
+    img {
+      border-radius: 50%;
+      object-fit: cover;
+      max-width: 100%;
+    }
+  }
+
+  p {
+    font-size: 12px;
+    line-height: 15px;
+    color: #8f8fa3;
+    text-align: center;
+    margin-top: 10px;
+  }
+}
+
+// Responsive
+@media (max-width: 991px) {
+  .white-bg {
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 767px) {
+  .students-info-form {
+    form {
+      .row {
+        .col-lg-6 {
+          &:nth-child(2) {
+            margin-top: 0px;
+          }
+        }
+      }
+    }
+  }
+  .white-bg {
+    padding-bottom: 35px;
+  }
+}
+
+@media (max-width: 991px) {
+  .students-info-form {
+    form {
+      input {
+        height: 48px !important;
+      }
+    }
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  .change-image-wizard {
+    .image {
+      width: 150px;
+      height: 150px;
+    }
+  }
+}

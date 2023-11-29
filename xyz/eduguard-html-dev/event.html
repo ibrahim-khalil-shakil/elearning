@@ -1,0 +1,1226 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Event Details Overview-Eduguard</title>
+        <link rel="stylesheet" href="dist/main.css" />
+        <link rel="icon" type="image/png" href="dist/images/favicon/favicon.png" />
+    </head>
+
+    <body style="background-color: #ebebf2;" onload="loader()">
+        <div class="loader">
+            <span class="loader-spinner">Loading...</span>
+        </div>
+        <!-- Header Starts Here -->
+        <header>
+            <nav class="navbar navbar-expand-xl navbar-light bg-transparent">
+                <div class="container">
+                    <!-- Logo -->
+                    <a class="navbar-brand" href="index.html">
+                        <img src="dist/images/logo/logo.png" alt="Logo" class="img-fluid" />
+                    </a>
+
+                    <button class="menu-icon-container">
+                        <span class="menu-icon"></span>
+                    </button>
+
+                    <!-- Navbar Item -->
+                    <div class="collapse navbar-collapse d-none d-xl-block" id="navbarSupportedContent">
+                        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="#">
+                                    Home
+                                </a>
+                                <div class="nav-item--dropdown">
+                                    <ul>
+                                        <li><a href="index.html">Homepage 01</a></li>
+                                        <li><a href="home-02.html">Homepage 02</a></li>
+                                        <li><a href="home-03.html">Homepage 03</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="#">
+                                    Course
+                                </a>
+                                <div class="nav-item--dropdown">
+                                    <ul>
+                                        <li><a href="course-search.html">search course list</a></li>
+                                        <li><a href="course-details.html">course details</a></li>
+                                        <li><a href="watch.html">Watch Course</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="about.html">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">
+                                    Events
+                                </a>
+                                <div class="nav-item--dropdown">
+                                    <ul>
+                                        <li><a href="event-search.html">Events Search list</a></li>
+                                        <li class="active"><a href="event.html">Event Details</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    Pages
+                                </a>
+                                <div class="nav-item--dropdown">
+                                    <ul>
+                                        <li>
+                                            <a href="#">
+                                                My Account
+                                            </a>
+                                            <div class="nav-item--subDropdown">
+                                                <ul>
+                                                    <li><a href="students-profile.html">Students Profile</a></li>
+                                                    <li><a href="signin.html">Sign in</a></li>
+                                                    <li><a href="signup.html">Sign up</a></li>
+                                                    <li><a href="verify.html">Verify Email</a></li>
+                                                    <li><a href="forget-password.html">Forget Password</a></li>
+                                                    <li><a href="reset-password.html">Reset Password</a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li><a href="instructor-profile.html">Instructor Profile</a></li>
+                                        <li><a href="become-instructor.html">Become Instructor</a></li>
+                                        <li><a href="cart.html">cart</a></li>
+                                        <li><a href="checkout.html">Check out</a></li>
+
+                                        <li><a href="faq.html">Faq</a></li>
+                                        <li><a href="404.html">404</a></li>
+                                        <li><a href="comingsoon.html">Coming Soon</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="contact.html">Contact</a>
+                            </li>
+                        </ul>
+                        <div class="d-flex align-items-center rightContent rightContent-2">
+                            <form action="#" class="header__Search-form" id="searchForm">
+                                <button type="button" class="border-0 bg-transparent header__Search-button" onclick="openSearch()">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="9.19522" cy="9.19518" r="7.61714" stroke="#35343E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></circle>
+                                        <path d="M15.0493 15.4866L18.3493 18.778" stroke="#35343E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                </button>
+                                <div id="myOverlay" class="overlay">
+                                    <span class="closebtn" onclick="closeSearch()" title="Close Overlay">×</span>
+                                    <div class="overlay-content">
+                                        <div>
+                                            <input type="text" placeholder="Search.." name="search" />
+                                            <button type="submit">
+                                                <svg
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    width="24"
+                                                    height="24"
+                                                    viewBox="0 0 24 24"
+                                                    fill="none"
+                                                    stroke="#ffff"
+                                                    stroke-width="2"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                    class="feather feather-search"
+                                                >
+                                                    <circle cx="11" cy="11" r="8"></circle>
+                                                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            <a href="cart.html" class="cart-nav border-0 bg-transparent ms-4 me-1">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        fill-rule="evenodd"
+                                        clip-rule="evenodd"
+                                        d="M2.87778 2.51099L2.77634 2.50038C2.40716 2.48688 2.07562 2.74796 2.01087 3.12209L2.00026 3.22354C1.98676 3.59272 2.24784 3.92426 2.62197 3.98901L4.13098 4.25L5.04551 15.1457L5.06443 15.3095C5.24843 16.5519 6.31708 17.486 7.58988 17.486H18.5019L18.6662 17.4808C19.8626 17.4044 20.8545 16.4996 21.0291 15.2978L21.9781 8.73941L21.9945 8.58877C22.0819 7.38969 21.132 6.349 19.9089 6.349H5.81198L5.57725 3.54727L5.55956 3.43641C5.49112 3.14809 5.25673 2.92273 4.95778 2.87099L2.87778 2.51099ZM7.47394 15.9797C6.97867 15.9255 6.58258 15.5277 6.54028 15.0207L5.93798 7.849H19.9089L19.997 7.85548C20.3128 7.90242 20.5409 8.19769 20.4936 8.52465L19.5446 15.0826L19.5208 15.1998C19.4005 15.6584 18.985 15.986 18.5019 15.986H7.58988L7.47394 15.9797ZM5.90828 20.5853C5.90828 19.7492 6.58595 19.0703 7.42228 19.0703C8.25849 19.0703 8.93728 19.7491 8.93728 20.5853C8.93728 21.4216 8.25838 22.0993 7.42228 22.0993C6.58606 22.0993 5.90828 21.4215 5.90828 20.5853ZM17.1597 20.5853C17.1597 19.7491 17.8385 19.0703 18.6747 19.0703C19.5109 19.0703 20.1897 19.7491 20.1897 20.5853C20.1897 21.4216 19.5108 22.0993 18.6747 22.0993C17.8386 22.0993 17.1597 21.4216 17.1597 20.5853ZM17.6484 10.795C17.6484 10.3808 17.3126 10.045 16.8984 10.045H14.1254L14.0236 10.0518C13.6575 10.1015 13.3754 10.4153 13.3754 10.795C13.3754 11.2092 13.7112 11.545 14.1254 11.545H16.8984L17.0001 11.5382C17.3662 11.4885 17.6484 11.1747 17.6484 10.795Z"
+                                        fill="#35343E"
+                                    ></path>
+                                </svg>
+                                <span class="badge bg-primary">2</span>
+                                <span class="visually-hidden">Items Added</span>
+                            </a>
+                            <div class="user-image ms-3">
+                                <a href="students-profile.html">
+                                    <img src="dist/images/ellipse/user.jpg" alt="User" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="navbar-mobile">
+                        <div>
+                            <div class="navbar-mobile__top">
+                                <a href="index.html"> <img src="dist/images/logo/logo.png" alt="brand" class="img-fluid" /> </a>
+                                <div>
+                                    <a href="cart.html" class="cart-nav">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                fill-rule="evenodd"
+                                                clip-rule="evenodd"
+                                                d="M2.87778 2.51099L2.77634 2.50038C2.40716 2.48688 2.07562 2.74796 2.01087 3.12209L2.00026 3.22354C1.98676 3.59272 2.24784 3.92426 2.62197 3.98901L4.13098 4.25L5.04551 15.1457L5.06443 15.3095C5.24843 16.5519 6.31708 17.486 7.58988 17.486H18.5019L18.6662 17.4808C19.8626 17.4044 20.8545 16.4996 21.0291 15.2978L21.9781 8.73941L21.9945 8.58877C22.0819 7.38969 21.132 6.349 19.9089 6.349H5.81198L5.57725 3.54727L5.55956 3.43641C5.49112 3.14809 5.25673 2.92273 4.95778 2.87099L2.87778 2.51099ZM7.47394 15.9797C6.97867 15.9255 6.58258 15.5277 6.54028 15.0207L5.93798 7.849H19.9089L19.997 7.85548C20.3128 7.90242 20.5409 8.19769 20.4936 8.52465L19.5446 15.0826L19.5208 15.1998C19.4005 15.6584 18.985 15.986 18.5019 15.986H7.58988L7.47394 15.9797ZM5.90828 20.5853C5.90828 19.7492 6.58595 19.0703 7.42228 19.0703C8.25849 19.0703 8.93728 19.7491 8.93728 20.5853C8.93728 21.4216 8.25838 22.0993 7.42228 22.0993C6.58606 22.0993 5.90828 21.4215 5.90828 20.5853ZM17.1597 20.5853C17.1597 19.7491 17.8385 19.0703 18.6747 19.0703C19.5109 19.0703 20.1897 19.7491 20.1897 20.5853C20.1897 21.4216 19.5108 22.0993 18.6747 22.0993C17.8386 22.0993 17.1597 21.4216 17.1597 20.5853ZM17.6484 10.795C17.6484 10.3808 17.3126 10.045 16.8984 10.045H14.1254L14.0236 10.0518C13.6575 10.1015 13.3754 10.4153 13.3754 10.795C13.3754 11.2092 13.7112 11.545 14.1254 11.545H16.8984L17.0001 11.5382C17.3662 11.4885 17.6484 11.1747 17.6484 10.795Z"
+                                                fill="#35343E"
+                                            ></path>
+                                        </svg>
+                                        <span class="badge bg-primary">2</span> <span class="visually-hidden">Items Added</span>
+                                    </a>
+                                    <button class="navbar-mobile--cross">
+                                        <svg width="20" height="19" viewBox="0 0 20 19" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M14.5967 4.59668L5.40429 13.7891" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                            <path d="M5.40332 4.59668L14.5957 13.7891" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="navbar-mobile__menu">
+                                <ul class="navbar-mobile__menu-list">
+                                    <li class="navbar-mobile__menu-item">
+                                        <a href="#">
+                                            <span class="navbar-mobile__menu-link">
+                                                Home
+                                            </span>
+                                            <span class="navbar-mobile__menu-dropicon">
+                                                <svg
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    width="24"
+                                                    height="24"
+                                                    viewBox="0 0 24 24"
+                                                    fill="none"
+                                                    stroke="currentColor"
+                                                    stroke-width="2"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                    class="feather feather-chevron-right"
+                                                >
+                                                    <polyline points="9 18 15 12 9 6"></polyline>
+                                                </svg>
+                                            </span>
+                                        </a>
+                                        <ul class="navbar-mobile__menu-dropmenu">
+                                            <li><a href="index.html">Homepage 01</a></li>
+                                            <li><a href="home-02.html">Homepage 02</a></li>
+                                            <li><a href="home-03.html">Homepage 03</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="navbar-mobile__menu-item">
+                                        <a href="#">
+                                            <span class="navbar-mobile__menu-link">
+                                                Courses
+                                            </span>
+                                            <span class="navbar-mobile__menu-dropicon">
+                                                <svg
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    width="24"
+                                                    height="24"
+                                                    viewBox="0 0 24 24"
+                                                    fill="none"
+                                                    stroke="currentColor"
+                                                    stroke-width="2"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                    class="feather feather-chevron-right"
+                                                >
+                                                    <polyline points="9 18 15 12 9 6"></polyline>
+                                                </svg>
+                                            </span>
+                                        </a>
+                                        <ul class="navbar-mobile__menu-dropmenu">
+                                            <li><a href="course-search.html">search course list</a></li>
+                                            <li><a href="course-details.html">Course details</a></li>
+                                            <li><a href="watch.html">Watch Course</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="navbar-mobile__menu-item">
+                                        <a href="about.html">
+                                            <span class="navbar-mobile__menu-link">
+                                                About
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li class="active navbar-mobile__menu-item">
+                                        <a href="#">
+                                            <span class="navbar-mobile__menu-link">
+                                                Events
+                                            </span>
+                                            <span class="navbar-mobile__menu-dropicon">
+                                                <svg
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    width="24"
+                                                    height="24"
+                                                    viewBox="0 0 24 24"
+                                                    fill="none"
+                                                    stroke="currentColor"
+                                                    stroke-width="2"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                    class="feather feather-chevron-right"
+                                                >
+                                                    <polyline points="9 18 15 12 9 6"></polyline>
+                                                </svg>
+                                            </span>
+                                        </a>
+                                        <ul class="navbar-mobile__menu-dropmenu">
+                                            <li><a href="event-search.html">Events Search list</a></li>
+                                            <li><a href="event.html" class="active">Event Details</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="navbar-mobile__menu-item">
+                                        <a href="#">
+                                            <span class="navbar-mobile__menu-link">
+                                                Pages
+                                            </span>
+                                            <span class="navbar-mobile__menu-dropicon">
+                                                <svg
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    width="24"
+                                                    height="24"
+                                                    viewBox="0 0 24 24"
+                                                    fill="none"
+                                                    stroke="currentColor"
+                                                    stroke-width="2"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                    class="feather feather-chevron-right"
+                                                >
+                                                    <polyline points="9 18 15 12 9 6"></polyline>
+                                                </svg>
+                                            </span>
+                                        </a>
+                                        <ul class="navbar-mobile__menu-dropmenu">
+                                            <li><a href="students-profile.html">Students Profile</a></li>
+                                            <li><a href="instructor-profile.html">Instructor Profile</a></li>
+                                            <li><a href="become-instructor.html">become Instructor</a></li>
+                                            <li><a href="cart.html">Cart</a></li>
+                                            <li><a href="checkout.html">Check out</a></li>
+                                            <li><a href="faq.html">Faq</a></li>
+                                            <li><a href="signin.html">Sign in</a></li>
+                                            <li><a href="signup.html">Sign up</a></li>
+                                            <li><a href="verify.html">Verify Email</a></li>
+                                            <li><a href="forget-password.html">Forget Password</a></li>
+                                            <li><a href="reset-password.html">Reset Password</a></li>
+                                            <li><a href="404.html">404</a></li>
+                                            <li><a href="comingsoon.html">coming soon</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="navbar-mobile__menu-item">
+                                        <a href="contact.html">
+                                            <span class="navbar-mobile__menu-link">
+                                                Contact
+                                            </span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="nav-mobile__footer">
+                            <ul class="social-icons social-icons--outline justify-content-center">
+                                <li>
+                                    <a href="#">
+                                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M17.9507 5.29205C17.9086 4.33564 17.7539 3.67812 17.5324 3.10836C17.3038 2.50359 16.9522 1.96213 16.4915 1.51201C16.0414 1.05489 15.4963 0.699691 14.8986 0.474702C14.3255 0.253147 13.6714 0.0984842 12.715 0.0563159C11.7515 0.0105764 11.4456 0 9.00174 0C6.55791 0 6.25202 0.0105764 5.29204 0.0527447C4.33563 0.0949129 3.67811 0.249713 3.1085 0.471131C2.50358 0.699691 1.96213 1.05132 1.51201 1.51201C1.05489 1.96213 0.699827 2.50716 0.474701 3.10493C0.253147 3.67812 0.098484 4.33207 0.0563158 5.28848C0.0105764 6.25203 0 6.55792 0 9.00176C0 11.4456 0.0105764 11.7515 0.0527446 12.7115C0.0949128 13.6679 0.249713 14.3254 0.471267 14.8952C0.699827 15.4999 1.05489 16.0414 1.51201 16.4915C1.96213 16.9486 2.50715 17.3038 3.10493 17.5288C3.67811 17.7504 4.33206 17.905 5.28861 17.9472C6.24845 17.9895 6.55448 17.9999 8.99831 17.9999C11.4421 17.9999 11.748 17.9895 12.708 17.9472C13.6644 17.905 14.3219 17.7504 14.8916 17.5288C16.1012 17.0611 17.0577 16.1047 17.5254 14.8952C17.7468 14.322 17.9016 13.6679 17.9437 12.7115C17.9859 11.7515 17.9965 11.4456 17.9965 9.00176C17.9965 6.55792 17.9929 6.25203 17.9507 5.29205ZM16.3298 12.6411C16.2911 13.5202 16.1434 13.9949 16.0203 14.3114C15.7179 15.0956 15.0955 15.7179 14.3114 16.0204C13.9949 16.1434 13.5168 16.2911 12.6411 16.3297C11.6917 16.372 11.407 16.3824 9.00531 16.3824C6.60365 16.3824 6.31534 16.372 5.36937 16.3297C4.4903 16.2911 4.01559 16.1434 3.69913 16.0204C3.3089 15.8761 2.9537 15.6476 2.66539 15.3487C2.3665 15.0568 2.13794 14.7052 1.99372 14.315C1.87065 13.9985 1.72299 13.5202 1.68439 12.6447C1.64209 11.6953 1.63165 11.4104 1.63165 9.00876C1.63165 6.60709 1.64209 6.31878 1.68439 5.37295C1.72299 4.49387 1.87065 4.01917 1.99372 3.7027C2.13794 3.31234 2.3665 2.95727 2.66896 2.66883C2.9607 2.36994 3.31233 2.14138 3.7027 1.99729C4.01917 1.87422 4.49744 1.72656 5.37294 1.68783C6.32235 1.64566 6.60722 1.63508 9.00875 1.63508C11.414 1.63508 11.6987 1.64566 12.6447 1.68783C13.5238 1.72656 13.9985 1.87422 14.3149 1.99729C14.7052 2.14138 15.0604 2.36994 15.3487 2.66883C15.6476 2.96071 15.8761 3.31234 16.0203 3.7027C16.1434 4.01917 16.2911 4.49731 16.3298 5.37295C16.372 6.32236 16.3826 6.60709 16.3826 9.00876C16.3826 11.4104 16.372 11.6917 16.3298 12.6411Z"
+                                                fill="currentColor"
+                                            ></path>
+                                            <path
+                                                d="M9.00188 4.37744C6.44912 4.37744 4.37793 6.44849 4.37793 9.00139C4.37793 11.5543 6.44912 13.6253 9.00188 13.6253C11.5548 13.6253 13.6258 11.5543 13.6258 9.00139C13.6258 6.44849 11.5548 4.37744 9.00188 4.37744ZM9.00188 12.0008C7.34578 12.0008 6.00244 10.6576 6.00244 9.00139C6.00244 7.34515 7.34578 6.00195 9.00188 6.00195C10.6581 6.00195 12.0013 7.34515 12.0013 9.00139C12.0013 10.6576 10.6581 12.0008 9.00188 12.0008Z"
+                                                fill="currentColor"
+                                            ></path>
+                                            <path
+                                                d="M14.8876 4.19521C14.8876 4.79133 14.4043 5.27469 13.808 5.27469C13.2119 5.27469 12.7285 4.79133 12.7285 4.19521C12.7285 3.59894 13.2119 3.11572 13.808 3.11572C14.4043 3.11572 14.8876 3.59894 14.8876 4.19521Z"
+                                                fill="currentColor"
+                                            ></path>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M17.9955 18.0002V17.9994H18V11.3979C18 8.16841 17.3047 5.68066 13.5292 5.68066C11.7142 5.68066 10.4962 6.67666 9.99896 7.62091H9.94646V5.98216H6.3667V17.9994H10.0942V12.0489C10.0942 10.4822 10.3912 8.96716 12.3315 8.96716C14.2432 8.96716 14.2717 10.7552 14.2717 12.1494V18.0002H17.9955Z"
+                                                fill="currentColor"
+                                            ></path>
+                                            <path d="M0.296875 5.98291H4.02888V18.0002H0.296875V5.98291Z" fill="currentColor"></path>
+                                            <path d="M2.1615 0C0.96825 0 0 0.96825 0 2.1615C0 3.35475 0.96825 4.34325 2.1615 4.34325C3.35475 4.34325 4.323 3.35475 4.323 2.1615C4.32225 0.96825 3.354 0 2.1615 0V0Z" fill="currentColor"></path>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <svg width="18" height="15" viewBox="0 0 18 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M18 1.73137C17.3306 2.025 16.6174 2.21962 15.8737 2.31412C16.6388 1.85737 17.2226 1.13962 17.4971 0.2745C16.7839 0.69975 15.9964 1.00013 15.1571 1.16775C14.4799 0.446625 13.5146 0 12.4616 0C10.4186 0 8.77387 1.65825 8.77387 3.69113C8.77387 3.98363 8.79862 4.26487 8.85938 4.53262C5.7915 4.383 3.07687 2.91263 1.25325 0.67275C0.934875 1.22513 0.748125 1.85738 0.748125 2.538C0.748125 3.816 1.40625 4.94887 2.38725 5.60475C1.79437 5.5935 1.21275 5.42138 0.72 5.15025C0.72 5.1615 0.72 5.17613 0.72 5.19075C0.72 6.984 1.99912 8.4735 3.6765 8.81662C3.37612 8.89875 3.04875 8.93812 2.709 8.93812C2.47275 8.93812 2.23425 8.92463 2.01038 8.87512C2.4885 10.3365 3.84525 11.4109 5.4585 11.4457C4.203 12.4279 2.60888 13.0196 0.883125 13.0196C0.5805 13.0196 0.29025 13.0061 0 12.969C1.63462 14.0231 3.57188 14.625 5.661 14.625C12.4515 14.625 16.164 9 16.164 4.12425C16.164 3.96112 16.1584 3.80363 16.1505 3.64725C16.8829 3.1275 17.4982 2.47837 18 1.73137Z"
+                                                fill="currentColor"
+                                            ></path>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                fill-rule="evenodd"
+                                                clip-rule="evenodd"
+                                                d="M16.0427 0.885481C16.8137 1.09312 17.4216 1.70094 17.6291 2.47204C18.0148 3.88048 17.9999 6.81629 17.9999 6.81629C17.9999 6.81629 17.9999 9.73713 17.6293 11.1457C17.4216 11.9167 16.8138 12.5246 16.0427 12.7321C14.6341 13.1029 8.99996 13.1029 8.99996 13.1029C8.99996 13.1029 3.38048 13.1029 1.95721 12.7174C1.18611 12.5098 0.57829 11.9018 0.37065 11.1309C0 9.73713 0 6.80146 0 6.80146C0 6.80146 0 3.88048 0.37065 2.47204C0.578153 1.70108 1.20094 1.07829 1.95707 0.870787C3.36565 0.5 8.99983 0.5 8.99983 0.5C8.99983 0.5 14.6341 0.5 16.0427 0.885481ZM11.8913 6.80154L7.20605 9.50006V4.10303L11.8913 6.80154Z"
+                                                fill="currentColor"
+                                            ></path>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <svg width="9" height="18" viewBox="0 0 9 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M7.3575 2.98875H9.00075V0.12675C8.71725 0.08775 7.74225 0 6.60675 0C4.2375 0 2.6145 1.49025 2.6145 4.22925V6.75H0V9.9495H2.6145V18H5.82V9.95025H8.32875L8.727 6.75075H5.81925V4.5465C5.82 3.62175 6.069 2.98875 7.3575 2.98875Z"
+                                                fill="currentColor"
+                                            ></path>
+                                        </svg>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Breadcrumb Starts Here -->
+        <section class="section event-sub-section">
+            <div class="container">
+                <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                    <ol class="breadcrumb align-items-center bg-transparent p-0 mb-0">
+                        <li class="breadcrumb-item"><a href="index.html" class="fs-6 text-secondary">Home</a></li>
+                        <li class="breadcrumb-item"><a href="#" class="fs-6 text-secondary">Events</a></li>
+                        <li class="breadcrumb-item"><a href="#" class="fs-6 text-secondary">Graphice Design</a></li>
+                        <li class="breadcrumb-item fs-6 text-secondary d-none d-lg-inline-block" aria-current="page">Graphic Design Trend 2021 in Chikago, USA</li>
+                    </ol>
+                </nav>
+                <div class="row event-sub-section-main">
+                    <div class="col-lg-8">
+                        <h5 class="font-title--sm">Graphic Design Trend 2021 in Chicago, United States Hosted by Adobe</h5>
+                        <div class="count-down count-down--sm eventCount justify-content-start" id="countdown"></div>
+                        <ul class="event-time list-unstyled list-inline"></ul>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="icon-with-date d-flex align-items-lg-center">
+                            <div class="icon-with-date-start d-flex align-items-center">
+                                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M14.25 3H3.75C2.92157 3 2.25 3.67157 2.25 4.5V15C2.25 15.8284 2.92157 16.5 3.75 16.5H14.25C15.0784 16.5 15.75 15.8284 15.75 15V4.5C15.75 3.67157 15.0784 3 14.25 3Z"
+                                        stroke="#00AF91"
+                                        stroke-width="1.7"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    />
+                                    <path d="M12 1.5V4.5" stroke="#00AF91" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M6 1.5V4.5" stroke="#00AF91" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M2.25 7.5H15.75" stroke="#00AF91" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                <span>29th jan, 2020</span>
+                            </div>
+                            <div class="icon-with-date-end">
+                                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M9 16.5C13.1421 16.5 16.5 13.1421 16.5 9C16.5 4.85786 13.1421 1.5 9 1.5C4.85786 1.5 1.5 4.85786 1.5 9C1.5 13.1421 4.85786 16.5 9 16.5Z"
+                                        stroke="#FFC91B"
+                                        stroke-width="1.8"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    />
+                                    <path d="M9 4.5V9L12 10.5" stroke="#FFC91B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                <span>9:30 am - 11:30 am</span>
+                            </div>
+                        </div>
+                        <div class="icon-with-date d-flex align-items-lg-cente mb-0">
+                            <div class="icon-with-date-start d-flex align-items-center">
+                                <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1 9C1 9 4 3 9.25 3C14.5 3 17.5 9 17.5 9C17.5 9 14.5 15 9.25 15C4 15 1 9 1 9Z" stroke="#1089FF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path
+                                        d="M9.25 11.25C10.4926 11.25 11.5 10.2426 11.5 9C11.5 7.75736 10.4926 6.75 9.25 6.75C8.00736 6.75 7 7.75736 7 9C7 10.2426 8.00736 11.25 9.25 11.25Z"
+                                        stroke="#1089FF"
+                                        stroke-width="1.8"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    />
+                                </svg>
+                                <span>7,584 Seat Booked</span>
+                            </div>
+                            <div class="icon-with-date-end">
+                                <svg width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        fill-rule="evenodd"
+                                        clip-rule="evenodd"
+                                        d="M1.5 7.78252C1.5122 4.30097 4.43222 1.48821 8.02206 1.50004C11.6119 1.51187 14.5122 4.34381 14.5 7.82536V7.89675C14.4558 10.1599 13.1529 12.2517 11.5555 13.8865C10.6419 14.8066 9.62174 15.6211 8.51527 16.3139C8.21941 16.5621 7.78056 16.5621 7.48469 16.3139C5.83521 15.2726 4.3875 13.958 3.20781 12.4301C2.15637 11.0978 1.5594 9.48072 1.5 7.80394L1.5 7.78252Z"
+                                        stroke="#FF7A1A"
+                                        stroke-width="1.7"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    />
+                                    <ellipse cx="7.99987" cy="7.90418" rx="2.08323" ry="2.02039" stroke="#FF7A1A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                <span>Chicago, USA</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Event Info Starts Here -->
+        <div class="event-info section pt-0">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="event-info-main">
+                            <div class="image">
+                                <img src="dist/images/event/info.jpg" alt="img" class="img-fluid rounded-2" />
+                            </div>
+                            <nav class="event-info-tab">
+                                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                    <button class="nav-link active" id="nav-overview-tab" data-bs-toggle="tab" data-bs-target="#nav-overview" type="button" role="tab" aria-controls="nav-overview" aria-selected="true">Overview</button>
+                                    <button class="nav-link" id="nav-speakers-tab" data-bs-toggle="tab" data-bs-target="#nav-speakers" type="button" role="tab" aria-controls="nav-speakers" aria-selected="false">Speakers</button>
+                                    <button class="nav-link" id="nav-location-tab" data-bs-toggle="tab" data-bs-target="#nav-location" type="button" role="tab" aria-controls="nav-location" aria-selected="false">Location</button>
+                                    <button class="nav-link me-0" id="nav-review-tab" data-bs-toggle="tab" data-bs-target="#nav-review" type="button" role="tab" aria-controls="nav-review" aria-selected="false">Review</button>
+                                </div>
+                            </nav>
+                            <div class="tab-content event-info-tab-content" id="nav-tabContent">
+                                <div class="tab-pane nav-overview fade show active" id="nav-overview" role="tabpanel" aria-labelledby="nav-overview-tab">
+                                    <h6 class="mb-2 font-title--card">Event Description</h6>
+                                    <p class="mb-4">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras suscipit vulputate blandit. Etiam nec viverra odio. Nulla ex tellus, dictum quis diam ac, bibendum euismod lacus. Suspendisse pretium,
+                                        tellus nec aliquam pulvinar, enim nunc hendrerit elit, ac dapibus justo erat at erat. Sed purus erat, maximus id euismod sit amet, consequat at mi. Sed interdum luctus velit non blandit. Etiam
+                                        porttitor ex et tellus pretium varius.
+                                    </p>
+                                    <p>
+                                        Quisque sollicitudin, ex in vulputate varius, dolor enim aliquam felis, et pellentesque lectus augue in risus. Cras in imperdiet sapien.
+                                    </p>
+                                </div>
+                                <div class="tab-pane fade" id="nav-speakers" role="tabpanel" aria-labelledby="nav-speakers-tab">
+                                    <div class="row">
+                                        <div class="col-sm-4 col-6">
+                                            <div class="event-speaker">
+                                                <div class="event-speaker-image">
+                                                    <img src="dist/images/event/speaker01.png" alt="img" />
+                                                </div>
+                                                <div class="event-speaker-info">
+                                                    <h6 class="font-title--card"><a href="#">Martin Bator</a></h6>
+                                                    <p>UI/UX Designer</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4 col-6">
+                                            <div class="event-speaker">
+                                                <div class="event-speaker-image">
+                                                    <img src="dist/images/event/speaker02.png" alt="img" />
+                                                </div>
+                                                <div class="event-speaker-info">
+                                                    <h6 class="font-title--card"><a href="#">Gretchen Curtis</a></h6>
+                                                    <p>UI/UX Designer</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4 col-6">
+                                            <div class="event-speaker">
+                                                <div class="event-speaker-image">
+                                                    <img src="dist/images/event/speaker03.png" alt="img" />
+                                                </div>
+                                                <div class="event-speaker-info">
+                                                    <h6 class="font-title--card"><a href="#">Zain Stanton</a></h6>
+                                                    <p>UI/UX Designer</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4 col-6">
+                                            <div class="event-speaker mb-lg-0">
+                                                <div class="event-speaker-image">
+                                                    <img src="dist/images/event/speaker04.png" alt="img" />
+                                                </div>
+                                                <div class="event-speaker-info">
+                                                    <h6 class="font-title--card"><a href="#">Madelyn Calzoni</a></h6>
+                                                    <p>UI/UX Designer</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4 col-6">
+                                            <div class="event-speaker mb-lg-0">
+                                                <div class="event-speaker-image">
+                                                    <img src="dist/images/event/speaker05.png" alt="img" />
+                                                </div>
+                                                <div class="event-speaker-info">
+                                                    <h6 class="font-title--card"><a href="#">Abram Saris</a></h6>
+                                                    <p>UI/UX Designer</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4 col-6">
+                                            <div class="event-speaker mb-lg-0">
+                                                <div class="event-speaker-image">
+                                                    <img src="dist/images/event/speaker06.png" alt="img" />
+                                                </div>
+                                                <div class="event-speaker-info">
+                                                    <h6 class="font-title--card"><a href="#">Jaxson Press</a></h6>
+                                                    <p>UI/UX Designer</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="nav-location" role="tabpanel" aria-labelledby="nav-location-tab">
+                                    <div class="row events-location">
+                                        <div class="col-xl-6">
+                                            <div class="events-location-map">
+                                                <iframe
+                                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d201876.9935430553!2d-122.37539090724721!3d37.75890609140571!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80857d8b28aaed03%3A0x71b415d535759367!2sOakland%2C%20CA%2C%20USA!5e0!3m2!1sen!2sbd!4v1614609723770!5m2!1sen!2sbd"
+                                                    style="border: 0;"
+                                                    allowfullscreen=""
+                                                    loading="lazy"
+                                                ></iframe>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-6">
+                                            <div class="events-location-text">
+                                                <div class="text-item">
+                                                    <div class="text-item-start">
+                                                        <div class="icon-image">
+                                                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <g clip-path="url(#clipOne)">
+                                                                    <path
+                                                                        d="M1.33325 8.00033V29.3337L10.6666 24.0003L21.3333 29.3337L30.6666 24.0003V2.66699L21.3333 8.00033L10.6666 2.66699L1.33325 8.00033Z"
+                                                                        stroke="currentColor"
+                                                                        stroke-width="3"
+                                                                        stroke-linecap="round"
+                                                                        stroke-linejoin="round"
+                                                                    />
+                                                                    <path d="M10.6667 2.66699V24.0003" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                                                                    <path d="M21.3333 8V29.3333" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                                                                </g>
+                                                                <defs>
+                                                                    <clipPath>
+                                                                        <rect width="32" height="32" fill="white" />
+                                                                    </clipPath>
+                                                                </defs>
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                    <div class="text-item-end">
+                                                        <p>Address</p>
+                                                        <h6 class="font-para--lg">
+                                                            Street NO. #15, House NO. <br />
+                                                            #15/B Chicago-60827, USA
+                                                        </h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="events-location-text">
+                                                <div class="text-item">
+                                                    <div class="text-item-start">
+                                                        <div class="icon-image email-bg">
+                                                            <svg width="32" height="26" viewBox="0 0 32 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path
+                                                                    d="M5.06115 1.57129H27.2652C28.7918 1.57129 30.0407 2.857 30.0407 4.42843V21.5713C30.0407 23.1427 28.7918 24.4284 27.2652 24.4284H5.06115C3.53462 24.4284 2.28564 23.1427 2.28564 21.5713V4.42843C2.28564 2.857 3.53462 1.57129 5.06115 1.57129Z"
+                                                                    stroke="currentColor"
+                                                                    stroke-width="3"
+                                                                    stroke-linecap="round"
+                                                                    stroke-linejoin="round"
+                                                                />
+                                                                <path d="M30.0407 4.42773L16.1632 14.4277L2.28564 4.42773" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                    <div class="text-item-end">
+                                                        <p>Email</p>
+                                                        <h6 class="font-title--card">
+                                                            Edu.bd@gmail.com
+                                                        </h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="events-location-text mb-0">
+                                                <div class="text-item">
+                                                    <div class="text-item-start">
+                                                        <div class="icon-image phone-bg">
+                                                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path
+                                                                    d="M28.7992 22.3667V26.2205C28.8006 26.5783 28.7272 26.9324 28.5836 27.2602C28.44 27.588 28.2293 27.8823 27.9652 28.1242C27.701 28.366 27.3892 28.5502 27.0496 28.6648C26.71 28.7794 26.3502 28.822 25.9931 28.7898C22.0323 28.3602 18.2277 27.0095 14.8849 24.846C11.7749 22.8737 9.13821 20.2422 7.16198 17.1383C4.98665 13.7871 3.6329 9.9715 3.2104 6.00077C3.17823 5.64553 3.22053 5.2875 3.33461 4.94948C3.44869 4.61145 3.63204 4.30083 3.87299 4.0374C4.11394 3.77397 4.40721 3.56349 4.73413 3.41937C5.06105 3.27526 5.41446 3.20066 5.77185 3.20032H9.63333C10.258 3.19418 10.8636 3.41495 11.3372 3.82147C11.8109 4.22799 12.1202 4.79253 12.2077 5.40985C12.3706 6.64316 12.6729 7.85411 13.1087 9.01961C13.2818 9.4794 13.3193 9.9791 13.2167 10.4595C13.114 10.9399 12.8755 11.3809 12.5294 11.7301L10.8947 13.3616C12.7271 16.5777 15.3952 19.2405 18.6177 21.0693L20.2524 19.4378C20.6024 19.0924 21.0442 18.8544 21.5256 18.7519C22.0069 18.6495 22.5076 18.6869 22.9683 18.8597C24.1361 19.2946 25.3495 19.5963 26.5852 19.759C27.2105 19.847 27.7815 20.1613 28.1897 20.6421C28.5979 21.1229 28.8148 21.7367 28.7992 22.3667Z"
+                                                                    stroke="#00AF91"
+                                                                    stroke-width="3"
+                                                                    stroke-linecap="round"
+                                                                    stroke-linejoin="round"
+                                                                />
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                    <div class="text-item-end">
+                                                        <p>Phone</p>
+                                                        <h6 class="font-title--card">
+                                                            +1202-555-0621
+                                                        </h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="nav-review" role="tabpanel" aria-labelledby="nav-review-tab">
+                                    <div class="row">
+                                        <!-- Feedback Area Ends Here -->
+                                        <div class="col-lg-12">
+                                            <div class="feedback-area">
+                                                <h6 class="font-title--card">Students Feedback <span>(57,685)</span></h6>
+                                                <div class="feedback-area-item">
+                                                    <div class="commentator">
+                                                        <div class="commentator-image">
+                                                            <img src="dist/images/ellipse/1.png" alt="commentator" />
+                                                        </div>
+                                                        <div class="commentator-info">
+                                                            <h6>Harry Pinsky</h6>
+                                                            <p>1 hour ago</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="comments">
+                                                        <p>
+                                                            Aliquam eget leo quis neque molestie dictum. Etiam ut tortor tempor, vestibulum ante non, vulputate nibh. Cras non molestie diam. Great Course for Beginner 😀
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div class="feedback-area-item">
+                                                    <div class="commentator">
+                                                        <div class="commentator-image">
+                                                            <img src="dist/images/ellipse/2.png" alt="commentator" />
+                                                        </div>
+                                                        <div class="commentator-info">
+                                                            <h6>Harry Pinsky</h6>
+                                                            <p>1 hour ago</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="comments">
+                                                        <p>
+                                                            Aliquam eget leo quis neque molestie dictum. Etiam ut tortor tempor, vestibulum ante non, vulputate nibh. Cras non molestie diam. Great Course for Beginner
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div class="feedback-area-item">
+                                                    <div class="commentator">
+                                                        <div class="commentator-image">
+                                                            <img src="dist/images/ellipse/3.png" alt="commentator" />
+                                                        </div>
+                                                        <div class="commentator-info">
+                                                            <h6>Watcraz Eggsy</h6>
+                                                            <p>1 day ago</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="comments">
+                                                        <p>
+                                                            Cras non molestie diam. Aenean vulputate nisi ligula. Quisque in tempus sapien. Quisque vestibulum massa eget consequat scelerisque.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div class="feedback-area-item border-0 pb-0 mb-4">
+                                                    <div class="commentator">
+                                                        <div class="commentator-image">
+                                                            <img src="dist/images/ellipse/5.png" alt="commentator" />
+                                                        </div>
+                                                        <div class="commentator-info">
+                                                            <h6>Watcraz Eggsy</h6>
+                                                            <p>1 day ago</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="comments">
+                                                        <p>
+                                                            Cras non molestie diam. Aenean vulputate nisi ligula. Quisque in tempus sapien. Quisque vestibulum massa eget consequat scelerisque.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <form action="#">
+                                                    <div class="d-flex justify-content-center">
+                                                        <button class="button button-md button--primary-outline" type="button">Load More</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <!-- Feedback Area Ends Here -->
+
+                                        <!-- Write a Review Area Starts Here -->
+                                        <div class="col-lg-12">
+                                            <div class="writereview-area">
+                                                <h6 class="font-title--card">Write a Review</h6>
+                                                <form action="#">
+                                                    <label for="messages">Review</label>
+                                                    <textarea id="messages" placeholder="how is feeling about the events" class="form-control"></textarea>
+                                                    <div class="d-flex justify-content-lg-end justify-content-center">
+                                                        <button class="button button-md button--primary mt-3">Post Comment</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <!-- Write a Review Area Ends Here -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="eventCard--wrapper">
+                            <div class="cart">
+                                <div class="cart__price">
+                                    <div class="current-price">
+                                        <h3 class="font-title--sm">$19.99</h3>
+                                    </div>
+                                </div>
+                                <div class="cart__checkout-process">
+                                    <form action="#">
+                                        <button type="submit" class="button button-lg button--primary w-100 mb-2">Book a Seat</button>
+                                        <p class="time-left text-center pb-3">You must <a href="signin.html">login</a> before register event</p>
+                                    </form>
+                                    <div class="cart__includes-info">
+                                        <ul class="mb-0">
+                                            <li>
+                                                <p>Total Slot:</p>
+                                                <p>250</p>
+                                            </li>
+                                            <li>
+                                                <p>Booked Slot:</p>
+                                                <p>172</p>
+                                            </li>
+                                            <li class="border-0 mb-0 pb-0">
+                                                <p>Remaining Slot:</p>
+                                                <p>78</p>
+                                            </li>
+                                            <li class="d-none">
+                                                <p class="font-title--card">Total:</p>
+                                                <p class="total-price font-title--card">$36.49</p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="cart__share-content pt-0">
+                                    <h6 class="font-title--card">Share This Course</h6>
+                                    <ul class="social-icons social-icons--outline">
+                                        <li>
+                                            <a href="#">
+                                                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M17.9507 5.29205C17.9086 4.33564 17.7539 3.67812 17.5324 3.10836C17.3038 2.50359 16.9522 1.96213 16.4915 1.51201C16.0414 1.05489 15.4963 0.699691 14.8986 0.474702C14.3255 0.253147 13.6714 0.0984842 12.715 0.0563159C11.7515 0.0105764 11.4456 0 9.00174 0C6.55791 0 6.25202 0.0105764 5.29204 0.0527447C4.33563 0.0949129 3.67811 0.249713 3.1085 0.471131C2.50358 0.699691 1.96213 1.05132 1.51201 1.51201C1.05489 1.96213 0.699827 2.50716 0.474701 3.10493C0.253147 3.67812 0.098484 4.33207 0.0563158 5.28848C0.0105764 6.25203 0 6.55792 0 9.00176C0 11.4456 0.0105764 11.7515 0.0527446 12.7115C0.0949128 13.6679 0.249713 14.3254 0.471267 14.8952C0.699827 15.4999 1.05489 16.0414 1.51201 16.4915C1.96213 16.9486 2.50715 17.3038 3.10493 17.5288C3.67811 17.7504 4.33206 17.905 5.28861 17.9472C6.24845 17.9895 6.55448 17.9999 8.99831 17.9999C11.4421 17.9999 11.748 17.9895 12.708 17.9472C13.6644 17.905 14.3219 17.7504 14.8916 17.5288C16.1012 17.0611 17.0577 16.1047 17.5254 14.8952C17.7468 14.322 17.9016 13.6679 17.9437 12.7115C17.9859 11.7515 17.9965 11.4456 17.9965 9.00176C17.9965 6.55792 17.9929 6.25203 17.9507 5.29205ZM16.3298 12.6411C16.2911 13.5202 16.1434 13.9949 16.0203 14.3114C15.7179 15.0956 15.0955 15.7179 14.3114 16.0204C13.9949 16.1434 13.5168 16.2911 12.6411 16.3297C11.6917 16.372 11.407 16.3824 9.00531 16.3824C6.60365 16.3824 6.31534 16.372 5.36937 16.3297C4.4903 16.2911 4.01559 16.1434 3.69913 16.0204C3.3089 15.8761 2.9537 15.6476 2.66539 15.3487C2.3665 15.0568 2.13794 14.7052 1.99372 14.315C1.87065 13.9985 1.72299 13.5202 1.68439 12.6447C1.64209 11.6953 1.63165 11.4104 1.63165 9.00876C1.63165 6.60709 1.64209 6.31878 1.68439 5.37295C1.72299 4.49387 1.87065 4.01917 1.99372 3.7027C2.13794 3.31234 2.3665 2.95727 2.66896 2.66883C2.9607 2.36994 3.31233 2.14138 3.7027 1.99729C4.01917 1.87422 4.49744 1.72656 5.37294 1.68783C6.32235 1.64566 6.60722 1.63508 9.00875 1.63508C11.414 1.63508 11.6987 1.64566 12.6447 1.68783C13.5238 1.72656 13.9985 1.87422 14.3149 1.99729C14.7052 2.14138 15.0604 2.36994 15.3487 2.66883C15.6476 2.96071 15.8761 3.31234 16.0203 3.7027C16.1434 4.01917 16.2911 4.49731 16.3298 5.37295C16.372 6.32236 16.3826 6.60709 16.3826 9.00876C16.3826 11.4104 16.372 11.6917 16.3298 12.6411Z"
+                                                        fill="currentColor"
+                                                    ></path>
+                                                    <path
+                                                        d="M9.00188 4.37744C6.44912 4.37744 4.37793 6.44849 4.37793 9.00139C4.37793 11.5543 6.44912 13.6253 9.00188 13.6253C11.5548 13.6253 13.6258 11.5543 13.6258 9.00139C13.6258 6.44849 11.5548 4.37744 9.00188 4.37744ZM9.00188 12.0008C7.34578 12.0008 6.00244 10.6576 6.00244 9.00139C6.00244 7.34515 7.34578 6.00195 9.00188 6.00195C10.6581 6.00195 12.0013 7.34515 12.0013 9.00139C12.0013 10.6576 10.6581 12.0008 9.00188 12.0008Z"
+                                                        fill="currentColor"
+                                                    ></path>
+                                                    <path
+                                                        d="M14.8876 4.19521C14.8876 4.79133 14.4043 5.27469 13.808 5.27469C13.2119 5.27469 12.7285 4.79133 12.7285 4.19521C12.7285 3.59894 13.2119 3.11572 13.808 3.11572C14.4043 3.11572 14.8876 3.59894 14.8876 4.19521Z"
+                                                        fill="currentColor"
+                                                    ></path>
+                                                </svg>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M17.9955 18.0002V17.9994H18V11.3979C18 8.16841 17.3047 5.68066 13.5292 5.68066C11.7142 5.68066 10.4962 6.67666 9.99896 7.62091H9.94646V5.98216H6.3667V17.9994H10.0942V12.0489C10.0942 10.4822 10.3912 8.96716 12.3315 8.96716C14.2432 8.96716 14.2717 10.7552 14.2717 12.1494V18.0002H17.9955Z"
+                                                        fill="currentColor"
+                                                    ></path>
+                                                    <path d="M0.296875 5.98291H4.02888V18.0002H0.296875V5.98291Z" fill="currentColor"></path>
+                                                    <path
+                                                        d="M2.1615 0C0.96825 0 0 0.96825 0 2.1615C0 3.35475 0.96825 4.34325 2.1615 4.34325C3.35475 4.34325 4.323 3.35475 4.323 2.1615C4.32225 0.96825 3.354 0 2.1615 0V0Z"
+                                                        fill="currentColor"
+                                                    ></path>
+                                                </svg>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <svg width="18" height="15" viewBox="0 0 18 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M18 1.73137C17.3306 2.025 16.6174 2.21962 15.8737 2.31412C16.6388 1.85737 17.2226 1.13962 17.4971 0.2745C16.7839 0.69975 15.9964 1.00013 15.1571 1.16775C14.4799 0.446625 13.5146 0 12.4616 0C10.4186 0 8.77387 1.65825 8.77387 3.69113C8.77387 3.98363 8.79862 4.26487 8.85938 4.53262C5.7915 4.383 3.07687 2.91263 1.25325 0.67275C0.934875 1.22513 0.748125 1.85738 0.748125 2.538C0.748125 3.816 1.40625 4.94887 2.38725 5.60475C1.79437 5.5935 1.21275 5.42138 0.72 5.15025C0.72 5.1615 0.72 5.17613 0.72 5.19075C0.72 6.984 1.99912 8.4735 3.6765 8.81662C3.37612 8.89875 3.04875 8.93812 2.709 8.93812C2.47275 8.93812 2.23425 8.92463 2.01038 8.87512C2.4885 10.3365 3.84525 11.4109 5.4585 11.4457C4.203 12.4279 2.60888 13.0196 0.883125 13.0196C0.5805 13.0196 0.29025 13.0061 0 12.969C1.63462 14.0231 3.57188 14.625 5.661 14.625C12.4515 14.625 16.164 9 16.164 4.12425C16.164 3.96112 16.1584 3.80363 16.1505 3.64725C16.8829 3.1275 17.4982 2.47837 18 1.73137Z"
+                                                        fill="currentColor"
+                                                    ></path>
+                                                </svg>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        fill-rule="evenodd"
+                                                        clip-rule="evenodd"
+                                                        d="M16.0427 0.885481C16.8137 1.09312 17.4216 1.70094 17.6291 2.47204C18.0148 3.88048 17.9999 6.81629 17.9999 6.81629C17.9999 6.81629 17.9999 9.73713 17.6293 11.1457C17.4216 11.9167 16.8138 12.5246 16.0427 12.7321C14.6341 13.1029 8.99996 13.1029 8.99996 13.1029C8.99996 13.1029 3.38048 13.1029 1.95721 12.7174C1.18611 12.5098 0.57829 11.9018 0.37065 11.1309C0 9.73713 0 6.80146 0 6.80146C0 6.80146 0 3.88048 0.37065 2.47204C0.578153 1.70108 1.20094 1.07829 1.95707 0.870787C3.36565 0.5 8.99983 0.5 8.99983 0.5C8.99983 0.5 14.6341 0.5 16.0427 0.885481ZM11.8913 6.80154L7.20605 9.50006V4.10303L11.8913 6.80154Z"
+                                                        fill="currentColor"
+                                                    ></path>
+                                                </svg>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <svg width="9" height="18" viewBox="0 0 9 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M7.3575 2.98875H9.00075V0.12675C8.71725 0.08775 7.74225 0 6.60675 0C4.2375 0 2.6145 1.49025 2.6145 4.22925V6.75H0V9.9495H2.6145V18H5.82V9.95025H8.32875L8.727 6.75075H5.81925V4.5465C5.82 3.62175 6.069 2.98875 7.3575 2.98875Z"
+                                                        fill="currentColor"
+                                                    ></path>
+                                                </svg>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--  Latest EventsFeatured Starts Here -->
+        <section class="section section--bg-offwhite-five">
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col-lg-12">
+                        <h2 class="font-title--md">Similar Events</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 position-relative px-0 mx-0">
+                        <div class="similar-events">
+                            <div class="contentCard contentCard--event contentCard--space">
+                                <div class="contentCard-top">
+                                    <a href="course-details.html"><img src="dist/images/courses/demo-img-01.png" alt="images" class="img-fluid" /></a>
+                                </div>
+                                <div class="contentCard-bottom">
+                                    <h5>
+                                        <a href="course-details.html" class="font-title--card">Chicago International Conference on Education</a>
+                                    </h5>
+                                    <div class="contentCard-more">
+                                        <div class="d-flex align-items-center">
+                                            <div class="icon">
+                                                <img src="dist/images/icon/Location.png" alt="location" />
+                                            </div>
+                                            <span>Chicago, Illinois</span>
+                                        </div>
+                                        <div class="d-flex align-items-center">
+                                            <div class="icon">
+                                                <img src="dist/images/icon/calendar.png" alt="calendar" />
+                                            </div>
+                                            <span>29th jan, 2020</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="contentCard contentCard--event contentCard--space">
+                                <div class="contentCard-top">
+                                    <a href="course-details.html"><img src="dist/images/courses/demo-img-02.png" alt="images" class="img-fluid" /></a>
+                                </div>
+                                <div class="contentCard-bottom">
+                                    <h5>
+                                        <a href="course-details.html" class="font-title--card">Chicago International Conference on Education</a>
+                                    </h5>
+                                    <div class="contentCard-more">
+                                        <div class="d-flex align-items-center">
+                                            <div class="icon">
+                                                <img src="dist/images/icon/Location.png" alt="location" />
+                                            </div>
+                                            <span>Chicago, Illinois</span>
+                                        </div>
+                                        <div class="d-flex align-items-center">
+                                            <div class="icon">
+                                                <img src="dist/images/icon/calendar.png" alt="calendar" />
+                                            </div>
+                                            <span>29th jan, 2020</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="contentCard contentCard--event contentCard--space">
+                                <div class="contentCard-top">
+                                    <a href="course-details.html"><img src="dist/images/courses/demo-img-03.png" alt="images" class="img-fluid" /></a>
+                                </div>
+                                <div class="contentCard-bottom">
+                                    <h5>
+                                        <a href="course-details.html" class="font-title--card">Chicago International Conference on Education</a>
+                                    </h5>
+                                    <div class="contentCard-more">
+                                        <div class="d-flex align-items-center">
+                                            <div class="icon">
+                                                <img src="dist/images/icon/Location.png" alt="location" />
+                                            </div>
+                                            <span>Chicago, Illinois</span>
+                                        </div>
+                                        <div class="d-flex align-items-center">
+                                            <div class="icon">
+                                                <img src="dist/images/icon/calendar.png" alt="calendar" />
+                                            </div>
+                                            <span>29th jan, 2020</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="contentCard contentCard--event contentCard--space">
+                                <div class="contentCard-top">
+                                    <a href="course-details.html"><img src="dist/images/courses/demo-img-04.png" alt="images" class="img-fluid" /></a>
+                                </div>
+                                <div class="contentCard-bottom">
+                                    <h5>
+                                        <a href="course-details.html" class="font-title--card">Chicago International Conference on Education</a>
+                                    </h5>
+                                    <div class="contentCard-more">
+                                        <div class="d-flex align-items-center">
+                                            <div class="icon">
+                                                <img src="dist/images/icon/Location.png" alt="location" />
+                                            </div>
+                                            <span>Chicago, Illinois</span>
+                                        </div>
+                                        <div class="d-flex align-items-center">
+                                            <div class="icon">
+                                                <img src="dist/images/icon/calendar.png" alt="calendar" />
+                                            </div>
+                                            <span>29th jan, 2020</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section__overlay">
+                <span class="section__overlay--01">
+                    <img src="dist/images/shape/dots/dots-img-13.png" alt="overlay shapes" />
+                </span>
+                <span class="section__overlay--02">
+                    <img src="dist/images/shape/circle1.png" alt="overlay shapes" />
+                </span>
+            </div>
+        </section>
+
+        <!-- Footer Starts Here -->
+        <footer class="footer footer--three">
+            <div class="container">
+                <div class="row footer__top">
+                    <div class="col-lg-6">
+                        <div class="footer__wrapper">
+                            <div class="footer__wrapper_logo">
+                                <img src="dist/images/logo/footerlogo.png" alt="logo" class="img-fluid" />
+                            </div>
+                            <p>
+                                Duis posuere maximus arcu eu tincidunt. Nam rutrum, nibh vitae tempus venenatis, ex tortor ultricies magna.
+                            </p>
+                            <div class="footer__wrapper_social d-none d-lg-block">
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M17.9507 5.29205C17.9086 4.33564 17.7539 3.67812 17.5324 3.10836C17.3038 2.50359 16.9522 1.96213 16.4915 1.51201C16.0414 1.05489 15.4963 0.699691 14.8986 0.474702C14.3255 0.253147 13.6714 0.0984842 12.715 0.0563159C11.7515 0.0105764 11.4456 0 9.00174 0C6.55791 0 6.25202 0.0105764 5.29204 0.0527447C4.33563 0.0949129 3.67811 0.249713 3.1085 0.471131C2.50358 0.699691 1.96213 1.05132 1.51201 1.51201C1.05489 1.96213 0.699827 2.50716 0.474701 3.10493C0.253147 3.67812 0.098484 4.33207 0.0563158 5.28848C0.0105764 6.25203 0 6.55792 0 9.00176C0 11.4456 0.0105764 11.7515 0.0527446 12.7115C0.0949128 13.6679 0.249713 14.3254 0.471267 14.8952C0.699827 15.4999 1.05489 16.0414 1.51201 16.4915C1.96213 16.9486 2.50715 17.3038 3.10493 17.5288C3.67811 17.7504 4.33206 17.905 5.28861 17.9472C6.24845 17.9895 6.55448 17.9999 8.99831 17.9999C11.4421 17.9999 11.748 17.9895 12.708 17.9472C13.6644 17.905 14.3219 17.7504 14.8916 17.5288C16.1012 17.0611 17.0577 16.1047 17.5254 14.8952C17.7468 14.322 17.9016 13.6679 17.9437 12.7115C17.9859 11.7515 17.9965 11.4456 17.9965 9.00176C17.9965 6.55792 17.9929 6.25203 17.9507 5.29205ZM16.3298 12.6411C16.2911 13.5202 16.1434 13.9949 16.0203 14.3114C15.7179 15.0956 15.0955 15.7179 14.3114 16.0204C13.9949 16.1434 13.5168 16.2911 12.6411 16.3297C11.6917 16.372 11.407 16.3824 9.00531 16.3824C6.60365 16.3824 6.31534 16.372 5.36937 16.3297C4.4903 16.2911 4.01559 16.1434 3.69913 16.0204C3.3089 15.8761 2.9537 15.6476 2.66539 15.3487C2.3665 15.0568 2.13794 14.7052 1.99372 14.315C1.87065 13.9985 1.72299 13.5202 1.68439 12.6447C1.64209 11.6953 1.63165 11.4104 1.63165 9.00876C1.63165 6.60709 1.64209 6.31878 1.68439 5.37295C1.72299 4.49387 1.87065 4.01917 1.99372 3.7027C2.13794 3.31234 2.3665 2.95727 2.66896 2.66883C2.9607 2.36994 3.31233 2.14138 3.7027 1.99729C4.01917 1.87422 4.49744 1.72656 5.37294 1.68783C6.32235 1.64566 6.60722 1.63508 9.00875 1.63508C11.414 1.63508 11.6987 1.64566 12.6447 1.68783C13.5238 1.72656 13.9985 1.87422 14.3149 1.99729C14.7052 2.14138 15.0604 2.36994 15.3487 2.66883C15.6476 2.96071 15.8761 3.31234 16.0203 3.7027C16.1434 4.01917 16.2911 4.49731 16.3298 5.37295C16.372 6.32236 16.3826 6.60709 16.3826 9.00876C16.3826 11.4104 16.372 11.6917 16.3298 12.6411Z"
+                                                    fill="white"
+                                                ></path>
+                                                <path
+                                                    d="M9.00188 4.37744C6.44912 4.37744 4.37793 6.44849 4.37793 9.00139C4.37793 11.5543 6.44912 13.6253 9.00188 13.6253C11.5548 13.6253 13.6258 11.5543 13.6258 9.00139C13.6258 6.44849 11.5548 4.37744 9.00188 4.37744ZM9.00188 12.0008C7.34578 12.0008 6.00244 10.6576 6.00244 9.00139C6.00244 7.34515 7.34578 6.00195 9.00188 6.00195C10.6581 6.00195 12.0013 7.34515 12.0013 9.00139C12.0013 10.6576 10.6581 12.0008 9.00188 12.0008Z"
+                                                    fill="white"
+                                                ></path>
+                                                <path
+                                                    d="M14.8876 4.19521C14.8876 4.79133 14.4043 5.27469 13.808 5.27469C13.2119 5.27469 12.7285 4.79133 12.7285 4.19521C12.7285 3.59894 13.2119 3.11572 13.808 3.11572C14.4043 3.11572 14.8876 3.59894 14.8876 4.19521Z"
+                                                    fill="white"
+                                                ></path>
+                                            </svg>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M17.9955 18.0002V17.9994H18V11.3979C18 8.16841 17.3047 5.68066 13.5292 5.68066C11.7142 5.68066 10.4962 6.67666 9.99896 7.62091H9.94646V5.98216H6.3667V17.9994H10.0942V12.0489C10.0942 10.4822 10.3912 8.96716 12.3315 8.96716C14.2432 8.96716 14.2717 10.7552 14.2717 12.1494V18.0002H17.9955Z"
+                                                    fill="white"
+                                                ></path>
+                                                <path d="M0.296875 5.98291H4.02888V18.0002H0.296875V5.98291Z" fill="white"></path>
+                                                <path d="M2.1615 0C0.96825 0 0 0.96825 0 2.1615C0 3.35475 0.96825 4.34325 2.1615 4.34325C3.35475 4.34325 4.323 3.35475 4.323 2.1615C4.32225 0.96825 3.354 0 2.1615 0V0Z" fill="white"></path>
+                                            </svg>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <svg width="18" height="15" viewBox="0 0 18 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M18 1.73137C17.3306 2.025 16.6174 2.21962 15.8737 2.31412C16.6388 1.85737 17.2226 1.13962 17.4971 0.2745C16.7839 0.69975 15.9964 1.00013 15.1571 1.16775C14.4799 0.446625 13.5146 0 12.4616 0C10.4186 0 8.77387 1.65825 8.77387 3.69113C8.77387 3.98363 8.79862 4.26487 8.85938 4.53262C5.7915 4.383 3.07687 2.91263 1.25325 0.67275C0.934875 1.22513 0.748125 1.85738 0.748125 2.538C0.748125 3.816 1.40625 4.94887 2.38725 5.60475C1.79437 5.5935 1.21275 5.42138 0.72 5.15025C0.72 5.1615 0.72 5.17613 0.72 5.19075C0.72 6.984 1.99912 8.4735 3.6765 8.81662C3.37612 8.89875 3.04875 8.93812 2.709 8.93812C2.47275 8.93812 2.23425 8.92463 2.01038 8.87512C2.4885 10.3365 3.84525 11.4109 5.4585 11.4457C4.203 12.4279 2.60888 13.0196 0.883125 13.0196C0.5805 13.0196 0.29025 13.0061 0 12.969C1.63462 14.0231 3.57188 14.625 5.661 14.625C12.4515 14.625 16.164 9 16.164 4.12425C16.164 3.96112 16.1584 3.80363 16.1505 3.64725C16.8829 3.1275 17.4982 2.47837 18 1.73137Z"
+                                                    fill="white"
+                                                ></path>
+                                            </svg>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    fill-rule="evenodd"
+                                                    clip-rule="evenodd"
+                                                    d="M16.0427 0.885481C16.8137 1.09312 17.4216 1.70094 17.6291 2.47204C18.0148 3.88048 17.9999 6.81629 17.9999 6.81629C17.9999 6.81629 17.9999 9.73713 17.6293 11.1457C17.4216 11.9167 16.8138 12.5246 16.0427 12.7321C14.6341 13.1029 8.99996 13.1029 8.99996 13.1029C8.99996 13.1029 3.38048 13.1029 1.95721 12.7174C1.18611 12.5098 0.57829 11.9018 0.37065 11.1309C0 9.73713 0 6.80146 0 6.80146C0 6.80146 0 3.88048 0.37065 2.47204C0.578153 1.70108 1.20094 1.07829 1.95707 0.870787C3.36565 0.5 8.99983 0.5 8.99983 0.5C8.99983 0.5 14.6341 0.5 16.0427 0.885481ZM11.8913 6.80154L7.20605 9.50006V4.10303L11.8913 6.80154Z"
+                                                    fill="white"
+                                                ></path>
+                                            </svg>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <svg width="9" height="18" viewBox="0 0 9 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M7.3575 2.98875H9.00075V0.12675C8.71725 0.08775 7.74225 0 6.60675 0C4.2375 0 2.6145 1.49025 2.6145 4.22925V6.75H0V9.9495H2.6145V18H5.82V9.95025H8.32875L8.727 6.75075H5.81925V4.5465C5.82 3.62175 6.069 2.98875 7.3575 2.98875Z"
+                                                    fill="white"
+                                                ></path>
+                                            </svg>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-sm-4 col-6">
+                        <div class="footer__list">
+                            <h6>Company</h6>
+                            <ul>
+                                <li><a href="about.html">About Us</a></li>
+                                <li><a href="course-search.html">Courses</a></li>
+                                <li><a href="#">career</a></li>
+                                <li><a href="#">Affiliate</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-sm-4 col-6">
+                        <div class="footer__list">
+                            <h6>Support</h6>
+                            <ul>
+                                <li><a href="#">Help &amp; Supports </a></li>
+                                <li><a href="#">Pravacy Polocy</a></li>
+                                <li><a href="faq.html">FAQs</a></li>
+                                <li><a href="contact.html">Contact Us</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-sm-4 col-6">
+                        <div class="footer__list">
+                            <h6>Quick Links</h6>
+                            <ul>
+                                <li><a href="event-search.html">Events</a></li>
+                                <li><a href="become-instructor.html">Become a Instructor</a></li>
+                                <li><a href="#">Partnerships</a></li>
+                                <li><a href="#">Get the app</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 d-block d-lg-none">
+                        <div class="footer__wrapper_social d-flex my-4">
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M17.9507 5.29205C17.9086 4.33564 17.7539 3.67812 17.5324 3.10836C17.3038 2.50359 16.9522 1.96213 16.4915 1.51201C16.0414 1.05489 15.4963 0.699691 14.8986 0.474702C14.3255 0.253147 13.6714 0.0984842 12.715 0.0563159C11.7515 0.0105764 11.4456 0 9.00174 0C6.55791 0 6.25202 0.0105764 5.29204 0.0527447C4.33563 0.0949129 3.67811 0.249713 3.1085 0.471131C2.50358 0.699691 1.96213 1.05132 1.51201 1.51201C1.05489 1.96213 0.699827 2.50716 0.474701 3.10493C0.253147 3.67812 0.098484 4.33207 0.0563158 5.28848C0.0105764 6.25203 0 6.55792 0 9.00176C0 11.4456 0.0105764 11.7515 0.0527446 12.7115C0.0949128 13.6679 0.249713 14.3254 0.471267 14.8952C0.699827 15.4999 1.05489 16.0414 1.51201 16.4915C1.96213 16.9486 2.50715 17.3038 3.10493 17.5288C3.67811 17.7504 4.33206 17.905 5.28861 17.9472C6.24845 17.9895 6.55448 17.9999 8.99831 17.9999C11.4421 17.9999 11.748 17.9895 12.708 17.9472C13.6644 17.905 14.3219 17.7504 14.8916 17.5288C16.1012 17.0611 17.0577 16.1047 17.5254 14.8952C17.7468 14.322 17.9016 13.6679 17.9437 12.7115C17.9859 11.7515 17.9965 11.4456 17.9965 9.00176C17.9965 6.55792 17.9929 6.25203 17.9507 5.29205ZM16.3298 12.6411C16.2911 13.5202 16.1434 13.9949 16.0203 14.3114C15.7179 15.0956 15.0955 15.7179 14.3114 16.0204C13.9949 16.1434 13.5168 16.2911 12.6411 16.3297C11.6917 16.372 11.407 16.3824 9.00531 16.3824C6.60365 16.3824 6.31534 16.372 5.36937 16.3297C4.4903 16.2911 4.01559 16.1434 3.69913 16.0204C3.3089 15.8761 2.9537 15.6476 2.66539 15.3487C2.3665 15.0568 2.13794 14.7052 1.99372 14.315C1.87065 13.9985 1.72299 13.5202 1.68439 12.6447C1.64209 11.6953 1.63165 11.4104 1.63165 9.00876C1.63165 6.60709 1.64209 6.31878 1.68439 5.37295C1.72299 4.49387 1.87065 4.01917 1.99372 3.7027C2.13794 3.31234 2.3665 2.95727 2.66896 2.66883C2.9607 2.36994 3.31233 2.14138 3.7027 1.99729C4.01917 1.87422 4.49744 1.72656 5.37294 1.68783C6.32235 1.64566 6.60722 1.63508 9.00875 1.63508C11.414 1.63508 11.6987 1.64566 12.6447 1.68783C13.5238 1.72656 13.9985 1.87422 14.3149 1.99729C14.7052 2.14138 15.0604 2.36994 15.3487 2.66883C15.6476 2.96071 15.8761 3.31234 16.0203 3.7027C16.1434 4.01917 16.2911 4.49731 16.3298 5.37295C16.372 6.32236 16.3826 6.60709 16.3826 9.00876C16.3826 11.4104 16.372 11.6917 16.3298 12.6411Z"
+                                                fill="white"
+                                            ></path>
+                                            <path
+                                                d="M9.00188 4.37744C6.44912 4.37744 4.37793 6.44849 4.37793 9.00139C4.37793 11.5543 6.44912 13.6253 9.00188 13.6253C11.5548 13.6253 13.6258 11.5543 13.6258 9.00139C13.6258 6.44849 11.5548 4.37744 9.00188 4.37744ZM9.00188 12.0008C7.34578 12.0008 6.00244 10.6576 6.00244 9.00139C6.00244 7.34515 7.34578 6.00195 9.00188 6.00195C10.6581 6.00195 12.0013 7.34515 12.0013 9.00139C12.0013 10.6576 10.6581 12.0008 9.00188 12.0008Z"
+                                                fill="white"
+                                            ></path>
+                                            <path
+                                                d="M14.8876 4.19521C14.8876 4.79133 14.4043 5.27469 13.808 5.27469C13.2119 5.27469 12.7285 4.79133 12.7285 4.19521C12.7285 3.59894 13.2119 3.11572 13.808 3.11572C14.4043 3.11572 14.8876 3.59894 14.8876 4.19521Z"
+                                                fill="white"
+                                            ></path>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M17.9955 18.0002V17.9994H18V11.3979C18 8.16841 17.3047 5.68066 13.5292 5.68066C11.7142 5.68066 10.4962 6.67666 9.99896 7.62091H9.94646V5.98216H6.3667V17.9994H10.0942V12.0489C10.0942 10.4822 10.3912 8.96716 12.3315 8.96716C14.2432 8.96716 14.2717 10.7552 14.2717 12.1494V18.0002H17.9955Z"
+                                                fill="white"
+                                            ></path>
+                                            <path d="M0.296875 5.98291H4.02888V18.0002H0.296875V5.98291Z" fill="white"></path>
+                                            <path d="M2.1615 0C0.96825 0 0 0.96825 0 2.1615C0 3.35475 0.96825 4.34325 2.1615 4.34325C3.35475 4.34325 4.323 3.35475 4.323 2.1615C4.32225 0.96825 3.354 0 2.1615 0V0Z" fill="white"></path>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <svg width="18" height="15" viewBox="0 0 18 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M18 1.73137C17.3306 2.025 16.6174 2.21962 15.8737 2.31412C16.6388 1.85737 17.2226 1.13962 17.4971 0.2745C16.7839 0.69975 15.9964 1.00013 15.1571 1.16775C14.4799 0.446625 13.5146 0 12.4616 0C10.4186 0 8.77387 1.65825 8.77387 3.69113C8.77387 3.98363 8.79862 4.26487 8.85938 4.53262C5.7915 4.383 3.07687 2.91263 1.25325 0.67275C0.934875 1.22513 0.748125 1.85738 0.748125 2.538C0.748125 3.816 1.40625 4.94887 2.38725 5.60475C1.79437 5.5935 1.21275 5.42138 0.72 5.15025C0.72 5.1615 0.72 5.17613 0.72 5.19075C0.72 6.984 1.99912 8.4735 3.6765 8.81662C3.37612 8.89875 3.04875 8.93812 2.709 8.93812C2.47275 8.93812 2.23425 8.92463 2.01038 8.87512C2.4885 10.3365 3.84525 11.4109 5.4585 11.4457C4.203 12.4279 2.60888 13.0196 0.883125 13.0196C0.5805 13.0196 0.29025 13.0061 0 12.969C1.63462 14.0231 3.57188 14.625 5.661 14.625C12.4515 14.625 16.164 9 16.164 4.12425C16.164 3.96112 16.1584 3.80363 16.1505 3.64725C16.8829 3.1275 17.4982 2.47837 18 1.73137Z"
+                                                fill="white"
+                                            ></path>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                fill-rule="evenodd"
+                                                clip-rule="evenodd"
+                                                d="M16.0427 0.885481C16.8137 1.09312 17.4216 1.70094 17.6291 2.47204C18.0148 3.88048 17.9999 6.81629 17.9999 6.81629C17.9999 6.81629 17.9999 9.73713 17.6293 11.1457C17.4216 11.9167 16.8138 12.5246 16.0427 12.7321C14.6341 13.1029 8.99996 13.1029 8.99996 13.1029C8.99996 13.1029 3.38048 13.1029 1.95721 12.7174C1.18611 12.5098 0.57829 11.9018 0.37065 11.1309C0 9.73713 0 6.80146 0 6.80146C0 6.80146 0 3.88048 0.37065 2.47204C0.578153 1.70108 1.20094 1.07829 1.95707 0.870787C3.36565 0.5 8.99983 0.5 8.99983 0.5C8.99983 0.5 14.6341 0.5 16.0427 0.885481ZM11.8913 6.80154L7.20605 9.50006V4.10303L11.8913 6.80154Z"
+                                                fill="white"
+                                            ></path>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <svg width="9" height="18" viewBox="0 0 9 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M7.3575 2.98875H9.00075V0.12675C8.71725 0.08775 7.74225 0 6.60675 0C4.2375 0 2.6145 1.49025 2.6145 4.22925V6.75H0V9.9495H2.6145V18H5.82V9.95025H8.32875L8.727 6.75075H5.81925V4.5465C5.82 3.62175 6.069 2.98875 7.3575 2.98875Z"
+                                                fill="white"
+                                            ></path>
+                                        </svg>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <div class="container">
+                    <div class="footer__bottom-content">
+                        <div class="footer__bottom_copyright">
+                            <p>© 2021 - Eduguard. All rights reserved</p>
+                        </div>
+                        <div class="footer__bottom_topbutton">
+                            <a href="#">
+                                Go To Top
+                                <div class="icon ms-2">
+                                    <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M9 5L5 1L1 5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <script src="src/js/jquery.min.js"></script>
+        <script src="src/js/bootstrap.bundle.min.js"></script>
+        <script src="src/scss/vendors/plugin/js/isotope.pkgd.min.js"></script>
+        <script src="src/scss/vendors/plugin/js/jquery.magnific-popup.min.js"></script>
+        <script src="src/scss/vendors/plugin/js/slick.min.js"></script>
+        <script src="src/scss/vendors/plugin/js/jquery.nice-select.min.js"></script>
+        <script src="src/scss/vendors/plugin/js/jquery.syotimer.min.js"></script>
+        <script src="src/js/app.js"></script>
+        <script src="dist/main.js"></script>
+        <script>
+            $("#countdown").syotimer({
+                year: 2026,
+                month: 9,
+                day: 6,
+                hour: 00,
+                minute: 00,
+            });
+        </script>
+    </body>
+</html>

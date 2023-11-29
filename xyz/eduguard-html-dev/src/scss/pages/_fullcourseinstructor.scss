@@ -1,0 +1,15 @@
+.fullcourse-instructor {
+    .course-instructor {
+        padding: 0;
+        max-width: 800px;
+
+        .lead-p {
+            color: #42414B !important;
+            font-size: 18px !important;
+        }
+
+        &-description {
+            font-size: 16px !important;
+        }
+    }
+}

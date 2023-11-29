@@ -1,0 +1,124 @@
+.error-area {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-top: 195px;
+  padding-bottom: 232px;
+  &-start {
+    h3 {
+      font-size: 48px;
+      line-height: 60px;
+      color: #202029;
+    }
+    p {
+      font-size: 16px;
+      line-height: 24px;
+      margin-top: 15px;
+      margin-bottom: 30px;
+      font-weight: 400;
+      max-width: 400px;
+      color: #666575 !important;
+      @include max(767px) {
+        max-width: 100%;
+      }
+    }
+  }
+
+  .image {
+    margin-right: -80px;
+  }
+
+  &-shape {
+    img {
+      position: absolute;
+    }
+
+    .shape-01 {
+      top: 0;
+      left: 0;
+    }
+
+    .shape-02 {
+      bottom: 0;
+      right: 50px;
+    }
+  }
+}
+
+// Responsive
+
+@media (max-width: 1200px) {
+  .error-area {
+    margin: 0px;
+    padding: 90px 0px;
+  }
+}
+
+// extra Small devices 991px
+@media (max-width: 991px) {
+  .newsletter {
+    padding-top: 0px !important;
+  }
+  .error-area {
+    height: auto;
+    padding: 30px 0px !important;
+
+    &-shape {
+      display: none;
+    }
+
+    .image {
+      display: flex;
+      justify-content: center;
+      margin-right: 0px;
+      img {
+        height: 350px;
+      }
+    }
+
+    &-start {
+      margin-top: 15px;
+    }
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  .error-area {
+    &-shape {
+      display: none;
+    }
+
+    .image {
+      margin-right: 0;
+    }
+
+    &-start {
+      h3 {
+        font-size: 36px;
+      }
+
+      p {
+        font-size: 14px;
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .error-area {
+    .image {
+      margin-right: 0px;
+    }
+  }
+}
+
+@media (min-width: 320px) and (max-width: 574px) {
+  .error-area {
+    .image {
+      img {
+        height: auto;
+      }
+    }
+  }
+}

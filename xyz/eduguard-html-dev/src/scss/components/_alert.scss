@@ -1,0 +1,66 @@
+.z-alert {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: $black90;
+  border-radius: 5px;
+  color: white;
+  padding: 8px;
+  margin-bottom: 20px;
+  span {
+    font-size: 16px;
+    line-height: 150%;
+    padding-left: 25px;
+  }
+  .action {
+    display: flex;
+    align-items: center;
+    a {
+      font-size: 14px;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-right: 10px;
+      color: $white;
+      padding: 15px 24px;
+      border-radius: 5px;
+      &:hover {
+        background-color: rgba($white, 0.1);
+      }
+    }
+    .close {
+      width: 45px;
+      height: 45px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      margin-left: 15;
+      margin-right: 0;
+      border-radius: 5px;
+      padding: 0;
+      &:hover {
+        background-color: rgba($white, 0.1);
+      }
+      &::after {
+        content: '';
+        width: 1px;
+        height: 28px;
+        top: 50%;
+        left: -13px;
+        position: absolute;
+        transform: translateY(-50%);
+        background-color: rgba($white, 0.35);
+      }
+    }
+  }
+  &.success {
+    background-color: $success;
+  }
+  &.error {
+    background-color: $danger;
+  }
+  &.warning {
+    background-color: $warning;
+  }
+}

@@ -1,0 +1,342 @@
+.join {
+  padding-top: 205px;
+  padding-bottom: 195px;
+  @include max(767px) {
+    padding-top: 160px;
+    padding-bottom: 120px;
+  }
+  &__overlay-img {
+    position: absolute;
+    pointer-events: none;
+    img {
+      position: relative;
+      z-index: 1;
+    }
+    span {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      animation: circle 3s linear infinite;
+    }
+
+    &--3,
+    &--4,
+    &--7,
+    &--8,
+    &--10,
+    &--15 {
+      animation: circle 3s linear infinite;
+    }
+    &--3 {
+      animation-direction: alternate-reverse;
+    }
+
+    &--1 {
+      bottom: 94px;
+      left: 283px;
+      span {
+        margin-left: -30px;
+      }
+    }
+    &--2 {
+      bottom: 274px;
+      left: 227px;
+      span {
+        left: -23px;
+        bottom: 24px;
+      }
+    }
+    &--3 {
+      top: 78px;
+      left: 700px;
+    }
+    &--4 {
+      right: 121px;
+      top: 257px;
+      animation: circle 3s linear infinite;
+    }
+    &--5 {
+      top: 78px;
+      right: 254px;
+    }
+    &--6 {
+      top: 84px;
+      right: 90px;
+    }
+    &--7 {
+      bottom: 60px;
+      right: 140px;
+    }
+    &--8 {
+      bottom: 180px;
+      left: 65px;
+    }
+    &--9 {
+      top: 1024px;
+      left: 136px;
+      display: none;
+    }
+    &--10 {
+      bottom: 100px;
+      left: 474px;
+    }
+    &--11 {
+      left: 404px;
+      bottom: 320px;
+    }
+    &--12 {
+      right: 87px;
+      bottom: 175px;
+    }
+    &--13 {
+      right: 236px;
+      top: 300px;
+    }
+    &--14 {
+      right: 371px;
+      bottom: 194px;
+    }
+    &--15 {
+      right: 510px;
+      bottom: 88px;
+    }
+    &--16 {
+      right: 354px;
+      top: 126px;
+    }
+    &--17 {
+      bottom: 58px;
+      left: 729px;
+    }
+    &--18 {
+      top: 73px;
+      left: 374px;
+    }
+    &--19 {
+      top: 102px;
+      left: 136px;
+    }
+  }
+  h2 {
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 50px;
+    margin-bottom: 16px;
+    @include max(767px) {
+      font-size: 32px;
+      line-height: 42px;
+    }
+  }
+  p {
+    font-size: 18px;
+    line-height: 27px;
+    color: #666575;
+    @include max(991px) {
+      margin-bottom: 30px;
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .join {
+    &__overlay-img {
+      &--2 {
+        bottom: 274px;
+        left: 135px;
+        span {
+          left: -23px;
+          bottom: 24px;
+        }
+      }
+      &--6 {
+        top: 36px;
+        right: 30px;
+      }
+      &--7 {
+        bottom: 60px;
+        right: 140px;
+      }
+      &--8 {
+        bottom: 65px;
+        left: 65px;
+      }
+      &--9 {
+        top: 1024px;
+        left: 136px;
+      }
+      &--10 {
+        bottom: 30px;
+        left: 474px;
+      }
+      &--11 {
+        left: 405px;
+        bottom: 195px;
+      }
+      &--12 {
+        right: 30px;
+        bottom: 175px;
+      }
+      &--13 {
+        right: 165px;
+        top: 230px;
+      }
+      &--14 {
+        right: 265px;
+        bottom: 194px;
+      }
+      &--15 {
+        right: 425px;
+      }
+      &--16 {
+        right: 354px;
+        top: 60px;
+      }
+      &--17 {
+        bottom: 58px;
+        left: 729px;
+      }
+      &--18 {
+        top: 73px;
+        left: 374px;
+      }
+      &--19 {
+        top: 30px;
+        left: 30px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1199px) {
+  .join {
+    &__overlay-img {
+      &--1,
+      &--7,
+      &--10,
+      &--11,
+      &--14,
+      &--16,
+      &--17,
+      &--18 {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1366px) {
+  .join__overlay-img--11 {
+    display: none;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .join {
+    &__overlay-img {
+      &--2 {
+        left: 75px;
+        span {
+          left: auto;
+          right: -55px;
+        }
+      }
+      &--4 {
+        right: 85px;
+        top: 265px;
+      }
+      &--6 {
+        top: 30px;
+        right: 185px;
+      }
+      &--12 {
+        bottom: 65px;
+      }
+      &--13 {
+        right: 85px;
+        top: 270px;
+      }
+      &--15 {
+        right: 185px;
+        bottom: 130px;
+      }
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .join {
+    &__overlay-img {
+      &--5,
+      &--6,
+      &--19 {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .join {
+    &__overlay-img {
+      &--2 {
+        top: 30px;
+        left: 35px;
+      }
+      &--3 {
+        top: 40px;
+        left: 595px;
+      }
+      &--4 {
+        top: auto;
+        bottom: 30px;
+        right: 10px;
+      }
+      &--8 {
+        animation: stop;
+      }
+      &--12 {
+        bottom: 60px;
+      }
+
+      &--13 {
+        top: 60px;
+        right: 165px;
+      }
+      &--15 {
+        right: auto;
+        left: 120px;
+        bottom: 85px;
+      }
+    }
+  }
+}
+@media (max-width: 767px) {
+  .join {
+    overflow: hidden;
+    &__overlay-img {
+      &--2,
+      &--12 {
+        display: none;
+      }
+      &--4 {
+        right: auto;
+        left: 30px;
+        top: 30px;
+      }
+      &--8 {
+        left: auto;
+        right: 30px;
+      }
+      &--13 {
+        top: 60px;
+        right: auto;
+        left: 30px;
+      }
+    }
+    p {
+      font-size: 14px;
+      line-height: 24px;
+    }
+  }
+}

@@ -1,0 +1,34 @@
+.slick-dots {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 10px;
+
+  li {
+    margin-right: 8px;
+    &:nth-last-child(1) {
+      margin-right: 0px;
+    }
+    button {
+      font-size: 0px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: #8f8fa3;
+      border: 0px;
+      outline: 0;
+    }
+    &.slick-active {
+      button {
+        width: 24px;
+        height: 8px;
+        border-radius: 50px;
+        background-color: #202029;
+        transition: all 0.2s ease-in-out;
+      }
+    }
+  }
+}

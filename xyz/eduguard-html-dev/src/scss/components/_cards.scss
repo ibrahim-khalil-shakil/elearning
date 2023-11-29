@@ -1,0 +1,180 @@
+/*------------------------*/
+/*-------Content Cards ---------*/
+/*-------------------------*/
+.contentCard {
+  position: relative;
+  min-width: 0;
+  display: flex;
+  overflow: hidden;
+  border-radius: 5px;
+  word-wrap: break-word;
+  flex-direction: column;
+  background-color: #fff;
+  background-clip: border-box;
+
+  &--space {
+    margin: 0px 15px;
+  }
+  &-top {
+    a {
+      width: 100%;
+      height: 245px;
+      overflow: hidden;
+      position: relative;
+      display: inline-block;
+    }
+    img {
+      width: inherit;
+      height: inherit;
+      object-fit: cover;
+    }
+  }
+  &-bottom {
+    padding: 16px;
+    padding-bottom: 0px;
+    h5 {
+      margin-bottom: 16px;
+    }
+  }
+
+  &-user {
+    img {
+      margin-right: 8px !important;
+    }
+    p {
+      color: #202029;
+    }
+  }
+  &-info {
+    margin: 12px 0px;
+    .price {
+      span {
+        font-size: 18px;
+        line-height: 27px;
+        font-weight: 500;
+        color: #42414b;
+        font-family: 'Poppins', sans-serif;
+      }
+      del {
+        font-size: 14px;
+        line-height: 21px;
+        color: #8f8fa3;
+      }
+    }
+  }
+  &-more {
+    width: 100%;
+    display: flex;
+    padding: 16px 0px;
+    position: relative;
+    align-items: center;
+    @include max(575px) {
+      justify-content: space-between;
+    }
+    &::after {
+      content: '';
+      width: calc(100% + 50%);
+      height: 1px;
+      position: absolute;
+      top: 0;
+      left: -20px;
+      background-color: #ebebf2;
+    }
+
+    & > div {
+      margin-right: 25px;
+      @include max(575px) {
+        margin-right: 0px;
+      }
+      &:nth-last-child(1) {
+        margin-right: 0px;
+      }
+    }
+
+    span {
+      font-size: 14px;
+      color: #666575;
+      font-weight: 400;
+      line-height: 21px;
+      white-space: nowrap;
+      text-transform: capitalize;
+    }
+    .icon {
+      margin-right: 4px;
+      flex-shrink: 0;
+    }
+  }
+
+  /*------------------------*/
+  /*-------Content Cards course ---------*/
+  /*-------------------------*/
+  &-course {
+    &--status {
+      font-size: 14px;
+      line-height: 21px;
+      color: #8f8fa3;
+      span {
+        margin-right: 2px;
+      }
+    }
+  }
+  &-watch--progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 6px;
+    background: rgba(255, 122, 26, 0.3);
+    border-radius: 0px 0px 5px 5px;
+    span {
+      height: 6px;
+      display: inline-block;
+      background: #ff7a1a;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+    }
+  }
+
+  /*------------------------*/
+  /*-------Content Cards course(marketingtype) ---------*/
+  /*-------------------------*/
+  &--type {
+    font-size: 12px;
+    line-height: 12px;
+    letter-spacing: 2px;
+    font-weight: 500;
+    color: #8f8fa3;
+    text-transform: uppercase;
+    font-family: 'Poppins', sans-serif;
+  }
+  /*------------------------*/
+  /*-------Content Cards Events  ---------*/
+  /*-------------------------*/
+  &--event-transparent {
+    background: transparent;
+
+    .contentCard {
+      &-top {
+        a img {
+          border-radius: 5px;
+        }
+      }
+      &-more {
+        &::after {
+          height: 0;
+        }
+      }
+    }
+  }
+}
+
+/*------------------------*/
+/*------- New Courses Section ---------*/
+/*-------------------------*/
+.new__courses {
+  .contentCard {
+    margin: 0px 15px;
+  }
+}

@@ -1,0 +1,123 @@
+.form-element {
+  margin-bottom: 32px;
+  position: relative;
+
+  label {
+    font-size: 14px;
+    line-height: 21px;
+    margin-bottom: 8px;
+    color: #202029;
+    text-transform: capitalize;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+  }
+
+  input {
+    width: 100%;
+    border-radius: 4px;
+    font-size: 16px;
+    padding: 16px 20px;
+    border: 1px solid rgba($black50, 0.4);
+    transition: all 0.2s linear;
+    &:focus {
+      border-color: $primary;
+    }
+  }
+  .form-alert {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    span {
+      font-size: 12px;
+    }
+    &-icon {
+      position: absolute;
+      right: 0px;
+      top: 50%;
+      transform: translateX(-50%);
+    }
+  }
+  .form-alert-input {
+    position: relative;
+    .form-alert-icon {
+      position: absolute;
+      top: 50%;
+      right: 20px;
+      transform: translate(0, -50%);
+      color: $black50;
+    }
+  }
+
+  &.success input,
+  input.success {
+    border-color: rgba($success, 0.4);
+    background-color: rgba($success, 0.02);
+  }
+  &.error input,
+  input.error {
+    border-color: rgba($danger, 0.4);
+    background-color: rgba($danger, 0.02);
+  }
+  &.error {
+    .form-alert span {
+      color: $danger;
+    }
+    .form-alert-icon {
+      color: $danger;
+    }
+  }
+  &.success {
+    .form-alert span {
+      color: $success;
+    }
+    .form-alert-icon {
+      color: $success;
+    }
+  }
+  &.active {
+    input {
+      border: 1px solid #1089ff;
+      box-shadow: 0px 2px 10px 0px #0264ed33;
+    }
+  }
+}
+
+.checkout-area {
+  // Responsive
+  @media (max-width: 1200px) {
+    .checkout-area {
+      padding-top: 0px;
+    }
+  }
+
+  @media (max-width: 991px) {
+    .checkout-area {
+      padding-top: 30px;
+    }
+  }
+
+  // Medium devices 768px - 991px
+  @media (min-width: 768px) and (max-width: 991px) {
+    form input {
+      padding: 10px 0px 10px 15px;
+    }
+  }
+  // Small devices 575px - 767px
+  @media (min-width: 575px) and (max-width: 767px) {
+    form input {
+      padding: 10px 0px 10px 15px;
+    }
+  }
+  // Small devices 420px - 574px
+  @media (min-width: 420px) and (max-width: 574px) {
+    form input {
+      padding: 10px 0px 10px 15px;
+    }
+  }
+  // extra Small devices 420px
+  @media (max-width: 420px) {
+    form input {
+      padding: 10px 0px 10px 15px;
+    }
+  }
+}

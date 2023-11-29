@@ -1,0 +1,140 @@
+.featuresitem {
+  margin-top: -130px;
+}
+//Features item
+.features {
+  background: #ffffff;
+  border: 1px solid #ebebf2;
+  border-radius: 5px;
+  text-align: center;
+  padding: 30px 20px;
+  transition: 0.3s;
+  &__icon {
+    width: 72px;
+    height: 72px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+  }
+  &__title {
+    margin-top: 22px;
+    h6 {
+      font-family: 'Poppins', sans-serif;
+        font-weight: 500;
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+  }
+  &:hover {
+    box-shadow: 0px 24px 50px rgba(9, 8, 78, 0.1);
+    border-color: transparent;
+    .bg-warning {
+      background-color: color(warning) !important;
+      svg {
+        path {
+          stroke: white;
+        }
+      }
+    }
+    .bg-success {
+      background-color: color(success) !important;
+      svg {
+        path {
+          stroke: white;
+        }
+      }
+    }
+    .bg-denger {
+      background-color: color(danger) !important;
+      svg {
+        path {
+          stroke: white;
+        }
+      }
+    }
+  }
+}
+
+/*------------------------*/
+/*-------RESPOSIVE---------*/
+/*-------------------------*/
+
+// large devices 992px - 1169px
+@media (min-width: 992px) and (max-width: 1199px) {
+}
+
+// Medium devices 768px - 991px
+@media (min-width: 768px) and (max-width: 991px) {
+  .featuresitem {
+    margin-top: 0px;
+    padding-top: 70px;
+    .features {
+      margin-bottom: 40px;
+    }
+  }
+}
+
+// Small devices 575px - 767px
+@media (min-width: 575px) and (max-width: 767px) {
+  .featuresitem {
+    margin-top: 0px;
+    padding-top: 50px;
+    .features {
+      margin: 0 78px;
+      margin-bottom: 30px;
+    }
+    .features {
+      &__icon {
+        width: 70px;
+        height: 70px;
+      }
+      &__title {
+        margin-top: 18px;
+        h6 {
+          font-size: 22px;
+          margin-bottom: 10px;
+        }
+        p {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+
+// Small devices 420px - 574px
+@media (min-width: 420px) and (max-width: 574px) {
+  .featuresitem {
+    margin-top: 0px;
+    padding-top: 50px;
+    .features {
+      margin-bottom: 30px;
+    }
+    .features {
+      &__icon {
+        width: 70px;
+        height: 70px;
+      }
+      &__title {
+        margin-top: 18px;
+        h6 {
+          font-size: 20px;
+          margin-bottom: 10px;
+        }
+        p {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 320px) and (max-width: 574px) {
+  .featured-popular-courses-heading .nav-button .nav-link {
+    margin-right: 15px !important;
+  }
+  .featured-popular-courses-tabs {
+    justify-content: center;
+  }
+}

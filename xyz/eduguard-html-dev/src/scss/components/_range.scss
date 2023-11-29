@@ -1,0 +1,128 @@
+.sliderText {
+  width: 40%;
+  margin-bottom: 30px;
+  border-bottom: 2px solid red;
+  padding: 10px 0 10px 0px;
+  font-weight: bold;
+  display: none;
+}
+
+.ui-slider-horizontal {
+  height: 0.6em;
+}
+.ui-slider-horizontal {
+  margin-bottom: 15px;
+  width: 40%;
+}
+.ui-widget-header {
+  background: linear-gradient(90deg, #1089ff -41.03%, #0264ed 371.15%);
+}
+.price-range-block__inputWrapper {
+  justify-content: space-between;
+}
+
+.price-range-search {
+  width: 40.5%;
+  background-color: #f9f9f9;
+  border: 1px solid #6e6666;
+  min-width: 40%;
+  display: inline-block;
+  height: 32px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.price-range-field {
+  color: black;
+  width: 50%;
+  min-width: 16%;
+  border: 1px solid #8f8fa3;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.search-results-block {
+  position: relative;
+  display: block;
+  clear: both;
+}
+
+#slider-range {
+  margin-bottom: 0px;
+  width: 100%;
+  height: 8px;
+  border-radius: 50px;
+}
+
+/* UI - State Active  */
+.ui-slider-handle .ui-state-active {
+  background-color: #1089ff;
+  border: 1px solid #ebebf2 !important;
+}
+
+.ui-corner-all {
+  width: 95%;
+  border-radius: 50%;
+}
+
+.ui-slider-horizontal .ui-slider-range {
+  border-radius: 0px;
+}
+
+.ui-state-default,
+.ui-widget-content .ui-state-default {
+  background: #1089ff;
+  border-radius: 2px solid #ebebf2;
+}
+
+.price-range-block__inputWrapper {
+  align-items: center;
+  margin-bottom: 30px;
+}
+.price-range-block__inputWrapper input {
+  font-size: 16px;
+  line-height: 24px;
+  color: #666575;
+}
+.price-range-block__inputWrapper span {
+  font-size: 14px;
+  line-height: 21px;
+  color: #8f8fa3;
+  margin: 0px 5px;
+}
+.price-range-block__inputWrapper .angle-btn {
+  background: #1089ff;
+  margin-left: 12px;
+  color: #fff;
+  width: 52px;
+  height: 52px;
+  outline: none;
+  border: 0px;
+  border-radius: 4px;
+}
+
+@media (max-width: 1199px) {
+  .price-range-block__inputWrapper {
+    input {
+      width: 80px !important;
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .price-range-block__inputWrapper {
+    input {
+      width: 190px !important;
+    }
+    span {
+      margin: 0px 20px;
+    }
+  }
+}
+
+@media (min-width: 575px) and (max-width: 767px) {
+  .price-range-block__inputWrapper input {
+    width: 165px !important;
+  }
+}

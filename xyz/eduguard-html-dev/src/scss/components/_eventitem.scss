@@ -1,0 +1,45 @@
+.ourevent {
+  background-color: white;
+}
+
+/*------------------------*/
+/*-------RESPOSIVE---------*/
+/*-------------------------*/
+
+// Small devices 575px - 767px
+@media (min-width: 575px) and (max-width: 767px) {
+  .event {
+    &__img {
+      margin-bottom: 10px;
+      img {
+        border-radius: 6px;
+      }
+    }
+    &__content {
+      &_title {
+        border-bottom: 1px solid #ebebf2;
+        h6 {
+          font-size: 16px;
+          margin-bottom: 15px;
+        }
+      }
+      &_detail {
+        padding: 10px 0;
+        .loction,
+        .date {
+          span {
+            font-size: 10px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Small devices 420px - 574px
+@media (min-width: 420px) and (max-width: 574px) {
+}
+
+// extra Small devices 420px
+@media (max-width: 420px) {
+}

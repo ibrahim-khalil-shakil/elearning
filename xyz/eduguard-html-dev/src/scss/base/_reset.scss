@@ -1,0 +1,169 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+}
+
+img {
+  border: 0;
+  outline: 0;
+  max-width: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (min-width: 1200px) {
+  .container,
+  .container-sm,
+  .container-md,
+  .container-lg,
+  .container-xl {
+    max-width: 1170px;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 0px;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  transition: 0.3s;
+  overflow-y: scroll;
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+}
+
+a:focus,
+.button:focus {
+  outline: none;
+  box-shadow: none !important;
+  text-decoration: none;
+}
+a {
+  transition: 0.3s;
+  &:hover {
+    color: #202029;
+  }
+}
+a,
+a:focus,
+a:hover,
+.portfolio-cat a:hover,
+.footer -menu li a:hover {
+  text-decoration: none;
+}
+
+input {
+  &:active,
+  &:focus {
+    box-shadow: none !important;
+  }
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+ul {
+  margin: 0px;
+  padding: 0px;
+}
+
+li {
+  list-style: none;
+}
+p {
+  margin-bottom: 0px;
+}
+
+.bg-warning {
+  transition: 0.3s;
+  background-color: rgba(255, 201, 27, 0.1) !important;
+  svg {
+    transition: 0.3s;
+    path {
+      stroke: #ffc91b;
+    }
+  }
+}
+
+.bg-success {
+  transition: 0.3s;
+  background-color: rgba(0, 175, 145, 0.1) !important;
+  svg {
+    transition: 0.3s;
+    path {
+      stroke: #00af91;
+    }
+  }
+}
+
+.bg-denger {
+  transition: 0.3s;
+  background-color: rgba(241, 92, 76, 0.1) !important;
+  svg {
+    transition: 0.3s;
+    path {
+      stroke: #f15c4c;
+    }
+  }
+}
+
+.mb-30 {
+  margin-bottom: 30px;
+}
+
+.accordion-button:focus {
+  border-color: transparent !important;
+}
+
+button {
+  &:focus {
+    outline: none;
+  }
+}
+// slick
+.slick-slider {
+  position: relative;
+  z-index: 1;
+}
+
+.feedback-rating-end {
+  .jq-star {
+    margin-right: 0px !important;
+    svg {
+      width: 20px !important;
+      height: 20px !important;
+    }
+  }
+}
+
+.modal-body-rating {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  #my-rating {
+    margin-top: 30px;
+  }
+}

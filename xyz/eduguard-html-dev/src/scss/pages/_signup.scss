@@ -1,0 +1,272 @@
+// Signin Area
+.signin-area {
+  form {
+    label {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 500;
+    }
+  }
+}
+
+// SignUp Area
+.signup-area {
+  position: relative;
+  background: linear-gradient(90deg, #fff 55%, rgba(236, 236, 243, 0.6) 45%);
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  overflow-y: auto;
+  &-image {
+    margin-right: -140px;
+    margin-left: 60px;
+  }
+
+  .verification {
+    input {
+      font-size: 32px;
+      line-height: 40px;
+      color: #202029;
+      border: 1px solid transparent;
+      &:focus {
+        border: 1px solid #1089ff !important;
+      }
+      &::placeholder {
+        color: #8f8fa3;
+      }
+    }
+  }
+
+  &-textwrapper {
+    h2 {
+      margin-bottom: 12px !important;
+    }
+    p {
+      color: #666575;
+      a {
+        color: #202029;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 500;
+      }
+    }
+    #agree {
+      border: 2px solid #8f8fa3;
+    }
+    .terms {
+      label {
+        font-size: 14px;
+        line-height: 21px;
+        color: #8f8fa3;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 400;
+        a {
+          text-decoration: underline;
+          color: #1089ff;
+        }
+      }
+    }
+  }
+}
+
+// Dot Image
+.dot-images {
+  img {
+    z-index: -1;
+  }
+  .first-dotimage {
+    position: absolute;
+    top: 85px;
+    left: 0;
+  }
+
+  .second-dotimage {
+    position: absolute;
+    bottom: 200px;
+    right: 0;
+  }
+}
+
+// Responsive
+
+@media (max-width: 1200px) {
+  .verify {
+    display: flex;
+    align-items: center;
+    overflow-y: auto !important;
+    position: relative;
+    z-index: 1;
+  }
+  .signin-area,
+  .signup-area {
+    height: auto;
+  }
+}
+
+@media (max-width: 1199px) {
+  .signup-area-image {
+    display: flex;
+    justify-content: center;
+    margin: auto !important;
+    margin-bottom: 30px !important;
+  }
+  .signup-area-image img {
+    width: 450px;
+  }
+}
+
+// large devices 992px - 1169px
+@media (min-width: 992px) and (max-width: 1200px) {
+  .signup-area {
+    &-image {
+      margin: 0;
+    }
+  }
+
+  .dot-images {
+    display: none;
+  }
+
+  .checkbox-primary[type='checkbox'] {
+    width: 22px;
+    height: 22px;
+  }
+
+  .form-element input {
+    padding: 12px 15px;
+  }
+
+  .signup-with {
+    height: 45px;
+    &.border-secondary-primary {
+      margin-top: 10px;
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .verify {
+    height: auto !important;
+    &__image {
+      display: flex;
+      justify-content: center;
+      img {
+        height: 350px;
+        object-fit: contain;
+      }
+    }
+  }
+  .dot-images {
+    padding: 0px !important;
+    display: none !important;
+  }
+  .verify__image {
+    margin: 0px;
+    margin-bottom: 30px;
+  }
+
+  .signup-area {
+    padding-top: 30px !important;
+  }
+
+  .signinButtons {
+    justify-content: center !important;
+    a {
+      margin: 0px;
+      margin-bottom: 15px;
+      margin-right: 15px;
+    }
+  }
+}
+// Medium devices 768px - 991px
+@media (min-width: 768px) and (max-width: 991px) {
+  .checkbox-primary[type='checkbox'] {
+    width: 22px;
+    height: 22px;
+  }
+
+  .form-element input {
+    padding: 12px 15px;
+  }
+}
+
+@media (max-width: 767px) {
+  .signup-with {
+    width: 125px !important;
+  }
+}
+
+// Small devices 575px - 767px
+@media (min-width: 575px) and (max-width: 767px) {
+  .signup-area {
+    &-image {
+      margin: 0;
+      margin-top: 30px;
+    }
+  }
+
+  .dot-images {
+    display: none;
+  }
+
+  .form-element input {
+    padding: 10px 15px;
+  }
+
+  .checkbox-primary[type='checkbox'] {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+// Small devices 420px - 574px
+@media (min-width: 420px) and (max-width: 574px) {
+  .signup-area {
+    background: #fff;
+
+    &-image {
+      margin: 0;
+      margin-top: 30px;
+    }
+  }
+
+  .dot-images {
+    display: none;
+  }
+
+  .form-element input {
+    padding: 10px 15px;
+  }
+
+  .checkbox-primary[type='checkbox'] {
+    width: 20px;
+    height: 20px;
+  }
+}
+// extra Small devices 420px
+@media (max-width: 420px) {
+  .signup-area {
+    &-image {
+      margin: 0;
+      margin-top: 30px;
+    }
+  }
+
+  .dot-images {
+    display: none;
+  }
+
+  .form-element input {
+    padding: 10px 15px;
+  }
+
+  .checkbox-primary[type='checkbox'] {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 574px) {
+  // verify image
+  .verify__image img {
+    height: auto;
+  }
+}

@@ -1,0 +1,5 @@
+node_modules/
+.vscode
+package-lock.json
+yarn.lock
+src/scss/vendors/plugin/js/rater.min.js

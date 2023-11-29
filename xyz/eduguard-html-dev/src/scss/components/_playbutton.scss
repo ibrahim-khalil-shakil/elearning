@@ -1,0 +1,17 @@
+.play-button {
+  width: 79px;
+  height: 79px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  box-shadow: 0px 24px 50px rgba(9, 8, 78, 0.1);
+}
+
+@media (max-width: 767px) {
+  .play-button {
+    width: 60px;
+    height: 60px;
+  }
+}

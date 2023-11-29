@@ -1,0 +1,225 @@
+.footer {
+  padding-top: 75px;
+  background-color: #202020;
+
+  &--two {
+    padding-top: 220px;
+    @include max(575px) {
+      padding-top: 180px;
+    }
+  }
+
+  &--three {
+    padding: 0;
+    .footer__top {
+      padding-top: 100px;
+      padding-bottom: 70px;
+    }
+    .footer__wrapper {
+      margin-bottom: 0px;
+      &_social {
+        margin-bottom: 0px !important;
+      }
+    }
+  }
+
+  &__wrapper {
+    margin-bottom: 50px;
+    &_logo {
+      margin-bottom: 6px;
+    }
+    max-width: 65%;
+    p {
+      font-size: 16px;
+      line-height: 1.5;
+      color: color(lowBlack);
+    }
+    &_social {
+      margin-top: 24px;
+      ul {
+        display: flex;
+        align-items: center;
+        li {
+          margin-right: 12px;
+          a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 4px;
+            transition: 0.3s;
+            border: 1px solid #42414b;
+            box-sizing: border-box;
+            background-color: transparent;
+            &:hover {
+              background-color: color(primary);
+              border: 1px solid transparent;
+            }
+          }
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+  &__list {
+    margin-bottom: 46px;
+    h6 {
+      font-size: 20px;
+      line-height: 1.5;
+      color: #fff !important;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 500;
+      margin-bottom: 12px;
+    }
+    ul {
+      li {
+        a {
+          font-size: 16px;
+          line-height: 1.5;
+          color: color(lowBlack);
+          padding: 4px 0;
+          display: block;
+          transition: 0.3s;
+          &:hover {
+            color: white;
+          }
+        }
+      }
+    }
+  }
+  &__bottom {
+    border-top: 1px solid #4b4b57;
+    padding: 20px 0;
+    &-content {
+      display: flex;
+      justify-content: space-between;
+      @include max(480px) {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    &_copyright {
+      p {
+        color: color(lowBlack);
+        line-height: 1.5;
+        font-size: 16px;
+        @include max(480px) {
+          margin-bottom: 16px;
+          text-align: center;
+        }
+      }
+    }
+    &_topbutton {
+      a {
+        display: flex;
+        align-items: center;
+        color: color(lowBlack);
+        font-size: 16px;
+        &:hover {
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+// Responsive
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  .footer__wrapper {
+    max-width: 80%;
+  }
+}
+
+@media (max-width: 991px) {
+  .footer {
+    &__list {
+      h6 {
+        font-size: 24px !important;
+        line-height: 36px !important;
+        margin-bottom: 0px;
+      }
+    }
+  }
+}
+
+// Medium devices 768px - 991px
+@media (min-width: 768px) and (max-width: 991px) {
+  .footer {
+    &.footer--two {
+      padding-top: 120px !important;
+    }
+  }
+  .footer__wrapper {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .footer {
+    &__list {
+      margin-bottom: 30px;
+    }
+  }
+}
+
+// Small devices 575px - 767px
+@media (min-width: 575px) and (max-width: 767px) {
+  .footer {
+    &.footer--two {
+      padding-top: 200px !important;
+    }
+  }
+  .footer__wrapper {
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 574px) {
+  .footer {
+    &__wrapper {
+      &_logo {
+        img {
+          width: 220px;
+        }
+      }
+    }
+    &__list {
+      margin-bottom: 15px;
+      h6 {
+        font-size: 18px !important ;
+      }
+      ul {
+        li {
+          a {
+            font-size: 14px;
+            line-height: 26px;
+          }
+        }
+      }
+    }
+
+    &__bottom {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}
+
+// extra Small devices 420px
+@media (max-width: 420px) {
+  .footer__wrapper {
+    max-width: 100%;
+  }
+}
+
+// Small devices 420px - 574px
+@media (min-width: 420px) and (max-width: 574px) {
+  .footer__wrapper {
+    max-width: 100%;
+  }
+}

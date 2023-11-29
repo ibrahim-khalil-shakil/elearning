@@ -1,0 +1,72 @@
+.avatar01{
+    width: 122px;
+    height: 122px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.avatar02{
+    width: 105px;
+    height: 105px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.avatar03{
+    width: 89px;
+    height: 89px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.avatar04{
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/*------------------------*/
+/*-------RESPOSIVE---------*/
+/*-------------------------*/
+
+// large devices 992px - 1169px
+@media (min-width: 992px) and (max-width: 1199px) {
+
+}
+
+// Medium devices 768px - 991px
+@media (min-width: 768px) and (max-width: 991px) {
+    .avatar01{
+        width: 90px;
+        height: 90px;
+    }
+    .avatar02{
+        width: 70px;
+        height: 70px;
+    }
+    .avatar03{
+        width: 50px;
+        height: 50px;
+    }
+    .avatar04{
+        width: 40px;
+        height: 40px;
+    }
+}
+// Small devices 575px - 767px
+@media (min-width: 575px) and (max-width: 767px) {
+    .avatar01{
+        width: 50px;
+        height: 50px;
+    }
+    .avatar02{
+        width: 40px;
+        height: 40px;
+    }
+    .avatar03{
+        width: 30px;
+        height: 30px;
+    }
+    .avatar04{
+        width: 30px;
+        height: 30px;
+    }
+}

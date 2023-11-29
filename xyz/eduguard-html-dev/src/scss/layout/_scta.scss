@@ -1,0 +1,161 @@
+.scta {
+    position: relative;
+    background-color: rgba(235, 235, 242, 0.5);
+    padding: 220px 0;
+
+    &__section {
+        margin: 0 55px;
+        text-align: center;
+
+        p {
+            padding-top: 10px;
+            font-size: 18px;
+            line-height: 1.5;
+        }
+    }
+
+    &__student {
+        img {
+            position: absolute;
+
+            &.avatar1 {
+                top: 11%;
+                left: 7%;
+                z-index: 2;
+            }
+
+            &.avatar2 {
+                top: 15%;
+                right: 16%;
+                z-index: 2;
+            }
+
+            &.avatar3 {
+                top: 40%;
+                left: 20%;
+                z-index: 2;
+            }
+
+            &.avatar4 {
+                bottom: 8%;
+                left: 9%;
+                z-index: 2;
+            }
+
+            &.avatar5 {
+                bottom: 7%;
+                left: 42%;
+                z-index: 2;
+            }
+
+            &.avatar6 {
+                bottom: 2%;
+                right: 8%;
+                z-index: 2;
+            }
+        }
+
+    }
+
+    &__shape {
+        img {
+            position: absolute;
+
+            &.shape1 {
+                bottom: 12%;
+                left: 7%;
+            }
+
+            &.shape2 {
+                top: 10%;
+                left: 30%;
+            }
+
+            &.shape3 {
+                right: 8%;
+                top: 36%;
+            }
+
+            &.shape4 {
+                bottom: 15%;
+                right: 27%;
+            }
+        }
+    }
+}
+
+/*------------------------*/
+/*-------RESPOSIVE---------*/
+/*-------------------------*/
+
+// large devices 992px - 1169px
+@media (min-width: 992px) and (max-width: 1199px) {
+    .scta__student img.avatar3 {
+        top: 61%;
+        left: 21%;
+    }
+
+}
+
+// Medium devices 768px - 991px
+@media (min-width: 768px) and (max-width: 991px) {
+    .scta {
+        padding: 130px 0;
+
+        &__section {
+            position: relative;
+            z-index: 99;
+
+            h4 {
+                font-size: 35px;
+            }
+
+            p {
+                font-size: 18px;
+            }
+        }
+
+        &__student {
+            img{
+                &.avatar2 {
+                    top: 7%;
+                }
+                &.avatar3 {
+                    top: 43%;
+                    left: 3%;}
+            }
+        }
+
+    }
+}
+
+// Small devices 575px - 767px
+@media (min-width: 575px) and (max-width: 767px) {
+    .scta {
+        padding: 130px 0;
+    
+        &__section {
+            margin: 0 24px;
+            text-align: center;
+    
+            p {
+                font-size: 16px;
+            }
+            a{
+                margin-top: 10px !important;
+            }
+        }
+        &__student{
+            img{
+               &.avatar3 {
+                   top: 18%;
+               }
+            }
+        }
+        &__shape {
+            img {
+                display: none;
+            }
+        }
+    }
+}

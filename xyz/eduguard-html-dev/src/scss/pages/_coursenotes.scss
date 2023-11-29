@@ -1,0 +1,37 @@
+// Course Notes Starts Here
+.course-notes {
+  margin-bottom: 20px;
+
+  &-area {
+    max-width: 815px;
+  }
+
+  h6 {
+    color: #666575;
+    font-family: 'Poppins', sans-serif;
+        font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 5px;
+  }
+
+  &-item {
+    position: relative;
+
+    .dot {
+      position: absolute;
+      top: 8px;
+      left: 0;
+      width: 5px;
+      height: 5px;
+      background-color: #8f8fa3;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+
+    p {
+      margin-left: 10px;
+      color: #8f8fa3;
+    }
+  }
+}

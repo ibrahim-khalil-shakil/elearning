@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+// fonts family
+.font-title--lg,
+.font-title--md,
+.font-title--sm,
+.font-title--xs {
+  text-transform: capitalize;
+}
+
+.font-title--md,
+.font-title--xs {
+  font-weight: 700;
+  color: #202029;
+}
+
+// Fonts  => Title/heading
+.font-title {
+  &--lg {
+    font-size: 56px;
+    color: #202029;
+    font-weight: 600;
+    line-height: 70px;
+    @include max(767px) {
+      font-size: 48px;
+      line-height: 58px;
+    }
+    @include max(480px) {
+      font-size: 32px;
+      line-height: 42px;
+    }
+  }
+  &--md {
+    font-size: 40px;
+    line-height: 50px;
+
+    @media (max-width: 767px) {
+      font-size: 26px;
+      line-height: 36px;
+    }
+  }
+  &--sm {
+    font-size: 32px;
+    line-height: 40px;
+
+    font-weight: 600;
+    @media (max-width: 767px) {
+      font-size: 24px;
+      line-height: 34px;
+    }
+  }
+  &--xs {
+    font-size: 24px;
+    line-height: 36px;
+    color: #42414b;
+
+    font-weight: 500;
+
+    @media (max-width: 767px) {
+      font-size: 18px;
+      line-height: 28px;
+    }
+  }
+
+  &--card {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 27px;
+    color: #202029;
+    // @media (max-width: 767px) {
+    //   font-size: 16px;
+    //   line-height: 26px;
+    // }
+  }
+}
+
+// Fonts => paragraph/section brief
+.font-para {
+  &--lg {
+    font-size: 16px;
+    line-height: 24px;
+    color: #8f8fa3;
+
+    font-weight: 500;
+    @media (max-width: 767px) {
+      font-size: 14px;
+      line-height: 24px;
+    }
+  }
+  &--md {
+    font-size: 14px;
+    line-height: 21px;
+    color: #8585a3;
+  }
+}

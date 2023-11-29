@@ -1,0 +1,40 @@
+.slick-arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  font-size: 0px;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ebebf2;
+  transition: all 0.2s linear;
+  transform: translateY(-50%);
+  &:hover {
+    transition: all 0.3s linear;
+    color: #fff;
+    background-color: #1089ff;
+    box-shadow: 0px 10px 20px 0px #0264ed40;
+  }
+
+  &--left {
+    left: -10%;
+    z-index: 1;
+  }
+  &--right {
+    right: -10%;
+    z-index: 1;
+  }
+
+  // customizations
+  &--border-white {
+    border: 1px solid #fff;
+    &:hover {
+      border-color: #1089ff;
+    }
+  }
+}

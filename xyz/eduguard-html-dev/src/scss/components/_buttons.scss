@@ -1,0 +1,244 @@
+.button {
+  display: inline-block;
+  padding: 12px 19px;
+  border: 0px;
+  font-size: 16px;
+  line-height: 19.2px;
+  border-radius: 4px;
+  color: #fff;
+  text-align: center;
+  text-transform: capitalize;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  transition: all 0.2s linear;
+  text-decoration: none;
+  @media (max-width: 767px) {
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+  &-md,
+  &-lg {
+    border: 0px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+  }
+  // medium buttons
+  &-md {
+    padding: 16px 24px;
+    @media (max-width: 767px) {
+      padding: 8px 16px;
+    }
+  }
+
+  &-lg {
+    padding: 19px 32px;
+    @media (max-width: 575px) {
+      padding: 12px 18px;
+    }
+  }
+
+  // Dark buttons
+  &--dark {
+    background-color: #202029;
+    &:hover {
+      background-color: #1089ff;
+      color: #fff;
+    }
+  }
+  &--disabled {
+    background-color: #ebebf2;
+    color: #8f8fa3;
+    pointer-events: none;
+  }
+
+  // Dark Outline buttons
+  &--dark-outline {
+    border: 2px solid #202029;
+    color: #202029;
+    &:hover {
+      background-color: #202029;
+      color: #fff;
+    }
+  }
+
+  &--outline-disabled {
+    border: 2px solid #8f8fa3;
+    color: #8f8fa3;
+    pointer-events: none;
+  }
+
+  // shaddow buttons
+  &--shaddow {
+    color: #202029;
+    background-color: #fff;
+    box-shadow: 0px 4px 12px 0px #00000014;
+    &:hover {
+      box-shadow: 0px 8px 18px 0px #0264ed26;
+    }
+  }
+
+  &--shaddow-disabled {
+    color: #8f8fa3;
+    background-color: #fff;
+    box-shadow: 0px 4px 12px 0px #00000014;
+    pointer-events: none;
+  }
+
+  // transparent buttons
+  &--transparent {
+    color: #1089ff;
+    background-color: transparent;
+    &:hover {
+      background: rgba(16, 137, 255, 0.1);
+      color: #1089ff;
+    }
+  }
+  &--transparent-disabled {
+    color: #8f8fa3;
+    pointer-events: none;
+  }
+
+  // button primary
+  &--primary {
+    background-color: #1089ff;
+    &:hover {
+      color: #fff;
+      background-color: #0264ed;
+      box-shadow: 0px 10px 20px 0px #0264ed40;
+    }
+  }
+  &--primary-outline {
+    border: 2px solid #1089ff;
+    background-color: transparent;
+    color: #1089ff;
+    &:hover {
+      color: #fff;
+      background-color: #0264ed;
+      box-shadow: 0px 10px 20px 0px #0264ed40;
+    }
+  }
+
+  // button text
+  &--text {
+    color: #202029;
+    &:hover {
+      color: #1089ff;
+    }
+  }
+}
+
+// social buttons
+.signinButtons {
+  justify-content: space-between;
+  .fb {
+    &:hover {
+      border-color: #1089ff !important;
+    }
+  }
+  .google {
+    &:hover {
+      border-color: rgba(241, 67, 54, 0.2) !important;
+    }
+  }
+  .twitter {
+    &:hover {
+      border-color: rgba(3, 169, 244, 0.2) !important;
+    }
+  }
+}
+
+// Responsive
+@media (max-width: 1200px) {
+  .signinButtons {
+    justify-content: center;
+    a {
+      margin-right: 15px;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+// sidebar menu icons
+
+.menu-icon-container {
+  border: 0;
+  outline: 0;
+  background-color: transparent;
+  height: 50px;
+  width: 60px;
+  border: 1px solid black;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  padding-left: 14px;
+  border-radius: 5px;
+}
+
+.menu-icon {
+  position: relative;
+  display: block;
+  width: 30px;
+  height: 4px;
+  background-color: #202029;
+
+  margin-top: -2px;
+  margin-left: -15px;
+  transition: background-color 0.2s ease-out;
+}
+.menu-icon::after,
+.menu-icon::before {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 30px;
+  height: 4px;
+  background-color: #202029;
+  left: 0px;
+  transition: all 0.2s ease-out;
+}
+.menu-icon::after {
+  top: 9px;
+}
+.menu-icon::before {
+  top: -9px;
+}
+.menu-icon-container:hover .menu-icon::after {
+  top: 10px;
+  transition: all 0.2s ease-out;
+}
+.menu-icon-container:hover .menu-icon::before {
+  top: -10px;
+  transition: all 0.2s ease-out;
+}
+
+/*---cross---*/
+.menu-icon.transformed {
+  background-color: transparent;
+}
+.menu-icon.transformed::after,
+.menu-icon.transformed::before {
+  transform-origin: 50% 50%;
+  top: 0px;
+  left: 2px;
+  width: 26px;
+  transition: all 0.15s ease-out;
+}
+.menu-icon.transformed::after {
+  transform: rotate(45deg);
+}
+.menu-icon.transformed::before {
+  transform: rotate(-45deg);
+}
+
+.menu-icon-container:hover .menu-icon.transformed::after,
+.menu-icon-container:hover .menu-icon.transformed::before {
+  top: 0px;
+  left: -1px;
+  width: 32px;
+  transition: all 0.15s ease-out;
+}

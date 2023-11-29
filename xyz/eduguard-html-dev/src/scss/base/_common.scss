@@ -1,0 +1,66 @@
+// Section spacing and common css
+.section {
+  position: relative;
+  padding: 100px 0px;
+
+  @media (max-width: 767px) {
+    padding: 50px 0px;
+  }
+  // section background colors
+  &--bg-white {
+    background-color: #fff;
+  }
+  &--bg-offwhite {
+    background-color: #ebebf2;
+  }
+  &--bg-offwhite-one {
+    background: rgba(235, 235, 242, 0.7);
+  }
+  &--bg-offwhite-two {
+    background: rgba(235, 235, 242, 0.6);
+  }
+  &--bg-offwhite-three {
+    background: rgba(235, 235, 242, 0.5);
+  }
+  &--bg-offwhite-four {
+    background: rgba(235, 235, 242, 0.4);
+  }
+  &--bg-offwhite-five {
+    background: rgba(255, 255, 255, 0.3);
+  }
+  &--bg-offgradient {
+    background: linear-gradient(180deg, #ebebf2 0%, rgba(235, 235, 242, 0.4) 100%);
+  }
+
+  &--white-one {
+    background: rgba(255, 255, 255, 0.4);
+  }
+  &--white-two {
+    background: rgba(255, 255, 255, 0.3);
+  }
+
+  // Section title spacing
+  .font-title--md {
+    margin-bottom: 50px;
+    @include max(767px) {
+      margin-bottom: 25px;
+    }
+  }
+}
+
+// Spacing units
+.m {
+  &--240 {
+    margin-top: -240px;
+    @media (max-width: 991px) {
+      margin-top: 0px;
+    }
+  }
+}
+
+// Checkbox
+.checkbox-primary[type='checkbox'] {
+  width: 24px;
+  height: 24px;
+  border: 2px solid color(lowBlack);
+}

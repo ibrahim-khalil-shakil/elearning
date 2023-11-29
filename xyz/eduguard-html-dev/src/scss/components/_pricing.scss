@@ -1,0 +1,94 @@
+.pricing-area {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  .content-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    .left-text {
+      display: flex;
+      justify-content: space-between;
+
+      h4 {
+        margin-right: 6px;
+      }
+      del {
+        font-size: 18px;
+        color: color(lowBlack);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+    .right-text {
+      display: flex;
+      span {
+        font-size: 14px;
+        color: color(tertiary);
+      }
+    }
+  }
+  .p-text {
+    margin-bottom: 8px;
+    p {
+      font-size: 12px;
+      color: color(lowBlack);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  .buy-btn {
+    margin-top: 16px;
+  }
+  .course-content {
+    h6 {
+      margin-top: 48px;
+      margin-bottom: 15px;
+      font-weight: 600;
+      color: #25252e;
+    }
+    .icon {
+      li {
+        margin: 10px 0 0 0;
+        a {
+          margin-top: 19px;
+          margin: 0 15px 0 0;
+        }
+        span {
+          font-size: 14px;
+          color: color(dark);
+        }
+      }
+    }
+  }
+  .share-content {
+    h6 {
+      margin-top: 40px;
+      margin-bottom: 14px;
+      color: #25252e;
+    }
+    .social-link {
+      .social {
+        li {
+          margin-right: 12px;
+          background: rgba(235, 235, 242, 0.7);
+          border-radius: 3px;
+          a {
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+          &:hover {
+            background-color: color(secondary);
+            transition: all 0.3s linear;
+          }
+        }
+      }
+    }
+  }
+}

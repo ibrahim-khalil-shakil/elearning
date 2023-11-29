@@ -1,0 +1,124 @@
+.newsletter-area {
+  padding: 40px 50px;
+  background: #ffffff;
+  border: 2px solid #ebebf2;
+  border-radius: 10px;
+  margin-bottom: -125px;
+  @include max(380px) {
+    padding: 40px 24px;
+  }
+  form {
+    input {
+      padding-left: 20px;
+      border-radius: 4px !important;
+      border: 1px solid rgba(143, 143, 163, 0.3);
+      &::placeholder {
+        color: #8f8fa3;
+        text-transform: capitalize;
+      }
+      &:focus {
+        box-shadow: none;
+      }
+    }
+  }
+  h4 {
+    font-size: 32px;
+    line-height: 40px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+  }
+  p {
+    font-size: 16px;
+    line-height: 24px;
+    color: #8f8fa3;
+  }
+
+  &-normal {
+    &-start {
+      h5 {
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 30px;
+        margin-bottom: 8px;
+        text-transform: capitalize;
+      }
+    }
+    &-end {
+      input {
+        padding-left: 15px;
+        border: 1px solid rgba(143, 143, 163, 0.3);
+        &::placeholder {
+          color: #8f8fa3;
+          text-transform: capitalize;
+        }
+      }
+    }
+  }
+}
+
+.newsletter-area-normal-start {
+  h5 {
+    margin-bottom: 8px;
+  }
+  p {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+  }
+}
+
+/*------------------------*/
+/*-------RESPOSIVE---------*/
+/*-------------------------*/
+
+// large devices 992px - 1169px
+@media (min-width: 992px) and (max-width: 1199px) {
+  .newsletter-area {
+    padding: 30px;
+  }
+}
+
+@media (max-width: 991px) {
+  .newsletter-area {
+    margin-bottom: -60px;
+  }
+  .newsletter-area-normal-start {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+}
+
+// Medium devices 768px - 991px
+
+@media (max-width: 767px) {
+  .newsletter-area {
+    margin-bottom: -120px;
+  }
+  .newsletter-area h4,
+  .newsletter-area .h4 {
+    font-size: 26px;
+    line-height: 26px;
+  }
+  .newsletter-area p {
+    font-size: 14px;
+  }
+}
+
+// extra Small devices 420px
+@media (max-width: 420px) {
+  .newsletter-area {
+    form {
+      .input-group {
+        flex-direction: column;
+        input {
+          width: 100%;
+          margin-bottom: 10px;
+          border-radius: 5px !important;
+          height: 45px;
+        }
+        button {
+          border-radius: 5px !important;
+        }
+      }
+    }
+  }
+}

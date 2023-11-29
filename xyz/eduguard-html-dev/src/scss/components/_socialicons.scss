@@ -1,0 +1,47 @@
+.social-icons {
+  display: flex;
+  align-items: center;
+  // Default
+  li {
+    border-radius: 4px;
+    margin-right: 12px;
+    &:nth-last-child(1) {
+      margin-right: 0px;
+    }
+    a {
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s linear;
+      svg {
+        color: #202029;
+      }
+    }
+    &:hover {
+      background-color: #0264ed;
+      a {
+        svg {
+          color: #fff;
+        }
+      }
+    }
+  }
+  // outline
+  &--outline {
+    li {
+      border: 1px solid #ebebf2;
+
+      &:hover {
+        border-color: transparent;
+      }
+    }
+  }
+  // bg
+  &--bg {
+    li {
+      background-color: #fff;
+    }
+  }
+}

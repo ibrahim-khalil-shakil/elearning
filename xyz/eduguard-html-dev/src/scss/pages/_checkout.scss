@@ -1,0 +1,152 @@
+.checkout-area {
+  padding-top: 50px;
+  &__label {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+    margin-bottom: 16px;
+    text-transform: capitalize;
+  }
+
+  &-checkout {
+    .checkout-tab {
+      background-color: white;
+      padding: 30px 25px;
+      border-radius: 6px;
+
+      .nav-link {
+        h6 {
+          color: #8f8fa3 !important;
+        }
+      }
+
+      .nav-link.active h6 {
+        color: #202029 !important;
+        font-size: 14px !important;
+      }
+    }
+  }
+
+  &-summery {
+    .summery-area {
+      padding: 25px;
+      background-color: white;
+      border-radius: 6px;
+
+      &-content {
+        margin-bottom: 25px;
+        padding-bottom: 25px;
+        border-bottom: 1px solid #ebebf2;
+
+        &-item {
+          margin-bottom: 15px;
+          padding-bottom: 15px;
+          border-bottom: 1px solid #ebebf2;
+
+          .image {
+            width: 130px;
+            height: 100px;
+            border-radius: 3px;
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+          }
+
+          .text {
+            h5 {
+              font-size: 16px !important;
+            }
+
+            p {
+              font-size: 12px !important;
+            }
+
+            h6 {
+              font-size: 14px !important;
+
+              span {
+                font-size: 12px !important;
+                color: #8f8fa3 !important;
+              }
+            }
+          }
+        }
+      }
+
+      &-text {
+        .summery-text {
+          border-bottom: 1px solid #ebebf2;
+          padding: 10px 0px;
+
+          .row {
+            margin-bottom: 0 !important;
+          }
+
+          span {
+            color: #666575 !important;
+            font-size: 13px !important;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+          }
+
+          p {
+            font-size: 14px !important;
+          }
+
+          .total-cost {
+            h6 {
+              color: #202029 !important;
+              font-size: 20px !important;
+              font-weight: 600 !important;
+            }
+
+            p {
+              font-size: 20px !important;
+              color: #202029 !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Responsive
+@media (max-width: 1200px) {
+  .checkout-area {
+    padding-top: 0px;
+  }
+}
+
+@media (max-width: 991px) {
+  .checkout-area {
+    padding-top: 30px;
+  }
+}
+
+// Small devices 575px - 767px
+@media (min-width: 575px) and (max-width: 767px) {
+  .checkout-area-summery .summery-area-content-item .text h5,
+  .checkout-area-summery .summery-area-content-item .text .h5 {
+    font-size: 18px !important;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 574px) {
+  .checkout-area {
+    &-summery {
+      .summery-area-content-item {
+        .image {
+          width: 100%;
+          display: flex;
+          justify-content: flex-start;
+        }
+      }
+    }
+  }
+  .checkout-area-summery .summery-area-content-item .text h6 {
+    margin-top: 0px !important;
+  }
+}

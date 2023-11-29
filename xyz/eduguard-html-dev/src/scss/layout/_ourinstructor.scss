@@ -1,0 +1,63 @@
+.ourinstructor {
+  background-color: rgba(16, 137, 255, 0.05);
+  padding: 100px 0;
+  &__wrapper {
+    .slick-slide {
+      margin: 0 15px;
+    }
+    .slick-list {
+      margin: 0 -15px;
+    }
+  }
+}
+
+/*------------------------*/
+/*-------RESPOSIVE---------*/
+/*-------------------------*/
+
+// large devices 992px - 1169px
+@media (min-width: 992px) and (max-width: 1199px) {
+  .ourinstructor {
+    &__wrapper {
+      .slider-arrows {
+        display: none;
+      }
+    }
+  }
+}
+
+// Medium devices 768px - 991px
+@media (min-width: 768px) and (max-width: 991px) {
+  .ourinstructor {
+    padding: 70px 0;
+    &__wrapper {
+      .slider-arrows {
+        display: none;
+      }
+    }
+  }
+}
+
+// Small devices 575px - 767px
+@media (min-width: 575px) and (max-width: 767px) {
+  .ourinstructor {
+    padding: 50px 0;
+    &__wrapper {
+      .slider-arrows {
+        display: none;
+      }
+    }
+  }
+}
+
+// Small devices 420px - 574px
+@media (min-width: 420px) and (max-width: 574px) {
+  .ourinstructor {
+    padding: 50px 0;
+    &__wrapper {
+      .slider-arrows {
+        display: none;
+      }
+    }
+  }
+}
