@@ -77,7 +77,7 @@
                                     <span class="text-danger"> {{ $errors->first('questionType') }}</span>
                                     @endif
                                 </div>
-                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                <div class="col-lg-12 col-md-12 col-sm-12">
                                     <div class="form-group">
                                         <label class="form-label">Question Content</label>
                                         <textarea class="form-control"
@@ -86,6 +86,53 @@
                                     @if($errors->has('questionContent'))
                                     <span class="text-danger"> {{ $errors->first('questionContent') }}</span>
                                     @endif
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-6">
+                                    <div class="form-group">
+                                        <label class="form-label">Option A</label>
+                                        <input type="text" class="form-control" name="optionA" value="{{old('optionA',$question->option_a)}}">
+                                    </div>
+                                    @if($errors->has('optionA'))
+                                    <span class="text-danger"> {{ $errors->first('optionA') }}</span>
+                                    @endif
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-6">
+                                    <div class="form-group">
+                                        <label class="form-label">Option B</label>
+                                        <input type="text" class="form-control" name="optionB" value="{{old('optionB',$question->option_b)}}">
+                                    </div>
+                                    @if($errors->has('optionB'))
+                                    <span class="text-danger"> {{ $errors->first('optionB') }}</span>
+                                    @endif
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-6">
+                                    <div class="form-group">
+                                        <label class="form-label">Option C</label>
+                                        <input type="text" class="form-control" name="optionC" value="{{old('optionC',$question->option_c)}}">
+                                    </div>
+                                    @if($errors->has('optionC'))
+                                    <span class="text-danger"> {{ $errors->first('optionC') }}</span>
+                                    @endif
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-6">
+                                    <div class="form-group">
+                                        <label class="form-label">Option D</label>
+                                        <input type="text" class="form-control" name="optionD" value="{{old('optionD',$question->option_d)}}">
+                                    </div>
+                                    @if($errors->has('optionD'))
+                                    <span class="text-danger"> {{ $errors->first('optionD') }}</span>
+                                    @endif
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <div class="form-group">
+                                        <label class="form-label">Correct Answer</label>
+                                        <select class="form-control" name="correctAnswer">
+                                            <option value="a" @if(old('correctAnswer',$question->correct_answer)=='a' ) selected @endif>Option A</option>
+                                            <option value="b" @if(old('correctAnswer',$question->correct_answer)=='b' ) selected @endif>Option B</option>
+                                            <option value="c" @if(old('correctAnswer',$question->correct_answer)=='c' ) selected @endif>Option C</option>
+                                            <option value="d" @if(old('correctAnswer',$question->correct_answer)=='d' ) selected @endif>Option D</option>
+                                        </select>
+                                    </div>
                                 </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12">
                                     <button type="submit" class="btn btn-primary">Submit</button>

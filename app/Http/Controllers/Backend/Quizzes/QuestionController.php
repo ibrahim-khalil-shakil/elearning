@@ -38,6 +38,11 @@ class QuestionController extends Controller
             $question->quiz_id = $request->quizId;
             $question->type = $request->questionType;
             $question->content = $request->questionContent;
+            $question->option_a = $request->optionA;
+            $question->option_b = $request->optionB;
+            $question->option_c = $request->optionC;
+            $question->option_d = $request->optionD;
+            $question->correct_answer = $request->correctAnswer;
 
             if ($question->save()) {
                 $this->notice::success('Data Saved');
@@ -81,6 +86,11 @@ class QuestionController extends Controller
             $question->quiz_id = $request->quizId;
             $question->type = $request->questionType;
             $question->content = $request->questionContent;
+            $question->option_a = $request->optionA;
+            $question->option_b = $request->optionB;
+            $question->option_c = $request->optionC;
+            $question->option_d = $request->optionD;
+            $question->correct_answer = $request->correctAnswer;
 
             if ($question->save()) {
                 $this->notice::success('Data Saved');

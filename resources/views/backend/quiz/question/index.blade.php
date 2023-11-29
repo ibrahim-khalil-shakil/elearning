@@ -51,23 +51,34 @@
                                     <table id="example3" class="display" style="min-width: 845px">
                                         <thead>
                                             <tr>
-                                                <th>{{__('#')}}</th>
-                                                <th>{{__('Quiz Name')}}</th>
-                                                <th>{{__('Question Type')}}</th>
-                                                <th>{{__('Question Content')}}</th>
+                                                <th>{{__('Quiz')}}</th>
+                                                <th>{{__('Type')}}</th>
+                                                <th>{{__('Question')}}</th>
+                                                <th>{{__('Option A')}}</th>
+                                                <th>{{__('Option B')}}</th>
+                                                <th>{{__('Option C')}}</th>
+                                                <th>{{__('Option D')}}</th>
+                                                <th>{{__('Correct Answer')}}</th>
                                                 <th>{{__('Action')}}</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             @forelse ($question as $q)
                                             <tr>
-                                                <td>{{$q->id}}</td>
-                                                <td>{{$q->quiz?->title}}</td> 
+                                                <td>{{$q->quiz?->title}}</td>
                                                 <td>
-                                                    {{ $q->type == 'multiple_choice' ? __('Multiple Choice') : ($q->type == 'true_false' ?
+                                                    {{ $q->type == 'multiple_choice' ? __('Multiple Choice') : ($q->type
+                                                    == 'true_false' ?
                                                     __('True False') : __('Short Answer')) }}
                                                 </td>
                                                 <td>{{$q->content}}</td>
+                                                <td>{{$q->option_a}}</td>
+                                                <td>{{$q->option_b}}</td>
+                                                <td>{{$q->option_c}}</td>
+                                                <td>{{$q->option_d}}</td>
+                                                <td>{{$q->correct_answer == 'a' ? 'Option-A' : ($q->correct_answer ==
+                                                    'b' ? 'Option-B' : ($q->correct_answer == 'c' ? 'Option-C' :
+                                                    'Option-D'))}}</td>
                                                 <td>
                                                     <a href="{{route('question.edit', encryptor('encrypt',$q->id))}}"
                                                         class="btn btn-sm btn-primary" title="Edit"><i
