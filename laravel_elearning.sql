@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 28, 2023 at 05:51 PM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- Generation Time: Nov 29, 2023 at 08:06 AM
+-- Server version: 10.4.27-MariaDB
+-- PHP Version: 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -74,8 +74,8 @@ CREATE TABLE `courses` (
 
 INSERT INTO `courses` (`id`, `title_en`, `title_bn`, `description_en`, `description_bn`, `category_id`, `instructor_id`, `type`, `price`, `subscription_price`, `start_from`, `duration`, `prerequisites_en`, `prerequisites_bn`, `difficulty`, `course_code`, `image`, `status`, `language`, `created_at`, `updated_at`, `deleted_at`) VALUES
 (6, 'Full-Stack Web Development Bootcamp: From Basics to Advanced', 'ফুল-স্ট্যাক ওয়েব ডেভেলপমেন্ট বুটক্যাম্প: বেসিক থেকে অ্যাডভান্সড পর্যন্ত', 'Dive into the world of web development with a comprehensive bootcamp covering both front-end and back-end technologies. From HTML and CSS to server-side scripting, this course will equip you with the skills to build dynamic and interactive web applications.', 'ফ্রন্ট-এন্ড এবং ব্যাক-এন্ড উভয় প্রযুক্তিকে কভার করে একটি ব্যাপক বুটক্যাম্প সহ ওয়েব ডেভেলপমেন্টের জগতে ডুব দিন। HTML এবং CSS থেকে সার্ভার-সাইড স্ক্রিপ্টিং পর্যন্ত, এই কোর্সটি আপনাকে গতিশীল এবং ইন্টারেক্টিভ ওয়েব অ্যাপ্লিকেশন তৈরি করার দক্ষতা দিয়ে সজ্জিত করবে।', 4, 1, 'free', NULL, NULL, NULL, NULL, 'Basic understanding of HTML and CSS; familiarity with programming concepts is beneficial but not required.', 'HTML এবং CSS এর প্রাথমিক ধারণা; প্রোগ্রামিং ধারণার সাথে পরিচিতি উপকারী কিন্তু প্রয়োজনীয় নয়।', 'beginner', NULL, '5331700991017.jpg', 1, 'en', '2023-11-26 03:30:17', '2023-11-26 03:30:17', NULL),
-(7, 'Adobe Creative Suite Mastery: Photoshop, Illustrator, InDesign', 'অ্যাডোব ক্রিয়েটিভ স্যুট মাস্টারি: ফটোশপ, ইলাস্ট্রেটর, ইনডিজাইন', 'Gain proficiency in Adobe Creative Suite\'s powerhouse tools—Photoshop for image editing, Illustrator for vector graphics, and InDesign for layout design. Learn to seamlessly integrate these applications to bring your creative visions to life.', 'Adobe Creative Suite-এর পাওয়ার হাউস টুলস-এ দক্ষতা অর্জন করুন- ছবি সম্পাদনার জন্য ফটোশপ, ভেক্টর গ্রাফিক্সের জন্য ইলাস্ট্রেটর এবং লেআউট ডিজাইনের জন্য InDesign। আপনার সৃজনশীল দৃষ্টিভঙ্গিগুলিকে জীবনে আনতে এই অ্যাপ্লিকেশনগুলিকে নির্বিঘ্নে সংহত করতে শিখুন৷', 2, 1, 'paid', 99.00, NULL, NULL, NULL, NULL, NULL, 'intermediate', NULL, '7331700991164.jpg', 0, 'en', '2023-11-26 03:32:44', '2023-11-26 21:40:28', NULL),
-(8, 'Search Engine Optimization (SEO): Boosting Website Visibility', 'সার্চ ইঞ্জিন অপ্টিমাইজেশান (SEO): ওয়েবসাইট ভিজিবিলিটি বাড়ানো', 'Demystify the world of SEO and discover techniques to improve website visibility in search engine results. Learn keyword research, on-page optimization, and off-page strategies to drive organic traffic and enhance online presence.', 'এসইও-এর জগতকে ডিমিস্টিফাই করুন এবং সার্চ ইঞ্জিন ফলাফলে ওয়েবসাইটের দৃশ্যমানতা উন্নত করার কৌশল আবিষ্কার করুন। জৈব ট্র্যাফিক চালনা করতে এবং অনলাইন উপস্থিতি বাড়াতে কীওয়ার্ড গবেষণা, অন-পৃষ্ঠা অপ্টিমাইজেশান এবং অফ-পৃষ্ঠা কৌশলগুলি শিখুন।', 6, 1, 'subscription', 59.00, NULL, NULL, NULL, NULL, NULL, 'advanced', NULL, '7791700991265.jpg', 1, 'en', '2023-11-26 03:34:25', '2023-11-26 21:40:54', NULL),
+(7, 'Adobe Creative Suite Mastery: Photoshop, Illustrator, InDesign', 'অ্যাডোব ক্রিয়েটিভ স্যুট মাস্টারি: ফটোশপ, ইলাস্ট্রেটর, ইনডিজাইন', 'Gain proficiency in Adobe Creative Suite\'s powerhouse tools—Photoshop for image editing, Illustrator for vector graphics, and InDesign for layout design. Learn to seamlessly integrate these applications to bring your creative visions to life.', 'Adobe Creative Suite-এর পাওয়ার হাউস টুলস-এ দক্ষতা অর্জন করুন- ছবি সম্পাদনার জন্য ফটোশপ, ভেক্টর গ্রাফিক্সের জন্য ইলাস্ট্রেটর এবং লেআউট ডিজাইনের জন্য InDesign। আপনার সৃজনশীল দৃষ্টিভঙ্গিগুলিকে জীবনে আনতে এই অ্যাপ্লিকেশনগুলিকে নির্বিঘ্নে সংহত করতে শিখুন৷', 2, 1, 'paid', '99.00', NULL, NULL, NULL, NULL, NULL, 'intermediate', NULL, '7331700991164.jpg', 0, 'en', '2023-11-26 03:32:44', '2023-11-26 21:40:28', NULL),
+(8, 'Search Engine Optimization (SEO): Boosting Website Visibility', 'সার্চ ইঞ্জিন অপ্টিমাইজেশান (SEO): ওয়েবসাইট ভিজিবিলিটি বাড়ানো', 'Demystify the world of SEO and discover techniques to improve website visibility in search engine results. Learn keyword research, on-page optimization, and off-page strategies to drive organic traffic and enhance online presence.', 'এসইও-এর জগতকে ডিমিস্টিফাই করুন এবং সার্চ ইঞ্জিন ফলাফলে ওয়েবসাইটের দৃশ্যমানতা উন্নত করার কৌশল আবিষ্কার করুন। জৈব ট্র্যাফিক চালনা করতে এবং অনলাইন উপস্থিতি বাড়াতে কীওয়ার্ড গবেষণা, অন-পৃষ্ঠা অপ্টিমাইজেশান এবং অফ-পৃষ্ঠা কৌশলগুলি শিখুন।', 6, 1, 'subscription', '59.00', NULL, NULL, NULL, NULL, NULL, 'advanced', NULL, '7791700991265.jpg', 1, 'en', '2023-11-26 03:34:25', '2023-11-26 21:40:54', NULL),
 (9, '3D Animation Basics: Getting Started with Blender', '3D অ্যানিমেশন বেসিকস: ব্লেন্ডার দিয়ে শুরু করা', 'Delve into the basics of 3D animation using Blender. Learn the fundamentals of modeling, rigging, and animation to bring characters and scenes to life in a three-dimensional space.', 'ব্লেন্ডার ব্যবহার করে 3D অ্যানিমেশনের বুনিয়াদিতে প্রবেশ করুন। একটি ত্রিমাত্রিক স্থানে চরিত্র এবং দৃশ্যগুলিকে প্রাণবন্ত করতে মডেলিং, কারচুপি এবং অ্যানিমেশনের মৌলিক বিষয়গুলি শিখুন৷', 37, 1, 'free', NULL, NULL, NULL, NULL, NULL, NULL, 'beginner', NULL, '3531700991463.jpg', 1, 'en', '2023-11-26 03:37:43', '2023-11-26 03:37:43', NULL),
 (10, 'React.js Fundamentals: Building Modern User Interfaces', 'React.js ফান্ডামেন্টালস: আধুনিক ইউজার ইন্টারফেস তৈরি করা', 'Delve into the fundamentals of React.js and discover how to build modern, component-based user interfaces. From state management to routing, this course guides you through React\'s core concepts, enabling you to create powerful and maintainable front-end applications.', 'React.js-এর মৌলিক বিষয়গুলিকে অধ্যয়ন করুন এবং কীভাবে আধুনিক, উপাদান-ভিত্তিক ব্যবহারকারী ইন্টারফেস তৈরি করতে হয় তা আবিষ্কার করুন। স্টেট ম্যানেজমেন্ট থেকে রাউটিং পর্যন্ত, এই কোর্সটি আপনাকে রিঅ্যাক্টের মূল ধারণার মাধ্যমে গাইড করে, আপনাকে শক্তিশালী এবং রক্ষণাবেক্ষণযোগ্য ফ্রন্ট-এন্ড অ্যাপ্লিকেশন তৈরি করতে সক্ষম করে।', 5, 1, 'free', NULL, NULL, NULL, NULL, NULL, NULL, 'beginner', NULL, '5191700991569.jpg', 0, 'en', '2023-11-26 03:39:29', '2023-11-26 03:39:29', NULL);
 
@@ -315,64 +315,137 @@ CREATE TABLE `permissions` (
 --
 
 INSERT INTO `permissions` (`id`, `role_id`, `name`, `created_at`, `updated_at`) VALUES
-(43, 2, 'user.index', '2023-11-23 01:02:46', '2023-11-23 01:02:46'),
-(44, 2, 'permission.list', '2023-11-23 01:02:47', '2023-11-23 01:02:47'),
-(124, 1, 'user.index', '2023-11-28 08:39:24', '2023-11-28 08:39:24'),
-(125, 1, 'user.create', '2023-11-28 08:39:24', '2023-11-28 08:39:24'),
-(126, 1, 'user.show', '2023-11-28 08:39:25', '2023-11-28 08:39:25'),
-(127, 1, 'user.edit', '2023-11-28 08:39:25', '2023-11-28 08:39:25'),
-(128, 1, 'user.destroy', '2023-11-28 08:39:25', '2023-11-28 08:39:25'),
-(129, 1, 'role.index', '2023-11-28 08:39:25', '2023-11-28 08:39:25'),
-(130, 1, 'role.create', '2023-11-28 08:39:25', '2023-11-28 08:39:25'),
-(131, 1, 'role.show', '2023-11-28 08:39:25', '2023-11-28 08:39:25'),
-(132, 1, 'role.edit', '2023-11-28 08:39:25', '2023-11-28 08:39:25'),
-(133, 1, 'role.destroy', '2023-11-28 08:39:25', '2023-11-28 08:39:25'),
-(134, 1, 'student.index', '2023-11-28 08:39:25', '2023-11-28 08:39:25'),
-(135, 1, 'student.create', '2023-11-28 08:39:26', '2023-11-28 08:39:26'),
-(136, 1, 'student.show', '2023-11-28 08:39:26', '2023-11-28 08:39:26'),
-(137, 1, 'student.edit', '2023-11-28 08:39:26', '2023-11-28 08:39:26'),
-(138, 1, 'student.destroy', '2023-11-28 08:39:26', '2023-11-28 08:39:26'),
-(139, 1, 'instructor.index', '2023-11-28 08:39:26', '2023-11-28 08:39:26'),
-(140, 1, 'instructor.create', '2023-11-28 08:39:26', '2023-11-28 08:39:26'),
-(141, 1, 'instructor.show', '2023-11-28 08:39:26', '2023-11-28 08:39:26'),
-(142, 1, 'instructor.edit', '2023-11-28 08:39:26', '2023-11-28 08:39:26'),
-(143, 1, 'instructor.destroy', '2023-11-28 08:39:26', '2023-11-28 08:39:26'),
-(144, 1, 'courseCategory.index', '2023-11-28 08:39:26', '2023-11-28 08:39:26'),
-(145, 1, 'courseCategory.create', '2023-11-28 08:39:26', '2023-11-28 08:39:26'),
-(146, 1, 'courseCategory.show', '2023-11-28 08:39:26', '2023-11-28 08:39:26'),
-(147, 1, 'courseCategory.edit', '2023-11-28 08:39:26', '2023-11-28 08:39:26'),
-(148, 1, 'courseCategory.destroy', '2023-11-28 08:39:26', '2023-11-28 08:39:26'),
-(149, 1, 'course.index', '2023-11-28 08:39:27', '2023-11-28 08:39:27'),
-(150, 1, 'course.create', '2023-11-28 08:39:27', '2023-11-28 08:39:27'),
-(151, 1, 'course.show', '2023-11-28 08:39:27', '2023-11-28 08:39:27'),
-(152, 1, 'course.edit', '2023-11-28 08:39:27', '2023-11-28 08:39:27'),
-(153, 1, 'course.destroy', '2023-11-28 08:39:27', '2023-11-28 08:39:27'),
-(154, 1, 'material.index', '2023-11-28 08:39:27', '2023-11-28 08:39:27'),
-(155, 1, 'material.create', '2023-11-28 08:39:27', '2023-11-28 08:39:27'),
-(156, 1, 'material.show', '2023-11-28 08:39:27', '2023-11-28 08:39:27'),
-(157, 1, 'material.edit', '2023-11-28 08:39:27', '2023-11-28 08:39:27'),
-(158, 1, 'material.destroy', '2023-11-28 08:39:27', '2023-11-28 08:39:27'),
-(159, 1, 'quiz.index', '2023-11-28 08:39:27', '2023-11-28 08:39:27'),
-(160, 1, 'quiz.create', '2023-11-28 08:39:27', '2023-11-28 08:39:27'),
-(161, 1, 'quiz.show', '2023-11-28 08:39:27', '2023-11-28 08:39:27'),
-(162, 1, 'quiz.edit', '2023-11-28 08:39:27', '2023-11-28 08:39:27'),
-(163, 1, 'quiz.destroy', '2023-11-28 08:39:27', '2023-11-28 08:39:27'),
-(164, 1, 'question.index', '2023-11-28 08:39:27', '2023-11-28 08:39:27'),
-(165, 1, 'question.create', '2023-11-28 08:39:27', '2023-11-28 08:39:27'),
-(166, 1, 'question.show', '2023-11-28 08:39:27', '2023-11-28 08:39:27'),
-(167, 1, 'question.edit', '2023-11-28 08:39:28', '2023-11-28 08:39:28'),
-(168, 1, 'question.destroy', '2023-11-28 08:39:28', '2023-11-28 08:39:28'),
-(169, 1, 'option.index', '2023-11-28 08:39:28', '2023-11-28 08:39:28'),
-(170, 1, 'option.create', '2023-11-28 08:39:28', '2023-11-28 08:39:28'),
-(171, 1, 'option.show', '2023-11-28 08:39:28', '2023-11-28 08:39:28'),
-(172, 1, 'option.edit', '2023-11-28 08:39:28', '2023-11-28 08:39:28'),
-(173, 1, 'option.destroy', '2023-11-28 08:39:28', '2023-11-28 08:39:28'),
-(174, 1, 'answer.index', '2023-11-28 08:39:28', '2023-11-28 08:39:28'),
-(175, 1, 'answer.create', '2023-11-28 08:39:28', '2023-11-28 08:39:28'),
-(176, 1, 'answer.show', '2023-11-28 08:39:28', '2023-11-28 08:39:28'),
-(177, 1, 'answer.edit', '2023-11-28 08:39:28', '2023-11-28 08:39:28'),
-(178, 1, 'answer.destroy', '2023-11-28 08:39:28', '2023-11-28 08:39:28'),
-(179, 1, 'permission.list', '2023-11-28 08:39:28', '2023-11-28 08:39:28');
+(185, 1, 'user.index', '2023-11-29 00:37:43', '2023-11-29 00:37:43'),
+(186, 1, 'user.create', '2023-11-29 00:37:43', '2023-11-29 00:37:43'),
+(187, 1, 'user.show', '2023-11-29 00:37:43', '2023-11-29 00:37:43'),
+(188, 1, 'user.edit', '2023-11-29 00:37:43', '2023-11-29 00:37:43'),
+(189, 1, 'user.destroy', '2023-11-29 00:37:43', '2023-11-29 00:37:43'),
+(190, 1, 'role.index', '2023-11-29 00:37:43', '2023-11-29 00:37:43'),
+(191, 1, 'role.create', '2023-11-29 00:37:43', '2023-11-29 00:37:43'),
+(192, 1, 'role.show', '2023-11-29 00:37:43', '2023-11-29 00:37:43'),
+(193, 1, 'role.edit', '2023-11-29 00:37:43', '2023-11-29 00:37:43'),
+(194, 1, 'role.destroy', '2023-11-29 00:37:43', '2023-11-29 00:37:43'),
+(195, 1, 'student.index', '2023-11-29 00:37:43', '2023-11-29 00:37:43'),
+(196, 1, 'student.create', '2023-11-29 00:37:43', '2023-11-29 00:37:43'),
+(197, 1, 'student.show', '2023-11-29 00:37:43', '2023-11-29 00:37:43'),
+(198, 1, 'student.edit', '2023-11-29 00:37:43', '2023-11-29 00:37:43'),
+(199, 1, 'student.destroy', '2023-11-29 00:37:43', '2023-11-29 00:37:43'),
+(200, 1, 'instructor.index', '2023-11-29 00:37:43', '2023-11-29 00:37:43'),
+(201, 1, 'instructor.create', '2023-11-29 00:37:43', '2023-11-29 00:37:43'),
+(202, 1, 'instructor.show', '2023-11-29 00:37:43', '2023-11-29 00:37:43'),
+(203, 1, 'instructor.edit', '2023-11-29 00:37:43', '2023-11-29 00:37:43'),
+(204, 1, 'instructor.destroy', '2023-11-29 00:37:43', '2023-11-29 00:37:43'),
+(205, 1, 'courseCategory.index', '2023-11-29 00:37:43', '2023-11-29 00:37:43'),
+(206, 1, 'courseCategory.create', '2023-11-29 00:37:43', '2023-11-29 00:37:43'),
+(207, 1, 'courseCategory.show', '2023-11-29 00:37:44', '2023-11-29 00:37:44'),
+(208, 1, 'courseCategory.edit', '2023-11-29 00:37:44', '2023-11-29 00:37:44'),
+(209, 1, 'courseCategory.destroy', '2023-11-29 00:37:44', '2023-11-29 00:37:44'),
+(210, 1, 'course.index', '2023-11-29 00:37:44', '2023-11-29 00:37:44'),
+(211, 1, 'course.create', '2023-11-29 00:37:44', '2023-11-29 00:37:44'),
+(212, 1, 'course.show', '2023-11-29 00:37:44', '2023-11-29 00:37:44'),
+(213, 1, 'course.edit', '2023-11-29 00:37:44', '2023-11-29 00:37:44'),
+(214, 1, 'course.destroy', '2023-11-29 00:37:44', '2023-11-29 00:37:44'),
+(215, 1, 'material.index', '2023-11-29 00:37:44', '2023-11-29 00:37:44'),
+(216, 1, 'material.create', '2023-11-29 00:37:44', '2023-11-29 00:37:44'),
+(217, 1, 'material.show', '2023-11-29 00:37:44', '2023-11-29 00:37:44'),
+(218, 1, 'material.edit', '2023-11-29 00:37:44', '2023-11-29 00:37:44'),
+(219, 1, 'material.destroy', '2023-11-29 00:37:44', '2023-11-29 00:37:44'),
+(220, 1, 'quiz.index', '2023-11-29 00:37:44', '2023-11-29 00:37:44'),
+(221, 1, 'quiz.create', '2023-11-29 00:37:44', '2023-11-29 00:37:44'),
+(222, 1, 'quiz.show', '2023-11-29 00:37:44', '2023-11-29 00:37:44'),
+(223, 1, 'quiz.edit', '2023-11-29 00:37:44', '2023-11-29 00:37:44'),
+(224, 1, 'quiz.destroy', '2023-11-29 00:37:44', '2023-11-29 00:37:44'),
+(225, 1, 'question.index', '2023-11-29 00:37:44', '2023-11-29 00:37:44'),
+(226, 1, 'question.create', '2023-11-29 00:37:44', '2023-11-29 00:37:44'),
+(227, 1, 'question.show', '2023-11-29 00:37:44', '2023-11-29 00:37:44'),
+(228, 1, 'question.edit', '2023-11-29 00:37:44', '2023-11-29 00:37:44'),
+(229, 1, 'question.destroy', '2023-11-29 00:37:44', '2023-11-29 00:37:44'),
+(230, 1, 'option.index', '2023-11-29 00:37:44', '2023-11-29 00:37:44'),
+(231, 1, 'option.create', '2023-11-29 00:37:44', '2023-11-29 00:37:44'),
+(232, 1, 'option.show', '2023-11-29 00:37:44', '2023-11-29 00:37:44'),
+(233, 1, 'option.edit', '2023-11-29 00:37:44', '2023-11-29 00:37:44'),
+(234, 1, 'option.destroy', '2023-11-29 00:37:44', '2023-11-29 00:37:44'),
+(235, 1, 'answer.index', '2023-11-29 00:37:44', '2023-11-29 00:37:44'),
+(236, 1, 'answer.create', '2023-11-29 00:37:44', '2023-11-29 00:37:44'),
+(237, 1, 'answer.show', '2023-11-29 00:37:44', '2023-11-29 00:37:44'),
+(238, 1, 'answer.edit', '2023-11-29 00:37:44', '2023-11-29 00:37:44'),
+(239, 1, 'answer.destroy', '2023-11-29 00:37:44', '2023-11-29 00:37:44'),
+(240, 1, 'review.index', '2023-11-29 00:37:44', '2023-11-29 00:37:44'),
+(241, 1, 'review.create', '2023-11-29 00:37:44', '2023-11-29 00:37:44'),
+(242, 1, 'review.show', '2023-11-29 00:37:44', '2023-11-29 00:37:44'),
+(243, 1, 'review.edit', '2023-11-29 00:37:44', '2023-11-29 00:37:44'),
+(244, 1, 'review.destroy', '2023-11-29 00:37:44', '2023-11-29 00:37:44'),
+(245, 1, 'discussion.index', '2023-11-29 00:37:44', '2023-11-29 00:37:44'),
+(246, 1, 'discussion.create', '2023-11-29 00:37:44', '2023-11-29 00:37:44'),
+(247, 1, 'discussion.show', '2023-11-29 00:37:44', '2023-11-29 00:37:44'),
+(248, 1, 'discussion.edit', '2023-11-29 00:37:44', '2023-11-29 00:37:44'),
+(249, 1, 'discussion.destroy', '2023-11-29 00:37:45', '2023-11-29 00:37:45'),
+(250, 1, 'message.index', '2023-11-29 00:37:45', '2023-11-29 00:37:45'),
+(251, 1, 'message.create', '2023-11-29 00:37:45', '2023-11-29 00:37:45'),
+(252, 1, 'message.show', '2023-11-29 00:37:45', '2023-11-29 00:37:45'),
+(253, 1, 'message.edit', '2023-11-29 00:37:45', '2023-11-29 00:37:45'),
+(254, 1, 'message.destroy', '2023-11-29 00:37:45', '2023-11-29 00:37:45'),
+(255, 1, 'permission.list', '2023-11-29 00:37:45', '2023-11-29 00:37:45'),
+(256, 2, 'student.index', '2023-11-29 00:38:42', '2023-11-29 00:38:42'),
+(257, 2, 'student.create', '2023-11-29 00:38:42', '2023-11-29 00:38:42'),
+(258, 2, 'student.show', '2023-11-29 00:38:42', '2023-11-29 00:38:42'),
+(259, 2, 'student.edit', '2023-11-29 00:38:42', '2023-11-29 00:38:42'),
+(260, 2, 'student.destroy', '2023-11-29 00:38:42', '2023-11-29 00:38:42'),
+(261, 2, 'instructor.index', '2023-11-29 00:38:42', '2023-11-29 00:38:42'),
+(262, 2, 'instructor.create', '2023-11-29 00:38:42', '2023-11-29 00:38:42'),
+(263, 2, 'instructor.show', '2023-11-29 00:38:42', '2023-11-29 00:38:42'),
+(264, 2, 'instructor.edit', '2023-11-29 00:38:42', '2023-11-29 00:38:42'),
+(265, 2, 'instructor.destroy', '2023-11-29 00:38:42', '2023-11-29 00:38:42'),
+(266, 2, 'courseCategory.index', '2023-11-29 00:38:42', '2023-11-29 00:38:42'),
+(267, 2, 'courseCategory.create', '2023-11-29 00:38:42', '2023-11-29 00:38:42'),
+(268, 2, 'courseCategory.show', '2023-11-29 00:38:42', '2023-11-29 00:38:42'),
+(269, 2, 'courseCategory.edit', '2023-11-29 00:38:42', '2023-11-29 00:38:42'),
+(270, 2, 'courseCategory.destroy', '2023-11-29 00:38:42', '2023-11-29 00:38:42'),
+(271, 2, 'course.index', '2023-11-29 00:38:42', '2023-11-29 00:38:42'),
+(272, 2, 'course.create', '2023-11-29 00:38:42', '2023-11-29 00:38:42'),
+(273, 2, 'course.show', '2023-11-29 00:38:42', '2023-11-29 00:38:42'),
+(274, 2, 'course.edit', '2023-11-29 00:38:42', '2023-11-29 00:38:42'),
+(275, 2, 'course.destroy', '2023-11-29 00:38:42', '2023-11-29 00:38:42'),
+(276, 2, 'material.index', '2023-11-29 00:38:42', '2023-11-29 00:38:42'),
+(277, 2, 'material.create', '2023-11-29 00:38:42', '2023-11-29 00:38:42'),
+(278, 2, 'material.show', '2023-11-29 00:38:42', '2023-11-29 00:38:42'),
+(279, 2, 'material.edit', '2023-11-29 00:38:42', '2023-11-29 00:38:42'),
+(280, 2, 'material.destroy', '2023-11-29 00:38:42', '2023-11-29 00:38:42'),
+(281, 2, 'quiz.index', '2023-11-29 00:38:42', '2023-11-29 00:38:42'),
+(282, 2, 'quiz.create', '2023-11-29 00:38:42', '2023-11-29 00:38:42'),
+(283, 2, 'quiz.show', '2023-11-29 00:38:42', '2023-11-29 00:38:42'),
+(284, 2, 'quiz.edit', '2023-11-29 00:38:42', '2023-11-29 00:38:42'),
+(285, 2, 'quiz.destroy', '2023-11-29 00:38:42', '2023-11-29 00:38:42'),
+(286, 2, 'question.index', '2023-11-29 00:38:42', '2023-11-29 00:38:42'),
+(287, 2, 'question.create', '2023-11-29 00:38:43', '2023-11-29 00:38:43'),
+(288, 2, 'question.show', '2023-11-29 00:38:43', '2023-11-29 00:38:43'),
+(289, 2, 'question.edit', '2023-11-29 00:38:43', '2023-11-29 00:38:43'),
+(290, 2, 'question.destroy', '2023-11-29 00:38:43', '2023-11-29 00:38:43'),
+(291, 2, 'option.index', '2023-11-29 00:38:43', '2023-11-29 00:38:43'),
+(292, 2, 'option.create', '2023-11-29 00:38:43', '2023-11-29 00:38:43'),
+(293, 2, 'option.show', '2023-11-29 00:38:43', '2023-11-29 00:38:43'),
+(294, 2, 'option.edit', '2023-11-29 00:38:43', '2023-11-29 00:38:43'),
+(295, 2, 'option.destroy', '2023-11-29 00:38:43', '2023-11-29 00:38:43'),
+(296, 2, 'answer.index', '2023-11-29 00:38:43', '2023-11-29 00:38:43'),
+(297, 2, 'answer.create', '2023-11-29 00:38:43', '2023-11-29 00:38:43'),
+(298, 2, 'answer.show', '2023-11-29 00:38:43', '2023-11-29 00:38:43'),
+(299, 2, 'answer.edit', '2023-11-29 00:38:43', '2023-11-29 00:38:43'),
+(300, 2, 'answer.destroy', '2023-11-29 00:38:43', '2023-11-29 00:38:43'),
+(301, 2, 'review.index', '2023-11-29 00:38:43', '2023-11-29 00:38:43'),
+(302, 2, 'review.create', '2023-11-29 00:38:43', '2023-11-29 00:38:43'),
+(303, 2, 'review.show', '2023-11-29 00:38:43', '2023-11-29 00:38:43'),
+(304, 2, 'review.edit', '2023-11-29 00:38:43', '2023-11-29 00:38:43'),
+(305, 2, 'review.destroy', '2023-11-29 00:38:43', '2023-11-29 00:38:43'),
+(306, 2, 'discussion.index', '2023-11-29 00:38:43', '2023-11-29 00:38:43'),
+(307, 2, 'discussion.create', '2023-11-29 00:38:43', '2023-11-29 00:38:43'),
+(308, 2, 'discussion.show', '2023-11-29 00:38:43', '2023-11-29 00:38:43'),
+(309, 2, 'discussion.edit', '2023-11-29 00:38:43', '2023-11-29 00:38:43'),
+(310, 2, 'discussion.destroy', '2023-11-29 00:38:43', '2023-11-29 00:38:43'),
+(311, 2, 'message.index', '2023-11-29 00:38:43', '2023-11-29 00:38:43'),
+(312, 2, 'message.create', '2023-11-29 00:38:43', '2023-11-29 00:38:43'),
+(313, 2, 'message.show', '2023-11-29 00:38:43', '2023-11-29 00:38:43'),
+(314, 2, 'message.edit', '2023-11-29 00:38:43', '2023-11-29 00:38:43'),
+(315, 2, 'message.destroy', '2023-11-29 00:38:43', '2023-11-29 00:38:43');
 
 -- --------------------------------------------------------
 
@@ -423,6 +496,11 @@ CREATE TABLE `questions` (
   `quiz_id` bigint(20) UNSIGNED NOT NULL,
   `content` text NOT NULL,
   `type` enum('multiple_choice','true_false','short_answer') NOT NULL,
+  `option_a` varchar(255) DEFAULT NULL,
+  `option_b` varchar(255) DEFAULT NULL,
+  `option_c` varchar(255) DEFAULT NULL,
+  `option_d` varchar(255) DEFAULT NULL,
+  `correct_answer` varchar(255) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL
@@ -432,9 +510,9 @@ CREATE TABLE `questions` (
 -- Dumping data for table `questions`
 --
 
-INSERT INTO `questions` (`id`, `quiz_id`, `content`, `type`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 1, 'What does HTML stand for?', 'multiple_choice', '2023-11-28 06:04:51', '2023-11-28 06:04:51', NULL),
-(2, 1, 'Which tag is used to display bold text?', 'multiple_choice', '2023-11-28 06:05:24', '2023-11-28 06:24:42', NULL);
+INSERT INTO `questions` (`id`, `quiz_id`, `content`, `type`, `option_a`, `option_b`, `option_c`, `option_d`, `correct_answer`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 1, 'What does HTML stand for?', 'multiple_choice', 'Hyper Text Markup Language', 'Hyperlinks and Text Markup Language', 'Home Tool Markup Languages', 'Home Text Making Language', 'a', '2023-11-28 06:04:51', '2023-11-28 23:39:14', NULL),
+(2, 1, 'Which tag is used to display bold text?', 'multiple_choice', '<a>', '<bold>', '<b>', '<abbr>', 'c', '2023-11-28 06:05:24', '2023-11-28 23:40:30', NULL);
 
 -- --------------------------------------------------------
 
@@ -587,7 +665,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `name_en`, `name_bn`, `email`, `contact_en`, `contact_bn`, `role_id`, `password`, `language`, `image`, `full_access`, `status`, `remember_token`, `created_at`, `updated_at`, `deleted_at`) VALUES
 (10, 'Ibrahim Khalil', NULL, 'admin@gmail.com', '01867655403', NULL, 1, '$2y$12$LdTowbF2MhpiaZLjn8Y/2ecrcjWqcT5VU26aM3J2bv5uN6AeiepaC', 'en', '6161700367047.png', 1, 1, NULL, '2023-11-18 22:01:49', '2023-11-19 01:44:41', NULL),
-(11, 'Burhan Uddin Fuad', NULL, 'burhan@gmail.com', '0987654321', NULL, 2, '$2y$12$NQlx2gYeStmVCjXEQwsmoejK93e.0Gy59jDLtHPodEM6gYjLc6K7.', 'en', '9231700380051.jpg', 0, 1, NULL, '2023-11-19 01:47:31', '2023-11-23 00:38:16', NULL),
+(11, 'Burhan Uddin Fuad', NULL, 'burhan@gmail.com', '0987654321', NULL, 2, '$2y$12$NQlx2gYeStmVCjXEQwsmoejK93e.0Gy59jDLtHPodEM6gYjLc6K7.', 'en', '9231700380051.jpg', 0, 1, NULL, '2023-11-19 01:47:31', '2023-11-29 00:40:12', NULL),
 (12, 'Sarah Taylor', NULL, 'sarah@gmail.com', '0124367894', NULL, 3, '$2y$12$EeSCwBeClyyF7kxJ0cK2KOFmH7aw.ZwjiY96Q/3.cmRrZuLvlb2hm', 'en', '4251700380547.jpg', 0, 1, NULL, '2023-11-19 01:55:47', '2023-11-19 21:21:38', NULL);
 
 --
@@ -834,7 +912,7 @@ ALTER TABLE `payments`
 -- AUTO_INCREMENT for table `permissions`
 --
 ALTER TABLE `permissions`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=180;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=316;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
