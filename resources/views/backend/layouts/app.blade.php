@@ -206,8 +206,8 @@
                             <span class="nav-text">Setting</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="{{route('role.index')}}"><i class="las la-universal-access"></i>Roles and
-                                    Permissions</a>
+                            <li><a href="{{route('role.index')}}"><i class="las la-universal-access"></i>Roles
+                                    & Permissions</a>
                             </li>
                             <li><a href="{{route('user.index')}}"><i class="la la-users"></i>Users</a></li>
                             <li><a href="{{route('instructor.index')}}"><i
@@ -236,7 +236,8 @@
                         </a>
                         <ul aria-expanded="false">
                             <li><a href="{{route('quiz.index')}}"><i class="las la-icons"></i>All Quizzes</a></li>
-                            <li><a href="{{route('question.index')}}"><i class="las la-question-circle"></i>Questions</a></li>
+                            <li><a href="{{route('question.index')}}"><i
+                                        class="las la-question-circle"></i>Questions</a></li>
                             <li><a href="{{route('option.index')}}"><i class="las la-stream"></i>Options</a></li>
                             <li><a href="{{route('answer.index')}}"><i class="las la-font"></i>Answers</a></li>
                         </ul>
@@ -246,7 +247,8 @@
                             <span class="nav-text">Reviews</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="{{route('review.index')}}"><i class="las la-wave-square"></i>All Review</a></li>
+                            <li><a href="{{route('review.index')}}"><i class="las la-wave-square"></i>All Review</a>
+                            </li>
                             <li><a href="{{route('review.index')}}"><i class="las la-star"></i>Ratings</a></li>
                         </ul>
                     </li>
@@ -255,7 +257,8 @@
                             <span class="nav-text">Forum</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="{{route('discussion.index')}}"><i class="las la-comment-alt"></i>Discussion</a></li>
+                            <li><a href="{{route('discussion.index')}}"><i class="las la-comment-alt"></i>Discussion</a>
+                            </li>
                             <li><a href="{{route('message.index')}}"><i class="las la-envelope"></i>Messages</a></li>
                         </ul>
                     </li>
