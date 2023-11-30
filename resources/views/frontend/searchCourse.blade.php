@@ -1,10 +1,9 @@
 @extends('frontend.layouts.app')
+@section('body-attr') style="background-color: #ebebf2;" @endsection
 
 @push('styles')
 <link rel="stylesheet" href="{{asset('public/frontend/src/scss/vendors/plugin/css/jquery-ui.css')}}" />
 @endpush
-
-@section('body-attr') style="background-color: #ebebf2;" @endsection
 
 @section('content')
     <!-- Breadcrumb Starts Here -->

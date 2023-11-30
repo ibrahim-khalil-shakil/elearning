@@ -20,7 +20,7 @@
         <nav class="navbar navbar-expand-xl navbar-light bg-transparent">
             <div class="container">
                 <!-- Logo -->
-                <a class="navbar-brand" href="index.html">
+                <a class="navbar-brand" href="{{route('home')}}">
                     <img src="{{asset('public/frontend/dist/images/logo/logo.png')}}" alt="Logo" class="img-fluid" />
                 </a>
                 <button class="menu-icon-container">

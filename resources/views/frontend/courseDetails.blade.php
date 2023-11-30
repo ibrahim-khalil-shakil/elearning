@@ -1,5 +1,4 @@
 @extends('frontend.layouts.app')
-
 @section('body-attr') style="background-color: #ebebf2;" @endsection
 
 @push('styles')
