@@ -65,10 +65,55 @@ Route::middleware(['checkrole'])->prefix('admin')->group(function () {
 Route::get('/', function () {
     return view('frontend.home');
 });
+
 Route::get('/home', function () {
     return view('frontend.home');
 })->name('home');
 
-// Route::get('/dashboard', function () {
-//     return view('welcome');
-// })->name('dashboard');
+Route::get('/searchCourse', function () {
+    return view('frontend.searchCourse');
+})->name('searchCourse');
+
+Route::get('/courseDetails', function () {
+    return view('frontend.courseDetails');
+})->name('courseDetails');
+
+Route::get('/watchCourse', function () {
+    return view('frontend.watchCourse');
+})->name('watchCourse');
+
+Route::get('/about', function () {
+    return view('frontend.about');
+})->name('about');
+
+Route::get('/studentProfile', function () {
+    return view('frontend.studentProfile');
+})->name('studentProfile');
+
+Route::get('/instructorProfile', function () {
+    return view('frontend.instructorProfile');
+})->name('instructorProfile');
+
+Route::get('/courseDetails', function () {
+    return view('frontend.courseDetails');
+})->name('courseDetails');
+
+Route::get('/studentRegister', function () {
+    return view('frontend.studentRegister');
+})->name('studentRegister');
+
+Route::get('/studentLogin', function () {
+    return view('frontend.studentLogin');
+})->name('studentLogin');
+
+Route::get('/cart', function () {
+    return view('frontend.cart');
+})->name('cart');
+
+Route::get('/checkout', function () {
+    return view('frontend.checkout');
+})->name('checkout');
+
+Route::get('/contact', function () {
+    return view('frontend.contact');
+})->name('contact');
