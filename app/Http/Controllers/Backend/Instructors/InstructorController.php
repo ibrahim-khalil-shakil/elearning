@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Backend\Instructors;
 use App\Http\Controllers\Controller;
 use App\Models\Instructor;
 use Illuminate\Http\Request;
+use App\Http\Requests\Backend\Instructors\AddNewRequest;
+use App\Http\Requests\Backend\Instructors\UpdateRequest;
 use App\Models\Role;
 use Illuminate\Support\Facades\Hash;
 use Exception;
@@ -33,10 +35,10 @@ class InstructorController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(AddNewRequest $request)
     {
         try {
-            $instructor = new Instructor;
+            $instructor = new Instructor; 
             $instructor->name_en = $request->fullName_en;
             $instructor->name_bn = $request->fullName_bn;
             $instructor->contact_en = $request->contactNumber_en;
@@ -59,7 +61,7 @@ class InstructorController extends Controller
             else
                 return redirect()->back()->withInput()->with('error', 'Please try again');
         } catch (Exception $e) {
-            dd($e);
+            // dd($e);
             return redirect()->back()->withInput()->with('error', 'Please try again');
         }
     }
@@ -85,7 +87,7 @@ class InstructorController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, $id)
+    public function update(UpdateRequest $request, $id)
     {
         try {
             $instructor = Instructor::findOrFail(encryptor('decrypt', $id));

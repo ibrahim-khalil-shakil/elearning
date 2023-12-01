@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Backend\CourseCategory;
+namespace App\Http\Requests\Backend\Course\Courses;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class AddNewRequest extends FormRequest
+class UpdateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,7 +22,9 @@ class AddNewRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'category_name'=>'required|max:255'
+            'courseTitle_en' => 'required|max:255',
+            'categoryId' => 'required|max:3',
+            'instructorId' => 'required|max:3',
         ];
     }
 }

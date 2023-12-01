@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Backend\Courses;
 use App\Models\Material;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Requests\Backend\Course\Materials\AddNewRequest;
+use App\Http\Requests\Backend\Course\Materials\UpdateRequest;
 use App\Models\Course;
 use Exception;
 
@@ -31,7 +33,7 @@ class MaterialController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(AddNewRequest $request)
     {
         try {
             $material = new Material;
@@ -48,7 +50,7 @@ class MaterialController extends Controller
                 return redirect()->back()->withInput();
             }
         } catch (Exception $e) {
-            dd($e);
+            // dd($e);
             $this->notice::error('Please try again');
             return redirect()->back()->withInput();
         }
@@ -75,7 +77,7 @@ class MaterialController extends Controller
     /** 
      * Update the specified resource in storage.
      */
-    public function update(Request $request, $id)
+    public function update(UpdateRequest $request, $id)
     {
         try {
             $material = Material::findOrFail(encryptor('decrypt', $id));
@@ -92,7 +94,7 @@ class MaterialController extends Controller
                 return redirect()->back()->withInput();
             }
         } catch (Exception $e) {
-            dd($e);
+            // dd($e);
             $this->notice::error('Please try again');
             return redirect()->back()->withInput();
         }

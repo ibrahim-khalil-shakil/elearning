@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Backend\Courses;
 use App\Http\Controllers\Controller;
 use App\Models\Course;
 use Illuminate\Http\Request;
+use App\Http\Requests\Backend\Course\Courses\AddNewRequest;
+use App\Http\Requests\Backend\Course\Courses\UpdateRequest;
 use App\Models\CourseCategory; 
 use App\Models\Instructor;
 use Exception;
@@ -34,7 +36,7 @@ class CourseController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(AddNewRequest $request)
     {
         try {
             $course = new Course;
@@ -45,7 +47,7 @@ class CourseController extends Controller
             $course->category_id = $request->categoryId;
             $course->instructor_id = $request->instructorId;
             $course->type = $request->courseType;
-            $course->price = $request->coursePrice;
+            $course->price = $request->coursePrice; 
             $course->subscription_price = $request->subscriptionPrice;
             $course->start_from = $request->start_from;
             $course->duration = $request->duration;
@@ -66,7 +68,7 @@ class CourseController extends Controller
             else
                 return redirect()->back()->withInput()->with('error', 'Please try again');
         } catch (Exception $e) {
-            dd($e);
+            // dd($e);
             return redirect()->back()->withInput()->with('error', 'Please try again');
         }
     }
@@ -93,7 +95,7 @@ class CourseController extends Controller
     /** 
      * Update the specified resource in storage.
      */
-    public function update(Request $request, $id)
+    public function update(UpdateRequest $request, $id)
     {
         try {
             $course = Course::findOrFail(encryptor('decrypt', $id));
@@ -125,7 +127,7 @@ class CourseController extends Controller
             else
                 return redirect()->back()->withInput()->with('error', 'Please try again');
         } catch (Exception $e) {
-            dd($e);
+            // dd($e);
             return redirect()->back()->withInput()->with('error', 'Please try again');
         }
     }

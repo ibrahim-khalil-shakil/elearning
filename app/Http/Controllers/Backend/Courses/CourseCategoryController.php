@@ -5,7 +5,9 @@ namespace App\Http\Controllers\Backend\Courses;
 use App\Http\Controllers\Controller;
 use App\Models\CourseCategory;
 use Illuminate\Http\Request;
-use App\Http\Requests\Backend\CourseCategory\AddNewRequest;
+use App\Http\Requests\Backend\Course\CourseCategory\AddNewRequest;
+use App\Http\Requests\Backend\Course\CourseCategory\UpdateRequest;
+
 use Exception;
 use File;
 
@@ -73,7 +75,7 @@ class CourseCategoryController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, $id)
+    public function update(UpdateRequest $request, $id)
     {
         try {
             $data = CourseCategory::findOrFail($id);
@@ -90,7 +92,7 @@ class CourseCategoryController extends Controller
             else
                 return redirect()->back()->withInput()->with('error', 'Please try again');
         } catch (Exception $e) {
-            dd($e);
+            // dd($e);
             return redirect()->back()->withInput()->with('error', 'Please try again');
         }
     }

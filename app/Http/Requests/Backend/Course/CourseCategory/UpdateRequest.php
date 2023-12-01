@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests\Backend\CourseCategory;
+namespace App\Http\Requests\Backend\Course\CourseCategory;
 
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -11,7 +11,7 @@ class UpdateRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,7 @@ class UpdateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'category_name' => 'required|max:255' 
         ];
     }
 }

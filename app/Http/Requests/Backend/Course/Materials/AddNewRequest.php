@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests\Backend\User;
+namespace App\Http\Requests\Backend\Course\Materials;
 
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -22,12 +22,9 @@ class AddNewRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'userName_en' => 'required|max:255', 
-            'roleId' => 'required|max:2',
-            'contactNumber_en' => 'required|unique:users,contact_en',
-            'emailAddress' => 'required|unique:users,email',
-            'password' => 'required'
+            'materialTitle' => 'required|max:255',
+            'materialType' => 'required|max:255',
+            'courseId' => 'required|max:3',
         ];
     }
 }
- 

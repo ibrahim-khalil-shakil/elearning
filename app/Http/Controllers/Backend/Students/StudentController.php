@@ -5,11 +5,12 @@ namespace App\Http\Controllers\Backend\Students;
 use App\Http\Controllers\Controller;
 use App\Models\Student;
 use Illuminate\Http\Request;
+use App\Http\Requests\Backend\Students\AddNewRequest;
+use App\Http\Requests\Backend\Students\UpdateRequest;
 use App\Models\Role;
 use Exception;
 use Illuminate\Support\Facades\Hash;
 use File;
-use Carbon\Carbon;
 
 class StudentController extends Controller
 {
@@ -34,7 +35,7 @@ class StudentController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(AddNewRequest $request)
     {
         try {
             $student = new Student();
@@ -61,7 +62,7 @@ class StudentController extends Controller
             else
                 return redirect()->back()->withInput()->with('error', 'Please try again');
         } catch (Exception $e) {
-            dd($e);
+            // dd($e);
             return redirect()->back()->withInput()->with('error', 'Please try again');
         }
     }
@@ -88,7 +89,7 @@ class StudentController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, $id)
+    public function update(UpdateRequest $request, $id)
     {
         try {
 
@@ -116,7 +117,7 @@ class StudentController extends Controller
             else
                 return redirect()->back()->withInput()->with('error', 'Please try again');
         } catch (Exception $e) {
-            dd($e);
+            // dd($e);
             return redirect()->back()->withInput()->with('error', 'Please try again');
         }
     }
