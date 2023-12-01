@@ -34,19 +34,7 @@
                             </p>
                             <div class="trash-icon">
                                 <a href="#">
-                                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M2 4.2002H3.6H16.4" stroke="#666575" stroke-width="1.4"
-                                            stroke-linecap="round" stroke-linejoin="round" />
-                                        <path
-                                            d="M6.00059 4.2V2.6C6.00059 2.17565 6.16916 1.76869 6.46922 1.46863C6.76927 1.16857 7.17624 1 7.60059 1H10.8006C11.2249 1 11.6319 1.16857 11.932 1.46863C12.232 1.76869 12.4006 2.17565 12.4006 2.6V4.2M14.8006 4.2V15.4C14.8006 15.8243 14.632 16.2313 14.332 16.5314C14.0319 16.8314 13.6249 17 13.2006 17H5.20059C4.77624 17 4.36927 16.8314 4.06922 16.5314C3.76916 16.2313 3.60059 15.8243 3.60059 15.4V4.2H14.8006Z"
-                                            stroke="#666575" stroke-width="1.4" stroke-linecap="round"
-                                            stroke-linejoin="round" />
-                                        <path d="M7.60059 8.2002V13.0002" stroke="#666575" stroke-width="1.4"
-                                            stroke-linecap="round" stroke-linejoin="round" />
-                                        <path d="M10.8018 8.2002V13.0002" stroke="#666575" stroke-width="1.4"
-                                            stroke-linecap="round" stroke-linejoin="round" />
-                                    </svg>
+                                    <i class="far fa-trash-alt"></i>
                                 </a>
                             </div>
                         </div>
@@ -65,19 +53,7 @@
                             </p>
                             <div class="trash-icon">
                                 <a href="#">
-                                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M2 4.2002H3.6H16.4" stroke="#666575" stroke-width="1.4"
-                                            stroke-linecap="round" stroke-linejoin="round" />
-                                        <path
-                                            d="M6.00059 4.2V2.6C6.00059 2.17565 6.16916 1.76869 6.46922 1.46863C6.76927 1.16857 7.17624 1 7.60059 1H10.8006C11.2249 1 11.6319 1.16857 11.932 1.46863C12.232 1.76869 12.4006 2.17565 12.4006 2.6V4.2M14.8006 4.2V15.4C14.8006 15.8243 14.632 16.2313 14.332 16.5314C14.0319 16.8314 13.6249 17 13.2006 17H5.20059C4.77624 17 4.36927 16.8314 4.06922 16.5314C3.76916 16.2313 3.60059 15.8243 3.60059 15.4V4.2H14.8006Z"
-                                            stroke="#666575" stroke-width="1.4" stroke-linecap="round"
-                                            stroke-linejoin="round" />
-                                        <path d="M7.60059 8.2002V13.0002" stroke="#666575" stroke-width="1.4"
-                                            stroke-linecap="round" stroke-linejoin="round" />
-                                        <path d="M10.8018 8.2002V13.0002" stroke="#666575" stroke-width="1.4"
-                                            stroke-linecap="round" stroke-linejoin="round" />
-                                    </svg>
+                                    <i class="far fa-trash-alt"></i>
                                 </a>
                             </div>
                         </div>

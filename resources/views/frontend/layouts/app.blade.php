@@ -8,6 +8,7 @@
     <title>{{ENV('APP_NAME')}} | @yield('title', 'Home')</title>
     <link rel="stylesheet" href="{{asset('public/frontend/dist/main.css')}}" />
     <link rel="icon" type="image/png" href="{{asset('public/frontend/dist/images/favicon/favicon.png')}}" />
+    <link rel="stylesheet" href="{{asset('public/frontend/fontawesome-free-5.15.4-web/css/all.min.css')}}">
 
     @stack('styles')
 
