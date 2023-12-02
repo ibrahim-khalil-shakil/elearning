@@ -267,13 +267,13 @@
                         <div class="col-lg-4 col-md-6 col-md-6 mb-4">
                             <div class="contentCard contentCard--watch-course">
                                 <div class="contentCard-top">
-                                    <a href="course-details.html"><img
+                                    <a href="{{route('courseDetails')}}"><img
                                             src="{{asset('public/frontend/dist/images/courses/demo-img-01.png')}}"
                                             alt="images" class="img-fluid" /></a>
                                 </div>
                                 <div class="contentCard-bottom">
                                     <h5>
-                                        <a href="course-details.html" class="font-title--card">Chicago International
+                                        <a href="{{route('courseDetails')}}" class="font-title--card">Chicago International
                                             Conference on Education</a>
                                     </h5>
                                     <div class="contentCard-info d-flex align-items-center justify-content-between">
@@ -289,7 +289,7 @@
                                         </div>
                                     </div>
                                     <a class="button button-md button--primary-outline w-100 my-3"
-                                        href="watch.html">Watch Course</a>
+                                        href="{{route('watchCourse')}}">Watch Course</a>
                                     <div class="contentCard-watch--progress">
                                         <span class="percentage" style="width: 43%;"></span>
                                     </div>
@@ -299,13 +299,13 @@
                         <div class="col-lg-4 col-md-6 col-md-6 mb-4">
                             <div class="contentCard contentCard--watch-course">
                                 <div class="contentCard-top">
-                                    <a href="course-details.html"><img
+                                    <a href="{{route('courseDetails')}}"><img
                                             src="{{asset('public/frontend/dist/images/courses/demo-img-02.png')}}"
                                             alt="images" class="img-fluid" /></a>
                                 </div>
                                 <div class="contentCard-bottom">
                                     <h5>
-                                        <a href="course-details.html" class="font-title--card">Chicago International
+                                        <a href="{{route('courseDetails')}}" class="font-title--card">Chicago International
                                             Conference on Education</a>
                                     </h5>
                                     <div class="contentCard-info d-flex align-items-center justify-content-between">
@@ -321,7 +321,7 @@
                                         </div>
                                     </div>
                                     <a class="button button-md button--primary-outline w-100 my-3"
-                                        href="watch.html">Watch Course</a>
+                                        href="{{route('watchCourse')}}">Watch Course</a>
                                     <div class="contentCard-watch--progress">
                                         <span class="percentage" style="width: 43%;"></span>
                                     </div>
@@ -331,13 +331,13 @@
                         <div class="col-lg-4 col-md-6 col-md-6 mb-4">
                             <div class="contentCard contentCard--watch-course">
                                 <div class="contentCard-top">
-                                    <a href="course-details.html"><img
+                                    <a href="{{route('courseDetails')}}"><img
                                             src="{{asset('public/frontend/dist/images/courses/demo-img-03.png')}}"
                                             alt="images" class="img-fluid" /></a>
                                 </div>
                                 <div class="contentCard-bottom">
                                     <h5>
-                                        <a href="course-details.html" class="font-title--card">Chicago International
+                                        <a href="{{route('courseDetails')}}" class="font-title--card">Chicago International
                                             Conference on Education</a>
                                     </h5>
                                     <div class="contentCard-info d-flex align-items-center justify-content-between">
@@ -353,7 +353,7 @@
                                         </div>
                                     </div>
                                     <a class="button button-md button--primary-outline w-100 my-3"
-                                        href="watch.html">Watch Course</a>
+                                        href="{{route('watchCourse')}}">Watch Course</a>
                                     <div class="contentCard-watch--progress">
                                         <span class="percentage" style="width: 43%;"></span>
                                     </div>
@@ -363,13 +363,13 @@
                         <div class="col-lg-4 col-md-6 col-md-6 mb-4">
                             <div class="contentCard contentCard--watch-course">
                                 <div class="contentCard-top">
-                                    <a href="course-details.html"><img
+                                    <a href="{{route('courseDetails')}}"><img
                                             src="{{asset('public/frontend/dist/images/courses/demo-img-04.png')}}"
                                             alt="images" class="img-fluid" /></a>
                                 </div>
                                 <div class="contentCard-bottom">
                                     <h5>
-                                        <a href="course-details.html" class="font-title--card">Chicago International
+                                        <a href="{{route('courseDetails')}}" class="font-title--card">Chicago International
                                             Conference on Education</a>
                                     </h5>
                                     <div class="contentCard-info d-flex align-items-center justify-content-between">
@@ -385,7 +385,7 @@
                                         </div>
                                     </div>
                                     <a class="button button-md button--primary-outline w-100 my-3"
-                                        href="watch.html">Watch Course</a>
+                                        href="{{route('watchCourse')}}">Watch Course</a>
                                     <div class="contentCard-watch--progress">
                                         <span class="percentage" style="width: 43%;"></span>
                                     </div>
@@ -395,13 +395,13 @@
                         <div class="col-lg-4 col-md-6 col-md-6 mb-4">
                             <div class="contentCard contentCard--watch-course">
                                 <div class="contentCard-top">
-                                    <a href="course-details.html"><img
+                                    <a href="{{route('courseDetails')}}"><img
                                             src="{{asset('public/frontend/dist/images/courses/demo-img-05.png')}}"
                                             alt="images" class="img-fluid" /></a>
                                 </div>
                                 <div class="contentCard-bottom">
                                     <h5>
-                                        <a href="course-details.html" class="font-title--card">Chicago International
+                                        <a href="{{route('courseDetails')}}" class="font-title--card">Chicago International
                                             Conference on Education</a>
                                     </h5>
                                     <div class="contentCard-info d-flex align-items-center justify-content-between">
@@ -417,7 +417,7 @@
                                         </div>
                                     </div>
                                     <a class="button button-md button--primary-outline w-100 my-3"
-                                        href="watch.html">Watch Course</a>
+                                        href="{{route('watchCourse')}}">Watch Course</a>
                                     <div class="contentCard-watch--progress">
                                         <span class="percentage" style="width: 43%;"></span>
                                     </div>
@@ -427,13 +427,13 @@
                         <div class="col-lg-4 col-md-6 col-md-6 mb-4">
                             <div class="contentCard contentCard--watch-course">
                                 <div class="contentCard-top">
-                                    <a href="course-details.html"><img
+                                    <a href="{{route('courseDetails')}}"><img
                                             src="{{asset('public/frontend/dist/images/courses/demo-img-01.png')}}"
                                             alt="images" class="img-fluid" /></a>
                                 </div>
                                 <div class="contentCard-bottom">
                                     <h5>
-                                        <a href="course-details.html" class="font-title--card">Chicago International
+                                        <a href="{{route('courseDetails')}}" class="font-title--card">Chicago International
                                             Conference on Education</a>
                                     </h5>
                                     <div class="contentCard-info d-flex align-items-center justify-content-between">
@@ -449,7 +449,7 @@
                                         </div>
                                     </div>
                                     <a class="button button-md button--primary-outline w-100 my-3"
-                                        href="watch.html">Watch Course</a>
+                                        href="{{route('watchCourse')}}">Watch Course</a>
                                     <div class="contentCard-watch--progress">
                                         <span class="percentage" style="width: 43%;"></span>
                                     </div>
@@ -459,13 +459,13 @@
                         <div class="col-lg-4 col-md-6 col-md-6 mb-4">
                             <div class="contentCard contentCard--watch-course">
                                 <div class="contentCard-top">
-                                    <a href="course-details.html"><img
+                                    <a href="{{route('courseDetails')}}"><img
                                             src="{{asset('public/frontend/dist/images/courses/demo-img-02.png')}}"
                                             alt="images" class="img-fluid" /></a>
                                 </div>
                                 <div class="contentCard-bottom">
                                     <h5>
-                                        <a href="course-details.html" class="font-title--card">Chicago International
+                                        <a href="{{route('courseDetails')}}" class="font-title--card">Chicago International
                                             Conference on Education</a>
                                     </h5>
                                     <div class="contentCard-info d-flex align-items-center justify-content-between">
@@ -481,7 +481,7 @@
                                         </div>
                                     </div>
                                     <a class="button button-md button--primary-outline w-100 my-3"
-                                        href="watch.html">Watch Course</a>
+                                        href="{{route('watchCourse')}}">Watch Course</a>
                                     <div class="contentCard-watch--progress">
                                         <span class="percentage" style="width: 43%;"></span>
                                     </div>
@@ -491,13 +491,13 @@
                         <div class="col-lg-4 col-md-6 col-md-6 mb-4">
                             <div class="contentCard contentCard--watch-course">
                                 <div class="contentCard-top">
-                                    <a href="course-details.html"><img
+                                    <a href="{{route('courseDetails')}}"><img
                                             src="{{asset('public/frontend/dist/images/courses/demo-img-03.png')}}"
                                             alt="images" class="img-fluid" /></a>
                                 </div>
                                 <div class="contentCard-bottom">
                                     <h5>
-                                        <a href="course-details.html" class="font-title--card">Chicago International
+                                        <a href="{{route('courseDetails')}}" class="font-title--card">Chicago International
                                             Conference on Education</a>
                                     </h5>
                                     <div class="contentCard-info d-flex align-items-center justify-content-between">
@@ -513,7 +513,7 @@
                                         </div>
                                     </div>
                                     <a class="button button-md button--primary-outline w-100 my-3"
-                                        href="watch.html">Watch Course</a>
+                                        href="{{route('watchCourse')}}">Watch Course</a>
                                     <div class="contentCard-watch--progress">
                                         <span class="percentage" style="width: 43%;"></span>
                                     </div>
@@ -523,13 +523,13 @@
                         <div class="col-lg-4 col-md-6 col-md-6 mb-4">
                             <div class="contentCard contentCard--watch-course">
                                 <div class="contentCard-top">
-                                    <a href="course-details.html"><img
+                                    <a href="{{route('courseDetails')}}"><img
                                             src="{{asset('public/frontend/dist/images/courses/demo-img-04.png')}}"
                                             alt="images" class="img-fluid" /></a>
                                 </div>
                                 <div class="contentCard-bottom">
                                     <h5>
-                                        <a href="course-details.html" class="font-title--card">Chicago International
+                                        <a href="{{route('courseDetails')}}" class="font-title--card">Chicago International
                                             Conference on Education</a>
                                     </h5>
                                     <div class="contentCard-info d-flex align-items-center justify-content-between">
@@ -545,7 +545,7 @@
                                         </div>
                                     </div>
                                     <a class="button button-md button--primary-outline w-100 my-3"
-                                        href="watch.html">Watch Course</a>
+                                        href="{{route('watchCourse')}}">Watch Course</a>
                                     <div class="contentCard-watch--progress">
                                         <span class="percentage" style="width: 43%;"></span>
                                     </div>
@@ -585,13 +585,13 @@
                         <div class="col-lg-4 col-md-6 col-md-6 mb-4">
                             <div class="contentCard contentCard--watch-course">
                                 <div class="contentCard-top">
-                                    <a href="course-details.html"><img
+                                    <a href="{{route('courseDetails')}}"><img
                                             src="{{asset('public/frontend/dist/images/courses/demo-img-01.png')}}"
                                             alt="images" class="img-fluid" /></a>
                                 </div>
                                 <div class="contentCard-bottom">
                                     <h5>
-                                        <a href="course-details.html" class="font-title--card">Chicago International
+                                        <a href="{{route('courseDetails')}}" class="font-title--card">Chicago International
                                             Conference on Education</a>
                                     </h5>
                                     <div class="contentCard-info d-flex align-items-center justify-content-between">
@@ -607,7 +607,7 @@
                                         </div>
                                     </div>
                                     <a class="button button-md button--primary-outline w-100 my-3"
-                                        href="watch.html">Watch Course</a>
+                                        href="{{route('watchCourse')}}">Watch Course</a>
                                     <div class="contentCard-watch--progress">
                                         <span class="percentage" style="width: 43%;"></span>
                                     </div>
@@ -617,13 +617,13 @@
                         <div class="col-lg-4 col-md-6 col-md-6 mb-4">
                             <div class="contentCard contentCard--watch-course">
                                 <div class="contentCard-top">
-                                    <a href="course-details.html"><img
+                                    <a href="{{route('courseDetails')}}"><img
                                             src="{{asset('public/frontend/dist/images/courses/demo-img-02.png')}}"
                                             alt="images" class="img-fluid" /></a>
                                 </div>
                                 <div class="contentCard-bottom">
                                     <h5>
-                                        <a href="course-details.html" class="font-title--card">Chicago International
+                                        <a href="{{route('courseDetails')}}" class="font-title--card">Chicago International
                                             Conference on Education</a>
                                     </h5>
                                     <div class="contentCard-info d-flex align-items-center justify-content-between">
@@ -639,7 +639,7 @@
                                         </div>
                                     </div>
                                     <a class="button button-md button--primary-outline w-100 my-3"
-                                        href="watch.html">Watch Course</a>
+                                        href="{{route('watchCourse')}}">Watch Course</a>
                                     <div class="contentCard-watch--progress">
                                         <span class="percentage" style="width: 43%;"></span>
                                     </div>
@@ -649,13 +649,13 @@
                         <div class="col-lg-4 col-md-6 col-md-6 mb-4">
                             <div class="contentCard contentCard--watch-course">
                                 <div class="contentCard-top">
-                                    <a href="course-details.html"><img
+                                    <a href="{{route('courseDetails')}}"><img
                                             src="{{asset('public/frontend/dist/images/courses/demo-img-03.png')}}"
                                             alt="images" class="img-fluid" /></a>
                                 </div>
                                 <div class="contentCard-bottom">
                                     <h5>
-                                        <a href="course-details.html" class="font-title--card">Chicago International
+                                        <a href="{{route('courseDetails')}}" class="font-title--card">Chicago International
                                             Conference on Education</a>
                                     </h5>
                                     <div class="contentCard-info d-flex align-items-center justify-content-between">
@@ -671,7 +671,7 @@
                                         </div>
                                     </div>
                                     <a class="button button-md button--primary-outline w-100 my-3"
-                                        href="watch.html">Watch Course</a>
+                                        href="{{route('watchCourse')}}">Watch Course</a>
                                     <div class="contentCard-watch--progress">
                                         <span class="percentage" style="width: 43%;"></span>
                                     </div>
@@ -681,13 +681,13 @@
                         <div class="col-lg-4 col-md-6 col-md-6 mb-4">
                             <div class="contentCard contentCard--watch-course">
                                 <div class="contentCard-top">
-                                    <a href="course-details.html"><img
+                                    <a href="{{route('courseDetails')}}"><img
                                             src="{{asset('public/frontend/dist/images/courses/demo-img-04.png')}}"
                                             alt="images" class="img-fluid" /></a>
                                 </div>
                                 <div class="contentCard-bottom">
                                     <h5>
-                                        <a href="course-details.html" class="font-title--card">Chicago International
+                                        <a href="{{route('courseDetails')}}" class="font-title--card">Chicago International
                                             Conference on Education</a>
                                     </h5>
                                     <div class="contentCard-info d-flex align-items-center justify-content-between">
@@ -703,7 +703,7 @@
                                         </div>
                                     </div>
                                     <a class="button button-md button--primary-outline w-100 my-3"
-                                        href="watch.html">Watch Course</a>
+                                        href="{{route('watchCourse')}}">Watch Course</a>
                                     <div class="contentCard-watch--progress">
                                         <span class="percentage" style="width: 43%;"></span>
                                     </div>
@@ -713,13 +713,13 @@
                         <div class="col-lg-4 col-md-6 col-md-6 mb-4">
                             <div class="contentCard contentCard--watch-course">
                                 <div class="contentCard-top">
-                                    <a href="course-details.html"><img
+                                    <a href="{{route('courseDetails')}}"><img
                                             src="{{asset('public/frontend/dist/images/courses/demo-img-05.png')}}"
                                             alt="images" class="img-fluid" /></a>
                                 </div>
                                 <div class="contentCard-bottom">
                                     <h5>
-                                        <a href="course-details.html" class="font-title--card">Chicago International
+                                        <a href="{{route('courseDetails')}}" class="font-title--card">Chicago International
                                             Conference on Education</a>
                                     </h5>
                                     <div class="contentCard-info d-flex align-items-center justify-content-between">
@@ -735,7 +735,7 @@
                                         </div>
                                     </div>
                                     <a class="button button-md button--primary-outline w-100 my-3"
-                                        href="watch.html">Watch Course</a>
+                                        href="{{route('watchCourse')}}">Watch Course</a>
                                     <div class="contentCard-watch--progress">
                                         <span class="percentage" style="width: 43%;"></span>
                                     </div>
@@ -745,13 +745,13 @@
                         <div class="col-lg-4 col-md-6 col-md-6 mb-4">
                             <div class="contentCard contentCard--watch-course">
                                 <div class="contentCard-top">
-                                    <a href="course-details.html"><img
+                                    <a href="{{route('courseDetails')}}"><img
                                             src="{{asset('public/frontend/dist/images/courses/demo-img-01.png')}}"
                                             alt="images" class="img-fluid" /></a>
                                 </div>
                                 <div class="contentCard-bottom">
                                     <h5>
-                                        <a href="course-details.html" class="font-title--card">Chicago International
+                                        <a href="{{route('courseDetails')}}" class="font-title--card">Chicago International
                                             Conference on Education</a>
                                     </h5>
                                     <div class="contentCard-info d-flex align-items-center justify-content-between">
@@ -767,7 +767,7 @@
                                         </div>
                                     </div>
                                     <a class="button button-md button--primary-outline w-100 my-3"
-                                        href="watch.html">Watch Course</a>
+                                        href="{{route('watchCourse')}}">Watch Course</a>
                                     <div class="contentCard-watch--progress">
                                         <span class="percentage" style="width: 43%;"></span>
                                     </div>
@@ -777,13 +777,13 @@
                         <div class="col-lg-4 col-md-6 col-md-6 mb-4">
                             <div class="contentCard contentCard--watch-course">
                                 <div class="contentCard-top">
-                                    <a href="course-details.html"><img
+                                    <a href="{{route('courseDetails')}}"><img
                                             src="{{asset('public/frontend/dist/images/courses/demo-img-02.png')}}"
                                             alt="images" class="img-fluid" /></a>
                                 </div>
                                 <div class="contentCard-bottom">
                                     <h5>
-                                        <a href="course-details.html" class="font-title--card">Chicago International
+                                        <a href="{{route('courseDetails')}}" class="font-title--card">Chicago International
                                             Conference on Education</a>
                                     </h5>
                                     <div class="contentCard-info d-flex align-items-center justify-content-between">
@@ -799,7 +799,7 @@
                                         </div>
                                     </div>
                                     <a class="button button-md button--primary-outline w-100 my-3"
-                                        href="watch.html">Watch Course</a>
+                                        href="{{route('watchCourse')}}">Watch Course</a>
                                     <div class="contentCard-watch--progress">
                                         <span class="percentage" style="width: 43%;"></span>
                                     </div>
@@ -809,13 +809,13 @@
                         <div class="col-lg-4 col-md-6 col-md-6 mb-4">
                             <div class="contentCard contentCard--watch-course">
                                 <div class="contentCard-top">
-                                    <a href="course-details.html"><img
+                                    <a href="{{route('courseDetails')}}"><img
                                             src="{{asset('public/frontend/dist/images/courses/demo-img-03.png')}}"
                                             alt="images" class="img-fluid" /></a>
                                 </div>
                                 <div class="contentCard-bottom">
                                     <h5>
-                                        <a href="course-details.html" class="font-title--card">Chicago International
+                                        <a href="{{route('courseDetails')}}" class="font-title--card">Chicago International
                                             Conference on Education</a>
                                     </h5>
                                     <div class="contentCard-info d-flex align-items-center justify-content-between">
@@ -831,7 +831,7 @@
                                         </div>
                                     </div>
                                     <a class="button button-md button--primary-outline w-100 my-3"
-                                        href="watch.html">Watch Course</a>
+                                        href="{{route('watchCourse')}}">Watch Course</a>
                                     <div class="contentCard-watch--progress">
                                         <span class="percentage" style="width: 43%;"></span>
                                     </div>
@@ -841,13 +841,13 @@
                         <div class="col-lg-4 col-md-6 col-md-6 mb-4">
                             <div class="contentCard contentCard--watch-course">
                                 <div class="contentCard-top">
-                                    <a href="course-details.html"><img
+                                    <a href="{{route('courseDetails')}}"><img
                                             src="{{asset('public/frontend/dist/images/courses/demo-img-04.png')}}"
                                             alt="images" class="img-fluid" /></a>
                                 </div>
                                 <div class="contentCard-bottom">
                                     <h5>
-                                        <a href="course-details.html" class="font-title--card">Chicago International
+                                        <a href="{{route('courseDetails')}}" class="font-title--card">Chicago International
                                             Conference on Education</a>
                                     </h5>
                                     <div class="contentCard-info d-flex align-items-center justify-content-between">
@@ -863,7 +863,7 @@
                                         </div>
                                     </div>
                                     <a class="button button-md button--primary-outline w-100 my-3"
-                                        href="watch.html">Watch Course</a>
+                                        href="{{route('watchCourse')}}">Watch Course</a>
                                     <div class="contentCard-watch--progress">
                                         <span class="percentage" style="width: 43%;"></span>
                                     </div>
@@ -903,13 +903,13 @@
                         <div class="col-lg-4 col-md-6 col-md-6 mb-4">
                             <div class="contentCard contentCard--watch-course">
                                 <div class="contentCard-top">
-                                    <a href="course-details.html"><img
+                                    <a href="{{route('courseDetails')}}"><img
                                             src="{{asset('public/frontend/dist/images/courses/demo-img-01.png')}}"
                                             alt="images" class="img-fluid" /></a>
                                 </div>
                                 <div class="contentCard-bottom">
                                     <h5>
-                                        <a href="course-details.html" class="font-title--card">Chicago International
+                                        <a href="{{route('courseDetails')}}" class="font-title--card">Chicago International
                                             Conference on Education</a>
                                     </h5>
                                     <div class="contentCard-info d-flex align-items-center justify-content-between">
@@ -925,7 +925,7 @@
                                         </div>
                                     </div>
                                     <a class="button button-md button--primary-outline w-100 my-3"
-                                        href="watch.html">Watch Course</a>
+                                        href="{{route('watchCourse')}}">Watch Course</a>
                                     <div class="contentCard-watch--progress">
                                         <span class="percentage" style="width: 100%;"></span>
                                     </div>
@@ -935,13 +935,13 @@
                         <div class="col-lg-4 col-md-6 col-md-6 mb-4">
                             <div class="contentCard contentCard--watch-course">
                                 <div class="contentCard-top">
-                                    <a href="course-details.html"><img
+                                    <a href="{{route('courseDetails')}}"><img
                                             src="{{asset('public/frontend/dist/images/courses/demo-img-02.png')}}"
                                             alt="images" class="img-fluid" /></a>
                                 </div>
                                 <div class="contentCard-bottom">
                                     <h5>
-                                        <a href="course-details.html" class="font-title--card">Chicago International
+                                        <a href="{{route('courseDetails')}}" class="font-title--card">Chicago International
                                             Conference on Education</a>
                                     </h5>
                                     <div class="contentCard-info d-flex align-items-center justify-content-between">
@@ -957,7 +957,7 @@
                                         </div>
                                     </div>
                                     <a class="button button-md button--primary-outline w-100 my-3"
-                                        href="watch.html">Watch Course</a>
+                                        href="{{route('watchCourse')}}">Watch Course</a>
                                     <div class="contentCard-watch--progress">
                                         <span class="percentage" style="width: 100%;"></span>
                                     </div>
@@ -967,13 +967,13 @@
                         <div class="col-lg-4 col-md-6 col-md-6 mb-4">
                             <div class="contentCard contentCard--watch-course">
                                 <div class="contentCard-top">
-                                    <a href="course-details.html"><img
+                                    <a href="{{route('courseDetails')}}"><img
                                             src="{{asset('public/frontend/dist/images/courses/demo-img-03.png')}}"
                                             alt="images" class="img-fluid" /></a>
                                 </div>
                                 <div class="contentCard-bottom">
                                     <h5>
-                                        <a href="course-details.html" class="font-title--card">Chicago International
+                                        <a href="{{route('courseDetails')}}" class="font-title--card">Chicago International
                                             Conference on Education</a>
                                     </h5>
                                     <div class="contentCard-info d-flex align-items-center justify-content-between">
@@ -989,7 +989,7 @@
                                         </div>
                                     </div>
                                     <a class="button button-md button--primary-outline w-100 my-3"
-                                        href="watch.html">Watch Course</a>
+                                        href="{{route('watchCourse')}}">Watch Course</a>
                                     <div class="contentCard-watch--progress">
                                         <span class="percentage" style="width: 100%;"></span>
                                     </div>
@@ -999,13 +999,13 @@
                         <div class="col-lg-4 col-md-6 col-md-6 mb-4">
                             <div class="contentCard contentCard--watch-course">
                                 <div class="contentCard-top">
-                                    <a href="course-details.html"><img
+                                    <a href="{{route('courseDetails')}}"><img
                                             src="{{asset('public/frontend/dist/images/courses/demo-img-04.png')}}"
                                             alt="images" class="img-fluid" /></a>
                                 </div>
                                 <div class="contentCard-bottom">
                                     <h5>
-                                        <a href="course-details.html" class="font-title--card">Chicago International
+                                        <a href="{{route('courseDetails')}}" class="font-title--card">Chicago International
                                             Conference on Education</a>
                                     </h5>
                                     <div class="contentCard-info d-flex align-items-center justify-content-between">
@@ -1021,7 +1021,7 @@
                                         </div>
                                     </div>
                                     <a class="button button-md button--primary-outline w-100 my-3"
-                                        href="watch.html">Watch Course</a>
+                                        href="{{route('watchCourse')}}">Watch Course</a>
                                     <div class="contentCard-watch--progress">
                                         <span class="percentage" style="width: 100%;"></span>
                                     </div>
@@ -1031,13 +1031,13 @@
                         <div class="col-lg-4 col-md-6 col-md-6 mb-4">
                             <div class="contentCard contentCard--watch-course">
                                 <div class="contentCard-top">
-                                    <a href="course-details.html"><img
+                                    <a href="{{route('courseDetails')}}"><img
                                             src="{{asset('public/frontend/dist/images/courses/demo-img-05.png')}}"
                                             alt="images" class="img-fluid" /></a>
                                 </div>
                                 <div class="contentCard-bottom">
                                     <h5>
-                                        <a href="course-details.html" class="font-title--card">Chicago International
+                                        <a href="{{route('courseDetails')}}" class="font-title--card">Chicago International
                                             Conference on Education</a>
                                     </h5>
                                     <div class="contentCard-info d-flex align-items-center justify-content-between">
@@ -1053,7 +1053,7 @@
                                         </div>
                                     </div>
                                     <a class="button button-md button--primary-outline w-100 my-3"
-                                        href="watch.html">Watch Course</a>
+                                        href="{{route('watchCourse')}}">Watch Course</a>
                                     <div class="contentCard-watch--progress">
                                         <span class="percentage" style="width: 100%;"></span>
                                     </div>
@@ -1063,13 +1063,13 @@
                         <div class="col-lg-4 col-md-6 col-md-6 mb-4">
                             <div class="contentCard contentCard--watch-course">
                                 <div class="contentCard-top">
-                                    <a href="course-details.html"><img
+                                    <a href="{{route('courseDetails')}}"><img
                                             src="{{asset('public/frontend/dist/images/courses/demo-img-01.png')}}"
                                             alt="images" class="img-fluid" /></a>
                                 </div>
                                 <div class="contentCard-bottom">
                                     <h5>
-                                        <a href="course-details.html" class="font-title--card">Chicago International
+                                        <a href="{{route('courseDetails')}}" class="font-title--card">Chicago International
                                             Conference on Education</a>
                                     </h5>
                                     <div class="contentCard-info d-flex align-items-center justify-content-between">
@@ -1085,7 +1085,7 @@
                                         </div>
                                     </div>
                                     <a class="button button-md button--primary-outline w-100 my-3"
-                                        href="watch.html">Watch Course</a>
+                                        href="{{route('watchCourse')}}">Watch Course</a>
                                     <div class="contentCard-watch--progress">
                                         <span class="percentage" style="width: 100%;"></span>
                                     </div>
@@ -1095,13 +1095,13 @@
                         <div class="col-lg-4 col-md-6 col-md-6 mb-4">
                             <div class="contentCard contentCard--watch-course">
                                 <div class="contentCard-top">
-                                    <a href="course-details.html"><img
+                                    <a href="{{route('courseDetails')}}"><img
                                             src="{{asset('public/frontend/dist/images/courses/demo-img-02.png')}}"
                                             alt="images" class="img-fluid" /></a>
                                 </div>
                                 <div class="contentCard-bottom">
                                     <h5>
-                                        <a href="course-details.html" class="font-title--card">Chicago International
+                                        <a href="{{route('courseDetails')}}" class="font-title--card">Chicago International
                                             Conference on Education</a>
                                     </h5>
                                     <div class="contentCard-info d-flex align-items-center justify-content-between">
@@ -1117,7 +1117,7 @@
                                         </div>
                                     </div>
                                     <a class="button button-md button--primary-outline w-100 my-3"
-                                        href="watch.html">Watch Course</a>
+                                        href="{{route('watchCourse')}}">Watch Course</a>
                                     <div class="contentCard-watch--progress">
                                         <span class="percentage" style="width: 100%;"></span>
                                     </div>
@@ -1127,13 +1127,13 @@
                         <div class="col-lg-4 col-md-6 col-md-6 mb-4">
                             <div class="contentCard contentCard--watch-course">
                                 <div class="contentCard-top">
-                                    <a href="course-details.html"><img
+                                    <a href="{{route('courseDetails')}}"><img
                                             src="{{asset('public/frontend/dist/images/courses/demo-img-03.png')}}"
                                             alt="images" class="img-fluid" /></a>
                                 </div>
                                 <div class="contentCard-bottom">
                                     <h5>
-                                        <a href="course-details.html" class="font-title--card">Chicago International
+                                        <a href="{{route('courseDetails')}}" class="font-title--card">Chicago International
                                             Conference on Education</a>
                                     </h5>
                                     <div class="contentCard-info d-flex align-items-center justify-content-between">
@@ -1149,7 +1149,7 @@
                                         </div>
                                     </div>
                                     <a class="button button-md button--primary-outline w-100 my-3"
-                                        href="watch.html">Watch Course</a>
+                                        href="{{route('watchCourse')}}">Watch Course</a>
                                     <div class="contentCard-watch--progress">
                                         <span class="percentage" style="width: 100%;"></span>
                                     </div>
@@ -1159,13 +1159,13 @@
                         <div class="col-lg-4 col-md-6 col-md-6 mb-4">
                             <div class="contentCard contentCard--watch-course">
                                 <div class="contentCard-top">
-                                    <a href="course-details.html"><img
+                                    <a href="{{route('courseDetails')}}"><img
                                             src="{{asset('public/frontend/dist/images/courses/demo-img-04.png')}}"
                                             alt="images" class="img-fluid" /></a>
                                 </div>
                                 <div class="contentCard-bottom">
                                     <h5>
-                                        <a href="course-details.html" class="font-title--card">Chicago International
+                                        <a href="{{route('courseDetails')}}" class="font-title--card">Chicago International
                                             Conference on Education</a>
                                     </h5>
                                     <div class="contentCard-info d-flex align-items-center justify-content-between">
@@ -1181,7 +1181,7 @@
                                         </div>
                                     </div>
                                     <a class="button button-md button--primary-outline w-100 my-3"
-                                        href="watch.html">Watch Course</a>
+                                        href="{{route('watchCourse')}}">Watch Course</a>
                                     <div class="contentCard-watch--progress">
                                         <span class="percentage" style="width: 100%;"></span>
                                     </div>

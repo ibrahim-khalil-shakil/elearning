@@ -42,7 +42,7 @@ Route::get('/logout', [auth::class, 'signOut'])->name('logOut');
 
 Route::middleware(['checkauth'])->prefix('admin')->group(function () {
     Route::get('/dashboard', [dashboard::class, 'index'])->name('dashboard');
-Route::get('userProfile', [auth::class, 'show'])->name('userProfile');
+    Route::get('userProfile', [auth::class, 'show'])->name('userProfile');
 });
 
 Route::middleware(['checkrole'])->prefix('admin')->group(function () {
@@ -74,6 +74,14 @@ Route::get('/student/logout', [sauth::class, 'signOut'])->name('studentlogOut');
 
 Route::middleware(['checkstudent'])->prefix('students')->group(function () {
     Route::get('/dashboard', [studashboard::class, 'index'])->name('studentdashboard');
+
+    Route::get('/watchCourse', function () {
+        return view('frontend.watchCourse');
+    })->name('watchCourse');
+
+    Route::get('/studentProfile', function () {
+        return view('frontend.studentProfile');
+    })->name('studentProfile');
 });
 
 
@@ -93,17 +101,10 @@ Route::get('/courseDetails', function () {
     return view('frontend.courseDetails');
 })->name('courseDetails');
 
-Route::get('/watchCourse', function () {
-    return view('frontend.watchCourse');
-})->name('watchCourse');
-
 Route::get('/about', function () {
     return view('frontend.about');
 })->name('about');
 
-Route::get('/studentProfile', function () {
-    return view('frontend.studentProfile');
-})->name('studentProfile');
 
 Route::get('/instructorProfile', function () {
     return view('frontend.instructorProfile');

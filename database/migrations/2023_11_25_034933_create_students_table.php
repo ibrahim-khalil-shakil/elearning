@@ -21,6 +21,9 @@ return new class extends Migration
             $table->date('date_of_birth')->nullable();
             $table->enum('gender', ['male', 'female', 'other'])->nullable();
             $table->string('image')->nullable();
+            $table->text('bio')->nullable();
+            $table->string('profession')->nullable();
+            $table->string('nationality')->default('Bangladeshi')->nullable();
             $table->boolean('status')->default(1)->comment('1 active, 0 inactive');
             $table->string('password');
             $table->string('language')->default('en');

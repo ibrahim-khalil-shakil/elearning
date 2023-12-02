@@ -9,7 +9,39 @@
     <link rel="stylesheet" href="{{asset('public/frontend/dist/main.css')}}" />
     <link rel="icon" type="image/png" href="{{asset('public/frontend/dist/images/favicon/favicon.png')}}" />
     <link rel="stylesheet" href="{{asset('public/frontend/fontawesome-free-5.15.4-web/css/all.min.css')}}">
+    <style>
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
 
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            left: -160px;
+            /* Adjust this value based on your design */
+
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .dropdown.active .dropdown-content {
+            display: block;
+        }
+    </style>
     @stack('styles')
 
 </head>
@@ -34,16 +66,7 @@
                             <a class="nav-link" aria-current="page" href="{{route('home')}}">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="#">
-                                Course
-                            </a>
-                            <div class="nav-item--dropdown">
-                                <ul>
-                                    <li><a href="{{route('searchCourse')}}">Search Course List</a></li>
-                                    <li><a href="{{route('courseDetails')}}">Course Details</a></li>
-                                    <li><a href="{{route('watchCourse')}}">Watch Course</a></li>
-                                </ul>
-                            </div>
+                            <a class="nav-link" aria-current="page" href="{{route('searchCourse')}}">Courses</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" aria-current="page" href="{{route('about')}}">About</a>
@@ -56,6 +79,7 @@
                                 <ul>
                                     <li><a href="{{route('studentProfile')}}">Student Profile</a></li>
                                     <li><a href="{{route('instructorProfile')}}">Instructor Profile</a></li>
+                                    <li><a href="{{route('courseDetails')}}">Course details</a></li>
                                     <li><a href="{{route('checkout')}}">Check out</a></li>
                                 </ul>
                             </div>
@@ -105,11 +129,19 @@
                             <span class="visually-hidden">Items Added</span>
                         </a>
                         @if(request()->session()->get('studentLogin'))
-                            <a href="{{route('studentdashboard')}}" class="button button--text">Dashboard</a>
-                            <a href="{{route('studentlogOut')}}" class="button button--dark">Logout</a>
+                        <div class="dropdown user-image ms-3" id="imageDropdown">
+                            <a href="{{route('studentdashboard')}}" onclick="toggleDropdown(event)">
+                                <img src="{{asset('public/frontend/dist/images/ellipse/user.jpg')}}"
+                                    alt="Student Profile" />
+                            </a>
+                            <div class="dropdown-content">
+                                <a href="{{route('studentdashboard')}}">Profile</a>
+                                <a href="{{route('studentlogOut')}}" class="text-danger">Logout</a>
+                            </div>
+                        </div>
                         @else
-                            <a href="{{route('studentLogin')}}" class="button button--text">Sign in</a>
-                            <a href="{{route('studentRegister')}}" class="button button--dark">Sign Up</a>
+                        <a href="{{route('studentLogin')}}" class="button button--text">Sign in</a>
+                        <a href="{{route('studentRegister')}}" class="button button--dark">Sign Up</a>
                         @endif
                     </div>
                 </div>
@@ -177,7 +209,6 @@
                                     </a>
                                     <ul class="navbar-mobile__menu-dropmenu">
                                         <li><a href="course-search.html">search course list</a></li>
-                                        <li><a href="course-details.html">Course details</a></li>
                                         <li><a href="watch.html">Watch Course</a></li>
                                     </ul>
                                 </li>
@@ -265,7 +296,8 @@
                                             d="M17.9955 18.0002V17.9994H18V11.3979C18 8.16841 17.3047 5.68066 13.5292 5.68066C11.7142 5.68066 10.4962 6.67666 9.99896 7.62091H9.94646V5.98216H6.3667V17.9994H10.0942V12.0489C10.0942 10.4822 10.3912 8.96716 12.3315 8.96716C14.2432 8.96716 14.2717 10.7552 14.2717 12.1494V18.0002H17.9955Z"
                                             fill="currentColor"></path>
                                         <path d="M0.296875 5.98291H4.02888V18.0002H0.296875V5.98291Z"
-                                            fill="currentColor"></path>
+                                            fill="currentColor">
+                                        </path>
                                         <path
                                             d="M2.1615 0C0.96825 0 0 0.96825 0 2.1615C0 3.35475 0.96825 4.34325 2.1615 4.34325C3.35475 4.34325 4.323 3.35475 4.323 2.1615C4.32225 0.96825 3.354 0 2.1615 0V0Z"
                                             fill="currentColor"></path>
@@ -526,7 +558,23 @@
     <script src="{{asset('public/frontend/src/js/app.js')}}"></script>
     <script src="{{asset('public/frontend/dist/main.js')}}"></script>
 
+    <script>
+        function toggleDropdown(event) {
+            event.preventDefault();
+            var dropdown = document.getElementById('imageDropdown');
+            dropdown.classList.toggle('active');
+    
+            // Close the dropdown when clicking somewhere else on the page
+            document.body.addEventListener('click', function (e) {
+                if (!dropdown.contains(e.target)) {
+                    dropdown.classList.remove('active');
+                }
+            });
+        }
+    </script>
+
     @stack('scripts')
+
 
 </body>
 
