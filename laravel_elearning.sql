@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 02, 2023 at 04:32 AM
+-- Generation Time: Dec 02, 2023 at 09:09 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -590,13 +590,15 @@ CREATE TABLE `students` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `name_en` varchar(255) NOT NULL,
   `name_bn` varchar(255) DEFAULT NULL,
-  `contact_en` varchar(255) NOT NULL,
+  `contact_en` varchar(255) DEFAULT NULL,
   `contact_bn` varchar(255) DEFAULT NULL,
   `email` varchar(255) NOT NULL,
-  `role_id` bigint(20) UNSIGNED NOT NULL,
   `date_of_birth` date DEFAULT NULL,
   `gender` enum('male','female','other') DEFAULT NULL,
   `image` varchar(255) DEFAULT NULL,
+  `bio` text DEFAULT NULL,
+  `profession` varchar(255) DEFAULT NULL,
+  `nationality` varchar(255) DEFAULT 'Bangladeshi',
   `status` tinyint(1) NOT NULL DEFAULT 1 COMMENT '1 active, 0 inactive',
   `password` varchar(255) NOT NULL,
   `language` varchar(255) NOT NULL DEFAULT 'en',
@@ -611,9 +613,10 @@ CREATE TABLE `students` (
 -- Dumping data for table `students`
 --
 
-INSERT INTO `students` (`id`, `name_en`, `name_bn`, `contact_en`, `contact_bn`, `email`, `role_id`, `date_of_birth`, `gender`, `image`, `status`, `password`, `language`, `access_block`, `remember_token`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(8, 'Ibrahim', 'Khalil', '+8801300025229', NULL, 'admin@gmail.com', 3, '2023-11-13', 'male', '3121700899569.jpg', 0, '$2y$12$sxR8A0DZR6FnrAUlEhLACeChJP5FQUSvYbjlMReUwJrMsIUPh74Im', 'en', NULL, NULL, '2023-11-25 02:06:09', '2023-11-25 02:06:09', NULL),
-(9, 'ergdfgdf', NULL, '453443', NULL, 'sdjfhsd@gmail.com', 1, '2023-11-13', 'male', '9161700900054.jpg', 1, '$2y$12$Yo0DrMY8NliB.zxJoVmFte1KVzKHPgqtZ2ERkSjb3DB.ks9Cr1vS6', 'en', NULL, NULL, '2023-11-25 02:14:14', '2023-11-25 02:14:14', NULL);
+INSERT INTO `students` (`id`, `name_en`, `name_bn`, `contact_en`, `contact_bn`, `email`, `date_of_birth`, `gender`, `image`, `bio`, `profession`, `nationality`, `status`, `password`, `language`, `access_block`, `remember_token`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(8, 'Ibrahim', 'Khalil', NULL, NULL, 'admin@gmail.com', '2023-11-13', 'male', '3121700899569.jpg', NULL, NULL, 'Bangladeshi', 0, '$2y$12$sxR8A0DZR6FnrAUlEhLACeChJP5FQUSvYbjlMReUwJrMsIUPh74Im', 'en', NULL, NULL, '2023-11-25 02:06:09', '2023-11-25 02:06:09', NULL),
+(9, 'ergdfgdf', NULL, NULL, NULL, 'sdjfhsd@gmail.com', '2023-11-13', 'male', '9161700900054.jpg', NULL, NULL, 'Bangladeshi', 1, '$2y$12$Yo0DrMY8NliB.zxJoVmFte1KVzKHPgqtZ2ERkSjb3DB.ks9Cr1vS6', 'en', NULL, NULL, '2023-11-25 02:14:14', '2023-11-25 02:14:14', NULL),
+(10, 'Safayet Ullah', NULL, NULL, NULL, 'student@gmail.com', NULL, NULL, NULL, NULL, NULL, 'Bangladeshi', 1, '$2y$12$ban4H0WFobNWv3zCAXy3HesQin0jI191dmVbtmRDPbcFQRQcGAa9i', 'en', NULL, NULL, '2023-12-01 23:59:13', '2023-12-01 23:59:13', NULL);
 
 -- --------------------------------------------------------
 
@@ -815,10 +818,7 @@ ALTER TABLE `roles`
 --
 ALTER TABLE `students`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `students_contact_en_unique` (`contact_en`),
-  ADD UNIQUE KEY `students_email_unique` (`email`),
-  ADD UNIQUE KEY `students_contact_bn_unique` (`contact_bn`),
-  ADD KEY `students_role_id_index` (`role_id`);
+  ADD UNIQUE KEY `students_email_unique` (`email`);
 
 --
 -- Indexes for table `subscriptions`
@@ -954,7 +954,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT for table `students`
 --
 ALTER TABLE `students`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `subscriptions`
@@ -1064,12 +1064,6 @@ ALTER TABLE `quizzes`
 ALTER TABLE `reviews`
   ADD CONSTRAINT `reviews_course_id_foreign` FOREIGN KEY (`course_id`) REFERENCES `courses` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `reviews_student_id_foreign` FOREIGN KEY (`student_id`) REFERENCES `students` (`id`) ON DELETE CASCADE;
-
---
--- Constraints for table `students`
---
-ALTER TABLE `students`
-  ADD CONSTRAINT `students_role_id_foreign` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `subscriptions`
