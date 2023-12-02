@@ -19,6 +19,9 @@ use App\Http\Controllers\Backend\Reviews\ReviewController as review;
 use App\Http\Controllers\Backend\Communication\DiscussionController as discussion;
 use App\Http\Controllers\Backend\Communication\MessageController as message;
 
+/* students */
+use App\Http\Controllers\Students\AuthController as sauth;
+use App\Http\Controllers\Students\DashboardController as studashboard;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -35,11 +38,11 @@ Route::post('/register', [auth::class, 'signUpStore'])->name('register.store');
 Route::get('/login', [auth::class, 'signInForm'])->name('login');
 Route::post('/login', [auth::class, 'signInCheck'])->name('login.check');
 Route::get('/logout', [auth::class, 'signOut'])->name('logOut');
-Route::get('userProfile', [auth::class, 'show'])->name('userProfile');
 
 
 Route::middleware(['checkauth'])->prefix('admin')->group(function () {
     Route::get('/dashboard', [dashboard::class, 'index'])->name('dashboard');
+Route::get('userProfile', [auth::class, 'show'])->name('userProfile');
 });
 
 Route::middleware(['checkrole'])->prefix('admin')->group(function () {
@@ -59,6 +62,18 @@ Route::middleware(['checkrole'])->prefix('admin')->group(function () {
     Route::resource('message', message::class);
     Route::get('permission/{role}', [permission::class, 'index'])->name('permission.list');
     Route::post('permission/{role}', [permission::class, 'save'])->name('permission.save');
+});
+
+
+/* students controllers */
+Route::get('/student/register', [sauth::class, 'signUpForm'])->name('studentRegister');
+Route::post('/student/register', [sauth::class, 'signUpStore'])->name('studentRegister.store');
+Route::get('/student/login', [sauth::class, 'signInForm'])->name('studentLogin');
+Route::post('/student/login', [sauth::class, 'signInCheck'])->name('studentLogin.check');
+Route::get('/student/logout', [sauth::class, 'signOut'])->name('studentlogOut');
+
+Route::middleware(['checkstudent'])->prefix('students')->group(function () {
+    Route::get('/dashboard', [studashboard::class, 'index'])->name('studentdashboard');
 });
 
 
@@ -98,13 +113,6 @@ Route::get('/courseDetails', function () {
     return view('frontend.courseDetails');
 })->name('courseDetails');
 
-Route::get('/studentRegister', function () {
-    return view('frontend.studentRegister');
-})->name('studentRegister');
-
-Route::get('/studentLogin', function () {
-    return view('frontend.studentLogin');
-})->name('studentLogin');
 
 Route::get('/cart', function () {
     return view('frontend.cart');

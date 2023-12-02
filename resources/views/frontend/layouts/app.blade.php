@@ -104,8 +104,13 @@
                             <span class="badge bg-primary">2</span>
                             <span class="visually-hidden">Items Added</span>
                         </a>
-                        <a href="{{route('studentLogin')}}" class="button button--text">Sign in</a>
-                        <a href="{{route('studentRegister')}}" class="button button--dark">Sign Up</a>
+                        @if(request()->session()->get('studentLogin'))
+                            <a href="{{route('studentdashboard')}}" class="button button--text">Dashboard</a>
+                            <a href="{{route('studentlogOut')}}" class="button button--dark">Logout</a>
+                        @else
+                            <a href="{{route('studentLogin')}}" class="button button--text">Sign in</a>
+                            <a href="{{route('studentRegister')}}" class="button button--dark">Sign Up</a>
+                        @endif
                     </div>
                 </div>
 
@@ -142,7 +147,7 @@
                             <ul class="navbar-mobile__menu-list">
                                 <li class="active navbar-mobile__menu-item">
                                     <a href="#">
-                                        <span class="navbar-mobile__menu-link"> Home </span>
+                                        <span class="navbar-mobile__menu-link"> Home</span>
                                         <span class="navbar-mobile__menu-dropicon">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
