@@ -97,7 +97,7 @@
                     <!-- Thumbnails -->
                     <div class="course-overview-image">
                         <img src="{{asset('public/uploads/courses/thumbnails/'.$course->thumbnail_image)}}" alt="img" />
-                        <a class="popup-video play-button" href="https://www.youtube.com/watch?v=lw6IVgb-omg">
+                        <a class="popup-video play-button" href="{{$course->thumbnail_video}}">
                             <svg width="23" height="27" viewBox="0 0 23 27" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -106,7 +106,7 @@
                             </svg>
                         </a>
                     </div>
-                    {{-- Nav --}}
+                    {{-- Tabs --}}
                     <ul class="nav course-overview-nav nav-pills mb-3" id="pills-tab" role="tablist">
                         <li class="nav-item" role="presentation">
                             <button class="nav-link active font-para--lg" id="pills-courseoverview-tab"
@@ -138,132 +138,33 @@
                         </li>
                     </ul>
                     <div class="tab-content course-overview-content" id="pills-tabContentTwo">
+
+                        <!-- Course Overview Starts Here -->
                         <div class="tab-pane fade show active" id="pills-courseoverview" role="tabpanel"
                             aria-labelledby="pills-courseoverview-tab">
-                            <!-- Course Overview Starts Here -->
                             <div class="row course-overview-main mt-4">
                                 <div class="course-overview-main-item">
                                     <h6 class="font-title--card">Description</h6>
-                                    <p class="mb-3 font-para--lg">
-                                        Duis placerat eleifend leo nec mattis. Phasellus scelerisque arcu quis
-                                        feugiat
-                                        efficitur. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-                                        laoreet est eget est sagittis, et
-                                        scelerisque quam convallis. Praesent at tortor facilisis, tempus ex quis,
-                                        tempor
-                                        arcu. Duis id velit mattis diam fermentum tincidunt. Sed et vehicula lectus.
-                                    </p>
-                                    <p class="font-para--lg">
-                                        Sed ut tincidunt velit, eu bibendum turpis. Fusce in posuere felis, sed
-                                        lobortis
-                                        elit. Integer mollis sodales congue
-                                    </p>
+                                    <p class="mb-3 font-para--lg">{{$course->description_en}}</p>
                                 </div>
                                 <div class="course-overview-main-item">
                                     <h6 class="font-title--card">Requirments</h6>
-                                    <p class="mb-2 font-para--lg">
-                                        Donec tristique ligula id tellus porta, dapibus imperdiet mi ullamcorper.
-                                        Vivamus suscipit, nisi eu tincidunt interdum.
-                                    </p>
-                                    <p class="bullets-line font-para--lg"><span></span>Mauris ut libero ut mauris
-                                        sagittis consectetur quis eget elit.</p>
-                                    <p class="bullets-line font-para--lg"><span></span>Praesent egestas sapien vel
-                                        ante
-                                        gravida pharetra.</p>
-                                    <p class="bullets-line font-para--lg"><span></span>Pellentesque sit amet odio
-                                        interdum, mollis eros id, tincidunt augue.</p>
-                                    <p class="bullets-line font-para--lg"><span></span> Donec eget nunc vel nisl
-                                        blandit
-                                        facilisis.</p>
-                                    <p class="bullets-line font-para--lg"><span></span>Quisque faucibus nisi eu diam
-                                        placerat, dapibus ullamcorper augue mollis.</p>
+                                    <p class="mb-2 font-para--lg">{{$course->prerequisites_en}}</p>
                                 </div>
                                 <div class="course-overview-main-item">
                                     <h6 class="font-title--card">Who This Course is For</h6>
-                                    <p class="mb-2 font-para--lg">
-                                        Sed arcu odio, ornare ac porttitor at, placerat nec dui. Nulla nec euismod
-                                        tellus. Donec facilisis condimentum commodo. Pellentesque ultricies dolor ut
-                                        magna aliquet, vitae sodales massa
-                                        euismod.
-                                    </p>
-                                    <p class="bullets-line">
-                                        <svg width="14" height="10" viewBox="0 0 14 10" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M1 5L13 5" stroke="#202029" stroke-width="1.5"
-                                                stroke-linecap="round" stroke-linejoin="round" />
-                                            <path d="M9 0.999999L13 5L9 9" stroke="#202029" stroke-width="1.5"
-                                                stroke-linecap="round" stroke-linejoin="round" />
-                                        </svg>
-                                        This Course for Complete Beginner Students who want learn UI/UX.
-                                    </p>
-                                    <p class="bullets-line">
-                                        <svg width="14" height="10" viewBox="0 0 14 10" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M1 5L13 5" stroke="#202029" stroke-width="1.5"
-                                                stroke-linecap="round" stroke-linejoin="round" />
-                                            <path d="M9 0.999999L13 5L9 9" stroke="#202029" stroke-width="1.5"
-                                                stroke-linecap="round" stroke-linejoin="round" />
-                                        </svg>
-                                        Nunc a ex sodales sem accumsan tristique.
-                                    </p>
-                                    <p class="bullets-line">
-                                        <svg width="14" height="10" viewBox="0 0 14 10" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M1 5L13 5" stroke="#202029" stroke-width="1.5"
-                                                stroke-linecap="round" stroke-linejoin="round" />
-                                            <path d="M9 0.999999L13 5L9 9" stroke="#202029" stroke-width="1.5"
-                                                stroke-linecap="round" stroke-linejoin="round" />
-                                        </svg>
-                                        Suspendisse eget eros eget leo pellentesque ullamcorper ac non augue.
-                                    </p>
+                                    <p class="mb-2 font-para--lg">{{$course->description_en}}</p>
                                 </div>
                                 <div class="course-overview-main-item mb-0">
                                     <h6 class="font-title--card">What You Will be Learn</h6>
-                                    <p class="mb-2 font-para--lg">
-                                        Sed arcu odio, ornare ac porttitor at, placerat nec dui. Nulla nec euismod
-                                        tellus. Donec facilisis condimentum commodo. Pellentesque ultricies dolor ut
-                                        magna aliquet, vitae sodales massa
-                                        euismod.
-                                    </p>
-                                    <p class="bullets-line">
-                                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M15 4.5L6.75 13.5L3 9.40909" stroke="#00AF91" stroke-width="2"
-                                                stroke-linecap="round" stroke-linejoin="round" />
-                                        </svg>
-                                        This Course for Complete Beginner Students who want learn UI/UX.
-                                    </p>
-                                    <p class="bullets-line">
-                                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M15 4.5L6.75 13.5L3 9.40909" stroke="#00AF91" stroke-width="2"
-                                                stroke-linecap="round" stroke-linejoin="round" />
-                                        </svg>
-
-                                        Nunc a ex sodales sem accumsan tristique.
-                                    </p>
-                                    <p class="bullets-line">
-                                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M15 4.5L6.75 13.5L3 9.40909" stroke="#00AF91" stroke-width="2"
-                                                stroke-linecap="round" stroke-linejoin="round" />
-                                        </svg>
-                                        Suspendisse eget eros eget leo pellentesque ullamcorper ac non augue.
-                                    </p>
-                                    <p class="bullets-line mb-0">
-                                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M15 4.5L6.75 13.5L3 9.40909" stroke="#00AF91" stroke-width="2"
-                                                stroke-linecap="round" stroke-linejoin="round" />
-                                        </svg>
-                                        Suspendisse eget eros eget leo pellentesque ullamcorper ac non augue.
-                                    </p>
+                                    <p class="mb-2 font-para--lg">{{$course->description_en}}</p>
                                 </div>
                             </div>
-                            <!-- Course Overview Ends Here -->
                         </div>
+                        <!-- Course Overview Ends Here -->
+
+                        <!-- Course Curriculum Area Starts Here -->
                         <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile">
-                            <!-- Course Curriculum Area Starts Here -->
                             <div class="row">
                                 <div class="course-curriculum-area">
                                     <div class="curriculum-area">
@@ -657,11 +558,12 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- Course Curriculum Area Ends Here -->
                         </div>
+                        <!-- Course Curriculum Area Ends Here -->
+
+                        <!-- Course Details Instructor Starts Here -->
                         <div class="tab-pane fade" id="pills-c-instructor" role="tabpanel"
                             aria-labelledby="pills-c-instructor-tab">
-                            <!-- Course Details Instructor Starts Here -->
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="course-instructor">
@@ -675,7 +577,7 @@
                                                     <a
                                                         href="instructor-profile.html">{{$course->instructor?->name_en}}</a>
                                                 </h6>
-                                                <p class="font-para--md">Senior Teacher</p>
+                                                <p class="font-para--md">{{($course->instructor?->designation)?$course->instructor?->designation:'No Designation'}}</p>
                                                 <div class="d-flex align-items-center instructor-text-bottom">
                                                     <div class="d-flex align-items-center ratings-icon">
                                                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
@@ -705,32 +607,17 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <p class="lead-p font-para--lg">
-                                            Adobe Certified Instructor & Adobe Certified Expert.
-                                        </p>
-                                        <p class="font-para--md">
-                                            Joe has been preaching and practicing the gospel of User Experience (UX)
-                                            to
-                                            Fortune 100, 500 and Government organizations for nearly three decades.
-                                            That
-                                            work includes commercial industry
-                                            leaders like Google Ventures, Kroll/Duff + Phelps, Broadridge, Conde
-                                            Nast,
-                                            Johns Hopkins, Mettler-Toledo, PHH Arval, SC Johnson and Wolters Kluwer,
-                                            as
-                                            well as government agencies like the
-                                            National Science Foundation, National Institutes of Health and the Dept.
-                                            of
-                                            Homeland Security.
-                                        </p>
+                                        <p class="lead-p font-para--lg">{{($course->instructor?->title)?$course->instructor?->title:'No Title'}}</p>
+                                        <p class="font-para--md">{{($course->instructor?->bio)?$course->instructor?->bio:'No Title'}}</p>
                                     </div>
                                 </div>
                             </div>
-                            <!-- Course Details Instructor Ends Here -->
                         </div>
+                        <!-- Course Details Instructor Ends Here -->
+
+                        <!-- Course Details Review Starts Here -->
                         <div class="tab-pane fade show course-review-content" id="pills-review" role="tabpanel"
                             aria-labelledby="pills-review">
-                            <!-- Course Details Review Starts Here -->
                             <div class="tab-content" id="pills-tabContent">
                                 <div class="tab-pane fade" id="pills-courses" role="tabpanel"
                                     aria-labelledby="pills-courses">
@@ -2406,8 +2293,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- Course Details Review Ends Here -->
                         </div>
+                        <!-- Course Details Review Ends Here -->
                     </div>
                 </div>
             </div>
@@ -2416,8 +2303,8 @@
                     <div class="cart">
                         <div class="cart__price">
                             <div class="current-price">
-                                <h3 class="font-title--sm">$19.99</h3>
-                                <p><del>$199.99</del></p>
+                                <h3 class="font-title--sm">${{$course->price}}</h3>
+                                <p><del>${{$course->old_price}}</del></p>
                             </div>
                             <div class="current-discount">
                                 <p class="font-para--md">90% off</p>

@@ -196,22 +196,20 @@
                                     <div class="form-group">
                                         <label class="form-label">Duration</label>
                                         <input type="number" class="form-control" name="duration"
-                                            value="{{old('duration')}}">
+                                            value="{{old('duration',$course->duration)}}">
                                     </div>
                                     @if($errors->has('duration'))
-                                    <span class="text-danger"> {{ $errors->first('duration',
-                                        $course->duration) }}</span>
+                                    <span class="text-danger"> {{ $errors->first('duration') }}</span>
                                     @endif
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12">
                                     <div class="form-group">
                                         <label class="form-label">Number of Lesson</label>
                                         <input type="number" class="form-control" name="lesson"
-                                            value="{{old('lesson')}}">
+                                            value="{{old('lesson',$course->lesson)}}">
                                     </div>
                                     @if($errors->has('lesson'))
-                                    <span class="text-danger"> {{ $errors->first('lesson',
-                                        $course->lesson) }}</span>
+                                    <span class="text-danger"> {{ $errors->first('lesson') }}</span>
                                     @endif
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12">
@@ -238,22 +236,20 @@
                                     <div class="form-group">
                                         <label class="form-label">Course Code</label>
                                         <input type="number" class="form-control" name="course_code"
-                                            value="{{old('course_code')}}">
+                                            value="{{old('course_code', $course->course_code)}}">
                                     </div>
                                     @if($errors->has('course_code'))
-                                    <span class="text-danger"> {{ $errors->first('course_code',
-                                        $course->course_code) }}</span>
+                                    <span class="text-danger"> {{ $errors->first('course_code') }}</span>
                                     @endif
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12">
                                     <div class="form-group">
                                         <label class="form-label">Thumbnail Video URL</label>
                                         <input type="text" class="form-control" name="thumbnail_video"
-                                            value="{{old('thumbnail_video')}}">
+                                            value="{{old('thumbnail_video',$course->thumbnail_video)}}">
                                     </div>
                                     @if($errors->has('thumbnail_video'))
-                                    <span class="text-danger"> {{ $errors->first('thumbnail_video',
-                                        $course->thumbnail_video) }}</span>
+                                    <span class="text-danger"> {{ $errors->first('thumbnail_video') }}</span>
                                     @endif
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12">

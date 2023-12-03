@@ -140,6 +140,7 @@ class CourseController extends Controller
             $course->course_code = $request->course_code;
             $course->prerequisites_en = $request->prerequisites_en;
             $course->prerequisites_bn = $request->prerequisites_bn;
+            $course->thumbnail_video = $request->thumbnail_video;
             $course->status = $request->status;
             $course->language = 'en';
 

@@ -12,46 +12,21 @@
                             In</a></p>
                     <form action="{{route('studentRegister.store')}}" method="POST">
                         @csrf
-                        <div class="form-element success">
-                            <div class="form-alert">
+                        <div class="form-element">
                                 <label for="name">Full Name</label>
-                            </div>
-                            <div class="form-alert-input">
-                                <input type="text" placeholder="Your Name" id="name" value="{{old('name')}}" name="name" />
-                                <div class="form-alert-icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" class="feather feather-check">
-                                        <polyline points="20 6 9 17 4 12"></polyline>
-                                    </svg>
-                                </div>
+                                <input type="text" placeholder="Enter Your Name" id="name" value="{{old('name')}}" name="name" />
                                 @if($errors->has('name'))
                                     <small class="d-block text-danger">{{$errors->first('name')}}</small>
                                 @endif
-                            </div>
                         </div>
-                        <div class="form-element error">
-                            <div class="form-alert">
+                        <div class="form-element">
                                 <label for="email">Email</label>
-                                <span>*please enter a valid email</span>
-                            </div>
-                            <div class="form-alert-input">
-                                <input type="email" placeholder="arifAhmed@gmail.com" id="email" value="{{old('email')}}" name="email" />
-                                <div class="form-alert-icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" class="feather feather-alert-circle">
-                                        <circle cx="12" cy="12" r="10"></circle>
-                                        <line x1="12" y1="8" x2="12" y2="12"></line>
-                                        <line x1="12" y1="16" x2="12.01" y2="16"></line>
-                                    </svg>
-                                </div>
+                                <input type="email" placeholder="example@email.com" id="email" value="{{old('email')}}" name="email" />
                                 @if($errors->has('email'))
                                     <small class="d-block text-danger">{{$errors->first('email')}}</small>
                                 @endif
-                            </div>
                         </div>
-                        <div class="form-element active">
+                        <div class="form-element">
                             <label for="password" class="w-100" style="text-align: left;">password</label>
                             <div class="form-alert-input">
                                 <input type="password" placeholder="Type here..." id="password"  name="password"/>

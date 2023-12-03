@@ -46,6 +46,8 @@ class InstructorController extends Controller
             $instructor->email = $request->emailAddress;
             $instructor->role_id = $request->roleId;
             $instructor->bio = $request->bio;
+            $instructor->designation = $request->designation;
+            $instructor->title = $request->title;
             $instructor->status = $request->status;
             $instructor->password = Hash::make($request->fullName_bn);
             $instructor->language = 'en';
@@ -98,6 +100,8 @@ class InstructorController extends Controller
             $instructor->email = $request->emailAddress;
             $instructor->role_id = $request->roleId;
             $instructor->bio = $request->bio;
+            $instructor->designation = $request->designation;
+            $instructor->title = $request->title;
             $instructor->status = $request->status;
             $instructor->password = Hash::make($request->fullName_bn);
             $instructor->language = 'en';

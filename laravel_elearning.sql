@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 03, 2023 at 10:12 AM
--- Server version: 10.4.27-MariaDB
--- PHP Version: 8.2.0
+-- Generation Time: Dec 03, 2023 at 06:18 PM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -77,11 +77,11 @@ CREATE TABLE `courses` (
 --
 
 INSERT INTO `courses` (`id`, `title_en`, `title_bn`, `description_en`, `description_bn`, `category_id`, `instructor_id`, `type`, `price`, `old_price`, `subscription_price`, `start_from`, `duration`, `lesson`, `prerequisites_en`, `prerequisites_bn`, `difficulty`, `course_code`, `image`, `thumbnail_image`, `thumbnail_video`, `status`, `language`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(6, 'Full-Stack Web Development Bootcamp: From Basics to Advanced', 'ফুল-স্ট্যাক ওয়েব ডেভেলপমেন্ট বুটক্যাম্প: বেসিক থেকে অ্যাডভান্সড পর্যন্ত', 'Dive into the world of web development with a comprehensive bootcamp covering both front-end and back-end technologies. From HTML and CSS to server-side scripting, this course will equip you with the skills to build dynamic and interactive web applications.', 'ফ্রন্ট-এন্ড এবং ব্যাক-এন্ড উভয় প্রযুক্তিকে কভার করে একটি ব্যাপক বুটক্যাম্প সহ ওয়েব ডেভেলপমেন্টের জগতে ডুব দিন। HTML এবং CSS থেকে সার্ভার-সাইড স্ক্রিপ্টিং পর্যন্ত, এই কোর্সটি আপনাকে গতিশীল এবং ইন্টারেক্টিভ ওয়েব অ্যাপ্লিকেশন তৈরি করার দক্ষতা দিয়ে সজ্জিত করবে।', 4, 1, 'free', NULL, NULL, NULL, NULL, NULL, NULL, 'Basic understanding of HTML and CSS; familiarity with programming concepts is beneficial but not required.', 'HTML এবং CSS এর প্রাথমিক ধারণা; প্রোগ্রামিং ধারণার সাথে পরিচিতি উপকারী কিন্তু প্রয়োজনীয় নয়।', 'beginner', NULL, '5331700991017.jpg', '2481701588826.jpg', NULL, 1, 'en', '2023-11-26 03:30:17', '2023-12-03 01:33:46', NULL),
-(7, 'Adobe Creative Suite Mastery: Photoshop, Illustrator, InDesign', 'অ্যাডোব ক্রিয়েটিভ স্যুট মাস্টারি: ফটোশপ, ইলাস্ট্রেটর, ইনডিজাইন', 'Gain proficiency in Adobe Creative Suite\'s powerhouse tools—Photoshop for image editing, Illustrator for vector graphics, and InDesign for layout design. Learn to seamlessly integrate these applications to bring your creative visions to life.', 'Adobe Creative Suite-এর পাওয়ার হাউস টুলস-এ দক্ষতা অর্জন করুন- ছবি সম্পাদনার জন্য ফটোশপ, ভেক্টর গ্রাফিক্সের জন্য ইলাস্ট্রেটর এবং লেআউট ডিজাইনের জন্য InDesign। আপনার সৃজনশীল দৃষ্টিভঙ্গিগুলিকে জীবনে আনতে এই অ্যাপ্লিকেশনগুলিকে নির্বিঘ্নে সংহত করতে শিখুন৷', 2, 2, 'paid', '99.00', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'intermediate', NULL, '7331700991164.jpg', NULL, NULL, 0, 'en', '2023-11-26 03:32:44', '2023-12-02 23:41:48', NULL),
-(8, 'Search Engine Optimization (SEO): Boosting Website Visibility', 'সার্চ ইঞ্জিন অপ্টিমাইজেশান (SEO): ওয়েবসাইট ভিজিবিলিটি বাড়ানো', 'Demystify the world of SEO and discover techniques to improve website visibility in search engine results. Learn keyword research, on-page optimization, and off-page strategies to drive organic traffic and enhance online presence.', 'এসইও-এর জগতকে ডিমিস্টিফাই করুন এবং সার্চ ইঞ্জিন ফলাফলে ওয়েবসাইটের দৃশ্যমানতা উন্নত করার কৌশল আবিষ্কার করুন। জৈব ট্র্যাফিক চালনা করতে এবং অনলাইন উপস্থিতি বাড়াতে কীওয়ার্ড গবেষণা, অন-পৃষ্ঠা অপ্টিমাইজেশান এবং অফ-পৃষ্ঠা কৌশলগুলি শিখুন।', 6, 1, 'subscription', '59.00', NULL, NULL, NULL, 1, 12, NULL, NULL, 'advanced', NULL, '7791700991265.jpg', NULL, NULL, 1, 'en', '2023-11-26 03:34:25', '2023-12-02 23:30:51', NULL),
-(9, '3D Animation Basics: Getting Started with Blender', '3D অ্যানিমেশন বেসিকস: ব্লেন্ডার দিয়ে শুরু করা', 'Delve into the basics of 3D animation using Blender. Learn the fundamentals of modeling, rigging, and animation to bring characters and scenes to life in a three-dimensional space.', 'ব্লেন্ডার ব্যবহার করে 3D অ্যানিমেশনের বুনিয়াদিতে প্রবেশ করুন। একটি ত্রিমাত্রিক স্থানে চরিত্র এবং দৃশ্যগুলিকে প্রাণবন্ত করতে মডেলিং, কারচুপি এবং অ্যানিমেশনের মৌলিক বিষয়গুলি শিখুন৷', 37, 1, 'free', NULL, NULL, NULL, NULL, 2, 15, NULL, NULL, 'beginner', NULL, '3531700991463.jpg', NULL, NULL, 1, 'en', '2023-11-26 03:37:43', '2023-12-02 23:31:31', NULL),
-(10, 'React.js Fundamentals: Building Modern User Interfaces', 'React.js ফান্ডামেন্টালস: আধুনিক ইউজার ইন্টারফেস তৈরি করা', 'Delve into the fundamentals of React.js and discover how to build modern, component-based user interfaces. From state management to routing, this course guides you through React\'s core concepts, enabling you to create powerful and maintainable front-end applications.', 'React.js-এর মৌলিক বিষয়গুলিকে অধ্যয়ন করুন এবং কীভাবে আধুনিক, উপাদান-ভিত্তিক ব্যবহারকারী ইন্টারফেস তৈরি করতে হয় তা আবিষ্কার করুন। স্টেট ম্যানেজমেন্ট থেকে রাউটিং পর্যন্ত, এই কোর্সটি আপনাকে রিঅ্যাক্টের মূল ধারণার মাধ্যমে গাইড করে, আপনাকে শক্তিশালী এবং রক্ষণাবেক্ষণযোগ্য ফ্রন্ট-এন্ড অ্যাপ্লিকেশন তৈরি করতে সক্ষম করে।', 5, 1, 'free', NULL, NULL, NULL, NULL, 4, 35, NULL, NULL, 'beginner', NULL, '5191700991569.jpg', NULL, NULL, 0, 'en', '2023-11-26 03:39:29', '2023-12-02 23:31:51', NULL);
+(6, 'Full-Stack Web Development Bootcamp: From Basics to Advanced', 'ফুল-স্ট্যাক ওয়েব ডেভেলপমেন্ট বুটক্যাম্প: বেসিক থেকে অ্যাডভান্সড পর্যন্ত', 'Dive into the world of web development with a comprehensive bootcamp covering both front-end and back-end technologies. From HTML and CSS to server-side scripting, this course will equip you with the skills to build dynamic and interactive web applications.', 'ফ্রন্ট-এন্ড এবং ব্যাক-এন্ড উভয় প্রযুক্তিকে কভার করে একটি ব্যাপক বুটক্যাম্প সহ ওয়েব ডেভেলপমেন্টের জগতে ডুব দিন। HTML এবং CSS থেকে সার্ভার-সাইড স্ক্রিপ্টিং পর্যন্ত, এই কোর্সটি আপনাকে গতিশীল এবং ইন্টারেক্টিভ ওয়েব অ্যাপ্লিকেশন তৈরি করার দক্ষতা দিয়ে সজ্জিত করবে।', 4, 1, 'free', 99.00, 100.00, NULL, NULL, 3, 35, 'Basic understanding of HTML and CSS; familiarity with programming concepts is beneficial but not required.', 'HTML এবং CSS এর প্রাথমিক ধারণা; প্রোগ্রামিং ধারণার সাথে পরিচিতি উপকারী কিন্তু প্রয়োজনীয় নয়।', 'beginner', NULL, '5331700991017.jpg', '2481701588826.jpg', 'https://www.youtube.com/watch?v=lw6IVgb-omg', 1, 'en', '2023-11-26 03:30:17', '2023-12-03 11:10:13', NULL),
+(7, 'Adobe Creative Suite Mastery: Photoshop, Illustrator, InDesign', 'অ্যাডোব ক্রিয়েটিভ স্যুট মাস্টারি: ফটোশপ, ইলাস্ট্রেটর, ইনডিজাইন', 'Gain proficiency in Adobe Creative Suite\'s powerhouse tools—Photoshop for image editing, Illustrator for vector graphics, and InDesign for layout design. Learn to seamlessly integrate these applications to bring your creative visions to life.', 'Adobe Creative Suite-এর পাওয়ার হাউস টুলস-এ দক্ষতা অর্জন করুন- ছবি সম্পাদনার জন্য ফটোশপ, ভেক্টর গ্রাফিক্সের জন্য ইলাস্ট্রেটর এবং লেআউট ডিজাইনের জন্য InDesign। আপনার সৃজনশীল দৃষ্টিভঙ্গিগুলিকে জীবনে আনতে এই অ্যাপ্লিকেশনগুলিকে নির্বিঘ্নে সংহত করতে শিখুন৷', 2, 2, 'paid', 99.00, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'intermediate', NULL, '7331700991164.jpg', '6181701622471.jpg', 'https://www.youtube.com/watch?v=lw6IVgb-omg', 0, 'en', '2023-11-26 03:32:44', '2023-12-03 10:59:10', NULL),
+(8, 'Search Engine Optimization (SEO): Boosting Website Visibility', 'সার্চ ইঞ্জিন অপ্টিমাইজেশান (SEO): ওয়েবসাইট ভিজিবিলিটি বাড়ানো', 'Demystify the world of SEO and discover techniques to improve website visibility in search engine results. Learn keyword research, on-page optimization, and off-page strategies to drive organic traffic and enhance online presence.', 'এসইও-এর জগতকে ডিমিস্টিফাই করুন এবং সার্চ ইঞ্জিন ফলাফলে ওয়েবসাইটের দৃশ্যমানতা উন্নত করার কৌশল আবিষ্কার করুন। জৈব ট্র্যাফিক চালনা করতে এবং অনলাইন উপস্থিতি বাড়াতে কীওয়ার্ড গবেষণা, অন-পৃষ্ঠা অপ্টিমাইজেশান এবং অফ-পৃষ্ঠা কৌশলগুলি শিখুন।', 6, 1, 'subscription', 59.00, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'advanced', NULL, '7791700991265.jpg', '6081701622497.jpg', 'https://www.youtube.com/watch?v=lw6IVgb-omg', 1, 'en', '2023-11-26 03:34:25', '2023-12-03 11:00:46', NULL),
+(9, '3D Animation Basics: Getting Started with Blender', '3D অ্যানিমেশন বেসিকস: ব্লেন্ডার দিয়ে শুরু করা', 'Delve into the basics of 3D animation using Blender. Learn the fundamentals of modeling, rigging, and animation to bring characters and scenes to life in a three-dimensional space.', 'ব্লেন্ডার ব্যবহার করে 3D অ্যানিমেশনের বুনিয়াদিতে প্রবেশ করুন। একটি ত্রিমাত্রিক স্থানে চরিত্র এবং দৃশ্যগুলিকে প্রাণবন্ত করতে মডেলিং, কারচুপি এবং অ্যানিমেশনের মৌলিক বিষয়গুলি শিখুন৷', 37, 1, 'free', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'beginner', NULL, '3531700991463.jpg', '7991701622520.jpg', 'https://www.youtube.com/watch?v=lw6IVgb-omg', 1, 'en', '2023-11-26 03:37:43', '2023-12-03 11:01:15', NULL),
+(10, 'React.js Fundamentals: Building Modern User Interfaces', 'React.js ফান্ডামেন্টালস: আধুনিক ইউজার ইন্টারফেস তৈরি করা', 'Delve into the fundamentals of React.js and discover how to build modern, component-based user interfaces. From state management to routing, this course guides you through React\'s core concepts, enabling you to create powerful and maintainable front-end applications.', 'React.js-এর মৌলিক বিষয়গুলিকে অধ্যয়ন করুন এবং কীভাবে আধুনিক, উপাদান-ভিত্তিক ব্যবহারকারী ইন্টারফেস তৈরি করতে হয় তা আবিষ্কার করুন। স্টেট ম্যানেজমেন্ট থেকে রাউটিং পর্যন্ত, এই কোর্সটি আপনাকে রিঅ্যাক্টের মূল ধারণার মাধ্যমে গাইড করে, আপনাকে শক্তিশালী এবং রক্ষণাবেক্ষণযোগ্য ফ্রন্ট-এন্ড অ্যাপ্লিকেশন তৈরি করতে সক্ষম করে।', 5, 1, 'free', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'beginner', NULL, '5191700991569.jpg', '1651701622539.jpg', 'https://www.youtube.com/watch?v=lw6IVgb-omg', 0, 'en', '2023-11-26 03:39:29', '2023-12-03 11:02:35', NULL);
 
 -- --------------------------------------------------------
 
@@ -158,6 +158,8 @@ CREATE TABLE `instructors` (
   `email` varchar(255) NOT NULL,
   `role_id` bigint(20) UNSIGNED NOT NULL,
   `bio` text DEFAULT NULL,
+  `title` varchar(255) DEFAULT NULL,
+  `designation` varchar(255) DEFAULT NULL,
   `image` varchar(255) DEFAULT NULL,
   `status` tinyint(1) NOT NULL DEFAULT 1 COMMENT '1 active, 0 inactive',
   `password` varchar(255) NOT NULL,
@@ -173,9 +175,9 @@ CREATE TABLE `instructors` (
 -- Dumping data for table `instructors`
 --
 
-INSERT INTO `instructors` (`id`, `name_en`, `name_bn`, `contact_en`, `contact_bn`, `email`, `role_id`, `bio`, `image`, `status`, `password`, `language`, `access_block`, `remember_token`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'Fuad', 'Khalil', '543453', NULL, 'admindfgd@gmail.com', 3, 'dfsvd bvvvvvvvvfff', '5371700969723.jpg', 1, '$2y$12$bFygMGVHbEFcVOqYgk.iMOUvkszaGKj5auzFO0kXKURs9iCSPxrcu', 'en', NULL, NULL, '2023-11-25 21:35:23', '2023-11-25 21:50:43', NULL),
-(2, 'Ibrahim', 'Khalil', '+8801300025229', NULL, 'admin@gmail.com', 1, NULL, '7141700979525.jpg', 0, '$2y$12$qVEBmUMwLETftKXLoFgLQ.OHGEEDwZhvKKPhrdpAEFM2SdxsIYiLG', 'en', NULL, NULL, '2023-11-26 00:18:45', '2023-11-26 00:18:45', NULL);
+INSERT INTO `instructors` (`id`, `name_en`, `name_bn`, `contact_en`, `contact_bn`, `email`, `role_id`, `bio`, `title`, `designation`, `image`, `status`, `password`, `language`, `access_block`, `remember_token`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 'Burhan Uddin Fuad', NULL, '01828543453', NULL, 'fuad@gmail.com', 3, 'Fuad is a highly skilled Full Stack Web Developer with over 10 years of experience. He specializes in front-end and back-end development, bringing a wealth of knowledge in modern web technologies. John is passionate about teaching and enjoys sharing his expertise with aspiring developers.', 'Experienced Full Stack Web Developer passionate about teaching modern web technologies.', 'Senior Instructor', '5371700969723.jpg', 1, '$2y$12$9wKowT3FRkNRbhr8H3EHqeFfB42uP2sR.ACK9TCx8dm3DShul.CrS', 'en', NULL, NULL, '2023-11-25 21:35:23', '2023-12-03 10:45:57', NULL),
+(2, 'Ibrahim Khalil', NULL, '+8801300025229', NULL, 'ibrahim@gmail.com', 3, 'Ibrahim is an Animation Expert and Video/Graphics Instructor known for her innovative approach to storytelling through animation. With a background in both 2D and 3D animation, Emily guides students through the world of visual storytelling, helping them unleash their creative potential.', '2D Animation and Short Video Ads Specialist', 'Animation Expert', '7141700979525.jpg', 1, '$2y$12$XqMNiBNht2EBZeDJs1GLR.TcxIPVs9WNYaPmClunATT/wibIpglZG', 'en', NULL, NULL, '2023-11-26 00:18:45', '2023-12-03 10:51:06', NULL);
 
 -- --------------------------------------------------------
 
@@ -606,7 +608,6 @@ CREATE TABLE `students` (
   `status` tinyint(1) NOT NULL DEFAULT 1 COMMENT '1 active, 0 inactive',
   `password` varchar(255) NOT NULL,
   `language` varchar(255) NOT NULL DEFAULT 'en',
-  `access_block` text DEFAULT NULL,
   `remember_token` varchar(100) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
@@ -617,10 +618,11 @@ CREATE TABLE `students` (
 -- Dumping data for table `students`
 --
 
-INSERT INTO `students` (`id`, `name_en`, `name_bn`, `contact_en`, `contact_bn`, `email`, `date_of_birth`, `gender`, `image`, `bio`, `profession`, `nationality`, `status`, `password`, `language`, `access_block`, `remember_token`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(8, 'Ibrahim', 'Khalil', NULL, NULL, 'admin@gmail.com', '2023-11-13', 'male', '3121700899569.jpg', NULL, NULL, 'Bangladeshi', 0, '$2y$12$sxR8A0DZR6FnrAUlEhLACeChJP5FQUSvYbjlMReUwJrMsIUPh74Im', 'en', NULL, NULL, '2023-11-25 02:06:09', '2023-11-25 02:06:09', NULL),
-(9, 'ergdfgdf', NULL, NULL, NULL, 'sdjfhsd@gmail.com', '2023-11-13', 'male', '9161700900054.jpg', NULL, NULL, 'Bangladeshi', 1, '$2y$12$Yo0DrMY8NliB.zxJoVmFte1KVzKHPgqtZ2ERkSjb3DB.ks9Cr1vS6', 'en', NULL, NULL, '2023-11-25 02:14:14', '2023-11-25 02:14:14', NULL),
-(10, 'Safayet Ullah', NULL, NULL, NULL, 'student@gmail.com', NULL, NULL, NULL, NULL, NULL, 'Bangladeshi', 1, '$2y$12$ban4H0WFobNWv3zCAXy3HesQin0jI191dmVbtmRDPbcFQRQcGAa9i', 'en', NULL, NULL, '2023-12-01 23:59:13', '2023-12-01 23:59:13', NULL);
+INSERT INTO `students` (`id`, `name_en`, `name_bn`, `contact_en`, `contact_bn`, `email`, `date_of_birth`, `gender`, `image`, `bio`, `profession`, `nationality`, `status`, `password`, `language`, `remember_token`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(8, 'Ibrahim', 'Khalil', NULL, NULL, 'admin@gmail.com', '2023-11-13', 'male', '3121700899569.jpg', NULL, NULL, 'Bangladeshi', 0, '$2y$12$sxR8A0DZR6FnrAUlEhLACeChJP5FQUSvYbjlMReUwJrMsIUPh74Im', 'en', NULL, '2023-11-25 02:06:09', '2023-11-25 02:06:09', NULL),
+(9, 'ergdfgdf', NULL, NULL, NULL, 'sdjfhsd@gmail.com', '2023-11-13', 'male', '9161700900054.jpg', NULL, NULL, 'Bangladeshi', 1, '$2y$12$Yo0DrMY8NliB.zxJoVmFte1KVzKHPgqtZ2ERkSjb3DB.ks9Cr1vS6', 'en', NULL, '2023-11-25 02:14:14', '2023-11-25 02:14:14', NULL),
+(10, 'Safayet Ullah', NULL, NULL, NULL, 'student@gmail.com', NULL, NULL, NULL, NULL, NULL, 'Bangladeshi', 1, '$2y$12$ban4H0WFobNWv3zCAXy3HesQin0jI191dmVbtmRDPbcFQRQcGAa9i', 'en', NULL, '2023-12-01 23:59:13', '2023-12-01 23:59:13', NULL),
+(12, 'Ibrahim Khalil', 'Ibrahim Khalil', '+8801300025229', NULL, 'admin@gmail.com2', NULL, NULL, NULL, NULL, NULL, NULL, 1, '$2y$12$LBgg7dwGRJOWKtpGHQdb/O0g8vXlQMp2mjYRxyM/TBw/HJyLEG7te', 'en', NULL, '2023-12-03 08:43:36', '2023-12-03 08:43:36', NULL);
 
 -- --------------------------------------------------------
 
@@ -958,7 +960,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT for table `students`
 --
 ALTER TABLE `students`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `subscriptions`

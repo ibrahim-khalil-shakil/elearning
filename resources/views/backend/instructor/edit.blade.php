@@ -107,11 +107,22 @@
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12">
                                     <div class="form-group">
-                                        <label class="form-label">Bio</label>
-                                        <textarea class="form-control" name="bio">{{old('bio',$instructor->bio)}}</textarea>
+                                        <label class="form-label">Designation</label>
+                                        <input type="text" class="form-control" name="designation"
+                                            value="{{old('designation',$instructor->designation)}}">
                                     </div>
-                                    @if($errors->has('bio'))
-                                    <span class="text-danger"> {{ $errors->first('bio') }}</span>
+                                    @if($errors->has('designation'))
+                                    <span class="text-danger"> {{ $errors->first('designation') }}</span>
+                                    @endif
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <div class="form-group">
+                                        <label class="form-label">Title</label>
+                                        <input type="text" class="form-control" name="title"
+                                            value="{{old('title',$instructor->title)}}">
+                                    </div>
+                                    @if($errors->has('title'))
+                                    <span class="text-danger"> {{ $errors->first('title') }}</span>
                                     @endif
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12">
@@ -132,6 +143,16 @@
                                     </div>
                                     @if($errors->has('password'))
                                     <span class="text-danger"> {{ $errors->first('password') }}</span>
+                                    @endif
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <div class="form-group">
+                                        <label class="form-label">Bio</label>
+                                        <textarea class="form-control"
+                                            name="bio">{{old('bio',$instructor->bio)}}</textarea>
+                                    </div>
+                                    @if($errors->has('bio'))
+                                    <span class="text-danger"> {{ $errors->first('bio') }}</span>
                                     @endif
                                 </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12">
