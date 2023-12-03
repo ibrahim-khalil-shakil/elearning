@@ -26,7 +26,8 @@ class CourseController extends Controller
     public function frontIndex()
     {
         $course = Course::paginate(10);
-        return view('frontend.searchCourse', compact('course'));
+        $category = CourseCategory::get();
+        return view('frontend.searchCourse', compact('course', 'category'));
     }
 
     /**

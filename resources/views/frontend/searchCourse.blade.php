@@ -55,7 +55,7 @@
                             <button class="accordion-button" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#categoryCollapse" aria-expanded="true"
                                 aria-controls="categoryCollapse">
-                                category
+                                Category
                             </button>
                         </h2>
                         <div id="categoryCollapse" class="accordion-collapse collapse show"
@@ -71,69 +71,18 @@
                                             1,54,750
                                         </p>
                                     </div>
+                                    @forelse($category as $cat)
                                     <div class="accordion-body__item">
                                         <div class="check-box">
                                             <input type="checkbox" class="checkbox-primary" />
-                                            <label> Development </label>
+                                            <label> {{ $cat->category_name }} </label>
                                         </div>
                                         <p class="check-details">
                                             45,770
                                         </p>
                                     </div>
-                                    <div class="accordion-body__item">
-                                        <div class="check-box">
-                                            <input type="checkbox" class="checkbox-primary" />
-                                            <label> Finance & Accounting </label>
-                                        </div>
-                                        <p class="check-details">
-                                            35,790
-                                        </p>
-                                    </div>
-                                    <div class="accordion-body__item">
-                                        <div class="check-box">
-                                            <input type="checkbox" class="checkbox-primary" />
-                                            <label> IT & Software </label>
-                                        </div>
-                                        <p class="check-details">
-                                            5,770
-                                        </p>
-                                    </div>
-                                    <div class="accordion-body__item">
-                                        <div class="check-box">
-                                            <input type="checkbox" class="checkbox-primary" />
-                                            <label> Offices Productivity </label>
-                                        </div>
-                                        <p class="check-details">
-                                            765
-                                        </p>
-                                    </div>
-                                    <div class="accordion-body__item">
-                                        <div class="check-box">
-                                            <input type="checkbox" class="checkbox-primary" />
-                                            <label> Personal Development </label>
-                                        </div>
-                                        <p class="check-details">
-                                            65
-                                        </p>
-                                    </div>
-                                    <div class="accordion-body__item">
-                                        <div class="check-box">
-                                            <input type="checkbox" class="checkbox-primary" />
-                                            <label> Digatal Marketing </label>
-                                        </div>
-                                        <p class="check-details">
-                                            9,870
-                                        </p>
-                                    </div>
-                                    <div class="accordion-body__item">
-                                        <div class="check-box">
-                                            <input type="checkbox" class="checkbox-primary" />
-                                            <label> Health & Fitness </label>
-                                        </div>
-                                        <p class="check-details">
-                                            70
-                                        </p>
-                                    </div>
+                                    @empty
+                                    @endforelse
                                 </form>
                             </div>
                         </div>
@@ -157,15 +106,6 @@
                                         </div>
                                         <p class="check-details">
                                             1,54,750
-                                        </p>
-                                    </div>
-                                    <div class="accordion-body__item">
-                                        <div class="check-box">
-                                            <input type="checkbox" class="checkbox-primary" />
-                                            <label> Beginner </label>
-                                        </div>
-                                        <p class="check-details">
-                                            45,770
                                         </p>
                                     </div>
                                     <div class="accordion-body__item">

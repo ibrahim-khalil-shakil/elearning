@@ -305,13 +305,13 @@
                         <div class="col-xl-4 col-md-6">
                             <div class="contentCard contentCard--course">
                                 <div class="contentCard-top">
-                                    <a href="{{route('courseDetails')}}"><img
+                                    <a href="#"><img
                                             src="{{asset('public/frontend/dist/images/courses/demo-img-01.png')}}"
                                             alt="images" class="img-fluid" /></a>
                                 </div>
                                 <div class="contentCard-bottom">
                                     <h5>
-                                        <a href="{{route('courseDetails')}}" class="font-title--card">Chicago International
+                                        <a href="#" class="font-title--card">Chicago International
                                             Conference on Education</a>
                                     </h5>
                                     <div class="contentCard-info d-flex align-items-center justify-content-between">
@@ -362,13 +362,13 @@
                         <div class="col-xl-4 col-md-6">
                             <div class="contentCard contentCard--course">
                                 <div class="contentCard-top">
-                                    <a href="{{route('courseDetails')}}"><img
+                                    <a href="#"><img
                                             src="{{asset('public/frontend/dist/images/courses/demo-img-02.png')}}"
                                             alt="images" class="img-fluid" /></a>
                                 </div>
                                 <div class="contentCard-bottom">
                                     <h5>
-                                        <a href="{{route('courseDetails')}}" class="font-title--card">Chicago International
+                                        <a href="#" class="font-title--card">Chicago International
                                             Conference on Education</a>
                                     </h5>
                                     <div class="contentCard-info d-flex align-items-center justify-content-between">
@@ -419,13 +419,13 @@
                         <div class="col-xl-4 col-md-6">
                             <div class="contentCard contentCard--course">
                                 <div class="contentCard-top">
-                                    <a href="{{route('courseDetails')}}"><img
+                                    <a href="#"><img
                                             src="{{asset('public/frontend/dist/images/courses/demo-img-03.png')}}"
                                             alt="images" class="img-fluid" /></a>
                                 </div>
                                 <div class="contentCard-bottom">
                                     <h5>
-                                        <a href="{{route('courseDetails')}}" class="font-title--card">Chicago International
+                                        <a href="#" class="font-title--card">Chicago International
                                             Conference on Education</a>
                                     </h5>
                                     <div class="contentCard-info d-flex align-items-center justify-content-between">
@@ -476,13 +476,13 @@
                         <div class="col-xl-4 col-md-6">
                             <div class="contentCard contentCard--course">
                                 <div class="contentCard-top">
-                                    <a href="{{route('courseDetails')}}"><img
+                                    <a href="#"><img
                                             src="{{asset('public/frontend/dist/images/courses/demo-img-04.png')}}"
                                             alt="images" class="img-fluid" /></a>
                                 </div>
                                 <div class="contentCard-bottom">
                                     <h5>
-                                        <a href="{{route('courseDetails')}}" class="font-title--card">Chicago International
+                                        <a href="#" class="font-title--card">Chicago International
                                             Conference on Education</a>
                                     </h5>
                                     <div class="contentCard-info d-flex align-items-center justify-content-between">
@@ -533,13 +533,13 @@
                         <div class="col-xl-4 col-md-6">
                             <div class="contentCard contentCard--course">
                                 <div class="contentCard-top">
-                                    <a href="{{route('courseDetails')}}"><img
+                                    <a href="#"><img
                                             src="{{asset('public/frontend/dist/images/courses/demo-img-05.png')}}"
                                             alt="images" class="img-fluid" /></a>
                                 </div>
                                 <div class="contentCard-bottom">
                                     <h5>
-                                        <a href="{{route('courseDetails')}}" class="font-title--card">Chicago International
+                                        <a href="#" class="font-title--card">Chicago International
                                             Conference on Education</a>
                                     </h5>
                                     <div class="contentCard-info d-flex align-items-center justify-content-between">
@@ -590,14 +590,14 @@
                         <div class="col-xl-4 col-md-6">
                             <div class="contentCard contentCard--course">
                                 <div class="contentCard-top">
-                                    <a href="{{route('courseDetails')}}">
+                                    <a href="#">
                                         <img src="{{asset('public/frontend/dist/images/courses/demo-img-02.png')}}"
                                             alt="images" class="img-fluid" />
                                     </a>
                                 </div>
                                 <div class="contentCard-bottom">
                                     <h5>
-                                        <a href="{{route('courseDetails')}}" class="font-title--card">Chicago International
+                                        <a href="#" class="font-title--card">Chicago International
                                             Conference on Education</a>
                                     </h5>
                                     <div class="contentCard-info d-flex align-items-center justify-content-between">
@@ -658,13 +658,13 @@
                         <div class="col-xl-4 col-md-6">
                             <div class="contentCard contentCard--course">
                                 <div class="contentCard-top">
-                                    <a href="{{route('courseDetails')}}"><img
+                                    <a href="#"><img
                                             src="{{asset('public/frontend/dist/images/courses/demo-img-01.png')}}"
                                             alt="images" class="img-fluid" /></a>
                                 </div>
                                 <div class="contentCard-bottom">
                                     <h5>
-                                        <a href="{{route('courseDetails')}}" class="font-title--card">Chicago International
+                                        <a href="#" class="font-title--card">Chicago International
                                             Conference on Education</a>
                                     </h5>
                                     <div class="contentCard-info d-flex align-items-center justify-content-between">
@@ -715,13 +715,13 @@
                         <div class="col-xl-4 col-md-6">
                             <div class="contentCard contentCard--course">
                                 <div class="contentCard-top">
-                                    <a href="{{route('courseDetails')}}"><img
+                                    <a href="#"><img
                                             src="{{asset('public/frontend/dist/images/courses/demo-img-02.png')}}"
                                             alt="images" class="img-fluid" /></a>
                                 </div>
                                 <div class="contentCard-bottom">
                                     <h5>
-                                        <a href="{{route('courseDetails')}}" class="font-title--card">Chicago International
+                                        <a href="#" class="font-title--card">Chicago International
                                             Conference on Education</a>
                                     </h5>
                                     <div class="contentCard-info d-flex align-items-center justify-content-between">
@@ -772,13 +772,13 @@
                         <div class="col-xl-4 col-md-6">
                             <div class="contentCard contentCard--course">
                                 <div class="contentCard-top">
-                                    <a href="{{route('courseDetails')}}"><img
+                                    <a href="#"><img
                                             src="{{asset('public/frontend/dist/images/courses/demo-img-03.png')}}"
                                             alt="images" class="img-fluid" /></a>
                                 </div>
                                 <div class="contentCard-bottom">
                                     <h5>
-                                        <a href="{{route('courseDetails')}}" class="font-title--card">Chicago International
+                                        <a href="#" class="font-title--card">Chicago International
                                             Conference on Education</a>
                                     </h5>
                                     <div class="contentCard-info d-flex align-items-center justify-content-between">
@@ -839,13 +839,13 @@
                         <div class="col-xl-4 col-md-6">
                             <div class="contentCard contentCard--course">
                                 <div class="contentCard-top">
-                                    <a href="{{route('courseDetails')}}"><img
+                                    <a href="#"><img
                                             src="{{asset('public/frontend/dist/images/courses/demo-img-01.png')}}"
                                             alt="images" class="img-fluid" /></a>
                                 </div>
                                 <div class="contentCard-bottom">
                                     <h5>
-                                        <a href="{{route('courseDetails')}}" class="font-title--card">Chicago International
+                                        <a href="#" class="font-title--card">Chicago International
                                             Conference on Education</a>
                                     </h5>
                                     <div class="contentCard-info d-flex align-items-center justify-content-between">
@@ -896,13 +896,13 @@
                         <div class="col-xl-4 col-md-6">
                             <div class="contentCard contentCard--course">
                                 <div class="contentCard-top">
-                                    <a href="{{route('courseDetails')}}"><img
+                                    <a href="#"><img
                                             src="{{asset('public/frontend/dist/images/courses/demo-img-02.png')}}"
                                             alt="images" class="img-fluid" /></a>
                                 </div>
                                 <div class="contentCard-bottom">
                                     <h5>
-                                        <a href="{{route('courseDetails')}}" class="font-title--card">Chicago International
+                                        <a href="#" class="font-title--card">Chicago International
                                             Conference on Education</a>
                                     </h5>
                                     <div class="contentCard-info d-flex align-items-center justify-content-between">
@@ -963,13 +963,13 @@
                         <div class="col-xl-4 col-md-6">
                             <div class="contentCard contentCard--course">
                                 <div class="contentCard-top">
-                                    <a href="{{route('courseDetails')}}"><img
+                                    <a href="#"><img
                                             src="{{asset('public/frontend/dist/images/courses/demo-img-01.png')}}"
                                             alt="images" class="img-fluid" /></a>
                                 </div>
                                 <div class="contentCard-bottom">
                                     <h5>
-                                        <a href="{{route('courseDetails')}}" class="font-title--card">Chicago International
+                                        <a href="#" class="font-title--card">Chicago International
                                             Conference on Education</a>
                                     </h5>
                                     <div class="contentCard-info d-flex align-items-center justify-content-between">
@@ -1020,13 +1020,13 @@
                         <div class="col-xl-4 col-md-6">
                             <div class="contentCard contentCard--course">
                                 <div class="contentCard-top">
-                                    <a href="{{route('courseDetails')}}"><img
+                                    <a href="#"><img
                                             src="{{asset('public/frontend/dist/images/courses/demo-img-02.png')}}"
                                             alt="images" class="img-fluid" /></a>
                                 </div>
                                 <div class="contentCard-bottom">
                                     <h5>
-                                        <a href="{{route('courseDetails')}}" class="font-title--card">Chicago International
+                                        <a href="#" class="font-title--card">Chicago International
                                             Conference on Education</a>
                                     </h5>
                                     <div class="contentCard-info d-flex align-items-center justify-content-between">
@@ -1077,13 +1077,13 @@
                         <div class="col-xl-4 col-md-6">
                             <div class="contentCard contentCard--course">
                                 <div class="contentCard-top">
-                                    <a href="{{route('courseDetails')}}"><img
+                                    <a href="#"><img
                                             src="{{asset('public/frontend/dist/images/courses/demo-img-03.png')}}"
                                             alt="images" class="img-fluid" /></a>
                                 </div>
                                 <div class="contentCard-bottom">
                                     <h5>
-                                        <a href="{{route('courseDetails')}}" class="font-title--card">Chicago International
+                                        <a href="#" class="font-title--card">Chicago International
                                             Conference on Education</a>
                                     </h5>
                                     <div class="contentCard-info d-flex align-items-center justify-content-between">
@@ -1134,13 +1134,13 @@
                         <div class="col-xl-4 col-md-6">
                             <div class="contentCard contentCard--course">
                                 <div class="contentCard-top">
-                                    <a href="{{route('courseDetails')}}"><img
+                                    <a href="#"><img
                                             src="{{asset('public/frontend/dist/images/courses/demo-img-04.png')}}"
                                             alt="images" class="img-fluid" /></a>
                                 </div>
                                 <div class="contentCard-bottom">
                                     <h5>
-                                        <a href="{{route('courseDetails')}}" class="font-title--card">Chicago International
+                                        <a href="#" class="font-title--card">Chicago International
                                             Conference on Education</a>
                                     </h5>
                                     <div class="contentCard-info d-flex align-items-center justify-content-between">
@@ -1201,13 +1201,13 @@
                         <div class="col-xl-4 col-md-6">
                             <div class="contentCard contentCard--course">
                                 <div class="contentCard-top">
-                                    <a href="{{route('courseDetails')}}"><img
+                                    <a href="#"><img
                                             src="{{asset('public/frontend/dist/images/courses/demo-img-01.png')}}"
                                             alt="images" class="img-fluid" /></a>
                                 </div>
                                 <div class="contentCard-bottom">
                                     <h5>
-                                        <a href="{{route('courseDetails')}}" class="font-title--card">Chicago International
+                                        <a href="#" class="font-title--card">Chicago International
                                             Conference on Education</a>
                                     </h5>
                                     <div class="contentCard-info d-flex align-items-center justify-content-between">
@@ -2153,13 +2153,13 @@
                 <div class="eventsSlider">
                     <div class="contentCard contentCard--event contentCard--space">
                         <div class="contentCard-top">
-                            <a href="{{route('courseDetails')}}"><img
+                            <a href="#"><img
                                     src="{{asset('public/frontend/dist/images/courses/demo-img-01.png')}}" alt="images"
                                     class="img-fluid" /></a>
                         </div>
                         <div class="contentCard-bottom">
                             <h5>
-                                <a href="{{route('courseDetails')}}" class="font-title--card">Chicago International
+                                <a href="#" class="font-title--card">Chicago International
                                     Conference on Education</a>
                             </h5>
                             <div class="contentCard-more">
@@ -2182,13 +2182,13 @@
                     </div>
                     <div class="contentCard contentCard--event contentCard--space">
                         <div class="contentCard-top">
-                            <a href="{{route('courseDetails')}}"><img
+                            <a href="#"><img
                                     src="{{asset('public/frontend/dist/images/courses/demo-img-02.png')}}" alt="images"
                                     class="img-fluid" /></a>
                         </div>
                         <div class="contentCard-bottom">
                             <h5>
-                                <a href="{{route('courseDetails')}}" class="font-title--card">Chicago International
+                                <a href="#" class="font-title--card">Chicago International
                                     Conference on Education</a>
                             </h5>
                             <div class="contentCard-more">
@@ -2211,13 +2211,13 @@
                     </div>
                     <div class="contentCard contentCard--event contentCard--space">
                         <div class="contentCard-top">
-                            <a href="{{route('courseDetails')}}"><img
+                            <a href="#"><img
                                     src="{{asset('public/frontend/dist/images/courses/demo-img-03.png')}}" alt="images"
                                     class="img-fluid" /></a>
                         </div>
                         <div class="contentCard-bottom">
                             <h5>
-                                <a href="{{route('courseDetails')}}" class="font-title--card">Chicago International
+                                <a href="#" class="font-title--card">Chicago International
                                     Conference on Education</a>
                             </h5>
                             <div class="contentCard-more">
@@ -2240,13 +2240,13 @@
                     </div>
                     <div class="contentCard contentCard--event contentCard--space">
                         <div class="contentCard-top">
-                            <a href="{{route('courseDetails')}}"><img
+                            <a href="#"><img
                                     src="{{asset('public/frontend/dist/images/courses/demo-img-04.png')}}" alt="images"
                                     class="img-fluid" /></a>
                         </div>
                         <div class="contentCard-bottom">
                             <h5>
-                                <a href="{{route('courseDetails')}}" class="font-title--card">Chicago International
+                                <a href="#" class="font-title--card">Chicago International
                                     Conference on Education</a>
                             </h5>
                             <div class="contentCard-more">
