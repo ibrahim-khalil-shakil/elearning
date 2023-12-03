@@ -7,7 +7,7 @@ use App\Models\Course;
 use Illuminate\Http\Request;
 use App\Http\Requests\Backend\Course\Courses\AddNewRequest;
 use App\Http\Requests\Backend\Course\Courses\UpdateRequest;
-use App\Models\CourseCategory; 
+use App\Models\CourseCategory;
 use App\Models\Instructor;
 use Exception;
 use File;
@@ -21,6 +21,12 @@ class CourseController extends Controller
     {
         $course = Course::paginate(10);
         return view('backend.course.courses.index', compact('course'));
+    }
+
+    public function frontIndex()
+    {
+        $course = Course::paginate(10);
+        return view('frontend.searchCourse', compact('course'));
     }
 
     /**
@@ -47,14 +53,18 @@ class CourseController extends Controller
             $course->category_id = $request->categoryId;
             $course->instructor_id = $request->instructorId;
             $course->type = $request->courseType;
-            $course->price = $request->coursePrice; 
+            $course->price = $request->coursePrice;
+            $course->old_price = $request->courseOldPrice;
             $course->subscription_price = $request->subscriptionPrice;
             $course->start_from = $request->start_from;
             $course->duration = $request->duration;
+            $course->lesson = $request->lesson;
+            $course->review_id = $request->reviewId;
             $course->difficulty = $request->courseDifficulty;
             $course->course_code = $request->course_code;
             $course->prerequisites_en = $request->prerequisites_en;
             $course->prerequisites_bn = $request->prerequisites_bn;
+            $course->thumbnail_video = $request->thumbnail_video;
             $course->status = $request->status;
             $course->language = 'en';
 
@@ -62,6 +72,11 @@ class CourseController extends Controller
                 $imageName = rand(111, 999) . time() . '.' . $request->image->extension();
                 $request->image->move(public_path('uploads/courses'), $imageName);
                 $course->image = $imageName;
+            }
+            if ($request->hasFile('thumbnail_image')) {
+                $thumbnailImageName = rand(111, 999) . time() . '.' . $request->thumbnail_image->extension();
+                $request->thumbnail_image->move(public_path('uploads/courses/thumbnails'), $thumbnailImageName);
+                $course->thumbnail_image = $thumbnailImageName;
             }
             if ($course->save())
                 return redirect()->route('course.index')->with('success', 'Data Saved');
@@ -76,10 +91,18 @@ class CourseController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Course $course)
+    public function show($id)
     {
-        //
+        // 
     }
+
+    public function frontShow($id)
+    {
+        $course = Course::findOrFail(encryptor('decrypt', $id));
+        // dd($course); 
+        return view('frontend.courseDetails', compact('course'));
+    }
+
 
     /**
      * Show the form for editing the specified resource.
@@ -107,9 +130,11 @@ class CourseController extends Controller
             $course->instructor_id = $request->instructorId;
             $course->type = $request->courseType;
             $course->price = $request->coursePrice;
+            $course->old_price = $request->courseOldPrice;
             $course->subscription_price = $request->subscriptionPrice;
             $course->start_from = $request->start_from;
             $course->duration = $request->duration;
+            $course->lesson = $request->lesson;
             $course->difficulty = $request->courseDifficulty;
             $course->course_code = $request->course_code;
             $course->prerequisites_en = $request->prerequisites_en;
@@ -121,6 +146,11 @@ class CourseController extends Controller
                 $imageName = rand(111, 999) . time() . '.' . $request->image->extension();
                 $request->image->move(public_path('uploads/courses'), $imageName);
                 $course->image = $imageName;
+            }
+            if ($request->hasFile('thumbnail_image')) {
+                $thumbnailImageName = rand(111, 999) . time() . '.' . $request->thumbnail_image->extension();
+                $request->thumbnail_image->move(public_path('uploads/courses/thumbnails'), $thumbnailImageName);
+                $course->thumbnail_image = $thumbnailImageName;
             }
             if ($course->save())
                 return redirect()->route('course.index')->with('success', 'Data Saved');

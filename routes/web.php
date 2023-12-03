@@ -93,13 +93,8 @@ Route::get('/home', function () {
     return view('frontend.home');
 })->name('home');
 
-Route::get('/searchCourse', function () {
-    return view('frontend.searchCourse');
-})->name('searchCourse');
-
-Route::get('/courseDetails', function () {
-    return view('frontend.courseDetails');
-})->name('courseDetails');
+Route::get('searchCourse', [course::class, 'frontIndex'])->name('searchCourse');
+Route::get('courseDetails/{id}', [course::class, 'frontShow'])->name('courseDetails');
 
 Route::get('/about', function () {
     return view('frontend.about');
@@ -109,10 +104,6 @@ Route::get('/about', function () {
 Route::get('/instructorProfile', function () {
     return view('frontend.instructorProfile');
 })->name('instructorProfile');
-
-Route::get('/courseDetails', function () {
-    return view('frontend.courseDetails');
-})->name('courseDetails');
 
 
 Route::get('/cart', function () {
