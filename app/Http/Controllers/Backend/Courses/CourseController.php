@@ -131,7 +131,7 @@ class CourseController extends Controller
             $course->instructor_id = $request->instructorId;
             $course->type = $request->courseType;
             $course->price = $request->coursePrice;
-            $course->old_price = $request->courseOldPrice;
+            $course->old_price = $request->courseOldPrice; 
             $course->subscription_price = $request->subscriptionPrice;
             $course->start_from = $request->start_from;
             $course->duration = $request->duration;
