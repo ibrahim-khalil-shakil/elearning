@@ -21,16 +21,20 @@
         <div class="row">
             <div class="col-lg-8">
                 <h6 class="cart-area__label">2 Courses in Cart</h6>
+                @php $total = 0 @endphp
+                @if(session('cart'))
+                @foreach(session('cart') as $id => $details)
+                @php $total += $details['price'] * $details['quantity'] @endphp
                 <div class="cart-wizard-area">
                     <div class="image">
-                        <img src="{{asset('public/frontend/dist/images/cart/01.jpg')}}" alt="product" />
+                        <img src="{{ $details['image'] }}" alt="product" />
                     </div>
                     <div class="text">
-                        <h6><a href="#">Gamification: Motivation Psychology & The Art of Engagement.</a></h6>
+                        <h6><a href="#">{{ $details['title_en'] }}</a></h6>
                         <p>By <a href="#">Kevin Gilbert</a></p>
                         <div class="bottom-wizard d-flex justify-content-between align-items-center">
                             <p>
-                                $24.99 <span><del>$24.99</del></span>
+                                ${{ $details['price'] }} <span><del>$24.99</del></span>
                             </p>
                             <div class="trash-icon">
                                 <a href="#">
@@ -40,25 +44,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="cart-wizard-area">
-                    <div class="image">
-                        <img src="{{asset('public/frontend/dist/images/cart/02.jpg')}}" alt="product" />
-                    </div>
-                    <div class="text">
-                        <h6><a href="#">2020 Complete Drawing Masterclass. From Beginner to Advanced</a></h6>
-                        <p>By <a href="#">Kevin Gilbert</a></p>
-                        <div class="bottom-wizard d-flex justify-content-between align-items-center">
-                            <p>
-                                $24.99 <span><del>$24.99</del></span>
-                            </p>
-                            <div class="trash-icon">
-                                <a href="#">
-                                    <i class="far fa-trash-alt"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
+                @endif
             </div>
             <div class="col-lg-4">
                 <h6 class="cart-area__label">Summery</h6>
@@ -94,4 +81,49 @@
     </div>
 </section>
 <!-- Cart Section Ends Here -->
+@endsection
+
+
+@section('scripts')
+<script type="text/javascript">
+    $(".update-cart").change(function (e) {
+        e.preventDefault();
+  
+        var ele = $(this);
+  
+        $.ajax({
+            url: '{{ route('update.cart') }}',
+            method: "patch",
+            data: {
+                _token: '{{ csrf_token() }}', 
+                id: ele.parents("tr").attr("data-id"), 
+                quantity: ele.parents("tr").find(".quantity").val()
+            },
+            success: function (response) {
+               window.location.reload();
+            }
+        });
+    });
+  
+    $(".remove-from-cart").click(function (e) {
+        e.preventDefault();
+  
+        var ele = $(this);
+  
+        if(confirm("Are you sure want to remove?")) {
+            $.ajax({
+                url: '{{ route('remove.from.cart') }}',
+                method: "DELETE",
+                data: {
+                    _token: '{{ csrf_token() }}', 
+                    id: ele.parents("tr").attr("data-id")
+                },
+                success: function (response) {
+                    window.location.reload();
+                }
+            });
+        }
+    });
+  
+</script>
 @endsection

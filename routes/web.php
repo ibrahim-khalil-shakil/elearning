@@ -18,6 +18,7 @@ use App\Http\Controllers\Backend\Quizzes\AnswerController as answer;
 use App\Http\Controllers\Backend\Reviews\ReviewController as review;
 use App\Http\Controllers\Backend\Communication\DiscussionController as discussion;
 use App\Http\Controllers\Backend\Communication\MessageController as message;
+use App\Http\Controllers\CartController;
 
 /* students */
 use App\Http\Controllers\Students\AuthController as sauth;
@@ -117,3 +118,11 @@ Route::get('/checkout', function () {
 Route::get('/contact', function () {
     return view('frontend.contact');
 })->name('contact');
+
+
+// Cart
+Route::get('/', [CartController::class, 'index']);
+Route::get('cart', [CartController::class, 'cart'])->name('cart');
+Route::get('add-to-cart/{id}', [CartController::class, 'addToCart'])->name('add.to.cart');
+Route::patch('update-cart', [CartController::class, 'update'])->name('update.cart');
+Route::delete('remove-from-cart', [CartController::class, 'remove'])->name('remove.from.cart');

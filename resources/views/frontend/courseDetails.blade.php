@@ -577,7 +577,9 @@
                                                     <a
                                                         href="instructor-profile.html">{{$course->instructor?->name_en}}</a>
                                                 </h6>
-                                                <p class="font-para--md">{{($course->instructor?->designation)?$course->instructor?->designation:'No Designation'}}</p>
+                                                <p class="font-para--md">
+                                                    {{($course->instructor?->designation)?$course->instructor?->designation:'No
+                                                    Designation'}}</p>
                                                 <div class="d-flex align-items-center instructor-text-bottom">
                                                     <div class="d-flex align-items-center ratings-icon">
                                                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
@@ -607,8 +609,10 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <p class="lead-p font-para--lg">{{($course->instructor?->title)?$course->instructor?->title:'No Title'}}</p>
-                                        <p class="font-para--md">{{($course->instructor?->bio)?$course->instructor?->bio:'No Title'}}</p>
+                                        <p class="lead-p font-para--lg">
+                                            {{($course->instructor?->title)?$course->instructor?->title:'No Title'}}</p>
+                                        <p class="font-para--md">
+                                            {{($course->instructor?->bio)?$course->instructor?->bio:'No Title'}}</p>
                                     </div>
                                 </div>
                             </div>
@@ -2303,8 +2307,8 @@
                     <div class="cart">
                         <div class="cart__price">
                             <div class="current-price">
-                                <h3 class="font-title--sm">${{$course->price}}</h3>
-                                <p><del>${{$course->old_price}}</del></p>
+                                <h3 class="font-title--sm">{{$course->price?'$'.$course->price:'Free'}}</h3>
+                                <p><del>{{$course->old_price?'$'.$course->old_price:''}}</del></p>
                             </div>
                             <div class="current-discount">
                                 <p class="font-para--md">90% off</p>
@@ -2314,8 +2318,7 @@
                             <p class="time-left text-center"><span>5 hours</span> to remaining this price</p>
                             <form action="#">
                                 <button type="submit" class="button button-lg button--primary w-100">
-                                    Add to Cart
-                                </button>
+                                    <a href="{{route('add.to.cart', $course->id)}}" class="text-white">Add to Cart</a> </button>
                                 <button type="submit" class="button button-lg button--primary-outline mt-3 w-100">
                                     Buy Now
                                 </button>

@@ -10,7 +10,7 @@ use App\Http\Requests\Backend\Course\Courses\UpdateRequest;
 use App\Models\CourseCategory;
 use App\Models\Instructor;
 use Exception;
-use File;
+use File; 
 
 class CourseController extends Controller
 {
