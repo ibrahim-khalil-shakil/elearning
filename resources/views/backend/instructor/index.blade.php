@@ -53,7 +53,7 @@
                                                 <th>{{__('Name')}}</th>
                                                 <th>{{__('Email')}}</th>
                                                 <th>{{__('Contact')}}</th>
-                                                <th>{{__('Role')}}</th>
+                                                <th>{{__('Designation')}}</th>
                                                 <th>{{__('Status')}}</th>
                                                 <th>{{__('Action')}}</th>
                                             </tr>
@@ -68,7 +68,7 @@
                                                 <td><strong>{{$d->name_en}}</strong></td>
                                                 <td>{{$d->email}}</td>
                                                 <td>{{$d->contact_en}}</td>
-                                                <td>{{$d->role?->name}}</td>
+                                                <td>{{$d->designation}}</td>
                                                 <td>
                                                     <span class="badge {{$d->status==1?"
                                                         badge-success":"badge-danger"}}">@if($d->status==1){{__('Active')}}
