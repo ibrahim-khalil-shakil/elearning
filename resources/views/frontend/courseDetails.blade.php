@@ -2318,10 +2318,10 @@
                             <p class="time-left text-center"><span>5 hours</span> to remaining this price</p>
                             <form action="#">
                                 <button type="submit" class="button button-lg button--primary w-100">
-                                    <a href="{{route('add.to.cart', $course->id)}}" class="text-white">Add to Cart</a> </button>
-                                <button type="submit" class="button button-lg button--primary-outline mt-3 w-100">
-                                    Buy Now
+                                    <a href="{{route('add.to.cart', $course->id)}}" class="text-white">Add to Cart</a>
                                 </button>
+                                <button type="submit" class="button button-lg button--primary-outline mt-3 w-100">
+                                    <a href="{{route('checkout')}}">Buy Now</a> </button> </button>
                             </form>
                         </div>
                         <div class="cart__includes-info">

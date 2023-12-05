@@ -148,7 +148,7 @@
                                     </div>
                                     <div class="productContent-item__info productContent-item">
                                         <h6 class="font-para--lg">
-                                            <a href="{{route('courseDetails')}}">Gamification: Motivation Psychology &amp; The
+                                            <a href="#">Gamification: Motivation Psychology &amp; The
                                                 Art of Engagement.</a>
                                         </h6>
                                         <p>by Kevin Gibert</p>
@@ -164,7 +164,7 @@
                                     </div>
                                     <div class="productContent-item__info productContent-item">
                                         <h6 class="font-para--lg">
-                                            <a href="{{route('courseDetails')}}">Digital Art for Beginners - Unleash Your
+                                            <a href="#">Digital Art for Beginners - Unleash Your
                                                 Creativity</a>
                                         </h6>
                                         <p>by Kevin Gibert</p>

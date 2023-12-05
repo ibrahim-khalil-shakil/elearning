@@ -19,6 +19,7 @@ use App\Http\Controllers\Backend\Reviews\ReviewController as review;
 use App\Http\Controllers\Backend\Communication\DiscussionController as discussion;
 use App\Http\Controllers\Backend\Communication\MessageController as message;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\HomeController;
 
 /* students */
 use App\Http\Controllers\Students\AuthController as sauth;
@@ -85,17 +86,21 @@ Route::middleware(['checkstudent'])->prefix('students')->group(function () {
     })->name('studentProfile');
 });
 
+Route::get('home', [HomeController::class, 'index'])->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
-Route::get('/', function () {
-    return view('frontend.home');
-});
+// Route::get('/', function () {
+//     return view('frontend.home');
+// });
 
-Route::get('/home', function () {
-    return view('frontend.home');
-})->name('home');
+// Route::get('/home', function () {
+//     return view('frontend.home');
+// })->name('home');
+
 
 Route::get('searchCourse', [course::class, 'frontIndex'])->name('searchCourse');
 Route::get('courseDetails/{id}', [course::class, 'frontShow'])->name('courseDetails');
+
 
 Route::get('/about', function () {
     return view('frontend.about');

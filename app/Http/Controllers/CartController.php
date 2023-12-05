@@ -11,7 +11,7 @@ class CartController extends Controller
     public function index()
     {
         $course = Course::all();
-        $category= CourseCategory::all();
+        $category = CourseCategory::all();
         return view('frontend.searchCourse', compact('course', 'category'));
     }
 
@@ -35,6 +35,7 @@ class CartController extends Controller
                 "price" => $course->price,
                 "old_price" => $course->old_price,
                 "image" => $course->image,
+                "difficulty" => $course->difficulty,
                 "instructor" => $course->instructor ? $course->instructor->name_en : 'Unknown Instructor',
             ];
         }
@@ -42,28 +43,6 @@ class CartController extends Controller
         session()->put('cart', $cart);
         return redirect()->back()->with('success', 'Product added to cart successfully!');
     }
-
-    public function update(Request $request)
-    {
-        if ($request->id && $request->quantity) {
-            $cart = session()->get('cart');
-            $cart[$request->id]["quantity"] = $request->quantity;
-            session()->put('cart', $cart);
-            session()->flash('success', 'Cart updated successfully');
-        }
-    }
-
-    // public function remove(Request $request)
-    // {
-    //     if ($request->id) {
-    //         $cart = session()->get('cart');
-    //         if (isset($cart[$request->id])) {
-    //             unset($cart[$request->id]);
-    //             session()->put('cart', $cart);
-    //         }
-    //         session()->flash('success', 'Product removed successfully');
-    //     }
-    // }
 
     public function remove(Request $request)
     {
@@ -73,9 +52,7 @@ class CartController extends Controller
                 unset($cart[$request->id]);
                 session()->put('cart', $cart);
             }
-            return response()->json(['success' => true], 200);
+            session()->flash('success', 'Product removed successfully');
         }
-        return response()->json(['error' => 'Invalid request'], 400);
     }
-
 }

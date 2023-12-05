@@ -13,7 +13,7 @@ use Exception;
 use File;
 
 class InstructorController extends Controller
-{
+{ 
     /**
      * Display a listing of the resource.
      */

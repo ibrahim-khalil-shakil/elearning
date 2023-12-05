@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 04, 2023 at 09:15 AM
+-- Generation Time: Dec 05, 2023 at 09:50 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -176,8 +176,10 @@ CREATE TABLE `instructors` (
 --
 
 INSERT INTO `instructors` (`id`, `name_en`, `name_bn`, `contact_en`, `contact_bn`, `email`, `role_id`, `bio`, `title`, `designation`, `image`, `status`, `password`, `language`, `access_block`, `remember_token`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'Burhan Uddin Fuad', NULL, '01828543453', NULL, 'fuad@gmail.com', 3, 'Fuad is a highly skilled Full Stack Web Developer with over 10 years of experience. He specializes in front-end and back-end development, bringing a wealth of knowledge in modern web technologies. John is passionate about teaching and enjoys sharing his expertise with aspiring developers.', 'Experienced Full Stack Web Developer passionate about teaching modern web technologies.', 'Senior Instructor', '5371700969723.jpg', 1, '$2y$12$9wKowT3FRkNRbhr8H3EHqeFfB42uP2sR.ACK9TCx8dm3DShul.CrS', 'en', NULL, NULL, '2023-11-25 21:35:23', '2023-12-03 10:45:57', NULL),
-(2, 'Ibrahim Khalil', NULL, '+8801300025229', NULL, 'ibrahim@gmail.com', 3, 'Ibrahim is an Animation Expert and Video/Graphics Instructor known for her innovative approach to storytelling through animation. With a background in both 2D and 3D animation, Emily guides students through the world of visual storytelling, helping them unleash their creative potential.', '2D Animation and Short Video Ads Specialist', 'Animation Expert', '7141700979525.jpg', 1, '$2y$12$XqMNiBNht2EBZeDJs1GLR.TcxIPVs9WNYaPmClunATT/wibIpglZG', 'en', NULL, NULL, '2023-11-26 00:18:45', '2023-12-03 10:51:06', NULL);
+(1, 'Burhan Uddin Fuad', NULL, '01828543453', NULL, 'fuad@gmail.com', 3, 'Fuad is a highly skilled Full Stack Web Developer with over 10 years of experience. He specializes in front-end and back-end development, bringing a wealth of knowledge in modern web technologies. John is passionate about teaching and enjoys sharing his expertise with aspiring developers.', 'Experienced Full Stack Web Developer passionate about teaching modern web technologies.', 'Senior Instructor', '8941701753954.jpg', 1, '$2y$12$3E1QSBCTMwmJssrvDHiaduJFOM1YsN/qudIbk6Zb8bjOAK9jWl6le', 'en', NULL, NULL, '2023-11-25 21:35:23', '2023-12-04 23:25:54', NULL),
+(2, 'Ibrahim Khalil', NULL, '+8801300025229', NULL, 'ibrahim@gmail.com', 3, 'Ibrahim is an Animation Expert and Video/Graphics Instructor known for her innovative approach to storytelling through animation. With a background in both 2D and 3D animation, Emily guides students through the world of visual storytelling, helping them unleash their creative potential.', '2D Animation and Short Video Ads Specialist', 'Animation Expert', '3351701753942.jpg', 1, '$2y$12$uff2So9F6EWhO1n3yMgfuOBNThe39xNmRf.kM3dGxBBAmUfiv3bRG', 'en', NULL, NULL, '2023-11-26 00:18:45', '2023-12-04 23:25:42', NULL),
+(3, 'Ahtesanul Haque', NULL, '3218974218', NULL, 'kaiser@gmail.com', 3, NULL, 'Professional Designer Who Loves to Design', 'UI UX Designer', '1281701753920.png', 1, '$2y$12$q8g0mQuG6V/2RFiypFxQc.7hCxGtWszZNhNjuBy8mwOuRmpbvQw1G', 'en', NULL, NULL, '2023-12-04 23:25:20', '2023-12-04 23:25:20', NULL),
+(4, 'Sarah Taylor', NULL, '675664644', NULL, 'sarah@gmail.com', 3, NULL, NULL, 'Digital Marketer', '9511701754077.jpg', 1, '$2y$12$LjhW.Pv1DhHu1lI.HaWxred7ATGW2cH14w3bRuZfC61baVtKWiiRW', 'en', NULL, NULL, '2023-12-04 23:27:57', '2023-12-04 23:27:57', NULL);
 
 -- --------------------------------------------------------
 
@@ -622,7 +624,8 @@ INSERT INTO `students` (`id`, `name_en`, `name_bn`, `contact_en`, `contact_bn`, 
 (8, 'Ibrahim', 'Khalil', NULL, NULL, 'admin@gmail.com', '2023-11-13', 'male', '3121700899569.jpg', NULL, NULL, 'Bangladeshi', 0, '$2y$12$sxR8A0DZR6FnrAUlEhLACeChJP5FQUSvYbjlMReUwJrMsIUPh74Im', 'en', NULL, '2023-11-25 02:06:09', '2023-11-25 02:06:09', NULL),
 (9, 'ergdfgdf', NULL, NULL, NULL, 'sdjfhsd@gmail.com', '2023-11-13', 'male', '9161700900054.jpg', NULL, NULL, 'Bangladeshi', 1, '$2y$12$Yo0DrMY8NliB.zxJoVmFte1KVzKHPgqtZ2ERkSjb3DB.ks9Cr1vS6', 'en', NULL, '2023-11-25 02:14:14', '2023-11-25 02:14:14', NULL),
 (10, 'Safayet Ullah', NULL, NULL, NULL, 'student@gmail.com', NULL, NULL, NULL, NULL, NULL, 'Bangladeshi', 1, '$2y$12$ban4H0WFobNWv3zCAXy3HesQin0jI191dmVbtmRDPbcFQRQcGAa9i', 'en', NULL, '2023-12-01 23:59:13', '2023-12-01 23:59:13', NULL),
-(12, 'Ibrahim Khalil', 'Ibrahim Khalil', '+8801300025229', NULL, 'admin@gmail.com2', NULL, NULL, NULL, NULL, NULL, NULL, 1, '$2y$12$LBgg7dwGRJOWKtpGHQdb/O0g8vXlQMp2mjYRxyM/TBw/HJyLEG7te', 'en', NULL, '2023-12-03 08:43:36', '2023-12-03 08:43:36', NULL);
+(12, 'Ibrahim Khalil', 'Ibrahim Khalil', '+8801300025229', NULL, 'admin@gmail.com2', NULL, NULL, NULL, NULL, NULL, NULL, 1, '$2y$12$LBgg7dwGRJOWKtpGHQdb/O0g8vXlQMp2mjYRxyM/TBw/HJyLEG7te', 'en', NULL, '2023-12-03 08:43:36', '2023-12-03 08:43:36', NULL),
+(13, 'Raihan Sazzad', NULL, NULL, NULL, 'raihan@gmail.com', NULL, NULL, NULL, NULL, NULL, 'Bangladeshi', 1, '$2y$12$.TByzebEY9ElG/7Y3.Lo8OzeZYljL1llso97D6Rr01/j3B3CD5/Yu', 'en', NULL, '2023-12-05 00:33:32', '2023-12-05 00:33:32', NULL);
 
 -- --------------------------------------------------------
 
@@ -882,7 +885,7 @@ ALTER TABLE `enrollments`
 -- AUTO_INCREMENT for table `instructors`
 --
 ALTER TABLE `instructors`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `materials`
@@ -960,7 +963,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT for table `students`
 --
 ALTER TABLE `students`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `subscriptions`

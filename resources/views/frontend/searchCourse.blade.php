@@ -49,7 +49,7 @@
         <div class="row">
             <div class="col-lg-4 d-none d-lg-block">
                 <div class="accordion sidebar-filter" id="sidebarFilter">
-                    <!-- Category  -->
+                    <!-- Search by Category  -->
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="categoryAcc">
                             <button class="accordion-button" type="button" data-bs-toggle="collapse"
@@ -75,7 +75,7 @@
                                     <div class="accordion-body__item">
                                         <div class="check-box">
                                             <input type="checkbox" class="checkbox-primary" />
-                                            <label> {{ $cat->category_name }} </label>
+                                            <label> {{$cat->category_name}} </label>
                                         </div>
                                         <p class="check-details">
                                             45,770
@@ -87,7 +87,7 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Level  -->
+                    <!-- Search by Level  -->
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="levelAcc">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -139,7 +139,7 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Price  -->
+                    <!-- Search by Price  -->
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="headingThree">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -179,7 +179,7 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Rating  -->
+                    <!-- Search by Rating  -->
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="ratingAcc">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -249,7 +249,7 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Duration  -->
+                    <!-- Search by Duration  -->
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="durationAcc">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -313,7 +313,9 @@
                     </div>
                 </div>
             </div>
+
             <div class="col-lg-8">
+                {{-- Filter by dropdown things--}}
                 <div class="event-search-results">
                     <div class="event-search-results-heading">
                         <div class="nice-select" tabindex="0">
@@ -356,19 +358,20 @@
                         </button>
                     </div>
                 </div>
+
                 {{-- Courses --}}
                 <div class="row event-search-content">
                     @forelse ($course as $c)
                     <div class="col-md-6 mb-4">
                         <div class="contentCard contentCard--course">
                             <div class="contentCard-top">
-                                <a href="{{ route('courseDetails', encryptor('encrypt', $c->id))}}"><img
+                                <a href="{{route('courseDetails', encryptor('encrypt', $c->id))}}"><img
                                         src="{{asset('public/uploads/courses/'.$c->image)}}" alt="images"
                                         class="img-fluid" /></a>
                             </div>
                             <div class="contentCard-bottom">
                                 <h5>
-                                    <a href="{{ route('courseDetails', ['id' => encryptor('encrypt', $c->id)]) }}"
+                                    <a href="{{route('courseDetails', ['id' => encryptor('encrypt', $c->id)])}}"
                                         class="font-title--card">{{$c->title_en}}</a>
                                 </h5>
                                 <div class="contentCard-info d-flex align-items-center justify-content-between">
@@ -424,6 +427,7 @@
                     </div>
                     @endforelse
                 </div>
+
                 <div class="pagination-group mt-lg-5 mt-2">
                     <a href="#" class="p_prev">
                         <svg xmlns="http://www.w3.org/2000/svg" width="9.414" height="16.828"
