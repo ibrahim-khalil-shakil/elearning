@@ -13,7 +13,7 @@
             <ol class="breadcrumb bg-transparent mb-0">
                 <li class="breadcrumb-item"><a href="index.html" class="fs-6 text-secondary">Home</a></li>
                 <li class="breadcrumb-item"><a href="course-search.html" class="fs-6 text-secondary">Courses</a></li>
-                <li class="breadcrumb-item d-none d-lg-inline-block"><a href="{{route('courseDetails')}}"
+                <li class="breadcrumb-item d-none d-lg-inline-block"><a href="#"
                         class="fs-6 text-secondary">Course Detail Instructor</a></li>
                 <li class="breadcrumb-item d-none d-lg-inline-block"><a href="#" class="fs-6 text-secondary">Kevin
                         Gilbert</a></li>
@@ -29,11 +29,11 @@
             <div class="col-lg-4">
                 <div class="instructor-courses-instructor">
                     <div class="instructor-image mx-auto text-center">
-                        <img src="{{asset('public/frontend/dist/images/hero/hero-img-02.png')}}" alt="Instructor" />
+                        <img src="{{asset('public/uploads/instructors/'.$instructor->image)}}" alt="Instructor" />
                     </div>
                     <div class="instructor-info text-center">
-                        <h5 class="font-title--sm">Kevin Gilbert</h5>
-                        <p class="text-secondary mb-3">Senior Instructor</p>
+                        <h5 class="font-title--sm">{{$instructor->name_en}}</h5>
+                        <p class="text-secondary mb-3">{{$instructor->designation}}</p>
                         <ul class="list-inline social-links">
                             <li class="list-inline-item">
                                 <a href="#">
@@ -171,15 +171,7 @@
                     </div>
                     <div class="about-instructor">
                         <h6>About Me</h6>
-                        <p>
-                            Sharing is who I am, and teaching is where I am at my best, because I've been on both sides
-                            of that equation, and getting to deliver useful training is my meaningful way to be a part
-                            of the creative
-                            community. I've spent a long time watching others learn, and teach, to refine how I work
-                            with you to be efficient, useful and, most importantly, memorable.I want you to carry what
-                            I've shown you into a
-                            bright future.
-                        </p>
+                        <p>{{$instructor->bio}}</p>
                     </div>
                     <div class="instructor-qualification">
                         <h6>Education</h6>
@@ -257,13 +249,13 @@
                                 <div class="col-md-6 mb-4">
                                     <div class="contentCard contentCard--course">
                                         <div class="contentCard-top">
-                                            <a href="{{route('courseDetails')}}"><img
+                                            <a href="#"><img
                                                     src="{{asset('public/frontend/dist/images/courses/demo-img-01.png')}}"
                                                     alt="images" class="img-fluid" /></a>
                                         </div>
                                         <div class="contentCard-bottom">
                                             <h5>
-                                                <a href="{{route('courseDetails')}}" class="font-title--card">Chicago
+                                                <a href="#" class="font-title--card">Chicago
                                                     International Conference on Education</a>
                                             </h5>
                                             <div
@@ -315,13 +307,13 @@
                                 <div class="col-md-6 mb-4">
                                     <div class="contentCard contentCard--course">
                                         <div class="contentCard-top">
-                                            <a href="{{route('courseDetails')}}"><img
+                                            <a href="#"><img
                                                     src="{{asset('public/frontend/dist/images/courses/demo-img-02.png')}}"
                                                     alt="images" class="img-fluid" /></a>
                                         </div>
                                         <div class="contentCard-bottom">
                                             <h5>
-                                                <a href="{{route('courseDetails')}}" class="font-title--card">Chicago
+                                                <a href="#" class="font-title--card">Chicago
                                                     International Conference on Education</a>
                                             </h5>
                                             <div
@@ -373,13 +365,13 @@
                                 <div class="col-md-6 mb-4">
                                     <div class="contentCard contentCard--course">
                                         <div class="contentCard-top">
-                                            <a href="{{route('courseDetails')}}"><img
+                                            <a href="#"><img
                                                     src="{{asset('public/frontend/dist/images/courses/demo-img-03.png')}}"
                                                     alt="images" class="img-fluid" /></a>
                                         </div>
                                         <div class="contentCard-bottom">
                                             <h5>
-                                                <a href="{{route('courseDetails')}}" class="font-title--card">Chicago
+                                                <a href="#" class="font-title--card">Chicago
                                                     International Conference on Education</a>
                                             </h5>
                                             <div
@@ -431,13 +423,13 @@
                                 <div class="col-md-6 mb-4">
                                     <div class="contentCard contentCard--course">
                                         <div class="contentCard-top">
-                                            <a href="{{route('courseDetails')}}"><img
+                                            <a href="#"><img
                                                     src="{{asset('public/frontend/dist/images/courses/demo-img-04.png')}}"
                                                     alt="images" class="img-fluid" /></a>
                                         </div>
                                         <div class="contentCard-bottom">
                                             <h5>
-                                                <a href="{{route('courseDetails')}}" class="font-title--card">Chicago
+                                                <a href="#" class="font-title--card">Chicago
                                                     International Conference on Education</a>
                                             </h5>
                                             <div
@@ -489,13 +481,13 @@
                                 <div class="col-md-6 mb-4">
                                     <div class="contentCard contentCard--course">
                                         <div class="contentCard-top">
-                                            <a href="{{route('courseDetails')}}"><img
+                                            <a href="#"><img
                                                     src="{{asset('public/frontend/dist/images/courses/demo-img-05.png')}}"
                                                     alt="images" class="img-fluid" /></a>
                                         </div>
                                         <div class="contentCard-bottom">
                                             <h5>
-                                                <a href="{{route('courseDetails')}}" class="font-title--card">Chicago
+                                                <a href="#" class="font-title--card">Chicago
                                                     International Conference on Education</a>
                                             </h5>
                                             <div
@@ -547,13 +539,13 @@
                                 <div class="col-md-6 mb-4">
                                     <div class="contentCard contentCard--course">
                                         <div class="contentCard-top">
-                                            <a href="{{route('courseDetails')}}"><img
+                                            <a href="#"><img
                                                     src="{{asset('public/frontend/dist/images/courses/demo-img-01.png')}}"
                                                     alt="images" class="img-fluid" /></a>
                                         </div>
                                         <div class="contentCard-bottom">
                                             <h5>
-                                                <a href="{{route('courseDetails')}}" class="font-title--card">Chicago
+                                                <a href="#" class="font-title--card">Chicago
                                                     International Conference on Education</a>
                                             </h5>
                                             <div

@@ -78,7 +78,7 @@
                             <div class="nav-item--dropdown">
                                 <ul>
                                     <li><a href="{{route('studentProfile')}}">Student Profile</a></li>
-                                    <li><a href="{{route('instructorProfile')}}">Instructor Profile</a></li>
+                                    {{-- <li><a href="{{route('instructorProfile')}}">Instructor Profile</a></li> --}}
                                     <li><a href="{{route('checkout')}}">Check out</a></li>
                                 </ul>
                             </div>

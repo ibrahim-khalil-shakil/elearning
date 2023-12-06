@@ -107,9 +107,12 @@ Route::get('/about', function () {
 })->name('about');
 
 
-Route::get('/instructorProfile', function () {
-    return view('frontend.instructorProfile');
-})->name('instructorProfile');
+// Route::get('/instructorProfile', function () {
+//     return view('frontend.instructorProfile');
+// })->name('instructorProfile');
+
+Route::get('instructorProfile/{id}', [instructor::class, 'frontShow'])->name('instructorProfile');
+
 
 
 Route::get('/cart', function () {

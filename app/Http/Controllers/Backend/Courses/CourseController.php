@@ -102,7 +102,7 @@ class CourseController extends Controller
         $course = Course::findOrFail(encryptor('decrypt', $id));
         // dd($course); 
         return view('frontend.courseDetails', compact('course'));
-    }
+    } 
 
 
     /**

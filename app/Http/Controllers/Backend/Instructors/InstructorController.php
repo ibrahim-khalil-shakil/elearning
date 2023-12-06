@@ -76,6 +76,13 @@ class InstructorController extends Controller
         //
     }
 
+    public function frontShow($id)
+    {
+        $instructor = Instructor::findOrFail(encryptor('decrypt', $id));
+        // dd($course); 
+        return view('frontend.instructorProfile', compact('instructor'));
+    } 
+
     /**
      * Show the form for editing the specified resource.
      */

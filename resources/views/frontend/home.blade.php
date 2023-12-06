@@ -1576,7 +1576,7 @@
                                 </div>
                                 <div class="mentor__title">
                                     <h6>
-                                        <a href="instructor-profile.html" tabindex="0">{{$i->name_en}}</a>
+                                        <a href="{{route('instructorProfile', encryptor('encrypt', $i->id))}}" tabindex="0">{{$i->name_en}}</a>
                                     </h6>
                                     <p>{{$i->designation}}</p>
                                 </div>
@@ -1614,7 +1614,7 @@
                             </div>
                             <div class="contentCard-bottom">
                                 <h5>
-                                    <a href="#" class="font-title--card">{{$c->title_en}}</a>
+                                    <a href="{{route('courseDetails', encryptor('encrypt', $c->id))}}" class="font-title--card">{{$c->title_en}}</a>
                                 </h5>
                                 <div class="contentCard-more">
                                     <div class="d-flex align-items-center">
