@@ -21,11 +21,11 @@ class AuthController extends Controller
     public function signUpStore(SignUpRequest $request)
     {
         try {
-            $stu = new Student;
-            $stu->name_en = $request->name;
-            $stu->email = $request->email;
-            $stu->password = Hash::make($request->password);
-            if ($stu->save())
+            $student = new Student;
+            $student->name_en = $request->name;
+            $student->email = $request->email;
+            $student->password = Hash::make($request->password);
+            if ($student->save())
                 return redirect()->route('studentLogin')->with('success', 'Successfully Registered');
             else
                 return redirect()->route('studentLogin')->with('danger', 'Please Try Again');
@@ -43,11 +43,11 @@ class AuthController extends Controller
     public function signInCheck(SignInRequest $request)
     {
         try {
-            $user = Student::Where('email', $request->email)->first();
-            if ($user) {
-                if ($user->status == 1) {
-                    if (Hash::check($request->password, $user->password)) {
-                        $this->setSession($user);
+            $student = Student::Where('email', $request->email)->first();
+            if ($student) {
+                if ($student->status == 1) {
+                    if (Hash::check($request->password, $student->password)) {
+                        $this->setSession($student);
                         return redirect()->route('studentdashboard')->with('success', 'Successfully Logged In');
                     } else
                         return redirect()->route('studentLogin')->with('error', 'Username or Password is wrong!');
@@ -61,15 +61,15 @@ class AuthController extends Controller
         }
     }
 
-    public function setSession($user)
+    public function setSession($student)
     {
         return request()->session()->put(
             [
-                'userId' => encryptor('encrypt', $user->id),
-                'userName' => encryptor('encrypt', $user->name_en),
-                'emailAddress' => encryptor('encrypt', $user->email),
+                'userId' => encryptor('encrypt', $student->id),
+                'userName' => encryptor('encrypt', $student->name_en),
+                'emailAddress' => encryptor('encrypt', $student->email),
                 'studentLogin' => 1,
-                'image' => $user->image ?? 'No Image Found'
+                'image' => $student->image ?? 'No Image Found' 
             ]
         );
     }
@@ -78,10 +78,5 @@ class AuthController extends Controller
     {
         request()->session()->flush();
         return redirect()->route('studentLogin')->with('danger', 'Succesfully Logged Out');
-    }
-
-    public function show(User $data)
-    {
-        return view('students.profile.userProfile', compact('data'));
     }
 }

@@ -38,7 +38,7 @@
                             <div class="enrolled-courses-icon">
                                 <svg width="28" height="26" viewBox="0 0 28 26" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path
+                                    <path 
                                         d="M1 1.625H8.8C10.1791 1.625 11.5018 2.15764 12.477 3.10574C13.4521 4.05384 14 5.33974 14 6.68056V24.375C14 23.3694 13.5891 22.405 12.8577 21.6939C12.1263 20.9828 11.1343 20.5833 10.1 20.5833H1V1.625Z"
                                         stroke="#1089FF" stroke-width="2" stroke-linecap="round"
                                         stroke-linejoin="round" />
@@ -136,7 +136,7 @@
                                         <span>Name</span>
                                     </dt>
                                     <dd class="col-sm-8">
-                                        <p>Phillip Bergson</p>
+                                        <p>{{ encryptor('decrypt', request()->session()->get('userName')) }}</p>
                                     </dd>
                                 </dl>
                                 <dl class="row my-0 info-student-topic">
@@ -144,7 +144,7 @@
                                         <span>E-mail</span>
                                     </dt>
                                     <dd class="col-sm-8">
-                                        <p>phillip.bergson@gmail.com</p>
+                                        <p>{{ encryptor('decrypt', request()->session()->get('emailAddress')) }}</p>
                                     </dd>
                                 </dl>
                                 <dl class="row my-0 info-student-topic">
