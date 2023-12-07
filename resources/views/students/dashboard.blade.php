@@ -51,7 +51,7 @@
                             <div class="enrolled-courses-text">
                                 <h6 class="font-title--xs">24</h6>
                                 <p class="fs-6 mt-1">Enrolled Courses</p> 
-                            </div>
+                            </div> 
                         </div>
                         <div class="completed-courses">
                             <div class="completed-courses-icon">
