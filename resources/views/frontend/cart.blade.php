@@ -72,7 +72,7 @@ style="background-color: #ebebf2;"
                         <p class="font-title--card">{{'$' . number_format((float) $total, 2)}}</p>
                     </div>
                     <form action="#">
-                        <a href="checkout.html"
+                        <a href="{{route('checkout')}}"
                             class="button button-lg button--primary form-control mb-lg-3">Checkout</a>
                         <label for="coupon">Apply Coupon</label>
                         <div class="cart-input">
