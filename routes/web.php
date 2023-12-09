@@ -20,6 +20,7 @@ use App\Http\Controllers\Backend\Communication\DiscussionController as discussio
 use App\Http\Controllers\Backend\Communication\MessageController as message;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\CheckoutController;
 
 /* students */
 use App\Http\Controllers\Students\AuthController as sauth;
@@ -69,9 +70,9 @@ Route::middleware(['checkrole'])->prefix('admin')->group(function () {
 
 /* students controllers */
 Route::get('/student/register', [sauth::class, 'signUpForm'])->name('studentRegister');
-Route::post('/student/register', [sauth::class, 'signUpStore'])->name('studentRegister.store');
+Route::post('/student/register/{back_route}', [sauth::class, 'signUpStore'])->name('studentRegister.store');
 Route::get('/student/login', [sauth::class, 'signInForm'])->name('studentLogin');
-Route::post('/student/login', [sauth::class, 'signInCheck'])->name('studentLogin.check');
+Route::post('/student/login/{back_route}', [sauth::class, 'signInCheck'])->name('studentLogin.check');
 Route::get('/student/logout', [sauth::class, 'signOut'])->name('studentlogOut');
 
 Route::middleware(['checkstudent'])->prefix('students')->group(function () {
@@ -112,6 +113,8 @@ Route::get('/about', function () {
 // })->name('instructorProfile');
 
 Route::get('instructorProfile/{id}', [instructor::class, 'frontShow'])->name('instructorProfile');
+Route::get('checkout', [CheckoutController::class, 'index'])->name('checkout');
+Route::post('checkout', [CheckoutController::class, 'store'])->name('checkout.store');
 
 
 
@@ -119,9 +122,6 @@ Route::get('/cart', function () {
     return view('frontend.cart');
 })->name('cart');
 
-Route::get('/checkout', function () {
-    return view('frontend.checkout');
-})->name('checkout');
 
 Route::get('/contact', function () {
     return view('frontend.contact');

@@ -11,7 +11,7 @@
                     <p class="mt-2 mb-lg-4 mb-3">Don't have account? <a href="{{route('studentRegister')}}"
                             class="text-black-50">Sign
                             up</a></p>
-                    <form action="{{route('studentLogin.check')}}" method="POST">
+                    <form action="{{route('studentLogin.check','studentdashboard')}}" method="POST">
                         @csrf
                         <div class="form-element">
                             <label for="email">Email</label>
@@ -60,13 +60,4 @@
     </div>
 </section>
 <!-- SignIn Area Ends Here -->
-
-<!-- Dot Images Starts Here -->
-<div class="dot-images">
-    <img src="{{asset('public/frontend/dist/images/shape/dots/dots-img-10.png')}}" alt="shape" style="z-index: 1;"
-        class="img-fluid first-dotimage" />
-    <img src="{{asset('public/frontend/dist/images/shape/dots/dots-img-07.png')}}" alt="shape"
-        class="img-fluid second-dotimage" />
-</div>
-<!-- Dot Images Ends Here -->
 @endsection

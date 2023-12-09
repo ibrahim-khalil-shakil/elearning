@@ -18,20 +18,20 @@ class AuthController extends Controller
         return view('students.auth.register');
     }
 
-    public function signUpStore(SignUpRequest $request)
+    public function signUpStore(SignUpRequest $request,$back_route)
     {
         try {
             $student = new Student;
             $student->name_en = $request->name;
             $student->email = $request->email;
             $student->password = Hash::make($request->password);
-            if ($student->save())
-                return redirect()->route('studentLogin')->with('success', 'Successfully Registered');
-            else
-                return redirect()->route('studentLogin')->with('danger', 'Please Try Again');
+            if ($student->save()){
+                $this->setSession($student);
+                return redirect()->route($back_route)->with('success', 'Successfully Logged In');
+            }
         } catch (Exception $e) {
             //dd($e);
-            return redirect()->route('studentLogin')->with('danger', 'Please Try Again');
+            return redirect()->back()->with('danger', 'Please Try Again');
         }
     }
 
@@ -40,7 +40,7 @@ class AuthController extends Controller
         return view('students.auth.login');
     }
 
-    public function signInCheck(SignInRequest $request)
+    public function signInCheck(SignInRequest $request,$back_route)
     {
         try {
             $student = Student::Where('email', $request->email)->first();
@@ -48,16 +48,16 @@ class AuthController extends Controller
                 if ($student->status == 1) {
                     if (Hash::check($request->password, $student->password)) {
                         $this->setSession($student);
-                        return redirect()->route('studentdashboard')->with('success', 'Successfully Logged In');
+                        return redirect()->route($back_route)->with('success', 'Successfully Logged In');
                     } else
-                        return redirect()->route('studentLogin')->with('error', 'Username or Password is wrong!');
+                        return redirect()->back()->with('error', 'Username or Password is wrong!');
                 } else
-                    return redirect()->route('studentLogin')->with('error', 'You are not an active user! Please contact to Authority');
+                    return redirect()->back()->with('error', 'You are not an active user! Please contact to Authority');
             } else
-                return redirect()->route('studentLogin')->with('error', 'Username or Password is wrong!');
+                return redirect()->back()->with('error', 'Username or Password is wrong!');
         } catch (Exception $e) {
             //dd($e);
-            return redirect()->route('studentLogin')->with('error', 'Username or Password is wrong!');
+            return redirect()->back()->with('error', 'Username or Password is wrong!');
         }
     }
 

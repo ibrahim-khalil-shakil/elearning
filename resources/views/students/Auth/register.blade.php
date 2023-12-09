@@ -8,9 +8,8 @@
             <div class="col-lg-5 order-2 order-lg-0">
                 <div class="signup-area-textwrapper">
                     <h2 class="font-title--md mb-0">Sign Up</h2>
-                    <p class="mt-2 mb-lg-4 mb-3">Already have account? <a href="{{route('studentLogin')}}" class="text-black-50">Sign
-                            In</a></p>
-                    <form action="{{route('studentRegister.store')}}" method="POST">
+                    <p class="mt-2 mb-lg-4 mb-3">Already have account? <a href="{{route('studentLogin')}}" class="text-black-50">Sign In</a></p>
+                    <form action="{{route('studentRegister.store','studentdashboard')}}" method="POST">
                         @csrf
                         <div class="form-element">
                                 <label for="name">Full Name</label>
@@ -81,12 +80,4 @@
 </section>
 <!-- SignUp Area Ends Here -->
 
-<!-- Dot Images Starts Here -->
-<div class="dot-images">
-    <img src="{{asset('public/frontend/dist/images/shape/dots/dots-img-05.png')}}" alt="shape"
-        class="img-fluid first-dotimage" />
-    <img src="{{asset('public/frontend/dist/images/shape/dots/dots-img-07.png')}}" alt="shape"
-        class="img-fluid second-dotimage" />
-</div>
-<!-- Dot Images Ends Here -->
 @endsection
