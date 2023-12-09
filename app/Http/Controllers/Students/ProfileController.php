@@ -19,18 +19,16 @@ class ProfileController extends Controller
         try {
             $data=Student::find(currentUserId());
             $data->name_en = $request->fullName_en;
-            $data->name_bn = $request->fullName_bn;
             $data->contact_en = $request->contactNumber_en;
-            $data->contact_bn = $request->contactNumber_bn;
             $data->email = $request->emailAddress;
-            $data->role_id = $request->roleId;
+            $data->date_of_birth = $request->dob;
+            $data->gender = $request->gender;
             $data->bio = $request->bio;
-            $data->designation = $request->designation;
-            $data->title = $request->title;
-            $data->status = $request->status;
-            $data->password = Hash::make($request->fullName_bn);
+            $data->profession = $request->profession;
+            $data->nationality = $request->nationality;
+            // $data->status = $request->status;
+            // $data->password = Hash::make($request->fullName_bn);
             $data->language = 'en';
-            $data->access_block = $request->access_block;
 
             if ($request->hasFile('image')) {
                 $imageName = rand(111, 999) . time() . '.' . $request->image->extension();
