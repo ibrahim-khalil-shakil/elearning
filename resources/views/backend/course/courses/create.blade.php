@@ -236,7 +236,7 @@
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12">
                                     <div class="form-group">
-                                        <label class="form-label">Status</label>
+                                        <label class="form-label">Status</label> 
                                         <select class="form-control" name="status">
                                             <option value="1" @if(old('status')==1) selected @endif>Active</option>
                                             <option value="0" @if(old('status')==0) selected @endif>Inactive</option>

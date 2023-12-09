@@ -29,26 +29,32 @@
                             aria-labelledby="pills-checkout-tab">
                             <form action="#">
                                 <div class="mb-3">
-                                    <label for="card-name-one">Name on Card</label>
-                                    <input type="text" class="form-control" placeholder="Type here"
-                                        id="card-name-one" />
-                                </div>
-                                <div class="mb-3">
-                                    <label for="card-number-one">Card Number</label>
-                                    <input type="text" class="form-control" placeholder="Type here"
-                                        id="card-number-one" />
+                                    <label for="payer_name">Name on Card</label>
+                                    <input type="text" class="form-control" name="payer_name" placeholder="Type here" />
                                 </div>
                                 <div class="mb-3">
                                     <div class="row">
                                         <div class="col-md-6 mb-3 mb-lg-0">
-                                            <label for="expiration-date-one">Expiration Date (MM/YY)</label>
-                                            <input type="text" class="form-control" placeholder="Type here"
-                                                id="expiration-date-one" />
+                                            <label for="payment_option">Payment Options</label>
+                                            <div class="form-check d-flex align-items-center ps-0">
+                                                <input type="checkbox" id="one_time" />
+                                                <label class="form-check-label ms-2 mb-0" for="one_time">
+                                                    One Time
+                                                </label>
+                                            </div>
+                                            <div class="form-check d-flex align-items-center ps-0">
+                                                <input type="checkbox" id="subscription" />
+                                                <label class="form-check-label ms-2 mb-0" for="subscription">
+                                                    Subscription
+                                                </label>
+                                            </div>
                                         </div>
                                         <div class="col-md-6">
-                                            <label for="cvc-one">CVC</label>
-                                            <input type="text" class="form-control" id="cvc-one"
-                                                placeholder="Type here" />
+                                            <label for="status">Status</label>
+                                            <select class="form-control" name="status">
+                                                <option value="1" class="form-control" @if(old('status')==1) selected @endif>Active</option>
+                                                <option value="0" class="form-control" @if(old('status')==0) selected @endif>Inactive</option>
+                                            </select>
                                         </div>
                                     </div>
                                 </div>
@@ -106,11 +112,11 @@
                                 </li>
                                 <li>
                                     <p>Coupon Discount</p>
-                                    <p>15%</p>
+                                    <p>0%</p>
                                 </li>
                                 <li>
                                     <p>taxes</p>
-                                    <p>$9.99</p>
+                                    <p>$0.00</p>
                                 </li>
                                 <li>
                                     <p class="font-title--card">Total:</p>

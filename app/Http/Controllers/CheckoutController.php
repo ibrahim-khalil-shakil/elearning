@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Checkout;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class CheckoutController extends Controller
@@ -15,32 +17,26 @@ class CheckoutController extends Controller
     }
 
     /**
+     * Show the form for creating a new resource.
+     */
+    public function create()
+    {
+        //
+    }
+
+    /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
     {
         try {
-            $instructor = new Instructor; 
-            $instructor->name_en = $request->fullName_en;
-            $instructor->name_bn = $request->fullName_bn;
-            $instructor->contact_en = $request->contactNumber_en;
-            $instructor->contact_bn = $request->contactNumber_bn;
-            $instructor->email = $request->emailAddress;
-            $instructor->role_id = $request->roleId;
-            $instructor->bio = $request->bio;
-            $instructor->designation = $request->designation;
-            $instructor->title = $request->title;
-            $instructor->status = $request->status;
-            $instructor->password = Hash::make($request->fullName_bn);
-            $instructor->language = 'en';
-            $instructor->access_block = $request->access_block;
-
-            if ($request->hasFile('image')) {
-                $imageName = rand(111, 999) . time() . '.' . $request->image->extension();
-                $request->image->move(public_path('uploads/instructors'), $imageName);
-                $instructor->image = $imageName;
-            }
-            if ($instructor->save())
+           $checkout = new Checkout;
+           $checkout->cart_data = $request->base64_encode(json_encode(session('cart')));
+           $checkout->payer_name = $request->payer_name;
+           $checkout->payment_option = $request->payment_option;
+           $checkout->status = $request->status;
+        
+            if ($checkout->save())
                 return redirect()->route('instructor.index')->with('success', 'Data Saved');
             else
                 return redirect()->back()->withInput()->with('error', 'Please try again');
@@ -48,5 +44,37 @@ class CheckoutController extends Controller
             // dd($e);
             return redirect()->back()->withInput()->with('error', 'Please try again');
         }
+    }
+
+    /**
+     * Display the specified resource.
+     */
+    public function show(Checkout $checkout)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     */
+    public function edit(Checkout $checkout)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(Request $request, Checkout $checkout)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy(Checkout $checkout)
+    {
+        //
     }
 }

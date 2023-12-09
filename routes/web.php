@@ -20,7 +20,7 @@ use App\Http\Controllers\Backend\Communication\DiscussionController as discussio
 use App\Http\Controllers\Backend\Communication\MessageController as message;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\CheckoutController as checkout;
 use App\Http\Controllers\CouponController as coupon;
 
 /* students */
@@ -120,8 +120,8 @@ Route::get('/about', function () {
 // })->name('instructorProfile');
 
 Route::get('instructorProfile/{id}', [instructor::class, 'frontShow'])->name('instructorProfile');
-Route::get('checkout', [CheckoutController::class, 'index'])->name('checkout');
-Route::post('checkout', [CheckoutController::class, 'store'])->name('checkout.store');
+Route::get('checkout', [checkout::class, 'index'])->name('checkout');
+Route::post('checkout', [checkout::class, 'store'])->name('checkout.store');
 
 
 
