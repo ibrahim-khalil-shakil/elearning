@@ -35,13 +35,26 @@ class ProfileController extends Controller
                 $request->image->move(public_path('uploads/students'), $imageName);
                 $data->image = $imageName;
             }
-            if ($data->save())
+            if ($data->save()){
+                $this->setSession($data);
                 return redirect()->back()->with('success', 'Data Saved');
-            else
-                return redirect()->back()->withInput()->with('error', 'Please try again');
+            }
         } catch (Exception $e) {
             // dd($e);
             return redirect()->back()->withInput()->with('error', 'Please try again');
         }
+    }
+
+    public function setSession($student)
+    {
+        return request()->session()->put(
+            [
+                'userId' => encryptor('encrypt', $student->id),
+                'userName' => encryptor('encrypt', $student->name_en),
+                'emailAddress' => encryptor('encrypt', $student->email),
+                'studentLogin' => 1,
+                'image' => $student->image ?? 'No Image Found' 
+            ]
+        );
     }
 }
