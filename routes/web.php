@@ -42,7 +42,7 @@ Route::post('/register', [auth::class, 'signUpStore'])->name('register.store');
 Route::get('/login', [auth::class, 'signInForm'])->name('login');
 Route::post('/login', [auth::class, 'signInCheck'])->name('login.check');
 Route::get('/logout', [auth::class, 'signOut'])->name('logOut');
- 
+
 
 Route::middleware(['checkauth'])->prefix('admin')->group(function () {
     Route::get('/dashboard', [dashboard::class, 'index'])->name('dashboard');
@@ -80,6 +80,8 @@ Route::middleware(['checkstudent'])->prefix('students')->group(function () {
     Route::get('/dashboard', [studashboard::class, 'index'])->name('studentdashboard');
     Route::get('/profile', [stu_profile::class, 'index'])->name('student_profile');
     Route::post('/profile/save', [stu_profile::class, 'save_profile'])->name('student_save_profile');
+    Route::post('/change-image', [stu_profile::class, 'changeImage'])->name('change_image');
+
 
     Route::get('/watchCourse', function () {
         return view('frontend.watchCourse');
@@ -137,4 +139,3 @@ Route::get('cart', [CartController::class, 'cart'])->name('cart');
 Route::get('add-to-cart/{id}', [CartController::class, 'addToCart'])->name('add.to.cart');
 Route::patch('update-cart', [CartController::class, 'update'])->name('update.cart');
 Route::delete('remove-from-cart', [CartController::class, 'remove'])->name('remove.from.cart');
-

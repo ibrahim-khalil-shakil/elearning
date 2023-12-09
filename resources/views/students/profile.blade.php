@@ -926,13 +926,15 @@
                             <div class="white-bg">
                                 <div class="change-image-wizard">
                                     <div class="image mx-auto">
-                                        <img src="{{asset('public/frontend/dist/images/user/user-img-01.jpg')}}"
-                                            alt="User" />
+                                        <img src="{{ asset('public/uploads/students/' . $student_info->image) }}" alt="User" height="200" width="200">
                                     </div>
-                                    <form action="#">
+                                    <form id="changeImageForm" action="{{ route('change_image') }}" method="post"
+                                        enctype="multipart/form-data">
+                                        @csrf
                                         <div class="d-flex justify-content-center">
-                                            <button type="submit" class="button button--primary-outline">CHANGE
-                                                iMAGE</button>
+                                            <input type="file" name="image"  id="newImageInput">
+                                            <button type="button" id="changeImageButton"
+                                                class="button button--primary-outline">CHANGE IMAGE</button>
                                         </div>
                                     </form>
                                     <p>Image size should be under 1MB image ratio 200px.</p>
@@ -949,3 +951,23 @@
 </section>
 
 @endsection
+
+@push('scripts')
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+    $(document).ready(function() {
+            // Hide the file input initially
+            $('#newImageInput').hide();
+    
+            // Trigger the file input when the button is clicked
+            $('#changeImageButton').click(function() {
+                $('#newImageInput').click();
+            });
+    
+            // Automatically submit the form when a file is selected
+            $('#newImageInput').change(function() {
+                $('#changeImageForm').submit();
+            });
+        });
+</script>
+@endpush

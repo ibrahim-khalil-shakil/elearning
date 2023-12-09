@@ -57,4 +57,27 @@ class ProfileController extends Controller
             ]
         );
     }
+
+    // ProfileController.php
+    public function changeImage(Request $request)
+    {
+        try {
+            $user = Student::find(currentUserId());
+
+            if ($request->hasFile('image')) {
+                $imageName = rand(111, 999) . time() . '.' . $request->image->extension();
+                $request->image->move(public_path('uploads/students'), $imageName);
+                $user->image = $imageName;
+                $user->save();
+
+                return redirect()->back()->with('success', 'Image changed successfully.');
+            } else {
+                return redirect()->back()->with('error', 'Please select a valid image file.');
+            }
+        } catch (\Exception $e) {
+            // dd($e);
+            return redirect()->back()->with('error', 'An error occurred. Please try again.');
+        }
+    }
+
 }
