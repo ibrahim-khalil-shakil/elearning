@@ -201,14 +201,16 @@
                         </a>
                     </li>
                     <li class="nav-label">Main Menu</li>
+                    <li><a class="" href="{{route('role.index')}}" aria-expanded="false">
+                            <i class="las la-cog"></i>
+                            <span class="nav-text">Permissions</span>
+                        </a>
+                    </li>
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="la la-cog"></i>
-                            <span class="nav-text">Setting</span>
+                            <i class="la la-universal-access"></i>
+                            <span class="nav-text">Roles</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="{{route('role.index')}}"><i class="las la-universal-access"></i>Roles
-                                    & Permissions</a>
-                            </li>
                             <li><a href="{{route('user.index')}}"><i class="la la-users"></i>Users</a></li>
                             <li><a href="{{route('instructor.index')}}"><i
                                         class="las la-chalkboard-teacher"></i>Instructors</a>
@@ -238,8 +240,8 @@
                             <li><a href="{{route('quiz.index')}}"><i class="las la-icons"></i>All Quizzes</a></li>
                             <li><a href="{{route('question.index')}}"><i
                                         class="las la-question-circle"></i>Questions</a></li>
-                            <li><a href="{{route('option.index')}}"><i class="las la-stream"></i>Options</a></li>
-                            <li><a href="{{route('answer.index')}}"><i class="las la-font"></i>Answers</a></li>
+                            {{-- <li><a href="{{route('option.index')}}"><i class="las la-stream"></i>Options</a></li>
+                            <li><a href="{{route('answer.index')}}"><i class="las la-font"></i>Answers</a></li> --}}
                         </ul>
                     </li>
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">
@@ -269,6 +271,7 @@
                         <ul aria-expanded="false">
                             <li><a href="javascript:void()"><i class="las la-money-bill"></i>Course Fees</a></li>
                             <li><a href="javascript:void()"><i class="lab la-gg-circle"></i>Subscription Fees</a></li>
+                            <li><a href="{{route('coupon.index')}}"><i class="las la-tags"></i>Coupons</a></li>
                         </ul>
                     </li>
                 </ul>

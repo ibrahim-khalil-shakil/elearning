@@ -21,6 +21,7 @@ use App\Http\Controllers\Backend\Communication\MessageController as message;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\CouponController as coupon;
 
 /* students */
 use App\Http\Controllers\Students\AuthController as sauth;
@@ -64,6 +65,7 @@ Route::middleware(['checkrole'])->prefix('admin')->group(function () {
     Route::resource('review', review::class);
     Route::resource('discussion', discussion::class);
     Route::resource('message', message::class);
+    Route::resource('coupon', coupon::class);
     Route::get('permission/{role}', [permission::class, 'index'])->name('permission.list');
     Route::post('permission/{role}', [permission::class, 'save'])->name('permission.save');
 });

@@ -144,7 +144,8 @@
                         @endif
                     </div>
                 </div>
-
+                
+                {{-- Mobile Navbar --}}
                 <div class="navbar-mobile">
                     <div>
                         <div class="navbar-mobile__top">
@@ -591,7 +592,7 @@
         		@endif  
     </script>
 
-    @stack('scripts') 
+    @stack('scripts')
 
 
 </body>
