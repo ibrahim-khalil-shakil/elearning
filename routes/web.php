@@ -25,6 +25,7 @@ use App\Http\Controllers\CheckoutController;
 /* students */
 use App\Http\Controllers\Students\AuthController as sauth;
 use App\Http\Controllers\Students\DashboardController as studashboard;
+use App\Http\Controllers\Students\ProfileController as stu_profile;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -77,6 +78,8 @@ Route::get('/student/logout', [sauth::class, 'signOut'])->name('studentlogOut');
 
 Route::middleware(['checkstudent'])->prefix('students')->group(function () {
     Route::get('/dashboard', [studashboard::class, 'index'])->name('studentdashboard');
+    Route::get('/profile', [stu_profile::class, 'index'])->name('student_profile');
+    Route::post('/profile/save', [stu_profile::class, 'save_profile'])->name('student_save_profile');
 
     Route::get('/watchCourse', function () {
         return view('frontend.watchCourse');
