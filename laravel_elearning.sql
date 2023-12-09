@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 09, 2023 at 07:58 AM
--- Server version: 10.4.27-MariaDB
--- PHP Version: 8.2.0
+-- Generation Time: Dec 09, 2023 at 07:43 PM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -36,6 +36,48 @@ CREATE TABLE `answers` (
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `checkouts`
+--
+
+CREATE TABLE `checkouts` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `cart_data` varchar(255) NOT NULL,
+  `payer_name` varchar(255) NOT NULL,
+  `payment_option` enum('one_time','subscription') NOT NULL DEFAULT 'one_time',
+  `status` tinyint(1) NOT NULL DEFAULT 1 COMMENT '1 active, 0 inactive',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `coupons`
+--
+
+CREATE TABLE `coupons` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `code` varchar(255) NOT NULL,
+  `discount` decimal(8,2) NOT NULL,
+  `valid_from` timestamp NULL DEFAULT NULL,
+  `valid_until` timestamp NULL DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `coupons`
+--
+
+INSERT INTO `coupons` (`id`, `code`, `discount`, `valid_from`, `valid_until`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 'offer20', 20.00, '2023-12-08 18:00:00', '2024-03-25 18:00:00', '2023-12-09 09:30:32', '2023-12-09 09:30:32', NULL),
+(2, 'el50', 50.00, '2023-12-08 18:00:00', '2024-12-15 18:00:00', '2023-12-09 09:34:18', '2023-12-09 09:34:18', NULL);
 
 -- --------------------------------------------------------
 
@@ -77,9 +119,9 @@ CREATE TABLE `courses` (
 --
 
 INSERT INTO `courses` (`id`, `title_en`, `title_bn`, `description_en`, `description_bn`, `category_id`, `instructor_id`, `type`, `price`, `old_price`, `subscription_price`, `start_from`, `duration`, `lesson`, `prerequisites_en`, `prerequisites_bn`, `difficulty`, `course_code`, `image`, `thumbnail_image`, `thumbnail_video`, `status`, `language`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(6, 'Full-Stack Web Development Bootcamp: From Basics to Advanced', 'ফুল-স্ট্যাক ওয়েব ডেভেলপমেন্ট বুটক্যাম্প: বেসিক থেকে অ্যাডভান্সড পর্যন্ত', 'Dive into the world of web development with a comprehensive bootcamp covering both front-end and back-end technologies. From HTML and CSS to server-side scripting, this course will equip you with the skills to build dynamic and interactive web applications.', 'ফ্রন্ট-এন্ড এবং ব্যাক-এন্ড উভয় প্রযুক্তিকে কভার করে একটি ব্যাপক বুটক্যাম্প সহ ওয়েব ডেভেলপমেন্টের জগতে ডুব দিন। HTML এবং CSS থেকে সার্ভার-সাইড স্ক্রিপ্টিং পর্যন্ত, এই কোর্সটি আপনাকে গতিশীল এবং ইন্টারেক্টিভ ওয়েব অ্যাপ্লিকেশন তৈরি করার দক্ষতা দিয়ে সজ্জিত করবে।', 4, 1, 'free', '99.00', '100.00', NULL, NULL, 3, 35, 'Basic understanding of HTML and CSS; familiarity with programming concepts is beneficial but not required.', 'HTML এবং CSS এর প্রাথমিক ধারণা; প্রোগ্রামিং ধারণার সাথে পরিচিতি উপকারী কিন্তু প্রয়োজনীয় নয়।', 'beginner', NULL, '3741701660977.jpg', '8521701660977.jpg', 'https://www.youtube.com/watch?v=lw6IVgb-omg', 1, 'en', '2023-11-26 03:30:17', '2023-12-03 21:36:17', NULL),
-(7, 'Adobe Creative Suite Mastery: Photoshop, Illustrator, InDesign', 'অ্যাডোব ক্রিয়েটিভ স্যুট মাস্টারি: ফটোশপ, ইলাস্ট্রেটর, ইনডিজাইন', 'Gain proficiency in Adobe Creative Suite\'s powerhouse tools—Photoshop for image editing, Illustrator for vector graphics, and InDesign for layout design. Learn to seamlessly integrate these applications to bring your creative visions to life.', 'Adobe Creative Suite-এর পাওয়ার হাউস টুলস-এ দক্ষতা অর্জন করুন- ছবি সম্পাদনার জন্য ফটোশপ, ভেক্টর গ্রাফিক্সের জন্য ইলাস্ট্রেটর এবং লেআউট ডিজাইনের জন্য InDesign। আপনার সৃজনশীল দৃষ্টিভঙ্গিগুলিকে জীবনে আনতে এই অ্যাপ্লিকেশনগুলিকে নির্বিঘ্নে সংহত করতে শিখুন৷', 2, 3, 'paid', '99.00', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'intermediate', NULL, '3751701660886.png', '5151701660887.png', 'https://www.youtube.com/watch?v=lw6IVgb-omg', 0, 'en', '2023-11-26 03:32:44', '2023-12-05 10:25:33', NULL),
-(8, 'Search Engine Optimization (SEO): Boosting Website Visibility', 'সার্চ ইঞ্জিন অপ্টিমাইজেশান (SEO): ওয়েবসাইট ভিজিবিলিটি বাড়ানো', 'Demystify the world of SEO and discover techniques to improve website visibility in search engine results. Learn keyword research, on-page optimization, and off-page strategies to drive organic traffic and enhance online presence.', 'এসইও-এর জগতকে ডিমিস্টিফাই করুন এবং সার্চ ইঞ্জিন ফলাফলে ওয়েবসাইটের দৃশ্যমানতা উন্নত করার কৌশল আবিষ্কার করুন। জৈব ট্র্যাফিক চালনা করতে এবং অনলাইন উপস্থিতি বাড়াতে কীওয়ার্ড গবেষণা, অন-পৃষ্ঠা অপ্টিমাইজেশান এবং অফ-পৃষ্ঠা কৌশলগুলি শিখুন।', 6, 4, 'subscription', '59.00', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'advanced', NULL, '4711701660905.png', '6821701660905.png', 'https://www.youtube.com/watch?v=lw6IVgb-omg', 1, 'en', '2023-11-26 03:34:25', '2023-12-05 10:25:57', NULL),
+(6, 'Full-Stack Web Development Bootcamp: From Basics to Advanced', 'ফুল-স্ট্যাক ওয়েব ডেভেলপমেন্ট বুটক্যাম্প: বেসিক থেকে অ্যাডভান্সড পর্যন্ত', 'Dive into the world of web development with a comprehensive bootcamp covering both front-end and back-end technologies. From HTML and CSS to server-side scripting, this course will equip you with the skills to build dynamic and interactive web applications.', 'ফ্রন্ট-এন্ড এবং ব্যাক-এন্ড উভয় প্রযুক্তিকে কভার করে একটি ব্যাপক বুটক্যাম্প সহ ওয়েব ডেভেলপমেন্টের জগতে ডুব দিন। HTML এবং CSS থেকে সার্ভার-সাইড স্ক্রিপ্টিং পর্যন্ত, এই কোর্সটি আপনাকে গতিশীল এবং ইন্টারেক্টিভ ওয়েব অ্যাপ্লিকেশন তৈরি করার দক্ষতা দিয়ে সজ্জিত করবে।', 4, 1, 'free', 99.00, 100.00, NULL, NULL, 3, 35, 'Basic understanding of HTML and CSS; familiarity with programming concepts is beneficial but not required.', 'HTML এবং CSS এর প্রাথমিক ধারণা; প্রোগ্রামিং ধারণার সাথে পরিচিতি উপকারী কিন্তু প্রয়োজনীয় নয়।', 'beginner', NULL, '3741701660977.jpg', '8521701660977.jpg', 'https://www.youtube.com/watch?v=lw6IVgb-omg', 1, 'en', '2023-11-26 03:30:17', '2023-12-03 21:36:17', NULL),
+(7, 'Adobe Creative Suite Mastery: Photoshop, Illustrator, InDesign', 'অ্যাডোব ক্রিয়েটিভ স্যুট মাস্টারি: ফটোশপ, ইলাস্ট্রেটর, ইনডিজাইন', 'Gain proficiency in Adobe Creative Suite\'s powerhouse tools—Photoshop for image editing, Illustrator for vector graphics, and InDesign for layout design. Learn to seamlessly integrate these applications to bring your creative visions to life.', 'Adobe Creative Suite-এর পাওয়ার হাউস টুলস-এ দক্ষতা অর্জন করুন- ছবি সম্পাদনার জন্য ফটোশপ, ভেক্টর গ্রাফিক্সের জন্য ইলাস্ট্রেটর এবং লেআউট ডিজাইনের জন্য InDesign। আপনার সৃজনশীল দৃষ্টিভঙ্গিগুলিকে জীবনে আনতে এই অ্যাপ্লিকেশনগুলিকে নির্বিঘ্নে সংহত করতে শিখুন৷', 2, 3, 'paid', 99.00, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'intermediate', NULL, '3751701660886.png', '5151701660887.png', 'https://www.youtube.com/watch?v=lw6IVgb-omg', 0, 'en', '2023-11-26 03:32:44', '2023-12-05 10:25:33', NULL),
+(8, 'Search Engine Optimization (SEO): Boosting Website Visibility', 'সার্চ ইঞ্জিন অপ্টিমাইজেশান (SEO): ওয়েবসাইট ভিজিবিলিটি বাড়ানো', 'Demystify the world of SEO and discover techniques to improve website visibility in search engine results. Learn keyword research, on-page optimization, and off-page strategies to drive organic traffic and enhance online presence.', 'এসইও-এর জগতকে ডিমিস্টিফাই করুন এবং সার্চ ইঞ্জিন ফলাফলে ওয়েবসাইটের দৃশ্যমানতা উন্নত করার কৌশল আবিষ্কার করুন। জৈব ট্র্যাফিক চালনা করতে এবং অনলাইন উপস্থিতি বাড়াতে কীওয়ার্ড গবেষণা, অন-পৃষ্ঠা অপ্টিমাইজেশান এবং অফ-পৃষ্ঠা কৌশলগুলি শিখুন।', 6, 4, 'subscription', 59.00, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'advanced', NULL, '4711701660905.png', '6821701660905.png', 'https://www.youtube.com/watch?v=lw6IVgb-omg', 1, 'en', '2023-11-26 03:34:25', '2023-12-05 10:25:57', NULL),
 (9, '3D Animation Basics: Getting Started with Blender', '3D অ্যানিমেশন বেসিকস: ব্লেন্ডার দিয়ে শুরু করা', 'Delve into the basics of 3D animation using Blender. Learn the fundamentals of modeling, rigging, and animation to bring characters and scenes to life in a three-dimensional space.', 'ব্লেন্ডার ব্যবহার করে 3D অ্যানিমেশনের বুনিয়াদিতে প্রবেশ করুন। একটি ত্রিমাত্রিক স্থানে চরিত্র এবং দৃশ্যগুলিকে প্রাণবন্ত করতে মডেলিং, কারচুপি এবং অ্যানিমেশনের মৌলিক বিষয়গুলি শিখুন৷', 37, 2, 'free', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'beginner', NULL, '1141701660945.png', '3001701660945.png', 'https://www.youtube.com/watch?v=lw6IVgb-omg', 1, 'en', '2023-11-26 03:37:43', '2023-12-05 10:25:13', NULL),
 (10, 'React.js Fundamentals: Building Modern User Interfaces', 'React.js ফান্ডামেন্টালস: আধুনিক ইউজার ইন্টারফেস তৈরি করা', 'Delve into the fundamentals of React.js and discover how to build modern, component-based user interfaces. From state management to routing, this course guides you through React\'s core concepts, enabling you to create powerful and maintainable front-end applications.', 'React.js-এর মৌলিক বিষয়গুলিকে অধ্যয়ন করুন এবং কীভাবে আধুনিক, উপাদান-ভিত্তিক ব্যবহারকারী ইন্টারফেস তৈরি করতে হয় তা আবিষ্কার করুন। স্টেট ম্যানেজমেন্ট থেকে রাউটিং পর্যন্ত, এই কোর্সটি আপনাকে রিঅ্যাক্টের মূল ধারণার মাধ্যমে গাইড করে, আপনাকে শক্তিশালী এবং রক্ষণাবেক্ষণযোগ্য ফ্রন্ট-এন্ড অ্যাপ্লিকেশন তৈরি করতে সক্ষম করে।', 5, 5, 'free', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'beginner', NULL, '2401701660963.png', '9801701660963.png', 'https://www.youtube.com/watch?v=lw6IVgb-omg', 0, 'en', '2023-11-26 03:39:29', '2023-12-05 10:26:13', NULL);
 
@@ -259,7 +301,9 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (26, '2023_11_26_153844_create_progress_table', 6),
 (27, '2023_11_26_153902_create_discussions_table', 6),
 (28, '2023_11_26_153916_create_messages_table', 6),
-(29, '2023_11_26_153660_create_options_table', 7);
+(29, '2023_11_26_153660_create_options_table', 7),
+(30, '2023_12_09_135359_create_coupons_table', 8),
+(32, '2023_12_09_170943_create_checkouts_table', 9);
 
 -- --------------------------------------------------------
 
@@ -623,8 +667,8 @@ CREATE TABLE `students` (
 --
 
 INSERT INTO `students` (`id`, `name_en`, `name_bn`, `contact_en`, `contact_bn`, `email`, `date_of_birth`, `gender`, `image`, `bio`, `profession`, `nationality`, `status`, `password`, `language`, `remember_token`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(10, 'Safayet Ullah Azad', NULL, '+88013005229', NULL, 'student@gmail.com', NULL, NULL, NULL, 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias non sit, eligendi facere ducimus dolorum itaque, doloribus deserunt esse, nostrum odio. Asperiores facilis esse consequuntur incidunt temporibus facere aut. Dolor.', 'Developer', 'Bangladeshi', 1, '$2y$12$ban4H0WFobNWv3zCAXy3HesQin0jI191dmVbtmRDPbcFQRQcGAa9i', 'en', NULL, '2023-12-01 23:59:13', '2023-12-09 00:32:48', NULL),
-(14, 'Nakib Uddin', NULL, NULL, NULL, 'student@yahoo.com', NULL, NULL, NULL, NULL, NULL, 'Bangladeshi', 1, '$2y$12$ifBXreN1UhSc4pMlaZ.UNeNWKJcl8lEMuzO67d78bvx0s3JPcAelu', 'en', NULL, '2023-12-06 00:09:53', '2023-12-09 00:44:34', NULL),
+(10, 'Safayet Ullah Azad', NULL, NULL, NULL, 'student@gmail.com', NULL, NULL, NULL, NULL, NULL, 'Bangladeshi', 1, '$2y$12$ban4H0WFobNWv3zCAXy3HesQin0jI191dmVbtmRDPbcFQRQcGAa9i', 'en', NULL, '2023-12-01 23:59:13', '2023-12-09 07:49:38', NULL),
+(14, 'Nakib Fahad', NULL, NULL, NULL, 'student@yahoo.com', NULL, NULL, NULL, NULL, NULL, 'Bangladeshi', 1, '$2y$12$ifBXreN1UhSc4pMlaZ.UNeNWKJcl8lEMuzO67d78bvx0s3JPcAelu', 'en', NULL, '2023-12-06 00:09:53', '2023-12-06 00:09:53', NULL),
 (15, 'Rabiul Islam', NULL, NULL, NULL, 'student2@gmail.com', NULL, NULL, NULL, NULL, NULL, 'Bangladeshi', 1, '$2y$12$oQCRT7fJw.ze6/0d/MrFKenHXZ7KfdnAArrF75ww0.GVsjCcHxvyS', 'en', NULL, '2023-12-06 00:22:10', '2023-12-06 00:22:10', NULL),
 (16, 'Noman Hossain', NULL, NULL, NULL, 'student2@yahoo.com', NULL, NULL, NULL, NULL, NULL, 'Bangladeshi', 1, '$2y$12$SvgP6RCHTvXFy0/qh9ypL.QdpKgRpaKWe0fGrhWF3cq9wIbnsCzBa', 'en', NULL, '2023-12-06 00:25:03', '2023-12-06 00:25:03', NULL);
 
@@ -692,6 +736,19 @@ ALTER TABLE `answers`
   ADD PRIMARY KEY (`id`),
   ADD KEY `answers_student_id_index` (`student_id`),
   ADD KEY `answers_question_id_index` (`question_id`);
+
+--
+-- Indexes for table `checkouts`
+--
+ALTER TABLE `checkouts`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `coupons`
+--
+ALTER TABLE `coupons`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `coupons_code_unique` (`code`);
 
 --
 -- Indexes for table `courses`
@@ -859,6 +916,18 @@ ALTER TABLE `answers`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `checkouts`
+--
+ALTER TABLE `checkouts`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `coupons`
+--
+ALTER TABLE `coupons`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `courses`
 --
 ALTER TABLE `courses`
@@ -904,7 +973,7 @@ ALTER TABLE `messages`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `options`
