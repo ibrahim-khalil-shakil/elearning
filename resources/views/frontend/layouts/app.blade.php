@@ -132,7 +132,7 @@
                             <a href="{{route('studentdashboard')}}" onclick="toggleDropdown(event)">
                                 <img src="{{asset('public/frontend/dist/images/ellipse/user.jpg')}}"
                                     alt="Student Profile" />
-                            </a>
+                            </a> 
                             <div class="dropdown-content">
                                 <a href="{{route('student_profile')}}">Profile</a>
                                 <a href="{{route('studentlogOut')}}" class="text-danger">Logout</a>

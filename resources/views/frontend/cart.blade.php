@@ -17,8 +17,9 @@
 <!-- Breadcrumb Ends Here -->
 
 <!-- Cart Section Starts Here -->
-<section class="section cart-area">
+<section class="section cart-area pb-0">
     <div class="container">
+        @if (session('cart'))
         <div class="row">
             <div class="col-lg-8">
                 <h6 class="cart-area__label">{{count(session('cart', []))}} Courses in Cart</h6>
@@ -81,6 +82,14 @@
                 </div>
             </div>
         </div>
+        @else
+        <section class="section cart-area pb-0">
+            <div class="container text-center">
+                <h1>Your Cart is Empty</h1>
+                <h5>No Courses in Your Cart Yet</h5>
+            </div>
+        </section>
+        @endif
     </div>
 </section>
 <!-- Cart Section Ends Here -->

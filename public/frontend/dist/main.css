@@ -25664,6 +25664,7 @@ header #search-nav.appear {
 
 .cart-area {
   padding-top: 50px;
+  min-height: 100vh;
 }
 
 .cart-area__label {
