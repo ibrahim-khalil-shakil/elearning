@@ -1,4 +1,5 @@
 @extends('frontend.layouts.app')
+@section('title', 'Home')
 @section('footer-class') footer--two @endsection
 
 

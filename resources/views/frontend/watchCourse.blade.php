@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>{{ENV('APP_NAME')}} | @yield('title', 'Home')</title>
+    <title>{{ENV('APP_NAME')}} | @yield('title', 'Watch Course')</title>
     <link rel="stylesheet" href="{{asset('public/frontend/src/scss/vendors/plugin/css/video-js.css')}}" />
     <link rel="stylesheet" href="{{asset('public/frontend/src/scss/vendors/plugin/css/star-rating-svg.css')}}" />
     <link rel="stylesheet" href="{{asset('public/frontend/dist/main.css')}}" />

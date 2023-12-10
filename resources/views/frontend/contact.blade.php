@@ -1,4 +1,5 @@
 @extends('frontend.layouts.app')
+@section('title', 'Contact Us')
 @section('header-attr') class="nav-shadow" @endsection
 
 @section('content')

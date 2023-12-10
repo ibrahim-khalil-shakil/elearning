@@ -1,7 +1,6 @@
 @extends('frontend.layouts.app')
-@section('body-attr')
-style="background-color: #ebebf2;"
-@endsection
+@section('title', 'Cart')
+@section('body-attr')style="background-color: #ebebf2;"@endsection
 
 @section('content')
 <!-- Breadcrumb Starts Here -->
@@ -25,29 +24,30 @@ style="background-color: #ebebf2;"
                 <h6 class="cart-area__label">{{count(session('cart', []))}} Courses in Cart</h6>
                 @php $total = 0 @endphp
                 @if (session('cart'))
-                    @foreach (session('cart') as $id => $details)
-                        @php $total += $details['price'] * $details['quantity'] @endphp
-                        <div class="cart-wizard-area">
-                            <div class="image">
-                                <img src="{{asset('public/uploads/courses/' . $details['image'])}}" alt="course image" />
-                            </div>
-                            <div class="text">
-                                <h6><a href="{{route('courseDetails', encryptor('encrypt', $id))}}">{{$details['title_en']}}</a></h6>
-                                <p>By <a href="#">{{$details['instructor']}}</a></p>
-                                <div class="bottom-wizard d-flex justify-content-between align-items-center">
-                                    <p>
-                                        {{$details['price'] ? '$' . $details['price'] : 'Free'}}
-                                        <span><del>{{$details['old_price'] ? '$' . $details['old_price'] : ''}}</del></span>
-                                    </p>
-                                    <div class="trash-icon">
-                                        <a href="#" class="remove-from-cart" data-id="{{$id}}">
-                                            <i class="far fa-trash-alt remove-from-cart"></i>
-                                        </a>
-                                    </div>
-                                </div>
+                @foreach (session('cart') as $id => $details)
+                @php $total += $details['price'] * $details['quantity'] @endphp
+                <div class="cart-wizard-area">
+                    <div class="image">
+                        <img src="{{asset('public/uploads/courses/' . $details['image'])}}" alt="course image" />
+                    </div>
+                    <div class="text">
+                        <h6><a href="{{route('courseDetails', encryptor('encrypt', $id))}}">{{$details['title_en']}}</a>
+                        </h6>
+                        <p>By <a href="#">{{$details['instructor']}}</a></p>
+                        <div class="bottom-wizard d-flex justify-content-between align-items-center">
+                            <p>
+                                {{$details['price'] ? '$' . $details['price'] : 'Free'}}
+                                <span><del>{{$details['old_price'] ? '$' . $details['old_price'] : ''}}</del></span>
+                            </p>
+                            <div class="trash-icon">
+                                <a href="#" class="remove-from-cart" data-id="{{$id}}">
+                                    <i class="far fa-trash-alt remove-from-cart"></i>
+                                </a>
                             </div>
                         </div>
-                    @endforeach
+                    </div>
+                </div>
+                @endforeach
                 @endif
             </div>
             <div class="col-lg-4">

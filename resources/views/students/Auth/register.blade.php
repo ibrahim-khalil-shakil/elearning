@@ -1,4 +1,5 @@
 @extends('frontend.layouts.app')
+@section('title', 'Sign Up')
 
 @section('content')
 <!-- SignUp Area Starts Here -->

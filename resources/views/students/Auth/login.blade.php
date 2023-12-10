@@ -1,4 +1,5 @@
 @extends('frontend.layouts.app')
+@section('title', 'Sign In')
 
 @section('content')
 <!-- SignIn Area Starts Here -->

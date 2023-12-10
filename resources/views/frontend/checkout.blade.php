@@ -1,4 +1,5 @@
 @extends('frontend.layouts.app')
+@section('title', 'Checkout')
 @section('body-attr') style="background-color: #ebebf2;" @endsection
 
 @section('content')
@@ -52,8 +53,10 @@
                                         <div class="col-md-6">
                                             <label for="status">Status</label>
                                             <select class="form-control" name="status">
-                                                <option value="1" class="form-control" @if(old('status')==1) selected @endif>Active</option>
-                                                <option value="0" class="form-control" @if(old('status')==0) selected @endif>Inactive</option>
+                                                <option value="1" class="form-control" @if(old('status')==1) selected
+                                                    @endif>Active</option>
+                                                <option value="0" class="form-control" @if(old('status')==0) selected
+                                                    @endif>Inactive</option>
                                             </select>
                                         </div>
                                     </div>
@@ -80,28 +83,32 @@
                     <div class="cart">
                         <div class="cart__includes-info cart__includes-info--bordertop-0">
                             <div class="productContent__wrapper">
-                            @php $total = 0 @endphp
-                @if (session('cart'))
-                    @foreach (session('cart') as $id => $details)
-                        @php $total += $details['price'] * $details['quantity'] @endphp
-                        <div class="productContent">
-                            <div class="productContent-item__img productContent-item">
-                                <img src="{{asset('public/uploads/courses/' . $details['image'])}}" alt="checkout" />
-                            </div>
-                            <div class="productContent-item__info productContent-item">
-                                <h6 class="font-para--lg">
-                                    <a href="{{route('courseDetails', encryptor('encrypt', $id))}}">{{$details['title_en']}}</a>
-                                </h6>
-                                <p>by {{$details['instructor']}}</p>
-                                <div class="price">
-                                    <h6 class="font-para--md">{{$details['price'] ? '$' . $details['price'] : 'Free'}}</h6>
-                                    <p><del>{{$details['old_price'] ? '$' . $details['old_price'] : ''}}</del></p>
+                                @php $total = 0 @endphp
+                                @if (session('cart'))
+                                @foreach (session('cart') as $id => $details)
+                                @php $total += $details['price'] * $details['quantity'] @endphp
+                                <div class="productContent">
+                                    <div class="productContent-item__img productContent-item">
+                                        <img src="{{asset('public/uploads/courses/' . $details['image'])}}"
+                                            alt="checkout" />
+                                    </div>
+                                    <div class="productContent-item__info productContent-item">
+                                        <h6 class="font-para--lg">
+                                            <a
+                                                href="{{route('courseDetails', encryptor('encrypt', $id))}}">{{$details['title_en']}}</a>
+                                        </h6>
+                                        <p>by {{$details['instructor']}}</p>
+                                        <div class="price">
+                                            <h6 class="font-para--md">{{$details['price'] ? '$' . $details['price'] :
+                                                'Free'}}</h6>
+                                            <p><del>{{$details['old_price'] ? '$' . $details['old_price'] : ''}}</del>
+                                            </p>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                    @endforeach
-                @endif
-                                
+                                @endforeach
+                                @endif
+
                             </div>
                         </div>
                         <div class="cart__checkout-process">
@@ -120,7 +127,8 @@
                                 </li>
                                 <li>
                                     <p class="font-title--card">Total:</p>
-                                    <p class="total-price font-title--card">{{'$' . number_format((float) $total, 2)}}</p>
+                                    <p class="total-price font-title--card">{{'$' . number_format((float) $total, 2)}}
+                                    </p>
                                 </li>
                             </ul>
                         </div>
@@ -136,7 +144,7 @@
                     <div class="col-xl-6 offset-xl-3 order-2 order-xl-0">
                         <div class="signup-area-textwrapper">
                             <h2 class="font-title--md mb-0">Sign in Before Checkout</h2>
-                            <p class="mt-2 mb-lg-4 mb-3">Don't have account? 
+                            <p class="mt-2 mb-lg-4 mb-3">Don't have account?
                                 <a href="#" onclick="hide_signin()" class="text-black-50">Sign up</a>
                             </p>
                             <form action="{{route('studentLogin.check','checkout')}}" method="POST">
@@ -154,11 +162,13 @@
                                         <a href="forget-password.html" class="text-primary fs-6">Forget Password</a>
                                     </div>
                                     <div class="form-alert-input">
-                                        <input type="password" placeholder="Type here..." id="password" name="password" />
+                                        <input type="password" placeholder="Type here..." id="password"
+                                            name="password" />
                                         <div class="form-alert-icon" onclick="showPassword('password',this);">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round" class="feather feather-eye">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="feather feather-eye">
                                                 <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
                                                 <circle cx="12" cy="12" r="3"></circle>
                                             </svg>
@@ -169,7 +179,8 @@
                                     </div>
                                 </div>
                                 <div class="form-element">
-                                    <button type="submit" class="button button-lg button--primary w-100">Sign in</button>
+                                    <button type="submit" class="button button-lg button--primary w-100">Sign
+                                        in</button>
                                 </div>
                             </form>
                         </div>
@@ -186,37 +197,42 @@
                     <div class="col-lg-5 order-2 order-lg-0">
                         <div class="signup-area-textwrapper">
                             <h2 class="font-title--md mb-0">Sign Up Before Checkout</h2>
-                            <p class="mt-2 mb-lg-4 mb-3">Already have account? <a href="#" onclick="hide_signin()" class="text-black-50">Sign In</a></p>
+                            <p class="mt-2 mb-lg-4 mb-3">Already have account? <a href="#" onclick="hide_signin()"
+                                    class="text-black-50">Sign In</a></p>
                             <form action="{{route('studentRegister.store','checkout')}}" method="POST">
                                 @csrf
                                 <div class="form-element">
-                                        <label for="name">Full Name</label>
-                                        <input type="text" placeholder="Enter Your Name" id="name" value="{{old('name')}}" name="name" />
-                                        @if($errors->has('name'))
-                                            <small class="d-block text-danger">{{$errors->first('name')}}</small>
-                                        @endif
+                                    <label for="name">Full Name</label>
+                                    <input type="text" placeholder="Enter Your Name" id="name" value="{{old('name')}}"
+                                        name="name" />
+                                    @if($errors->has('name'))
+                                    <small class="d-block text-danger">{{$errors->first('name')}}</small>
+                                    @endif
                                 </div>
                                 <div class="form-element">
-                                        <label for="email">Email</label>
-                                        <input type="email" placeholder="example@email.com" id="email" value="{{old('email')}}" name="email" />
-                                        @if($errors->has('email'))
-                                            <small class="d-block text-danger">{{$errors->first('email')}}</small>
-                                        @endif
+                                    <label for="email">Email</label>
+                                    <input type="email" placeholder="example@email.com" id="email"
+                                        value="{{old('email')}}" name="email" />
+                                    @if($errors->has('email'))
+                                    <small class="d-block text-danger">{{$errors->first('email')}}</small>
+                                    @endif
                                 </div>
                                 <div class="form-element">
                                     <label for="password" class="w-100" style="text-align: left;">password</label>
                                     <div class="form-alert-input">
-                                        <input type="password" placeholder="Type here..." id="password"  name="password"/>
+                                        <input type="password" placeholder="Type here..." id="password"
+                                            name="password" />
                                         <div class="form-alert-icon" onclick="showPassword('password',this)">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round" class="feather feather-eye">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="feather feather-eye">
                                                 <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
                                                 <circle cx="12" cy="12" r="3"></circle>
                                             </svg>
                                         </div>
                                         @if($errors->has('password'))
-                                            <small class="d-block text-danger">{{$errors->first('password')}}</small>
+                                        <small class="d-block text-danger">{{$errors->first('password')}}</small>
                                         @endif
                                     </div>
                                 </div>
@@ -224,11 +240,14 @@
                                     <label for="password_confirmation" class="w-100" style="text-align: left;">Confirm
                                         password</label>
                                     <div class="form-alert-input">
-                                        <input type="password" placeholder="Type here..." name="password_confirmation" id="password_confirmation" />
-                                        <div class="form-alert-icon" onclick="showPassword('password_confirmation',this)">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round" class="feather feather-eye">
+                                        <input type="password" placeholder="Type here..." name="password_confirmation"
+                                            id="password_confirmation" />
+                                        <div class="form-alert-icon"
+                                            onclick="showPassword('password_confirmation',this)">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="feather feather-eye">
                                                 <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
                                                 <circle cx="12" cy="12" r="3"></circle>
                                             </svg>
@@ -242,15 +261,16 @@
                                             style="text-decoration: underline;">Privacy Policy</a></label>
                                 </div>
                                 <div class="form-element">
-                                    <button type="submit" class="button button-lg button--primary w-100">Sign UP</button>
+                                    <button type="submit" class="button button-lg button--primary w-100">Sign
+                                        UP</button>
                                 </div>
                             </form>
                         </div>
                     </div>
                     <div class="col-lg-7 order-1 order-lg-0">
                         <div class="signup-area-image">
-                            <img src="{{asset('public/frontend/dist/images/signup/Illustration.png')}}" alt="Illustration Image"
-                                class="img-fluid" />
+                            <img src="{{asset('public/frontend/dist/images/signup/Illustration.png')}}"
+                                alt="Illustration Image" class="img-fluid" />
                         </div>
                     </div>
                 </div>
