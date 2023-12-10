@@ -1,9 +1,10 @@
 @extends('frontend.layouts.app')
 @section('title', 'Sign Up')
+@section('header-attr') class="nav-shadow" @endsection
 
 @section('content')
 <!-- SignUp Area Starts Here -->
-<section class="signup-area">
+<section class="section signup-area signin-area p-3">
     <div class="container">
         <div class="row align-items-center justify-content-md-center">
             <div class="col-lg-5 order-2 order-lg-0">
