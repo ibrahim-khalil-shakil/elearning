@@ -17,7 +17,7 @@ class CartController extends Controller
 
     public function cart()
     {
-        return view('frontend.cart');
+        return view('frontend.cart'); 
     }
 
     public function addToCart($id)

@@ -361,7 +361,7 @@
 
                 {{-- Courses --}}
                 <div class="row event-search-content">
-                    @forelse ($course as $c)
+                    @forelse ($course as $c) 
                     <div class="col-md-6 mb-4">
                         <div class="contentCard contentCard--course">
                             <div class="contentCard-top">

@@ -111,7 +111,7 @@ Route::get('courseDetails/{id}', [course::class, 'frontShow'])->name('courseDeta
 
 
 Route::get('/about', function () {
-    return view('frontend.about');
+    return view('frontend.about'); 
 })->name('about');
 
 
