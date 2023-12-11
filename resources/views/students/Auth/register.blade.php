@@ -4,7 +4,7 @@
 
 @section('content')
 <!-- SignUp Area Starts Here -->
-<section class="section signup-area signin-area p-3">
+<section class="signup-area signin-area p-3">
     <div class="container">
         <div class="row align-items-center justify-content-md-center">
             <div class="col-lg-5 order-2 order-lg-0">

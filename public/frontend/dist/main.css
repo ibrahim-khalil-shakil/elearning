@@ -32287,7 +32287,7 @@ body {
 }
 
 .signup-area {
-  position: relative;
+  /* position: relative; */
   background: -webkit-gradient(linear, left top, right top, color-stop(55%, #fff), color-stop(45%, rgba(236, 236, 243, 0.6)));
   background: linear-gradient(90deg, #fff 55%, rgba(236, 236, 243, 0.6) 45%);
     /* background: linear-gradient(to right, #fff, #F9F9F9); */
@@ -32306,7 +32306,7 @@ body {
 
 .signup-area-image {
   margin-right: -50px;
-  margin-left: 60px;
+  margin-left: 55px;
   width: 100%;
 }
 
