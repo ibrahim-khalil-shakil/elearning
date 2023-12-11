@@ -132,7 +132,7 @@
                             <a href="{{route('studentdashboard')}}" onclick="toggleDropdown(event)">
                                 <img src="{{asset('public/frontend/dist/images/ellipse/user.jpg')}}"
                                     alt="Student Profile" />
-                            </a> 
+                            </a>
                             <div class="dropdown-content">
                                 <a href="{{route('student_profile')}}">Profile</a>
                                 <a href="{{route('studentlogOut')}}" class="text-danger">Logout</a>
@@ -144,7 +144,7 @@
                         @endif
                     </div>
                 </div>
-                
+
                 {{-- Mobile Navbar --}}
                 <div class="navbar-mobile">
                     <div>
@@ -179,61 +179,19 @@
                         <div class="navbar-mobile__menu">
                             <ul class="navbar-mobile__menu-list">
                                 <li class="active navbar-mobile__menu-item">
-                                    <a href="#">
+                                    <a href="{{route('home')}}">
                                         <span class="navbar-mobile__menu-link"> Home</span>
-                                        <span class="navbar-mobile__menu-dropicon">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                                stroke-linecap="round" stroke-linejoin="round"
-                                                class="feather feather-chevron-right">
-                                                <polyline points="9 18 15 12 9 6"></polyline>
-                                            </svg>
-                                        </span>
                                     </a>
-                                    <ul class="navbar-mobile__menu-dropmenu">
-                                        <li><a href="index.html" class="active">Homepage 01</a></li>
-                                        <li><a href="home-02.html">Homepage 02</a></li>
-                                        <li><a href="home-03.html">Homepage 03</a></li>
-                                    </ul>
                                 </li>
                                 <li class="navbar-mobile__menu-item">
-                                    <a href="#">
+                                    <a href="{{route('searchCourse')}}">
                                         <span class="navbar-mobile__menu-link"> Courses </span>
-                                        <span class="navbar-mobile__menu-dropicon">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                                stroke-linecap="round" stroke-linejoin="round"
-                                                class="feather feather-chevron-right">
-                                                <polyline points="9 18 15 12 9 6"></polyline>
-                                            </svg>
-                                        </span>
                                     </a>
-                                    <ul class="navbar-mobile__menu-dropmenu">
-                                        <li><a href="course-search.html">search course list</a></li>
-                                        <li><a href="watch.html">Watch Course</a></li>
-                                    </ul>
                                 </li>
                                 <li class="navbar-mobile__menu-item">
-                                    <a href="about.html">
+                                    <a href="{{route('about')}}">
                                         <span class="navbar-mobile__menu-link"> About </span>
                                     </a>
-                                </li>
-                                <li class="navbar-mobile__menu-item">
-                                    <a href="#">
-                                        <span class="navbar-mobile__menu-link"> Events </span>
-                                        <span class="navbar-mobile__menu-dropicon">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                                stroke-linecap="round" stroke-linejoin="round"
-                                                class="feather feather-chevron-right">
-                                                <polyline points="9 18 15 12 9 6"></polyline>
-                                            </svg>
-                                        </span>
-                                    </a>
-                                    <ul class="navbar-mobile__menu-dropmenu">
-                                        <li><a href="event-search.html">Events Search list</a></li>
-                                        <li><a href="event.html">Event Details</a></li>
-                                    </ul>
                                 </li>
                                 <li class="navbar-mobile__menu-item">
                                     <a href="#">
@@ -248,23 +206,12 @@
                                         </span>
                                     </a>
                                     <ul class="navbar-mobile__menu-dropmenu">
-                                        <li><a href="students-profile.html">Students Profile</a></li>
-                                        <li><a href="instructor-profile.html">Instructor Profile</a></li>
-                                        <li><a href="become-instructor.html">become Instructor</a></li>
-                                        <li><a href="cart.html">Cart</a></li>
-                                        <li><a href="checkout.html">Check out</a></li>
-                                        <li><a href="faq.html">Faq</a></li>
-                                        <li><a href="signin.html">Sign in</a></li>
-                                        <li><a href="signup.html">Sign up</a></li>
-                                        <li><a href="verify.html">Verify Email</a></li>
-                                        <li><a href="forget-password.html">Forget Password</a></li>
-                                        <li><a href="reset-password.html">Reset Password</a></li>
-                                        <li><a href="404.html">404</a></li>
-                                        <li><a href="comingsoon.html">coming soon</a></li>
+                                        <li><a href="{{route('studentProfile')}}">Student Profile</a></li>
+                                        <li><a href="{{route('checkout')}}">Check out</a></li>
                                     </ul>
                                 </li>
                                 <li class="navbar-mobile__menu-item">
-                                    <a href="contact.html">
+                                    <a href="{{route('contact')}}">
                                         <span class="navbar-mobile__menu-link"> Contact </span>
                                     </a>
                                 </li>
