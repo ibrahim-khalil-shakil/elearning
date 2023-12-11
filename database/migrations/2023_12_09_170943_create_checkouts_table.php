@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('checkouts', function (Blueprint $table) {
             $table->id();
-            $table->string('cart_data');
-            $table->string('payer_name');
-            $table->enum('payment_option', ['one_time', 'subscription'])->default('one_time');
+            $table->longText('cart_data');
+            $table->bigInteger('student_id');
+            $table->string('txnid')->nullable();
             $table->boolean('status')->default(1)->comment('1 active, 0 inactive');
             $table->timestamps();
             $table->softDeletes();

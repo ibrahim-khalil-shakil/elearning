@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('code')->unique();
             $table->decimal('discount', 8, 2);
-            $table->timestamp('valid_from')->nullable();
-            $table->timestamp('valid_until')->nullable();
+            $table->date('valid_from')->nullable();
+            $table->date('valid_until')->nullable();
             $table->timestamps();
             $table->softDeletes(); 
         });

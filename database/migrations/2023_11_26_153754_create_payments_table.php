@@ -13,18 +13,16 @@ return new class extends Migration
     {
         Schema::create('payments', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('student_id')->index();
-            $table->unsignedBigInteger('course_id')->index();
-            $table->decimal('amount', 10, 2)->nullable(false);
-            $table->timestamp('payment_date')->useCurrent();
-            $table->string('payment_method');
-            $table->string('transaction_id');
-            $table->enum('status', ['success', 'pending', 'failed'])->default('pending');
+            $table->bigInteger('student_id')->nullable();
+            $table->string('currency')->nullable();
+            $table->string('currency_code')->nullable();
+            $table->decimal('amount',10,2)->nullable();
+            $table->decimal('currency_value',10,2)->nullable();
+            $table->string('method')->nullable();
+            $table->string('txnid')->nullable();
+            $table->integer('status')->default(0)->comment('0 pending, 1 successfull, 2 fail');
             $table->timestamps();
             $table->softDeletes();
-
-            $table->foreign('student_id')->references('id')->on('students')->onDelete('cascade');
-            $table->foreign('course_id')->references('id')->on('courses')->onDelete('cascade');
         });
     }
 

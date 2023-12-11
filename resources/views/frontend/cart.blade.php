@@ -36,7 +36,7 @@
                         </h6>
                         <p>By <a href="#">{{$details['instructor']}}</a></p>
                         <div class="bottom-wizard d-flex justify-content-between align-items-center">
-                            <p>
+                            <p> {{$details['quantity']}}
                                 {{$details['price'] ? '$' . $details['price'] : 'Free'}}
                                 <span><del>{{$details['old_price'] ? '$' . $details['old_price'] : ''}}</del></span>
                             </p>
@@ -56,26 +56,27 @@
                 <div class="summery-wizard">
                     <div class="summery-wizard-text pt-0">
                         <h6>Subtotal</h6>
-                        <p>{{'$' . number_format((float) $total, 2)}}</p>
+                        <p> {{'$' . number_format((float) session('cart_details')['cart_total'] , 2)}}</p>
                     </div>
                     <div class="summery-wizard-text">
-                        <h6>Coupon Discount</h6>
-                        <p>0.00%</p>
+                        <h6>Coupon Discount ({{session('cart_details')['discount'] ?? 0.00}}%)</h6>
+                        <p>{{'$' . number_format((float) isset(session('cart_details')['discount_amount']) ? session('cart_details')['discount_amount']: 0.00 , 2)}}</p>
                     </div>
                     <div class="summery-wizard-text">
                         <h6>Taxes</h6>
-                        <p>0.00</p>
+                        <p> {{'$' . number_format((float) session('cart_details')['tax'] , 2)}}</p>
                     </div>
                     <div class="total-wizard">
                         <h6 class="font-title--card">Total:</h6>
-                        <p class="font-title--card">{{'$' . number_format((float) $total, 2)}}</p>
+                        <p class="font-title--card">{{'$' . number_format((float) session('cart_details')['total_amount'] , 2)}}</p>
                     </div>
-                    <form action="#">
+                    <form action="{{route('coupon_check')}}" method="post">
+                        @csrf
                         <a href="{{route('checkout')}}"
                             class="button button-lg button--primary form-control mb-lg-3">Checkout</a>
                         <label for="coupon">Apply Coupon</label>
                         <div class="cart-input">
-                            <input type="text" class="form-control" placeholder="Coupon Code" id="coupon" />
+                            <input type="text" name="coupon" class="form-control" placeholder="Coupon Code" id="coupon" />
                             <button type="submit" class="sm-button">Apply</button>
                         </div>
                     </form>

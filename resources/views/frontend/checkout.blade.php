@@ -20,7 +20,7 @@
 <section class="section checkout-area">
     <div class="container">
         @if(request()->session()->get('studentLogin'))
-        <?php print_r(base64_encode(json_encode(session('cart')))) ?>
+        
         <div class="row">
             <div class="col-lg-6 checkout-area-checkout">
                 <h6 class="checkout-area__label">Checkout</h6>
@@ -28,44 +28,12 @@
                     <div class="tab-content" id="pills-tabContent">
                         <div class="tab-pane fade show active" id="pills-checkout" role="tabpanel"
                             aria-labelledby="pills-checkout-tab">
-                            <form action="#">
-                                <div class="mb-3">
-                                    <label for="payer_name">Name on Card</label>
-                                    <input type="text" class="form-control" name="payer_name" placeholder="Type here" />
-                                </div>
-                                <div class="mb-3">
-                                    <div class="row">
-                                        <div class="col-md-6 mb-3 mb-lg-0">
-                                            <label for="payment_option">Payment Options</label>
-                                            <div class="form-check d-flex align-items-center ps-0">
-                                                <input type="checkbox" id="one_time" />
-                                                <label class="form-check-label ms-2 mb-0" for="one_time">
-                                                    One Time
-                                                </label>
-                                            </div>
-                                            <div class="form-check d-flex align-items-center ps-0">
-                                                <input type="checkbox" id="subscription" />
-                                                <label class="form-check-label ms-2 mb-0" for="subscription">
-                                                    Subscription
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <label for="status">Status</label>
-                                            <select class="form-control" name="status">
-                                                <option value="1" class="form-control" @if(old('status')==1) selected
-                                                    @endif>Active</option>
-                                                <option value="0" class="form-control" @if(old('status')==0) selected
-                                                    @endif>Inactive</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
+                            <form action="{{route('payment.ssl.submit')}}" method="post">
+                                @csrf
                                 <div class="mb-4">
                                     <div class="form-check d-flex align-items-center ps-0">
-                                        <input type="checkbox" id="flexCheckIndeterminate-one" />
                                         <label class="form-check-label ms-2 mb-0" for="flexCheckIndeterminate-one">
-                                            Save my information for a faster checkout
+                                            Please check your product before payment
                                         </label>
                                     </div>
                                 </div>
@@ -115,20 +83,19 @@
                             <ul>
                                 <li>
                                     <p>Subtotal</p>
-                                    <p>{{'$' . number_format((float) $total, 2)}}</p>
+                                    <p>{{'$' . number_format((float) session('cart_details')['cart_total'] , 2)}}</p>
                                 </li>
                                 <li>
-                                    <p>Coupon Discount</p>
-                                    <p>0%</p>
+                                    <p>Coupon Discount  ({{session('cart_details')['discount'] ?? 0.00}}%)</p>
+                                    <p>{{'$' . number_format((float) isset(session('cart_details')['discount_amount']) ? session('cart_details')['discount_amount']: 0.00 , 2)}}</p>
                                 </li>
                                 <li>
                                     <p>taxes</p>
-                                    <p>$0.00</p>
+                                    <p>{{'$' . number_format((float) session('cart_details')['tax'] , 2)}}</p>
                                 </li>
                                 <li>
                                     <p class="font-title--card">Total:</p>
-                                    <p class="total-price font-title--card">{{'$' . number_format((float) $total, 2)}}
-                                    </p>
+                                    <p class="total-price font-title--card">{{'$' . number_format((float) session('cart_details')['total_amount'] , 2)}}</p>
                                 </li>
                             </ul>
                         </div>
