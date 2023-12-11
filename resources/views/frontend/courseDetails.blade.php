@@ -138,6 +138,7 @@
                             </button>
                         </li>
                     </ul>
+
                     <div class="tab-content course-overview-content" id="pills-tabContentTwo">
 
                         <!-- Course Overview Starts Here -->
@@ -2318,11 +2319,8 @@
                         <div class="cart__checkout-process">
                             <p class="time-left text-center"><span>5 hours</span> to remaining this price</p>
                             <form action="#">
-                                <button type="submit" class="button button-lg button--primary w-100">
-                                    <a href="{{route('add.to.cart', $course->id)}}" class="text-white">Add to Cart</a>
-                                </button>
-                                <button type="submit" class="button button-lg button--primary-outline mt-3 w-100">
-                                    <a href="{{route('checkout')}}">Buy Now</a> </button> </button>
+                                    <a href="{{route('add.to.cart', $course->id)}}" class="text-white button button-lg button--primary w-100">Add to Cart</a>
+                                    <a href="{{route('checkout')}}" class="button button-lg button--primary-outline mt-3 w-100">Buy Now</a>
                             </form>
                         </div>
                         <div class="cart__includes-info">
