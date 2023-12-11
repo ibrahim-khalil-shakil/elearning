@@ -563,7 +563,7 @@
                         <!-- Course Curriculum Area Ends Here -->
 
                         <!-- Course Details Instructor Starts Here -->
-                        <div class="tab-pane fade" id="pills-c-instructor" role="tabpanel"
+                        <div class="tab-pane fade" id="pills-c-instructor" role="tabpanel" 
                             aria-labelledby="pills-c-instructor-tab">
                             <div class="row">
                                 <div class="col-lg-12">

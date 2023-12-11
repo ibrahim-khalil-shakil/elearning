@@ -428,7 +428,7 @@
                     </div>
                     @endforelse
                 </div>
-
+ 
                 <div class="pagination-group mt-lg-5 mt-2">
                     <a href="#" class="p_prev">
                         <svg xmlns="http://www.w3.org/2000/svg" width="9.414" height="16.828"

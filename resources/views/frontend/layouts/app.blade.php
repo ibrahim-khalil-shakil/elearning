@@ -135,6 +135,7 @@
                             </a>
                             <div class="dropdown-content">
                                 <a href="{{route('student_profile')}}">Profile</a>
+                                <a href="{{route('studentdashboard')}}">Dashboard</a>
                                 <a href="{{route('studentlogOut')}}" class="text-danger">Logout</a>
                             </div>
                         </div>

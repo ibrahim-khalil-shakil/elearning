@@ -78,9 +78,6 @@ Route::post('/student/register/{back_route}', [sauth::class, 'signUpStore'])->na
 Route::get('/student/login', [sauth::class, 'signInForm'])->name('studentLogin');
 Route::post('/student/login/{back_route}', [sauth::class, 'signInCheck'])->name('studentLogin.check');
 Route::get('/student/logout', [sauth::class, 'signOut'])->name('studentlogOut');
-/* ssl payment */
-Route::post('/payment/ssl/notify', [sslcz::class,'notify'])->name('payment.ssl.notify');
-Route::post('/payment/ssl/cancel', [sslcz::class,'cancel'])->name('payment.ssl.cancel');
 
 Route::middleware(['checkstudent'])->prefix('students')->group(function () {
     Route::get('/dashboard', [studashboard::class, 'index'])->name('studentdashboard'); 
@@ -88,12 +85,13 @@ Route::middleware(['checkstudent'])->prefix('students')->group(function () {
     Route::post('/profile/save', [stu_profile::class, 'save_profile'])->name('student_save_profile');
     Route::post('/change-image', [stu_profile::class, 'changeImage'])->name('change_image');
 
+    /* ssl payment */
+    Route::post('/payment/ssl/notify', [sslcz::class, 'notify'])->name('payment.ssl.notify');
+    Route::post('/payment/ssl/cancel', [sslcz::class, 'cancel'])->name('payment.ssl.cancel');
+
+
     // ssl Routes
     Route::post('/payment/ssl/submit', [sslcz::class,'store'])->name('payment.ssl.submit');
-
-    Route::get('/watchCourse', function () {
-        return view('frontend.watchCourse');
-    })->name('watchCourse');
 
     Route::get('/studentProfile', function () {
         return view('frontend.studentProfile');
@@ -106,6 +104,8 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::get('searchCourse', [course::class, 'frontIndex'])->name('searchCourse');
 Route::get('courseDetails/{id}', [course::class, 'frontShow'])->name('courseDetails');
+
+Route::get('watchCourse/{id}', [course::class, 'watchCourse'])->name('watchCourse');
 
 
 Route::get('/about', function () {

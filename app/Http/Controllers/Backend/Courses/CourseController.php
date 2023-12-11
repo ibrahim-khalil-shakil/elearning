@@ -25,7 +25,7 @@ class CourseController extends Controller
 
     public function frontIndex()
     {
-        $course = Course::paginate(10);
+        $course = Course::get();
         $category = CourseCategory::get();
         return view('frontend.searchCourse', compact('course', 'category'));
     }
@@ -178,5 +178,12 @@ class CourseController extends Controller
 
             return redirect()->back();
         }
+    }
+
+    public function watchCourse($id)
+    {
+        $course = Course::get();
+        $category = CourseCategory::get();
+        return view('frontend.watchCourse', compact('course', 'category'));
     }
 }

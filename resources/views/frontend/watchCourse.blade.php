@@ -40,8 +40,7 @@
                             </a>
                         </div>
                         <div class="topic-info-text">
-                            <h6 class="font-title--xs"><a href="#">User Experience Design Essentials - Adobe XD UI UX
-                                    Design</a></h6>
+                            <h6 class="font-title--xs"><a href="#">{{$course->title_en}}</a></h6>
                             <div class="lesson-hours">
                                 <div class="book-lesson">
                                     <svg width="18" height="19" viewBox="0 0 18 19" fill="none"
