@@ -356,7 +356,7 @@
                                 </svg>
                             </span>
                             Filter
-                        </button>
+                        </button> 
                     </div>
                 </div>
 

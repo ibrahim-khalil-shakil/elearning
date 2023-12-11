@@ -39,7 +39,7 @@
                             <div class="enrolled-courses-icon">
                                 <svg width="28" height="26" viewBox="0 0 28 26" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path 
+                                    <path
                                         d="M1 1.625H8.8C10.1791 1.625 11.5018 2.15764 12.477 3.10574C13.4521 4.05384 14 5.33974 14 6.68056V24.375C14 23.3694 13.5891 22.405 12.8577 21.6939C12.1263 20.9828 11.1343 20.5833 10.1 20.5833H1V1.625Z"
                                         stroke="#1089FF" stroke-width="2" stroke-linecap="round"
                                         stroke-linejoin="round" />
@@ -51,8 +51,8 @@
                             </div>
                             <div class="enrolled-courses-text">
                                 <h6 class="font-title--xs">24</h6>
-                                <p class="fs-6 mt-1">Enrolled Courses</p> 
-                            </div>  
+                                <p class="fs-6 mt-1">Enrolled Courses</p>
+                            </div>
                         </div>
                         <div class="completed-courses">
                             <div class="completed-courses-icon">
@@ -180,6 +180,7 @@
                 {{-- All Courses --}}
                 <div class="tab-pane fade" id="nav-coursesall" role="tabpanel" aria-labelledby="nav-coursesall-tab">
                     <div class="row">
+                        @forelse ($enrollment as $a)
                         <div class="col-lg-4 col-md-6 col-md-6 mb-4">
                             <div class="contentCard contentCard--watch-course">
                                 <div class="contentCard-top">
@@ -189,8 +190,7 @@
                                 </div>
                                 <div class="contentCard-bottom">
                                     <h5>
-                                        <a href="#" class="font-title--card">Chicago International
-                                            Conference on Education</a>
+                                        <a href="#" class="font-title--card">{{$a->course?->title_en}}</a>
                                     </h5>
                                     <div class="contentCard-info d-flex align-items-center justify-content-between">
                                         <a href="instructor-profile.html"
@@ -205,77 +205,22 @@
                                         </div>
                                     </div>
                                     <a class="button button-md button--primary-outline w-100 my-3"
-                                        href="{{route('watchCourse')}}">Watch Course</a>
+                                        href="{{route('watchCourse')}}">Watch
+                                        Course</a>
                                     <div class="contentCard-watch--progress">
                                         <span class="percentage" style="width: 43%;"></span>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        @empty
                         <div class="col-lg-4 col-md-6 col-md-6 mb-4">
                             <div class="contentCard contentCard--watch-course">
-                                <div class="contentCard-top">
-                                    <a href="#"><img
-                                            src="{{asset('public/frontend/dist/images/courses/demo-img-02.png')}}"
-                                            alt="images" class="img-fluid" /></a>
-                                </div>
-                                <div class="contentCard-bottom">
-                                    <h5>
-                                        <a href="#" class="font-title--card">Chicago International
-                                            Conference on Education</a>
-                                    </h5>
-                                    <div class="contentCard-info d-flex align-items-center justify-content-between">
-                                        <a href="instructor-profile.html"
-                                            class="contentCard-user d-flex align-items-center">
-                                            <img src="{{asset('public/frontend/dist/images/courses/7.png')}}"
-                                                alt="client-image" class="rounded-circle" />
-                                            <p class="font-para--md">Brandon Dias</p>
-                                        </a>
-                                        <div class="contentCard-course--status d-flex align-items-center">
-                                            <span class="percentage">43%</span>
-                                            <p>Finish</p>
-                                        </div>
-                                    </div>
-                                    <a class="button button-md button--primary-outline w-100 my-3"
-                                        href="{{route('watchCourse')}}">Watch Course</a>
-                                    <div class="contentCard-watch--progress">
-                                        <span class="percentage" style="width: 43%;"></span>
-                                    </div>
-                                </div>
+                                <h3>You haven't enrolled any course yet</h3>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-md-6 col-md-6 mb-4">
-                            <div class="contentCard contentCard--watch-course">
-                                <div class="contentCard-top">
-                                    <a href="#"><img
-                                            src="{{asset('public/frontend/dist/images/courses/demo-img-03.png')}}"
-                                            alt="images" class="img-fluid" /></a>
-                                </div>
-                                <div class="contentCard-bottom">
-                                    <h5>
-                                        <a href="#" class="font-title--card">Chicago International
-                                            Conference on Education</a>
-                                    </h5>
-                                    <div class="contentCard-info d-flex align-items-center justify-content-between">
-                                        <a href="instructor-profile.html"
-                                            class="contentCard-user d-flex align-items-center">
-                                            <img src="{{asset('public/frontend/dist/images/courses/7.png')}}"
-                                                alt="client-image" class="rounded-circle" />
-                                            <p class="font-para--md">Brandon Dias</p>
-                                        </a>
-                                        <div class="contentCard-course--status d-flex align-items-center">
-                                            <span class="percentage">43%</span>
-                                            <p>Finish</p>
-                                        </div>
-                                    </div>
-                                    <a class="button button-md button--primary-outline w-100 my-3"
-                                        href="{{route('watchCourse')}}">Watch Course</a>
-                                    <div class="contentCard-watch--progress">
-                                        <span class="percentage" style="width: 43%;"></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        @endforelse
+
                         <div class="col-lg-12 mt-lg-5">
                             <div class="pagination justify-content-center pb-0">
                                 <div class="pagination-group">
@@ -945,4 +890,4 @@
     </div>
 </section>
 
-@endsection 
+@endsection

@@ -83,7 +83,7 @@ Route::post('/payment/ssl/notify', [sslcz::class,'notify'])->name('payment.ssl.n
 Route::post('/payment/ssl/cancel', [sslcz::class,'cancel'])->name('payment.ssl.cancel');
 
 Route::middleware(['checkstudent'])->prefix('students')->group(function () {
-    Route::get('/dashboard', [studashboard::class, 'index'])->name('studentdashboard');
+    Route::get('/dashboard', [studashboard::class, 'index'])->name('studentdashboard'); 
     Route::get('/profile', [stu_profile::class, 'index'])->name('student_profile');
     Route::post('/profile/save', [stu_profile::class, 'save_profile'])->name('student_save_profile');
     Route::post('/change-image', [stu_profile::class, 'changeImage'])->name('change_image');
