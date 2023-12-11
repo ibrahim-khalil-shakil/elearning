@@ -11,7 +11,7 @@ use App\Models\Role;
 use Illuminate\Support\Facades\Hash;
 use Exception;
 use File;
-
+ 
 class InstructorController extends Controller
 { 
     /**

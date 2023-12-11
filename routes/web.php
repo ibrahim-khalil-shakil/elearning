@@ -88,19 +88,12 @@ Route::middleware(['checkstudent'])->prefix('students')->group(function () {
     /* ssl payment */
     Route::post('/payment/ssl/notify', [sslcz::class, 'notify'])->name('payment.ssl.notify');
     Route::post('/payment/ssl/cancel', [sslcz::class, 'cancel'])->name('payment.ssl.cancel');
-
-
     // ssl Routes
     Route::post('/payment/ssl/submit', [sslcz::class,'store'])->name('payment.ssl.submit');
-
-    Route::get('/studentProfile', function () {
-        return view('frontend.studentProfile');
-    })->name('studentProfile');
 });
 
 Route::get('home', [HomeController::class, 'index'])->name('home');
 Route::get('/', [HomeController::class, 'index'])->name('home');
-
 
 Route::get('searchCourse', [course::class, 'frontIndex'])->name('searchCourse');
 Route::get('courseDetails/{id}', [course::class, 'frontShow'])->name('courseDetails');
@@ -108,29 +101,9 @@ Route::get('courseDetails/{id}', [course::class, 'frontShow'])->name('courseDeta
 Route::get('watchCourse/{id}', [course::class, 'watchCourse'])->name('watchCourse');
 
 
-Route::get('/about', function () {
-    return view('frontend.about'); 
-})->name('about');
-
-
-// Route::get('/instructorProfile', function () {
-//     return view('frontend.instructorProfile');
-// })->name('instructorProfile');
-
 Route::get('instructorProfile/{id}', [instructor::class, 'frontShow'])->name('instructorProfile');
 Route::get('checkout', [checkout::class, 'index'])->name('checkout');
 Route::post('checkout', [checkout::class, 'store'])->name('checkout.store');
-
-
-
-Route::get('/cart', function () {
-    return view('frontend.cart');
-})->name('cart');
-
-
-Route::get('/contact', function () {
-    return view('frontend.contact');
-})->name('contact');
 
 
 // Cart
@@ -139,5 +112,27 @@ Route::get('cart', [CartController::class, 'cart'])->name('cart');
 Route::get('add-to-cart/{id}', [CartController::class, 'addToCart'])->name('add.to.cart');
 Route::patch('update-cart', [CartController::class, 'update'])->name('update.cart');
 Route::delete('remove-from-cart', [CartController::class, 'remove'])->name('remove.from.cart');
-
+// Coupon
 Route::post('coupon_check', [CartController::class, 'coupon_check'])->name('coupon_check');
+
+
+Route::get('/about', function () {
+    return view('frontend.about');
+})->name('about');
+
+Route::get('/contact', function () {
+    return view('frontend.contact');
+})->name('contact');
+
+// Route::get('/cart', function () {
+//     return view('frontend.cart');
+// })->name('cart');
+
+// Route::get('/instructorProfile', function () {
+//     return view('frontend.instructorProfile');
+// })->name('instructorProfile');
+
+
+    // Route::get('/studentProfile', function () {
+    //     return view('frontend.studentProfile');
+    // })->name('studentProfile');

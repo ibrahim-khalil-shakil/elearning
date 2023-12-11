@@ -199,7 +199,7 @@
                                         </div>
                                     </div>
                                     <a class="button button-md button--primary-outline w-100 my-3"
-                                        href="{{route('watchCourse')}}">Watch Course</a>
+                                        href="#">Watch Course</a>
                                     <div class="contentCard-watch--progress">
                                         <span class="percentage" style="width: 43%;"></span>
                                     </div>
@@ -231,7 +231,7 @@
                                         </div>
                                     </div>
                                     <a class="button button-md button--primary-outline w-100 my-3"
-                                        href="{{route('watchCourse')}}">Watch Course</a>
+                                        href="#">Watch Course</a>
                                     <div class="contentCard-watch--progress">
                                         <span class="percentage" style="width: 43%;"></span>
                                     </div>
@@ -263,7 +263,7 @@
                                         </div>
                                     </div>
                                     <a class="button button-md button--primary-outline w-100 my-3"
-                                        href="{{route('watchCourse')}}">Watch Course</a>
+                                        href="#">Watch Course</a>
                                     <div class="contentCard-watch--progress">
                                         <span class="percentage" style="width: 43%;"></span>
                                     </div>
@@ -326,7 +326,7 @@
                                         </div>
                                     </div>
                                     <a class="button button-md button--primary-outline w-100 my-3"
-                                        href="{{route('watchCourse')}}">Watch Course</a>
+                                        href="#">Watch Course</a>
                                     <div class="contentCard-watch--progress">
                                         <span class="percentage" style="width: 43%;"></span>
                                     </div>
@@ -358,7 +358,7 @@
                                         </div>
                                     </div>
                                     <a class="button button-md button--primary-outline w-100 my-3"
-                                        href="{{route('watchCourse')}}">Watch Course</a>
+                                        href="#">Watch Course</a>
                                     <div class="contentCard-watch--progress">
                                         <span class="percentage" style="width: 43%;"></span>
                                     </div>
@@ -390,7 +390,7 @@
                                         </div>
                                     </div>
                                     <a class="button button-md button--primary-outline w-100 my-3"
-                                        href="{{route('watchCourse')}}">Watch Course</a>
+                                        href="#">Watch Course</a>
                                     <div class="contentCard-watch--progress">
                                         <span class="percentage" style="width: 43%;"></span>
                                     </div>
@@ -453,7 +453,7 @@
                                         </div>
                                     </div>
                                     <a class="button button-md button--primary-outline w-100 my-3"
-                                        href="{{route('watchCourse')}}">Watch Course</a>
+                                        href="#">Watch Course</a>
                                     <div class="contentCard-watch--progress">
                                         <span class="percentage" style="width: 100%;"></span>
                                     </div>
@@ -485,7 +485,7 @@
                                         </div>
                                     </div>
                                     <a class="button button-md button--primary-outline w-100 my-3"
-                                        href="{{route('watchCourse')}}">Watch Course</a>
+                                        href="#">Watch Course</a>
                                     <div class="contentCard-watch--progress">
                                         <span class="percentage" style="width: 100%;"></span>
                                     </div>
@@ -517,7 +517,7 @@
                                         </div>
                                     </div>
                                     <a class="button button-md button--primary-outline w-100 my-3"
-                                        href="{{route('watchCourse')}}">Watch Course</a>
+                                        href="#">Watch Course</a>
                                     <div class="contentCard-watch--progress">
                                         <span class="percentage" style="width: 100%;"></span>
                                     </div>

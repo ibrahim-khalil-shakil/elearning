@@ -13,7 +13,7 @@ use Exception;
 use File; 
 
 class CourseController extends Controller
-{
+{ 
     /**
      * Display a listing of the resource.
      */
@@ -182,7 +182,7 @@ class CourseController extends Controller
 
     public function watchCourse($id)
     {
-        $course = Course::get();
+        $course = Course::findOrFail(encryptor('decrypt',$id));
         $category = CourseCategory::get();
         return view('frontend.watchCourse', compact('course', 'category'));
     }

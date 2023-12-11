@@ -185,7 +185,7 @@
                             <div class="contentCard contentCard--watch-course">
                                 <div class="contentCard-top">
                                     <a href="#"><img
-                                            src="{{asset('public/frontend/dist/images/courses/demo-img-01.png')}}"
+                                            src="{{asset('public/uploads/courses/'.$a->course?->image)}}"
                                             alt="images" class="img-fluid" /></a>
                                 </div>
                                 <div class="contentCard-bottom">
@@ -195,9 +195,9 @@
                                     <div class="contentCard-info d-flex align-items-center justify-content-between">
                                         <a href="instructor-profile.html"
                                             class="contentCard-user d-flex align-items-center">
-                                            <img src="{{asset('public/frontend/dist/images/courses/7.png')}}"
-                                                alt="client-image" class="rounded-circle" />
-                                            <p class="font-para--md">Brandon Dias</p>
+                                            <img src="{{asset('public/uploads/instructors/'.$a->course?->instructor?->image)}}"
+                                                alt="client-image" class="rounded-circle" height="34" width="34" />
+                                            <p class="font-para--md">{{$a->course?->instructor?->name_en}}</p>
                                         </a>
                                         <div class="contentCard-course--status d-flex align-items-center">
                                             <span class="percentage">43%</span>

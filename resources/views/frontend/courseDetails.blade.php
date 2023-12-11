@@ -564,7 +564,7 @@
                         <!-- Course Curriculum Area Ends Here -->
 
                         <!-- Course Details Instructor Starts Here -->
-                        <div class="tab-pane fade" id="pills-c-instructor" role="tabpanel" 
+                        <div class="tab-pane fade" id="pills-c-instructor" role="tabpanel"
                             aria-labelledby="pills-c-instructor-tab">
                             <div class="row">
                                 <div class="col-lg-12">
@@ -2304,6 +2304,7 @@
                     </div>
                 </div>
             </div>
+            {{-- Price Details Section --}}
             <div class="col-lg-4 mt-4 mt-lg-0">
                 <div class="courseCard--wrapper">
                     <div class="cart">
@@ -2319,8 +2320,10 @@
                         <div class="cart__checkout-process">
                             <p class="time-left text-center"><span>5 hours</span> to remaining this price</p>
                             <form action="#">
-                                    <a href="{{route('add.to.cart', $course->id)}}" class="text-white button button-lg button--primary w-100">Add to Cart</a>
-                                    <a href="{{route('checkout')}}" class="button button-lg button--primary-outline mt-3 w-100">Buy Now</a>
+                                <a href="{{route('add.to.cart', $course->id)}}"
+                                    class="text-white button button-lg button--primary w-100">Add to Cart</a>
+                                <a href="{{route('checkout')}}"
+                                    class="button button-lg button--primary-outline mt-3 w-100">Buy Now</a>
                             </form>
                         </div>
                         <div class="cart__includes-info">
@@ -2426,6 +2429,7 @@
     </div>
 </section>
 
+{{-- Related Course --}}
 <section class="section new-course-feature section--bg-offwhite-five">
     <div class="container">
         <div class="row justify-content-center">

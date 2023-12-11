@@ -77,7 +77,7 @@
                             </a>
                             <div class="nav-item--dropdown">
                                 <ul>
-                                    <li><a href="{{route('studentProfile')}}">Student Profile</a></li>
+                                    <li><a href="{{route('student_profile')}}">Student Profile</a></li>
                                     {{-- <li><a href="{{route('instructorProfile')}}">Instructor Profile</a></li> --}}
                                     <li><a href="{{route('checkout')}}">Check out</a></li>
                                 </ul>
@@ -207,7 +207,7 @@
                                         </span>
                                     </a>
                                     <ul class="navbar-mobile__menu-dropmenu">
-                                        <li><a href="{{route('studentProfile')}}">Student Profile</a></li>
+                                        <li><a href="{{route('student_profile')}}">Student Profile</a></li>
                                         <li><a href="{{route('checkout')}}">Check out</a></li>
                                     </ul>
                                 </li>
