@@ -504,11 +504,11 @@
 
                 {{-- Purchase History --}}
                 <div class="tab-pane fade" id="nav-purchase" role="tabpanel" aria-labelledby="nav-purchase-tab">
-                    @foreach ($purchaseHistory as $enrollment)
+                    @foreach ($enrollment as $e)
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="purchase-area">
-                                <!-- Display course details using $enrollment->course and $enrollment->student -->
+                                <!-- Display course details using $e->course and $e->student -->
                                 <div class="purchase-area-close">
                                     <a href="#">
                                         <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
@@ -533,9 +533,9 @@
                                             <div class="text d-flex flex-column flex-lg-row">
                                                 <div class="text-main">
                                                     <h6>
-                                                        <a href="#">{{$enrollment->course?->title_en}}</a>
+                                                        <a href="#">{{$e->course?->title_en}}</a>
                                                     </h6>
-                                                    <p>By <a href="instructorcourses.html">{{$enrollment->course?->instructor?->name_en}}</a></p>
+                                                    <p>By <a href="instructorcourses.html">{{$e->course?->instructor?->name_en}}</a></p>
                                                 </div>
                                                 <p>$87</p>
                                             </div>
