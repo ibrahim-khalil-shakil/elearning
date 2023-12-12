@@ -10,7 +10,7 @@ class ProfileController extends Controller
 {
     public function index()
     {
-        $student_info=Student::find(currentUserId());
+        $student_info=Student::find(currentUserId()); 
         return view('students.profile',compact('student_info'));
     }
 

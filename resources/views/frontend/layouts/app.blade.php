@@ -130,8 +130,8 @@
                         @if(request()->session()->get('studentLogin'))
                         <div class="dropdown user-image ms-3" id="imageDropdown">
                             <a href="{{route('studentdashboard')}}" onclick="toggleDropdown(event)">
-                                <img src="{{asset('public/frontend/dist/images/ellipse/user.jpg')}}"
-                                    alt="Student Profile" />
+                                <img src="{{asset('public/uploads/students/'.request()->session()->get('image'))}}"
+                                    alt="Student Profile" height="48" width="48"/>
                             </a>
                             <div class="dropdown-content">
                                 <a href="{{route('student_profile')}}">Profile</a>

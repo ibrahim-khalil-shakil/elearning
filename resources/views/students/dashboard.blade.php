@@ -25,11 +25,11 @@
                 <div>
                     <div class="students-info-intro-start">
                         <div class="image">
-                            <img src="{{asset('public/frontend/dist/images/user/user-img-01.jpg')}}" alt="Student" />
+                            <img src="{{ asset('public/uploads/students/' . $student_info->image) }}" alt="Student" />
                         </div>
                         <div class="text">
-                            <h5>{{ encryptor('decrypt', request()->session()->get('userName')) }}</h5>
-                            <p>UI/UX Designer</p>
+                            <h5>{{$student_info->name_en}}</h5>
+                            <p>{{$student_info->profession?$student_info->profession:'Student'}}</p>
                         </div>
                     </div>
                 </div>
@@ -79,7 +79,7 @@
                 <div class="nav" id="nav-tab" role="tablist">
                     <button class="nav-link active" id="nav-profile-tab" data-bs-toggle="tab"
                         data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile"
-                        aria-selected="true">My Profile</button>
+                        aria-selected="true">Dashboard</button>
 
                     <button class="nav-link" id="nav-coursesall-tab" data-bs-toggle="tab"
                         data-bs-target="#nav-coursesall" type="button" role="tab" aria-controls="nav-coursesall"
@@ -101,8 +101,7 @@
                         type="button" role="tab" aria-controls="nav-purchase" aria-selected="false">Purchase
                         History</button>
 
-                    <button class="nav-link" id="nav-setting-tab" data-bs-toggle="tab" data-bs-target="#nav-setting"
-                        type="button" role="tab" aria-controls="nav-setting" aria-selected="false">Setting</button>
+                    <button class="nav-link "><a href="{{route('student_profile')}}" class="text-secondary">Profile</a></button>
 
                     <button class="nav-link "><a href="{{route('home')}}" class="text-secondary">Home</a></button>
                 </div>
@@ -119,25 +118,19 @@
                             <div class="about-student">
                                 <h6 class="font-title--card">About Me</h6>
                                 <p class="font-para--md">
-                                    Hello my name is Tanya. I am a designer. My personal qualities are responsibility,
-                                    as I bring everything to its logical conclusion, determination, never rest on my
-                                    laurels, always open to change
-                                    and something new. In my arsenal there are such programs as Adobe Photoshop,
-                                    Illustrator, InDesign, Figma, also some Maya, 3ds Max ZBrush, Substance Painter,
-                                    Marvelous Designer. Lorem ipsum dolor
-                                    sit amet consectetur, adipisicing elit. Animi, voluptatum.
+                                    {{$student_info->bio?$student_info->bio:"Student's Bio"}}
                                 </p>
                             </div>
                         </div>
                         <div class="tab-content__profile-content">
                             <div class="info-student">
-                                <h6 class="font-title--card">Philip Information</h6>
+                                <h6 class="font-title--card">{{$student_info->name_en}}'s Information</h6>
                                 <dl class="row my-0 info-student-topic">
                                     <dt class="col-sm-4">
                                         <span>Name</span>
                                     </dt>
                                     <dd class="col-sm-8">
-                                        <p>{{ encryptor('decrypt', request()->session()->get('userName')) }}</p>
+                                        <p>{{$student_info->name_en}}</p>
                                     </dd>
                                 </dl>
                                 <dl class="row my-0 info-student-topic">
@@ -145,7 +138,7 @@
                                         <span>E-mail</span>
                                     </dt>
                                     <dd class="col-sm-8">
-                                        <p>{{ encryptor('decrypt', request()->session()->get('emailAddress')) }}</p>
+                                        <p>{{$student_info->email}}</p>
                                     </dd>
                                 </dl>
                                 <dl class="row my-0 info-student-topic">
@@ -153,7 +146,7 @@
                                         <span>What do you do</span>
                                     </dt>
                                     <dd class="col-sm-8">
-                                        <p>UI/UX Designer</p>
+                                        <p>{{$student_info->profession?$student_info->profession:'Student'}}</p>
                                     </dd>
                                 </dl>
                                 <dl class="row my-0 info-student-topic">
@@ -161,7 +154,7 @@
                                         <span>Phone Number</span>
                                     </dt>
                                     <dd class="col-sm-8">
-                                        <p>+8801236 968966</p>
+                                        <p>{{$student_info->contact_en?$student_info->contact_en:'+880'}}</p>
                                     </dd>
                                 </dl>
                                 <dl class="row my-0 info-student-topic">
@@ -169,7 +162,7 @@
                                         <span>Nationality</span>
                                     </dt>
                                     <dd class="col-sm-8">
-                                        <p>Bangladesh</p>
+                                        <p>{{$student_info->nationality}}</p>
                                     </dd>
                                 </dl>
                             </div>
@@ -184,13 +177,13 @@
                         <div class="col-lg-4 col-md-6 col-md-6 mb-4">
                             <div class="contentCard contentCard--watch-course">
                                 <div class="contentCard-top">
-                                    <a href="#"><img
-                                            src="{{asset('public/uploads/courses/'.$a->course?->image)}}"
+                                    <a href="#"><img src="{{asset('public/uploads/courses/'.$a->course?->image)}}"
                                             alt="images" class="img-fluid" /></a>
                                 </div>
                                 <div class="contentCard-bottom">
                                     <h5>
-                                        <a href="{{route('courseDetails', encryptor('encrypt', $a->course?->id))}}" class="font-title--card">{{$a->course?->title_en}}</a>
+                                        <a href="{{route('courseDetails', encryptor('encrypt', $a->course?->id))}}"
+                                            class="font-title--card">{{$a->course?->title_en}}</a>
                                     </h5>
                                     <div class="contentCard-info d-flex align-items-center justify-content-between">
                                         <a href="instructor-profile.html"
@@ -276,8 +269,8 @@
                                             <p>Finish</p>
                                         </div>
                                     </div>
-                                    <a class="button button-md button--primary-outline w-100 my-3"
-                                        href="#">Watch Course</a>
+                                    <a class="button button-md button--primary-outline w-100 my-3" href="#">Watch
+                                        Course</a>
                                     <div class="contentCard-watch--progress">
                                         <span class="percentage" style="width: 43%;"></span>
                                     </div>
@@ -308,8 +301,8 @@
                                             <p>Finish</p>
                                         </div>
                                     </div>
-                                    <a class="button button-md button--primary-outline w-100 my-3"
-                                        href="#">Watch Course</a>
+                                    <a class="button button-md button--primary-outline w-100 my-3" href="#">Watch
+                                        Course</a>
                                     <div class="contentCard-watch--progress">
                                         <span class="percentage" style="width: 43%;"></span>
                                     </div>
@@ -340,8 +333,8 @@
                                             <p>Finish</p>
                                         </div>
                                     </div>
-                                    <a class="button button-md button--primary-outline w-100 my-3"
-                                        href="#">Watch Course</a>
+                                    <a class="button button-md button--primary-outline w-100 my-3" href="#">Watch
+                                        Course</a>
                                     <div class="contentCard-watch--progress">
                                         <span class="percentage" style="width: 43%;"></span>
                                     </div>
@@ -403,8 +396,8 @@
                                             <p>Finish</p>
                                         </div>
                                     </div>
-                                    <a class="button button-md button--primary-outline w-100 my-3"
-                                        href="#">Watch Course</a>
+                                    <a class="button button-md button--primary-outline w-100 my-3" href="#">Watch
+                                        Course</a>
                                     <div class="contentCard-watch--progress">
                                         <span class="percentage" style="width: 100%;"></span>
                                     </div>
@@ -435,8 +428,8 @@
                                             <p>Finish</p>
                                         </div>
                                     </div>
-                                    <a class="button button-md button--primary-outline w-100 my-3"
-                                        href="#">Watch Course</a>
+                                    <a class="button button-md button--primary-outline w-100 my-3" href="#">Watch
+                                        Course</a>
                                     <div class="contentCard-watch--progress">
                                         <span class="percentage" style="width: 100%;"></span>
                                     </div>
@@ -467,8 +460,8 @@
                                             <p>Finish</p>
                                         </div>
                                     </div>
-                                    <a class="button button-md button--primary-outline w-100 my-3"
-                                        href="#">Watch Course</a>
+                                    <a class="button button-md button--primary-outline w-100 my-3" href="#">Watch
+                                        Course</a>
                                     <div class="contentCard-watch--progress">
                                         <span class="percentage" style="width: 100%;"></span>
                                     </div>
@@ -534,7 +527,9 @@
                                                     <h6>
                                                         <a href="#">{{$e->course?->title_en}}</a>
                                                     </h6>
-                                                    <p>By <a href="instructorcourses.html">{{$e->course?->instructor?->name_en}}</a></p>
+                                                    <p>By <a
+                                                            href="instructorcourses.html">{{$e->course?->instructor?->name_en}}</a>
+                                                    </p>
                                                 </div>
                                                 <p>${{$e->course?->price}}</p>
                                             </div>
@@ -741,150 +736,8 @@
                             </p>
                         </div>
                     </div>
-                </div> 
-
-                {{-- Setting --}}
-                <div class="tab-pane fade" id="nav-setting" role="tabpanel" aria-labelledby="nav-setting-tab">
-                    <div class="row">
-                        <div class="col-lg-9 order-2 order-lg-0">
-                            <div class="white-bg">
-                                <div class="students-info-form">
-                                    <h6 class="font-title--card">Your Information</h6>
-                                    <form action="#">
-                                        <div class="row g-3">
-                                            <div class="col-lg-6">
-                                                <label for="fname">First Name</label>
-                                                <input type="text" class="form-control" placeholder="Phillip"
-                                                    id="fname" />
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <label for="lname">Last Name</label>
-                                                <input type="text" class="form-control" placeholder="Bergson"
-                                                    id="lname" />
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <label for="email">Email</label>
-                                                <input type="email" id="email" class="form-control"
-                                                    placeholder="phillip.bergson@gmail.com" />
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <label for="do">What Do You Do</label>
-                                                <input type="text" id="do" class="form-control"
-                                                    placeholder="UI/UX Designer" />
-                                            </div>
-                                        </div>
-                                        <div class="row g-3">
-                                            <div class="col-lg-6">
-                                                <label for="pnumber">Phone Number</label>
-                                                <input type="text" class="form-control" placeholder="+8801236-858966"
-                                                    id="pnumber" />
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <label for="nationality">Nationality</label>
-                                                <input type="text" class="form-control" placeholder="Bangladesh"
-                                                    id="nationality" />
-                                            </div>
-                                        </div>
-                                        <div class="d-flex justify-content-lg-end justify-content-center mt-2">
-                                            <button class="button button-lg button--primary" type="submit">Save
-                                                Changes</button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                            <div class="white-bg mt-4">
-                                <div class="students-info-form">
-                                    <h6 class="font-title--card">Change Password</h6>
-                                    <form action="#">
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <label for="cpass">Current Password</label>
-                                                <div class="input-with-icon">
-                                                    <input type="password" id="cpass" class="form-control"
-                                                        placeholder="Enter Password" />
-                                                    <div class="input-icon" onclick="showPassword('cpass',this)">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                            viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                                            stroke-width="2" stroke-linecap="round"
-                                                            stroke-linejoin="round" class="feather feather-eye">
-                                                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z">
-                                                            </path>
-                                                            <circle cx="12" cy="12" r="3"></circle>
-                                                        </svg>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <label for="npass">New Password</label>
-                                                <div class="input-with-icon">
-                                                    <input type="password" id="npass" class="form-control"
-                                                        placeholder="Enter Password" />
-                                                    <div class="input-icon" onclick="showPassword('npass',this)">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                            viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                                            stroke-width="2" stroke-linecap="round"
-                                                            stroke-linejoin="round" class="feather feather-eye">
-                                                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z">
-                                                            </path>
-                                                            <circle cx="12" cy="12" r="3"></circle>
-                                                        </svg>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <label for="cnpass">Confirm New Password</label>
-                                                <div class="input-with-icon">
-                                                    <input type="password" id="cnpass" class="form-control"
-                                                        placeholder="Enter Password" />
-                                                    <div class="input-icon" onclick="showPassword('cnpass',this)">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                            viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                                            stroke-width="2" stroke-linecap="round"
-                                                            stroke-linejoin="round" class="feather feather-eye">
-                                                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z">
-                                                            </path>
-                                                            <circle cx="12" cy="12" r="3"></circle>
-                                                        </svg>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="d-flex justify-content-lg-end justify-content-center mt-2">
-                                            <button class="button button-lg button--primary" type="submit">Save
-                                                Changes</button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 order-1 order-lg-0 mt-4 mt-lg-0">
-                            <div class="white-bg">
-                                <div class="change-image-wizard">
-                                    <div class="image mx-auto">
-                                        <img src="{{asset('public/frontend/dist/images/user/user-img-01.jpg')}}"
-                                            alt="User" />
-                                    </div>
-                                    <form action="#">
-                                        <div class="d-flex justify-content-center">
-                                            <button type="submit" class="button button--primary-outline">CHANGE
-                                                iMAGE</button>
-                                        </div>
-                                    </form>
-                                    <p>Image size should be under 1MB image ratio 200px.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
- 
+
             </div>
         </div>
 
