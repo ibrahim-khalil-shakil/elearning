@@ -8,7 +8,7 @@ use App\Models\Student;
 use App\Models\Payment;
 use App\Models\Enrollment;
 use App\Models\Checkout;
-use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Session; 
 
 class sslController extends Controller
 {
@@ -53,11 +53,11 @@ class sslController extends Controller
         # CUSTOMER INFORMATION
         $post_data['cus_name'] = $user->name_en;
         $post_data['cus_email'] = $user->email;
-        $post_data['cus_add1'] = "2no Gate";
-        $post_data['cus_city'] = "Chattogram";
-        $post_data['cus_state'] = "Chattogram";
-        $post_data['cus_postcode'] = "4100";
-        $post_data['cus_country'] = "Bangladesh";
+        $post_data['cus_add1'] = "$user->address";
+        $post_data['cus_city'] = "$user->city";
+        $post_data['cus_state'] = "$user->state";
+        $post_data['cus_postcode'] = "$user->postcode";
+        $post_data['cus_country'] = "$user->country";
         $post_data['cus_phone'] = $user->contact_en;
         $post_data['cus_fax'] = $user->contact_en;
         

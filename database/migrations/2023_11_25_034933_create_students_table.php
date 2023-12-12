@@ -24,6 +24,11 @@ return new class extends Migration
             $table->text('bio')->nullable();
             $table->string('profession')->nullable();
             $table->string('nationality')->default('Bangladeshi')->nullable();
+            $table->text('address')->nullable();
+            $table->string('city')->nullable();
+            $table->string('state')->nullable();
+            $table->string('postcode')->nullable();
+            $table->string('country')->nullable();
             $table->boolean('status')->default(1)->comment('1 active, 0 inactive');
             $table->string('password');
             $table->string('language')->default('en');

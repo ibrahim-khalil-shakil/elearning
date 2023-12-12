@@ -25,7 +25,7 @@ use App\Http\Controllers\CouponController as coupon;
 
 /* students */
 use App\Http\Controllers\Students\AuthController as sauth;
-use App\Http\Controllers\Students\DashboardController as studashboard;
+use App\Http\Controllers\Students\DashboardController as studashboard; 
 use App\Http\Controllers\Students\ProfileController as stu_profile;
 use App\Http\Controllers\Students\sslController as sslcz;
 /*

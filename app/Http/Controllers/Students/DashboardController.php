@@ -13,6 +13,7 @@ class DashboardController extends Controller
     {
         $enrollment = Enrollment::get();
         $course = Course::get();
-        return view('students.dashboard', compact('enrollment', 'course'));
+        $purchaseHistory = Enrollment::with(['course'])->orderBy('enrollment_date', 'desc')->get();
+        return view('students.dashboard', compact('enrollment', 'course', 'purchaseHistory'));
     }
 }

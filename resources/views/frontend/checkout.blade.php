@@ -15,7 +15,7 @@
         </nav>
     </div>
 </div>
-
+ 
 <!-- Checkout Area Starts Here -->
 <section class="section checkout-area">
     <div class="container">

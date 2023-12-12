@@ -504,9 +504,11 @@
 
                 {{-- Purchase History --}}
                 <div class="tab-pane fade" id="nav-purchase" role="tabpanel" aria-labelledby="nav-purchase-tab">
+                    @foreach ($purchaseHistory as $enrollment)
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="purchase-area">
+                                <!-- Display course details using $enrollment->course and $enrollment->student -->
                                 <div class="purchase-area-close">
                                     <a href="#">
                                         <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
@@ -531,10 +533,9 @@
                                             <div class="text d-flex flex-column flex-lg-row">
                                                 <div class="text-main">
                                                     <h6>
-                                                        <a href="#">Advanced Digital Comic Coloring Concepts &
-                                                            Techniques</a>
+                                                        <a href="#">{{$enrollment->course?->title_en}}</a>
                                                     </h6>
-                                                    <p>By <a href="instructorcourses.html">Kevin Gilbert</a></p>
+                                                    <p>By <a href="instructorcourses.html">{{$enrollment->course?->instructor?->name_en}}</a></p>
                                                 </div>
                                                 <p>$87</p>
                                             </div>
@@ -598,6 +599,7 @@
                             </div>
                         </div>
                     </div>
+                    @endforeach
                     <div class="row mt-3">
                         <div class="col-lg-12">
                             <div class="purchase-area">
@@ -740,7 +742,7 @@
                             </p>
                         </div>
                     </div>
-                </div>
+                </div> 
 
                 {{-- Setting --}}
                 <div class="tab-pane fade" id="nav-setting" role="tabpanel" aria-labelledby="nav-setting-tab">
@@ -883,7 +885,7 @@
                         </div>
                     </div>
                 </div>
-
+ 
             </div>
         </div>
 
