@@ -508,7 +508,6 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="purchase-area">
-                                <!-- Display course details using $e->course and $e->student -->
                                 <div class="purchase-area-close">
                                     <a href="#">
                                         <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
@@ -526,7 +525,7 @@
                                             class="purchase-area-items-start d-flex align-items-lg-center flex-column flex-lg-row">
                                             <div class="image">
                                                 <a href="#">
-                                                    <img src="{{asset('public/frontend/dist/images/courses/demo-img-03.png')}}"
+                                                    <img src="{{asset('public/uploads/courses/'.$e->course?->image)}}"
                                                         alt="Image" />
                                                 </a>
                                             </div>
@@ -537,7 +536,7 @@
                                                     </h6>
                                                     <p>By <a href="instructorcourses.html">{{$e->course?->instructor?->name_en}}</a></p>
                                                 </div>
-                                                <p>$87</p>
+                                                <p>${{$e->course?->price}}</p>
                                             </div>
                                         </div>
                                         <div
