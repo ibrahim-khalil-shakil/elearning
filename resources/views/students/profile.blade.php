@@ -179,7 +179,7 @@
                                                 <label for="emailAddress">Email</label>
                                                 <input type="email" name="emailAddress" class="form-control"
                                                     value="{{$student_info->email}}" placeholder="Enter Your Email" />
-                                            </div>
+                                            </div> 
                                         </div>
                                         <div class="row">
                                             <div class="col-12">
