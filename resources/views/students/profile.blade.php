@@ -187,7 +187,7 @@
                                                 <input type="text" name="profession" class="form-control"
                                                     value="{{$student_info->profession}}"
                                                     placeholder="Enter Your Profession" />
-                                            </div>
+                                            </div> 
                                         </div>
                                         <div class="row g-3">
                                             <div class="col-lg-6">
