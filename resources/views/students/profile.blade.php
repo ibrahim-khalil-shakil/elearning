@@ -181,8 +181,8 @@
                                                     value="{{$student_info->email}}" placeholder="Enter Your Email" />
                                             </div>  
                                         </div>
-                                        <div class="row">
-                                            <div class="col-12">
+                                        <div class="row"> 
+                                            <div class="col-12"> 
                                                 <label for="profession">What Do You Do</label>
                                                 <input type="text" name="profession" class="form-control"
                                                     value="{{$student_info->profession}}"
