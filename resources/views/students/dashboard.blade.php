@@ -196,7 +196,7 @@
                                             <span class="percentage">43%</span>
                                             <p>Finish</p>
                                         </div>
-                                    </div>
+                                    </div> 
                                     <a class="button button-md button--primary-outline w-100 my-3"
                                         href="{{route('watchCourse', encryptor('encrypt', $a->course?->id))}}">Watch
                                         Course</a>
