@@ -11,25 +11,22 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('materials', function (Blueprint $table) {
+        Schema::create('lessons', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('lesson_id')->index();
             $table->string('title', 255)->nullable(false);
-            $table->enum('type', ['video', 'document', 'quiz'])->nullable(false);
-            $table->string('content')->nullable();
-            $table->text('content_url')->nullable();
+            $table->unsignedBigInteger('course_id')->index();
             $table->timestamps();
             $table->softDeletes();
 
-            $table->foreign('lesson_id')->references('id')->on('lessons')->onDelete('cascade');
+            $table->foreign('course_id')->references('id')->on('courses')->onDelete('cascade');
         });
-    } 
+    }
 
-    /** 
+    /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('materials');
+        Schema::dropIfExists('lessons');
     }
 };

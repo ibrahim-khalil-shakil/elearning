@@ -53,7 +53,7 @@
                                             <tr>
                                                 <th>{{__('#')}}</th>
                                                 <th>{{__('Title')}}</th>
-                                                <th>{{__('Lesson')}}</th>
+                                                <th>{{__('Course')}}</th>
                                                 <th>{{__('Material Type')}}</th>
                                                 <th>{{__('Content')}}</th>
                                                 <th>{{__('Content Url')}}</th>
@@ -65,7 +65,7 @@
                                             <tr>
                                                 <td>{{$m->id}}</td>
                                                 <td>{{$m->title}}</td>
-                                                <td>{{$m->lesson?->title}}</td>
+                                                <td>{{$m->course?->title_en}}</td>
                                                 <td>
                                                     {{ $m->type == 'video' ? __('Video') : ($m->type == 'document' ?
                                                     __('Document') : __('Quiz')) }}

@@ -38,7 +38,7 @@ class MaterialController extends Controller
         try {
             $material = new Material;
             $material->title = $request->materialTitle;
-            $material->course_id = $request->courseId;
+            $material->lesson_id = $request->lessonId;
             $material->type = $request->materialType;
             $material->content = $request->content;
             $material->content_url = $request->contentURL;
@@ -88,7 +88,7 @@ class MaterialController extends Controller
         try {
             $material = Material::findOrFail(encryptor('decrypt', $id));
             $material->title = $request->materialTitle;
-            $material->course_id = $request->courseId;
+            $material->lesson_id = $request->lessonId;
             $material->type = $request->materialType;
             $material->content_url = $request->contentURL;
 

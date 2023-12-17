@@ -52,17 +52,17 @@
                                 <div class="col-lg-6 col-md-6 col-sm-12">
                                     <div class="form-group">
                                         <label class="form-label">Course</label>
-                                        <select class="form-control" name="lessonId">
-                                            @forelse ($lesson as $l)
-                                            <option value="{{$l->id}}" {{old('lessonId')==$l->id?'selected':''}}>
-                                                {{$l->title}}</option>
+                                        <select class="form-control" name="courseId">
+                                            @forelse ($course as $c)
+                                            <option value="{{$c->id}}" {{old('courseId')==$c->id?'selected':''}}>
+                                                {{$c->title_en}}</option>
                                             @empty
                                             <option value="">No Course Found</option>
                                             @endforelse
                                         </select>
                                     </div>
-                                    @if($errors->has('lessonId'))
-                                    <span class="text-danger"> {{ $errors->first('lessonId') }}</span>
+                                    @if($errors->has('courseId'))
+                                    <span class="text-danger"> {{ $errors->first('courseId') }}</span>
                                     @endif
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12">

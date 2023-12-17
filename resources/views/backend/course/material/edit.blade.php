@@ -54,18 +54,18 @@
                                 <div class="col-lg-6 col-md-6 col-sm-12">
                                     <div class="form-group">
                                         <label class="form-label">Course</label>
-                                        <select class="form-control" name="courseId">
-                                            @forelse ($course as $c)
-                                            <option value="{{$c->id}}" {{old('courseId', $material->course_id) ==
-                                                $c->id?'selected':''}}>
-                                                {{$c->title_en}}</option>
+                                        <select class="form-control" name="lessonId">
+                                            @forelse ($lesson as $l)
+                                            <option value="{{$l->id}}" {{old('lessonId', $material->lesson_id) ==
+                                                $l->id?'selected':''}}>
+                                                {{$l->title}}</option>
                                             @empty
                                             <option value="">No Course Material Material Found</option>
                                             @endforelse
                                         </select>
                                     </div>
-                                    @if($errors->has('courseId'))
-                                    <span class="text-danger"> {{ $errors->first('courseId') }}</span>
+                                    @if($errors->has('lessonId'))
+                                    <span class="text-danger"> {{ $errors->first('lessonId') }}</span>
                                     @endif
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12">
