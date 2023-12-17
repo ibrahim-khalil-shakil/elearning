@@ -10,6 +10,7 @@ use App\Http\Controllers\Backend\Students\StudentController as student;
 use App\Http\Controllers\Backend\Instructors\InstructorController as instructor;
 use App\Http\Controllers\Backend\Courses\CourseCategoryController as courseCategory;
 use App\Http\Controllers\Backend\Courses\CourseController as course;
+use App\Http\Controllers\LessonController as lesson;
 use App\Http\Controllers\Backend\Courses\MaterialController as material;
 use App\Http\Controllers\Backend\Quizzes\QuizController as quiz;
 use App\Http\Controllers\Backend\Quizzes\QuestionController as question;
@@ -59,6 +60,7 @@ Route::middleware(['checkrole'])->prefix('admin')->group(function () {
     Route::resource('courseCategory', courseCategory::class);
     Route::resource('course', course::class);
     Route::resource('material', material::class);
+    Route::resource('lesson', lesson::class);
     Route::resource('quiz', quiz::class);
     Route::resource('question', question::class);
     Route::resource('option', option::class);

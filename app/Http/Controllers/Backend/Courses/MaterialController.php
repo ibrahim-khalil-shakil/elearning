@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\Backend\Course\Materials\AddNewRequest;
 use App\Http\Requests\Backend\Course\Materials\UpdateRequest;
-use App\Models\Course;
+use App\Models\Lesson;
 use Exception;
 
 class MaterialController extends Controller
@@ -26,8 +26,8 @@ class MaterialController extends Controller
      */
     public function create()
     {
-        $course = Course::get();
-        return view('backend.course.material.create', compact('course'));
+        $lesson= Lesson::get();
+        return view('backend.course.material.create', compact('lesson'));
     }
 
     /**
@@ -75,9 +75,9 @@ class MaterialController extends Controller
      */
     public function edit($id)
     {
-        $course = Course::get();
+        $lesson= Course::get();
         $material = Material::findOrFail(encryptor('decrypt', $id));
-        return view('backend.course.material.edit', compact('course', 'material'));
+        return view('backend.course.material.edit', compact('lesson', 'material'));
     }
 
     /** 

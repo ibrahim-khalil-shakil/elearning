@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Lesson;
+use App\Models\Course;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -61,7 +62,7 @@ class LessonController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Lesson $lesson)
+    public function edit($id)
     {
         $course = Course::get();
         $lesson = Lesson::findOrFail(encryptor('decrypt', $id));
@@ -71,20 +72,13 @@ class LessonController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Lesson $lesson)
+    public function update(Request $request, $id)
     {
         try {
             $lesson = Lesson::findOrFail(encryptor('decrypt', $id));
             $lesson->title = $request->lessonTitle;
-            $lesson->lesson_id = $request->lessonId;
-            $lesson->type = $request->materialType;
-            $lesson->content_url = $request->contentURL;
+            $lesson->course_id = $request->courseId;
 
-            if ($request->hasFile('content')) {
-                $contentName = rand(111, 999) . time() . '.' . $request->content->extension();
-                $request->content->move(public_path('uploads/courses/contents'), $contentName);
-                $lesson->content = $contentName;
-            }
             if ($lesson->save()) {
                 $this->notice::success('Data Saved');
                 return redirect()->route('lesson.index');
@@ -102,7 +96,7 @@ class LessonController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Lesson $lesson)
+    public function destroy($id)
     {
         $data = Lesson::findOrFail(encryptor('decrypt', $id));
         if ($data->delete()) {

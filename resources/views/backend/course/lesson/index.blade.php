@@ -1,5 +1,5 @@
 @extends('backend.layouts.app')
-@section('title', 'Course Material List')
+@section('title', 'Course Lesson List')
 
 @push('styles')
 <!-- Datatable -->
@@ -15,14 +15,14 @@
         <div class="row page-titles mx-0">
             <div class="col-sm-6 p-md-0">
                 <div class="welcome-text">
-                    <h4>Course Material List</h4>
+                    <h4>Course Lesson List</h4>
                 </div>
             </div>
             <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Home</a></li>
-                    <li class="breadcrumb-item active"><a href="{{route('material.index')}}">Course Materials</a></li>
-                    <li class="breadcrumb-item active"><a href="{{route('material.index')}}">All Course Material</a>
+                    <li class="breadcrumb-item active"><a href="{{route('lesson.index')}}">Course Lessons</a></li>
+                    <li class="breadcrumb-item active"><a href="{{route('lesson.index')}}">All Course Lesson</a>
                     </li>
                 </ol>
             </div>
@@ -43,8 +43,8 @@
                     <div id="list-view" class="tab-pane fade active show col-lg-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">All Course Materials List </h4>
-                                <a href="{{route('material.create')}}" class="btn btn-primary">+ Add new</a>
+                                <h4 class="card-title">All Course Lessons List </h4>
+                                <a href="{{route('lesson.create')}}" class="btn btn-primary">+ Add new</a>
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
@@ -54,37 +54,24 @@
                                                 <th>{{__('#')}}</th>
                                                 <th>{{__('Title')}}</th>
                                                 <th>{{__('Course')}}</th>
-                                                <th>{{__('Material Type')}}</th>
-                                                <th>{{__('Content')}}</th>
-                                                <th>{{__('Content Url')}}</th>
                                                 <th>{{__('Action')}}</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @forelse ($material as $m)
+                                            @forelse ($lesson as $l)
                                             <tr>
-                                                <td>{{$m->id}}</td>
-                                                <td>{{$m->title}}</td>
-                                                <td>{{$m->course?->title_en}}</td>
+                                                <td>{{$l->id}}</td>
+                                                <td>{{$l->title}}</td>
+                                                <td>{{$l->course?->title_en}}</td>
                                                 <td>
-                                                    {{ $m->type == 'video' ? __('Video') : ($m->type == 'document' ?
-                                                    __('Document') : __('Quiz')) }}
-                                                </td>
-                                                <td>
-                                                    <embed
-                                                        src="{{asset('public/uploads/courses/contents/'.$m->content)}}"
-                                                        width="100px" height="50px" />
-                                                </td>
-                                                <td>{{$m->content_url}}</td>
-                                                <td>
-                                                    <a href="{{route('material.edit', encryptor('encrypt',$m->id))}}"
+                                                    <a href="{{route('lesson.edit', encryptor('encrypt',$l->id))}}"
                                                         class="btn btn-sm btn-primary" title="Edit"><i
                                                             class="la la-pencil"></i></a>
                                                     <a href="javascript:void(0);" class="btn btn-sm btn-danger"
-                                                        title="Delete" onclick="$('#form{{$m->id}}').submit()"><i
+                                                        title="Delete" onclick="$('#form{{$l->id}}').submit()"><i
                                                             class="la la-trash-o"></i></a>
-                                                    <form id="form{{$m->id}}"
-                                                        action="{{route('material.destroy', encryptor('encrypt',$m->id))}}"
+                                                    <form id="form{{$l->id}}"
+                                                        action="{{route('lesson.destroy', encryptor('encrypt',$l->id))}}"
                                                         method="post">
                                                         @csrf
                                                         @method('DELETE')
@@ -93,7 +80,7 @@
                                             </tr>
                                             @empty
                                             <tr>
-                                                <th colspan="6" class="text-center">No Course Material Found</th>
+                                                <th colspan="6" class="text-center">No Course Lesson Found</th>
                                             </tr>
                                             @endforelse
                                         </tbody>

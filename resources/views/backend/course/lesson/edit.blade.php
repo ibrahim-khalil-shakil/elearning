@@ -1,5 +1,5 @@
 @extends('backend.layouts.app')
-@section('title', 'Edit Course Material Material')
+@section('title', 'Edit Course Lesson')
 
 @push('styles')
 <!-- Pick date -->
@@ -16,14 +16,14 @@
         <div class="row page-titles mx-0">
             <div class="col-sm-6 p-md-0">
                 <div class="welcome-text">
-                    <h4>Edit Course Material</h4>
+                    <h4>Edit Course Lesson</h4>
                 </div>
             </div>
             <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Home</a></li>
-                    <li class="breadcrumb-item active"><a href="{{route('material.index')}}">Course Materials</a></li>
-                    <li class="breadcrumb-item active"><a href="javascript:void(0);">Edit Course Material</a></li>
+                    <li class="breadcrumb-item active"><a href="{{route('lesson.index')}}">Course Lessons</a></li>
+                    <li class="breadcrumb-item active"><a href="javascript:void(0);">Edit Course Lesson</a></li>
                 </ol>
             </div>
         </div>
@@ -35,20 +35,20 @@
                         <h5 class="card-title">Basic Info</h5>
                     </div>
                     <div class="card-body">
-                        <form action="{{route('material.update',encryptor('encrypt', $material->id))}}" method="post"
+                        <form action="{{route('lesson.update',encryptor('encrypt', $lesson->id))}}" method="post"
                             enctype="multipart/form-data">
                             @csrf
                             @method('PATCH')
-                            <input type="hidden" name="uptoken" value="{{encryptor('encrypt',$material->id)}}">
+                            <input type="hidden" name="uptoken" value="{{encryptor('encrypt',$lesson->id)}}">
                             <div class="row">
                                 <div class="col-lg-6 col-md-6 col-sm-12">
                                     <div class="form-group">
                                         <label class="form-label">Title</label>
-                                        <input type="text" class="form-control" name="materialTitle"
-                                            value="{{old('materialTitle',$material->title)}}">
+                                        <input type="text" class="form-control" name="lessonTitle"
+                                            value="{{old('lessonTitle',$lesson->title)}}">
                                     </div>
-                                    @if($errors->has('materialTitle'))
-                                    <span class="text-danger"> {{ $errors->first('materialTitle') }}</span>
+                                    @if($errors->has('lessonTitle'))
+                                    <span class="text-danger"> {{ $errors->first('lessonTitle') }}</span>
                                     @endif
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12">
@@ -56,11 +56,11 @@
                                         <label class="form-label">Course</label>
                                         <select class="form-control" name="courseId">
                                             @forelse ($course as $c)
-                                            <option value="{{$c->id}}" {{old('courseId', $material->course_id) ==
+                                            <option value="{{$c->id}}" {{old('courseId', $lesson->course_id) ==
                                                 $c->id?'selected':''}}>
                                                 {{$c->title_en}}</option>
                                             @empty
-                                            <option value="">No Course Material Material Found</option>
+                                            <option value="">No Course Lesson Lesson Found</option>
                                             @endforelse
                                         </select>
                                     </div>
@@ -68,44 +68,9 @@
                                     <span class="text-danger"> {{ $errors->first('courseId') }}</span>
                                     @endif
                                 </div>
-                                <div class="col-lg-6 col-md-6 col-sm-12">
-                                    <div class="form-group">
-                                        <label class="form-label">Material Type</label>
-                                        <select class="form-control" name="materialType">
-                                            <option value="video" @if(old('materialType', $material->type)=='video' ) selected
-                                                @endif>Video
-                                            </option>
-                                            <option value="document" @if(old('materialType', $material->type)=='document' ) selected
-                                                @endif>Document
-                                            </option>
-                                            <option value="quiz" @if(old('materialType', $material->type)
-                                                =='quiz' )
-                                                selected @endif>Quiz</option>
-                                        </select>
-                                    </div>
-                                    @if($errors->has('materialType'))
-                                    <span class="text-danger"> {{ $errors->first('materialType') }}</span>
-                                    @endif
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-12">
-                                    <div class="form-group">
-                                        <label class="form-label">Content</label>
-                                        <input type="file" class="form-control" name="content">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-12">
-                                    <div class="form-group">
-                                        <label class="form-label">Content Url</label>
-                                        <textarea class="form-control"
-                                            name="contentURL">{{old('contentURL',$material->content_url)}}</textarea>
-                                    </div>
-                                    @if($errors->has('contentURL'))
-                                    <span class="text-danger"> {{ $errors->first('contentURL') }}</span>
-                                    @endif
-                                </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12">
                                     <button type="submit" class="btn btn-primary">Submit</button>
-                                    <button type="submit" class="btn btn-light">Cencel</button>
+                                    <button type="submit" class="btn btn-light">Cancel</button>
                                 </div>
                             </div>
                         </form>
