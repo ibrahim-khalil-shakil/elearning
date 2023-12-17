@@ -49,16 +49,13 @@ class MaterialController extends Controller
                 $material->content = $contentName;
             }
             if ($material->save()) {
-                $this->notice::success('Data Saved');
-                return redirect()->route('material.index');
+                return redirect()->route('material.index')->with('success', 'Data Saved');;
             } else {
-                $this->notice::error('Please try again');
-                return redirect()->back()->withInput();
+                return redirect()->back()->withInput()->with('error', 'Please try again');
             }
         } catch (Exception $e) {
-            // dd($e);
-            $this->notice::error('Please try again');
-            return redirect()->back()->withInput();
+            dd($e);
+            return redirect()->back()->withInput()->with('error', 'Please try again');
         }
     }
 
@@ -75,7 +72,7 @@ class MaterialController extends Controller
      */
     public function edit($id)
     {
-        $lesson= Course::get();
+        $lesson= Lesson::get();
         $material = Material::findOrFail(encryptor('decrypt', $id));
         return view('backend.course.material.edit', compact('lesson', 'material'));
     }
