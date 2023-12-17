@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 17, 2023 at 05:42 AM
--- Server version: 10.4.27-MariaDB
--- PHP Version: 8.2.0
+-- Generation Time: Dec 17, 2023 at 07:49 PM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -88,8 +88,8 @@ CREATE TABLE `coupons` (
 --
 
 INSERT INTO `coupons` (`id`, `code`, `discount`, `valid_from`, `valid_until`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'offer20', '20.00', '2023-12-09', '2024-03-26', '2023-12-09 09:30:32', '2023-12-09 09:30:32', NULL),
-(2, 'el50', '50.00', '2023-12-09', '2024-12-16', '2023-12-09 09:34:18', '2023-12-09 09:34:18', NULL);
+(1, 'offer20', 20.00, '2023-12-09', '2024-03-26', '2023-12-09 09:30:32', '2023-12-09 09:30:32', NULL),
+(2, 'el50', 50.00, '2023-12-09', '2024-12-16', '2023-12-09 09:34:18', '2023-12-09 09:34:18', NULL);
 
 -- --------------------------------------------------------
 
@@ -131,9 +131,9 @@ CREATE TABLE `courses` (
 --
 
 INSERT INTO `courses` (`id`, `title_en`, `title_bn`, `description_en`, `description_bn`, `category_id`, `instructor_id`, `type`, `price`, `old_price`, `subscription_price`, `start_from`, `duration`, `lesson`, `prerequisites_en`, `prerequisites_bn`, `difficulty`, `course_code`, `image`, `thumbnail_image`, `thumbnail_video`, `status`, `language`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(6, 'Full-Stack Web Development Bootcamp: From Basics to Advanced', 'ফুল-স্ট্যাক ওয়েব ডেভেলপমেন্ট বুটক্যাম্প: বেসিক থেকে অ্যাডভান্সড পর্যন্ত', 'Dive into the world of web development with a comprehensive bootcamp covering both front-end and back-end technologies. From HTML and CSS to server-side scripting, this course will equip you with the skills to build dynamic and interactive web applications.', 'ফ্রন্ট-এন্ড এবং ব্যাক-এন্ড উভয় প্রযুক্তিকে কভার করে একটি ব্যাপক বুটক্যাম্প সহ ওয়েব ডেভেলপমেন্টের জগতে ডুব দিন। HTML এবং CSS থেকে সার্ভার-সাইড স্ক্রিপ্টিং পর্যন্ত, এই কোর্সটি আপনাকে গতিশীল এবং ইন্টারেক্টিভ ওয়েব অ্যাপ্লিকেশন তৈরি করার দক্ষতা দিয়ে সজ্জিত করবে।', 4, 1, 'free', '99.00', '100.00', NULL, NULL, 3, 35, 'Basic understanding of HTML and CSS; familiarity with programming concepts is beneficial but not required.', 'HTML এবং CSS এর প্রাথমিক ধারণা; প্রোগ্রামিং ধারণার সাথে পরিচিতি উপকারী কিন্তু প্রয়োজনীয় নয়।', 'beginner', NULL, '3741701660977.jpg', '8521701660977.jpg', 'https://www.youtube.com/watch?v=lw6IVgb-omg', 1, 'en', '2023-11-26 03:30:17', '2023-12-03 21:36:17', NULL),
-(7, 'Adobe Creative Suite Mastery: Photoshop, Illustrator, InDesign', 'অ্যাডোব ক্রিয়েটিভ স্যুট মাস্টারি: ফটোশপ, ইলাস্ট্রেটর, ইনডিজাইন', 'Gain proficiency in Adobe Creative Suite\'s powerhouse tools—Photoshop for image editing, Illustrator for vector graphics, and InDesign for layout design. Learn to seamlessly integrate these applications to bring your creative visions to life.', 'Adobe Creative Suite-এর পাওয়ার হাউস টুলস-এ দক্ষতা অর্জন করুন- ছবি সম্পাদনার জন্য ফটোশপ, ভেক্টর গ্রাফিক্সের জন্য ইলাস্ট্রেটর এবং লেআউট ডিজাইনের জন্য InDesign। আপনার সৃজনশীল দৃষ্টিভঙ্গিগুলিকে জীবনে আনতে এই অ্যাপ্লিকেশনগুলিকে নির্বিঘ্নে সংহত করতে শিখুন৷', 2, 3, 'paid', '99.00', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'intermediate', NULL, '3751701660886.png', '5151701660887.png', 'https://www.youtube.com/watch?v=lw6IVgb-omg', 0, 'en', '2023-11-26 03:32:44', '2023-12-05 10:25:33', NULL),
-(8, 'Search Engine Optimization (SEO): Boosting Website Visibility', 'সার্চ ইঞ্জিন অপ্টিমাইজেশান (SEO): ওয়েবসাইট ভিজিবিলিটি বাড়ানো', 'Demystify the world of SEO and discover techniques to improve website visibility in search engine results. Learn keyword research, on-page optimization, and off-page strategies to drive organic traffic and enhance online presence.', 'এসইও-এর জগতকে ডিমিস্টিফাই করুন এবং সার্চ ইঞ্জিন ফলাফলে ওয়েবসাইটের দৃশ্যমানতা উন্নত করার কৌশল আবিষ্কার করুন। জৈব ট্র্যাফিক চালনা করতে এবং অনলাইন উপস্থিতি বাড়াতে কীওয়ার্ড গবেষণা, অন-পৃষ্ঠা অপ্টিমাইজেশান এবং অফ-পৃষ্ঠা কৌশলগুলি শিখুন।', 6, 4, 'subscription', '59.00', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'advanced', NULL, '4711701660905.png', '6821701660905.png', 'https://www.youtube.com/watch?v=lw6IVgb-omg', 1, 'en', '2023-11-26 03:34:25', '2023-12-05 10:25:57', NULL),
+(6, 'Full-Stack Web Development Bootcamp: From Basics to Advanced', 'ফুল-স্ট্যাক ওয়েব ডেভেলপমেন্ট বুটক্যাম্প: বেসিক থেকে অ্যাডভান্সড পর্যন্ত', 'Dive into the world of web development with a comprehensive bootcamp covering both front-end and back-end technologies. From HTML and CSS to server-side scripting, this course will equip you with the skills to build dynamic and interactive web applications.', 'ফ্রন্ট-এন্ড এবং ব্যাক-এন্ড উভয় প্রযুক্তিকে কভার করে একটি ব্যাপক বুটক্যাম্প সহ ওয়েব ডেভেলপমেন্টের জগতে ডুব দিন। HTML এবং CSS থেকে সার্ভার-সাইড স্ক্রিপ্টিং পর্যন্ত, এই কোর্সটি আপনাকে গতিশীল এবং ইন্টারেক্টিভ ওয়েব অ্যাপ্লিকেশন তৈরি করার দক্ষতা দিয়ে সজ্জিত করবে।', 4, 1, 'free', 99.00, 100.00, NULL, NULL, 3, 35, 'Basic understanding of HTML and CSS; familiarity with programming concepts is beneficial but not required.', 'HTML এবং CSS এর প্রাথমিক ধারণা; প্রোগ্রামিং ধারণার সাথে পরিচিতি উপকারী কিন্তু প্রয়োজনীয় নয়।', 'beginner', NULL, '3741701660977.jpg', '8521701660977.jpg', 'https://www.youtube.com/watch?v=lw6IVgb-omg', 1, 'en', '2023-11-26 03:30:17', '2023-12-03 21:36:17', NULL),
+(7, 'Adobe Creative Suite Mastery: Photoshop, Illustrator, InDesign', 'অ্যাডোব ক্রিয়েটিভ স্যুট মাস্টারি: ফটোশপ, ইলাস্ট্রেটর, ইনডিজাইন', 'Gain proficiency in Adobe Creative Suite\'s powerhouse tools—Photoshop for image editing, Illustrator for vector graphics, and InDesign for layout design. Learn to seamlessly integrate these applications to bring your creative visions to life.', 'Adobe Creative Suite-এর পাওয়ার হাউস টুলস-এ দক্ষতা অর্জন করুন- ছবি সম্পাদনার জন্য ফটোশপ, ভেক্টর গ্রাফিক্সের জন্য ইলাস্ট্রেটর এবং লেআউট ডিজাইনের জন্য InDesign। আপনার সৃজনশীল দৃষ্টিভঙ্গিগুলিকে জীবনে আনতে এই অ্যাপ্লিকেশনগুলিকে নির্বিঘ্নে সংহত করতে শিখুন৷', 2, 3, 'paid', 99.00, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'intermediate', NULL, '3751701660886.png', '5151701660887.png', 'https://www.youtube.com/watch?v=lw6IVgb-omg', 0, 'en', '2023-11-26 03:32:44', '2023-12-05 10:25:33', NULL),
+(8, 'Search Engine Optimization (SEO): Boosting Website Visibility', 'সার্চ ইঞ্জিন অপ্টিমাইজেশান (SEO): ওয়েবসাইট ভিজিবিলিটি বাড়ানো', 'Demystify the world of SEO and discover techniques to improve website visibility in search engine results. Learn keyword research, on-page optimization, and off-page strategies to drive organic traffic and enhance online presence.', 'এসইও-এর জগতকে ডিমিস্টিফাই করুন এবং সার্চ ইঞ্জিন ফলাফলে ওয়েবসাইটের দৃশ্যমানতা উন্নত করার কৌশল আবিষ্কার করুন। জৈব ট্র্যাফিক চালনা করতে এবং অনলাইন উপস্থিতি বাড়াতে কীওয়ার্ড গবেষণা, অন-পৃষ্ঠা অপ্টিমাইজেশান এবং অফ-পৃষ্ঠা কৌশলগুলি শিখুন।', 6, 4, 'subscription', 59.00, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'advanced', NULL, '4711701660905.png', '6821701660905.png', 'https://www.youtube.com/watch?v=lw6IVgb-omg', 1, 'en', '2023-11-26 03:34:25', '2023-12-05 10:25:57', NULL),
 (9, '3D Animation Basics: Getting Started with Blender', '3D অ্যানিমেশন বেসিকস: ব্লেন্ডার দিয়ে শুরু করা', 'Delve into the basics of 3D animation using Blender. Learn the fundamentals of modeling, rigging, and animation to bring characters and scenes to life in a three-dimensional space.', 'ব্লেন্ডার ব্যবহার করে 3D অ্যানিমেশনের বুনিয়াদিতে প্রবেশ করুন। একটি ত্রিমাত্রিক স্থানে চরিত্র এবং দৃশ্যগুলিকে প্রাণবন্ত করতে মডেলিং, কারচুপি এবং অ্যানিমেশনের মৌলিক বিষয়গুলি শিখুন৷', 37, 2, 'free', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'beginner', NULL, '1141701660945.png', '3001701660945.png', 'https://www.youtube.com/watch?v=lw6IVgb-omg', 1, 'en', '2023-11-26 03:37:43', '2023-12-05 10:25:13', NULL),
 (10, 'React.js Fundamentals: Building Modern User Interfaces', 'React.js ফান্ডামেন্টালস: আধুনিক ইউজার ইন্টারফেস তৈরি করা', 'Delve into the fundamentals of React.js and discover how to build modern, component-based user interfaces. From state management to routing, this course guides you through React\'s core concepts, enabling you to create powerful and maintainable front-end applications.', 'React.js-এর মৌলিক বিষয়গুলিকে অধ্যয়ন করুন এবং কীভাবে আধুনিক, উপাদান-ভিত্তিক ব্যবহারকারী ইন্টারফেস তৈরি করতে হয় তা আবিষ্কার করুন। স্টেট ম্যানেজমেন্ট থেকে রাউটিং পর্যন্ত, এই কোর্সটি আপনাকে রিঅ্যাক্টের মূল ধারণার মাধ্যমে গাইড করে, আপনাকে শক্তিশালী এবং রক্ষণাবেক্ষণযোগ্য ফ্রন্ট-এন্ড অ্যাপ্লিকেশন তৈরি করতে সক্ষম করে।', 5, 5, 'free', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'beginner', NULL, '2401701660963.png', '9801701660963.png', 'https://www.youtube.com/watch?v=lw6IVgb-omg', 0, 'en', '2023-11-26 03:39:29', '2023-12-05 10:26:13', NULL);
 
@@ -251,12 +251,34 @@ INSERT INTO `instructors` (`id`, `name_en`, `name_bn`, `contact_en`, `contact_bn
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `lessons`
+--
+
+CREATE TABLE `lessons` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `course_id` bigint(20) UNSIGNED NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `lessons`
+--
+
+INSERT INTO `lessons` (`id`, `title`, `course_id`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 'Introduction to HTML', 10, '2023-12-17 12:28:08', '2023-12-17 12:32:41', NULL);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `materials`
 --
 
 CREATE TABLE `materials` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `course_id` bigint(20) UNSIGNED NOT NULL,
+  `lesson_id` bigint(20) UNSIGNED NOT NULL,
   `title` varchar(255) NOT NULL,
   `type` enum('video','document','quiz') NOT NULL,
   `content` varchar(255) DEFAULT NULL,
@@ -265,13 +287,6 @@ CREATE TABLE `materials` (
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `materials`
---
-
-INSERT INTO `materials` (`id`, `course_id`, `title`, `type`, `content`, `content_url`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 10, 'Module-01', 'video', '8721702788050.mp4', 'www.youtube.com', '2023-11-27 09:26:27', '2023-12-16 22:40:50', NULL);
 
 -- --------------------------------------------------------
 
@@ -315,19 +330,20 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (15, '2023_11_25_034955_create_instructors_table', 4),
 (17, '2023_11_26_034558_create_courses_table', 5),
 (18, '2023_11_26_153556_create_enrollments_table', 6),
-(19, '2023_11_26_153620_create_materials_table', 6),
 (20, '2023_11_26_153639_create_quizzes_table', 6),
 (21, '2023_11_26_153659_create_questions_table', 6),
 (22, '2023_11_26_153719_create_answers_table', 6),
 (23, '2023_11_26_153735_create_reviews_table', 6),
 (25, '2023_11_26_153818_create_subscriptions_table', 6),
-(26, '2023_11_26_153844_create_progress_table', 6),
 (27, '2023_11_26_153902_create_discussions_table', 6),
 (28, '2023_11_26_153916_create_messages_table', 6),
 (29, '2023_11_26_153660_create_options_table', 7),
 (30, '2023_12_09_135359_create_coupons_table', 8),
 (32, '2023_12_09_170943_create_checkouts_table', 9),
-(33, '2023_11_26_153754_create_payments_table', 10);
+(33, '2023_11_26_153754_create_payments_table', 10),
+(34, '2023_11_26_153557_create_lessons_table', 11),
+(35, '2023_11_26_153620_create_materials_table', 12),
+(36, '2023_11_26_153844_create_progress_table', 12);
 
 -- --------------------------------------------------------
 
@@ -380,14 +396,14 @@ CREATE TABLE `payments` (
 --
 
 INSERT INTO `payments` (`id`, `student_id`, `currency`, `currency_code`, `amount`, `currency_value`, `method`, `txnid`, `status`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 10, 'BDT', 'BDT', '182.16', '1.00', 'SSLCommerz', 'SSLCZ_TXN_657699d29ce57', 0, '2023-12-10 23:10:42', '2023-12-10 23:10:42', NULL),
-(2, 10, 'BDT', 'BDT', '91.08', '1.00', 'SSLCommerz', 'SSLCZ_TXN_65769ad5411ed', 1, '2023-12-10 23:15:01', '2023-12-10 23:15:05', NULL),
-(3, 10, 'BDT', 'BDT', '91.08', '1.00', 'SSLCommerz', 'SSLCZ_TXN_65769e8f0cf11', 1, '2023-12-10 23:30:55', '2023-12-10 23:30:59', NULL),
-(4, 10, 'BDT', 'BDT', '182.16', '1.00', 'SSLCommerz', 'SSLCZ_TXN_65769f2a84099', 1, '2023-12-10 23:33:30', '2023-12-10 23:33:34', NULL),
-(5, 14, 'BDT', 'BDT', '113.85', '1.00', 'SSLCommerz', 'SSLCZ_TXN_6576a5e82a723', 1, '2023-12-11 00:02:16', '2023-12-11 00:02:25', NULL),
-(6, 14, 'BDT', 'BDT', '113.85', '1.00', 'SSLCommerz', 'SSLCZ_TXN_6576a7c21ecb3', 0, '2023-12-11 00:10:10', '2023-12-11 00:10:10', NULL),
-(7, 14, 'BDT', 'BDT', '113.85', '1.00', 'SSLCommerz', 'SSLCZ_TXN_6576a8b00421a', 1, '2023-12-11 00:14:08', '2023-12-11 00:14:48', NULL),
-(8, 14, 'BDT', 'BDT', '113.85', '1.00', 'SSLCommerz', 'SSLCZ_TXN_6576a8f323604', 1, '2023-12-11 00:15:15', '2023-12-11 00:15:26', NULL);
+(1, 10, 'BDT', 'BDT', 182.16, 1.00, 'SSLCommerz', 'SSLCZ_TXN_657699d29ce57', 0, '2023-12-10 23:10:42', '2023-12-10 23:10:42', NULL),
+(2, 10, 'BDT', 'BDT', 91.08, 1.00, 'SSLCommerz', 'SSLCZ_TXN_65769ad5411ed', 1, '2023-12-10 23:15:01', '2023-12-10 23:15:05', NULL),
+(3, 10, 'BDT', 'BDT', 91.08, 1.00, 'SSLCommerz', 'SSLCZ_TXN_65769e8f0cf11', 1, '2023-12-10 23:30:55', '2023-12-10 23:30:59', NULL),
+(4, 10, 'BDT', 'BDT', 182.16, 1.00, 'SSLCommerz', 'SSLCZ_TXN_65769f2a84099', 1, '2023-12-10 23:33:30', '2023-12-10 23:33:34', NULL),
+(5, 14, 'BDT', 'BDT', 113.85, 1.00, 'SSLCommerz', 'SSLCZ_TXN_6576a5e82a723', 1, '2023-12-11 00:02:16', '2023-12-11 00:02:25', NULL),
+(6, 14, 'BDT', 'BDT', 113.85, 1.00, 'SSLCommerz', 'SSLCZ_TXN_6576a7c21ecb3', 0, '2023-12-11 00:10:10', '2023-12-11 00:10:10', NULL),
+(7, 14, 'BDT', 'BDT', 113.85, 1.00, 'SSLCommerz', 'SSLCZ_TXN_6576a8b00421a', 1, '2023-12-11 00:14:08', '2023-12-11 00:14:48', NULL),
+(8, 14, 'BDT', 'BDT', 113.85, 1.00, 'SSLCommerz', 'SSLCZ_TXN_6576a8f323604', 1, '2023-12-11 00:15:15', '2023-12-11 00:15:26', NULL);
 
 -- --------------------------------------------------------
 
@@ -711,7 +727,7 @@ CREATE TABLE `students` (
 --
 
 INSERT INTO `students` (`id`, `name_en`, `name_bn`, `contact_en`, `contact_bn`, `email`, `date_of_birth`, `gender`, `image`, `bio`, `profession`, `nationality`, `address`, `city`, `state`, `postcode`, `country`, `status`, `password`, `language`, `remember_token`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(10, 'Safayet Ullah Azad', NULL, NULL, NULL, 'student@gmail.com', NULL, NULL, '3061702363456.jpg', NULL, NULL, 'Bangladeshi', NULL, NULL, NULL, NULL, NULL, 1, '$2y$12$ban4H0WFobNWv3zCAXy3HesQin0jI191dmVbtmRDPbcFQRQcGAa9i', 'en', NULL, '2023-12-01 23:59:13', '2023-12-12 00:44:16', NULL),
+(10, 'Ibrahim Khalil Shakil', NULL, '01234567890', NULL, 'student@gmail.com', '1998-01-13', NULL, '3061702363456.jpg', NULL, 'Web Developer', 'Bangladeshi', NULL, NULL, NULL, NULL, NULL, 1, '$2y$12$ban4H0WFobNWv3zCAXy3HesQin0jI191dmVbtmRDPbcFQRQcGAa9i', 'en', NULL, '2023-12-01 23:59:13', '2023-12-17 07:32:47', NULL),
 (14, 'Nakib Uddin', NULL, NULL, NULL, 'student@yahoo.com', NULL, NULL, NULL, NULL, NULL, 'Bangladeshi', NULL, NULL, NULL, NULL, NULL, 1, '$2y$12$ifBXreN1UhSc4pMlaZ.UNeNWKJcl8lEMuzO67d78bvx0s3JPcAelu', 'en', NULL, '2023-12-06 00:09:53', '2023-12-11 00:07:31', NULL),
 (15, 'Rabiul Islam', NULL, NULL, NULL, 'student2@gmail.com', NULL, NULL, NULL, NULL, NULL, 'Bangladeshi', NULL, NULL, NULL, NULL, NULL, 1, '$2y$12$oQCRT7fJw.ze6/0d/MrFKenHXZ7KfdnAArrF75ww0.GVsjCcHxvyS', 'en', NULL, '2023-12-06 00:22:10', '2023-12-06 00:22:10', NULL),
 (16, 'Noman Hossain', NULL, NULL, NULL, 'student2@yahoo.com', NULL, NULL, NULL, NULL, NULL, 'Bangladeshi', NULL, NULL, NULL, NULL, NULL, 1, '$2y$12$SvgP6RCHTvXFy0/qh9ypL.QdpKgRpaKWe0fGrhWF3cq9wIbnsCzBa', 'en', NULL, '2023-12-06 00:25:03', '2023-12-06 00:25:03', NULL);
@@ -835,11 +851,18 @@ ALTER TABLE `instructors`
   ADD KEY `instructors_role_id_index` (`role_id`);
 
 --
+-- Indexes for table `lessons`
+--
+ALTER TABLE `lessons`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `lessons_course_id_index` (`course_id`);
+
+--
 -- Indexes for table `materials`
 --
 ALTER TABLE `materials`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `materials_course_id_index` (`course_id`);
+  ADD KEY `materials_lesson_id_index` (`lesson_id`);
 
 --
 -- Indexes for table `messages`
@@ -1000,10 +1023,16 @@ ALTER TABLE `instructors`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
+-- AUTO_INCREMENT for table `lessons`
+--
+ALTER TABLE `lessons`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `materials`
 --
 ALTER TABLE `materials`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `messages`
@@ -1015,7 +1044,7 @@ ALTER TABLE `messages`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT for table `options`
@@ -1128,10 +1157,16 @@ ALTER TABLE `instructors`
   ADD CONSTRAINT `instructors_role_id_foreign` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE;
 
 --
+-- Constraints for table `lessons`
+--
+ALTER TABLE `lessons`
+  ADD CONSTRAINT `lessons_course_id_foreign` FOREIGN KEY (`course_id`) REFERENCES `courses` (`id`) ON DELETE CASCADE;
+
+--
 -- Constraints for table `materials`
 --
 ALTER TABLE `materials`
-  ADD CONSTRAINT `materials_course_id_foreign` FOREIGN KEY (`course_id`) REFERENCES `courses` (`id`) ON DELETE CASCADE;
+  ADD CONSTRAINT `materials_lesson_id_foreign` FOREIGN KEY (`lesson_id`) REFERENCES `lessons` (`id`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `messages`
