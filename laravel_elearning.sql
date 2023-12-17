@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 12, 2023 at 07:22 AM
+-- Generation Time: Dec 17, 2023 at 05:42 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -259,6 +259,7 @@ CREATE TABLE `materials` (
   `course_id` bigint(20) UNSIGNED NOT NULL,
   `title` varchar(255) NOT NULL,
   `type` enum('video','document','quiz') NOT NULL,
+  `content` varchar(255) DEFAULT NULL,
   `content_url` text DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
@@ -269,8 +270,8 @@ CREATE TABLE `materials` (
 -- Dumping data for table `materials`
 --
 
-INSERT INTO `materials` (`id`, `course_id`, `title`, `type`, `content_url`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 10, 'Module-01', 'video', 'www.youtube.com', '2023-11-27 09:26:27', '2023-11-27 09:38:01', NULL);
+INSERT INTO `materials` (`id`, `course_id`, `title`, `type`, `content`, `content_url`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 10, 'Module-01', 'video', '8721702788050.mp4', 'www.youtube.com', '2023-11-27 09:26:27', '2023-12-16 22:40:50', NULL);
 
 -- --------------------------------------------------------
 
@@ -710,7 +711,7 @@ CREATE TABLE `students` (
 --
 
 INSERT INTO `students` (`id`, `name_en`, `name_bn`, `contact_en`, `contact_bn`, `email`, `date_of_birth`, `gender`, `image`, `bio`, `profession`, `nationality`, `address`, `city`, `state`, `postcode`, `country`, `status`, `password`, `language`, `remember_token`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(10, 'Safayet Ullah Azad', NULL, NULL, NULL, 'student@gmail.com', NULL, NULL, NULL, NULL, NULL, 'Bangladeshi', NULL, NULL, NULL, NULL, NULL, 1, '$2y$12$ban4H0WFobNWv3zCAXy3HesQin0jI191dmVbtmRDPbcFQRQcGAa9i', 'en', NULL, '2023-12-01 23:59:13', '2023-12-09 07:49:38', NULL),
+(10, 'Safayet Ullah Azad', NULL, NULL, NULL, 'student@gmail.com', NULL, NULL, '3061702363456.jpg', NULL, NULL, 'Bangladeshi', NULL, NULL, NULL, NULL, NULL, 1, '$2y$12$ban4H0WFobNWv3zCAXy3HesQin0jI191dmVbtmRDPbcFQRQcGAa9i', 'en', NULL, '2023-12-01 23:59:13', '2023-12-12 00:44:16', NULL),
 (14, 'Nakib Uddin', NULL, NULL, NULL, 'student@yahoo.com', NULL, NULL, NULL, NULL, NULL, 'Bangladeshi', NULL, NULL, NULL, NULL, NULL, 1, '$2y$12$ifBXreN1UhSc4pMlaZ.UNeNWKJcl8lEMuzO67d78bvx0s3JPcAelu', 'en', NULL, '2023-12-06 00:09:53', '2023-12-11 00:07:31', NULL),
 (15, 'Rabiul Islam', NULL, NULL, NULL, 'student2@gmail.com', NULL, NULL, NULL, NULL, NULL, 'Bangladeshi', NULL, NULL, NULL, NULL, NULL, 1, '$2y$12$oQCRT7fJw.ze6/0d/MrFKenHXZ7KfdnAArrF75ww0.GVsjCcHxvyS', 'en', NULL, '2023-12-06 00:22:10', '2023-12-06 00:22:10', NULL),
 (16, 'Noman Hossain', NULL, NULL, NULL, 'student2@yahoo.com', NULL, NULL, NULL, NULL, NULL, 'Bangladeshi', NULL, NULL, NULL, NULL, NULL, 1, '$2y$12$SvgP6RCHTvXFy0/qh9ypL.QdpKgRpaKWe0fGrhWF3cq9wIbnsCzBa', 'en', NULL, '2023-12-06 00:25:03', '2023-12-06 00:25:03', NULL);
@@ -1002,7 +1003,7 @@ ALTER TABLE `instructors`
 -- AUTO_INCREMENT for table `materials`
 --
 ALTER TABLE `materials`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `messages`
