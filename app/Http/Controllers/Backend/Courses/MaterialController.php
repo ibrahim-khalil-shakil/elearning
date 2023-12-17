@@ -15,7 +15,7 @@ class MaterialController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index() 
+    public function index()
     {
         $material = Material::paginate(10);
         return view('backend.course.material.index', compact('material'));
@@ -40,10 +40,16 @@ class MaterialController extends Controller
             $material->title = $request->materialTitle;
             $material->course_id = $request->courseId;
             $material->type = $request->materialType;
+            $material->content = $request->content;
             $material->content_url = $request->contentURL;
 
+            if ($request->hasFile('content')) {
+                $contentName = rand(111, 999) . time() . '.' . $request->content->extension();
+                $request->content->move(public_path('uploads/courses/contents'), $contentName);
+                $material->content = $contentName;
+            }
             if ($material->save()) {
-                $this->notice::success('Data Saved'); 
+                $this->notice::success('Data Saved');
                 return redirect()->route('material.index');
             } else {
                 $this->notice::error('Please try again');
@@ -86,6 +92,11 @@ class MaterialController extends Controller
             $material->type = $request->materialType;
             $material->content_url = $request->contentURL;
 
+            if ($request->hasFile('content')) {
+                $contentName = rand(111, 999) . time() . '.' . $request->content->extension();
+                $request->content->move(public_path('uploads/courses/contents'), $contentName);
+                $material->content = $contentName;
+            }
             if ($material->save()) {
                 $this->notice::success('Data Saved');
                 return redirect()->route('material.index');

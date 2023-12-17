@@ -89,6 +89,12 @@
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12">
                                     <div class="form-group">
+                                        <label class="form-label">Content</label>
+                                        <input type="file" class="form-control" name="content">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <div class="form-group">
                                         <label class="form-label">Content Url</label>
                                         <textarea class="form-control"
                                             name="contentURL">{{old('contentURL',$material->content_url)}}</textarea>

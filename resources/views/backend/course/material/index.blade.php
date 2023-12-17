@@ -55,6 +55,7 @@
                                                 <th>{{__('Title')}}</th>
                                                 <th>{{__('Course')}}</th>
                                                 <th>{{__('Material Type')}}</th>
+                                                <th>{{__('Content')}}</th>
                                                 <th>{{__('Content Url')}}</th>
                                                 <th>{{__('Action')}}</th>
                                             </tr>
@@ -64,10 +65,15 @@
                                             <tr>
                                                 <td>{{$m->id}}</td>
                                                 <td>{{$m->title}}</td>
-                                                <td>{{$m->course?->title_en}}</td> 
+                                                <td>{{$m->course?->title_en}}</td>
                                                 <td>
                                                     {{ $m->type == 'video' ? __('Video') : ($m->type == 'document' ?
                                                     __('Document') : __('Quiz')) }}
+                                                </td>
+                                                <td>
+                                                    <embed
+                                                        src="{{asset('public/uploads/courses/contents/'.$m->content)}}"
+                                                        width="100px" height="50px" />
                                                 </td>
                                                 <td>{{$m->content_url}}</td>
                                                 <td>
