@@ -101,7 +101,8 @@
                         type="button" role="tab" aria-controls="nav-purchase" aria-selected="false">Purchase
                         History</button>
 
-                    <button class="nav-link "><a href="{{route('student_profile')}}" class="text-secondary">Profile</a></button>
+                    <button class="nav-link "><a href="{{route('student_profile')}}"
+                            class="text-secondary">Profile</a></button>
 
                     <button class="nav-link "><a href="{{route('home')}}" class="text-secondary">Home</a></button>
                 </div>
@@ -196,7 +197,7 @@
                                             <span class="percentage">43%</span>
                                             <p>Finish</p>
                                         </div>
-                                    </div> 
+                                    </div>
                                     <a class="button button-md button--primary-outline w-100 my-3"
                                         href="{{route('watchCourse', encryptor('encrypt', $a->course?->id))}}">Watch
                                         Course</a>
@@ -527,48 +528,11 @@
                                                     <h6>
                                                         <a href="#">{{$e->course?->title_en}}</a>
                                                     </h6>
-                                                    <p>By <a
+                                                    <p> By <a
                                                             href="instructorcourses.html">{{$e->course?->instructor?->name_en}}</a>
                                                     </p>
                                                 </div>
                                                 <p>${{$e->course?->price}}</p>
-                                            </div>
-                                        </div>
-                                        <div
-                                            class="purchase-area-items-start d-flex align-items-lg-center flex-column flex-lg-row">
-                                            <div class="image">
-                                                <a href="#">
-                                                    <img src="{{asset('public/frontend/dist/images/courses/demo-img-05.png')}}"
-                                                        alt="Image" />
-                                                </a>
-                                            </div>
-                                            <div class="text d-flex flex-column flex-lg-row">
-                                                <div class="text-main">
-                                                    <h6>
-                                                        <a href="#">Advanced Digital Comic Coloring Concepts &
-                                                            Techniques</a>
-                                                    </h6>
-                                                    <p>By <a href="instructorcourses.html">Kevin Gilbert</a></p>
-                                                </div>
-                                                <p>$25</p>
-                                            </div>
-                                        </div>
-                                        <div
-                                            class="purchase-area-items-start mb-0 pb-2 d-flex align-items-lg-center flex-column flex-lg-row">
-                                            <div class="image">
-                                                <a href="#">
-                                                    <img src="{{asset('public/frontend/dist/images/courses/8.jpg')}}"
-                                                        alt="Image" />
-                                                </a>
-                                            </div>
-                                            <div class="text d-flex flex-column flex-lg-row">
-                                                <div class="text-main">
-                                                    <h6>
-                                                        <a href="#">Adobe Illustrator CC – Advanced Training Course</a>
-                                                    </h6>
-                                                    <p>By <a href="instructorcourses.html">Kevin Gilbert</a></p>
-                                                </div>
-                                                <p>$14</p>
                                             </div>
                                         </div>
                                     </div>
@@ -582,7 +546,6 @@
                                             <dd class="col-sm-8">
                                                 03
                                             </dd>
-
                                             <dt class="col-sm-4">Payment Type</dt>
                                             <dd class="col-sm-8">
                                                 Credit Card
