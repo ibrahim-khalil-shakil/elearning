@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 18, 2023 at 04:25 AM
+-- Generation Time: Dec 18, 2023 at 08:15 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -64,7 +64,12 @@ INSERT INTO `checkouts` (`id`, `cart_data`, `student_id`, `txnid`, `status`, `cr
 (3, 'eyJjYXJ0Ijp7IjYiOnsidGl0bGVfZW4iOiJGdWxsLVN0YWNrIFdlYiBEZXZlbG9wbWVudCBCb290Y2FtcDogRnJvbSBCYXNpY3MgdG8gQWR2YW5jZWQiLCJxdWFudGl0eSI6MSwicHJpY2UiOiI5OS4wMCIsIm9sZF9wcmljZSI6IjEwMC4wMCIsImltYWdlIjoiMzc0MTcwMTY2MDk3Ny5qcGciLCJkaWZmaWN1bHR5IjoiYmVnaW5uZXIiLCJpbnN0cnVjdG9yIjoiQnVyaGFuIFVkZGluIEZ1YWQifX0sImNhcnRfZGV0YWlscyI6eyJjYXJ0X3RvdGFsIjo5OSwidGF4IjoxNC44NSwidG90YWxfYW1vdW50IjoxMTMuODV9fQ==', 14, 'SSLCZ_TXN_6576a5e82a723', 1, '2023-12-11 00:02:16', '2023-12-11 00:02:25', NULL),
 (4, 'eyJjYXJ0Ijp7IjYiOnsidGl0bGVfZW4iOiJGdWxsLVN0YWNrIFdlYiBEZXZlbG9wbWVudCBCb290Y2FtcDogRnJvbSBCYXNpY3MgdG8gQWR2YW5jZWQiLCJxdWFudGl0eSI6MSwicHJpY2UiOiI5OS4wMCIsIm9sZF9wcmljZSI6IjEwMC4wMCIsImltYWdlIjoiMzc0MTcwMTY2MDk3Ny5qcGciLCJkaWZmaWN1bHR5IjoiYmVnaW5uZXIiLCJpbnN0cnVjdG9yIjoiQnVyaGFuIFVkZGluIEZ1YWQifX0sImNhcnRfZGV0YWlscyI6eyJjYXJ0X3RvdGFsIjo5OSwidGF4IjoxNC44NSwidG90YWxfYW1vdW50IjoxMTMuODV9fQ==', 14, 'SSLCZ_TXN_6576a7c21ecb3', 0, '2023-12-11 00:10:10', '2023-12-11 00:10:10', NULL),
 (5, 'eyJjYXJ0Ijp7IjYiOnsidGl0bGVfZW4iOiJGdWxsLVN0YWNrIFdlYiBEZXZlbG9wbWVudCBCb290Y2FtcDogRnJvbSBCYXNpY3MgdG8gQWR2YW5jZWQiLCJxdWFudGl0eSI6MSwicHJpY2UiOiI5OS4wMCIsIm9sZF9wcmljZSI6IjEwMC4wMCIsImltYWdlIjoiMzc0MTcwMTY2MDk3Ny5qcGciLCJkaWZmaWN1bHR5IjoiYmVnaW5uZXIiLCJpbnN0cnVjdG9yIjoiQnVyaGFuIFVkZGluIEZ1YWQifX0sImNhcnRfZGV0YWlscyI6eyJjYXJ0X3RvdGFsIjo5OSwidGF4IjoxNC44NSwidG90YWxfYW1vdW50IjoxMTMuODV9fQ==', 14, 'SSLCZ_TXN_6576a8b00421a', 1, '2023-12-11 00:14:08', '2023-12-11 00:14:48', NULL),
-(6, 'eyJjYXJ0Ijp7IjYiOnsidGl0bGVfZW4iOiJGdWxsLVN0YWNrIFdlYiBEZXZlbG9wbWVudCBCb290Y2FtcDogRnJvbSBCYXNpY3MgdG8gQWR2YW5jZWQiLCJxdWFudGl0eSI6MSwicHJpY2UiOiI5OS4wMCIsIm9sZF9wcmljZSI6IjEwMC4wMCIsImltYWdlIjoiMzc0MTcwMTY2MDk3Ny5qcGciLCJkaWZmaWN1bHR5IjoiYmVnaW5uZXIiLCJpbnN0cnVjdG9yIjoiQnVyaGFuIFVkZGluIEZ1YWQifX0sImNhcnRfZGV0YWlscyI6eyJjYXJ0X3RvdGFsIjo5OSwidGF4IjoxNC44NSwidG90YWxfYW1vdW50IjoxMTMuODV9fQ==', 14, 'SSLCZ_TXN_6576a8f323604', 1, '2023-12-11 00:15:15', '2023-12-11 00:15:26', NULL);
+(6, 'eyJjYXJ0Ijp7IjYiOnsidGl0bGVfZW4iOiJGdWxsLVN0YWNrIFdlYiBEZXZlbG9wbWVudCBCb290Y2FtcDogRnJvbSBCYXNpY3MgdG8gQWR2YW5jZWQiLCJxdWFudGl0eSI6MSwicHJpY2UiOiI5OS4wMCIsIm9sZF9wcmljZSI6IjEwMC4wMCIsImltYWdlIjoiMzc0MTcwMTY2MDk3Ny5qcGciLCJkaWZmaWN1bHR5IjoiYmVnaW5uZXIiLCJpbnN0cnVjdG9yIjoiQnVyaGFuIFVkZGluIEZ1YWQifX0sImNhcnRfZGV0YWlscyI6eyJjYXJ0X3RvdGFsIjo5OSwidGF4IjoxNC44NSwidG90YWxfYW1vdW50IjoxMTMuODV9fQ==', 14, 'SSLCZ_TXN_6576a8f323604', 1, '2023-12-11 00:15:15', '2023-12-11 00:15:26', NULL),
+(7, 'eyJjYXJ0Ijp7IjYiOnsidGl0bGVfZW4iOiJGdWxsLVN0YWNrIFdlYiBEZXZlbG9wbWVudCBCb290Y2FtcDogRnJvbSBCYXNpY3MgdG8gQWR2YW5jZWQiLCJxdWFudGl0eSI6MSwicHJpY2UiOiI5OS4wMCIsIm9sZF9wcmljZSI6IjEwMC4wMCIsImltYWdlIjoiMzc0MTcwMTY2MDk3Ny5qcGciLCJkaWZmaWN1bHR5IjoiYmVnaW5uZXIiLCJpbnN0cnVjdG9yIjoiQnVyaGFuIFVkZGluIEZ1YWQifSwiOCI6eyJ0aXRsZV9lbiI6IlNlYXJjaCBFbmdpbmUgT3B0aW1pemF0aW9uIChTRU8pOiBCb29zdGluZyBXZWJzaXRlIFZpc2liaWxpdHkiLCJxdWFudGl0eSI6MSwicHJpY2UiOiI1OS4wMCIsIm9sZF9wcmljZSI6bnVsbCwiaW1hZ2UiOiI0NzExNzAxNjYwOTA1LnBuZyIsImRpZmZpY3VsdHkiOiJhZHZhbmNlZCIsImluc3RydWN0b3IiOiJKb3NoaW0gVWRkaW4ifX0sImNhcnRfZGV0YWlscyI6eyJjYXJ0X3RvdGFsIjoxNTgsImNvdXBvbl9jb2RlIjoib2ZmZXIyMCIsImRpc2NvdW50IjoiMjAuMDAiLCJkaXNjb3VudF9hbW91bnQiOjMxLjYsInRheCI6MTguOTYsInRvdGFsX2Ftb3VudCI6MTQ1LjM2fX0=', 17, 'SSLCZ_TXN_657fea661d5b3', 0, '2023-12-18 00:44:54', '2023-12-18 00:44:54', NULL),
+(8, 'eyJjYXJ0Ijp7IjYiOnsidGl0bGVfZW4iOiJGdWxsLVN0YWNrIFdlYiBEZXZlbG9wbWVudCBCb290Y2FtcDogRnJvbSBCYXNpY3MgdG8gQWR2YW5jZWQiLCJxdWFudGl0eSI6MSwicHJpY2UiOiI5OS4wMCIsIm9sZF9wcmljZSI6IjEwMC4wMCIsImltYWdlIjoiMzc0MTcwMTY2MDk3Ny5qcGciLCJkaWZmaWN1bHR5IjoiYmVnaW5uZXIiLCJpbnN0cnVjdG9yIjoiQnVyaGFuIFVkZGluIEZ1YWQifSwiOCI6eyJ0aXRsZV9lbiI6IlNlYXJjaCBFbmdpbmUgT3B0aW1pemF0aW9uIChTRU8pOiBCb29zdGluZyBXZWJzaXRlIFZpc2liaWxpdHkiLCJxdWFudGl0eSI6MSwicHJpY2UiOiI1OS4wMCIsIm9sZF9wcmljZSI6bnVsbCwiaW1hZ2UiOiI0NzExNzAxNjYwOTA1LnBuZyIsImRpZmZpY3VsdHkiOiJhZHZhbmNlZCIsImluc3RydWN0b3IiOiJKb3NoaW0gVWRkaW4ifX0sImNhcnRfZGV0YWlscyI6eyJjYXJ0X3RvdGFsIjoxNTgsImNvdXBvbl9jb2RlIjoib2ZmZXIyMCIsImRpc2NvdW50IjoiMjAuMDAiLCJkaXNjb3VudF9hbW91bnQiOjMxLjYsInRheCI6MTguOTYsInRvdGFsX2Ftb3VudCI6MTQ1LjM2fX0=', 17, 'SSLCZ_TXN_657feb1853ccc', 0, '2023-12-18 00:47:52', '2023-12-18 00:47:52', NULL),
+(9, 'eyJjYXJ0Ijp7IjYiOnsidGl0bGVfZW4iOiJGdWxsLVN0YWNrIFdlYiBEZXZlbG9wbWVudCBCb290Y2FtcDogRnJvbSBCYXNpY3MgdG8gQWR2YW5jZWQiLCJxdWFudGl0eSI6MSwicHJpY2UiOiI5OS4wMCIsIm9sZF9wcmljZSI6IjEwMC4wMCIsImltYWdlIjoiMzc0MTcwMTY2MDk3Ny5qcGciLCJkaWZmaWN1bHR5IjoiYmVnaW5uZXIiLCJpbnN0cnVjdG9yIjoiQnVyaGFuIFVkZGluIEZ1YWQifX0sImNhcnRfZGV0YWlscyI6eyJjYXJ0X3RvdGFsIjo5OSwiY291cG9uX2NvZGUiOiJvZmZlcjIwIiwiZGlzY291bnQiOiIyMC4wMCIsImRpc2NvdW50X2Ftb3VudCI6MTkuOCwidGF4IjoxMS44OCwidG90YWxfYW1vdW50Ijo5MS4wOH19', 17, 'SSLCZ_TXN_657fee632397d', 0, '2023-12-18 01:01:55', '2023-12-18 01:01:55', NULL),
+(10, 'eyJjYXJ0Ijp7IjYiOnsidGl0bGVfZW4iOiJGdWxsLVN0YWNrIFdlYiBEZXZlbG9wbWVudCBCb290Y2FtcDogRnJvbSBCYXNpY3MgdG8gQWR2YW5jZWQiLCJxdWFudGl0eSI6MSwicHJpY2UiOiI5OS4wMCIsIm9sZF9wcmljZSI6IjEwMC4wMCIsImltYWdlIjoiMzc0MTcwMTY2MDk3Ny5qcGciLCJkaWZmaWN1bHR5IjoiYmVnaW5uZXIiLCJpbnN0cnVjdG9yIjoiQnVyaGFuIFVkZGluIEZ1YWQifX0sImNhcnRfZGV0YWlscyI6eyJjYXJ0X3RvdGFsIjo5OSwidGF4IjoxNC44NSwidG90YWxfYW1vdW50IjoxMTMuODV9fQ==', 17, 'SSLCZ_TXN_657fef18a049e', 0, '2023-12-18 01:04:56', '2023-12-18 01:04:56', NULL),
+(11, 'eyJjYXJ0Ijp7IjYiOnsidGl0bGVfZW4iOiJGdWxsLVN0YWNrIFdlYiBEZXZlbG9wbWVudCBCb290Y2FtcDogRnJvbSBCYXNpY3MgdG8gQWR2YW5jZWQiLCJxdWFudGl0eSI6MSwicHJpY2UiOiI5OS4wMCIsIm9sZF9wcmljZSI6IjEwMC4wMCIsImltYWdlIjoiMzc0MTcwMTY2MDk3Ny5qcGciLCJkaWZmaWN1bHR5IjoiYmVnaW5uZXIiLCJpbnN0cnVjdG9yIjoiQnVyaGFuIFVkZGluIEZ1YWQifX0sImNhcnRfZGV0YWlscyI6eyJjYXJ0X3RvdGFsIjo5OSwidGF4IjoxNC44NSwidG90YWxfYW1vdW50IjoxMTMuODV9fQ==', 17, 'SSLCZ_TXN_657ff023049f9', 1, '2023-12-18 01:09:23', '2023-12-18 01:09:26', NULL);
 
 -- --------------------------------------------------------
 
@@ -203,11 +208,10 @@ CREATE TABLE `enrollments` (
 --
 
 INSERT INTO `enrollments` (`id`, `student_id`, `course_id`, `enrollment_date`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 10, 6, '2023-12-10 18:00:00', '2023-12-10 23:37:53', '2023-12-10 23:37:53', NULL),
-(2, 10, 7, '2023-12-10 18:00:00', '2023-12-10 23:37:53', '2023-12-10 23:37:53', NULL),
 (5, 14, 6, '2023-12-10 18:00:00', '2023-12-11 00:02:25', '2023-12-11 00:02:25', NULL),
 (6, 14, 6, '2023-12-10 18:00:00', '2023-12-11 00:14:48', '2023-12-11 00:14:48', NULL),
-(7, 14, 6, '2023-12-10 18:00:00', '2023-12-11 00:15:26', '2023-12-11 00:15:26', NULL);
+(7, 14, 6, '2023-12-10 18:00:00', '2023-12-11 00:15:26', '2023-12-11 00:15:26', NULL),
+(8, 17, 6, '2023-12-17 18:00:00', '2023-12-18 01:09:26', '2023-12-18 01:09:26', NULL);
 
 -- --------------------------------------------------------
 
@@ -412,7 +416,12 @@ INSERT INTO `payments` (`id`, `student_id`, `currency`, `currency_code`, `amount
 (5, 14, 'BDT', 'BDT', '113.85', '1.00', 'SSLCommerz', 'SSLCZ_TXN_6576a5e82a723', 1, '2023-12-11 00:02:16', '2023-12-11 00:02:25', NULL),
 (6, 14, 'BDT', 'BDT', '113.85', '1.00', 'SSLCommerz', 'SSLCZ_TXN_6576a7c21ecb3', 0, '2023-12-11 00:10:10', '2023-12-11 00:10:10', NULL),
 (7, 14, 'BDT', 'BDT', '113.85', '1.00', 'SSLCommerz', 'SSLCZ_TXN_6576a8b00421a', 1, '2023-12-11 00:14:08', '2023-12-11 00:14:48', NULL),
-(8, 14, 'BDT', 'BDT', '113.85', '1.00', 'SSLCommerz', 'SSLCZ_TXN_6576a8f323604', 1, '2023-12-11 00:15:15', '2023-12-11 00:15:26', NULL);
+(8, 14, 'BDT', 'BDT', '113.85', '1.00', 'SSLCommerz', 'SSLCZ_TXN_6576a8f323604', 1, '2023-12-11 00:15:15', '2023-12-11 00:15:26', NULL),
+(9, 17, 'BDT', 'BDT', '145.36', '1.00', 'SSLCommerz', 'SSLCZ_TXN_657fea661d5b3', 0, '2023-12-18 00:44:54', '2023-12-18 00:44:54', NULL),
+(10, 17, 'BDT', 'BDT', '145.36', '1.00', 'SSLCommerz', 'SSLCZ_TXN_657feb1853ccc', 0, '2023-12-18 00:47:52', '2023-12-18 00:47:52', NULL),
+(11, 17, 'BDT', 'BDT', '91.08', '1.00', 'SSLCommerz', 'SSLCZ_TXN_657fee632397d', 0, '2023-12-18 01:01:55', '2023-12-18 01:01:55', NULL),
+(12, 17, 'BDT', 'BDT', '113.85', '1.00', 'SSLCommerz', 'SSLCZ_TXN_657fef18a049e', 0, '2023-12-18 01:04:56', '2023-12-18 01:04:56', NULL),
+(13, 17, 'BDT', 'BDT', '113.85', '1.00', 'SSLCommerz', 'SSLCZ_TXN_657ff023049f9', 1, '2023-12-18 01:09:23', '2023-12-18 01:09:26', NULL);
 
 -- --------------------------------------------------------
 
@@ -736,10 +745,10 @@ CREATE TABLE `students` (
 --
 
 INSERT INTO `students` (`id`, `name_en`, `name_bn`, `contact_en`, `contact_bn`, `email`, `date_of_birth`, `gender`, `image`, `bio`, `profession`, `nationality`, `address`, `city`, `state`, `postcode`, `country`, `status`, `password`, `language`, `remember_token`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(10, 'Ibrahim Khalil Shakil', NULL, '01234567890', NULL, 'student@gmail.com', '1998-01-13', NULL, '3061702363456.jpg', NULL, 'Web Developer', 'Bangladeshi', NULL, NULL, NULL, NULL, NULL, 1, '$2y$12$ban4H0WFobNWv3zCAXy3HesQin0jI191dmVbtmRDPbcFQRQcGAa9i', 'en', NULL, '2023-12-01 23:59:13', '2023-12-17 07:32:47', NULL),
-(14, 'Nakib Uddin', NULL, NULL, NULL, 'student@yahoo.com', NULL, NULL, NULL, NULL, NULL, 'Bangladeshi', NULL, NULL, NULL, NULL, NULL, 1, '$2y$12$ifBXreN1UhSc4pMlaZ.UNeNWKJcl8lEMuzO67d78bvx0s3JPcAelu', 'en', NULL, '2023-12-06 00:09:53', '2023-12-11 00:07:31', NULL),
+(14, 'Nakib Uddin', NULL, NULL, NULL, 'student@yahoo.com', NULL, NULL, NULL, NULL, NULL, 'Bangladeshi', NULL, NULL, NULL, NULL, NULL, 1, '$2y$12$ACT2LHXsD/Jlfw0aMNAIY.236b9GAkfRxdjAuYf0B65zmTFbjSpBm', 'en', NULL, '2023-12-06 00:09:53', '2023-12-18 00:11:12', NULL),
 (15, 'Rabiul Islam', NULL, NULL, NULL, 'student2@gmail.com', NULL, NULL, NULL, NULL, NULL, 'Bangladeshi', NULL, NULL, NULL, NULL, NULL, 1, '$2y$12$oQCRT7fJw.ze6/0d/MrFKenHXZ7KfdnAArrF75ww0.GVsjCcHxvyS', 'en', NULL, '2023-12-06 00:22:10', '2023-12-06 00:22:10', NULL),
-(16, 'Noman Hossain', NULL, NULL, NULL, 'student2@yahoo.com', NULL, NULL, NULL, NULL, NULL, 'Bangladeshi', NULL, NULL, NULL, NULL, NULL, 1, '$2y$12$SvgP6RCHTvXFy0/qh9ypL.QdpKgRpaKWe0fGrhWF3cq9wIbnsCzBa', 'en', NULL, '2023-12-06 00:25:03', '2023-12-06 00:25:03', NULL);
+(16, 'Noman Hossain', NULL, NULL, NULL, 'student2@yahoo.com', NULL, NULL, NULL, NULL, NULL, 'Bangladeshi', NULL, NULL, NULL, NULL, NULL, 1, '$2y$12$SvgP6RCHTvXFy0/qh9ypL.QdpKgRpaKWe0fGrhWF3cq9wIbnsCzBa', 'en', NULL, '2023-12-06 00:25:03', '2023-12-06 00:25:03', NULL),
+(17, 'Ibrahim Khalil Shakil', NULL, '0183478963', NULL, 'student@gmail.com', '1998-01-13', NULL, '2931702880014.png', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.', 'Web Developer', 'Bangladeshi', NULL, NULL, NULL, NULL, NULL, 1, '$2y$12$rUxi5wAuMt/u9jG46La/h.rva.37gFo6invimj.kjxQEOiRyL7os.', 'en', NULL, '2023-12-18 00:13:14', '2023-12-18 00:26:10', NULL);
 
 -- --------------------------------------------------------
 
@@ -993,7 +1002,7 @@ ALTER TABLE `answers`
 -- AUTO_INCREMENT for table `checkouts`
 --
 ALTER TABLE `checkouts`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `coupons`
@@ -1023,7 +1032,7 @@ ALTER TABLE `discussions`
 -- AUTO_INCREMENT for table `enrollments`
 --
 ALTER TABLE `enrollments`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `instructors`
@@ -1065,7 +1074,7 @@ ALTER TABLE `options`
 -- AUTO_INCREMENT for table `payments`
 --
 ALTER TABLE `payments`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `permissions`
@@ -1113,7 +1122,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT for table `students`
 --
 ALTER TABLE `students`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `subscriptions`
