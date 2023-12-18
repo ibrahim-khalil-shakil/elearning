@@ -24,7 +24,7 @@ class UpdateRequest extends FormRequest
         return [
             'materialTitle' => 'required|max:255',
             'materialType' => 'required|max:255',
-            'courseId' => 'required|max:3',
+            'lessonId' => 'required|max:3',
         ];
     }
 }

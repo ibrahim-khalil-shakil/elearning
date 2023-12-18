@@ -9,8 +9,8 @@ class Material extends Model
 {
     use HasFactory;
 
-    public function course()
+    public function lesson()
     {
-        return $this->belongsTo(Course::class);
+        return $this->belongsTo(Lesson::class);
     }
 }

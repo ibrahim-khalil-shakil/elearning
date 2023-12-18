@@ -102,7 +102,7 @@ class MaterialController extends Controller
                 return redirect()->back()->withInput();
             }
         } catch (Exception $e) {
-            // dd($e);
+            dd($e);
             $this->notice::error('Please try again');
             return redirect()->back()->withInput();
         }
