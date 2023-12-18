@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Students;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Student;
+use Illuminate\Support\Facades\Hash;
 
 class ProfileController extends Controller
 {
@@ -36,6 +37,29 @@ class ProfileController extends Controller
                 $data->image = $imageName;
             }
             if ($data->save()){
+                $this->setSession($data);
+                return redirect()->back()->with('success', 'Data Saved');
+            }
+        } catch (Exception $e) {
+            // dd($e);
+            return redirect()->back()->withInput()->with('error', 'Please try again');
+        }
+    }
+
+    public function change_password(Request $request)
+    {
+        try {
+            $data = Student::find(currentUserId());
+
+            // Validate current password
+            if (!Hash::check($request->current_password, $data->password)) {
+                return redirect()->back()->with('error', 'Current password is incorrect.');
+            }
+
+            $data->password = Hash::make($request->password);
+            $data->language = 'en';
+
+            if ($data->save()) {
                 $this->setSession($data);
                 return redirect()->back()->with('success', 'Data Saved');
             }
