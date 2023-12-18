@@ -36,7 +36,7 @@
                         </h6>
                         <p>By <a href="#">{{$details['instructor']}}</a></p>
                         <div class="bottom-wizard d-flex justify-content-between align-items-center">
-                            <p> {{$details['quantity']}}
+                            <p>
                                 {{$details['price'] ? '$' . $details['price'] : 'Free'}}
                                 <span><del>{{$details['old_price'] ? '$' . $details['old_price'] : ''}}</del></span>
                             </p>
@@ -61,9 +61,10 @@
                     <div class="summery-wizard-text">
                         <h6>Coupon Discount ({{session('cart_details')['discount'] ?? 0.00}}%)</h6>
                         <p>{{'$' . number_format((float) isset(session('cart_details')['discount_amount']) ? session('cart_details')['discount_amount']: 0.00 , 2)}}</p>
+                    {{ array_key_exists('discount_amount', session('cart_details')) ?number_format(session('cart_details')['discount_amount'], 2) : ' 0.00' }}
                     </div>
                     <div class="summery-wizard-text">
-                        <h6>Taxes</h6>
+                        <h6>Taxes (15%)</h6>
                         <p> {{'$' . number_format((float) session('cart_details')['tax'] , 2)}}</p>
                     </div>
                     <div class="total-wizard">

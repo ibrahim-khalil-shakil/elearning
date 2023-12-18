@@ -208,8 +208,8 @@
                             </div>
                         </div>
                         @empty
-                        <div class="col-lg-4 col-md-6 col-md-6 mb-4">
-                            <div class="contentCard contentCard--watch-course">
+                        <div class="col-12 py-5">
+                            <div class="text-center py-5">
                                 <h3>You haven't enrolled any course yet</h3>
                             </div>
                         </div>

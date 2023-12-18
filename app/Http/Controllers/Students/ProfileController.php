@@ -11,14 +11,14 @@ class ProfileController extends Controller
 {
     public function index()
     {
-        $student_info=Student::find(currentUserId()); 
-        return view('students.profile',compact('student_info'));
+        $student_info = Student::find(currentUserId());
+        return view('students.profile', compact('student_info'));
     }
 
     public function save_profile(Request $request)
     {
         try {
-            $data=Student::find(currentUserId());
+            $data = Student::find(currentUserId());
             $data->name_en = $request->fullName_en;
             $data->contact_en = $request->contactNumber_en;
             $data->email = $request->emailAddress;
@@ -36,7 +36,7 @@ class ProfileController extends Controller
                 $request->image->move(public_path('uploads/students'), $imageName);
                 $data->image = $imageName;
             }
-            if ($data->save()){
+            if ($data->save()) {
                 $this->setSession($data);
                 return redirect()->back()->with('success', 'Data Saved');
             }
@@ -55,7 +55,7 @@ class ProfileController extends Controller
             if (!Hash::check($request->current_password, $data->password)) {
                 return redirect()->back()->with('error', 'Current password is incorrect.');
             }
-
+            // Proceed with password change
             $data->password = Hash::make($request->password);
             $data->language = 'en';
 
@@ -77,7 +77,7 @@ class ProfileController extends Controller
                 'userName' => encryptor('encrypt', $student->name_en),
                 'emailAddress' => encryptor('encrypt', $student->email),
                 'studentLogin' => 1,
-                'image' => $student->image ?? 'No Image Found' 
+                'image' => $student->image ?? 'No Image Found'
             ]
         );
     }
@@ -103,5 +103,4 @@ class ProfileController extends Controller
             return redirect()->back()->with('error', 'An error occurred. Please try again.');
         }
     }
-
 }

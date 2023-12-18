@@ -15,12 +15,12 @@
         </nav>
     </div>
 </div>
- 
+
 <!-- Checkout Area Starts Here -->
 <section class="section checkout-area">
     <div class="container">
         @if(request()->session()->get('studentLogin'))
-        
+
         <div class="row">
             <div class="col-lg-6 checkout-area-checkout">
                 <h6 class="checkout-area__label">Checkout</h6>
@@ -31,13 +31,14 @@
                             <form action="{{route('payment.ssl.submit')}}" method="post">
                                 @csrf
                                 <div class="mb-4">
-                                    <div class="form-check d-flex align-items-center ps-0">
-                                        <label class="form-check-label ms-2 mb-0" for="flexCheckIndeterminate-one">
-                                            Please check your product before payment
+                                    <div class="ps-0 ">
+                                        <label class="text-danger"> *
+                                            Please check your courses before payment
                                         </label>
                                     </div>
                                 </div>
-                                <button type="submit" class="button button-lg button--primary w-100">Confirm
+                                <button type="submit" class="button button-lg button--primary w-100"> Click Here to
+                                    Confirm
                                     Payment</button>
                             </form>
                         </div>
@@ -83,19 +84,31 @@
                             <ul>
                                 <li>
                                     <p>Subtotal</p>
-                                    <p>{{'$' . number_format((float) session('cart_details')['cart_total'] , 2)}}</p>
+                                    {{-- <p>{{'$' . number_format((float) session('cart_details')['cart_total'] , 2)}}
+                                    </p> --}}
+                                    {{ '$' . (session('cart_details') && array_key_exists('cart_total',
+                                    session('cart_details')) ? number_format(session('cart_details')['cart_total'], 2) :
+                                    '0.00') }}
                                 </li>
                                 <li>
-                                    <p>Coupon Discount  ({{session('cart_details')['discount'] ?? 0.00}}%)</p>
-                                    <p>{{'$' . number_format((float) isset(session('cart_details')['discount_amount']) ? session('cart_details')['discount_amount']: 0.00 , 2)}}</p>
+                                    <p>Coupon Discount ({{session('cart_details')['discount'] ?? 0.00}}%)</p>
+                                    <p>{{'$' . number_format((float) isset(session('cart_details')['discount_amount']) ?
+                                        session('cart_details')['discount_amount']: 0.00 , 2)}}</p>
                                 </li>
                                 <li>
-                                    <p>taxes</p>
-                                    <p>{{'$' . number_format((float) session('cart_details')['tax'] , 2)}}</p>
+                                    <p>Taxes (15%)</p>
+                                    {{-- <p>{{'$' . number_format((float) session('cart_details')['tax'] , 2)}}</p> --}}
+                                    {{ '$' . (session('cart_details') && array_key_exists('tax',
+                                    session('cart_details')) ? number_format(session('cart_details')['tax'], 2) :
+                                    '0.00') }}
                                 </li>
                                 <li>
                                     <p class="font-title--card">Total:</p>
-                                    <p class="total-price font-title--card">{{'$' . number_format((float) session('cart_details')['total_amount'] , 2)}}</p>
+                                    {{-- <p class="total-price font-title--card">{{'$' .
+                                        number_format((float)session('cart_details')['total_amount'] , 2)}}</p> --}}
+                                    {{ '$' . (session('cart_details') && array_key_exists('total_amount',
+                                    session('cart_details')) ? number_format(session('cart_details')['total_amount'], 2)
+                                    : '0.00') }}
                                 </li>
                             </ul>
                         </div>

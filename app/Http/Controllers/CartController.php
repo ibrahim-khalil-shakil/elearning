@@ -111,6 +111,6 @@ class CartController extends Controller
             );
             session()->put('cart_details', $coupondata);
         }
-        return redirect()->back()->with('success', 'Product added to cart successfully!');
+        return redirect()->back()->with('success', 'Coupon Applied successfully!');
     }
 }
