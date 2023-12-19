@@ -532,7 +532,7 @@
                                                             href="instructorcourses.html">{{$e->course?->instructor?->name_en}}</a>
                                                     </p>
                                                 </div>
-                                                <p>${{$e->course?->price}}</p>
+                                                <p>৳{{$e->course?->price}}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -589,7 +589,7 @@
                                                     </h6>
                                                     <p>By <a href="instructorcourses.html">Kevin Gilbert</a></p>
                                                 </div>
-                                                <p>$14</p>
+                                                <p>৳14</p>
                                             </div>
                                         </div>
                                     </div>

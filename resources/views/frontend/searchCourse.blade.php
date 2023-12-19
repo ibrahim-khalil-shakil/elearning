@@ -383,8 +383,8 @@
                                         <p class="font-para--md">{{$c->instructor?->name_en}}</p>
                                     </a>
                                     <div class="price">
-                                        <span>{{$c->price==null?'Free':'$'.$c->price}}</span>
-                                        <del>{{$c->old_price?'$'.$c->old_price:''}}</del>
+                                        <span>{{$c->price==null?'Free':'৳'.$c->price}}</span>
+                                        <del>{{$c->old_price?'৳'.$c->old_price:''}}</del>
                                     </div>
                                 </div>
                                 <div class="contentCard-more">

@@ -651,8 +651,8 @@
                                                             <a href="#">Brandon Dias</a>
                                                         </div>
                                                         <div class="price">
-                                                            <del>$95</del>
-                                                            <span>$12</span>
+                                                            <del>৳95</del>
+                                                            <span>৳12</span>
                                                         </div>
                                                     </div>
                                                     <div
@@ -757,8 +757,8 @@
                                                             <a href="#">Brandon Dias</a>
                                                         </div>
                                                         <div class="price">
-                                                            <del>$95</del>
-                                                            <span>$12</span>
+                                                            <del>৳95</del>
+                                                            <span>৳12</span>
                                                         </div>
                                                     </div>
                                                     <div
@@ -864,8 +864,8 @@
                                                             <a href="#">Brandon Dias</a>
                                                         </div>
                                                         <div class="price">
-                                                            <del>$95</del>
-                                                            <span>$12</span>
+                                                            <del>৳95</del>
+                                                            <span>৳12</span>
                                                         </div>
                                                     </div>
                                                     <div
@@ -971,8 +971,8 @@
                                                             <a href="#">Brandon Dias</a>
                                                         </div>
                                                         <div class="price">
-                                                            <del>$95</del>
-                                                            <span>$12</span>
+                                                            <del>৳95</del>
+                                                            <span>৳12</span>
                                                         </div>
                                                     </div>
                                                     <div
@@ -1077,8 +1077,8 @@
                                                             <a href="#">Brandon Dias</a>
                                                         </div>
                                                         <div class="price">
-                                                            <del>$95</del>
-                                                            <span>$12</span>
+                                                            <del>৳95</del>
+                                                            <span>৳12</span>
                                                         </div>
                                                     </div>
                                                     <div
@@ -1183,8 +1183,8 @@
                                                             <a href="#">Brandon Dias</a>
                                                         </div>
                                                         <div class="price">
-                                                            <del>$95</del>
-                                                            <span>$12</span>
+                                                            <del>৳95</del>
+                                                            <span>৳12</span>
                                                         </div>
                                                     </div>
                                                     <div
@@ -1290,8 +1290,8 @@
                                                             <a href="#">Brandon Dias</a>
                                                         </div>
                                                         <div class="price">
-                                                            <del>$95</del>
-                                                            <span>$12</span>
+                                                            <del>৳95</del>
+                                                            <span>৳12</span>
                                                         </div>
                                                     </div>
                                                     <div
@@ -1397,8 +1397,8 @@
                                                             <a href="#">Brandon Dias</a>
                                                         </div>
                                                         <div class="price">
-                                                            <del>$95</del>
-                                                            <span>$12</span>
+                                                            <del>৳95</del>
+                                                            <span>৳12</span>
                                                         </div>
                                                     </div>
                                                     <div
@@ -2310,8 +2310,8 @@
                     <div class="cart">
                         <div class="cart__price">
                             <div class="current-price">
-                                <h3 class="font-title--sm">{{$course->price?'$'.$course->price:'Free'}}</h3>
-                                <p><del>{{$course->old_price?'$'.$course->old_price:''}}</del></p>
+                                <h3 class="font-title--sm">{{$course->price?'৳'.$course->price:'Free'}}</h3>
+                                <p><del>{{$course->old_price?'৳'.$course->old_price:''}}</del></p>
                             </div>
                             <div class="current-discount">
                                 <p class="font-para--md">90% off</p>
@@ -2457,8 +2457,8 @@
                                         <p class="font-para--md">Brandon Dias</p>
                                     </a>
                                     <div class="price">
-                                        <span>$12</span>
-                                        <del>$95</del>
+                                        <span>৳12</span>
+                                        <del>৳95</del>
                                     </div>
                                 </div>
                                 <div class="contentCard-more">
@@ -2511,8 +2511,8 @@
                                         <p class="font-para--md">Brandon Dias</p>
                                     </a>
                                     <div class="price">
-                                        <span>$12</span>
-                                        <del>$95</del>
+                                        <span>৳12</span>
+                                        <del>৳95</del>
                                     </div>
                                 </div>
                                 <div class="contentCard-more">
@@ -2565,8 +2565,8 @@
                                         <p class="font-para--md">Brandon Dias</p>
                                     </a>
                                     <div class="price">
-                                        <span>$12</span>
-                                        <del>$95</del>
+                                        <span>৳12</span>
+                                        <del>৳95</del>
                                     </div>
                                 </div>
                                 <div class="contentCard-more">
@@ -2619,8 +2619,8 @@
                                         <p class="font-para--md">Brandon Dias</p>
                                     </a>
                                     <div class="price">
-                                        <span>$12</span>
-                                        <del>$95</del>
+                                        <span>৳12</span>
+                                        <del>৳95</del>
                                     </div>
                                 </div>
                                 <div class="contentCard-more">

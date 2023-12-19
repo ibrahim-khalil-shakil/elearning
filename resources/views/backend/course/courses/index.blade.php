@@ -81,7 +81,7 @@
                                                 </li>
                                                 <li class="list-group-item px-0 d-flex justify-content-between">
                                                     <span class="mb-0">Price :</span>
-                                                    <strong>${{$d->price==null?'0.00':$d->price}}</strong>
+                                                    <strong>৳{{$d->price==null?'0.00':$d->price}}</strong>
                                                 </li>
                                             </ul>
                                             <a class="btn btn-outline-primary btn-rounded mt-3 px-4" href="about-student.html">Read More</a>
