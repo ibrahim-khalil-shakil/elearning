@@ -499,6 +499,11 @@
                     </div>
                     <div class="videolist-area-bar__wrapper">
                         <div class="videolist-area-wizard">
+                            @foreach($lessons as $lesson)
+                            <div class="wizard-heading">
+                                <h6 class="">{{$lesson->title}}</h6>
+                            </div>
+                            @endforeach
                             <div class="wizard-heading">
                                 <h6 class="">Get Started</h6>
                             </div>

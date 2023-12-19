@@ -9,6 +9,8 @@ use App\Http\Requests\Backend\Course\Courses\AddNewRequest;
 use App\Http\Requests\Backend\Course\Courses\UpdateRequest;
 use App\Models\CourseCategory;
 use App\Models\Instructor;
+use App\Models\Lesson;
+use App\Models\Material;
 use Exception;
 use File; 
 
@@ -184,6 +186,8 @@ class CourseController extends Controller
     {
         $course = Course::findOrFail(encryptor('decrypt',$id));
         $category = CourseCategory::get();
-        return view('frontend.watchCourse', compact('course', 'category'));
+        $lessons = Lesson::where('course_id', $course->id)->get();
+
+        return view('frontend.watchCourse', compact('course', 'category', 'lessons'));
     }
 }
