@@ -498,91 +498,40 @@
                         <span class="videolist-area-bar--progress"></span>
                     </div>
                     <div class="videolist-area-bar__wrapper">
+                        @foreach($lessons as $lesson)
                         <div class="videolist-area-wizard">
-                            @foreach($lessons as $lesson)
                             <div class="wizard-heading">
-                                <h6 class="">{{$lesson->title}}</h6>
+                                <h6 class="">{{ $loop->iteration }}. {{$lesson->title}}</h6>
+                            </div>
+                            @foreach ($lesson->material as $material)
+                            <div class="main-wizard">
+                                <div class="main-wizard__wrapper">
+                                    <a class="main-wizard-start">
+                                        <div class="main-wizard-icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="feather feather-play-circle">
+                                                <circle cx="12" cy="12" r="10"></circle>
+                                                <polygon points="10 8 16 12 10 16 10 8"></polygon>
+                                            </svg>
+                                        </div>
+                                        <div class="main-wizard-title">
+                                            <p>{{ $loop->parent->iteration }}.{{ $loop->iteration }}  {{ $material->title }}</p>
+                                        </div>
+                                    </a>
+                                    <div class="main-wizard-end d-flex align-items-center">
+                                        <span>12:34</span>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value=""
+                                                style="border-radius: 0px; margin-left: 5px;" />
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             @endforeach
-                            <div class="wizard-heading">
-                                <h6 class="">Get Started</h6>
-                            </div>
-                            <div class="main-wizard">
-                                <div class="main-wizard__wrapper">
-                                    <a class="main-wizard-start">
-                                        <div class="main-wizard-icon">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                                stroke-linecap="round" stroke-linejoin="round"
-                                                class="feather feather-play-circle">
-                                                <circle cx="12" cy="12" r="10"></circle>
-                                                <polygon points="10 8 16 12 10 16 10 8"></polygon>
-                                            </svg>
-                                        </div>
-                                        <div class="main-wizard-title">
-                                            <p>1. Introduction to Adobe XD</p>
-                                        </div>
-                                    </a>
-                                    <div class="main-wizard-end d-flex align-items-center">
-                                        <span>12:34</span>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value=""
-                                                style="border-radius: 0px; margin-left: 5px;" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="main-wizard">
-                                <div class="main-wizard__wrapper">
-                                    <a class="main-wizard-start">
-                                        <div class="main-wizard-icon">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                                stroke-linecap="round" stroke-linejoin="round"
-                                                class="feather feather-play-circle">
-                                                <circle cx="12" cy="12" r="10"></circle>
-                                                <polygon points="10 8 16 12 10 16 10 8"></polygon>
-                                            </svg>
-                                        </div>
-                                        <div class="main-wizard-title">
-                                            <p>2. Getting started with your Adobe XD project</p>
-                                        </div>
-                                    </a>
-                                    <div class="main-wizard-end d-flex align-items-center">
-                                        <span>12:34</span>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value=""
-                                                style="border-radius: 0px; margin-left: 5px;" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="main-wizard">
-                                <div class="main-wizard__wrapper active">
-                                    <a class="main-wizard-start">
-                                        <div class="main-wizard-icon">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                                stroke-linecap="round" stroke-linejoin="round"
-                                                class="feather feather-play-circle">
-                                                <circle cx="12" cy="12" r="10"></circle>
-                                                <polygon points="10 8 16 12 10 16 10 8"></polygon>
-                                            </svg>
-                                        </div>
-                                        <div class="main-wizard-title">
-                                            <p>3. What is UI vs UX - User Interface vs User Experie...</p>
-                                        </div>
-                                    </a>
-                                    <div class="main-wizard-end d-flex align-items-center">
-                                        <span>12:34</span>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value=""
-                                                style="border-radius: 0px; margin-left: 5px;" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
+                        @endforeach
                         <div class="videolist-area-wizard">
                             <div class="wizard-heading">
                                 <h6 class="">The Project Brief</h6>
