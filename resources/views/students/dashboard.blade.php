@@ -498,64 +498,72 @@
 
                 {{-- Purchase History --}}
                 <div class="tab-pane fade" id="nav-purchase" role="tabpanel" aria-labelledby="nav-purchase-tab">
-                    @foreach ($enrollment as $e)
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="purchase-area">
-                                <div class="purchase-area-close">
-                                    <a href="#">
-                                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M11 1L1 11" stroke="#F15C4C" stroke-width="1.5"
-                                                stroke-linecap="round" stroke-linejoin="round" />
-                                            <path d="M1 1L11 11" stroke="#F15C4C" stroke-width="1.5"
-                                                stroke-linecap="round" stroke-linejoin="round" />
-                                        </svg>
-                                    </a>
-                                </div>
-                                <div class="d-flex align-items-lg-center align-items-start flex-column flex-lg-row">
-                                    <div class="purchase-area-items">
-                                        <div
-                                            class="purchase-area-items-start d-flex align-items-lg-center flex-column flex-lg-row">
-                                            <div class="image">
-                                                <a href="#">
-                                                    <img src="{{asset('public/uploads/courses/'.$e->course?->image)}}"
-                                                        alt="Image" />
-                                                </a>
-                                            </div>
-                                            <div class="text d-flex flex-column flex-lg-row">
-                                                <div class="text-main">
-                                                    <h6>
-                                                        <a href="#">{{$e->course?->title_en}}</a>
-                                                    </h6>
-                                                    <p> By <a
-                                                            href="instructorcourses.html">{{$e->course?->instructor?->name_en}}</a>
-                                                    </p>
+                    @foreach ($checkout as $e)
+                        @if ($e->cart_data)
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="purchase-area">
+                                        <div class="purchase-area-close">
+                                            <a href="#">
+                                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M11 1L1 11" stroke="#F15C4C" stroke-width="1.5"
+                                                        stroke-linecap="round" stroke-linejoin="round" />
+                                                    <path d="M1 1L11 11" stroke="#F15C4C" stroke-width="1.5"
+                                                        stroke-linecap="round" stroke-linejoin="round" />
+                                                </svg>
+                                            </a>
+                                        </div>
+                                        <div class="d-flex align-items-lg-center align-items-start flex-column flex-lg-row">
+                                           
+                                            
+                                            <div class="purchase-area-items">
+                                                @php $i=0; @endphp
+                                                @foreach (json_decode(base64_decode($e->cart_data))->cart as $data)
+                                                @php ++$i; @endphp
+                                                <div
+                                                    class="purchase-area-items-start d-flex align-items-lg-center flex-column flex-lg-row">
+                                                    <div class="image">
+                                                        <a href="#">
+                                                            <img src="{{asset('public/uploads/courses/'.$data->image)}}"
+                                                                alt="Image" />
+                                                        </a>
+                                                    </div>
+                                                    <div class="text d-flex flex-column flex-lg-row">
+                                                        <div class="text-main">
+                                                            <h6>
+                                                                <a href="#">{{$data->title_en}}</a>
+                                                            </h6>
+                                                            <p> By <a
+                                                                    href="instructorcourses.html">{{$e->course?->instructor?->name_en}}</a>
+                                                            </p>
+                                                        </div>
+                                                        <p>৳{{$data->price}}</p>
+                                                    </div>
                                                 </div>
-                                                <p>৳{{$e->course?->price}}</p>
+                                            @endforeach
+                                            </div>
+                                            <div class="purchase-area-items-end">
+                                                <p>{{$e->created_at}}</p>
+                                                <dl class="row">
+                                                    <dt class="col-sm-4">Total</dt>
+                                                    <dd class="col-sm-8">{{json_decode(base64_decode($e->cart_data))->cart_details->total_amount}}</dd>
+
+                                                    <dt class="col-sm-4">Total Courses</dt>
+                                                    <dd class="col-sm-8">
+                                                        {{$i}}
+                                                    </dd>
+                                                    <dt class="col-sm-4">Payment Type</dt>
+                                                    <dd class="col-sm-8">
+                                                        {{$e->txnid}}
+                                                    </dd>
+                                                </dl>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="purchase-area-items-end">
-                                        <p>11th Dec, 2020</p>
-                                        <dl class="row">
-                                            <dt class="col-sm-4">Subtotal</dt>
-                                            <dd class="col-sm-8">211 USD</dd>
-
-                                            <dt class="col-sm-4">Total Courses</dt>
-                                            <dd class="col-sm-8">
-                                                03
-                                            </dd>
-                                            <dt class="col-sm-4">Payment Type</dt>
-                                            <dd class="col-sm-8">
-                                                Credit Card
-                                            </dd>
-                                        </dl>
-                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
+                        @endif
                     @endforeach
                     <div class="row mt-3">
                         <div class="col-lg-12">

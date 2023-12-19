@@ -70,9 +70,9 @@
             <div class="col-lg-8">
                 <div class="course-description-start">
                     <div class="video-area">
-                        <video controls id="my-video" class="video-js w-100"
-                            poster="{{asset('public/frontend/dist/images/courses/vthumb.jpg')}}" data-setup="{}">
-                            <source src="{{asset('public/frontend/dist/images/courses/video.mp4')}}" class="w-100" />
+                        <video controls id="myvideo" class="video-js w-100"
+                            poster="{{asset('public/frontend/dist/images/courses/vthumb.jpg')}}" >
+                            <source src="" class="w-100" />
                         </video>
                     </div>
                     <div class="course-description-start-content">
@@ -507,7 +507,7 @@
                             <div class="main-wizard">
                                 <div class="main-wizard__wrapper">
                                     <a class="main-wizard-start">
-                                        <div class="main-wizard-icon">
+                                        <div class="main-wizard-icon" onclick="show_video('{{$material->content}}')">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                                 stroke-linecap="round" stroke-linejoin="round"
@@ -754,6 +754,7 @@
             </div>
         </div>
     </div>
+    
 
     <script src="{{asset('public/frontend/src/js/jquery.min.js')}}"></script>
     <script src="{{asset('public/frontend/src/js/bootstrap.bundle.min.js')}}"></script>
@@ -771,7 +772,16 @@
                     hoverColor: "#FF7A1A",
                     ratedColors: ["#FF7A1A", "#FF7A1A", "#FF7A1A", "#FF7A1A", "#FF7A1A"],
                     starShape: "rounded",
-                });
+        });
+
+        function show_video(e){
+            let link="{{asset('public/uploads/courses/contents')}}/"+e
+           
+            var video = document.getElementById('myvideo');
+                        video.src = link;
+                        video.play();
+        }
+
     </script>
 
 </body>
