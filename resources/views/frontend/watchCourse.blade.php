@@ -67,6 +67,8 @@
     <!-- Course Description Starts Here -->
     <div class="container-fluid">
         <div class="row course-description">
+
+            {{-- Video Area --}}
             <div class="col-lg-8">
                 <div class="course-description-start">
                     <div class="video-area">
@@ -508,13 +510,13 @@
                             @foreach ($lesson->material as $material)
                             <div class="main-wizard">
                                 <div class="main-wizard__wrapper">
-                                    <a class="main-wizard-start">
+                                    <a class="main-wizard-start" onclick="show_video('{{$material->content}}')">
                                         @if ($material->type=='video')
-                                        <div class="main-wizard-icon" onclick="show_video('{{$material->content}}')">
+                                        <div class="main-wizard-icon">
                                             <i class="far fa-play-circle fa-lg"></i>
                                         </div>
                                         @else
-                                        <div class="main-wizard-icon" onclick="show_video('{{$material->content}}')">
+                                        <div class="main-wizard-icon">
                                             <i class="far fa-file fa-lg text-success"></i>
                                         </div>
                                         @endif

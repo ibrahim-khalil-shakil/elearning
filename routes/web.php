@@ -23,6 +23,7 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CheckoutController as checkout;
 use App\Http\Controllers\CouponController as coupon;
+use App\Http\Controllers\WatchCourseController as watchCourse;
 
 /* students */
 use App\Http\Controllers\Students\AuthController as sauth;
@@ -98,7 +99,8 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('searchCourse', [course::class, 'frontIndex'])->name('searchCourse');
 Route::get('courseDetails/{id}', [course::class, 'frontShow'])->name('courseDetails');
 
-Route::get('watchCourse/{id}', [course::class, 'watchCourse'])->name('watchCourse');
+// Route::get('watchCourse/{id}', [course::class, 'watchCourse'])->name('watchCourse');
+Route::get('watchCourse/{id}', [watchCourse::class, 'watchCourse'])->name('watchCourse');
 
 Route::get('instructorProfile/{id}', [instructor::class, 'frontShow'])->name('instructorProfile');
 Route::get('checkout', [checkout::class, 'index'])->name('checkout');
