@@ -181,13 +181,4 @@ class CourseController extends Controller
             return redirect()->back();
         }
     }
-
-    // public function watchCourse($id)
-    // {
-    //     $course = Course::findOrFail(encryptor('decrypt',$id));
-    //     $category = CourseCategory::get();
-    //     $lessons = Lesson::where('course_id', $course->id)->get();
-
-    //     return view('frontend.watchCourse', compact('course', 'category', 'lessons')); 
-    // }
 }

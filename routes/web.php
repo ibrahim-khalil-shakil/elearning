@@ -10,7 +10,6 @@ use App\Http\Controllers\Backend\Students\StudentController as student;
 use App\Http\Controllers\Backend\Instructors\InstructorController as instructor;
 use App\Http\Controllers\Backend\Courses\CourseCategoryController as courseCategory;
 use App\Http\Controllers\Backend\Courses\CourseController as course;
-use App\Http\Controllers\LessonController as lesson;
 use App\Http\Controllers\Backend\Courses\MaterialController as material;
 use App\Http\Controllers\Backend\Quizzes\QuizController as quiz;
 use App\Http\Controllers\Backend\Quizzes\QuestionController as question;
@@ -24,10 +23,11 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CheckoutController as checkout;
 use App\Http\Controllers\CouponController as coupon;
 use App\Http\Controllers\WatchCourseController as watchCourse;
+use App\Http\Controllers\LessonController as lesson;
 
 /* students */
 use App\Http\Controllers\Students\AuthController as sauth;
-use App\Http\Controllers\Students\DashboardController as studashboard; 
+use App\Http\Controllers\Students\DashboardController as studashboard;
 use App\Http\Controllers\Students\ProfileController as stu_profile;
 use App\Http\Controllers\Students\sslController as sslcz;
 /*
@@ -83,25 +83,22 @@ Route::post('/student/login/{back_route}', [sauth::class, 'signInCheck'])->name(
 Route::get('/student/logout', [sauth::class, 'signOut'])->name('studentlogOut');
 
 Route::middleware(['checkstudent'])->prefix('students')->group(function () {
-    Route::get('/dashboard', [studashboard::class, 'index'])->name('studentdashboard'); 
+    Route::get('/dashboard', [studashboard::class, 'index'])->name('studentdashboard');
     Route::get('/profile', [stu_profile::class, 'index'])->name('student_profile');
     Route::post('/profile/save', [stu_profile::class, 'save_profile'])->name('student_save_profile');
     Route::post('/profile/savePass', [stu_profile::class, 'change_password'])->name('change_password');
     Route::post('/change-image', [stu_profile::class, 'changeImage'])->name('change_image');
 
     // ssl Routes
-    Route::post('/payment/ssl/submit', [sslcz::class,'store'])->name('payment.ssl.submit');
+    Route::post('/payment/ssl/submit', [sslcz::class, 'store'])->name('payment.ssl.submit');
 });
 
+// frontend pages
 Route::get('home', [HomeController::class, 'index'])->name('home');
 Route::get('/', [HomeController::class, 'index'])->name('home');
-
 Route::get('searchCourse', [course::class, 'frontIndex'])->name('searchCourse');
 Route::get('courseDetails/{id}', [course::class, 'frontShow'])->name('courseDetails');
-
-// Route::get('watchCourse/{id}', [course::class, 'watchCourse'])->name('watchCourse');
 Route::get('watchCourse/{id}', [watchCourse::class, 'watchCourse'])->name('watchCourse');
-
 Route::get('instructorProfile/{id}', [instructor::class, 'frontShow'])->name('instructorProfile');
 Route::get('checkout', [checkout::class, 'index'])->name('checkout');
 Route::post('checkout', [checkout::class, 'store'])->name('checkout.store');
@@ -119,6 +116,9 @@ Route::post('coupon_check', [CartController::class, 'coupon_check'])->name('coup
 /* ssl payment */
 Route::post('/payment/ssl/notify', [sslcz::class, 'notify'])->name('payment.ssl.notify');
 Route::post('/payment/ssl/cancel', [sslcz::class, 'cancel'])->name('payment.ssl.cancel');
+
+
+
 
 Route::get('/about', function () {
     return view('frontend.about');

@@ -64,7 +64,7 @@ class ProfileController extends Controller
                 return redirect()->back()->with('success', 'Data Saved');
             }
         } catch (Exception $e) {
-            // dd($e);
+            // dd($e); 
             return redirect()->back()->withInput()->with('error', 'Please try again');
         }
     }

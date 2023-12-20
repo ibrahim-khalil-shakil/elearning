@@ -135,47 +135,6 @@
                                             </p>
                                         </div>
                                     </div>
-                                    <div class="course-notes">
-                                        <h6>Steps 2: ID8 (brainstorming and coming up with lots of ideas)</h6>
-                                        <div class="course-notes-item">
-                                            <div class="dot"></div>
-                                            <p>
-                                                The way to get the idea is by removing your barriers about I only need
-                                                to
-                                                come up with good ideas and just bring a lot of ideas and it's very
-                                                important to come up with a lot's of ideas.
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="course-notes">
-                                        <h6>Steps 3: take the kind of rough idea that you have been trying to validate
-                                            it
-                                        </h6>
-                                        <div class="course-notes-item">
-                                            <div class="dot"></div>
-                                            <p>
-                                                By validating I mean you present it. so you do a present it's a client
-                                                work
-                                                you do a presentation you show them the work. and you're saying here it
-                                                is
-                                                here's why I did this here's the
-                                                process that I went through.
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="course-notes mb-0">
-                                        <h6>Steps 4: Refine Your Design</h6>
-                                        <div class="course-notes-item">
-                                            <div class="dot"></div>
-                                            <p>
-                                                After you've listened and documented that feedback is actually to refine
-                                                your design and improve it and make it better then it's ready after
-                                                you've
-                                                to go feedback that it's well ready to
-                                                release it or finalize it or lunch it or whatever you're doing.
-                                            </p>
-                                        </div>
-                                    </div>
                                 </div>
                                 <!-- Course Notes Ends Here -->
                             </div>
@@ -183,99 +142,6 @@
                                 aria-labelledby="nav-lcomments-tab">
                                 <!-- Lesson Comments Starts Here -->
                                 <div class="lesson-comments">
-                                    <div class="feedback-comment pt-0 ps-0 pe-0">
-                                        <h6 class="font-title--card">Add a Public Comment</h6>
-                                        <form action="#">
-                                            <label for="comment">Comment</label>
-                                            <textarea class="form-control" id="comment"
-                                                placeholder="Add a Public Comment"></textarea>
-                                            <button type="submit"
-                                                class="button button-md button--primary float-end">Post
-                                                Comment</button>
-                                        </form>
-                                    </div>
-                                    <div class="students-feedback pt-0 ps-0 pe-0 pb-0 mb-0">
-                                        <div class="students-feedback-heading">
-                                            <h5 class="font-title--card">Comments <span>(57,685)</span></h5>
-                                        </div>
-                                        <div class="students-feedback-item">
-                                            <div class="feedback-rating">
-                                                <div class="feedback-rating-start">
-                                                    <div class="image">
-                                                        <img src="{{asset('public/frontend/dist/images/ellipse/user.jpg')}}"
-                                                            alt="Image" />
-                                                    </div>
-                                                    <div class="text">
-                                                        <h6><a href="#">Harry Pinsky</a></h6>
-                                                        <p>1 hour ago</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <p>
-                                                Aliquam eget leo quis neque molestie dictum. Etiam ut tortor tempor,
-                                                vestibulum ante non, vulputate nibh. Cras non molestie diam. Great
-                                                Course
-                                                for Beginner 😀
-                                            </p>
-                                        </div>
-                                        <div class="students-feedback-item">
-                                            <div class="feedback-rating">
-                                                <div class="feedback-rating-start">
-                                                    <div class="image">
-                                                        <img src="{{asset('public/frontend/dist/images/ellipse/1.png')}}"
-                                                            alt="Image" />
-                                                    </div>
-                                                    <div class="text">
-                                                        <h6><a href="#">Harry Pinsky</a></h6>
-                                                        <p>2 hour ago</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <p>
-                                                Aliquam eget leo quis neque molestie dictum. Etiam ut tortor tempor,
-                                                vestibulum ante non, vulputate nibh.
-                                            </p>
-                                        </div>
-                                        <div class="students-feedback-item">
-                                            <div class="feedback-rating">
-                                                <div class="feedback-rating-start">
-                                                    <div class="image">
-                                                        <img src="{{asset('public/frontend/dist/images/ellipse/2.png')}}"
-                                                            alt="Image" />
-                                                    </div>
-                                                    <div class="text">
-                                                        <h6><a href="#">Watcraz Eggsy</a></h6>
-                                                        <p>1 day ago</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <p>
-                                                Aenean vulputate nisi ligula. Quisque in tempus sapien. Quisque
-                                                vestibulum
-                                                massa eget consequat scelerisque. Phasellus varius risus nec maximus
-                                                auctor.
-                                            </p>
-                                        </div>
-                                        <div class="students-feedback-item border-0">
-                                            <div class="feedback-rating">
-                                                <div class="feedback-rating-start">
-                                                    <div class="image">
-                                                        <img src="{{asset('public/frontend/dist/images/ellipse/3.png')}}"
-                                                            alt="Image" />
-                                                    </div>
-                                                    <div class="text">
-                                                        <h6><a href="#">Watcraz Eggsy</a></h6>
-                                                        <p>1 day ago</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <p>
-                                                Cras non molestie diam. Aenean vulputate nisi ligula. Quisque in tempus
-                                                sapien. Quisque vestibulum massa eget consequat scelerisque.
-                                            </p>
-                                        </div>
-                                        <button class="button button-md button--primary-outline">Load More</button>
-                                    </div>
                                 </div>
                                 <!-- Lesson Comments Ends Here -->
                             </div>
@@ -283,138 +149,6 @@
                                 aria-labelledby="nav-loverview-tab">
                                 <!-- Course Overview Starts Here -->
                                 <div class="row course-overview-main">
-                                    <div class="course-overview-main-item">
-                                        <h6 class="font-title--card">Description</h6>
-                                        <p class="mb-3 font-para--lg">
-                                            Duis placerat eleifend leo nec mattis. Phasellus scelerisque arcu quis
-                                            feugiat
-                                            efficitur. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-                                            laoreet est eget est sagittis, et
-                                            scelerisque quam convallis. Praesent at tortor facilisis, tempus ex quis,
-                                            tempor
-                                            arcu. Duis id velit mattis diam fermentum tincidunt. Sed et vehicula lectus.
-                                        </p>
-                                        <p class="font-para--lg">
-                                            Sed ut tincidunt velit, eu bibendum turpis. Fusce in posuere felis, sed
-                                            lobortis
-                                            elit. Integer mollis sodales congue
-                                        </p>
-                                    </div>
-                                    <div class="course-overview-main-item">
-                                        <h6 class="font-title--card">Requirments</h6>
-                                        <p class="mb-2 font-para--lg">
-                                            Donec tristique ligula id tellus porta, dapibus imperdiet mi ullamcorper.
-                                            Vivamus suscipit, nisi eu tincidunt interdum.
-                                        </p>
-                                        <ul class="course-overview__point">
-                                            <li>
-                                                <p>
-                                                    Mauris ut libero ut mauris sagittis consectetur quis eget elit.
-                                                </p>
-                                            </li>
-                                            <li>
-                                                <p>
-                                                    Mauris ut libero ut mauris sagittis consectetur quis eget elit.
-                                                </p>
-                                            </li>
-                                            <li>
-                                                <p>
-                                                    Mauris ut libero ut mauris sagittis consectetur quis eget elit.
-                                                </p>
-                                            </li>
-                                            <li>
-                                                <p>
-                                                    Mauris ut libero ut mauris sagittis consectetur quis eget elit.
-                                                </p>
-                                            </li>
-                                            <li>
-                                                <p>
-                                                    Mauris ut libero ut mauris sagittis consectetur quis eget elit.
-                                                </p>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="course-overview-main-item">
-                                        <h6 class="font-title--card">Who This Course is For</h6>
-                                        <p class="mb-2 font-para--lg">
-                                            Sed arcu odio, ornare ac porttitor at, placerat nec dui. Nulla nec euismod
-                                            tellus. Donec facilisis condimentum commodo. Pellentesque ultricies dolor ut
-                                            magna aliquet, vitae sodales massa
-                                            euismod.
-                                        </p>
-                                        <p class="bullets-line">
-                                            <svg width="14" height="10" viewBox="0 0 14 10" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M1 5L13 5" stroke="#202029" stroke-width="1.5"
-                                                    stroke-linecap="round" stroke-linejoin="round" />
-                                                <path d="M9 0.999999L13 5L9 9" stroke="#202029" stroke-width="1.5"
-                                                    stroke-linecap="round" stroke-linejoin="round" />
-                                            </svg>
-                                            This Course for Complete Beginner Students who want learn UI/UX.
-                                        </p>
-                                        <p class="bullets-line">
-                                            <svg width="14" height="10" viewBox="0 0 14 10" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M1 5L13 5" stroke="#202029" stroke-width="1.5"
-                                                    stroke-linecap="round" stroke-linejoin="round" />
-                                                <path d="M9 0.999999L13 5L9 9" stroke="#202029" stroke-width="1.5"
-                                                    stroke-linecap="round" stroke-linejoin="round" />
-                                            </svg>
-                                            Nunc a ex sodales sem accumsan tristique.
-                                        </p>
-                                        <p class="bullets-line">
-                                            <svg width="14" height="10" viewBox="0 0 14 10" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M1 5L13 5" stroke="#202029" stroke-width="1.5"
-                                                    stroke-linecap="round" stroke-linejoin="round" />
-                                                <path d="M9 0.999999L13 5L9 9" stroke="#202029" stroke-width="1.5"
-                                                    stroke-linecap="round" stroke-linejoin="round" />
-                                            </svg>
-                                            Suspendisse eget eros eget leo pellentesque ullamcorper ac non augue.
-                                        </p>
-                                    </div>
-                                    <div class="course-overview-main-item mb-0">
-                                        <h6 class="font-title--card">What You Will be Learn</h6>
-                                        <p class="mb-2 font-para--lg">
-                                            Sed arcu odio, ornare ac porttitor at, placerat nec dui. Nulla nec euismod
-                                            tellus. Donec facilisis condimentum commodo. Pellentesque ultricies dolor ut
-                                            magna aliquet, vitae sodales massa
-                                            euismod.
-                                        </p>
-                                        <p class="bullets-line">
-                                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M15 4.5L6.75 13.5L3 9.40909" stroke="#00AF91" stroke-width="2"
-                                                    stroke-linecap="round" stroke-linejoin="round" />
-                                            </svg>
-                                            This Course for Complete Beginner Students who want learn UI/UX.
-                                        </p>
-                                        <p class="bullets-line">
-                                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M15 4.5L6.75 13.5L3 9.40909" stroke="#00AF91" stroke-width="2"
-                                                    stroke-linecap="round" stroke-linejoin="round" />
-                                            </svg>
-
-                                            Nunc a ex sodales sem accumsan tristique.
-                                        </p>
-                                        <p class="bullets-line">
-                                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M15 4.5L6.75 13.5L3 9.40909" stroke="#00AF91" stroke-width="2"
-                                                    stroke-linecap="round" stroke-linejoin="round" />
-                                            </svg>
-                                            Suspendisse eget eros eget leo pellentesque ullamcorper ac non augue.
-                                        </p>
-                                        <p class="bullets-line mb-0">
-                                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M15 4.5L6.75 13.5L3 9.40909" stroke="#00AF91" stroke-width="2"
-                                                    stroke-linecap="round" stroke-linejoin="round" />
-                                            </svg>
-                                            Suspendisse eget eros eget leo pellentesque ullamcorper ac non augue.
-                                        </p>
-                                    </div>
                                 </div>
                                 <!-- Course Overview Ends Here -->
                             </div>
@@ -503,7 +237,7 @@
                     </div>
                     <div class="videolist-area-bar__wrapper">
                         @foreach($lessons as $lesson)
-                        <div class="videolist-area-wizard">
+                        <div class="videolist-area-wizard" data-lesson-description="{{ $lesson->description }}" data-lesson-notes="{{ $lesson->notes }}">
                             <div class="wizard-heading">
                                 <h6 class="">{{ $loop->iteration }}. {{$lesson->title}}</h6>
                             </div>
@@ -599,6 +333,26 @@
         }
 
     </script>
+
+    <!-- Include jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+        $('.videolist-area-wizard').on('click', function() {
+            // Get lesson and material details
+            var lessonDescription = $(this).data('lesson-description');
+            var lessonNotes = $(this).data('lesson-notes');
+
+            // Update lesson description
+            $('#nav-ldescrip .lesson-description p').html(lessonDescription);
+
+            // Update lesson notes
+            $('#nav-lnotes .course-notes-area .course-notes-item p').html(lessonNotes);
+        });
+    });
+</script>
+
 
 </body>
 
