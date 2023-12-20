@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 20, 2023 at 04:24 AM
+-- Generation Time: Dec 20, 2023 at 05:19 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -267,6 +267,8 @@ CREATE TABLE `lessons` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `title` varchar(255) NOT NULL,
   `course_id` bigint(20) UNSIGNED NOT NULL,
+  `description` text DEFAULT NULL,
+  `notes` text DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL
@@ -276,9 +278,10 @@ CREATE TABLE `lessons` (
 -- Dumping data for table `lessons`
 --
 
-INSERT INTO `lessons` (`id`, `title`, `course_id`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'Introduction to HTML', 6, '2023-12-17 12:28:08', '2023-12-17 21:21:59', NULL),
-(2, 'Introduction to CSS', 6, '2023-12-17 21:21:51', '2023-12-17 21:22:07', NULL);
+INSERT INTO `lessons` (`id`, `title`, `course_id`, `description`, `notes`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 'Introduction to HTML', 6, 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for \'lorem ipsum\' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).', 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for \'lorem ipsum\' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).', '2023-12-17 12:28:08', '2023-12-19 22:15:05', NULL),
+(2, 'Introduction to CSS', 6, NULL, NULL, '2023-12-17 21:21:51', '2023-12-17 21:22:07', NULL),
+(3, 'JavaScript Tutorial', 6, NULL, NULL, '2023-12-19 21:51:36', '2023-12-19 21:51:36', NULL);
 
 -- --------------------------------------------------------
 
@@ -304,7 +307,12 @@ CREATE TABLE `materials` (
 
 INSERT INTO `materials` (`id`, `lesson_id`, `title`, `type`, `content`, `content_url`, `created_at`, `updated_at`, `deleted_at`) VALUES
 (1, 1, 'HTML Attributes', 'video', '5431702869404.mp4', NULL, '2023-12-17 21:16:21', '2023-12-17 21:24:46', NULL),
-(2, 1, 'HTML Tables', 'video', '6981702869810.mp4', NULL, '2023-12-17 21:23:30', '2023-12-17 21:23:30', NULL);
+(2, 1, 'HTML Tables', 'video', '6981702869810.mp4', NULL, '2023-12-17 21:23:30', '2023-12-17 21:23:30', NULL),
+(3, 2, 'CSS Syntax', 'video', '6821703043905.mp4', NULL, '2023-12-19 21:45:05', '2023-12-19 21:45:05', NULL),
+(4, 2, 'CSS Selectors', 'document', '4711703044319.png', NULL, '2023-12-19 21:46:44', '2023-12-19 21:51:59', NULL),
+(5, 2, 'CSS Colors', 'video', '9181703044379.mp4', NULL, '2023-12-19 21:52:59', '2023-12-19 21:52:59', NULL),
+(6, 3, 'JavaScript Statements', 'video', '6421703044700.mp4', NULL, '2023-12-19 21:56:54', '2023-12-19 21:58:20', NULL),
+(7, 3, 'JavaScript Variables', 'document', '2891703044741.png', NULL, '2023-12-19 21:59:01', '2023-12-19 21:59:01', NULL);
 
 -- --------------------------------------------------------
 
@@ -1080,13 +1088,13 @@ ALTER TABLE `instructors`
 -- AUTO_INCREMENT for table `lessons`
 --
 ALTER TABLE `lessons`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `materials`
 --
 ALTER TABLE `materials`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `messages`
