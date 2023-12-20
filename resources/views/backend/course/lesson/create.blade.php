@@ -65,6 +65,26 @@
                                     <span class="text-danger"> {{ $errors->first('courseId') }}</span>
                                     @endif
                                 </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <div class="form-group">
+                                        <label class="form-label">Lesson Description</label>
+                                        <textarea class="form-control" name="lessonDescription"
+                                            value="{{old('lessonDescription')}}"></textarea>
+                                    </div>
+                                    @if($errors->has('lessonDescription'))
+                                    <span class="text-danger"> {{ $errors->first('lessonDescription') }}</span>
+                                    @endif
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <div class="form-group">
+                                        <label class="form-label">Lesson Notes</label>
+                                        <textarea class="form-control" name="lessonNotes"
+                                            value="{{old('lessonNotes')}}"></textarea>
+                                    </div>
+                                    @if($errors->has('lessonNotes'))
+                                    <span class="text-danger"> {{ $errors->first('lessonNotes') }}</span>
+                                    @endif
+                                </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12">
                                     <button type="submit" class="btn btn-primary">Submit</button>
                                     <button type="submit" class="btn btn-light">Cancel</button>

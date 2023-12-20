@@ -36,6 +36,8 @@ class LessonController extends Controller
             $lesson = new Lesson;
             $lesson->title = $request->lessonTitle;
             $lesson->course_id = $request->courseId;
+            $lesson->description = $request->lessonDescription;
+            $lesson->notes = $request->lessonNotes;
 
             if ($lesson->save()) {
                 $this->notice::success('Data Saved');
@@ -78,6 +80,8 @@ class LessonController extends Controller
             $lesson = Lesson::findOrFail(encryptor('decrypt', $id));
             $lesson->title = $request->lessonTitle;
             $lesson->course_id = $request->courseId;
+            $lesson->description = $request->lessonDescription;
+            $lesson->notes = $request->lessonNotes;
 
             if ($lesson->save()) {
                 $this->notice::success('Data Saved');
