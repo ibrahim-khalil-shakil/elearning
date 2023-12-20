@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 19, 2023 at 08:47 AM
+-- Generation Time: Dec 20, 2023 at 04:24 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -361,7 +361,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (33, '2023_11_26_153754_create_payments_table', 10),
 (34, '2023_11_26_153557_create_lessons_table', 11),
 (35, '2023_11_26_153620_create_materials_table', 12),
-(36, '2023_11_26_153844_create_progress_table', 12);
+(36, '2023_11_26_153844_create_progress_table', 12),
+(37, '2023_12_20_031354_create_watchlists_table', 13);
 
 -- --------------------------------------------------------
 
@@ -811,6 +812,23 @@ INSERT INTO `users` (`id`, `name_en`, `name_bn`, `email`, `contact_en`, `contact
 (11, 'Burhan Uddin Fuad', NULL, 'burhan@gmail.com', '0987654321', NULL, 2, '$2y$12$NQlx2gYeStmVCjXEQwsmoejK93e.0Gy59jDLtHPodEM6gYjLc6K7.', 'en', '9231700380051.jpg', 0, 1, NULL, '2023-11-19 01:47:31', '2023-12-06 00:01:45', '2023-12-06 00:01:45'),
 (12, 'Ahtesanul Haque Kaiser', NULL, 'kaiser@gmail.com', '0124367894', NULL, 2, '$2y$12$EeSCwBeClyyF7kxJ0cK2KOFmH7aw.ZwjiY96Q/3.cmRrZuLvlb2hm', 'en', '2051701842581.jpg', 0, 1, NULL, '2023-11-19 01:55:47', '2023-12-06 00:03:01', NULL);
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `watchlists`
+--
+
+CREATE TABLE `watchlists` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `student_id` bigint(20) UNSIGNED NOT NULL,
+  `course_id` bigint(20) UNSIGNED NOT NULL,
+  `lesson_id` bigint(20) UNSIGNED NOT NULL,
+  `material_id` bigint(20) UNSIGNED NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
 --
 -- Indexes for dumped tables
 --
@@ -997,6 +1015,16 @@ ALTER TABLE `users`
   ADD KEY `users_role_id_index` (`role_id`);
 
 --
+-- Indexes for table `watchlists`
+--
+ALTER TABLE `watchlists`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `watchlists_student_id_index` (`student_id`),
+  ADD KEY `watchlists_course_id_index` (`course_id`),
+  ADD KEY `watchlists_lesson_id_index` (`lesson_id`),
+  ADD KEY `watchlists_material_id_index` (`material_id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -1070,7 +1098,7 @@ ALTER TABLE `messages`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT for table `options`
@@ -1143,6 +1171,12 @@ ALTER TABLE `subscriptions`
 --
 ALTER TABLE `users`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
+-- AUTO_INCREMENT for table `watchlists`
+--
+ALTER TABLE `watchlists`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- Constraints for dumped tables
@@ -1252,6 +1286,15 @@ ALTER TABLE `subscriptions`
 --
 ALTER TABLE `users`
   ADD CONSTRAINT `users_role_id_foreign` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `watchlists`
+--
+ALTER TABLE `watchlists`
+  ADD CONSTRAINT `watchlists_course_id_foreign` FOREIGN KEY (`course_id`) REFERENCES `courses` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `watchlists_lesson_id_foreign` FOREIGN KEY (`lesson_id`) REFERENCES `lessons` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `watchlists_material_id_foreign` FOREIGN KEY (`material_id`) REFERENCES `materials` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `watchlists_student_id_foreign` FOREIGN KEY (`student_id`) REFERENCES `students` (`id`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
