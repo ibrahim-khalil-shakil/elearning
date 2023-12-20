@@ -11,20 +11,19 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('progress', function (Blueprint $table) {
+        Schema::create('watchlists', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('student_id')->index();
             $table->unsignedBigInteger('course_id')->index();
-            $table->integer('progress_percentage')->default(0);
-            $table->boolean('completed')->default(false);
-            $table->unsignedBigInteger('last_viewed_material_id')->index()->nullable();
-            $table->timestamp('last_viewed_at')->nullable();
+            $table->unsignedBigInteger('lesson_id')->index();
+            $table->unsignedBigInteger('material_id')->index();
             $table->timestamps();
-            $table->softDeletes();  
+            $table->softDeletes();
 
             $table->foreign('student_id')->references('id')->on('students')->onDelete('cascade');
             $table->foreign('course_id')->references('id')->on('courses')->onDelete('cascade');
-            $table->foreign('last_viewed_material_id')->references('id')->on('materials')->onDelete('cascade');
+            $table->foreign('lesson_id')->references('id')->on('lessons')->onDelete('cascade');
+            $table->foreign('material_id')->references('id')->on('materials')->onDelete('cascade');
         });
     }
 
@@ -33,6 +32,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('progress');
+        Schema::dropIfExists('watchlists');
     }
 };
