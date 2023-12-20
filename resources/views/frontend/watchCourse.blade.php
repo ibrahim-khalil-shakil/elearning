@@ -32,7 +32,7 @@
                     </a>
                     <div class="topic-info">
                         <div class="topic-info-arrow">
-                            <a href="{{ URL::previous() }}">
+                            <a href="{{URL::previous()}}">
                                 <i class="fas fa-chevron-left"></i>
                             </a>
                         </div>
@@ -78,7 +78,7 @@
                         </video>
                     </div>
                     <div class="course-description-start-content">
-                        <h5 class="font-title--sm">3. What is UI vs UX - User Interface vs User Experience</h5>
+                        <h5 class="font-title--sm material-title">{{$course->title_en}}</h5>
                         <nav class="course-description-start-content-tab">
                             <div class="nav nav-tabs" id="nav-tab" role="tablist">
                                 <button class="nav-link active" id="nav-ldescrip-tab" data-bs-toggle="tab"
@@ -121,9 +121,7 @@
                                 <!-- Course Notes Starts Here -->
                                 <div class="course-notes-area">
                                     <div class="course-notes">
-                                        <h6>Steps 1: Understand what we're trying to solve.</h6>
                                         <div class="course-notes-item">
-                                            <div class="dot"></div>
                                             <p>
                                                 You have to take a minute to understand what is the goal, what is the
                                                 problem, what they're trying to achieve with it who is the target
@@ -237,12 +235,14 @@
                     </div>
                     <div class="videolist-area-bar__wrapper">
                         @foreach($lessons as $lesson)
-                        <div class="videolist-area-wizard" data-lesson-description="{{ $lesson->description }}" data-lesson-notes="{{ $lesson->notes }}">
+                        <div class="videolist-area-wizard" data-lesson-description="{{$lesson->description}}"
+                            data-lesson-notes="{{$lesson->notes}}">
                             <div class="wizard-heading">
-                                <h6 class="">{{ $loop->iteration }}. {{$lesson->title}}</h6>
+                                <h6 class="">{{$loop->iteration}}. {{$lesson->title}}</h6>
                             </div>
                             @foreach ($lesson->material as $material)
-                            <div class="main-wizard">
+                            <div class="main-wizard"
+                                data-material-title="{{$loop->parent->iteration}}.{{$loop->iteration}} {{$material->title}}">
                                 <div class="main-wizard__wrapper">
                                     <a class="main-wizard-start" onclick="show_video('{{$material->content}}')">
                                         @if ($material->type=='video')
@@ -255,8 +255,8 @@
                                         </div>
                                         @endif
                                         <div class="main-wizard-title">
-                                            <p>{{ $loop->parent->iteration }}.{{ $loop->iteration }} {{ $material->title
-                                                }}</p>
+                                            <p>{{$loop->parent->iteration}}.{{$loop->iteration}} {{$material->title}}
+                                            </p>
                                         </div>
                                     </a>
                                     <div class="main-wizard-end d-flex align-items-center">
@@ -306,6 +306,7 @@
     </div>
 
 
+
     <script src="{{asset('public/frontend/src/js/jquery.min.js')}}"></script>
     <script src="{{asset('public/frontend/src/js/bootstrap.bundle.min.js')}}"></script>
     <script src="{{asset('public/frontend/src/scss/vendors/plugin/js/video.min.js')}}"></script>
@@ -315,6 +316,9 @@
     <script src="{{asset('public/frontend/src/scss/vendors/plugin/js/jquery.nice-select.min.js')}}"></script>
     <script src="{{asset('public/frontend/src/scss/vendors/plugin/js/jquery.star-rating-svg.js')}}"></script>
     <script src="{{asset('public/frontend/src/js/app.js')}}"></script>
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
     <script>
         $(".my-rating").starRating({
                     starSize: 30,
@@ -331,27 +335,28 @@
                         video.src = link;
                         video.play();
         }
-
     </script>
 
-    <!-- Include jQuery -->
-<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-
-<script>
-    $(document).ready(function() {
+    <script>
+        $(document).ready(function() {
         $('.videolist-area-wizard').on('click', function() {
             // Get lesson and material details
             var lessonDescription = $(this).data('lesson-description');
             var lessonNotes = $(this).data('lesson-notes');
-
             // Update lesson description
             $('#nav-ldescrip .lesson-description p').html(lessonDescription);
-
             // Update lesson notes
             $('#nav-lnotes .course-notes-area .course-notes-item p').html(lessonNotes);
         });
+
+        $('.main-wizard').on('click', function() {
+            // Get material title
+            var materialTitle = $(this).data('material-title');
+            // Update material title
+            $('.material-title').html(materialTitle);
+        });
     });
-</script>
+    </script>
 
 
 </body>
