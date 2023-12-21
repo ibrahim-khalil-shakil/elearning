@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 20, 2023 at 08:25 AM
+-- Generation Time: Dec 21, 2023 at 07:39 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -281,9 +281,9 @@ CREATE TABLE `lessons` (
 --
 
 INSERT INTO `lessons` (`id`, `title`, `course_id`, `description`, `notes`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'Introduction to HTML', 6, 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for \'lorem ipsum\' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).', 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for \'lorem ipsum\' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).', '2023-12-17 12:28:08', '2023-12-19 22:15:05', NULL),
-(2, 'Introduction to CSS', 6, NULL, NULL, '2023-12-17 21:21:51', '2023-12-17 21:22:07', NULL),
-(3, 'JavaScript Tutorial', 6, NULL, NULL, '2023-12-19 21:51:36', '2023-12-19 21:51:36', NULL);
+(1, 'Introduction to HTML', 6, 'In this lesson, students will be introduced to the fundamental structure of web development with HTML (Hypertext Markup Language). They will learn about the basic syntax of HTML tags, the document structure, and how to create a simple webpage. Emphasis will be placed on understanding the purpose of common HTML elements such as headings, paragraphs, lists, and links.', 'Introduction to HTML:\r\n\r\nHTML stands for Hypertext Markup Language.\r\nIt is the standard markup language for creating web pages.\r\nHTML tags are used to define and structure content on a webpage.\r\nDocument Structure:\r\n\r\nExplain the basic structure of an HTML document: !DOCTYPE html, html, head, and body tags.\r\nDiscuss the purpose of the head section for meta-information and the body section for content.\r\nCommon HTML Elements:\r\n\r\nIntroduce essential HTML tags such as h1, p, ul, li, and a.\r\nDemonstrate how to create hyperlinks using the a tag.\r\nHands-on Activity:\r\n\r\nHave students create a simple webpage with a heading, paragraphs, a list, and a hyperlink.\r\nEncourage them to experiment with different HTML elements.', '2023-12-17 12:28:08', '2023-12-21 00:14:51', NULL),
+(2, 'Introduction to CSS', 6, 'This lesson focuses on Cascading Style Sheets (CSS) and how it is used to enhance the presentation of HTML documents. Students will learn about selectors, properties, and values. The goal is for students to understand how to apply styles to HTML elements and gain insight into the concept of styling cascades.', 'Introduction to CSS:\r\n\r\nCSS stands for Cascading Style Sheets.\r\nIt is used to style the layout and presentation of HTML documents.\r\nSelectors and Properties:\r\n\r\nIntroduce CSS selectors and how they target HTML elements.\r\nDiscuss common CSS properties such as color, font-size, margin, and padding.\r\nBox Model:\r\n\r\nExplain the CSS box model: margin, border, padding, and content.\r\nDemonstrate how to use the box model to control spacing and layout.\r\nStyling Cascades:\r\n\r\nDiscuss the concept of cascading styles and how conflicting styles are resolved.\r\nIntroduce specificity and the importance of understanding the order of styles.\r\nHands-on Activity:\r\n\r\nHave students apply styles to the HTML webpage created in Lesson 1.\r\nExperiment with changing colors, fonts, and layout properties.', '2023-12-17 21:21:51', '2023-12-21 00:16:54', NULL),
+(3, 'JavaScript Tutorial', 6, 'This lesson introduces students to the basics of JavaScript, a programming language that enables dynamic and interactive web pages. Students will learn about variables, data types, and basic control structures. The lesson culminates in a simple interactive program.', 'Introduction to JavaScript:\r\n\r\nJavaScript is a scripting language that enables client-side interactivity in web browsers.\r\nIt is used to manipulate the content and behavior of HTML documents.\r\nVariables and Data Types:\r\n\r\nIntroduce the concept of variables and how they are used to store data.\r\nCover basic data types: strings, numbers, and booleans.\r\nBasic Control Structures:\r\n\r\nExplain control structures such as if statements for conditional logic.\r\nIntroduce loops, specifically the for loop, for repetitive tasks.\r\nDOM Manipulation:\r\n\r\nDiscuss the Document Object Model (DOM) and how JavaScript can be used to manipulate HTML elements dynamically.\r\nShow examples of changing text, styles, and adding/removing elements.\r\nHands-on Activity:\r\n\r\nGuide students in creating a simple interactive program using JavaScript.\r\nEncourage them to modify the HTML and CSS based on user interactions.', '2023-12-19 21:51:36', '2023-12-21 00:17:47', NULL);
 
 -- --------------------------------------------------------
 
@@ -308,13 +308,14 @@ CREATE TABLE `materials` (
 --
 
 INSERT INTO `materials` (`id`, `lesson_id`, `title`, `type`, `content`, `content_url`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 1, 'HTML Attributes', 'video', '5431702869404.mp4', NULL, '2023-12-17 21:16:21', '2023-12-17 21:24:46', NULL),
-(2, 1, 'HTML Tables', 'video', '6981702869810.mp4', NULL, '2023-12-17 21:23:30', '2023-12-17 21:23:30', NULL),
-(3, 2, 'CSS Syntax', 'video', '6821703043905.mp4', NULL, '2023-12-19 21:45:05', '2023-12-19 21:45:05', NULL),
-(4, 2, 'CSS Selectors', 'document', '4711703044319.png', NULL, '2023-12-19 21:46:44', '2023-12-19 21:51:59', NULL),
-(5, 2, 'CSS Colors', 'video', '9181703044379.mp4', NULL, '2023-12-19 21:52:59', '2023-12-19 21:52:59', NULL),
-(6, 3, 'JavaScript Statements', 'video', '6421703044700.mp4', NULL, '2023-12-19 21:56:54', '2023-12-19 21:58:20', NULL),
-(7, 3, 'JavaScript Variables', 'document', '2891703044741.png', NULL, '2023-12-19 21:59:01', '2023-12-19 21:59:01', NULL);
+(1, 1, 'HTML Attributes', 'video', '5291703138753.mp4', NULL, '2023-12-17 21:16:21', '2023-12-21 00:05:53', NULL),
+(2, 1, 'HTML Tables', 'video', '5181703138767.mp4', NULL, '2023-12-17 21:23:30', '2023-12-21 00:06:07', NULL),
+(3, 2, 'CSS Syntax', 'video', '3081703138785.mp4', NULL, '2023-12-19 21:45:05', '2023-12-21 00:06:25', NULL),
+(4, 2, 'CSS Selectors', 'document', '8221703138965.jpg', NULL, '2023-12-19 21:46:44', '2023-12-21 00:09:25', NULL),
+(5, 2, 'CSS Colors', 'video', '9321703138799.mp4', NULL, '2023-12-19 21:52:59', '2023-12-21 00:06:39', NULL),
+(6, 3, 'JavaScript Statements', 'video', '5971703138819.mp4', NULL, '2023-12-19 21:56:54', '2023-12-21 00:06:59', NULL),
+(7, 3, 'JavaScript Variables', 'document', '3971703138919.jpg', NULL, '2023-12-19 21:59:01', '2023-12-21 00:08:39', NULL),
+(8, 3, 'JavaScript Data Types', 'video', '3311703138870.mp4', NULL, '2023-12-21 00:07:50', '2023-12-21 00:07:50', NULL);
 
 -- --------------------------------------------------------
 
@@ -768,7 +769,7 @@ INSERT INTO `students` (`id`, `name_en`, `name_bn`, `contact_en`, `contact_bn`, 
 (14, 'Nakib Uddin', NULL, NULL, NULL, 'student@yahoo.com', NULL, NULL, NULL, NULL, NULL, 'Bangladeshi', NULL, NULL, NULL, NULL, NULL, 1, '$2y$12$ACT2LHXsD/Jlfw0aMNAIY.236b9GAkfRxdjAuYf0B65zmTFbjSpBm', 'en', NULL, '2023-12-06 00:09:53', '2023-12-18 00:11:12', NULL),
 (15, 'Rabiul Islam', NULL, NULL, NULL, 'student2@gmail.com', NULL, NULL, NULL, NULL, NULL, 'Bangladeshi', NULL, NULL, NULL, NULL, NULL, 1, '$2y$12$oQCRT7fJw.ze6/0d/MrFKenHXZ7KfdnAArrF75ww0.GVsjCcHxvyS', 'en', NULL, '2023-12-06 00:22:10', '2023-12-06 00:22:10', NULL),
 (16, 'Noman Hossain', NULL, NULL, NULL, 'student2@yahoo.com', NULL, NULL, NULL, NULL, NULL, 'Bangladeshi', NULL, NULL, NULL, NULL, NULL, 1, '$2y$12$SvgP6RCHTvXFy0/qh9ypL.QdpKgRpaKWe0fGrhWF3cq9wIbnsCzBa', 'en', NULL, '2023-12-06 00:25:03', '2023-12-06 00:25:03', NULL),
-(17, 'Ibrahim Khalil Shakil', NULL, '0183478963', NULL, 'student@gmail.com', '1998-01-13', NULL, '2931702880014.png', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.', 'Web Developer', 'Bangladeshi', NULL, NULL, NULL, NULL, NULL, 1, '$2y$12$rUxi5wAuMt/u9jG46La/h.rva.37gFo6invimj.kjxQEOiRyL7os.', 'en', NULL, '2023-12-18 00:13:14', '2023-12-18 00:26:10', NULL);
+(17, 'Ibrahim Khalil Shakil', NULL, '0183478963', NULL, 'student@gmail.com', NULL, NULL, '3021703132738.png', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur', 'Web Developer', 'Bangladeshi', NULL, NULL, NULL, NULL, NULL, 1, '$2y$12$rUxi5wAuMt/u9jG46La/h.rva.37gFo6invimj.kjxQEOiRyL7os.', 'en', NULL, '2023-12-18 00:13:14', '2023-12-20 22:25:38', NULL);
 
 -- --------------------------------------------------------
 
@@ -1097,7 +1098,7 @@ ALTER TABLE `lessons`
 -- AUTO_INCREMENT for table `materials`
 --
 ALTER TABLE `materials`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `messages`
