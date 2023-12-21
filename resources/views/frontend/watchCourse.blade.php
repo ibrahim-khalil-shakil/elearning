@@ -101,9 +101,9 @@
                             </div>
                         </nav>
                         <div class="tab-content course-description-start-content-tabitem" id="nav-tabContent">
+                            <!-- Lesson Description Starts Here -->
                             <div class="tab-pane fade show active" id="nav-ldescrip" role="tabpanel"
                                 aria-labelledby="nav-ldescrip-tab">
-                                <!-- Lesson Description Starts Here -->
                                 <div class="lesson-description">
                                     <p>
                                         Donec imperdiet erat tortor, nec consectetur odio fermentum et. Mauris vehicula
@@ -117,8 +117,8 @@
                                 </div>
                                 <!-- Lesson Description Ends Here -->
                             </div>
+                            <!-- Course Notes Starts Here -->
                             <div class="tab-pane fade" id="nav-lnotes" role="tabpanel" aria-labelledby="nav-lnotes-tab">
-                                <!-- Course Notes Starts Here -->
                                 <div class="course-notes-area">
                                     <div class="course-notes">
                                         <div class="course-notes-item">
@@ -136,35 +136,133 @@
                                 </div>
                                 <!-- Course Notes Ends Here -->
                             </div>
+                            <!-- Lesson Comments Starts Here -->
                             <div class="tab-pane fade" id="nav-lcomments" role="tabpanel"
                                 aria-labelledby="nav-lcomments-tab">
-                                <!-- Lesson Comments Starts Here -->
                                 <div class="lesson-comments">
+                                    <div class="feedback-comment pt-0 ps-0 pe-0">
+                                        <h6 class="font-title--card">Add a Public Comment</h6>
+                                        <form action="#">
+                                            <label for="comment">Comment</label>
+                                            <textarea class="form-control" id="comment" placeholder="Add a Public Comment"></textarea>
+                                            <button type="submit" class="button button-md button--primary float-end">Post
+                                                Comment</button>
+                                        </form>
+                                    </div>
+                                    <div class="students-feedback pt-0 ps-0 pe-0 pb-0 mb-0">
+                                        <div class="students-feedback-heading">
+                                            <h5 class="font-title--card">Comments <span>(57,685)</span></h5>
+                                        </div>
+                                        <div class="students-feedback-item">
+                                            <div class="feedback-rating">
+                                                <div class="feedback-rating-start">
+                                                    <div class="image">
+                                                        <img src="{{asset('public/frontend/dist/images/ellipse/user.jpg')}}" alt="Image" />
+                                                    </div>
+                                                    <div class="text">
+                                                        <h6><a href="#">Harry Pinsky</a></h6>
+                                                        <p>1 hour ago</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <p>
+                                                Aliquam eget leo quis neque molestie dictum. Etiam ut tortor tempor,
+                                                vestibulum ante non, vulputate nibh. Cras non molestie diam. Great
+                                                Course
+                                                for Beginner 😀
+                                            </p>
+                                        </div>
+                                        <div class="students-feedback-item">
+                                            <div class="feedback-rating">
+                                                <div class="feedback-rating-start">
+                                                    <div class="image">
+                                                        <img src="{{asset('public/frontend/dist/images/ellipse/1.png')}}" alt="Image" />
+                                                    </div>
+                                                    <div class="text">
+                                                        <h6><a href="#">Harry Pinsky</a></h6>
+                                                        <p>2 hour ago</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <p>
+                                                Aliquam eget leo quis neque molestie dictum. Etiam ut tortor tempor,
+                                                vestibulum ante non, vulputate nibh.
+                                            </p>
+                                        </div>
+                                        <div class="students-feedback-item">
+                                            <div class="feedback-rating">
+                                                <div class="feedback-rating-start">
+                                                    <div class="image">
+                                                        <img src="{{asset('public/frontend/dist/images/ellipse/2.png')}}" alt="Image" />
+                                                    </div>
+                                                    <div class="text">
+                                                        <h6><a href="#">Watcraz Eggsy</a></h6>
+                                                        <p>1 day ago</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <p>
+                                                Aenean vulputate nisi ligula. Quisque in tempus sapien. Quisque
+                                                vestibulum
+                                                massa eget consequat scelerisque. Phasellus varius risus nec maximus
+                                                auctor.
+                                            </p>
+                                        </div>
+                                        <div class="students-feedback-item border-0">
+                                            <div class="feedback-rating">
+                                                <div class="feedback-rating-start">
+                                                    <div class="image">
+                                                        <img src="{{asset('public/frontend/dist/images/ellipse/3.png')}}" alt="Image" />
+                                                    </div>
+                                                    <div class="text">
+                                                        <h6><a href="#">Watcraz Eggsy</a></h6>
+                                                        <p>1 day ago</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <p>
+                                                Cras non molestie diam. Aenean vulputate nisi ligula. Quisque in tempus
+                                                sapien. Quisque vestibulum massa eget consequat scelerisque.
+                                            </p>
+                                        </div>
+                                        <button class="button button-md button--primary-outline">Load More</button>
+                                    </div>
                                 </div>
                                 <!-- Lesson Comments Ends Here -->
                             </div>
+                            <!-- Course Overview Starts Here -->
                             <div class="tab-pane fade" id="nav-loverview" role="tabpanel"
                                 aria-labelledby="nav-loverview-tab">
-                                <!-- Course Overview Starts Here -->
                                 <div class="row course-overview-main">
+                                    <div class="course-overview-main-item">
+                                        <h6 class="font-title--card">Description</h6>
+                                        <p class="mb-3 font-para--lg">
+                                           {{$course->description_en}}
+                                        </p>
+                                    </div>
+                                    <div class="course-overview-main-item">
+                                        <h6 class="font-title--card">Requirments</h6>
+                                        <p class="mb-2 font-para--lg">
+                                           {{$course->prerequisites_en}}
+                                        </p>
+                                    </div>
                                 </div>
                                 <!-- Course Overview Ends Here -->
                             </div>
+                            <!-- course details instructor  -->
                             <div class="tab-pane fade" id="nav-linstruc" role="tabpanel"
                                 aria-labelledby="nav-linstruc-tab">
-                                <!-- course details instructor  -->
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="course-instructor mw-100">
                                             <div class="course-instructor-info">
                                                 <div class="instructor-image">
-                                                    <img src="{{asset('public/frontend/dist/images/courses/courseinstructor.png')}}"
+                                                    <img src="{{asset('public/uploads/instructors/'.$course?->instructor?->image)}}"
                                                         alt="Instructor" />
                                                 </div>
                                                 <div class="instructor-text">
-                                                    <h6 class="font-title--xs"><a href="instructorreviews.html">Gartin
-                                                            Bator</a></h6>
-                                                    <p>Senior Teacher</p>
+                                                    <h6 class="font-title--xs"><a href="#">{{$course?->instructor?->name_en}}</a></h6>
+                                                    <p>{{$course?->instructor?->designation}}</p>
                                                     <div class="d-flex align-items-center instructor-text-bottom">
                                                         <div class="d-flex align-items-center ratings-icon">
                                                             <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
@@ -197,22 +295,10 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <p class="lead-p">Adobe Certified Instructor &amp; Adobe Certified Expert.
+                                            <p class="lead-p">{{$course?->instructor?->title}}
                                             </p>
                                             <p class="course-instructor-description">
-                                                Joe has been preaching and practicing the gospel of User Experience (UX)
-                                                to
-                                                Fortune 100, 500 and Government organizations for nearly three decades.
-                                                That
-                                                work includes commercial industry
-                                                leaders like Google Ventures, Kroll/Duff + Phelps, Broadridge, Conde
-                                                Nast,
-                                                Johns Hopkins, Mettler-Toledo, PHH Arval, SC Johnson and Wolters Kluwer,
-                                                as
-                                                well as government agencies like the
-                                                National Science Foundation, National Institutes of Health and the Dept.
-                                                of
-                                                Homeland Security.
+                                                {{$course?->instructor?->bio}}
                                             </p>
                                         </div>
                                     </div>

@@ -16,8 +16,7 @@
                 <li class="breadcrumb-item"><a href="course-search.html" class="fs-6 text-secondary">Courses</a></li>
                 <li class="breadcrumb-item d-none d-lg-inline-block"><a href="#"
                         class="fs-6 text-secondary">Course Detail Instructor</a></li>
-                <li class="breadcrumb-item d-none d-lg-inline-block"><a href="#" class="fs-6 text-secondary">Kevin
-                        Gilbert</a></li>
+                <li class="breadcrumb-item d-none d-lg-inline-block"><a href="#" class="fs-6 text-secondary">{{$instructor->name_en}}</a></li>
             </ol>
         </nav>
     </div>
