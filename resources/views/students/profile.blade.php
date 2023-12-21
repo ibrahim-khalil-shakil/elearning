@@ -84,10 +84,10 @@
                     <button class="nav-link" id="nav-setting-tab" data-bs-toggle="tab" data-bs-target="#nav-setting"
                         type="button" role="tab" aria-controls="nav-setting" aria-selected="false">Setting</button>
 
-                    <button class="nav-link "><a href="{{route('studentdashboard')}}"
+                    {{-- <button class="nav-link "><a href="{{route('studentdashboard')}}"
                             class="text-secondary">Dashboard</a></button>
 
-                    <button class="nav-link "><a href="{{route('home')}}" class="text-secondary">Home</a></button>
+                    <button class="nav-link "><a href="{{route('home')}}" class="text-secondary">Home</a></button> --}}
                 </div>
             </nav>
         </div>
@@ -206,7 +206,7 @@
                                         <div class="row">
                                             <div class="col-12">
                                                 <label for="bio">About You</label>
-                                                <textarea name="bio" class="form-control"
+                                                <textarea name="bio" class="form-control" rows="5"
                                                     placeholder="About Yourself">{{$student_info->bio}}</textarea>
                                             </div>
                                         </div>

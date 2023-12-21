@@ -27,8 +27,6 @@ class ProfileController extends Controller
             $data->bio = $request->bio;
             $data->profession = $request->profession;
             $data->nationality = $request->nationality;
-            // $data->status = $request->status;
-            // $data->password = Hash::make($request->fullName_bn);
             $data->language = 'en';
 
             if ($request->hasFile('image')) {
@@ -38,11 +36,11 @@ class ProfileController extends Controller
             }
             if ($data->save()) {
                 $this->setSession($data);
-                return redirect()->back()->with('success', 'Data Saved');
+                return redirect()->back()->with('success', 'Your Changes Have been Saved');
             }
         } catch (Exception $e) {
             // dd($e);
-            return redirect()->back()->withInput()->with('error', 'Please try again');
+            return redirect()->back()->withInput()->with('error', 'Something went wrong. Please try again');
         }
     }
 
@@ -61,11 +59,11 @@ class ProfileController extends Controller
 
             if ($data->save()) {
                 $this->setSession($data);
-                return redirect()->back()->with('success', 'Data Saved');
+                return redirect()->back()->with('success', 'Password Have been Changed');
             }
         } catch (Exception $e) {
             // dd($e); 
-            return redirect()->back()->withInput()->with('error', 'Please try again');
+            return redirect()->back()->withInput()->with('error', 'Something went wrong. Please try again');
         }
     }
 
@@ -94,7 +92,7 @@ class ProfileController extends Controller
                 $user->image = $imageName;
                 $user->save();
 
-                return redirect()->back()->with('success', 'Image changed successfully.');
+                return rredirect()->back()->with('success', 'Image changed successfully.');
             } else {
                 return redirect()->back()->with('error', 'Please select a valid image file.');
             }
