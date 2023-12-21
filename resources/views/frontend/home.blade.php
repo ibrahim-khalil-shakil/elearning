@@ -1620,7 +1620,7 @@
                                 <div class="contentCard-more">
                                     <div class="d-flex align-items-center">
                                         <div class="icon">
-                                            <img src="{{asset('public/frontend/dist/images/icon/Location.png')}}" alt="location" />
+                                            <img src="{{asset('public/frontend/dist/images/icon/location.png')}}" alt="location" />
                                         </div>
                                         <span>Chicago, Illinois</span>
                                     </div>
