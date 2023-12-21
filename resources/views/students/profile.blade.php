@@ -83,11 +83,6 @@
 
                     <button class="nav-link" id="nav-setting-tab" data-bs-toggle="tab" data-bs-target="#nav-setting"
                         type="button" role="tab" aria-controls="nav-setting" aria-selected="false">Setting</button>
-
-                    {{-- <button class="nav-link "><a href="{{route('studentdashboard')}}"
-                            class="text-secondary">Dashboard</a></button>
-
-                    <button class="nav-link "><a href="{{route('home')}}" class="text-secondary">Home</a></button> --}}
                 </div>
             </nav>
         </div>
@@ -179,15 +174,15 @@
                                                 <label for="emailAddress">Email</label>
                                                 <input type="email" name="emailAddress" class="form-control"
                                                     value="{{$student_info->email}}" placeholder="Enter Your Email" />
-                                            </div>  
+                                            </div>
                                         </div>
-                                        <div class="row"> 
-                                            <div class="col-12"> 
+                                        <div class="row">
+                                            <div class="col-12">
                                                 <label for="profession">What Do You Do</label>
                                                 <input type="text" name="profession" class="form-control"
                                                     value="{{$student_info->profession}}"
                                                     placeholder="Enter Your Profession" />
-                                            </div> 
+                                            </div>
                                         </div>
                                         <div class="row g-3">
                                             <div class="col-lg-6">
@@ -226,8 +221,8 @@
                                             <div class="col-12">
                                                 <label for="current_password">Current Password</label>
                                                 <div class="input-with-icon">
-                                                    <input type="password" id="cpass" name="current_password" class="form-control"
-                                                        placeholder="Enter Password" />
+                                                    <input type="password" id="cpass" name="current_password"
+                                                        class="form-control" placeholder="Enter Password" />
                                                     <div class="input-icon" onclick="showPassword('cpass',this)">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                             viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -245,8 +240,8 @@
                                             <div class="col-12">
                                                 <label for="password">New Password</label>
                                                 <div class="input-with-icon">
-                                                    <input type="password" id="npass" name="password" class="form-control"
-                                                        placeholder="Enter Password" />
+                                                    <input type="password" id="npass" name="password"
+                                                        class="form-control" placeholder="Enter Password" />
                                                     <div class="input-icon" onclick="showPassword('npass',this)">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                             viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -264,8 +259,8 @@
                                             <div class="col-12">
                                                 <label for="password_confirmation">Confirm New Password</label>
                                                 <div class="input-with-icon">
-                                                    <input type="password" id="cnpass" name="password_confirmation" class="form-control"
-                                                        placeholder="Enter Password" />
+                                                    <input type="password" id="cnpass" name="password_confirmation"
+                                                        class="form-control" placeholder="Enter Password" />
                                                     <div class="input-icon" onclick="showPassword('cnpass',this)">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                             viewBox="0 0 24 24" fill="none" stroke="currentColor"

@@ -115,59 +115,20 @@
                 <div class="tab-pane fade show active" id="nav-profile" role="tabpanel"
                     aria-labelledby="nav-profile-tab">
                     <div class="tab-content__profile">
-                        <div class="tab-content__profile-content">
-                            <div class="about-student">
-                                <h6 class="font-title--card">About Me</h6>
-                                <p class="font-para--md">
-                                    {{$student_info->bio?$student_info->bio:"Student's Bio"}}
-                                </p>
+                        <section class="section section--bg-white calltoaction">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-6 col-12 mx-auto text-center">
+                                        <h5 class="font-title--sm">Invest in your career with Us</h5>
+                                        <p class="my-4 font-para--lg">
+                                            Duis posuere maximus arcu eu tincidunt. Nam rutrum, nibh vitae tempus venenatis, ex tortor ultricies
+                                            magna, et faucibus magna eros quis arcu.
+                                        </p>
+                                        <a href="{{route('searchCourse')}}" class="button button-md button--primary">Let’s Go</a>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="tab-content__profile-content">
-                            <div class="info-student">
-                                <h6 class="font-title--card">{{$student_info->name_en}}'s Information</h6>
-                                <dl class="row my-0 info-student-topic">
-                                    <dt class="col-sm-4">
-                                        <span>Name</span>
-                                    </dt>
-                                    <dd class="col-sm-8">
-                                        <p>{{$student_info->name_en}}</p>
-                                    </dd>
-                                </dl>
-                                <dl class="row my-0 info-student-topic">
-                                    <dt class="col-sm-4">
-                                        <span>E-mail</span>
-                                    </dt>
-                                    <dd class="col-sm-8">
-                                        <p>{{$student_info->email}}</p>
-                                    </dd>
-                                </dl>
-                                <dl class="row my-0 info-student-topic">
-                                    <dt class="col-sm-4">
-                                        <span>What do you do</span>
-                                    </dt>
-                                    <dd class="col-sm-8">
-                                        <p>{{$student_info->profession?$student_info->profession:'Student'}}</p>
-                                    </dd>
-                                </dl>
-                                <dl class="row my-0 info-student-topic">
-                                    <dt class="col-sm-4">
-                                        <span>Phone Number</span>
-                                    </dt>
-                                    <dd class="col-sm-8">
-                                        <p>{{$student_info->contact_en?$student_info->contact_en:'+880'}}</p>
-                                    </dd>
-                                </dl>
-                                <dl class="row my-0 info-student-topic">
-                                    <dt class="col-sm-4">
-                                        <span>Nationality</span>
-                                    </dt>
-                                    <dd class="col-sm-8">
-                                        <p>{{$student_info->nationality}}</p>
-                                    </dd>
-                                </dl>
-                            </div>
-                        </div>
+                        </section>
                     </div>
                 </div>
 
@@ -549,7 +510,6 @@
                                             <dd class="col-sm-8">
                                                 {{json_decode(base64_decode($e->cart_data))->cart_details->total_amount}}
                                             </dd>
-
                                             <dt class="col-sm-4">Total Courses</dt>
                                             <dd class="col-sm-8">
                                                 {{$i}}
