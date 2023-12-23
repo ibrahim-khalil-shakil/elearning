@@ -53,7 +53,7 @@ class CourseController extends Controller
             $course->title_bn = $request->courseTitle_bn;
             $course->description_en = $request->courseDescription_en;
             $course->description_bn = $request->courseDescription_bn;
-            $course->category_id = $request->categoryId;
+            $course->course_category_id = $request->categoryId;
             $course->instructor_id = $request->instructorId;
             $course->type = $request->courseType;
             $course->price = $request->coursePrice;
@@ -129,7 +129,7 @@ class CourseController extends Controller
             $course->title_bn = $request->courseTitle_bn;
             $course->description_en = $request->courseDescription_en;
             $course->description_bn = $request->courseDescription_bn;
-            $course->category_id = $request->categoryId;
+            $course->course_category_id = $request->categoryId;
             $course->instructor_id = $request->instructorId;
             $course->type = $request->courseType;
             $course->price = $request->coursePrice;
