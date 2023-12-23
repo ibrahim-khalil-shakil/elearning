@@ -15,7 +15,7 @@ class Course extends Model
 
     public function courseCategory()
     {
-        return $this->belongsTo(CourseCategory::class, 'category_id', 'id');
+        return $this->belongsTo(CourseCategory::class, 'category_id', 'id'); 
     }
 
     public function instructor()

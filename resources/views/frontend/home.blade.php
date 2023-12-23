@@ -51,6 +51,10 @@
         <div class="browse-categories__wrapper position-relative">
             <div class="categories--box">
                 @forelse ($category as $cat)
+                @php
+                // Fetch the count of courses for each category
+                $courseCount = $cat->course()->count();
+                @endphp
                     <div class="browse-categories-item default-item-one mb-2">
                         <div class="browse-categories-item-icon">
                             <div class="categories-one default-categories">
@@ -59,7 +63,7 @@
                         </div>
                         <div class="browse-categories-item-text">
                             <h6 class="font-title--card"><a href="#">{{$cat->category_name}}</a></h6>
-                            <p>587 Courses</p>
+                            <p>{{ $courseCount }} Courses</p>
                         </div>
                     </div>
                 @empty
@@ -77,7 +81,7 @@
             class="img-fluid shape-01" />
         <img src="{{asset('public/frontend/dist/images/shape/line01.png')}}" alt="shape" class="img-fluid shape-02" />
     </div>
-</section>
+</section> 
 
 <!--  Popular Courses Starts Here -->
 <section class="section section--bg-offwhite-three featured-popular-courses main-popular-course">

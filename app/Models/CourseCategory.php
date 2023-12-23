@@ -12,4 +12,4 @@ class CourseCategory extends Model
     public function course(){
         return $this->hasMany(Course::class);
     }
-}
+} 
