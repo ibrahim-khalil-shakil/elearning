@@ -14,7 +14,8 @@ class HomeController extends Controller
         $course = Course::get();
         $instructor = Instructor::get();
         $category = CourseCategory::get();
-        return view('frontend.home', compact('course', 'instructor', 'category'));
+        $popularCourses = Course::where('tag', 'popular')->get();
+        return view('frontend.home', compact('course', 'instructor', 'category', 'popularCourses'));
     }
 
 }

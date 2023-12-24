@@ -138,349 +138,60 @@
             <div class="tab-content" id="pills-tabContent">
                 <div class="tab-pane fade show active" id="pills-all" role="tabpanel" aria-labelledby="pills-all-tab">
                     <div class="row">
-                        <div class="col-xl-4 col-md-6">
-                            <div class="contentCard contentCard--course">
-                                <div class="contentCard-top">
-                                    <a href="#"><img
-                                            src="{{asset('public/frontend/dist/images/courses/demo-img-01.png')}}"
-                                            alt="images" class="img-fluid" /></a>
-                                </div>
-                                <div class="contentCard-bottom">
-                                    <h5>
-                                        <a href="#" class="font-title--card">Chicago International
-                                            Conference on Education</a>
-                                    </h5>
-                                    <div class="contentCard-info d-flex align-items-center justify-content-between">
-                                        <a href="instructor-profile.html"
-                                            class="contentCard-user d-flex align-items-center">
-                                            <img src="{{asset('public/frontend/dist/images/courses/7.png')}}"
-                                                alt="client-image" class="rounded-circle" />
-                                            <p class="font-para--md">Brandon Dias</p>
-                                        </a>
-                                        <div class="price">
-                                            <span>৳12</span>
-                                            <del>৳95</del>
-                                        </div>
+                        @forelse ($popularCourses as $pc)
+                            <div class="col-xl-4 col-md-6">
+                                <div class="contentCard contentCard--course">
+                                    <div class="contentCard-top">
+                                        <a href="#"><img src="{{asset('public/uploads/courses/'.$pc->image)}}" alt="images"
+                                                class="img-fluid" /></a>
                                     </div>
-                                    <div class="contentCard-more">
-                                        <div class="d-flex align-items-center">
-                                            <div class="icon">
-                                                <img src="{{asset('public/frontend/dist/images/icon/star.png')}}"
-                                                    alt="star" />
+                                    <div class="contentCard-bottom">
+                                        <h5>
+                                            <a href="#" class="font-title--card">{{$pc->title_en}}</a>
+                                        </h5>
+                                        <div class="contentCard-info d-flex align-items-center justify-content-between">
+                                            <a href="instructor-profile.html" class="contentCard-user d-flex align-items-center">
+                                                <img src="{{asset('public/uploads/instructors/'.$pc?->instructor->image)}}" alt="client-image"
+                                                    class="rounded-circle" height="34" width="34" />
+                                                <p class="font-para--md">{{$pc?->instructor->name_en}}</p>
+                                            </a>
+                                            <div class="price">
+                                                <span>{{$pc->price?'৳'.$pc->price:'Free'}}</span>
+                                                <del>{{$pc->old_price?'৳'.$pc->old_price:''}}</del>
                                             </div>
-                                            <span>4.5</span>
                                         </div>
-                                        <div class="eye d-flex align-items-center">
-                                            <div class="icon">
-                                                <img src="{{asset('public/frontend/dist/images/icon/eye.png')}}"
-                                                    alt="eye" />
+                                        <div class="contentCard-more">
+                                            <div class="d-flex align-items-center">
+                                                <div class="icon">
+                                                    <img src="{{asset('public/frontend/dist/images/icon/star.png')}}" alt="star" />
+                                                </div>
+                                                <span>4.5</span>
                                             </div>
-                                            <span>24,517</span>
-                                        </div>
-                                        <div class="book d-flex align-items-center">
-                                            <div class="icon">
-                                                <img src="{{asset('public/frontend/dist/images/icon/book.png')}}"
-                                                    alt="location" />
+                                            <div class="eye d-flex align-items-center">
+                                                <div class="icon">
+                                                    <img src="{{asset('public/frontend/dist/images/icon/eye.png')}}" alt="eye" />
+                                                </div>
+                                                <span>24,517</span>
                                             </div>
-                                            <span>37 Lesson</span>
-                                        </div>
-                                        <div class="clock d-flex align-items-center">
-                                            <div class="icon">
-                                                <img src="{{asset('public/frontend/dist/images/icon/Clock.png')}}"
-                                                    alt="clock" />
+                                            <div class="book d-flex align-items-center">
+                                                <div class="icon">
+                                                    <img src="{{asset('public/frontend/dist/images/icon/book.png')}}" alt="location" />
+                                                </div>
+                                                <span>{{$pc->lesson?$pc->lesson:0}} Lesson</span>
                                             </div>
-                                            <span>3 Hours</span>
+                                            <div class="clock d-flex align-items-center">
+                                                <div class="icon">
+                                                    <img src="{{asset('public/frontend/dist/images/icon/Clock.png')}}" alt="clock" />
+                                                </div>
+                                                <span>{{$pc->duration?$pc->duration:0}} Hours</span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-xl-4 col-md-6">
-                            <div class="contentCard contentCard--course">
-                                <div class="contentCard-top">
-                                    <a href="#"><img
-                                            src="{{asset('public/frontend/dist/images/courses/demo-img-02.png')}}"
-                                            alt="images" class="img-fluid" /></a>
-                                </div>
-                                <div class="contentCard-bottom">
-                                    <h5>
-                                        <a href="#" class="font-title--card">Chicago International
-                                            Conference on Education</a>
-                                    </h5>
-                                    <div class="contentCard-info d-flex align-items-center justify-content-between">
-                                        <a href="instructor-profile.html"
-                                            class="contentCard-user d-flex align-items-center">
-                                            <img src="{{asset('public/frontend/dist/images/courses/7.png')}}"
-                                                alt="client-image" class="rounded-circle" />
-                                            <p class="font-para--md">Brandon Dias</p>
-                                        </a>
-                                        <div class="price">
-                                            <span>৳12</span>
-                                            <del>৳95</del>
-                                        </div>
-                                    </div>
-                                    <div class="contentCard-more">
-                                        <div class="d-flex align-items-center">
-                                            <div class="icon">
-                                                <img src="{{asset('public/frontend/dist/images/icon/star.png')}}"
-                                                    alt="star" />
-                                            </div>
-                                            <span>4.5</span>
-                                        </div>
-                                        <div class="eye d-flex align-items-center">
-                                            <div class="icon">
-                                                <img src="{{asset('public/frontend/dist/images/icon/eye.png')}}"
-                                                    alt="eye" />
-                                            </div>
-                                            <span>24,517</span>
-                                        </div>
-                                        <div class="book d-flex align-items-center">
-                                            <div class="icon">
-                                                <img src="{{asset('public/frontend/dist/images/icon/book.png')}}"
-                                                    alt="location" />
-                                            </div>
-                                            <span>37 Lesson</span>
-                                        </div>
-                                        <div class="clock d-flex align-items-center">
-                                            <div class="icon">
-                                                <img src="{{asset('public/frontend/dist/images/icon/Clock.png')}}"
-                                                    alt="clock" />
-                                            </div>
-                                            <span>3 Hours</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-md-6">
-                            <div class="contentCard contentCard--course">
-                                <div class="contentCard-top">
-                                    <a href="#"><img
-                                            src="{{asset('public/frontend/dist/images/courses/demo-img-03.png')}}"
-                                            alt="images" class="img-fluid" /></a>
-                                </div>
-                                <div class="contentCard-bottom">
-                                    <h5>
-                                        <a href="#" class="font-title--card">Chicago International
-                                            Conference on Education</a>
-                                    </h5>
-                                    <div class="contentCard-info d-flex align-items-center justify-content-between">
-                                        <a href="instructor-profile.html"
-                                            class="contentCard-user d-flex align-items-center">
-                                            <img src="{{asset('public/frontend/dist/images/courses/7.png')}}"
-                                                alt="client-image" class="rounded-circle" />
-                                            <p class="font-para--md">Brandon Dias</p>
-                                        </a>
-                                        <div class="price">
-                                            <span>৳12</span>
-                                            <del>৳95</del>
-                                        </div>
-                                    </div>
-                                    <div class="contentCard-more">
-                                        <div class="d-flex align-items-center">
-                                            <div class="icon">
-                                                <img src="{{asset('public/frontend/dist/images/icon/star.png')}}"
-                                                    alt="star" />
-                                            </div>
-                                            <span>4.5</span>
-                                        </div>
-                                        <div class="eye d-flex align-items-center">
-                                            <div class="icon">
-                                                <img src="{{asset('public/frontend/dist/images/icon/eye.png')}}"
-                                                    alt="eye" />
-                                            </div>
-                                            <span>24,517</span>
-                                        </div>
-                                        <div class="book d-flex align-items-center">
-                                            <div class="icon">
-                                                <img src="{{asset('public/frontend/dist/images/icon/book.png')}}"
-                                                    alt="location" />
-                                            </div>
-                                            <span>37 Lesson</span>
-                                        </div>
-                                        <div class="clock d-flex align-items-center">
-                                            <div class="icon">
-                                                <img src="{{asset('public/frontend/dist/images/icon/Clock.png')}}"
-                                                    alt="clock" />
-                                            </div>
-                                            <span>3 Hours</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-md-6">
-                            <div class="contentCard contentCard--course">
-                                <div class="contentCard-top">
-                                    <a href="#"><img
-                                            src="{{asset('public/frontend/dist/images/courses/demo-img-04.png')}}"
-                                            alt="images" class="img-fluid" /></a>
-                                </div>
-                                <div class="contentCard-bottom">
-                                    <h5>
-                                        <a href="#" class="font-title--card">Chicago International
-                                            Conference on Education</a>
-                                    </h5>
-                                    <div class="contentCard-info d-flex align-items-center justify-content-between">
-                                        <a href="instructor-profile.html"
-                                            class="contentCard-user d-flex align-items-center">
-                                            <img src="{{asset('public/frontend/dist/images/courses/7.png')}}"
-                                                alt="client-image" class="rounded-circle" />
-                                            <p class="font-para--md">Brandon Dias</p>
-                                        </a>
-                                        <div class="price">
-                                            <span>৳12</span>
-                                            <del>৳95</del>
-                                        </div>
-                                    </div>
-                                    <div class="contentCard-more">
-                                        <div class="d-flex align-items-center">
-                                            <div class="icon">
-                                                <img src="{{asset('public/frontend/dist/images/icon/star.png')}}"
-                                                    alt="star" />
-                                            </div>
-                                            <span>4.5</span>
-                                        </div>
-                                        <div class="eye d-flex align-items-center">
-                                            <div class="icon">
-                                                <img src="{{asset('public/frontend/dist/images/icon/eye.png')}}"
-                                                    alt="eye" />
-                                            </div>
-                                            <span>24,517</span>
-                                        </div>
-                                        <div class="book d-flex align-items-center">
-                                            <div class="icon">
-                                                <img src="{{asset('public/frontend/dist/images/icon/book.png')}}"
-                                                    alt="location" />
-                                            </div>
-                                            <span>37 Lesson</span>
-                                        </div>
-                                        <div class="clock d-flex align-items-center">
-                                            <div class="icon">
-                                                <img src="{{asset('public/frontend/dist/images/icon/Clock.png')}}"
-                                                    alt="clock" />
-                                            </div>
-                                            <span>3 Hours</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-md-6">
-                            <div class="contentCard contentCard--course">
-                                <div class="contentCard-top">
-                                    <a href="#"><img
-                                            src="{{asset('public/frontend/dist/images/courses/demo-img-05.png')}}"
-                                            alt="images" class="img-fluid" /></a>
-                                </div>
-                                <div class="contentCard-bottom">
-                                    <h5>
-                                        <a href="#" class="font-title--card">Chicago International
-                                            Conference on Education</a>
-                                    </h5>
-                                    <div class="contentCard-info d-flex align-items-center justify-content-between">
-                                        <a href="instructor-profile.html"
-                                            class="contentCard-user d-flex align-items-center">
-                                            <img src="{{asset('public/frontend/dist/images/courses/7.png')}}"
-                                                alt="client-image" class="rounded-circle" />
-                                            <p class="font-para--md">Brandon Dias</p>
-                                        </a>
-                                        <div class="price">
-                                            <span>৳12</span>
-                                            <del>৳95</del>
-                                        </div>
-                                    </div>
-                                    <div class="contentCard-more">
-                                        <div class="d-flex align-items-center">
-                                            <div class="icon">
-                                                <img src="{{asset('public/frontend/dist/images/icon/star.png')}}"
-                                                    alt="star" />
-                                            </div>
-                                            <span>4.5</span>
-                                        </div>
-                                        <div class="eye d-flex align-items-center">
-                                            <div class="icon">
-                                                <img src="{{asset('public/frontend/dist/images/icon/eye.png')}}"
-                                                    alt="eye" />
-                                            </div>
-                                            <span>24,517</span>
-                                        </div>
-                                        <div class="book d-flex align-items-center">
-                                            <div class="icon">
-                                                <img src="{{asset('public/frontend/dist/images/icon/book.png')}}"
-                                                    alt="location" />
-                                            </div>
-                                            <span>37 Lesson</span>
-                                        </div>
-                                        <div class="clock d-flex align-items-center">
-                                            <div class="icon">
-                                                <img src="{{asset('public/frontend/dist/images/icon/Clock.png')}}"
-                                                    alt="clock" />
-                                            </div>
-                                            <span>3 Hours</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-md-6">
-                            <div class="contentCard contentCard--course">
-                                <div class="contentCard-top">
-                                    <a href="#">
-                                        <img src="{{asset('public/frontend/dist/images/courses/demo-img-02.png')}}"
-                                            alt="images" class="img-fluid" />
-                                    </a>
-                                </div>
-                                <div class="contentCard-bottom">
-                                    <h5>
-                                        <a href="#" class="font-title--card">Chicago International
-                                            Conference on Education</a>
-                                    </h5>
-                                    <div class="contentCard-info d-flex align-items-center justify-content-between">
-                                        <a href="instructor-profile.html"
-                                            class="contentCard-user d-flex align-items-center">
-                                            <img src="{{asset('public/frontend/dist/images/courses/7.png')}}"
-                                                alt="client-image" class="rounded-circle" />
-                                            <p class="font-para--md">Brandon Dias</p>
-                                        </a>
-                                        <div class="price">
-                                            <span>৳12</span>
-                                            <del>৳95</del>
-                                        </div>
-                                    </div>
-                                    <div class="contentCard-more">
-                                        <div class="d-flex align-items-center">
-                                            <div class="icon">
-                                                <img src="{{asset('public/frontend/dist/images/icon/star.png')}}"
-                                                    alt="star" />
-                                            </div>
-                                            <span>4.5</span>
-                                        </div>
-                                        <div class="eye d-flex align-items-center">
-                                            <div class="icon">
-                                                <img src="{{asset('public/frontend/dist/images/icon/eye.png')}}"
-                                                    alt="eye" />
-                                            </div>
-                                            <span>24,517</span>
-                                        </div>
-                                        <div class="book d-flex align-items-center">
-                                            <div class="icon">
-                                                <img src="{{asset('public/frontend/dist/images/icon/book.png')}}"
-                                                    alt="location" />
-                                            </div>
-                                            <span>37 Lesson</span>
-                                        </div>
-                                        <div class="clock d-flex align-items-center">
-                                            <div class="icon">
-                                                <img src="{{asset('public/frontend/dist/images/icon/Clock.png')}}"
-                                                    alt="clock" />
-                                            </div>
-                                            <span>3 Hours</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        @empty
+                            
+                        @endforelse
                     </div>
                     <div class="row">
                         <div class="col-lg-12 text-center">
@@ -496,120 +207,6 @@
                                 <div class="contentCard-top">
                                     <a href="#"><img
                                             src="{{asset('public/frontend/dist/images/courses/demo-img-01.png')}}"
-                                            alt="images" class="img-fluid" /></a>
-                                </div>
-                                <div class="contentCard-bottom">
-                                    <h5>
-                                        <a href="#" class="font-title--card">Chicago International
-                                            Conference on Education</a>
-                                    </h5>
-                                    <div class="contentCard-info d-flex align-items-center justify-content-between">
-                                        <a href="instructor-profile.html"
-                                            class="contentCard-user d-flex align-items-center">
-                                            <img src="{{asset('public/frontend/dist/images/courses/7.png')}}"
-                                                alt="client-image" class="rounded-circle" />
-                                            <p class="font-para--md">Brandon Dias</p>
-                                        </a>
-                                        <div class="price">
-                                            <span>৳12</span>
-                                            <del>৳95</del>
-                                        </div>
-                                    </div>
-                                    <div class="contentCard-more">
-                                        <div class="d-flex align-items-center">
-                                            <div class="icon">
-                                                <img src="{{asset('public/frontend/dist/images/icon/star.png')}}"
-                                                    alt="star" />
-                                            </div>
-                                            <span>4.5</span>
-                                        </div>
-                                        <div class="eye d-flex align-items-center">
-                                            <div class="icon">
-                                                <img src="{{asset('public/frontend/dist/images/icon/eye.png')}}"
-                                                    alt="eye" />
-                                            </div>
-                                            <span>24,517</span>
-                                        </div>
-                                        <div class="book d-flex align-items-center">
-                                            <div class="icon">
-                                                <img src="{{asset('public/frontend/dist/images/icon/book.png')}}"
-                                                    alt="location" />
-                                            </div>
-                                            <span>37 Lesson</span>
-                                        </div>
-                                        <div class="clock d-flex align-items-center">
-                                            <div class="icon">
-                                                <img src="{{asset('public/frontend/dist/images/icon/Clock.png')}}"
-                                                    alt="clock" />
-                                            </div>
-                                            <span>3 Hours</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-md-6">
-                            <div class="contentCard contentCard--course">
-                                <div class="contentCard-top">
-                                    <a href="#"><img
-                                            src="{{asset('public/frontend/dist/images/courses/demo-img-02.png')}}"
-                                            alt="images" class="img-fluid" /></a>
-                                </div>
-                                <div class="contentCard-bottom">
-                                    <h5>
-                                        <a href="#" class="font-title--card">Chicago International
-                                            Conference on Education</a>
-                                    </h5>
-                                    <div class="contentCard-info d-flex align-items-center justify-content-between">
-                                        <a href="instructor-profile.html"
-                                            class="contentCard-user d-flex align-items-center">
-                                            <img src="{{asset('public/frontend/dist/images/courses/7.png')}}"
-                                                alt="client-image" class="rounded-circle" />
-                                            <p class="font-para--md">Brandon Dias</p>
-                                        </a>
-                                        <div class="price">
-                                            <span>৳12</span>
-                                            <del>৳95</del>
-                                        </div>
-                                    </div>
-                                    <div class="contentCard-more">
-                                        <div class="d-flex align-items-center">
-                                            <div class="icon">
-                                                <img src="{{asset('public/frontend/dist/images/icon/star.png')}}"
-                                                    alt="star" />
-                                            </div>
-                                            <span>4.5</span>
-                                        </div>
-                                        <div class="eye d-flex align-items-center">
-                                            <div class="icon">
-                                                <img src="{{asset('public/frontend/dist/images/icon/eye.png')}}"
-                                                    alt="eye" />
-                                            </div>
-                                            <span>24,517</span>
-                                        </div>
-                                        <div class="book d-flex align-items-center">
-                                            <div class="icon">
-                                                <img src="{{asset('public/frontend/dist/images/icon/book.png')}}"
-                                                    alt="location" />
-                                            </div>
-                                            <span>37 Lesson</span>
-                                        </div>
-                                        <div class="clock d-flex align-items-center">
-                                            <div class="icon">
-                                                <img src="{{asset('public/frontend/dist/images/icon/Clock.png')}}"
-                                                    alt="clock" />
-                                            </div>
-                                            <span>3 Hours</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-md-6">
-                            <div class="contentCard contentCard--course">
-                                <div class="contentCard-top">
-                                    <a href="#"><img
-                                            src="{{asset('public/frontend/dist/images/courses/demo-img-03.png')}}"
                                             alt="images" class="img-fluid" /></a>
                                 </div>
                                 <div class="contentCard-bottom">
@@ -729,63 +326,6 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-4 col-md-6">
-                            <div class="contentCard contentCard--course">
-                                <div class="contentCard-top">
-                                    <a href="#"><img
-                                            src="{{asset('public/frontend/dist/images/courses/demo-img-02.png')}}"
-                                            alt="images" class="img-fluid" /></a>
-                                </div>
-                                <div class="contentCard-bottom">
-                                    <h5>
-                                        <a href="#" class="font-title--card">Chicago International
-                                            Conference on Education</a>
-                                    </h5>
-                                    <div class="contentCard-info d-flex align-items-center justify-content-between">
-                                        <a href="instructor-profile.html"
-                                            class="contentCard-user d-flex align-items-center">
-                                            <img src="{{asset('public/frontend/dist/images/courses/7.png')}}"
-                                                alt="client-image" class="rounded-circle" />
-                                            <p class="font-para--md">Brandon Dias</p>
-                                        </a>
-                                        <div class="price">
-                                            <span>৳12</span>
-                                            <del>৳95</del>
-                                        </div>
-                                    </div>
-                                    <div class="contentCard-more">
-                                        <div class="d-flex align-items-center">
-                                            <div class="icon">
-                                                <img src="{{asset('public/frontend/dist/images/icon/star.png')}}"
-                                                    alt="star" />
-                                            </div>
-                                            <span>4.5</span>
-                                        </div>
-                                        <div class="eye d-flex align-items-center">
-                                            <div class="icon">
-                                                <img src="{{asset('public/frontend/dist/images/icon/eye.png')}}"
-                                                    alt="eye" />
-                                            </div>
-                                            <span>24,517</span>
-                                        </div>
-                                        <div class="book d-flex align-items-center">
-                                            <div class="icon">
-                                                <img src="{{asset('public/frontend/dist/images/icon/book.png')}}"
-                                                    alt="location" />
-                                            </div>
-                                            <span>37 Lesson</span>
-                                        </div>
-                                        <div class="clock d-flex align-items-center">
-                                            <div class="icon">
-                                                <img src="{{asset('public/frontend/dist/images/icon/Clock.png')}}"
-                                                    alt="clock" />
-                                            </div>
-                                            <span>3 Hours</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                     <div class="row">
                         <div class="col-lg-12 text-center">
@@ -801,177 +341,6 @@
                                 <div class="contentCard-top">
                                     <a href="#"><img
                                             src="{{asset('public/frontend/dist/images/courses/demo-img-01.png')}}"
-                                            alt="images" class="img-fluid" /></a>
-                                </div>
-                                <div class="contentCard-bottom">
-                                    <h5>
-                                        <a href="#" class="font-title--card">Chicago International
-                                            Conference on Education</a>
-                                    </h5>
-                                    <div class="contentCard-info d-flex align-items-center justify-content-between">
-                                        <a href="instructor-profile.html"
-                                            class="contentCard-user d-flex align-items-center">
-                                            <img src="{{asset('public/frontend/dist/images/courses/7.png')}}"
-                                                alt="client-image" class="rounded-circle" />
-                                            <p class="font-para--md">Brandon Dias</p>
-                                        </a>
-                                        <div class="price">
-                                            <span>৳12</span>
-                                            <del>৳95</del>
-                                        </div>
-                                    </div>
-                                    <div class="contentCard-more">
-                                        <div class="d-flex align-items-center">
-                                            <div class="icon">
-                                                <img src="{{asset('public/frontend/dist/images/icon/star.png')}}"
-                                                    alt="star" />
-                                            </div>
-                                            <span>4.5</span>
-                                        </div>
-                                        <div class="eye d-flex align-items-center">
-                                            <div class="icon">
-                                                <img src="{{asset('public/frontend/dist/images/icon/eye.png')}}"
-                                                    alt="eye" />
-                                            </div>
-                                            <span>24,517</span>
-                                        </div>
-                                        <div class="book d-flex align-items-center">
-                                            <div class="icon">
-                                                <img src="{{asset('public/frontend/dist/images/icon/book.png')}}"
-                                                    alt="location" />
-                                            </div>
-                                            <span>37 Lesson</span>
-                                        </div>
-                                        <div class="clock d-flex align-items-center">
-                                            <div class="icon">
-                                                <img src="{{asset('public/frontend/dist/images/icon/Clock.png')}}"
-                                                    alt="clock" />
-                                            </div>
-                                            <span>3 Hours</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-md-6">
-                            <div class="contentCard contentCard--course">
-                                <div class="contentCard-top">
-                                    <a href="#"><img
-                                            src="{{asset('public/frontend/dist/images/courses/demo-img-02.png')}}"
-                                            alt="images" class="img-fluid" /></a>
-                                </div>
-                                <div class="contentCard-bottom">
-                                    <h5>
-                                        <a href="#" class="font-title--card">Chicago International
-                                            Conference on Education</a>
-                                    </h5>
-                                    <div class="contentCard-info d-flex align-items-center justify-content-between">
-                                        <a href="instructor-profile.html"
-                                            class="contentCard-user d-flex align-items-center">
-                                            <img src="{{asset('public/frontend/dist/images/courses/7.png')}}"
-                                                alt="client-image" class="rounded-circle" />
-                                            <p class="font-para--md">Brandon Dias</p>
-                                        </a>
-                                        <div class="price">
-                                            <span>৳12</span>
-                                            <del>৳95</del>
-                                        </div>
-                                    </div>
-                                    <div class="contentCard-more">
-                                        <div class="d-flex align-items-center">
-                                            <div class="icon">
-                                                <img src="{{asset('public/frontend/dist/images/icon/star.png')}}"
-                                                    alt="star" />
-                                            </div>
-                                            <span>4.5</span>
-                                        </div>
-                                        <div class="eye d-flex align-items-center">
-                                            <div class="icon">
-                                                <img src="{{asset('public/frontend/dist/images/icon/eye.png')}}"
-                                                    alt="eye" />
-                                            </div>
-                                            <span>24,517</span>
-                                        </div>
-                                        <div class="book d-flex align-items-center">
-                                            <div class="icon">
-                                                <img src="{{asset('public/frontend/dist/images/icon/book.png')}}"
-                                                    alt="location" />
-                                            </div>
-                                            <span>37 Lesson</span>
-                                        </div>
-                                        <div class="clock d-flex align-items-center">
-                                            <div class="icon">
-                                                <img src="{{asset('public/frontend/dist/images/icon/Clock.png')}}"
-                                                    alt="clock" />
-                                            </div>
-                                            <span>3 Hours</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-md-6">
-                            <div class="contentCard contentCard--course">
-                                <div class="contentCard-top">
-                                    <a href="#"><img
-                                            src="{{asset('public/frontend/dist/images/courses/demo-img-03.png')}}"
-                                            alt="images" class="img-fluid" /></a>
-                                </div>
-                                <div class="contentCard-bottom">
-                                    <h5>
-                                        <a href="#" class="font-title--card">Chicago International
-                                            Conference on Education</a>
-                                    </h5>
-                                    <div class="contentCard-info d-flex align-items-center justify-content-between">
-                                        <a href="instructor-profile.html"
-                                            class="contentCard-user d-flex align-items-center">
-                                            <img src="{{asset('public/frontend/dist/images/courses/7.png')}}"
-                                                alt="client-image" class="rounded-circle" />
-                                            <p class="font-para--md">Brandon Dias</p>
-                                        </a>
-                                        <div class="price">
-                                            <span>৳12</span>
-                                            <del>৳95</del>
-                                        </div>
-                                    </div>
-                                    <div class="contentCard-more">
-                                        <div class="d-flex align-items-center">
-                                            <div class="icon">
-                                                <img src="{{asset('public/frontend/dist/images/icon/star.png')}}"
-                                                    alt="star" />
-                                            </div>
-                                            <span>4.5</span>
-                                        </div>
-                                        <div class="eye d-flex align-items-center">
-                                            <div class="icon">
-                                                <img src="{{asset('public/frontend/dist/images/icon/eye.png')}}"
-                                                    alt="eye" />
-                                            </div>
-                                            <span>24,517</span>
-                                        </div>
-                                        <div class="book d-flex align-items-center">
-                                            <div class="icon">
-                                                <img src="{{asset('public/frontend/dist/images/icon/book.png')}}"
-                                                    alt="location" />
-                                            </div>
-                                            <span>37 Lesson</span>
-                                        </div>
-                                        <div class="clock d-flex align-items-center">
-                                            <div class="icon">
-                                                <img src="{{asset('public/frontend/dist/images/icon/Clock.png')}}"
-                                                    alt="clock" />
-                                            </div>
-                                            <span>3 Hours</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-md-6">
-                            <div class="contentCard contentCard--course">
-                                <div class="contentCard-top">
-                                    <a href="#"><img
-                                            src="{{asset('public/frontend/dist/images/courses/demo-img-04.png')}}"
                                             alt="images" class="img-fluid" /></a>
                                 </div>
                                 <div class="contentCard-bottom">
@@ -1107,7 +476,7 @@
             class="img-fluid dot-06" />
         <img src="{{asset('public/frontend/dist/images/shape/triangel.png')}}" alt="Shape" class="img-fluid dot-07" />
     </div>
-</section>
+</section> 
 
 {{-- Why You'll Learn With Eduguard --}}
 <section class="section feature section section--bg-offwhite-one">
