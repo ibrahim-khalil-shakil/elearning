@@ -75,13 +75,8 @@
                                                     <strong>{{$d->courseCategory?->category_name}}</strong>
                                                 </li>
                                                 <li class="list-group-item px-0 d-flex justify-content-between">
-                                                    <span class="mb-0">Type :</span>
-                                                    <strong>{{ $d->type == 'free' ? __('Free') : ($d->type == 'paid' ? __('Paid') :
-                                                        __('Subscription')) }}</strong>
-                                                </li>
-                                                <li class="list-group-item px-0 d-flex justify-content-between">
                                                     <span class="mb-0">Price :</span>
-                                                    <strong>৳{{$d->price==null?'0.00':$d->price}}</strong>
+                                                    <strong>{{$d->price?'৳'.$d->price:'Free'}}</strong>
                                                 </li>
                                             </ul>
                                             <a class="btn btn-outline-primary btn-rounded mt-3 px-4" href="about-student.html">Read More</a>

@@ -254,6 +254,24 @@
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12">
                                     <div class="form-group">
+                                        <label class="form-label">Course Tag</label>
+                                        <select class="form-control" name="tag">
+                                            <option value="popular" @if(old('tag', $course->tag)=='popular' ) selected
+                                                @endif>Popular
+                                            </option>
+                                            <option value="featured" @if(old('tag', $course->tag)=='featured' ) selected
+                                                @endif>Featured
+                                            </option>tag
+                                            <option value="upcoming" @if(old('tag', $course->tag)=='upcoming' ) selected
+                                                @endif>Upcoming</option>
+                                        </select>
+                                    </div>
+                                    @if($errors->has('tag'))
+                                    <span class="text-danger"> {{ $errors->first('tag') }}</span>
+                                    @endif
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <div class="form-group">
                                         <label class="form-label">Status</label>
                                         <select class="form-control" name="status">
                                             <option value="1" @if(old('status',$course->status)==1) selected

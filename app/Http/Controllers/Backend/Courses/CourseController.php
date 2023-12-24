@@ -68,6 +68,7 @@ class CourseController extends Controller
             $course->prerequisites_en = $request->prerequisites_en;
             $course->prerequisites_bn = $request->prerequisites_bn;
             $course->thumbnail_video = $request->thumbnail_video;
+            $course->tag = $request->tag;
             $course->status = $request->status;
             $course->language = 'en';
 
@@ -143,6 +144,7 @@ class CourseController extends Controller
             $course->prerequisites_en = $request->prerequisites_en;
             $course->prerequisites_bn = $request->prerequisites_bn;
             $course->thumbnail_video = $request->thumbnail_video;
+            $course->tag = $request->tag;
             $course->status = $request->status;
             $course->language = 'en';
 

@@ -236,6 +236,18 @@
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12">
                                     <div class="form-group">
+                                        <label class="form-label">Course Tag</label>
+                                        <select class="form-control" name="tag">
+                                            <option value="popular" @if(old('tag')=='popular' ) selected @endif>Popular</option>
+                                            <option value="featured" @if(old('tag')=='featured' ) selected @endif>Featured
+                                            </option>
+                                            <option value="upcoming" @if(old('tag')=='upcoming' ) selected @endif>Upcoming
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <div class="form-group">
                                         <label class="form-label">Status</label> 
                                         <select class="form-control" name="status">
                                             <option value="1" @if(old('status')==1) selected @endif>Active</option>
