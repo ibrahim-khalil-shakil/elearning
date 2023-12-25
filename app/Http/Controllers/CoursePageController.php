@@ -12,13 +12,14 @@ class CoursePageController extends Controller
     {
         
         $category = CourseCategory::get();
-        $selectedCategoryId = $request->input('category');
+        $selectedCategories = $request->input('categories', []);
 
-
-        $course = Course::when($selectedCategoryId, function ($query) use ($selectedCategoryId) {
-                $query->where('course_category_id', $selectedCategoryId);
+        $course = Course::when($selectedCategories, function ($query) use ($selectedCategories) {
+                $query->whereIn('course_category_id', $selectedCategories);
             })->get();
 
-        return view('frontend.searchCourse', compact('course', 'category', 'selectedCategoryId'));
+        $allCourse = Course::get();
+
+        return view('frontend.searchCourse', compact('course', 'category', 'selectedCategories', 'allCourse'));
     }
 }

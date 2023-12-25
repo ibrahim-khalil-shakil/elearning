@@ -66,11 +66,12 @@
                                     @csrf
                                     <div class="accordion-body__item">
                                         <div class="check-box">
-                                            <input type="checkbox" class="checkbox-primary" name="category" value="" {{
-                                                !$selectedCategoryId ? 'checked' : ''}}> <label> All </label>
+                                            <input type="checkbox" class="checkbox-primary" name="category" value=""
+                                                {{!$selectedCategories ? 'checked' : '' }}>
+                                            <label> All </label>
                                         </div>
                                         <p class="check-details">
-                                            {{$course->count()}}
+                                            {{$allCourse->count()}}
                                         </p>
                                     </div>
                                     @forelse($category as $cat)
@@ -80,9 +81,11 @@
                                     @endphp
                                     <div class="accordion-body__item">
                                         <div class="check-box">
-                                            <input type="checkbox" class="checkbox-primary" name="category"
+                                            {{-- <input type="checkbox" class="checkbox-primary" name="category"
                                                 value="{{$cat->id}}" {{$selectedCategoryId==$cat->id ? 'checked' :
-                                            ''}}>
+                                            ''}}> --}}
+                                            <input type="checkbox" class="checkbox-primary" name="categories[]" value="{{ $cat->id }}" {{ in_array($cat->id,
+                                            (array)$selectedCategories) ? 'checked' : '' }}>
                                             <label> {{$cat->category_name}} </label>
                                         </div>
                                         <p class="check-details">
@@ -324,7 +327,6 @@
             </div>
 
             <div class="col-lg-8">
-                {{-- Filter by dropdown things--}}
                 <div class="event-search-results">
                     <div class="event-search-results-heading">
                         <div class="nice-select" tabindex="0">
@@ -338,7 +340,7 @@
                                 <li data-value="4" class="option">Potato</li>
                             </ul>
                         </div>
-                        <p>1, 254 results found.</p>
+                        <p>{{$course->count()}} results found.</p>
                         <button class="button button-lg button--primary button--primary-filter d-lg-none" id="filter">
                             <span>
                                 <svg width="19" height="16" viewBox="0 0 19 16" fill="none"
@@ -462,370 +464,6 @@
     </div>
 </section>
 
-{{-- <div class="filter-sidebar">
-    <div class="filter-sidebar__top">
-        <button class="filter--cross">
-            <svg width="20" height="19" viewBox="0 0 20 19" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                <path d="M14.5967 4.59668L5.40429 13.7891" stroke="currentColor" stroke-width="1.5"
-                    stroke-linecap="round" stroke-linejoin="round"></path>
-                <path d="M5.40332 4.59668L14.5957 13.7891" stroke="currentColor" stroke-width="1.5"
-                    stroke-linecap="round" stroke-linejoin="round"></path>
-            </svg>
-        </button>
-    </div>
-
-    <form action="#">
-        <div class="filter-sidebar__wrapper">
-            <div class="accordion sidebar-filter" id="sidebarFilter">
-                <!-- Category  -->
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="categoryAcc">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#categoryCollapse" aria-expanded="true" aria-controls="categoryCollapse">
-                            category
-                        </button>
-                    </h2>
-                    <div id="categoryCollapse" class="accordion-collapse collapse show" aria-labelledby="categoryAcc"
-                        data-bs-parent="#sidebarFilter">
-                        <div class="accordion-body">
-                            <form action="#">
-                                <div class="accordion-body__item">
-                                    <div class="check-box">
-                                        <input type="checkbox" class="checkbox-primary" />
-                                        <label> All </label>
-                                    </div>
-                                    <p class="check-details">
-                                        1,54,750
-                                    </p>
-                                </div>
-                                <div class="accordion-body__item">
-                                    <div class="check-box">
-                                        <input type="checkbox" class="checkbox-primary" />
-                                        <label> Development </label>
-                                    </div>
-                                    <p class="check-details">
-                                        45,770
-                                    </p>
-                                </div>
-                                <div class="accordion-body__item">
-                                    <div class="check-box">
-                                        <input type="checkbox" class="checkbox-primary" />
-                                        <label> Finance & Accounting </label>
-                                    </div>
-                                    <p class="check-details">
-                                        35,790
-                                    </p>
-                                </div>
-                                <div class="accordion-body__item">
-                                    <div class="check-box">
-                                        <input type="checkbox" class="checkbox-primary" />
-                                        <label> IT & Software </label>
-                                    </div>
-                                    <p class="check-details">
-                                        5,770
-                                    </p>
-                                </div>
-                                <div class="accordion-body__item">
-                                    <div class="check-box">
-                                        <input type="checkbox" class="checkbox-primary" />
-                                        <label> Offices Productivity </label>
-                                    </div>
-                                    <p class="check-details">
-                                        765
-                                    </p>
-                                </div>
-                                <div class="accordion-body__item">
-                                    <div class="check-box">
-                                        <input type="checkbox" class="checkbox-primary" />
-                                        <label> Personal Development </label>
-                                    </div>
-                                    <p class="check-details">
-                                        65
-                                    </p>
-                                </div>
-                                <div class="accordion-body__item">
-                                    <div class="check-box">
-                                        <input type="checkbox" class="checkbox-primary" />
-                                        <label> Digatal Marketing </label>
-                                    </div>
-                                    <p class="check-details">
-                                        9,870
-                                    </p>
-                                </div>
-                                <div class="accordion-body__item">
-                                    <div class="check-box">
-                                        <input type="checkbox" class="checkbox-primary" />
-                                        <label> Health & Fitness </label>
-                                    </div>
-                                    <p class="check-details">
-                                        70
-                                    </p>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <!-- Level  -->
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="levelAcc">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#levelCollapse" aria-expanded="false" aria-controls="levelCollapse">
-                            Level
-                        </button>
-                    </h2>
-                    <div id="levelCollapse" class="accordion-collapse collapse" aria-labelledby="levelAcc"
-                        data-bs-parent="#sidebarFilter">
-                        <div class="accordion-body">
-                            <form action="#">
-                                <div class="accordion-body__item">
-                                    <div class="check-box">
-                                        <input type="checkbox" class="checkbox-primary" />
-                                        <label> All </label>
-                                    </div>
-                                    <p class="check-details">
-                                        1,54,750
-                                    </p>
-                                </div>
-                                <div class="accordion-body__item">
-                                    <div class="check-box">
-                                        <input type="checkbox" class="checkbox-primary" />
-                                        <label> Beginner </label>
-                                    </div>
-                                    <p class="check-details">
-                                        45,770
-                                    </p>
-                                </div>
-                                <div class="accordion-body__item">
-                                    <div class="check-box">
-                                        <input type="checkbox" class="checkbox-primary" />
-                                        <label> Intermediate </label>
-                                    </div>
-                                    <p class="check-details">
-                                        35,790
-                                    </p>
-                                </div>
-                                <div class="accordion-body__item">
-                                    <div class="check-box">
-                                        <input type="checkbox" class="checkbox-primary" />
-                                        <label> Advanced </label>
-                                    </div>
-                                    <p class="check-details">
-                                        5,770
-                                    </p>
-                                </div>
-                                <div class="accordion-body__item">
-                                    <div class="check-box">
-                                        <input type="checkbox" class="checkbox-primary" />
-                                        <label> Expert </label>
-                                    </div>
-                                    <p class="check-details">
-                                        765
-                                    </p>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <!-- Price  -->
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingThree">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                            Price
-                        </button>
-                    </h2>
-                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
-                        data-bs-parent="#sidebarFilter">
-                        <div class="accordion-body">
-                            <div class="price-range">
-                                <div>
-                                    <div class="price-range-block">
-                                        <form class="d-flex price-range-block__inputWrapper" action="#">
-                                            <input type="number" min="0" max="5000"
-                                                oninput="validity.valid||(value='0');" id="min_price"
-                                                class="price-range-field"
-                                                style="width: 105px; height: 50px; border-radius: 4px; padding: 15px;" />
-                                            <span>to</span>
-                                            <input type="number" min="0" max="5000"
-                                                oninput="validity.valid||(value='5000');" id="max_price"
-                                                class="price-range-field"
-                                                style="width: 125px; height: 50px; padding: 15px; border-radius: 4px;" />
-                                            <button class="angle-btn">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                                    class="feather feather-chevron-right">
-                                                    <polyline points="9 18 15 12 9 6"></polyline>
-                                                </svg>
-                                            </button>
-                                        </form>
-                                        <div id="slider-range" class="price-filter-range"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Rating  -->
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="ratingAcc">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#ratingCollapse" aria-expanded="false" aria-controls="ratingCollapse">
-                            Rating
-                        </button>
-                    </h2>
-                    <div id="ratingCollapse" class="accordion-collapse collapse" aria-labelledby="ratingAcc"
-                        data-bs-parent="#sidebarFilter">
-                        <div class="accordion-body">
-                            <form action="#">
-                                <div class="accordion-body__item">
-                                    <div class="check-box">
-                                        <input type="checkbox" class="checkbox-primary" />
-                                        <label> All </label>
-                                    </div>
-                                    <p class="check-details">
-                                        1,54,750
-                                    </p>
-                                </div>
-                                <div class="accordion-body__item">
-                                    <div class="check-box">
-                                        <input type="checkbox" class="checkbox-primary" />
-                                        <label> 1 Star and higher </label>
-                                    </div>
-                                    <p class="check-details">
-                                        45,770
-                                    </p>
-                                </div>
-                                <div class="accordion-body__item">
-                                    <div class="check-box">
-                                        <input type="checkbox" class="checkbox-primary" />
-                                        <label> 2 Star and higher </label>
-                                    </div>
-                                    <p class="check-details">
-                                        45,770
-                                    </p>
-                                </div>
-                                <div class="accordion-body__item">
-                                    <div class="check-box">
-                                        <input type="checkbox" class="checkbox-primary" />
-                                        <label> 3 Star and higher </label>
-                                    </div>
-                                    <p class="check-details">
-                                        45,770
-                                    </p>
-                                </div>
-                                <div class="accordion-body__item">
-                                    <div class="check-box">
-                                        <input type="checkbox" class="checkbox-primary" />
-                                        <label> 4 Star and higher </label>
-                                    </div>
-                                    <p class="check-details">
-                                        45,770
-                                    </p>
-                                </div>
-                                <div class="accordion-body__item">
-                                    <div class="check-box">
-                                        <input type="checkbox" class="checkbox-primary" />
-                                        <label> 5 Star </label>
-                                    </div>
-                                    <p class="check-details">
-                                        45,770
-                                    </p>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <!-- Duration  -->
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="durationAcc">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#durationCollapse" aria-expanded="false" aria-controls="durationCollapse">
-                            Duration
-                        </button>
-                    </h2>
-                    <div id="durationCollapse" class="accordion-collapse collapse" aria-labelledby="durationAcc"
-                        data-bs-parent="#sidebarFilter">
-                        <div class="accordion-body">
-                            <form action="#">
-                                <div class="accordion-body__item">
-                                    <div class="check-box">
-                                        <input type="checkbox" class="checkbox-primary" />
-                                        <label> All </label>
-                                    </div>
-                                    <p class="check-details">
-                                        1,54,750
-                                    </p>
-                                </div>
-                                <div class="accordion-body__item">
-                                    <div class="check-box">
-                                        <input type="checkbox" class="checkbox-primary" />
-                                        <label> 0 - 5 minutes </label>
-                                    </div>
-                                    <p class="check-details">
-                                        45,770
-                                    </p>
-                                </div>
-                                <div class="accordion-body__item">
-                                    <div class="check-box">
-                                        <input type="checkbox" class="checkbox-primary" />
-                                        <label> 5 - 10 minutes </label>
-                                    </div>
-                                    <p class="check-details">
-                                        35,790
-                                    </p>
-                                </div>
-                                <div class="accordion-body__item">
-                                    <div class="check-box">
-                                        <input type="checkbox" class="checkbox-primary" />
-                                        <label> 10 - 15 minutes </label>
-                                    </div>
-                                    <p class="check-details">
-                                        5,770
-                                    </p>
-                                </div>
-                                <div class="accordion-body__item">
-                                    <div class="check-box">
-                                        <input type="checkbox" class="checkbox-primary" />
-                                        <label> 15+ minutes </label>
-                                    </div>
-                                    <p class="check-details">
-                                        765
-                                    </p>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </form>
-    <button class="button button-lg button--primary button--primary-filter w-100 d-lg-none" type="button">
-        <span>
-            <svg width="19" height="16" viewBox="0 0 19 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M3.3335 14.9999V9.55554" stroke="white" stroke-width="1.7" stroke-linecap="round"
-                    stroke-linejoin="round"></path>
-                <path d="M3.3335 6.4444V1" stroke="white" stroke-width="1.7" stroke-linecap="round"
-                    stroke-linejoin="round"></path>
-                <path d="M9.55469 14.9999V8" stroke="white" stroke-width="1.7" stroke-linecap="round"
-                    stroke-linejoin="round"></path>
-                <path d="M9.55469 4.88886V1" stroke="white" stroke-width="1.7" stroke-linecap="round"
-                    stroke-linejoin="round"></path>
-                <path d="M15.7773 14.9999V11.1111" stroke="white" stroke-width="1.7" stroke-linecap="round"
-                    stroke-linejoin="round"></path>
-                <path d="M15.7773 7.99995V1" stroke="white" stroke-width="1.7" stroke-linecap="round"
-                    stroke-linejoin="round"></path>
-                <path d="M1 9.55554H5.66663" stroke="white" stroke-width="1.7" stroke-linecap="round"
-                    stroke-linejoin="round"></path>
-                <path d="M7.22217 4.88867H11.8888" stroke="white" stroke-width="1.7" stroke-linecap="round"
-                    stroke-linejoin="round"></path>
-                <path d="M13.4443 11.1111H18.111" stroke="white" stroke-width="1.7" stroke-linecap="round"
-                    stroke-linejoin="round"></path>
-            </svg>
-        </span>
-        Apply
-    </button>
-</div> --}}
 @endsection
 
 
