@@ -62,11 +62,12 @@
                         <div id="categoryCollapse" class="accordion-collapse collapse show"
                             aria-labelledby="categoryAcc" data-bs-parent="#sidebarFilter">
                             <div class="accordion-body">
-                                <form action="#">
+                                <form action="{{ route('searchCourse') }}" method="get">
+                                    @csrf
                                     <div class="accordion-body__item">
                                         <div class="check-box">
-                                            <input type="checkbox" class="checkbox-primary" />
-                                            <label> All </label>
+                                            <input type="checkbox" class="checkbox-primary" name="category" value="" {{
+                                                !$selectedCategoryId ? 'checked' : '' }}> <label> All </label>
                                         </div>
                                         <p class="check-details">
                                             1,54,750
@@ -75,7 +76,9 @@
                                     @forelse($category as $cat)
                                     <div class="accordion-body__item">
                                         <div class="check-box">
-                                            <input type="checkbox" class="checkbox-primary" />
+                                            <input type="checkbox" class="checkbox-primary" name="category"
+                                                value="{{ $cat->id }}" {{ $selectedCategoryId==$cat->id
+                                            ? 'checked' : '' }}>
                                             <label> {{$cat->category_name}} </label>
                                         </div>
                                         <p class="check-details">
@@ -84,6 +87,7 @@
                                     </div>
                                     @empty
                                     @endforelse
+                                    <button type="submit" class="btn btn-primary">Apply Filter</button>
                                 </form>
                             </div>
                         </div>
@@ -356,13 +360,13 @@
                                 </svg>
                             </span>
                             Filter
-                        </button> 
+                        </button>
                     </div>
                 </div>
 
                 {{-- Courses --}}
                 <div class="row event-search-content">
-                    @forelse ($course as $c) 
+                    @forelse ($course as $c)
                     <div class="col-md-6 mb-4">
                         <div class="contentCard contentCard--course">
                             <div class="contentCard-top">
@@ -428,7 +432,7 @@
                     </div>
                     @endforelse
                 </div>
- 
+
                 <div class="pagination-group mt-lg-5 mt-2">
                     <a href="#" class="p_prev">
                         <svg xmlns="http://www.w3.org/2000/svg" width="9.414" height="16.828"

@@ -20,6 +20,7 @@ use App\Http\Controllers\Backend\Communication\DiscussionController as discussio
 use App\Http\Controllers\Backend\Communication\MessageController as message;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\CoursePageController;
 use App\Http\Controllers\CheckoutController as checkout;
 use App\Http\Controllers\CouponController as coupon;
 use App\Http\Controllers\WatchCourseController as watchCourse;
@@ -96,7 +97,7 @@ Route::middleware(['checkstudent'])->prefix('students')->group(function () {
 // frontend pages
 Route::get('home', [HomeController::class, 'index'])->name('home');
 Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('searchCourse', [course::class, 'frontIndex'])->name('searchCourse');
+Route::get('searchCourse', [CoursePageController::class, 'index'])->name('searchCourse'); 
 Route::get('courseDetails/{id}', [course::class, 'frontShow'])->name('courseDetails');
 Route::get('watchCourse/{id}', [watchCourse::class, 'watchCourse'])->name('watchCourse');
 Route::get('instructorProfile/{id}', [instructor::class, 'frontShow'])->name('instructorProfile');

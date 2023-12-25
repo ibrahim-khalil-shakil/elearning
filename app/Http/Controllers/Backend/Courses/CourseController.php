@@ -25,13 +25,6 @@ class CourseController extends Controller
         return view('backend.course.courses.index', compact('course'));
     }
 
-    public function frontIndex()
-    {
-        $course = Course::get();
-        $category = CourseCategory::get();
-        return view('frontend.searchCourse', compact('course', 'category'));
-    }
-
     /**
      * Show the form for creating a new resource.
      */
