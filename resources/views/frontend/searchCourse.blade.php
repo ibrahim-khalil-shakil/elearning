@@ -62,15 +62,15 @@
                         <div id="categoryCollapse" class="accordion-collapse collapse show"
                             aria-labelledby="categoryAcc" data-bs-parent="#sidebarFilter">
                             <div class="accordion-body">
-                                <form action="{{ route('searchCourse') }}" method="get">
+                                <form action="{{route('searchCourse')}}" method="get">
                                     @csrf
                                     <div class="accordion-body__item">
                                         <div class="check-box">
                                             <input type="checkbox" class="checkbox-primary" name="category" value="" {{
-                                                !$selectedCategoryId ? 'checked' : '' }}> <label> All </label>
+                                                !$selectedCategoryId ? 'checked' : ''}}> <label> All </label>
                                         </div>
                                         <p class="check-details">
-                                            {{ $course->count() }}
+                                            {{$course->count()}}
                                         </p>
                                     </div>
                                     @forelse($category as $cat)
@@ -81,7 +81,7 @@
                                     <div class="accordion-body__item">
                                         <div class="check-box">
                                             <input type="checkbox" class="checkbox-primary" name="category"
-                                                value="{{ $cat->id }}" {{$selectedCategoryId==$cat->id ? 'checked' :
+                                                value="{{$cat->id}}" {{$selectedCategoryId==$cat->id ? 'checked' :
                                             ''}}>
                                             <label> {{$cat->category_name}} </label>
                                         </div>
