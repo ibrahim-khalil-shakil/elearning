@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Course;
 use App\Models\CourseCategory;
 
-class CoursePageController extends Controller
+class SearchCourseController extends Controller
 {
     public function index(Request $request)
     {
