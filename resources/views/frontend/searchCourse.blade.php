@@ -76,14 +76,10 @@
                                     </div>
                                     @forelse($category as $cat)
                                     @php
-                                    // Fetch the count of courses for each category
                                     $courseCount = $cat->course()->count();
                                     @endphp
                                     <div class="accordion-body__item">
                                         <div class="check-box">
-                                            {{-- <input type="checkbox" class="checkbox-primary" name="category"
-                                                value="{{$cat->id}}" {{$selectedCategoryId==$cat->id ? 'checked' :
-                                            ''}}> --}}
                                             <input type="checkbox" class="checkbox-primary" name="categories[]" value="{{ $cat->id }}" {{ in_array($cat->id,
                                             (array)$selectedCategories) ? 'checked' : '' }}>
                                             <label> {{$cat->category_name}} </label>
