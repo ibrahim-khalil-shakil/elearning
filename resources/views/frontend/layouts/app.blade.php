@@ -77,9 +77,10 @@
                             </a>
                             <div class="nav-item--dropdown">
                                 <ul>
+                                    <li><a href="{{route('searchCourse')}}">Courses</a></li>
                                     <li><a href="{{route('student_profile')}}">Student Profile</a></li>
-                                    {{-- <li><a href="{{route('instructorProfile')}}">Instructor Profile</a></li> --}}
-                                    <li><a href="{{route('checkout')}}">Check out</a></li>
+                                    <li><a href="{{route('about')}}">About</a></li>
+                                    <li><a href="{{route('contact')}}">Contact</a></li>
                                 </ul>
                             </div>
                         </li>
@@ -207,8 +208,10 @@
                                         </span>
                                     </a>
                                     <ul class="navbar-mobile__menu-dropmenu">
+                                        <li><a href="{{route('searchCourse')}}">Courses</a></li>
                                         <li><a href="{{route('student_profile')}}">Student Profile</a></li>
-                                        <li><a href="{{route('checkout')}}">Check out</a></li>
+                                        <li><a href="{{route('about')}}">About</a></li>
+                                        <li><a href="{{route('contact')}}">Contact</a></li>
                                     </ul>
                                 </li>
                                 <li class="navbar-mobile__menu-item">
