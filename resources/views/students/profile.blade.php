@@ -50,7 +50,7 @@
                                 </svg>
                             </div>
                             <div class="enrolled-courses-text">
-                                <h6 class="font-title--xs">24</h6>
+                                <h6 class="font-title--xs">{{$enrollment?$enrollment->count():0}}</h6>
                                 <p class="fs-6 mt-1">Enrolled Courses</p>
                             </div>
                         </div>

@@ -50,7 +50,7 @@
                                 </svg>
                             </div>
                             <div class="enrolled-courses-text">
-                                <h6 class="font-title--xs">24</h6>
+                                <h6 class="font-title--xs">{{$enrollment?$enrollment->count():0}}</h6>
                                 <p class="fs-6 mt-1">Enrolled Courses</p>
                             </div>
                         </div>
@@ -67,7 +67,7 @@
                                 </svg>
                             </div>
                             <div class="completed-courses-text">
-                                <h5 class="font-title--xs">19</h5>
+                                <h5 class="font-title--xs">0</h5>
                                 <p class="fs-6 mt-1">Completed Courses</p>
                             </div>
                         </div>
@@ -170,8 +170,12 @@
                         </div>
                         @empty
                         <div class="col-12 py-5">
-                            <div class="text-center py-5">
-                                <h3>You haven't enrolled any course yet</h3>
+                            <div class="col-md-6 col-12 mx-auto text-center">
+                                <h5 class="font-title--sm">You Haven't Enrolled Any Course Yet...</h5>
+                                <p class="my-4 font-para--lg">
+                                    Your Course List is Empty!
+                                </p>
+                                <a href="{{route('searchCourse')}}" class="button button-md button--primary">Enroll Now!</a>
                             </div>
                         </div>
                         @endforelse
