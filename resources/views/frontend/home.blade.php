@@ -36,7 +36,7 @@
             <div class="col-lg-5 order-1 order-lg-0">
                 <div class="main-banner-end">
                     <img src="{{asset('public/frontend/dist/images/banner/banner-image-01.png')}}" alt="image"
-                        class="img-fluid" />
+                        class="img-fluid" width="515" height="700"/>
                 </div>
             </div>
         </div>
