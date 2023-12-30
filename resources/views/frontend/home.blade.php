@@ -11,10 +11,9 @@
         <div class="row">
             <div class="col-lg-7 mb-lg-0 order-2 order-lg-0 d-flex align-items-center">
                 <div class="banner-two-start">
-                    <h1 class="font-title--lg">Learn with Expert Anytime Anywhere.</h1>
+                    <h1 class="font-title--lg">Unlock Knowledge Anywhere, Anytime with Experts.</h1>
                     <p>
-                        Our mision is to help people to find the best course online and learn with expert anytime,
-                        anywhere.
+                       Our commitment is to guide you to the finest online courses, offering expert insights whenever and wherever you are.
                     </p>
                     <form>
                         <div class="banner-input">
@@ -625,7 +624,7 @@
             <div class="col-lg-6 order-1 order-lg-0">
                 <div class="learning-rules-ends">
                     <img src="{{asset('public/frontend/dist/images/hero/hero-img-01.jpg')}}" alt="img"
-                        class="img-fluid" />
+                        class="img-fluid rounded"/>
                     <div class="learning-rules-ends-circle">
                         <img src="{{asset('public/frontend/dist/images/shape/l03.png')}}" alt="shape"
                             class="img-fluid" />
@@ -726,7 +725,7 @@
                 <div class="testimonial__user-wrapper d-flex justify-content-between">
                     <div class="testimonial__user d-flex align-items-center">
                         <div class="testimonial__user-img">
-                            <img src="{{asset('public/frontend/dist/images/avatar/avatar-img-01.png')}}" alt="Client" />
+                            <img src="{{asset('public/frontend/dist/images/avatar/avatar-img-02.png')}}" alt="Client" />
                         </div>
                         <div class="testimonial__user-info">
                             <h6>Dev Zakir</h6>
@@ -790,10 +789,10 @@
                 <div class="testimonial__user-wrapper d-flex justify-content-between">
                     <div class="testimonial__user d-flex align-items-center">
                         <div class="testimonial__user-img">
-                            <img src="{{asset('public/frontend/dist/images/avatar/avatar-img-01.png')}}" alt="Client" />
+                            <img src="{{asset('public/frontend/dist/images/avatar/avatar-img-03.png')}}" alt="Client" />
                         </div>
                         <div class="testimonial__user-info">
-                            <h6>Dev Taher</h6>
+                            <h6>Dev Kate</h6>
                             <span class="font-para--md">UI/UX Student</span>
                         </div>
                     </div>
