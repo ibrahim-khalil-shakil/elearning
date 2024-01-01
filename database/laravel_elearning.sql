@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 01, 2024 at 09:11 AM
--- Server version: 10.4.27-MariaDB
--- PHP Version: 8.2.0
+-- Generation Time: Jan 01, 2024 at 06:49 PM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -59,7 +59,7 @@ CREATE TABLE `checkouts` (
 --
 
 INSERT INTO `checkouts` (`id`, `cart_data`, `student_id`, `txnid`, `status`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(18, 'eyJjYXJ0Ijp7IjYiOnsidGl0bGVfZW4iOiJGdWxsLVN0YWNrIFdlYiBEZXZlbG9wbWVudCBCb290Y2FtcDogQmFzaWNzIHRvIEFkdmFuY2VkIiwicXVhbnRpdHkiOjEsInByaWNlIjoiNTAwMC4wMCIsIm9sZF9wcmljZSI6IjkwMDAuMDAiLCJpbWFnZSI6IjU5NTE3MDM5MTI3NjUuanBnIiwiZGlmZmljdWx0eSI6ImJlZ2lubmVyIiwiaW5zdHJ1Y3RvciI6IkJ1cmhhbiBVZGRpbiBGdWFkIn0sIjciOnsidGl0bGVfZW4iOiJBZG9iZSBDcmVhdGl2ZSBTdWl0ZSBNYXN0ZXJ5OiBQaG90b3Nob3AsIElsbHVzdHJhdG9yLCBJbkRlc2lnbiIsInF1YW50aXR5IjoxLCJwcmljZSI6IjQ1MDAuMDAiLCJvbGRfcHJpY2UiOm51bGwsImltYWdlIjoiOTk5MTcwMzkxMjc4Ni5qcGciLCJkaWZmaWN1bHR5IjoiaW50ZXJtZWRpYXRlIiwiaW5zdHJ1Y3RvciI6IlJhaWhhbiBTYXp6YWQifX0sImNhcnRfZGV0YWlscyI6eyJjYXJ0X3RvdGFsIjo5NTAwLCJjb3Vwb25fY29kZSI6Im9mZmVyMjAiLCJkaXNjb3VudCI6IjIwLjAwIiwiZGlzY291bnRfYW1vdW50IjoxOTAwLCJ0YXgiOjExNDAsInRvdGFsX2Ftb3VudCI6ODc0MH19', 17, 'SSLCZ_TXN_658fbf91d5fbc', 1, '2023-12-30 00:58:25', '2023-12-30 00:58:30', NULL);
+(18, 'eyJjYXJ0Ijp7IjYiOnsidGl0bGVfZW4iOiJGdWxsLVN0YWNrIFdlYiBEZXZlbG9wbWVudCBCb290Y2FtcDogQmFzaWNzIHRvIEFkdmFuY2VkIiwicXVhbnRpdHkiOjEsInByaWNlIjoiNTAwMC4wMCIsIm9sZF9wcmljZSI6IjkwMDAuMDAiLCJpbWFnZSI6IjE0MDE3MDQxMjY5NzIuanBnIiwiZGlmZmljdWx0eSI6ImJlZ2lubmVyIiwiaW5zdHJ1Y3RvciI6IkJ1cmhhbiBVZGRpbiBGdWFkIn19LCJjYXJ0X2RldGFpbHMiOnsiY2FydF90b3RhbCI6NTAwMCwiY291cG9uX2NvZGUiOiJvZmZlcjIwIiwiZGlzY291bnQiOiIyMC4wMCIsImRpc2NvdW50X2Ftb3VudCI6MTAwMCwidGF4Ijo2MDAsInRvdGFsX2Ftb3VudCI6NDYwMH19', 17, 'SSLCZ_TXN_6592f9adf2b79', 1, '2024-01-01 11:43:09', '2024-01-01 11:43:52', NULL);
 
 -- --------------------------------------------------------
 
@@ -83,8 +83,8 @@ CREATE TABLE `coupons` (
 --
 
 INSERT INTO `coupons` (`id`, `code`, `discount`, `valid_from`, `valid_until`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'offer20', '20.00', '2023-12-09', '2024-03-26', '2023-12-09 09:30:32', '2023-12-09 09:30:32', NULL),
-(2, 'el50', '50.00', '2023-12-09', '2024-12-16', '2023-12-09 09:34:18', '2023-12-09 09:34:18', NULL);
+(1, 'offer20', 20.00, '2023-12-09', '2024-03-26', '2023-12-09 09:30:32', '2023-12-09 09:30:32', NULL),
+(2, 'el50', 50.00, '2023-12-09', '2024-12-16', '2023-12-09 09:34:18', '2023-12-09 09:34:18', NULL);
 
 -- --------------------------------------------------------
 
@@ -127,11 +127,11 @@ CREATE TABLE `courses` (
 --
 
 INSERT INTO `courses` (`id`, `title_en`, `title_bn`, `description_en`, `description_bn`, `course_category_id`, `instructor_id`, `type`, `price`, `old_price`, `subscription_price`, `start_from`, `duration`, `lesson`, `prerequisites_en`, `prerequisites_bn`, `difficulty`, `course_code`, `image`, `thumbnail_image`, `thumbnail_video`, `tag`, `status`, `language`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(6, 'Full-Stack Web Development Bootcamp: Basics to Advanced', 'ফুল-স্ট্যাক ওয়েব ডেভেলপমেন্ট বুটক্যাম্প: বেসিক থেকে অ্যাডভান্সড পর্যন্ত', 'Dive into the world of web development with a comprehensive bootcamp covering both front-end and back-end technologies. From HTML and CSS to server-side scripting, this course will equip you with the skills to build dynamic and interactive web applications.', 'ফ্রন্ট-এন্ড এবং ব্যাক-এন্ড উভয় প্রযুক্তিকে কভার করে একটি ব্যাপক বুটক্যাম্প সহ ওয়েব ডেভেলপমেন্টের জগতে ডুব দিন। HTML এবং CSS থেকে সার্ভার-সাইড স্ক্রিপ্টিং পর্যন্ত, এই কোর্সটি আপনাকে গতিশীল এবং ইন্টারেক্টিভ ওয়েব অ্যাপ্লিকেশন তৈরি করার দক্ষতা দিয়ে সজ্জিত করবে।', 2, 1, 'free', '5000.00', '9000.00', NULL, NULL, 3, 35, 'Basic understanding of HTML and CSS; familiarity with programming concepts is beneficial but not required.', 'HTML এবং CSS এর প্রাথমিক ধারণা; প্রোগ্রামিং ধারণার সাথে পরিচিতি উপকারী কিন্তু প্রয়োজনীয় নয়।', 'beginner', NULL, '5951703912765.jpg', '2541703912765.jpg', 'https://www.youtube.com/watch?v=lw6IVgb-omg', 'popular', 1, 'en', '2023-11-26 03:30:17', '2023-12-29 23:06:05', NULL),
-(7, 'Adobe Creative Suite Mastery: Photoshop, Illustrator, InDesign', 'অ্যাডোব ক্রিয়েটিভ স্যুট মাস্টারি: ফটোশপ, ইলাস্ট্রেটর, ইনডিজাইন', 'Gain proficiency in Adobe Creative Suite\'s powerhouse tools—Photoshop for image editing, Illustrator for vector graphics, and InDesign for layout design. Learn to seamlessly integrate these applications to bring your creative visions to life.', 'Adobe Creative Suite-এর পাওয়ার হাউস টুলস-এ দক্ষতা অর্জন করুন- ছবি সম্পাদনার জন্য ফটোশপ, ভেক্টর গ্রাফিক্সের জন্য ইলাস্ট্রেটর এবং লেআউট ডিজাইনের জন্য InDesign। আপনার সৃজনশীল দৃষ্টিভঙ্গিগুলিকে জীবনে আনতে এই অ্যাপ্লিকেশনগুলিকে নির্বিঘ্নে সংহত করতে শিখুন৷', 2, 3, 'paid', '4500.00', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'intermediate', NULL, '9991703912786.jpg', '2621703912786.jpg', 'https://www.youtube.com/watch?v=lw6IVgb-omg', 'popular', 0, 'en', '2023-11-26 03:32:44', '2023-12-29 23:06:26', NULL),
-(8, 'Search Engine Optimization (SEO): Boosting Website Visibility', 'সার্চ ইঞ্জিন অপ্টিমাইজেশান (SEO): ওয়েবসাইট ভিজিবিলিটি বাড়ানো', 'Demystify the world of SEO and discover techniques to improve website visibility in search engine results. Learn keyword research, on-page optimization, and off-page strategies to drive organic traffic and enhance online presence.', 'এসইও-এর জগতকে ডিমিস্টিফাই করুন এবং সার্চ ইঞ্জিন ফলাফলে ওয়েবসাইটের দৃশ্যমানতা উন্নত করার কৌশল আবিষ্কার করুন। জৈব ট্র্যাফিক চালনা করতে এবং অনলাইন উপস্থিতি বাড়াতে কীওয়ার্ড গবেষণা, অন-পৃষ্ঠা অপ্টিমাইজেশান এবং অফ-পৃষ্ঠা কৌশলগুলি শিখুন।', 2, 4, 'subscription', '3000.00', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'advanced', NULL, '3931703912804.jpg', '2151703912804.jpg', 'https://www.youtube.com/watch?v=lw6IVgb-omg', 'popular', 1, 'en', '2023-11-26 03:34:25', '2023-12-29 23:06:44', NULL),
-(9, '3D Animation Basics: Getting Started with Blender', '3D অ্যানিমেশন বেসিকস: ব্লেন্ডার দিয়ে শুরু করা', 'Delve into the basics of 3D animation using Blender. Learn the fundamentals of modeling, rigging, and animation to bring characters and scenes to life in a three-dimensional space.', 'ব্লেন্ডার ব্যবহার করে 3D অ্যানিমেশনের বুনিয়াদিতে প্রবেশ করুন। একটি ত্রিমাত্রিক স্থানে চরিত্র এবং দৃশ্যগুলিকে প্রাণবন্ত করতে মডেলিং, কারচুপি এবং অ্যানিমেশনের মৌলিক বিষয়গুলি শিখুন৷', 2, 2, 'free', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'beginner', NULL, '3471703912830.jpg', '2031703912830.jpg', 'https://www.youtube.com/watch?v=lw6IVgb-omg', 'popular', 1, 'en', '2023-11-26 03:37:43', '2023-12-29 23:07:10', NULL),
-(10, 'React.js Fundamentals: Building Modern User Interfaces', 'React.js ফান্ডামেন্টালস: আধুনিক ইউজার ইন্টারফেস তৈরি করা', 'Delve into the fundamentals of React.js and discover how to build modern, component-based user interfaces. From state management to routing, this course guides you through React\'s core concepts, enabling you to create powerful and maintainable front-end applications.', 'React.js-এর মৌলিক বিষয়গুলিকে অধ্যয়ন করুন এবং কীভাবে আধুনিক, উপাদান-ভিত্তিক ব্যবহারকারী ইন্টারফেস তৈরি করতে হয় তা আবিষ্কার করুন। স্টেট ম্যানেজমেন্ট থেকে রাউটিং পর্যন্ত, এই কোর্সটি আপনাকে রিঅ্যাক্টের মূল ধারণার মাধ্যমে গাইড করে, আপনাকে শক্তিশালী এবং রক্ষণাবেক্ষণযোগ্য ফ্রন্ট-এন্ড অ্যাপ্লিকেশন তৈরি করতে সক্ষম করে।', 2, 5, 'free', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'beginner', NULL, '9871703912846.jpg', '1241703912846.jpg', 'https://www.youtube.com/watch?v=lw6IVgb-omg', 'popular', 0, 'en', '2023-11-26 03:39:29', '2023-12-29 23:07:26', NULL);
+(6, 'Full-Stack Web Development Bootcamp: Basics to Advanced', 'ফুল-স্ট্যাক ওয়েব ডেভেলপমেন্ট বুটক্যাম্প: বেসিক থেকে অ্যাডভান্সড পর্যন্ত', 'Dive into the world of web development with a comprehensive bootcamp covering both front-end and back-end technologies. From HTML and CSS to server-side scripting, this course will equip you with the skills to build dynamic and interactive web applications.', 'ফ্রন্ট-এন্ড এবং ব্যাক-এন্ড উভয় প্রযুক্তিকে কভার করে একটি ব্যাপক বুটক্যাম্প সহ ওয়েব ডেভেলপমেন্টের জগতে ডুব দিন। HTML এবং CSS থেকে সার্ভার-সাইড স্ক্রিপ্টিং পর্যন্ত, এই কোর্সটি আপনাকে গতিশীল এবং ইন্টারেক্টিভ ওয়েব অ্যাপ্লিকেশন তৈরি করার দক্ষতা দিয়ে সজ্জিত করবে।', 5, 1, 'paid', 5000.00, 9000.00, NULL, NULL, 3, 35, 'Basic understanding of HTML and CSS; familiarity with programming concepts is beneficial but not required.', 'HTML এবং CSS এর প্রাথমিক ধারণা; প্রোগ্রামিং ধারণার সাথে পরিচিতি উপকারী কিন্তু প্রয়োজনীয় নয়।', 'beginner', NULL, '1401704126972.jpg', '8191704126972.jpg', 'https://www.youtube.com/watch?v=lw6IVgb-omg', 'popular', 1, 'en', '2023-11-26 03:30:17', '2024-01-01 10:42:12', NULL),
+(7, 'Adobe Creative Suite Mastery: Photoshop, Illustrator, InDesign', 'অ্যাডোব ক্রিয়েটিভ স্যুট মাস্টারি: ফটোশপ, ইলাস্ট্রেটর, ইনডিজাইন', 'Gain proficiency in Adobe Creative Suite\'s powerhouse tools—Photoshop for image editing, Illustrator for vector graphics, and InDesign for layout design. Learn to seamlessly integrate these applications to bring your creative visions to life.', 'Adobe Creative Suite-এর পাওয়ার হাউস টুলস-এ দক্ষতা অর্জন করুন- ছবি সম্পাদনার জন্য ফটোশপ, ভেক্টর গ্রাফিক্সের জন্য ইলাস্ট্রেটর এবং লেআউট ডিজাইনের জন্য InDesign। আপনার সৃজনশীল দৃষ্টিভঙ্গিগুলিকে জীবনে আনতে এই অ্যাপ্লিকেশনগুলিকে নির্বিঘ্নে সংহত করতে শিখুন৷', 2, 3, 'paid', 4500.00, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'intermediate', NULL, '4091704127086.jpg', '3521704127086.jpg', 'https://www.youtube.com/watch?v=lw6IVgb-omg', 'popular', 1, 'en', '2023-11-26 03:32:44', '2024-01-01 10:42:38', NULL),
+(8, 'Search Engine Optimization (SEO): Boosting Website Visibility', 'সার্চ ইঞ্জিন অপ্টিমাইজেশান (SEO): ওয়েবসাইট ভিজিবিলিটি বাড়ানো', 'Demystify the world of SEO and discover techniques to improve website visibility in search engine results. Learn keyword research, on-page optimization, and off-page strategies to drive organic traffic and enhance online presence.', 'এসইও-এর জগতকে ডিমিস্টিফাই করুন এবং সার্চ ইঞ্জিন ফলাফলে ওয়েবসাইটের দৃশ্যমানতা উন্নত করার কৌশল আবিষ্কার করুন। জৈব ট্র্যাফিক চালনা করতে এবং অনলাইন উপস্থিতি বাড়াতে কীওয়ার্ড গবেষণা, অন-পৃষ্ঠা অপ্টিমাইজেশান এবং অফ-পৃষ্ঠা কৌশলগুলি শিখুন।', 6, 4, 'paid', 3000.00, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'advanced', NULL, '6891704127114.jpg', '8491704127114.jpg', 'https://www.youtube.com/watch?v=lw6IVgb-omg', 'popular', 1, 'en', '2023-11-26 03:34:25', '2024-01-01 10:42:57', NULL),
+(9, '3D Animation Basics: Getting Started with Blender', '3D অ্যানিমেশন বেসিকস: ব্লেন্ডার দিয়ে শুরু করা', 'Delve into the basics of 3D animation using Blender. Learn the fundamentals of modeling, rigging, and animation to bring characters and scenes to life in a three-dimensional space.', 'ব্লেন্ডার ব্যবহার করে 3D অ্যানিমেশনের বুনিয়াদিতে প্রবেশ করুন। একটি ত্রিমাত্রিক স্থানে চরিত্র এবং দৃশ্যগুলিকে প্রাণবন্ত করতে মডেলিং, কারচুপি এবং অ্যানিমেশনের মৌলিক বিষয়গুলি শিখুন৷', 39, 2, 'free', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'beginner', NULL, '6781704127193.jpg', '7821704127193.jpg', 'https://www.youtube.com/watch?v=lw6IVgb-omg', 'popular', 1, 'en', '2023-11-26 03:37:43', '2024-01-01 10:43:21', NULL),
+(10, 'React.js Fundamentals: Building Modern User Interfaces', 'React.js ফান্ডামেন্টালস: আধুনিক ইউজার ইন্টারফেস তৈরি করা', 'Delve into the fundamentals of React.js and discover how to build modern, component-based user interfaces. From state management to routing, this course guides you through React\'s core concepts, enabling you to create powerful and maintainable front-end applications.', 'React.js-এর মৌলিক বিষয়গুলিকে অধ্যয়ন করুন এবং কীভাবে আধুনিক, উপাদান-ভিত্তিক ব্যবহারকারী ইন্টারফেস তৈরি করতে হয় তা আবিষ্কার করুন। স্টেট ম্যানেজমেন্ট থেকে রাউটিং পর্যন্ত, এই কোর্সটি আপনাকে রিঅ্যাক্টের মূল ধারণার মাধ্যমে গাইড করে, আপনাকে শক্তিশালী এবং রক্ষণাবেক্ষণযোগ্য ফ্রন্ট-এন্ড অ্যাপ্লিকেশন তৈরি করতে সক্ষম করে।', 5, 5, 'free', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'beginner', NULL, '4341704127229.jpg', '6681704127229.jpg', 'https://www.youtube.com/watch?v=lw6IVgb-omg', 'popular', 1, 'en', '2023-11-26 03:39:29', '2024-01-01 10:43:47', NULL);
 
 -- --------------------------------------------------------
 
@@ -209,8 +209,7 @@ CREATE TABLE `enrollments` (
 --
 
 INSERT INTO `enrollments` (`id`, `student_id`, `course_id`, `enrollment_date`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(14, 17, 6, '2023-12-29 18:00:00', '2023-12-30 00:58:30', '2023-12-30 00:58:30', NULL),
-(15, 17, 7, '2023-12-29 18:00:00', '2023-12-30 00:58:30', '2023-12-30 00:58:30', NULL);
+(14, 17, 6, '2023-12-31 18:00:00', '2024-01-01 11:43:52', '2024-01-01 11:43:52', NULL);
 
 -- --------------------------------------------------------
 
@@ -245,11 +244,12 @@ CREATE TABLE `instructors` (
 --
 
 INSERT INTO `instructors` (`id`, `name_en`, `name_bn`, `contact_en`, `contact_bn`, `email`, `role_id`, `bio`, `title`, `designation`, `image`, `status`, `password`, `language`, `access_block`, `remember_token`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'Burhan Uddin Fuad', NULL, '01828543453423', NULL, 'fuad@gmail.com', 3, 'Fuad is a highly skilled Full Stack Web Developer with over 10 years of experience. He specializes in front-end and back-end development, bringing a wealth of knowledge in modern web technologies. John is passionate about teaching and enjoys sharing his expertise with aspiring developers.', 'Experienced Full Stack Web Developer passionate about teaching modern web technologies.', 'Senior Instructor', '7651701794492.jpg', 1, '$2y$12$.U02Y2tp8sspnCmsqXuSZeffY6NSwYAAh.yTcuHNE.nqwslA38Yg6', 'en', NULL, NULL, '2023-11-25 21:35:23', '2024-01-01 01:57:37', NULL),
-(2, 'Thouhidul Islam', NULL, '8013000291', NULL, 'thouhid@gmail.com', 3, 'Thouhid is an Animation Expert and Video/Graphics Instructor known for her innovative approach to storytelling through animation. With a background in both 2D and 3D animation, Emily guides students through the world of visual storytelling, helping them unleash their creative potential.', '2D Animation and Short Video Ads Specialist', 'Animation Expert', '4991701794515.jpg', 1, '$2y$12$MjQtXT3mxNYqC3BzY8m.euZNzfqlN3M6tjK0snin8Gha8d7vIyoKW', 'en', NULL, NULL, '2023-11-26 00:18:45', '2024-01-01 00:34:52', NULL),
-(3, 'Raihan Sazzad', NULL, '32189742181', NULL, 'raihan@gmail.com', 3, 'Raihan is an Animation Expert and Video/Graphics Instructor known for her innovative approach to storytelling through animation. With a background in both 2D and 3D animation, Emily guides students through the world of visual storytelling, helping them unleash their creative potential.', 'Professional Designer Who Loves to Design', 'UI UX Designer', '1381701794537.jpg', 1, '$2y$12$NMwYz1.MG6cY5mMncshiku/nxNmKVDp9QylEaCAUlFrNTfh7DxAiq', 'en', NULL, NULL, '2023-12-04 23:25:20', '2024-01-01 00:35:00', NULL),
-(4, 'Joshim Uddin', NULL, '67566464423', NULL, 'joshim@gmail.com', 3, 'Joshim a passionate and results-oriented Digital Marketer with a knack for navigating the ever-evolving landscape of online promotion. With a strategic mindset, he specialize in crafting data-driven marketing campaigns that elevate brand visibility and engagement.', 'Expert in SMM and Lead Generation', 'Digital Marketer', '1461701794588.jpg', 1, '$2y$12$UgjyjRPmqHjCYLcbWKWYH.I1sQhi.Mve4iFZgHTAILNPj7Ccd7kpS', 'en', NULL, NULL, '2023-12-04 23:27:57', '2024-01-01 00:35:16', NULL),
-(5, 'Asadullah Galib', NULL, '345353452211', NULL, 'galib@gmail.com', 3, 'Galib is an experienced Full Stack Web Developer known for her expertise in building scalable and robust web applications. With a background in both front-end and back-end development, Jane is dedicated to helping students master the skills needed for success in the ever-evolving field of web development.', 'Full Stack Web Developer', 'Lead Instructor', '6641701794615.jpg', 1, '$2y$12$fDR4aXXRkpbLUxPiHfqhr.miwYdUNYosiYeJ1ihNglRl8AwZjElYS', 'en', NULL, NULL, '2023-12-05 10:18:26', '2024-01-01 00:35:25', NULL);
+(1, 'Burhan Uddin Fuad', NULL, '01828543453', NULL, 'fuad@gmail.com', 3, 'Fuad is a highly skilled Full Stack Web Developer with over 10 years of experience. He specializes in front-end and back-end development, bringing a wealth of knowledge in modern web technologies. John is passionate about teaching and enjoys sharing his expertise with aspiring developers.', 'Experienced Full Stack Web Developer passionate about teaching modern web technologies.', 'Senior Instructor', '6661704117291.jpg', 1, '$2y$12$cpTaYrJY0Gn9JHClrCCrZOwCmLBfrNvsXFEO0m.2bP59LxTvio9BG', 'en', NULL, NULL, '2023-11-25 15:35:23', '2024-01-01 07:54:51', NULL),
+(2, 'Thouhidul Islam', NULL, '801300029', NULL, 'thouhid@gmail.com', 3, 'Thouhid is an Animation Expert and Video/Graphics Instructor known for her innovative approach to storytelling through animation. With a background in both 2D and 3D animation, Emily guides students through the world of visual storytelling, helping them unleash their creative potential.', '2D Animation and Short Video Ads Specialist', 'Animation Expert', '6361704117383.jpg', 1, '$2y$12$MhpBKoItHmA.fdUH3Bzi1.YJz/7iW4x1WFO2Gwrr7OiqgHtsIdTJK', 'en', NULL, NULL, '2023-11-25 18:18:45', '2024-01-01 07:56:23', NULL),
+(3, 'Raihan Sazzad', NULL, '3218974218', NULL, 'raihan@gmail.com', 3, 'Raihan is an Animation Expert and Video/Graphics Instructor known for her innovative approach to storytelling through animation. With a background in both 2D and 3D animation, Emily guides students through the world of visual storytelling, helping them unleash their creative potential.', 'Professional Designer Who Loves to Design', 'UI UX Designer', '8731704117402.jpg', 1, '$2y$12$q7C.EXCusmXExPbVEOHeIuWBKi4DYD3XtmeaC1WBLPBSWCwbFxR3W', 'en', NULL, NULL, '2023-12-04 17:25:20', '2024-01-01 07:56:42', NULL),
+(4, 'Joshim Uddin', NULL, '675664644', NULL, 'joshim@gmail.com', 3, 'Joshim a passionate and results-oriented Digital Marketer with a knack for navigating the ever-evolving landscape of online promotion. With a strategic mindset, he specialize in crafting data-driven marketing campaigns that elevate brand visibility and engagement.', 'Expert in SMM and Lead Generation', 'Digital Marketer', '3961704117419.jpg', 1, '$2y$12$4sVDlcM9ozR94nm5/jBrH.HOrcMgFAX3qvhu8iMUA1ZZQ.ejAiuJK', 'en', NULL, NULL, '2023-12-04 17:27:57', '2024-01-01 07:56:59', NULL),
+(5, 'Asadullah Galib', NULL, '3453534521', NULL, 'galib@gmail.com', 3, 'Galib is an experienced Full Stack Web Developer known for her expertise in building scalable and robust web applications. With a background in both front-end and back-end development, Jane is dedicated to helping students master the skills needed for success in the ever-evolving field of web development.', 'Full Stack Web Developer', 'Lead Instructor', '6211704117438.jpg', 1, '$2y$12$hcJLA2OijnGqL/CuvBu.peWesluepYJDwbdR1/Dl1RnHdbaPKkEq2', 'en', NULL, NULL, '2023-12-05 04:18:26', '2024-01-01 07:57:18', NULL),
+(13, 'aaaaaaaaa', NULL, '11111111', NULL, 'a@gmail.com', 3, NULL, NULL, NULL, '9231704120744.jpg', 0, '$2y$12$vjx2MEnVxU7UrH1CTC8/Pua20NPgOXlKWmutgZ0t35dcK.1zbMOy2', 'en', NULL, NULL, '2024-01-01 08:52:25', '2024-01-01 09:41:59', NULL);
 
 -- --------------------------------------------------------
 
@@ -344,11 +344,9 @@ CREATE TABLE `migrations` (
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (4, '2019_12_14_000001_create_personal_access_tokens_table', 1),
 (5, '2023_10_12_031415_create_roles_table', 1),
-(6, '2023_11_12_031402_create_users_table', 1),
 (9, '2023_11_19_053448_create_course_categories_table', 2),
 (10, '2023_11_22_143059_create_permissions_table', 3),
 (14, '2023_11_25_034933_create_students_table', 4),
-(15, '2023_11_25_034955_create_instructors_table', 4),
 (17, '2023_11_26_034558_create_courses_table', 5),
 (18, '2023_11_26_153556_create_enrollments_table', 6),
 (20, '2023_11_26_153639_create_quizzes_table', 6),
@@ -366,7 +364,10 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (35, '2023_11_26_153620_create_materials_table', 12),
 (36, '2023_11_26_153844_create_progress_table', 12),
 (37, '2023_12_20_031354_create_watchlists_table', 13),
-(38, '2023_12_23_070253_add_tag_to_courses_table', 14);
+(38, '2023_12_23_070253_add_tag_to_courses_table', 14),
+(41, '2023_11_12_031401_create_instructors_table', 15),
+(42, '2023_11_12_031402_create_users_table', 15),
+(43, '2024_01_01_121113_add_column_to_user_table', 15);
 
 -- --------------------------------------------------------
 
@@ -419,26 +420,26 @@ CREATE TABLE `payments` (
 --
 
 INSERT INTO `payments` (`id`, `student_id`, `currency`, `currency_code`, `amount`, `currency_value`, `method`, `txnid`, `status`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 10, 'BDT', 'BDT', '182.16', '1.00', 'SSLCommerz', 'SSLCZ_TXN_657699d29ce57', 0, '2023-12-10 23:10:42', '2023-12-10 23:10:42', NULL),
-(2, 10, 'BDT', 'BDT', '91.08', '1.00', 'SSLCommerz', 'SSLCZ_TXN_65769ad5411ed', 1, '2023-12-10 23:15:01', '2023-12-10 23:15:05', NULL),
-(3, 10, 'BDT', 'BDT', '91.08', '1.00', 'SSLCommerz', 'SSLCZ_TXN_65769e8f0cf11', 1, '2023-12-10 23:30:55', '2023-12-10 23:30:59', NULL),
-(4, 10, 'BDT', 'BDT', '182.16', '1.00', 'SSLCommerz', 'SSLCZ_TXN_65769f2a84099', 1, '2023-12-10 23:33:30', '2023-12-10 23:33:34', NULL),
-(5, 14, 'BDT', 'BDT', '113.85', '1.00', 'SSLCommerz', 'SSLCZ_TXN_6576a5e82a723', 1, '2023-12-11 00:02:16', '2023-12-11 00:02:25', NULL),
-(6, 14, 'BDT', 'BDT', '113.85', '1.00', 'SSLCommerz', 'SSLCZ_TXN_6576a7c21ecb3', 0, '2023-12-11 00:10:10', '2023-12-11 00:10:10', NULL),
-(7, 14, 'BDT', 'BDT', '113.85', '1.00', 'SSLCommerz', 'SSLCZ_TXN_6576a8b00421a', 1, '2023-12-11 00:14:08', '2023-12-11 00:14:48', NULL),
-(8, 14, 'BDT', 'BDT', '113.85', '1.00', 'SSLCommerz', 'SSLCZ_TXN_6576a8f323604', 1, '2023-12-11 00:15:15', '2023-12-11 00:15:26', NULL),
-(9, 17, 'BDT', 'BDT', '145.36', '1.00', 'SSLCommerz', 'SSLCZ_TXN_657fea661d5b3', 0, '2023-12-18 00:44:54', '2023-12-18 00:44:54', NULL),
-(10, 17, 'BDT', 'BDT', '145.36', '1.00', 'SSLCommerz', 'SSLCZ_TXN_657feb1853ccc', 0, '2023-12-18 00:47:52', '2023-12-18 00:47:52', NULL),
-(11, 17, 'BDT', 'BDT', '91.08', '1.00', 'SSLCommerz', 'SSLCZ_TXN_657fee632397d', 0, '2023-12-18 01:01:55', '2023-12-18 01:01:55', NULL),
-(12, 17, 'BDT', 'BDT', '113.85', '1.00', 'SSLCommerz', 'SSLCZ_TXN_657fef18a049e', 0, '2023-12-18 01:04:56', '2023-12-18 01:04:56', NULL),
-(13, 17, 'BDT', 'BDT', '113.85', '1.00', 'SSLCommerz', 'SSLCZ_TXN_657ff023049f9', 1, '2023-12-18 01:09:23', '2023-12-18 01:09:26', NULL),
-(14, 17, 'BDT', 'BDT', '0.00', '1.00', 'SSLCommerz', 'SSLCZ_TXN_65810ee5590a9', 0, '2023-12-18 21:32:53', '2023-12-18 21:32:53', NULL),
-(15, 17, 'BDT', 'BDT', '0.00', '1.00', 'SSLCommerz', 'SSLCZ_TXN_65810eeaba3cd', 0, '2023-12-18 21:32:58', '2023-12-18 21:32:58', NULL),
-(16, 17, 'BDT', 'BDT', '67.85', '1.00', 'SSLCommerz', 'SSLCZ_TXN_65810efe527f4', 1, '2023-12-18 21:33:18', '2023-12-18 21:33:25', NULL),
-(17, 17, 'BDT', 'BDT', '4600.00', '1.00', 'SSLCommerz', 'SSLCZ_TXN_65829556dfd67', 1, '2023-12-20 01:18:46', '2023-12-20 01:18:53', NULL),
-(18, 17, 'BDT', 'BDT', '4600.00', '1.00', 'SSLCommerz', 'SSLCZ_TXN_658412e42bb29', 1, '2023-12-21 04:26:44', '2023-12-21 04:26:50', NULL),
-(19, 17, 'BDT', 'BDT', '5750.00', '1.00', 'SSLCommerz', 'SSLCZ_TXN_658676a7d8af0', 1, '2023-12-22 23:56:55', '2023-12-22 23:57:02', NULL),
-(20, 17, 'BDT', 'BDT', '8740.00', '1.00', 'SSLCommerz', 'SSLCZ_TXN_658fbf91d5fbc', 1, '2023-12-30 00:58:25', '2023-12-30 00:58:30', NULL);
+(1, 10, 'BDT', 'BDT', 182.16, 1.00, 'SSLCommerz', 'SSLCZ_TXN_657699d29ce57', 0, '2023-12-10 23:10:42', '2023-12-10 23:10:42', NULL),
+(2, 10, 'BDT', 'BDT', 91.08, 1.00, 'SSLCommerz', 'SSLCZ_TXN_65769ad5411ed', 1, '2023-12-10 23:15:01', '2023-12-10 23:15:05', NULL),
+(3, 10, 'BDT', 'BDT', 91.08, 1.00, 'SSLCommerz', 'SSLCZ_TXN_65769e8f0cf11', 1, '2023-12-10 23:30:55', '2023-12-10 23:30:59', NULL),
+(4, 10, 'BDT', 'BDT', 182.16, 1.00, 'SSLCommerz', 'SSLCZ_TXN_65769f2a84099', 1, '2023-12-10 23:33:30', '2023-12-10 23:33:34', NULL),
+(5, 14, 'BDT', 'BDT', 113.85, 1.00, 'SSLCommerz', 'SSLCZ_TXN_6576a5e82a723', 1, '2023-12-11 00:02:16', '2023-12-11 00:02:25', NULL),
+(6, 14, 'BDT', 'BDT', 113.85, 1.00, 'SSLCommerz', 'SSLCZ_TXN_6576a7c21ecb3', 0, '2023-12-11 00:10:10', '2023-12-11 00:10:10', NULL),
+(7, 14, 'BDT', 'BDT', 113.85, 1.00, 'SSLCommerz', 'SSLCZ_TXN_6576a8b00421a', 1, '2023-12-11 00:14:08', '2023-12-11 00:14:48', NULL),
+(8, 14, 'BDT', 'BDT', 113.85, 1.00, 'SSLCommerz', 'SSLCZ_TXN_6576a8f323604', 1, '2023-12-11 00:15:15', '2023-12-11 00:15:26', NULL),
+(9, 17, 'BDT', 'BDT', 145.36, 1.00, 'SSLCommerz', 'SSLCZ_TXN_657fea661d5b3', 0, '2023-12-18 00:44:54', '2023-12-18 00:44:54', NULL),
+(10, 17, 'BDT', 'BDT', 145.36, 1.00, 'SSLCommerz', 'SSLCZ_TXN_657feb1853ccc', 0, '2023-12-18 00:47:52', '2023-12-18 00:47:52', NULL),
+(11, 17, 'BDT', 'BDT', 91.08, 1.00, 'SSLCommerz', 'SSLCZ_TXN_657fee632397d', 0, '2023-12-18 01:01:55', '2023-12-18 01:01:55', NULL),
+(12, 17, 'BDT', 'BDT', 113.85, 1.00, 'SSLCommerz', 'SSLCZ_TXN_657fef18a049e', 0, '2023-12-18 01:04:56', '2023-12-18 01:04:56', NULL),
+(13, 17, 'BDT', 'BDT', 113.85, 1.00, 'SSLCommerz', 'SSLCZ_TXN_657ff023049f9', 1, '2023-12-18 01:09:23', '2023-12-18 01:09:26', NULL),
+(14, 17, 'BDT', 'BDT', 0.00, 1.00, 'SSLCommerz', 'SSLCZ_TXN_65810ee5590a9', 0, '2023-12-18 21:32:53', '2023-12-18 21:32:53', NULL),
+(15, 17, 'BDT', 'BDT', 0.00, 1.00, 'SSLCommerz', 'SSLCZ_TXN_65810eeaba3cd', 0, '2023-12-18 21:32:58', '2023-12-18 21:32:58', NULL),
+(16, 17, 'BDT', 'BDT', 67.85, 1.00, 'SSLCommerz', 'SSLCZ_TXN_65810efe527f4', 1, '2023-12-18 21:33:18', '2023-12-18 21:33:25', NULL),
+(17, 17, 'BDT', 'BDT', 4600.00, 1.00, 'SSLCommerz', 'SSLCZ_TXN_65829556dfd67', 1, '2023-12-20 01:18:46', '2023-12-20 01:18:53', NULL),
+(18, 17, 'BDT', 'BDT', 4600.00, 1.00, 'SSLCommerz', 'SSLCZ_TXN_658412e42bb29', 1, '2023-12-21 04:26:44', '2023-12-21 04:26:50', NULL),
+(19, 17, 'BDT', 'BDT', 5750.00, 1.00, 'SSLCommerz', 'SSLCZ_TXN_658676a7d8af0', 1, '2023-12-22 23:56:55', '2023-12-22 23:57:02', NULL),
+(20, 17, 'BDT', 'BDT', 4600.00, 1.00, 'SSLCommerz', 'SSLCZ_TXN_6592f9adf2b79', 1, '2024-01-01 11:43:10', '2024-01-01 11:43:52', NULL);
 
 -- --------------------------------------------------------
 
@@ -589,7 +590,36 @@ INSERT INTO `permissions` (`id`, `role_id`, `name`, `created_at`, `updated_at`) 
 (312, 2, 'message.create', '2023-11-29 00:38:43', '2023-11-29 00:38:43'),
 (313, 2, 'message.show', '2023-11-29 00:38:43', '2023-11-29 00:38:43'),
 (314, 2, 'message.edit', '2023-11-29 00:38:43', '2023-11-29 00:38:43'),
-(315, 2, 'message.destroy', '2023-11-29 00:38:43', '2023-11-29 00:38:43');
+(315, 2, 'message.destroy', '2023-11-29 00:38:43', '2023-11-29 00:38:43'),
+(316, 3, 'user.index', '2024-01-01 07:23:31', '2024-01-01 07:23:31'),
+(317, 3, 'role.index', '2024-01-01 07:23:31', '2024-01-01 07:23:31'),
+(318, 3, 'student.index', '2024-01-01 07:23:31', '2024-01-01 07:23:31'),
+(319, 3, 'instructor.index', '2024-01-01 07:23:32', '2024-01-01 07:23:32'),
+(320, 3, 'courseCategory.index', '2024-01-01 07:23:32', '2024-01-01 07:23:32'),
+(321, 3, 'courseCategory.create', '2024-01-01 07:23:32', '2024-01-01 07:23:32'),
+(322, 3, 'courseCategory.show', '2024-01-01 07:23:32', '2024-01-01 07:23:32'),
+(323, 3, 'courseCategory.edit', '2024-01-01 07:23:32', '2024-01-01 07:23:32'),
+(324, 3, 'courseCategory.destroy', '2024-01-01 07:23:32', '2024-01-01 07:23:32'),
+(325, 3, 'course.index', '2024-01-01 07:23:32', '2024-01-01 07:23:32'),
+(326, 3, 'course.create', '2024-01-01 07:23:32', '2024-01-01 07:23:32'),
+(327, 3, 'course.show', '2024-01-01 07:23:32', '2024-01-01 07:23:32'),
+(328, 3, 'course.edit', '2024-01-01 07:23:32', '2024-01-01 07:23:32'),
+(329, 3, 'course.destroy', '2024-01-01 07:23:33', '2024-01-01 07:23:33'),
+(330, 3, 'material.index', '2024-01-01 07:23:33', '2024-01-01 07:23:33'),
+(331, 3, 'material.create', '2024-01-01 07:23:33', '2024-01-01 07:23:33'),
+(332, 3, 'material.show', '2024-01-01 07:23:33', '2024-01-01 07:23:33'),
+(333, 3, 'material.edit', '2024-01-01 07:23:33', '2024-01-01 07:23:33'),
+(334, 3, 'material.destroy', '2024-01-01 07:23:33', '2024-01-01 07:23:33'),
+(335, 3, 'lesson.index', '2024-01-01 07:23:33', '2024-01-01 07:23:33'),
+(336, 3, 'lesson.create', '2024-01-01 07:23:33', '2024-01-01 07:23:33'),
+(337, 3, 'lesson.show', '2024-01-01 07:23:33', '2024-01-01 07:23:33'),
+(338, 3, 'lesson.edit', '2024-01-01 07:23:33', '2024-01-01 07:23:33'),
+(339, 3, 'lesson.destroy', '2024-01-01 07:23:34', '2024-01-01 07:23:34'),
+(340, 3, 'coupon.index', '2024-01-01 07:23:34', '2024-01-01 07:23:34'),
+(341, 3, 'coupon.create', '2024-01-01 07:23:34', '2024-01-01 07:23:34'),
+(342, 3, 'coupon.show', '2024-01-01 07:23:34', '2024-01-01 07:23:34'),
+(343, 3, 'coupon.edit', '2024-01-01 07:23:34', '2024-01-01 07:23:34'),
+(344, 3, 'coupon.destroy', '2024-01-01 07:23:34', '2024-01-01 07:23:34');
 
 -- --------------------------------------------------------
 
@@ -762,10 +792,7 @@ CREATE TABLE `students` (
 --
 
 INSERT INTO `students` (`id`, `name_en`, `name_bn`, `contact_en`, `contact_bn`, `email`, `date_of_birth`, `gender`, `image`, `bio`, `profession`, `nationality`, `address`, `city`, `state`, `postcode`, `country`, `status`, `password`, `language`, `remember_token`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(14, 'Nakib Uddin', NULL, NULL, NULL, 'student@yahoo.com', NULL, NULL, NULL, NULL, NULL, 'Bangladeshi', NULL, NULL, NULL, NULL, NULL, 1, '$2y$12$ACT2LHXsD/Jlfw0aMNAIY.236b9GAkfRxdjAuYf0B65zmTFbjSpBm', 'en', NULL, '2023-12-06 00:09:53', '2023-12-18 00:11:12', NULL),
-(15, 'Rabiul Islam', NULL, NULL, NULL, 'student2@gmail.com', NULL, NULL, NULL, NULL, NULL, 'Bangladeshi', NULL, NULL, NULL, NULL, NULL, 1, '$2y$12$oQCRT7fJw.ze6/0d/MrFKenHXZ7KfdnAArrF75ww0.GVsjCcHxvyS', 'en', NULL, '2023-12-06 00:22:10', '2023-12-06 00:22:10', NULL),
-(16, 'Noman Hossain', NULL, NULL, NULL, 'student2@yahoo.com', NULL, NULL, NULL, NULL, NULL, 'Bangladeshi', NULL, NULL, NULL, NULL, NULL, 1, '$2y$12$SvgP6RCHTvXFy0/qh9ypL.QdpKgRpaKWe0fGrhWF3cq9wIbnsCzBa', 'en', NULL, '2023-12-06 00:25:03', '2023-12-06 00:25:03', NULL),
-(17, 'Ibrahim Khalil Shakil', NULL, '0183478963', NULL, 'student@gmail.com', NULL, NULL, '3021703132738.png', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur', 'Web Developer', 'Bangladeshi', NULL, NULL, NULL, NULL, NULL, 1, '$2y$12$rUxi5wAuMt/u9jG46La/h.rva.37gFo6invimj.kjxQEOiRyL7os.', 'en', NULL, '2023-12-18 00:13:14', '2023-12-20 22:25:38', NULL);
+(17, 'Safayet Ullah', NULL, '0183478963', NULL, 'student@gmail.com', '2000-02-01', NULL, '3291704130747.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur', 'Web Developer', 'Bangladeshi', NULL, NULL, NULL, NULL, NULL, 1, '$2y$12$rUxi5wAuMt/u9jG46La/h.rva.37gFo6invimj.kjxQEOiRyL7os.', 'en', NULL, '2023-12-18 00:13:14', '2024-01-01 11:40:25', NULL);
 
 -- --------------------------------------------------------
 
@@ -800,7 +827,6 @@ CREATE TABLE `users` (
   `contact_en` varchar(255) NOT NULL,
   `contact_bn` varchar(255) DEFAULT NULL,
   `role_id` bigint(20) UNSIGNED NOT NULL,
-  `instructor_id` bigint(20) UNSIGNED NOT NULL,
   `password` varchar(255) NOT NULL,
   `language` varchar(255) NOT NULL DEFAULT 'en',
   `image` varchar(255) DEFAULT NULL,
@@ -809,21 +835,22 @@ CREATE TABLE `users` (
   `remember_token` varchar(100) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  `deleted_at` timestamp NULL DEFAULT NULL
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  `instructor_id` bigint(20) UNSIGNED DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `name_en`, `name_bn`, `email`, `contact_en`, `contact_bn`, `role_id`, `instructor_id`, `password`, `language`, `image`, `full_access`, `status`, `remember_token`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(10, 'Ibrahim Khalil', NULL, 'admin@gmail.com', '01867655403', NULL, 1, 0, '$2y$12$LdTowbF2MhpiaZLjn8Y/2ecrcjWqcT5VU26aM3J2bv5uN6AeiepaC', 'en', '6161700367047.png', 1, 1, NULL, '2023-11-18 22:01:49', '2023-11-19 01:44:41', NULL),
-(16, 'aaaaaaa', NULL, 'i@gmail.com', '1234', NULL, 3, 8, '$2y$12$tq3gova/BR2yQtBCdBAxXe6yi9f2F.PPvaRkfZdRThwpOXP.QVF5a', 'en', NULL, 0, 1, NULL, '2024-01-01 00:30:49', '2024-01-01 00:30:49', NULL),
-(17, 'Burhan Uddin Fuad', NULL, 'fuad@gmail.com', '01828543453423', NULL, 3, 1, '$2y$12$NRXQh6moawk9dqRiD5EVnealrdFUKRIDtQh9gVq3gFGVxXwgD5SaK', 'en', NULL, 0, 1, NULL, '2024-01-01 00:34:43', '2024-01-01 01:57:37', NULL),
-(18, 'Thouhidul Islam', NULL, 'thouhid@gmail.com', '8013000291', NULL, 3, 2, '$2y$12$mVIdsWtj1.T1UOIQYZOAEOYfBQCPon2X.OjowbkmcJiMemqjaDmre', 'en', NULL, 0, 1, NULL, '2024-01-01 00:34:52', '2024-01-01 00:34:52', NULL),
-(19, 'Raihan Sazzad', NULL, 'raihan@gmail.com', '32189742181', NULL, 3, 3, '$2y$12$ISCmGljkkC.AkqCY/jY4.u1ye1UWXspkVPB6tLbQthxDAMnScGjMi', 'en', NULL, 0, 1, NULL, '2024-01-01 00:35:01', '2024-01-01 00:35:01', NULL),
-(20, 'Joshim Uddin', NULL, 'joshim@gmail.com', '67566464423', NULL, 3, 4, '$2y$12$V56J2lP0I6.BEapztk7LGuWjESpGIY6HOSasdxz.FvnC3lle3c5Ru', 'en', NULL, 0, 1, NULL, '2024-01-01 00:35:16', '2024-01-01 00:35:16', NULL),
-(21, 'Asadullah Galib', NULL, 'galib@gmail.com', '345353452211', NULL, 3, 5, '$2y$12$O60jETh3ipHopktF5JxPDeE7eW85n1g1QV1bzqwQYLaKzOGgHKtDa', 'en', NULL, 0, 1, NULL, '2024-01-01 00:35:25', '2024-01-01 00:35:25', NULL);
+INSERT INTO `users` (`id`, `name_en`, `name_bn`, `email`, `contact_en`, `contact_bn`, `role_id`, `password`, `language`, `image`, `full_access`, `status`, `remember_token`, `created_at`, `updated_at`, `deleted_at`, `instructor_id`) VALUES
+(2, 'Ibrahim Khalil', NULL, 'admin@gmail.com', '+8801300025229', NULL, 1, '$2y$12$RDPYtmf4JJwoQ4sEMuVYse6kg.Xnv1vcJ86sZhT63uaL5vrMje69W', 'en', '7741704114296.png', 1, 1, NULL, '2024-01-01 06:47:43', '2024-01-01 07:04:57', NULL, NULL),
+(4, 'Asadullah Galib', NULL, 'galib@gmail.com', '3453534521', NULL, 3, '$2y$12$86XiKoWQmLXc3nMzjYZBBu8EpMnT6enpDkhHWKF3QD/n2U8bg8Abu', 'en', NULL, 0, 1, NULL, '2024-01-01 07:49:40', '2024-01-01 07:57:18', NULL, 5),
+(5, 'Joshim Uddin', NULL, 'joshim@gmail.com', '675664644', NULL, 3, '$2y$12$3XeD0wzsHVAt/fUjz/0KaOi1VzhPrgugKZRsEvw0NsXhCzGc.Jhce', 'en', NULL, 0, 1, NULL, '2024-01-01 07:50:08', '2024-01-01 07:57:00', NULL, 4),
+(6, 'Raihan Sazzad', NULL, 'raihan@gmail.com', '3218974218', NULL, 3, '$2y$12$xhoiSuAYzsG.LkegUZaY.uhjcACLYLb8zL8axjpaGDu.ScqujIjJa', 'en', NULL, 0, 1, NULL, '2024-01-01 07:50:18', '2024-01-01 07:56:42', NULL, 3),
+(7, 'Thouhidul Islam', NULL, 'thouhid@gmail.com', '801300029', NULL, 3, '$2y$12$Pse99XX7MWpy9HAqzcXrC.U1ZUkj/sH6GTw/Lrg8dFBpxZs7wm6my', 'en', NULL, 0, 1, NULL, '2024-01-01 07:50:28', '2024-01-01 07:56:23', NULL, 2),
+(8, 'Burhan Uddin Fuad', NULL, 'fuad@gmail.com', '01828543453', NULL, 3, '$2y$12$hiPgoRHaaY8BdVhi4zfTXe56jb.zstbzXqhyX7pNJOVUGOnWr.YhG', 'en', NULL, 0, 1, NULL, '2024-01-01 07:50:43', '2024-01-01 08:03:36', NULL, 1),
+(11, 'aaaaaaaaa', NULL, 'a@gmail.com', '11111111', NULL, 3, '$2y$12$DvSPM25pW9B4WNZKBuvYOOvYVUbDmFy8FhVViaB76rAkNA7rKUIi.', 'en', NULL, 0, 0, NULL, '2024-01-01 08:52:25', '2024-01-01 09:42:00', NULL, 13);
 
 -- --------------------------------------------------------
 
@@ -1025,7 +1052,8 @@ ALTER TABLE `users`
   ADD UNIQUE KEY `users_email_unique` (`email`),
   ADD UNIQUE KEY `users_contact_en_unique` (`contact_en`),
   ADD UNIQUE KEY `users_contact_bn_unique` (`contact_bn`),
-  ADD KEY `users_role_id_index` (`role_id`);
+  ADD KEY `users_role_id_index` (`role_id`),
+  ADD KEY `users_instructor_id_index` (`instructor_id`);
 
 --
 -- Indexes for table `watchlists`
@@ -1081,13 +1109,13 @@ ALTER TABLE `discussions`
 -- AUTO_INCREMENT for table `enrollments`
 --
 ALTER TABLE `enrollments`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `instructors`
 --
 ALTER TABLE `instructors`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `lessons`
@@ -1111,7 +1139,7 @@ ALTER TABLE `messages`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
 -- AUTO_INCREMENT for table `options`
@@ -1129,7 +1157,7 @@ ALTER TABLE `payments`
 -- AUTO_INCREMENT for table `permissions`
 --
 ALTER TABLE `permissions`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=316;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=345;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
@@ -1183,7 +1211,7 @@ ALTER TABLE `subscriptions`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `watchlists`
@@ -1298,6 +1326,7 @@ ALTER TABLE `subscriptions`
 -- Constraints for table `users`
 --
 ALTER TABLE `users`
+  ADD CONSTRAINT `users_instructor_id_foreign` FOREIGN KEY (`instructor_id`) REFERENCES `instructors` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `users_role_id_foreign` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE;
 
 --
