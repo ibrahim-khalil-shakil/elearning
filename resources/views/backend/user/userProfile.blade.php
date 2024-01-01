@@ -34,7 +34,7 @@
                             <div class="row">
                                 <div class="col-sm-3">
                                     <div class="profile-photo">
-                                        <img src="{{asset('public/uploads/users/'.request()->session()->get('image'))}}" class="img-fluid rounded-circle" height="140" width="140" alt="">
+                                        <img src="{{asset('public/uploads/users/'.request()->session()->get('image'))}}" class="rounded-circle" height="140" width="140" alt="">
                                     </div>
                                 </div>
                                 <div class="col-sm-9 col-12">

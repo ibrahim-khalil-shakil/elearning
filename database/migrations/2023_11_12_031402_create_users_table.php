@@ -19,7 +19,6 @@ return new class extends Migration
             $table->string('contact_en')->unique();
             $table->string('contact_bn')->unique()->nullable();
             $table->unsignedBigInteger('role_id')->index();
-            $table->unsignedBigInteger('instructor_id')->index();
             $table->string('password');
             $table->string('language')->default('en');
             $table->string('image')->nullable();
@@ -30,7 +29,6 @@ return new class extends Migration
             $table->softDeletes();
 
             $table->foreign('role_id')->references('id')->on('roles')->onDelete('cascade');
-            $table->foreign('instructor_id')->references('id')->on('instructors')->onDelete('cascade');
         });
     }
 

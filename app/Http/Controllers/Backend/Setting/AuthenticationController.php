@@ -33,7 +33,7 @@ class AuthenticationController extends Controller
             else
                 return redirect('login')->with('danger', 'Please Try Again');
         } catch (Exception $e) {
-            // dd($e);
+            dd($e);
             return redirect('login')->with('danger', 'Please Try Again');
         }
     }
@@ -77,7 +77,7 @@ class AuthenticationController extends Controller
                 'roleIdentitiy' => encryptor('encrypt', $user->role->identity),
                 'language' => encryptor('encrypt', $user->language),
                 'image' => $user->image ?? 'No Image Found',
-                'image' => $user?->instructor->image ?? 'No Image Found',
+                'instructorImage' => $user?->instructor->image ?? 'No instructorImage Found',
             ]
         );
     }
