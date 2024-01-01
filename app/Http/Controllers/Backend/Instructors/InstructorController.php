@@ -70,11 +70,6 @@ class InstructorController extends Controller
                 $user->role_id = $request->roleId;
                 $user->status = $request->status;
                 $user->password = Hash::make($request->password);
-                // if ($request->hasFile('image')) {
-                //     $imageName = rand(111, 999) . time() . '.' . $request->image->extension();
-                //     $request->image->move(public_path('uploads/users'), $imageName);
-                //     $user->image = $imageName;
-                // }
                 if ($user->save()) {
                     DB::commit();
                     $this->notice::success('Successfully saved');
@@ -148,11 +143,6 @@ class InstructorController extends Controller
                 $user->role_id = $request->roleId;
                 $user->status = $request->status;
                 $user->password = Hash::make($request->password);
-                if ($request->hasFile('image')) {
-                    $imageName = rand(111, 999) . time() . '.' . $request->image->extension();
-                    $request->image->move(public_path('uploads/users'), $imageName);
-                    $user->image = $imageName;
-                }
                 if ($user->save()) {
                     DB::commit();
                     $this->notice::success('Successfully saved');

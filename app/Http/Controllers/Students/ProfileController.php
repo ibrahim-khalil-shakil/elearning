@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Students;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Student;
+use App\Models\Enrollment;
 use Illuminate\Support\Facades\Hash;
 
 class ProfileController extends Controller
@@ -12,7 +13,8 @@ class ProfileController extends Controller
     public function index()
     {
         $student_info = Student::find(currentUserId());
-        return view('students.profile', compact('student_info'));
+        $enrollment = Enrollment::where('student_id', currentUserId())->get();
+        return view('students.profile', compact('student_info', 'enrollment'));
     }
 
     public function save_profile(Request $request)
@@ -92,7 +94,7 @@ class ProfileController extends Controller
                 $user->image = $imageName;
                 $user->save();
 
-                return rredirect()->back()->with('success', 'Image changed successfully.');
+                return redirect()->back()->with('success', 'Image changed successfully.');
             } else {
                 return redirect()->back()->with('error', 'Please select a valid image file.');
             }

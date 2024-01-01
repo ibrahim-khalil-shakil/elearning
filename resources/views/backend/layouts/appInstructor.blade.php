@@ -189,90 +189,25 @@
         <div class="dlabnav">
             <div class="dlabnav-scroll">
                 <ul class="metismenu" id="menu">
-                    <li class="nav-label first">Admin Panel</li>
+                    <li class="nav-label first">Instructor Panel</li>
                     <li><a class="ai-icon" href="{{route('dashboard')}}" aria-expanded="false">
-                            <i class="las la-tachometer-alt"></i>
-                            <span class="nav-text">Dashboard</span>
+                            <i class="las la-tachometer-alt"></i> <span class="nav-text">Dashboard</span>
                         </a>
                     </li>
                     <li><a class="ai-icon" href="{{route('home')}}" aria-expanded="false">
-                            <i class="las la-home"></i>
-                            <span class="nav-text">Home</span>
+                            <i class="las la-home"></i><span class="nav-text">Home</span>
                         </a>
                     </li>
                     <li class="nav-label">Main Menu</li>
-                    <li><a class="" href="{{route('role.index')}}" aria-expanded="false">
-                            <i class="las la-cog"></i>
-                            <span class="nav-text">Permissions</span>
+                    <li><a href="{{route('instructor.index')}}">
+                            <i class="las la-chalkboard-teacher"></i>Instructors List
                         </a>
                     </li>
-                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="la la-universal-access"></i>
-                            <span class="nav-text">Roles</span>
-                        </a>
-                        <ul aria-expanded="false">
-                            <li><a href="{{route('user.index')}}"><i class="la la-users"></i>Users</a></li>
-                            <li><a href="{{route('instructor.index')}}"><i
-                                        class="las la-chalkboard-teacher"></i>Instructors</a>
-                            </li>
-                            <li><a href="{{route('student.index')}}"><i class="las la-book-reader"></i>Students</a></li>
-                        </ul>
-                    </li>
-                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="las la-school"></i>
-                            <span class="nav-text">Courses</span>
-                        </a>
-                        <ul aria-expanded="false">
-                            <li><a href="{{route('courseCategory.index')}}"><i class="la la-list"></i>Course
-                                    Category</a>
-                            </li>
-                            <li><a href="{{route('course.index')}}"><i class="las la-book-open"></i>All Courses</a></li>
-                            <li><a href="{{route('lesson.index')}}"><i class="las la-chalkboard"></i>Lessons</a></li>
-                            <li><a href="{{route('material.index')}}"><i class="las la-atom"></i></i>Materials</a></li>
-                        </ul>
-                    </li>
-                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="las la-tasks"></i>
-                            <span class="nav-text">Quizzes</span>
-                        </a>
-                        <ul aria-expanded="false">
-                            <li><a href="{{route('quiz.index')}}"><i class="las la-icons"></i>All Quizzes</a></li>
-                            <li><a href="{{route('question.index')}}"><i
-                                        class="las la-question-circle"></i>Questions</a></li>
-                            {{-- <li><a href="{{route('option.index')}}"><i class="las la-stream"></i>Options</a></li>
-                            <li><a href="{{route('answer.index')}}"><i class="las la-font"></i>Answers</a></li> --}}
-                        </ul>
-                    </li>
-                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="las la-star-half-alt"></i>
-                            <span class="nav-text">Reviews</span>
-                        </a>
-                        <ul aria-expanded="false">
-                            <li><a href="{{route('review.index')}}"><i class="las la-wave-square"></i>All Review</a>
-                            </li>
-                            <li><a href="{{route('review.index')}}"><i class="las la-star"></i>Ratings</a></li>
-                        </ul>
-                    </li>
-                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="las la-comment"></i>
-                            <span class="nav-text">Forum</span>
-                        </a>
-                        <ul aria-expanded="false">
-                            <li><a href="{{route('discussion.index')}}"><i class="las la-comment-alt"></i>Discussion</a>
-                            </li>
-                            <li><a href="{{route('message.index')}}"><i class="las la-envelope"></i>Messages</a></li>
-                        </ul>
-                    </li>
-                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="las la-money-check"></i>
-                            <span class="nav-text">Payments</span>
-                        </a>
-                        <ul aria-expanded="false">
-                            <li><a href="javascript:void()"><i class="las la-money-bill"></i>Course Fees</a></li>
-                            <li><a href="javascript:void()"><i class="lab la-gg-circle"></i>Subscription Fees</a></li>
-                            <li><a href="{{route('coupon.index')}}"><i class="las la-tags"></i>Coupons</a></li>
-                        </ul>
-                    </li>
+                    <li><a href="{{route('student.index')}}"><i class="las la-book-reader"></i>Students List</a></li>
+                    <li><a href="{{route('course.index')}}"><i class="las la-book-open"></i>All Courses</a></li>
+                    <li><a href="{{route('lesson.index')}}"><i class="las la-chalkboard"></i>Course Lessons</a></li>
+                    <li><a href="{{route('material.index')}}"><i class="las la-atom"></i></i>Course Materials</a></li>
+                    <li><a href="{{route('coupon.index')}}"><i class="las la-tags"></i>Coupons</a></li>
                 </ul>
             </div>
         </div>
