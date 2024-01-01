@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 30, 2023 at 08:03 AM
+-- Generation Time: Jan 01, 2024 at 09:11 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -245,11 +245,11 @@ CREATE TABLE `instructors` (
 --
 
 INSERT INTO `instructors` (`id`, `name_en`, `name_bn`, `contact_en`, `contact_bn`, `email`, `role_id`, `bio`, `title`, `designation`, `image`, `status`, `password`, `language`, `access_block`, `remember_token`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'Burhan Uddin Fuad', NULL, '01828543453', NULL, 'fuad@gmail.com', 3, 'Fuad is a highly skilled Full Stack Web Developer with over 10 years of experience. He specializes in front-end and back-end development, bringing a wealth of knowledge in modern web technologies. John is passionate about teaching and enjoys sharing his expertise with aspiring developers.', 'Experienced Full Stack Web Developer passionate about teaching modern web technologies.', 'Senior Instructor', '7651701794492.jpg', 1, '$2y$12$jxbne9KxH0/pS/pz5cW0BunNSQCDZ1ZQwwSICcMd1o7rAENnvmm9a', 'en', NULL, NULL, '2023-11-25 21:35:23', '2023-12-05 10:41:32', NULL),
-(2, 'Thouhidul Islam', NULL, '801300029', NULL, 'thouhid@gmail.com', 3, 'Thouhid is an Animation Expert and Video/Graphics Instructor known for her innovative approach to storytelling through animation. With a background in both 2D and 3D animation, Emily guides students through the world of visual storytelling, helping them unleash their creative potential.', '2D Animation and Short Video Ads Specialist', 'Animation Expert', '4991701794515.jpg', 1, '$2y$12$MhpBKoItHmA.fdUH3Bzi1.YJz/7iW4x1WFO2Gwrr7OiqgHtsIdTJK', 'en', NULL, NULL, '2023-11-26 00:18:45', '2023-12-05 10:41:55', NULL),
-(3, 'Raihan Sazzad', NULL, '3218974218', NULL, 'raihan@gmail.com', 3, 'Raihan is an Animation Expert and Video/Graphics Instructor known for her innovative approach to storytelling through animation. With a background in both 2D and 3D animation, Emily guides students through the world of visual storytelling, helping them unleash their creative potential.', 'Professional Designer Who Loves to Design', 'UI UX Designer', '1381701794537.jpg', 1, '$2y$12$q7C.EXCusmXExPbVEOHeIuWBKi4DYD3XtmeaC1WBLPBSWCwbFxR3W', 'en', NULL, NULL, '2023-12-04 23:25:20', '2023-12-05 10:42:17', NULL),
-(4, 'Joshim Uddin', NULL, '675664644', NULL, 'joshim@gmail.com', 3, 'Joshim a passionate and results-oriented Digital Marketer with a knack for navigating the ever-evolving landscape of online promotion. With a strategic mindset, he specialize in crafting data-driven marketing campaigns that elevate brand visibility and engagement.', 'Expert in SMM and Lead Generation', 'Digital Marketer', '1461701794588.jpg', 1, '$2y$12$4sVDlcM9ozR94nm5/jBrH.HOrcMgFAX3qvhu8iMUA1ZZQ.ejAiuJK', 'en', NULL, NULL, '2023-12-04 23:27:57', '2023-12-05 10:43:08', NULL),
-(5, 'Asadullah Galib', NULL, '345353452', NULL, 'galib@gmail.com', 3, 'Galib is an experienced Full Stack Web Developer known for her expertise in building scalable and robust web applications. With a background in both front-end and back-end development, Jane is dedicated to helping students master the skills needed for success in the ever-evolving field of web development.', 'Full Stack Web Developer', 'Lead Instructor', '6641701794615.jpg', 1, '$2y$12$hcJLA2OijnGqL/CuvBu.peWesluepYJDwbdR1/Dl1RnHdbaPKkEq2', 'en', NULL, NULL, '2023-12-05 10:18:26', '2023-12-05 10:43:35', NULL);
+(1, 'Burhan Uddin Fuad', NULL, '01828543453423', NULL, 'fuad@gmail.com', 3, 'Fuad is a highly skilled Full Stack Web Developer with over 10 years of experience. He specializes in front-end and back-end development, bringing a wealth of knowledge in modern web technologies. John is passionate about teaching and enjoys sharing his expertise with aspiring developers.', 'Experienced Full Stack Web Developer passionate about teaching modern web technologies.', 'Senior Instructor', '7651701794492.jpg', 1, '$2y$12$.U02Y2tp8sspnCmsqXuSZeffY6NSwYAAh.yTcuHNE.nqwslA38Yg6', 'en', NULL, NULL, '2023-11-25 21:35:23', '2024-01-01 01:57:37', NULL),
+(2, 'Thouhidul Islam', NULL, '8013000291', NULL, 'thouhid@gmail.com', 3, 'Thouhid is an Animation Expert and Video/Graphics Instructor known for her innovative approach to storytelling through animation. With a background in both 2D and 3D animation, Emily guides students through the world of visual storytelling, helping them unleash their creative potential.', '2D Animation and Short Video Ads Specialist', 'Animation Expert', '4991701794515.jpg', 1, '$2y$12$MjQtXT3mxNYqC3BzY8m.euZNzfqlN3M6tjK0snin8Gha8d7vIyoKW', 'en', NULL, NULL, '2023-11-26 00:18:45', '2024-01-01 00:34:52', NULL),
+(3, 'Raihan Sazzad', NULL, '32189742181', NULL, 'raihan@gmail.com', 3, 'Raihan is an Animation Expert and Video/Graphics Instructor known for her innovative approach to storytelling through animation. With a background in both 2D and 3D animation, Emily guides students through the world of visual storytelling, helping them unleash their creative potential.', 'Professional Designer Who Loves to Design', 'UI UX Designer', '1381701794537.jpg', 1, '$2y$12$NMwYz1.MG6cY5mMncshiku/nxNmKVDp9QylEaCAUlFrNTfh7DxAiq', 'en', NULL, NULL, '2023-12-04 23:25:20', '2024-01-01 00:35:00', NULL),
+(4, 'Joshim Uddin', NULL, '67566464423', NULL, 'joshim@gmail.com', 3, 'Joshim a passionate and results-oriented Digital Marketer with a knack for navigating the ever-evolving landscape of online promotion. With a strategic mindset, he specialize in crafting data-driven marketing campaigns that elevate brand visibility and engagement.', 'Expert in SMM and Lead Generation', 'Digital Marketer', '1461701794588.jpg', 1, '$2y$12$UgjyjRPmqHjCYLcbWKWYH.I1sQhi.Mve4iFZgHTAILNPj7Ccd7kpS', 'en', NULL, NULL, '2023-12-04 23:27:57', '2024-01-01 00:35:16', NULL),
+(5, 'Asadullah Galib', NULL, '345353452211', NULL, 'galib@gmail.com', 3, 'Galib is an experienced Full Stack Web Developer known for her expertise in building scalable and robust web applications. With a background in both front-end and back-end development, Jane is dedicated to helping students master the skills needed for success in the ever-evolving field of web development.', 'Full Stack Web Developer', 'Lead Instructor', '6641701794615.jpg', 1, '$2y$12$fDR4aXXRkpbLUxPiHfqhr.miwYdUNYosiYeJ1ihNglRl8AwZjElYS', 'en', NULL, NULL, '2023-12-05 10:18:26', '2024-01-01 00:35:25', NULL);
 
 -- --------------------------------------------------------
 
@@ -800,6 +800,7 @@ CREATE TABLE `users` (
   `contact_en` varchar(255) NOT NULL,
   `contact_bn` varchar(255) DEFAULT NULL,
   `role_id` bigint(20) UNSIGNED NOT NULL,
+  `instructor_id` bigint(20) UNSIGNED NOT NULL,
   `password` varchar(255) NOT NULL,
   `language` varchar(255) NOT NULL DEFAULT 'en',
   `image` varchar(255) DEFAULT NULL,
@@ -815,10 +816,14 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `name_en`, `name_bn`, `email`, `contact_en`, `contact_bn`, `role_id`, `password`, `language`, `image`, `full_access`, `status`, `remember_token`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(10, 'Ibrahim Khalil', NULL, 'admin@gmail.com', '01867655403', NULL, 1, '$2y$12$LdTowbF2MhpiaZLjn8Y/2ecrcjWqcT5VU26aM3J2bv5uN6AeiepaC', 'en', '6161700367047.png', 1, 1, NULL, '2023-11-18 22:01:49', '2023-11-19 01:44:41', NULL),
-(11, 'Burhan Uddin Fuad', NULL, 'burhan@gmail.com', '0987654321', NULL, 2, '$2y$12$NQlx2gYeStmVCjXEQwsmoejK93e.0Gy59jDLtHPodEM6gYjLc6K7.', 'en', '9231700380051.jpg', 0, 1, NULL, '2023-11-19 01:47:31', '2023-12-06 00:01:45', '2023-12-06 00:01:45'),
-(12, 'Ahtesanul Haque Kaiser', NULL, 'kaiser@gmail.com', '0124367894', NULL, 2, '$2y$12$EeSCwBeClyyF7kxJ0cK2KOFmH7aw.ZwjiY96Q/3.cmRrZuLvlb2hm', 'en', '2051701842581.jpg', 0, 1, NULL, '2023-11-19 01:55:47', '2023-12-06 00:03:01', NULL);
+INSERT INTO `users` (`id`, `name_en`, `name_bn`, `email`, `contact_en`, `contact_bn`, `role_id`, `instructor_id`, `password`, `language`, `image`, `full_access`, `status`, `remember_token`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(10, 'Ibrahim Khalil', NULL, 'admin@gmail.com', '01867655403', NULL, 1, 0, '$2y$12$LdTowbF2MhpiaZLjn8Y/2ecrcjWqcT5VU26aM3J2bv5uN6AeiepaC', 'en', '6161700367047.png', 1, 1, NULL, '2023-11-18 22:01:49', '2023-11-19 01:44:41', NULL),
+(16, 'aaaaaaa', NULL, 'i@gmail.com', '1234', NULL, 3, 8, '$2y$12$tq3gova/BR2yQtBCdBAxXe6yi9f2F.PPvaRkfZdRThwpOXP.QVF5a', 'en', NULL, 0, 1, NULL, '2024-01-01 00:30:49', '2024-01-01 00:30:49', NULL),
+(17, 'Burhan Uddin Fuad', NULL, 'fuad@gmail.com', '01828543453423', NULL, 3, 1, '$2y$12$NRXQh6moawk9dqRiD5EVnealrdFUKRIDtQh9gVq3gFGVxXwgD5SaK', 'en', NULL, 0, 1, NULL, '2024-01-01 00:34:43', '2024-01-01 01:57:37', NULL),
+(18, 'Thouhidul Islam', NULL, 'thouhid@gmail.com', '8013000291', NULL, 3, 2, '$2y$12$mVIdsWtj1.T1UOIQYZOAEOYfBQCPon2X.OjowbkmcJiMemqjaDmre', 'en', NULL, 0, 1, NULL, '2024-01-01 00:34:52', '2024-01-01 00:34:52', NULL),
+(19, 'Raihan Sazzad', NULL, 'raihan@gmail.com', '32189742181', NULL, 3, 3, '$2y$12$ISCmGljkkC.AkqCY/jY4.u1ye1UWXspkVPB6tLbQthxDAMnScGjMi', 'en', NULL, 0, 1, NULL, '2024-01-01 00:35:01', '2024-01-01 00:35:01', NULL),
+(20, 'Joshim Uddin', NULL, 'joshim@gmail.com', '67566464423', NULL, 3, 4, '$2y$12$V56J2lP0I6.BEapztk7LGuWjESpGIY6HOSasdxz.FvnC3lle3c5Ru', 'en', NULL, 0, 1, NULL, '2024-01-01 00:35:16', '2024-01-01 00:35:16', NULL),
+(21, 'Asadullah Galib', NULL, 'galib@gmail.com', '345353452211', NULL, 3, 5, '$2y$12$O60jETh3ipHopktF5JxPDeE7eW85n1g1QV1bzqwQYLaKzOGgHKtDa', 'en', NULL, 0, 1, NULL, '2024-01-01 00:35:25', '2024-01-01 00:35:25', NULL);
 
 -- --------------------------------------------------------
 
@@ -1082,7 +1087,7 @@ ALTER TABLE `enrollments`
 -- AUTO_INCREMENT for table `instructors`
 --
 ALTER TABLE `instructors`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `lessons`
@@ -1178,7 +1183,7 @@ ALTER TABLE `subscriptions`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `watchlists`
