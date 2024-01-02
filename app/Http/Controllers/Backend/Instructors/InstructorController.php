@@ -55,7 +55,6 @@ class InstructorController extends Controller
             $instructor->password = Hash::make($request->password);
             $instructor->language = 'en';
             $instructor->access_block = $request->access_block;
-
             if ($request->hasFile('image')) {
                 $imageName = rand(111, 999) . time() . '.' . $request->image->extension();
                 $request->image->move(public_path('uploads/instructors'), $imageName);
