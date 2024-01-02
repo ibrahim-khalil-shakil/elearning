@@ -23,4 +23,9 @@ class Student extends Model
     {
         return $this->hasMany(Review::class);
     }
+
+    public function enrollemnt()
+    {
+        return $this->hasMany(Enrollment::class);
+    }
 }

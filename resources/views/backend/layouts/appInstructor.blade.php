@@ -205,6 +205,7 @@
                     <li><a href="{{route('lesson.index')}}"><i class="las la-chalkboard"></i>Course Lessons</a></li>
                     <li><a href="{{route('material.index')}}"><i class="las la-atom"></i></i>Course Materials</a></li>
                     <li><a href="{{route('coupon.index')}}"><i class="las la-tags"></i>Coupons</a></li>
+                    <li><a href="{{route('enrollment.index')}}"><i class="las la-bullseye"></i>Enrollments</a></li>
                 </ul>
             </div>
         </div>

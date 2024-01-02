@@ -1,4 +1,9 @@
-@extends('backend.layouts.app')
+@if(fullAccess())
+@extends('backend.layouts.appInstructor')
+@endif
+@if(!fullAccess())
+@extends('backend.layouts.appInstructor')
+@endif
 @section('title', 'Course List')
 
 @push('styles')

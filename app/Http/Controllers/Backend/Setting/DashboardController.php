@@ -16,7 +16,7 @@ class DashboardController extends Controller
             return view('backend.adminDashboard');
         else
         if ($user->role = 'instructor')
-            return view('backend.instructorDashboard');
+            return view('backend.instructorDashboard'); 
         else
             return view('backend.dashboard');
 

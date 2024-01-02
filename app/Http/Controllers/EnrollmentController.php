@@ -13,7 +13,8 @@ class EnrollmentController extends Controller
      */
     public function index()
     {
-        //
+        $enrollment = Enrollment::get();
+        return view('backend.enrollment.index', compact('enrollment'));
     }
 
     /**

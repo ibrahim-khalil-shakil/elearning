@@ -4,7 +4,7 @@
 @if(!fullAccess())
 @extends('backend.layouts.appInstructor')
 @endif
-@section('title', 'Course Lesson List')
+@section('title', 'Enrollment List')
 
 @push('styles')
 <!-- Datatable -->
@@ -20,36 +20,26 @@
         <div class="row page-titles mx-0">
             <div class="col-sm-6 p-md-0">
                 <div class="welcome-text">
-                    <h4>Course Lesson List</h4>
+                    <h4>Enrollments</h4>
                 </div>
             </div>
             <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Home</a></li>
-                    <li class="breadcrumb-item active"><a href="{{route('lesson.index')}}">Course Lessons</a></li>
-                    <li class="breadcrumb-item active"><a href="{{route('lesson.index')}}">All Course Lesson</a>
-                    </li>
+                    <li class="breadcrumb-item active"><a href="{{route('enrollment.index')}}">Enrollments</a></li>
+                    <li class="breadcrumb-item active"><a href="{{route('enrollment.index')}}">All Enrollment</a></li>
                 </ol>
             </div>
         </div>
 
         <div class="row">
             <div class="col-lg-12">
-                <ul class="nav nav-pills mb-3">
-                    <li class="nav-item"><a href="#list-view" data-toggle="tab"
-                            class="nav-link btn-primary mr-1 show active">List View</a></li>
-                    <li class="nav-item"><a href="javascript:void(0);" data-toggle="tab"
-                            class="nav-link btn-primary">Grid
-                            View</a></li>
-                </ul>
-            </div>
-            <div class="col-lg-12">
                 <div class="row tab-content">
                     <div id="list-view" class="tab-pane fade active show col-lg-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">All Course Lessons List </h4>
-                                <a href="{{route('lesson.create')}}" class="btn btn-primary">+ Add new</a>
+                                <h4 class="card-title">All Enrollments List </h4>
+                                <a href="{{route('enrollment.create')}}" class="btn btn-primary">+ Add new</a>
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
@@ -57,26 +47,38 @@
                                         <thead>
                                             <tr>
                                                 <th>{{__('#')}}</th>
-                                                <th>{{__('Title')}}</th>
-                                                <th>{{__('Course')}}</th>
+                                                <th>{{__('Student Name')}}</th>
+                                                <th>{{__('Course Name')}}</th>
+                                                <th>{{__('Course Image')}}</th>
+                                                <th>{{__('Course Value')}}</th>
+                                                <th>{{__('Enrollment Date')}}</th>
                                                 <th>{{__('Action')}}</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @forelse ($lesson as $l)
+                                            @forelse ($enrollment as $e)
                                             <tr>
-                                                <td>{{$l->id}}</td>
-                                                <td>{{$l->title}}</td>
-                                                <td>{{$l->course?->title_en}}</td>
+                                                <td><img class="rounded-circle" width="35" height="35"
+                                                        src="{{asset('public/uploads/students/'.$e->student?->image)}}"
+                                                        alt="">
+                                                </td>
+                                                <td><strong>{{$e->student?->name_en}}</strong></td>
+                                                <td><strong>{{$e->course?->title_en}}</strong></td>
+                                                <td><img class="img fluid" width="100"
+                                                        src="{{asset('public/uploads/courses/'.$e->course?->image)}}"
+                                                        alt="">
+                                                </td>
+                                                <td><strong>{{$e->course?->price==null?'Free':'৳'.$e->course?->price}}</strong></td>
+                                                <td><strong>{{$e->enrollment_date}}</strong></td>
                                                 <td>
-                                                    <a href="{{route('lesson.edit', encryptor('encrypt',$l->id))}}"
+                                                    <a href="{{route('enrollment.edit', encryptor('encrypt',$e->id))}}"
                                                         class="btn btn-sm btn-primary" title="Edit"><i
                                                             class="la la-pencil"></i></a>
                                                     <a href="javascript:void(0);" class="btn btn-sm btn-danger"
-                                                        title="Delete" onclick="$('#form{{$l->id}}').submit()"><i
+                                                        title="Delete" onclick="$('#form{{$e->id}}').submit()"><i
                                                             class="la la-trash-o"></i></a>
-                                                    <form id="form{{$l->id}}"
-                                                        action="{{route('lesson.destroy', encryptor('encrypt',$l->id))}}"
+                                                    <form id="form{{$e->id}}"
+                                                        action="{{route('enrollment.destroy', encryptor('encrypt',$e->id))}}"
                                                         method="post">
                                                         @csrf
                                                         @method('DELETE')
@@ -85,7 +87,7 @@
                                             </tr>
                                             @empty
                                             <tr>
-                                                <th colspan="6" class="text-center">No Course Lesson Found</th>
+                                                <th colspan="6" class="text-center">No Enrollment Found</th>
                                             </tr>
                                             @endforelse
                                         </tbody>

@@ -25,6 +25,7 @@ use App\Http\Controllers\CheckoutController as checkout;
 use App\Http\Controllers\CouponController as coupon;
 use App\Http\Controllers\WatchCourseController as watchCourse;
 use App\Http\Controllers\LessonController as lesson;
+use App\Http\Controllers\EnrollmentController as enrollment;
 
 /* students */
 use App\Http\Controllers\Students\AuthController as sauth;
@@ -71,6 +72,7 @@ Route::middleware(['checkrole'])->prefix('admin')->group(function () {
     Route::resource('discussion', discussion::class);
     Route::resource('message', message::class);
     Route::resource('coupon', coupon::class);
+    Route::resource('enrollment', enrollment::class);
     Route::get('permission/{role}', [permission::class, 'index'])->name('permission.list');
     Route::post('permission/{role}', [permission::class, 'save'])->name('permission.save');
 });
