@@ -85,6 +85,19 @@
                                                     <span class="mb-0">Price :</span>
                                                     <strong>{{$d->price?'৳'.$d->price:'Free'}}</strong>
                                                 </li>
+                                                <li class="list-group-item px-0 d-flex justify-content-between">
+                                                    <span class="mb-0">Status :</span>
+                                                    <span class="badge 
+                                                    @if($d->status == 0) badge-warning 
+                                                    @elseif($d->status == 1) badge-danger 
+                                                    @elseif($d->status == 2) badge-success 
+                                                    @endif">
+                                                        @if($d->status == 0) {{__('Pending')}}
+                                                        @elseif($d->status == 1) {{__('Inactive')}}
+                                                        @elseif($d->status == 2) {{__('Active')}}
+                                                        @endif
+                                                    </span>
+                                                </li>
                                             </ul>
                                             <a class="btn btn-outline-primary btn-rounded mt-3 px-4"
                                                 href="about-student.html">Read More</a>

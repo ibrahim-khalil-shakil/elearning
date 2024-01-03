@@ -62,6 +62,8 @@ Route::middleware(['checkrole'])->prefix('admin')->group(function () {
     Route::resource('instructor', instructor::class);
     Route::resource('courseCategory', courseCategory::class);
     Route::resource('course', course::class);
+    Route::get('/courseList', [course::class, 'indexForAdmin'])->name('courseList');
+    Route::patch('/courseList/{update}', [course::class, 'updateforAdmin'])->name('course.updateforAdmin');
     Route::resource('material', material::class);
     Route::resource('lesson', lesson::class);
     Route::resource('quiz', quiz::class);

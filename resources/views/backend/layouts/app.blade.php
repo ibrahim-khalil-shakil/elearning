@@ -227,6 +227,7 @@
                             <li><a href="{{route('courseCategory.index')}}"><i class="la la-list"></i>Course
                                     Category</a>
                             </li>
+                            <li><a href="{{route('courseList')}}"><i class="las la-school"></i>Courses List</a></li>
                             <li><a href="{{route('course.index')}}"><i class="las la-book-open"></i>All Courses</a></li>
                             <li><a href="{{route('lesson.index')}}"><i class="las la-chalkboard"></i>Lessons</a></li>
                             <li><a href="{{route('material.index')}}"><i class="las la-atom"></i></i>Materials</a></li>

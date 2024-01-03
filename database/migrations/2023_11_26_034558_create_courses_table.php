@@ -33,7 +33,7 @@ return new class extends Migration
             $table->string('image')->nullable();
             $table->string('thumbnail_image')->nullable();
             $table->string('thumbnail_video')->nullable();
-            $table->boolean('status')->default(1)->comment('1 active, 0 inactive');
+            $table->integer('status')->default(0)->comment('0 pending, 1 inactive, 2 active');
             $table->string('language')->default('en');
             $table->timestamps();
             $table->softDeletes();

@@ -246,7 +246,7 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                {{-- <div class="col-lg-6 col-md-6 col-sm-12">
                                     <div class="form-group">
                                         <label class="form-label">Status</label> 
                                         <select class="form-control" name="status">
@@ -254,7 +254,7 @@
                                             <option value="0" @if(old('status')==0) selected @endif>Inactive</option>
                                         </select>
                                     </div>
-                                </div>
+                                </div> --}}
                                 <div class="col-lg-6 col-md-6 col-sm-12">
                                     <label class="form-label">Image</label>
                                     <div class="form-group fallback w-100">
