@@ -15,10 +15,11 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->text('description');
-            $table->string('location');
+            $table->string('location')->nullable();
             $table->string('image')->nullable();
-            $table->string('location');
-            $table->string('hosted_by');
+            $table->text('topic')->nullable();
+            $table->text('goal')->nullable();
+            $table->string('hosted_by')->nullable();
             $table->date('date')->nullable();
             $table->timestamps(); // Created at and Updated at columns
             $table->softDeletes(); // Deleted at column for soft deletes
