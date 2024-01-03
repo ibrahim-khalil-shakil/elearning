@@ -1,9 +1,4 @@
-@if(fullAccess())
-@extends('backend.layouts.appInstructor')
-@endif
-@if(!fullAccess())
-@extends('backend.layouts.appInstructor')
-@endif
+@extends('backend.layouts.app')
 @section('title', 'Course List')
 
 @push('styles')
@@ -31,7 +26,7 @@
                 </ol>
             </div>
         </div>
-        
+
         <div class="row">
             <div class="col-lg-12">
                 <div class="row tab-content">
@@ -50,9 +45,13 @@
                                             </button>
                                             <div class="dropdown-menu dropdown-menu-right border py-0">
                                                 <div class="py-2">
-                                                    <a class="dropdown-item" href="{{route('course.edit', encryptor('encrypt',$d->id))}}">Edit</a>
-                                                    <a class="dropdown-item text-danger" href="javascript:void(0);" onclick="$('#form{{$d->id}}').submit()">Delete</a>
-                                                    <form id="form{{$d->id}}" action="{{route('course.destroy', encryptor('encrypt',$d->id))}}" method="post">
+                                                    <a class="dropdown-item"
+                                                        href="{{route('course.edit', encryptor('encrypt',$d->id))}}">Edit</a>
+                                                    <a class="dropdown-item text-danger" href="javascript:void(0);"
+                                                        onclick="$('#form{{$d->id}}').submit()">Delete</a>
+                                                    <form id="form{{$d->id}}"
+                                                        action="{{route('course.destroy', encryptor('encrypt',$d->id))}}"
+                                                        method="post">
                                                         @csrf
                                                         @method('DELETE')
                                                     </form>
@@ -63,13 +62,16 @@
                                     <div class="card-body pt-2">
                                         <div class="text-center">
                                             <div class="">
-                                                <img src="{{asset('public/uploads/courses/'.$d->image)}}" class="w-100" height="200" alt="">
+                                                <img src="{{asset('public/uploads/courses/'.$d->image)}}" class="w-100"
+                                                    height="200" alt="">
                                             </div>
                                             <h3 class="mt-4 mb-1">{{$d->title_en}}</h3>
                                             <ul class="list-group mb-3 list-group-flush">
                                                 <li class="list-group-item px-0 d-flex justify-content-between">
                                                     <span>Difficulty</span>
-                                                    <strong>{{ $d->difficulty == 'beginner' ? __('Beginner') : ($d->difficulty == 'intermediate' ? __('Intermediate') : __('Advanced')) }}</strong>
+                                                    <strong>{{ $d->difficulty == 'beginner' ? __('Beginner') :
+                                                        ($d->difficulty == 'intermediate' ? __('Intermediate') :
+                                                        __('Advanced')) }}</strong>
                                                 </li>
                                                 <li class="list-group-item px-0 d-flex justify-content-between">
                                                     <span class="mb-0">Instructor :</span>
@@ -84,7 +86,8 @@
                                                     <strong>{{$d->price?'৳'.$d->price:'Free'}}</strong>
                                                 </li>
                                             </ul>
-                                            <a class="btn btn-outline-primary btn-rounded mt-3 px-4" href="about-student.html">Read More</a>
+                                            <a class="btn btn-outline-primary btn-rounded mt-3 px-4"
+                                                href="about-student.html">Read More</a>
                                         </div>
                                     </div>
                                 </div>

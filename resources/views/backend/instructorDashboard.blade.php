@@ -1,4 +1,4 @@
-@extends('backend.layouts.appInstructor')
+@extends('backend.layouts.app')
 @section('title', 'Instructor Dashboard') 
 
 @push('styles')

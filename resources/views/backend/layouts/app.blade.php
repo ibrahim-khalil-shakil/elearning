@@ -186,6 +186,7 @@
         <!--**********************************
             Sidebar start
         ***********************************-->
+        @if(fullAccess())
         <div class="dlabnav">
             <div class="dlabnav-scroll">
                 <ul class="metismenu" id="menu">
@@ -277,6 +278,36 @@
                 </ul>
             </div>
         </div>
+        @endif
+
+        @if(!fullAccess())
+        <div class="dlabnav">
+        <div class="dlabnav-scroll">
+            <ul class="metismenu" id="menu">
+                <li class="nav-label first">Instructor Panel</li>
+                <li><a class="ai-icon" href="{{route('dashboard')}}" aria-expanded="false">
+                        <i class="las la-tachometer-alt"></i> <span class="nav-text">Dashboard</span>
+                    </a>
+                </li>
+                <li><a class="ai-icon" href="{{route('home')}}" aria-expanded="false">
+                        <i class="las la-home"></i><span class="nav-text">Home</span>
+                    </a>
+                </li>
+                <li class="nav-label">Main Menu</li>
+                <li><a href="{{route('instructor.index')}}">
+                        <i class="las la-chalkboard-teacher"></i>Instructors List
+                    </a>
+                </li>
+                <li><a href="{{route('student.index')}}"><i class="las la-book-reader"></i>Students List</a></li>
+                <li><a href="{{route('course.index')}}"><i class="las la-book-open"></i>All Courses</a></li>
+                <li><a href="{{route('lesson.index')}}"><i class="las la-chalkboard"></i>Course Lessons</a></li>
+                <li><a href="{{route('material.index')}}"><i class="las la-atom"></i></i>Course Materials</a></li>
+                <li><a href="{{route('coupon.index')}}"><i class="las la-tags"></i>Coupons</a></li>
+                <li><a href="{{route('enrollment.index')}}"><i class="las la-bullseye"></i>Enrollments</a></li>
+            </ul>
+        </div>
+        </div>
+        @endif
         <!--**********************************
             Sidebar end
         ***********************************-->

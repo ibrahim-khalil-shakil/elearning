@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Course;
 use App\Models\Instructor;
@@ -28,9 +29,6 @@ class HomeController extends Controller
         $itCategories = CourseCategory::whereIn('category_name', ['Hardware', 'Network Technology', 'Software & Security', 'Operating System & Server', '2D Animation', '3D Animation'])->pluck('id')->toArray();
         $itCourses = Course::whereIn('course_category_id', $itCategories)->where('tag', 'popular')->get();
 
-        return view(
-            'frontend.home',
-            compact('course', 'instructor', 'category', 'popularCourses', 'designCourses', 'developmentCourses', 'businessCourses', 'itCourses')
-        );
+       return response($category, 200);
     }
 }
