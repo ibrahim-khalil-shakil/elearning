@@ -72,17 +72,9 @@
                             <a class="nav-link" aria-current="page" href="{{route('about')}}">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                Pages
+                            <a class="nav-link" href="http://localhost:8081/">
+                                Events
                             </a>
-                            <div class="nav-item--dropdown">
-                                <ul>
-                                    <li><a href="{{route('searchCourse')}}">Courses</a></li>
-                                    <li><a href="{{route('student_profile')}}">Student Profile</a></li>
-                                    <li><a href="{{route('about')}}">About</a></li>
-                                    <li><a href="{{route('contact')}}">Contact</a></li>
-                                </ul>
-                            </div>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('contact')}}">Contact</a>
