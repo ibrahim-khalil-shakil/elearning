@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 03, 2024 at 07:34 AM
+-- Generation Time: Jan 03, 2024 at 08:55 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -214,6 +214,31 @@ INSERT INTO `enrollments` (`id`, `student_id`, `course_id`, `enrollment_date`, `
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `events`
+--
+
+CREATE TABLE `events` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `description` text NOT NULL,
+  `location` varchar(255) NOT NULL,
+  `hosted_by` varchar(255) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `events`
+--
+
+INSERT INTO `events` (`id`, `title`, `description`, `location`, `hosted_by`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 'Event 1', 'Description for Event 1.', 'Location 1', 'Host 1', '2024-01-03 07:39:47', '2024-01-03 07:39:47', NULL),
+(2, 'Event 2', 'Description for Event 2.', 'Location 2', 'Host 2', '2024-01-03 07:39:47', '2024-01-03 07:39:47', NULL);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `instructors`
 --
 
@@ -366,7 +391,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (38, '2023_12_23_070253_add_tag_to_courses_table', 14),
 (41, '2023_11_12_031401_create_instructors_table', 15),
 (42, '2023_11_12_031402_create_users_table', 15),
-(43, '2024_01_01_121113_add_column_to_user_table', 15);
+(43, '2024_01_01_121113_add_column_to_user_table', 15),
+(44, '2024_01_03_073449_create_events_table', 16);
 
 -- --------------------------------------------------------
 
@@ -924,6 +950,12 @@ ALTER TABLE `enrollments`
   ADD KEY `enrollments_course_id_index` (`course_id`);
 
 --
+-- Indexes for table `events`
+--
+ALTER TABLE `events`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `instructors`
 --
 ALTER TABLE `instructors`
@@ -1111,6 +1143,12 @@ ALTER TABLE `enrollments`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
+-- AUTO_INCREMENT for table `events`
+--
+ALTER TABLE `events`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `instructors`
 --
 ALTER TABLE `instructors`
@@ -1138,7 +1176,7 @@ ALTER TABLE `messages`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- AUTO_INCREMENT for table `options`
