@@ -14,54 +14,21 @@ class EventController extends Controller
     public function index()
     {
        $event = Event::get();
+        $data = array();
+        if ($event) {
+            foreach ($event as $e) {
+                $data[] = array(
+                    'id' => $e->id,
+                    'title' => $e->title,
+                    'description' => $e->description,
+                    'image' => asset('public/uploads/event/' . $e->image),
+                    'location' => $e->location,
+                    'hosted_by' => $e->hosted_by,
+                    'date' => date("d", strtotime($e->date)),
+                );
+            }
+        }
        return response($event, 200);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(Event $event)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Event $event)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Event $event)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Event $event)
-    {
-        //
-    }
 }

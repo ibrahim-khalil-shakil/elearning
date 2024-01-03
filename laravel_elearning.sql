@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 03, 2024 at 08:55 AM
+-- Generation Time: Jan 03, 2024 at 09:21 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -221,8 +221,10 @@ CREATE TABLE `events` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `title` varchar(255) NOT NULL,
   `description` text NOT NULL,
+  `image` varchar(255) DEFAULT NULL,
   `location` varchar(255) NOT NULL,
   `hosted_by` varchar(255) NOT NULL,
+  `date` datetime DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL
@@ -232,9 +234,9 @@ CREATE TABLE `events` (
 -- Dumping data for table `events`
 --
 
-INSERT INTO `events` (`id`, `title`, `description`, `location`, `hosted_by`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'Event 1', 'Description for Event 1.', 'Location 1', 'Host 1', '2024-01-03 07:39:47', '2024-01-03 07:39:47', NULL),
-(2, 'Event 2', 'Description for Event 2.', 'Location 2', 'Host 2', '2024-01-03 07:39:47', '2024-01-03 07:39:47', NULL);
+INSERT INTO `events` (`id`, `title`, `description`, `image`, `location`, `hosted_by`, `date`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 'Event 1', 'Description for Event 1.', '1.jpg', 'Location 1', 'Host 1', NULL, '2024-01-03 07:39:47', '2024-01-03 07:39:47', NULL),
+(2, 'Event 2', 'Description for Event 2.', '02.jpg', 'Location 2', 'Host 2', NULL, '2024-01-03 07:39:47', '2024-01-03 07:39:47', NULL);
 
 -- --------------------------------------------------------
 

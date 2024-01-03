@@ -16,7 +16,10 @@ return new class extends Migration
             $table->string('title');
             $table->text('description');
             $table->string('location');
+            $table->string('image')->nullable();
+            $table->string('location');
             $table->string('hosted_by');
+            $table->date('date')->nullable();
             $table->timestamps(); // Created at and Updated at columns
             $table->softDeletes(); // Deleted at column for soft deletes
     
