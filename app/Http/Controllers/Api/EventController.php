@@ -13,7 +13,7 @@ class EventController extends Controller
      */
     public function index()
     {
-       $event = Event::get();
+        $event = Event::get();
         $data = array();
         if ($event) {
             foreach ($event as $e) {
@@ -23,30 +23,32 @@ class EventController extends Controller
                     'description' => $e->description,
                     'image' => asset('public/uploads/event/' . $e->image),
                     'location' => $e->location,
+                    'topic' => $e->topic,
+                    'goal' => $e->goal,
                     'hosted_by' => $e->hosted_by,
                     'date' => date("F j, l, Y", strtotime($e->date)),
                 );
             }
         }
-       return response($data, 200);
+        return response($data, 200);
     }
     public function single($id)
     {
         $event = Event::find($id);
         $data = array();
         if ($event) {
-                $data = array(
-                    'id' => $event->id,
-                    'title' => $event->title,
-                    'description' => $event->description,
-                    'image' => asset('public/uploads/event/' . $event->image),
-                    'location' => $event->location,
-                    'hosted_by' => $event->hosted_by,
-                    'date' => date("d m, Y", strtotime($event->date)),
-                );
-            
+            $data = array(
+                'id' => $event->id,
+                'title' => $event->title,
+                'description' => $event->description,
+                'image' => asset('public/uploads/event/' . $event->image),
+                'location' => $event->location,
+                'topic' => $event->topic,
+                'goal' => $event->goal,
+                'hosted_by' => $event->hosted_by,
+                'date' => date("F j, l, Y", strtotime($event->date)),
+            );
         }
-       return response($data, 200);
+        return response($data, 200);
     }
-
 }
