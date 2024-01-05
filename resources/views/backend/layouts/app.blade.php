@@ -231,10 +231,24 @@
                             <li><a href="{{route('course.index')}}"><i class="las la-book-open"></i>All Courses</a></li>
                             <li><a href="{{route('lesson.index')}}"><i class="las la-chalkboard"></i>Lessons</a></li>
                             <li><a href="{{route('material.index')}}"><i class="las la-atom"></i></i>Materials</a></li>
-                            <li><a href="{{route('enrollment.index')}}"><i class="las la-bullseye"></i>Enrollments</a></li>
                         </ul>
                     </li>
-                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                    <li><a class="" href="{{route('enrollment.index')}}" aria-expanded="false">
+                            <i class="las la-bullseye"></i>
+                            <span class="nav-text">Enrollments</span>
+                        </a>
+                    </li>
+                    <li><a class="" href="{{route('event.index')}}" aria-expanded="false">
+                            <i class="las la-icons"></i>
+                            <span class="nav-text">Events</span>
+                        </a>
+                    </li>
+                    <li><a class="" href="{{route('coupon.index')}}" aria-expanded="false">
+                            <i class="las la-tags"></i>
+                            <span class="nav-text">Coupons</span>
+                        </a>
+                    </li>
+                    {{-- <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">
                             <i class="las la-tasks"></i>
                             <span class="nav-text">Quizzes</span>
                         </a>
@@ -242,8 +256,6 @@
                             <li><a href="{{route('quiz.index')}}"><i class="las la-icons"></i>All Quizzes</a></li>
                             <li><a href="{{route('question.index')}}"><i
                                         class="las la-question-circle"></i>Questions</a></li>
-                            {{-- <li><a href="{{route('option.index')}}"><i class="las la-stream"></i>Options</a></li>
-                            <li><a href="{{route('answer.index')}}"><i class="las la-font"></i>Answers</a></li> --}}
                         </ul>
                     </li>
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">
@@ -275,7 +287,7 @@
                             <li><a href="javascript:void()"><i class="lab la-gg-circle"></i>Subscription Fees</a></li>
                             <li><a href="{{route('coupon.index')}}"><i class="las la-tags"></i>Coupons</a></li>
                         </ul>
-                    </li>
+                    </li> --}}
                 </ul>
             </div>
         </div>
