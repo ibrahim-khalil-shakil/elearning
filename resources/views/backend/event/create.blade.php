@@ -45,8 +45,7 @@
                                 <div class="col-lg-6 col-md-6 col-sm-12">
                                     <div class="form-group">
                                         <label class="form-label">Event Title</label>
-                                        <input type="text" class="form-control" name="title"
-                                            value="{{old('title')}}">
+                                        <input type="text" class="form-control" name="title" value="{{old('title')}}">
                                     </div>
                                     @if($errors->has('title'))
                                     <span class="text-danger"> {{$errors->first('title')}}</span>
@@ -54,17 +53,9 @@
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12">
                                     <div class="form-group">
-                                        <label class="form-label">Description</label>
-                                        <textarea name="description" id="" cols="30" rows="10" class="form-control">{{old('description')}}</textarea>
-                                    </div>
-                                    @if($errors->has('description'))
-                                    <span class="text-danger"> {{$errors->first('description')}}</span>
-                                    @endif
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-12">
-                                    <div class="form-group">
                                         <label class="form-label">Location Type</label>
-                                        <input type="text" class="form-control" name="location" value="{{old('location')}}">
+                                        <input type="text" class="form-control" name="location"
+                                            value="{{old('location')}}">
                                     </div>
                                     @if($errors->has('location'))
                                     <span class="text-danger"> {{$errors->first('location')}}</span>
@@ -81,15 +72,6 @@
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12">
                                     <div class="form-group">
-                                        <label class="form-label">Event Goal</label>
-                                        <textarea name="goal" id="" cols="30" rows="10" class="form-control">{{old('goal')}}</textarea>
-                                    </div>
-                                    @if($errors->has('goal'))
-                                    <span class="text-danger"> {{$errors->first('goal')}}</span>
-                                    @endif
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-12">
-                                    <div class="form-group">
                                         <label class="form-label">Hosted By</label>
                                         <input type="text" class="form-control" name="hosted_by" value="{{old('hosted_by')}}">
                                     </div>
@@ -99,13 +81,36 @@
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12">
                                     <div class="form-group">
+                                        <label class="form-label">Description</label>
+                                        <textarea name="description" class="form-control">{{old('description')}}</textarea>
+                                    </div>
+                                    @if($errors->has('description'))
+                                    <span class="text-danger"> {{$errors->first('description')}}</span>
+                                    @endif
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <div class="form-group">
+                                        <label class="form-label">Event Goal</label>
+                                        <textarea name="goal" class="form-control">{{old('goal')}}</textarea>
+                                    </div>
+                                    @if($errors->has('goal'))
+                                    <span class="text-danger"> {{$errors->first('goal')}}</span>
+                                    @endif
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <div class="form-group">
                                         <label class="form-label">Date</label>
-                                        <input type="date" class="form-control" name="date"
-                                            value="{{old('date')}}">
+                                        <input type="date" class="form-control" name="date" value="{{old('date')}}">
                                     </div>
                                     @if($errors->has('date'))
                                     <span class="text-danger"> {{$errors->first('date')}}</span>
                                     @endif
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <div class="form-group">
+                                        <label class="form-label">Image</label>
+                                        <input type="file" class="form-control" name="image">
+                                    </div>
                                 </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12">
                                     <button type="submit" class="btn btn-primary">Submit</button>

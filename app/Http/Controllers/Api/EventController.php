@@ -26,7 +26,7 @@ class EventController extends Controller
                     'topic' => $e->topic,
                     'goal' => $e->goal,
                     'hosted_by' => $e->hosted_by,
-                    'date' => date("F j, l, Y", strtotime($e->date)),
+                    'date' => date("j F, Y, l", strtotime($e->date)),
                 );
             }
         }
@@ -46,7 +46,7 @@ class EventController extends Controller
                 'topic' => $event->topic,
                 'goal' => $event->goal,
                 'hosted_by' => $event->hosted_by,
-                'date' => date("F j, l, Y", strtotime($event->date)),
+                'date' => date("j F, Y, l", strtotime($event->date)),
             );
         }
         return response($data, 200);

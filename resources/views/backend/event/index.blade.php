@@ -1,5 +1,5 @@
 @extends('backend.layouts.app')
-@section('title', 'Coupon List')
+@section('title', 'Event List')
 
 @push('styles')
 <!-- Datatable -->
@@ -18,14 +18,14 @@
         <div class="row page-titles mx-0">
             <div class="col-sm-6 p-md-0">
                 <div class="welcome-text">
-                    <h4>Coupon List</h4>
+                    <h4>Event List</h4>
                 </div>
             </div>
             <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Home</a></li>
-                    <li class="breadcrumb-item active"><a href="{{route('coupon.index')}}">Coupons</a></li>
-                    <li class="breadcrumb-item active"><a href="{{route('coupon.index')}}">All Coupon</a></li>
+                    <li class="breadcrumb-item active"><a href="{{route('event.index')}}">Events</a></li>
+                    <li class="breadcrumb-item active"><a href="{{route('event.index')}}">All Event</a></li>
                 </ol>
             </div>
         </div>
@@ -36,8 +36,8 @@
                     <div id="list-view" class="tab-pane fade active show col-lg-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">All Coupons List </h4>
-                                <a href="{{route('coupon.create')}}" class="btn btn-primary">+ Add new</a>
+                                <h4 class="card-title">All Events List </h4>
+                                <a href="{{route('event.create')}}" class="btn btn-primary">+ Add new</a>
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
@@ -45,31 +45,31 @@
                                         <thead>
                                             <tr>
                                                 <th>{{__('#')}}</th>
-                                                <th>{{__('Coupon Code')}}</th>
-                                                <th>{{__('Discount')}}</th>
-                                                <th>{{__('Valid From')}}</th>
-                                                <th>{{__('Valid Until')}}</th>
+                                                <th>{{__('Event Title')}}</th>
+                                                <th>{{__('Topic')}}</th>
+                                                <th>{{__('Location Type')}}</th>
+                                                <th>{{__('Date')}}</th>
                                                 <th>{{__('Action')}}</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @forelse ($coupon as $c)
+                                            @forelse ($event as $e)
                                             <tr>
-                                                <td>{{$c->id}}</td>
-                                                <td><strong>{{$c->code}}</strong></td>
-                                                <td><strong>{{$c->discount}}</strong></td>
-                                                <td>{{$c->valid_from}}</td>
-                                                <td>{{$c->valid_until}}</td>
+                                                <td><img src="{{asset('public/uploads/events/'.$e->image)}}"
+                                                        class="w-100" height="50"></td>
+                                                <td><strong>{{$e->title}}</strong></td>
+                                                <td><strong>{{$e->topic}}</strong></td>
+                                                <td>{{$e->location}}</td>
+                                                <td>{{ \Carbon\Carbon::parse($e->date)->format('j F, Y, l') }}</td>
                                                 <td>
-                                                    <a href="{{route('coupon.edit', $c->id)}}"
+                                                    <a href="{{route('event.edit', $e->id)}}"
                                                         class="btn btn-sm btn-primary" title="Edit"><i
                                                             class="la la-pencil"></i></a>
                                                     <a href="javascript:void(0);" class="btn btn-sm btn-danger"
-                                                        title="Delete" onclick="$('#form{{$c->id}}').submit()"><i
+                                                        title="Delete" onclick="$('#form{{$e->id}}').submit()"><i
                                                             class="la la-trash-o"></i></a>
-                                                    <form id="form{{$c->id}}"
-                                                        action="{{route('coupon.destroy', $c->id)}}"
-                                                        method="post">
+                                                    <form id="form{{$e->id}}"
+                                                        action="{{route('event.destroy', $e->id)}}" method="post">
                                                         @csrf
                                                         @method('DELETE')
                                                     </form>
@@ -77,7 +77,7 @@
                                             </tr>
                                             @empty
                                             <tr>
-                                                <th colspan="7" class="text-center">No Coupon Found</th>
+                                                <th colspan="6" class="text-center">No Event Found</th>
                                             </tr>
                                             @endforelse
                                         </tbody>

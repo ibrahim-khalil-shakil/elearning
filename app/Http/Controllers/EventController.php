@@ -71,9 +71,8 @@ class EventController extends Controller
      */
     public function edit($id)
     {
-        $course = Course::get();
-        $event = Event::findOrFail(encryptor('decrypt', $id));
-        return view('backend.event.edit', compact('course', 'event'));
+        $event = Event::findOrFail($id);
+        return view('backend.event.edit', compact('event'));
     }
 
     /**
@@ -82,12 +81,19 @@ class EventController extends Controller
     public function update(Request $request, $id)
     {
         try {
-            $event = Event::findOrFail(encryptor('decrypt', $id));
-            $event->title = $request->lessonTitle;
-            $event->course_id = $request->courseId;
-            $event->description = $request->lessonDescription;
-            $event->notes = $request->lessonNotes;
-
+            $event = Event::findOrFail($id);
+            $event->title = $request->title;
+            $event->description = $request->description;
+            $event->location = $request->location;
+            $event->topic = $request->topic;
+            $event->goal = $request->goal;
+            $event->hosted_by = $request->hosted_by;
+            $event->date = $request->date;
+            if ($request->hasFile('image')) {
+                $imageName = rand(999, 111) . time() . '.' . $request->image->extension();
+                $request->image->move(public_path('uploads/events'), $imageName);
+                $event->image = $imageName;
+            }
             if ($event->save()) {
                 $this->notice::success('Data Saved');
                 return redirect()->route('event.index');
@@ -96,7 +102,7 @@ class EventController extends Controller
                 return redirect()->back()->withInput();
             }
         } catch (Exception $e) {
-            // dd($e);
+            dd($e);
             $this->notice::error('Please try again');
             return redirect()->back()->withInput();
         }
@@ -107,7 +113,7 @@ class EventController extends Controller
      */
     public function destroy($id)
     {
-        $data = Event::findOrFail(encryptor('decrypt', $id));
+        $data = Event::findOrFail($id);
         if ($data->delete()) {
             $this->notice::error('Data Deleted!');
             return redirect()->back();
