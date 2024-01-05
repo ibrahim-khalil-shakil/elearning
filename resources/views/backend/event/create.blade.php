@@ -99,22 +99,12 @@
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12">
                                     <div class="form-group">
-                                        <label class="form-label">Valid From</label>
-                                        <input type="date" class="form-control" name="valid_from"
-                                            value="{{old('valid_from')}}">
+                                        <label class="form-label">Date</label>
+                                        <input type="date" class="form-control" name="date"
+                                            value="{{old('date')}}">
                                     </div>
-                                    @if($errors->has('valid_from'))
-                                    <span class="text-danger"> {{$errors->first('valid_from')}}</span>
-                                    @endif
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-12">
-                                    <div class="form-group">
-                                        <label class="form-label">Valid Until</label>
-                                        <input type="date" class="form-control" name="valid_until"
-                                            value="{{old('valid_until')}}">
-                                    </div>
-                                    @if($errors->has('valid_until'))
-                                    <span class="text-danger"> {{$errors->first('valid_until')}}</span>
+                                    @if($errors->has('date'))
+                                    <span class="text-danger"> {{$errors->first('date')}}</span>
                                     @endif
                                 </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12">

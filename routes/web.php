@@ -26,6 +26,7 @@ use App\Http\Controllers\CouponController as coupon;
 use App\Http\Controllers\WatchCourseController as watchCourse;
 use App\Http\Controllers\LessonController as lesson;
 use App\Http\Controllers\EnrollmentController as enrollment;
+use App\Http\Controllers\EventController as event;
 
 /* students */
 use App\Http\Controllers\Students\AuthController as sauth;
@@ -66,6 +67,7 @@ Route::middleware(['checkrole'])->prefix('admin')->group(function () {
     Route::patch('/courseList/{update}', [course::class, 'updateforAdmin'])->name('course.updateforAdmin');
     Route::resource('material', material::class);
     Route::resource('lesson', lesson::class);
+    Route::resource('event', event::class);
     Route::resource('quiz', quiz::class);
     Route::resource('question', question::class);
     Route::resource('option', option::class);
