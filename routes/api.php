@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\EventController as event;
+use App\Http\Controllers\Api\HomeController as home;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,3 +22,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('/event',[event::class,'index']);
 Route::get('/event/{id}',[event::class,'single']);
+
+Route::get('/home', [home::class, 'index']);
