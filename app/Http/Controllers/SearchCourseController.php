@@ -14,11 +14,11 @@ class SearchCourseController extends Controller
         $category = CourseCategory::get();
         $selectedCategories = $request->input('categories', []);
 
-        $course = Course::when($selectedCategories, function ($query) use ($selectedCategories) {
+        $course = Course::where('status', 2)->when($selectedCategories, function ($query) use ($selectedCategories) {
                 $query->whereIn('course_category_id', $selectedCategories);
             })->get();
 
-        $allCourse = Course::get();
+        $allCourse = Course::where('status', 2)->get();
 
         return view('frontend.searchCourse', compact('course', 'category', 'selectedCategories', 'allCourse'));
     }
