@@ -50,7 +50,7 @@ class CourseController extends Controller
             $course = new Course;
             $course->title_en = $request->courseTitle_en;
             $course->title_bn = $request->courseTitle_bn;
-            $course->description_en = $request->courseDescription_en;
+            $course->description_en = $request->courseDescription_en; 
             $course->description_bn = $request->courseDescription_bn;
             $course->course_category_id = $request->categoryId;
             $course->instructor_id = $request->instructorId;
@@ -61,14 +61,12 @@ class CourseController extends Controller
             $course->start_from = $request->start_from;
             $course->duration = $request->duration;
             $course->lesson = $request->lesson;
-            $course->review_id = $request->reviewId;
             $course->difficulty = $request->courseDifficulty;
             $course->course_code = $request->course_code;
             $course->prerequisites_en = $request->prerequisites_en;
             $course->prerequisites_bn = $request->prerequisites_bn;
             $course->thumbnail_video = $request->thumbnail_video;
             $course->tag = $request->tag; 
-            $course->status = $request->status;
             $course->language = 'en';
 
             if ($request->hasFile('image')) {
@@ -86,7 +84,7 @@ class CourseController extends Controller
             else
                 return redirect()->back()->withInput()->with('error', 'Please try again');
         } catch (Exception $e) {
-            // dd($e);
+            dd($e);
             return redirect()->back()->withInput()->with('error', 'Please try again');
         }
     }

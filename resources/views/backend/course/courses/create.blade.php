@@ -58,8 +58,7 @@
                                 <div class="col-lg-6 col-md-6 col-sm-12">
                                     <div class="form-group">
                                         <label class="form-label">Description</label>
-                                        <textarea class="form-control" name="courseDescription_en"
-                                            value="{{old('courseDescription_en')}}"></textarea>
+                                        <textarea class="form-control" name="courseDescription_en">{{old('courseDescription_en')}}</textarea>
                                     </div>
                                     @if($errors->has('courseDescription_en'))
                                     <span class="text-danger"> {{ $errors->first('courseDescription_en') }}</span>
