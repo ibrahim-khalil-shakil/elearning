@@ -17,9 +17,9 @@ class HomeController extends Controller
             foreach ($category as $cat) {
                 $data[] = array(
                     'id' => $cat->id,
-                    'title' => $cat->category_name,
-                    'description' => $cat->category_status,
-                    'image' => asset('public/uploads/courseCategories/' . $cat->image),
+                    'category_name' => $cat->category_name,
+                    'category_status' => $cat->category_status,
+                    'category_image' => asset('public/uploads/courseCategories/' . $cat->category_image),
                 );
             }
         }
