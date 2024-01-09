@@ -97,7 +97,7 @@
                                         <label class="form-label">Category</label>
                                         <select class="form-control" name="categoryId">
                                             @forelse ($courseCategory as $c)
-                                            <option value="{{$c->id}}" {{old('categoryId', $course->category_id) ==
+                                            <option value="{{$c->id}}" {{old('categoryId', $course->course_category_id) ==
                                                 $c->id?'selected':''}}>
                                                 {{$c->category_name}}</option>
                                             @empty
@@ -352,9 +352,9 @@
                                         <label class="form-label">Category</label>
                                         <select class="form-control" name="categoryId">
                                             @forelse ($courseCategory as $c)
-                                            <option value="{{$c->id}}" {{old('categoryId', $course->category_id) ==
+                                            <option value="{{$c->id}}" {{old('categoryId', $course->course_category_id) ==
                                                 $c->id?'selected':''}}>
-                                                {{$c->category_name}}</option>
+                                                {{$c->category_name}}</option> 
                                             @empty
                                             <option value="">No Category Found</option>
                                             @endforelse

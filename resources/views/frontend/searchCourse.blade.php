@@ -76,7 +76,7 @@
                                     </div>
                                     @forelse($category as $cat)
                                     @php
-                                    $courseCount = $cat->course()->count();
+                                    $courseCount = $cat->course()->where('status', 2)->count();
                                     @endphp
                                     <div class="accordion-body__item">
                                         <div class="check-box">

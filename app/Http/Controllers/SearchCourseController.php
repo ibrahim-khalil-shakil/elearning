@@ -18,6 +18,8 @@ class SearchCourseController extends Controller
                 $query->whereIn('course_category_id', $selectedCategories);
             })->get();
 
+            
+
         $allCourse = Course::where('status', 2)->get();
 
         return view('frontend.searchCourse', compact('course', 'category', 'selectedCategories', 'allCourse'));
