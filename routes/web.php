@@ -57,7 +57,7 @@ Route::middleware(['checkauth'])->prefix('admin')->group(function () {
 });
 
 Route::middleware(['checkrole'])->prefix('admin')->group(function () {
-    Route::resource('user', user::class);
+    Route::resource('user', user::class); 
     Route::resource('role', role::class);
     Route::resource('student', student::class);
     Route::resource('instructor', instructor::class);
@@ -72,7 +72,7 @@ Route::middleware(['checkrole'])->prefix('admin')->group(function () {
     Route::resource('question', question::class);
     Route::resource('option', option::class);
     Route::resource('answer', answer::class);
-    Route::resource('review', review::class);
+    Route::resource('review', review::class); 
     Route::resource('discussion', discussion::class);
     Route::resource('message', message::class);
     Route::resource('coupon', coupon::class);

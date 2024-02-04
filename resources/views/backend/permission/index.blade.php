@@ -38,7 +38,7 @@
                     <li class="breadcrumb-item active"><a href="{{route('role.index')}}">All Permission</a></li>
                 </ol>
             </div>
-        </div>
+        </div> 
 
         <div class="row">
             <div class="col-lg-12">

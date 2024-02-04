@@ -22,7 +22,7 @@ class SaveRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'permission'=>'required'
+            'permission'=>'required' 
         ];
     }
 }

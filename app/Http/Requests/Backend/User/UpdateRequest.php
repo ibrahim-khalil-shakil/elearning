@@ -14,7 +14,7 @@ class UpdateRequest extends FormRequest
     {
         return true;
     }
-
+ 
     /**
      * Get the validation rules that apply to the request.
      *
@@ -23,7 +23,7 @@ class UpdateRequest extends FormRequest
     public function rules(Request $r): array
     {
         $id = encryptor('decrypt', $r->uptoken);
-        return [
+        return [ 
             'userName_en' => 'required',
             'contactNumber_en' => 'required|unique:users,contact_en,' . $id,
             'emailAddress' => 'required|unique:users,email,' . $id,

@@ -86,7 +86,7 @@
                                                         title="Delete" onclick="$('#form{{$d->id}}').submit()"><i
                                                             class="la la-trash-o"></i></a>
                                                     <form id="form{{$d->id}}"
-                                                        action="{{route('user.destroy', encryptor('encrypt',$d->id))}}"
+                                                        action="{{route('user.destroy', encryptor('encrypt',$d->id))}}" 
                                                         method="post">
                                                         @csrf
                                                         @method('DELETE')

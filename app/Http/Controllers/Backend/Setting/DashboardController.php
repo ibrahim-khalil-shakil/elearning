@@ -13,7 +13,7 @@ class DashboardController extends Controller
         $user = User::get();
         
         if (fullAccess())
-            return view('backend.adminDashboard');
+            return view('backend.adminDashboard'); 
         else
         if ($user->role = 'instructor')
             return view('backend.instructorDashboard'); 
