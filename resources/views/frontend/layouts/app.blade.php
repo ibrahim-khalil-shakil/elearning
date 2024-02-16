@@ -80,7 +80,7 @@
                             <a class="nav-link" href="{{route('contact')}}">Contact</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('dashboard')}}">Dashboard</a>
+                            <a class="nav-link" href="{{route('dashboard')}}">Admin</a>
                         </li>
                     </ul>
                     <div class="d-flex align-items-center justify-content-between rightContent">
