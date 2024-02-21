@@ -56,8 +56,9 @@ class InstructorController extends Controller
             $instructor->language = 'en';
             $instructor->access_block = $request->access_block;
             if ($request->hasFile('image')) {
-                $imageName = rand(111, 999) . time() . '.' . $request->image->extension();
-                $request->image->move(public_path('uploads/instructors'), $imageName);
+                $roleName = Role::find($request->role_id)?->name;
+                $imageName = $roleName.'-'.$request->name_en.'.'. $request->image->extension();
+                $request->image->move(public_path('uploads/users'), $imageName);
                 $instructor->image = $imageName;
             }
             if ($instructor->save()) {
@@ -69,6 +70,9 @@ class InstructorController extends Controller
                 $user->role_id = $request->roleId;
                 $user->status = $request->status;
                 $user->password = Hash::make($request->password);
+                if (isset($imageName)) {
+                    $user->image = $imageName; // Save the image name in the users table
+                }
                 if ($user->save()) {
                     DB::commit();
                     $this->notice::success('Successfully saved');
@@ -129,8 +133,9 @@ class InstructorController extends Controller
             $instructor->access_block = $request->access_block;
 
             if ($request->hasFile('image')) {
-                $imageName = rand(111, 999) . time() . '.' . $request->image->extension();
-                $request->image->move(public_path('uploads/instructors'), $imageName);
+                $roleName = Role::find($request->role_id)?->name;
+                $imageName = $roleName . '-' . $request->name_en . '.' . $request->image->extension();
+                $request->image->move(public_path('uploads/users'), $imageName);
                 $instructor->image = $imageName;
             }
             if ($instructor->save()) {
@@ -142,6 +147,9 @@ class InstructorController extends Controller
                 $user->role_id = $request->roleId;
                 $user->status = $request->status;
                 $user->password = Hash::make($request->password);
+                if (isset($imageName)) {
+                    $user->image = $imageName; // Save the image name in the users table
+                }
                 if ($user->save()) {
                     DB::commit();
                     $this->notice::success('Successfully saved');

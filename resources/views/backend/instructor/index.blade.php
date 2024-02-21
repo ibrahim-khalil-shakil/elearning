@@ -63,7 +63,7 @@
                                             <tr>
                                                 <td>
                                                     <img class="rounded-circle" width="35" height="35"
-                                                        src="{{asset('public/uploads/instructors/'.$d->image)}}" alt="">
+                                                        src="{{asset('public/uploads/users/'.$d->image)}}" alt="">
                                                 </td>
                                                 <td><strong>{{$d->name_en}}</strong></td>
                                                 <td>{{$d->email}}</td>
