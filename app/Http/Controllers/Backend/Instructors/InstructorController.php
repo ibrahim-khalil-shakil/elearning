@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Backend\Instructors;
 use App\Http\Controllers\Controller;
 use App\Models\Instructor;
 use App\Models\User;
-use Illuminate\Http\Request;
 use App\Http\Requests\Backend\Instructors\AddNewRequest;
 use App\Http\Requests\Backend\Instructors\UpdateRequest;
 use App\Models\Role;
@@ -56,11 +55,11 @@ class InstructorController extends Controller
             $instructor->language = 'en';
             $instructor->access_block = $request->access_block;
             if ($request->hasFile('image')) {
-                $roleName = Role::find($request->role_id)?->name;
-                $imageName = $roleName.'-'.$request->name_en.'.'. $request->image->extension();
+                $imageName = (Role::find($request->roleId)->name) . '_' .  $request->fullName_en . '_' . rand(999, 111) .  '.' . $request->image->extension();
                 $request->image->move(public_path('uploads/users'), $imageName);
                 $instructor->image = $imageName;
             }
+
             if ($instructor->save()) {
                 $user = new User;
                 $user->instructor_id = $instructor->id;
@@ -131,13 +130,12 @@ class InstructorController extends Controller
             $instructor->password = Hash::make($request->password);
             $instructor->language = 'en';
             $instructor->access_block = $request->access_block;
-
             if ($request->hasFile('image')) {
-                $roleName = Role::find($request->role_id)?->name;
-                $imageName = $roleName . '-' . $request->name_en . '.' . $request->image->extension();
+                $imageName = (Role::find($request->roleId)->name) . '_' .  $request->fullName_en . '_' . rand(999, 111) .  '.' . $request->image->extension();
                 $request->image->move(public_path('uploads/users'), $imageName);
                 $instructor->image = $imageName;
             }
+
             if ($instructor->save()) {
                 $user = User::where('instructor_id', $instructor->id)->first();
                 $user->instructor_id = $instructor->id;
