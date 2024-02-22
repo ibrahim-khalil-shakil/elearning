@@ -30,7 +30,7 @@
                 </h3>
                 <div class="created-by d-flex align-items-center">
                     <div class="created-by-image me-3">
-                        <img src="{{asset('public/uploads/instructors/'.$course->instructor?->image)}}"
+                        <img src="{{asset('public/uploads/users/'.$course->instructor?->image)}}"
                             class="rounded-circle" alt="Instructor Image" height="75" width="75" />
                     </div>
                     <div class="created-by-text">
@@ -571,7 +571,7 @@
                                     <div class="course-instructor">
                                         <div class="course-instructor-info">
                                             <div class="instructor-image">
-                                                <img src="{{asset('public/uploads/instructors/'.$course->instructor?->image)}}"
+                                                <img src="{{asset('public/uploads/users/'.$course->instructor?->image)}}"
                                                     alt="Instructor" height="125" width="125" />
                                             </div>
                                             <div class="instructor-text">

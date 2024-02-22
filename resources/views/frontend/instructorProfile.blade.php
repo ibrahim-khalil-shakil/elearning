@@ -29,7 +29,7 @@
             <div class="col-lg-4">
                 <div class="instructor-courses-instructor">
                     <div class="instructor-image mx-auto text-center">
-                        <img src="{{asset('public/uploads/instructors/'.$instructor->image)}}" alt="Instructor" />
+                        <img src="{{asset('public/uploads/users/'.$instructor->image)}}" alt="Instructor" />
                     </div>
                     <div class="instructor-info text-center">
                         <h5 class="font-title--sm">{{$instructor->name_en}}</h5>

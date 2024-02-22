@@ -257,7 +257,7 @@
                                         <div class="course-instructor mw-100">
                                             <div class="course-instructor-info">
                                                 <div class="instructor-image">
-                                                    <img src="{{asset('public/uploads/instructors/'.$course?->instructor?->image)}}"
+                                                    <img src="{{asset('public/uploads/users/'.$course?->instructor?->image)}}"
                                                         alt="Instructor" />
                                                 </div>
                                                 <div class="instructor-text">

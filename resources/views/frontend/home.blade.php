@@ -153,7 +153,7 @@
                                     <div class="contentCard-info d-flex align-items-center justify-content-between">
                                         <a href="{{route('instructorProfile', encryptor('encrypt', $pc->instructor?->id))}}"
                                             class="contentCard-user d-flex align-items-center">
-                                            <img src="{{asset('public/uploads/instructors/'.$pc?->instructor->image)}}"
+                                            <img src="{{asset('public/uploads/users/'.$pc?->instructor->image)}}"
                                                 alt="client-image" class="rounded-circle" height="34" width="34" />
                                             <p class="font-para--md">{{$pc?->instructor->name_en}}</p>
                                         </a>
@@ -226,7 +226,7 @@
                                     <div class="contentCard-info d-flex align-items-center justify-content-between">
                                         <a href="{{route('instructorProfile', encryptor('encrypt', $dc->instructor?->id))}}"
                                             class="contentCard-user d-flex align-items-center">
-                                            <img src="{{asset('public/uploads/instructors/'.$dc?->instructor->image)}}" alt="client-image"
+                                            <img src="{{asset('public/uploads/users/'.$dc?->instructor->image)}}" alt="client-image"
                                                 class="rounded-circle" height="34" width="34" />
                                             <p class="font-para--md">{{$dc?->instructor->name_en}}</p>
                                         </a>
@@ -296,7 +296,7 @@
                                     <div class="contentCard-info d-flex align-items-center justify-content-between">
                                         <a href="{{route('instructorProfile', encryptor('encrypt', $dv->instructor?->id))}}"
                                             class="contentCard-user d-flex align-items-center">
-                                            <img src="{{asset('public/uploads/instructors/'.$dv?->instructor->image)}}" alt="client-image"
+                                            <img src="{{asset('public/uploads/users/'.$dv?->instructor->image)}}" alt="client-image"
                                                 class="rounded-circle" height="34" width="34" />
                                             <p class="font-para--md">{{$dv?->instructor->name_en}}</p>
                                         </a>
@@ -366,7 +366,7 @@
                                     <div class="contentCard-info d-flex align-items-center justify-content-between">
                                         <a href="{{route('instructorProfile', encryptor('encrypt', $bc->instructor?->id))}}"
                                             class="contentCard-user d-flex align-items-center">
-                                            <img src="{{asset('public/uploads/instructors/'.$bc?->instructor->image)}}" alt="client-image"
+                                            <img src="{{asset('public/uploads/users/'.$bc?->instructor->image)}}" alt="client-image"
                                                 class="rounded-circle" height="34" width="34" />
                                             <p class="font-para--md">{{$bc?->instructor->name_en}}</p>
                                         </a>
@@ -436,7 +436,7 @@
                                     <div class="contentCard-info d-flex align-items-center justify-content-between">
                                         <a href="{{route('instructorProfile', encryptor('encrypt', $ic->instructor?->id))}}"
                                             class="contentCard-user d-flex align-items-center">
-                                            <img src="{{asset('public/uploads/instructors/'.$ic?->instructor->image)}}" alt="client-image"
+                                            <img src="{{asset('public/uploads/users/'.$ic?->instructor->image)}}" alt="client-image"
                                                 class="rounded-circle" height="34" width="34" />
                                             <p class="font-para--md">{{$ic?->instructor->name_en}}</p>
                                         </a>
@@ -910,7 +910,7 @@
                         @forelse ($instructor as $i)
                         <div class="mentor">
                             <div class="mentor__img">
-                                <img src="{{asset('public/uploads/instructors/'.$i->image)}}" alt="Mentor image" />
+                                <img src="{{asset('public/uploads/users/'.$i->image)}}" alt="Mentor image" />
                                 <ul class="list-inline">
                                     <li class="list-inline-item">
                                         <a href="#" tabindex="0">

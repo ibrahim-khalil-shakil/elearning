@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 09, 2024 at 05:28 PM
+-- Generation Time: Feb 22, 2024 at 06:59 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -131,8 +131,7 @@ INSERT INTO `courses` (`id`, `title_en`, `title_bn`, `description_en`, `descript
 (7, 'Adobe Creative Suite Mastery: Photoshop, Illustrator, InDesign', 'অ্যাডোব ক্রিয়েটিভ স্যুট মাস্টারি: ফটোশপ, ইলাস্ট্রেটর, ইনডিজাইন', 'Gain proficiency in Adobe Creative Suite\'s powerhouse tools—Photoshop for image editing, Illustrator for vector graphics, and InDesign for layout design. Learn to seamlessly integrate these applications to bring your creative visions to life.', 'Adobe Creative Suite-এর পাওয়ার হাউস টুলস-এ দক্ষতা অর্জন করুন- ছবি সম্পাদনার জন্য ফটোশপ, ভেক্টর গ্রাফিক্সের জন্য ইলাস্ট্রেটর এবং লেআউট ডিজাইনের জন্য InDesign। আপনার সৃজনশীল দৃষ্টিভঙ্গিগুলিকে জীবনে আনতে এই অ্যাপ্লিকেশনগুলিকে নির্বিঘ্নে সংহত করতে শিখুন৷', 2, 3, 'paid', 4500.00, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'intermediate', NULL, '4091704127086.jpg', '3521704127086.jpg', 'https://www.youtube.com/watch?v=lw6IVgb-omg', 'popular', 2, 'en', '2023-11-26 03:32:44', '2024-01-09 07:49:25', NULL),
 (8, 'Search Engine Optimization (SEO): Boosting Website Visibility', 'সার্চ ইঞ্জিন অপ্টিমাইজেশান (SEO): ওয়েবসাইট ভিজিবিলিটি বাড়ানো', 'Demystify the world of SEO and discover techniques to improve website visibility in search engine results. Learn keyword research, on-page optimization, and off-page strategies to drive organic traffic and enhance online presence.', 'এসইও-এর জগতকে ডিমিস্টিফাই করুন এবং সার্চ ইঞ্জিন ফলাফলে ওয়েবসাইটের দৃশ্যমানতা উন্নত করার কৌশল আবিষ্কার করুন। জৈব ট্র্যাফিক চালনা করতে এবং অনলাইন উপস্থিতি বাড়াতে কীওয়ার্ড গবেষণা, অন-পৃষ্ঠা অপ্টিমাইজেশান এবং অফ-পৃষ্ঠা কৌশলগুলি শিখুন।', 6, 4, 'paid', 3000.00, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'advanced', NULL, '6891704127114.jpg', '8491704127114.jpg', 'https://www.youtube.com/watch?v=lw6IVgb-omg', 'popular', 2, 'en', '2023-11-26 03:34:25', '2024-01-09 09:19:39', NULL),
 (9, '3D Animation Basics: Getting Started with Blender', '3D অ্যানিমেশন বেসিকস: ব্লেন্ডার দিয়ে শুরু করা', 'Delve into the basics of 3D animation using Blender. Learn the fundamentals of modeling, rigging, and animation to bring characters and scenes to life in a three-dimensional space.', 'ব্লেন্ডার ব্যবহার করে 3D অ্যানিমেশনের বুনিয়াদিতে প্রবেশ করুন। একটি ত্রিমাত্রিক স্থানে চরিত্র এবং দৃশ্যগুলিকে প্রাণবন্ত করতে মডেলিং, কারচুপি এবং অ্যানিমেশনের মৌলিক বিষয়গুলি শিখুন৷', 39, 2, 'free', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'beginner', NULL, '6781704127193.jpg', '7821704127193.jpg', 'https://www.youtube.com/watch?v=lw6IVgb-omg', 'popular', 2, 'en', '2023-11-26 03:37:43', '2024-01-09 09:20:01', NULL),
-(10, 'React.js Fundamentals: Building Modern User Interfaces', 'React.js ফান্ডামেন্টালস: আধুনিক ইউজার ইন্টারফেস তৈরি করা', 'Delve into the fundamentals of React.js and discover how to build modern, component-based user interfaces. From state management to routing, this course guides you through React\'s core concepts, enabling you to create powerful and maintainable front-end applications.', 'React.js-এর মৌলিক বিষয়গুলিকে অধ্যয়ন করুন এবং কীভাবে আধুনিক, উপাদান-ভিত্তিক ব্যবহারকারী ইন্টারফেস তৈরি করতে হয় তা আবিষ্কার করুন। স্টেট ম্যানেজমেন্ট থেকে রাউটিং পর্যন্ত, এই কোর্সটি আপনাকে রিঅ্যাক্টের মূল ধারণার মাধ্যমে গাইড করে, আপনাকে শক্তিশালী এবং রক্ষণাবেক্ষণযোগ্য ফ্রন্ট-এন্ড অ্যাপ্লিকেশন তৈরি করতে সক্ষম করে।', 5, 5, 'free', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'beginner', NULL, '4341704127229.jpg', '6681704127229.jpg', 'https://www.youtube.com/watch?v=lw6IVgb-omg', 'popular', 2, 'en', '2023-11-26 03:39:29', '2024-01-09 09:29:35', NULL),
-(11, 'aaaaaaaaaa', NULL, 'aaaaaaaaaaaaaaa', NULL, 2, 1, 'free', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'beginner', NULL, NULL, NULL, NULL, 'popular', 1, 'en', '2024-01-09 09:38:44', '2024-01-09 10:24:40', NULL);
+(10, 'React.js Fundamentals: Building Modern User Interfaces', 'React.js ফান্ডামেন্টালস: আধুনিক ইউজার ইন্টারফেস তৈরি করা', 'Delve into the fundamentals of React.js and discover how to build modern, component-based user interfaces. From state management to routing, this course guides you through React\'s core concepts, enabling you to create powerful and maintainable front-end applications.', 'React.js-এর মৌলিক বিষয়গুলিকে অধ্যয়ন করুন এবং কীভাবে আধুনিক, উপাদান-ভিত্তিক ব্যবহারকারী ইন্টারফেস তৈরি করতে হয় তা আবিষ্কার করুন। স্টেট ম্যানেজমেন্ট থেকে রাউটিং পর্যন্ত, এই কোর্সটি আপনাকে রিঅ্যাক্টের মূল ধারণার মাধ্যমে গাইড করে, আপনাকে শক্তিশালী এবং রক্ষণাবেক্ষণযোগ্য ফ্রন্ট-এন্ড অ্যাপ্লিকেশন তৈরি করতে সক্ষম করে।', 5, 5, 'free', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'beginner', NULL, '4341704127229.jpg', '6681704127229.jpg', 'https://www.youtube.com/watch?v=lw6IVgb-omg', 'popular', 2, 'en', '2023-11-26 03:39:29', '2024-01-09 09:29:35', NULL);
 
 -- --------------------------------------------------------
 
@@ -280,11 +279,11 @@ CREATE TABLE `instructors` (
 --
 
 INSERT INTO `instructors` (`id`, `name_en`, `name_bn`, `contact_en`, `contact_bn`, `email`, `role_id`, `bio`, `title`, `designation`, `image`, `status`, `password`, `language`, `access_block`, `remember_token`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'Burhan Uddin Fuad', NULL, '01828543453', NULL, 'fuad@gmail.com', 3, 'Fuad is a highly skilled Full Stack Web Developer with over 10 years of experience. He specializes in front-end and back-end development, bringing a wealth of knowledge in modern web technologies. John is passionate about teaching and enjoys sharing his expertise with aspiring developers.', 'Experienced Full Stack Web Developer passionate about teaching modern web technologies.', 'Senior Instructor', '6661704117291.jpg', 1, '$2y$12$cpTaYrJY0Gn9JHClrCCrZOwCmLBfrNvsXFEO0m.2bP59LxTvio9BG', 'en', NULL, NULL, '2023-11-25 15:35:23', '2024-01-01 07:54:51', NULL),
-(2, 'Thouhidul Islam', NULL, '801300029', NULL, 'thouhid@gmail.com', 3, 'Thouhid is an Animation Expert and Video/Graphics Instructor known for her innovative approach to storytelling through animation. With a background in both 2D and 3D animation, Emily guides students through the world of visual storytelling, helping them unleash their creative potential.', '2D Animation and Short Video Ads Specialist', 'Animation Expert', '6361704117383.jpg', 1, '$2y$12$MhpBKoItHmA.fdUH3Bzi1.YJz/7iW4x1WFO2Gwrr7OiqgHtsIdTJK', 'en', NULL, NULL, '2023-11-25 18:18:45', '2024-01-01 07:56:23', NULL),
-(3, 'Raihan Sazzad', NULL, '3218974218', NULL, 'raihan@gmail.com', 3, 'Raihan is an Animation Expert and Video/Graphics Instructor known for her innovative approach to storytelling through animation. With a background in both 2D and 3D animation, Emily guides students through the world of visual storytelling, helping them unleash their creative potential.', 'Professional Designer Who Loves to Design', 'UI UX Designer', '8731704117402.jpg', 1, '$2y$12$q7C.EXCusmXExPbVEOHeIuWBKi4DYD3XtmeaC1WBLPBSWCwbFxR3W', 'en', NULL, NULL, '2023-12-04 17:25:20', '2024-01-01 07:56:42', NULL),
-(4, 'Joshim Uddin', NULL, '675664644', NULL, 'joshim@gmail.com', 3, 'Joshim a passionate and results-oriented Digital Marketer with a knack for navigating the ever-evolving landscape of online promotion. With a strategic mindset, he specialize in crafting data-driven marketing campaigns that elevate brand visibility and engagement.', 'Expert in SMM and Lead Generation', 'Digital Marketer', '3961704117419.jpg', 1, '$2y$12$4sVDlcM9ozR94nm5/jBrH.HOrcMgFAX3qvhu8iMUA1ZZQ.ejAiuJK', 'en', NULL, NULL, '2023-12-04 17:27:57', '2024-01-01 07:56:59', NULL),
-(5, 'Asadullah Galib', NULL, '3453534521', NULL, 'galib@gmail.com', 3, 'Galib is an experienced Full Stack Web Developer known for her expertise in building scalable and robust web applications. With a background in both front-end and back-end development, Jane is dedicated to helping students master the skills needed for success in the ever-evolving field of web development.', 'Full Stack Web Developer', 'Lead Instructor', '6211704117438.jpg', 1, '$2y$12$hcJLA2OijnGqL/CuvBu.peWesluepYJDwbdR1/Dl1RnHdbaPKkEq2', 'en', NULL, NULL, '2023-12-05 04:18:26', '2024-01-01 07:57:18', NULL);
+(1, 'Burhan Uddin Fuad', NULL, '01828543453', NULL, 'fuad@gmail.com', 3, 'Fuad is a highly skilled Full Stack Web Developer with over 10 years of experience. He specializes in front-end and back-end development, bringing a wealth of knowledge in modern web technologies. John is passionate about teaching and enjoys sharing his expertise with aspiring developers.', 'Experienced Full Stack Web Developer passionate about teaching modern web technologies.', 'Senior Instructor', 'Instructor_Burhan Uddin Fuad_137.jpg', 1, '$2y$12$ZsGZnJfm4sKnDmH/nzDdf.3/ZthTEmY99rA9m/rPAXHx1UE6QhJCG', 'en', NULL, NULL, '2023-11-25 15:35:23', '2024-02-21 14:15:36', NULL),
+(2, 'Thouhidul Islam', NULL, '801300029', NULL, 'thouhid@gmail.com', 3, 'Thouhid is an Animation Expert and Video/Graphics Instructor known for her innovative approach to storytelling through animation. With a background in both 2D and 3D animation, Emily guides students through the world of visual storytelling, helping them unleash their creative potential.', '2D Animation and Short Video Ads Specialist', 'Animation Expert', 'Instructor_Thouhidul Islam_766.jpg', 1, '$2y$12$FNBov.CIK58wPQcSSKRToOMru6xabDZvdY34wpOH4Y/PCLZ4VyOLu', 'en', NULL, NULL, '2023-11-25 18:18:45', '2024-02-21 14:17:18', NULL),
+(3, 'Raihan Sazzad', NULL, '3218974218', NULL, 'raihan@gmail.com', 3, 'Raihan is an Animation Expert and Video/Graphics Instructor known for her innovative approach to storytelling through animation. With a background in both 2D and 3D animation, Emily guides students through the world of visual storytelling, helping them unleash their creative potential.', 'Professional Designer Who Loves to Design', 'UI UX Designer', 'Instructor_Raihan Sazzad_662.jpg', 1, '$2y$12$1x1.vxwZaewnKtRrl4Ieh.8sMHFgz8DFsR5SeAdjPPwQiAiCEEGR6', 'en', NULL, NULL, '2023-12-04 17:25:20', '2024-02-21 14:18:56', NULL),
+(4, 'Joshim Uddin', NULL, '675664644', NULL, 'joshim@gmail.com', 3, 'Joshim a passionate and results-oriented Digital Marketer with a knack for navigating the ever-evolving landscape of online promotion. With a strategic mindset, he specialize in crafting data-driven marketing campaigns that elevate brand visibility and engagement.', 'Expert in SMM and Lead Generation', 'Digital Marketer', 'Instructor_Joshim Uddin_155.jpg', 1, '$2y$12$t3XmqNf9miC7kaBXYTsAXuBWOZ.ySxQViaaUjh9W78f9DRQhrUvhm', 'en', NULL, NULL, '2023-12-04 17:27:57', '2024-02-21 14:19:51', NULL),
+(5, 'Asadullah Galib', NULL, '3453534521', NULL, 'galib@gmail.com', 3, 'Galib is an experienced Full Stack Web Developer known for her expertise in building scalable and robust web applications. With a background in both front-end and back-end development, Jane is dedicated to helping students master the skills needed for success in the ever-evolving field of web development.', 'Full Stack Web Developer', 'Lead Instructor', 'Instructor_Asadullah Galib_310.jpg', 1, '$2y$12$rVB66yb.OKaVj0HKcilFweoK5nOx.dJ4e2GHvyaITMvs0DPGgLEpm', 'en', NULL, NULL, '2023-12-05 04:18:26', '2024-02-21 14:20:17', NULL);
 
 -- --------------------------------------------------------
 
@@ -335,14 +334,14 @@ CREATE TABLE `materials` (
 --
 
 INSERT INTO `materials` (`id`, `lesson_id`, `title`, `type`, `content`, `content_url`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 1, 'HTML Attributes', 'video', '5291703138753.mp4', NULL, '2023-12-17 21:16:21', '2023-12-21 00:05:53', NULL),
-(2, 1, 'HTML Tables', 'video', '5181703138767.mp4', NULL, '2023-12-17 21:23:30', '2023-12-21 00:06:07', NULL),
-(3, 2, 'CSS Syntax', 'video', '3081703138785.mp4', NULL, '2023-12-19 21:45:05', '2023-12-21 00:06:25', NULL),
-(4, 2, 'CSS Selectors', 'document', '8221703138965.jpg', NULL, '2023-12-19 21:46:44', '2023-12-21 00:09:25', NULL),
-(5, 2, 'CSS Colors', 'video', '9321703138799.mp4', NULL, '2023-12-19 21:52:59', '2023-12-21 00:06:39', NULL),
+(1, 1, 'HTML Attributes', 'video', '5971703138819.mp4', NULL, '2023-12-17 21:16:21', '2023-12-21 00:05:53', NULL),
+(2, 1, 'HTML Tables', 'video', '5971703138819.mp4', NULL, '2023-12-17 21:23:30', '2023-12-21 00:06:07', NULL),
+(3, 2, 'CSS Syntax', 'video', '5971703138819.mp4', NULL, '2023-12-19 21:45:05', '2023-12-21 00:06:25', NULL),
+(4, 2, 'CSS Selectors', 'document', '3971703138919.jpg', NULL, '2023-12-19 21:46:44', '2023-12-21 00:09:25', NULL),
+(5, 2, 'CSS Colors', 'video', '5971703138819.mp4', NULL, '2023-12-19 21:52:59', '2023-12-21 00:06:39', NULL),
 (6, 3, 'JavaScript Statements', 'video', '5971703138819.mp4', NULL, '2023-12-19 21:56:54', '2023-12-21 00:06:59', NULL),
 (7, 3, 'JavaScript Variables', 'document', '3971703138919.jpg', NULL, '2023-12-19 21:59:01', '2023-12-21 00:08:39', NULL),
-(8, 3, 'JavaScript Data Types', 'video', '3311703138870.mp4', NULL, '2023-12-21 00:07:50', '2023-12-21 00:07:50', NULL);
+(8, 3, 'JavaScript Data Types', 'video', '5971703138819.mp4', NULL, '2023-12-21 00:07:50', '2023-12-21 00:07:50', NULL);
 
 -- --------------------------------------------------------
 
@@ -882,11 +881,11 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `name_en`, `name_bn`, `email`, `contact_en`, `contact_bn`, `role_id`, `password`, `language`, `image`, `full_access`, `status`, `remember_token`, `created_at`, `updated_at`, `deleted_at`, `instructor_id`) VALUES
 (2, 'Ibrahim Khalil', NULL, 'admin@gmail.com', '+8801300025229', NULL, 1, '$2y$12$RDPYtmf4JJwoQ4sEMuVYse6kg.Xnv1vcJ86sZhT63uaL5vrMje69W', 'en', '7741704114296.png', 1, 1, NULL, '2024-01-01 06:47:43', '2024-01-01 07:04:57', NULL, NULL),
-(4, 'Asadullah Galib', NULL, 'galib@gmail.com', '3453534521', NULL, 3, '$2y$12$86XiKoWQmLXc3nMzjYZBBu8EpMnT6enpDkhHWKF3QD/n2U8bg8Abu', 'en', NULL, 0, 1, NULL, '2024-01-01 07:49:40', '2024-01-01 07:57:18', NULL, 5),
-(5, 'Joshim Uddin', NULL, 'joshim@gmail.com', '675664644', NULL, 3, '$2y$12$3XeD0wzsHVAt/fUjz/0KaOi1VzhPrgugKZRsEvw0NsXhCzGc.Jhce', 'en', NULL, 0, 1, NULL, '2024-01-01 07:50:08', '2024-01-01 07:57:00', NULL, 4),
-(6, 'Raihan Sazzad', NULL, 'raihan@gmail.com', '3218974218', NULL, 3, '$2y$12$xhoiSuAYzsG.LkegUZaY.uhjcACLYLb8zL8axjpaGDu.ScqujIjJa', 'en', NULL, 0, 1, NULL, '2024-01-01 07:50:18', '2024-01-01 07:56:42', NULL, 3),
-(7, 'Thouhidul Islam', NULL, 'thouhid@gmail.com', '801300029', NULL, 3, '$2y$12$Pse99XX7MWpy9HAqzcXrC.U1ZUkj/sH6GTw/Lrg8dFBpxZs7wm6my', 'en', NULL, 0, 1, NULL, '2024-01-01 07:50:28', '2024-01-01 07:56:23', NULL, 2),
-(8, 'Burhan Uddin Fuad', NULL, 'fuad@gmail.com', '01828543453', NULL, 3, '$2y$12$hiPgoRHaaY8BdVhi4zfTXe56jb.zstbzXqhyX7pNJOVUGOnWr.YhG', 'en', NULL, 0, 1, NULL, '2024-01-01 07:50:43', '2024-01-01 08:03:36', NULL, 1);
+(4, 'Asadullah Galib', NULL, 'galib@gmail.com', '3453534521', NULL, 3, '$2y$12$CgGd2qfI/1nRHDyzYBUq3.nuw/vWV.e9hP/Ze6T6tEzpgng.Dyl6m', 'en', 'Instructor_Asadullah Galib_310.jpg', 0, 1, NULL, '2024-01-01 07:49:40', '2024-02-21 14:20:18', NULL, 5),
+(5, 'Joshim Uddin', NULL, 'joshim@gmail.com', '675664644', NULL, 3, '$2y$12$1l18cpPxU4M2zZgMxECs6ezwQKGM/ton5GsztDIiFz0keVvmVsX4O', 'en', 'Instructor_Joshim Uddin_155.jpg', 0, 1, NULL, '2024-01-01 07:50:08', '2024-02-21 14:19:51', NULL, 4),
+(6, 'Raihan Sazzad', NULL, 'raihan@gmail.com', '3218974218', NULL, 3, '$2y$12$slth2axx..G1Nz.3jFSa4eHOfBzJybSrjSY3ocZCOQSx10KEcdqtO', 'en', 'Instructor_Raihan Sazzad_662.jpg', 0, 1, NULL, '2024-01-01 07:50:18', '2024-02-21 14:18:57', NULL, 3),
+(7, 'Thouhidul Islam', NULL, 'thouhid@gmail.com', '801300029', NULL, 3, '$2y$12$ua2TYVVOxnQWxa2RFnD1euGL8rRUwzFZ2m/uWOw8V/pFfNI3K8Qxa', 'en', 'Instructor_Thouhidul Islam_766.jpg', 0, 1, NULL, '2024-01-01 07:50:28', '2024-02-21 14:17:19', NULL, 2),
+(8, 'Burhan Uddin Fuad', NULL, 'fuad@gmail.com', '01828543453', NULL, 3, '$2y$12$uTGQ75wrj/r/2wZgWe8tVeetckNkgGaqMczxzGhRTbxLWvAfpADp6', 'en', 'Instructor_Burhan Uddin Fuad_137.jpg', 0, 1, NULL, '2024-01-01 07:50:43', '2024-02-21 14:15:37', NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -1163,7 +1162,7 @@ ALTER TABLE `events`
 -- AUTO_INCREMENT for table `instructors`
 --
 ALTER TABLE `instructors`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `lessons`
@@ -1259,7 +1258,7 @@ ALTER TABLE `subscriptions`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `watchlists`

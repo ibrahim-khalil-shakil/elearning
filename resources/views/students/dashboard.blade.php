@@ -150,7 +150,7 @@
                                     <div class="contentCard-info d-flex align-items-center justify-content-between">
                                         <a href="instructor-profile.html"
                                             class="contentCard-user d-flex align-items-center">
-                                            <img src="{{asset('public/uploads/instructors/'.$a->course?->instructor?->image)}}"
+                                            <img src="{{asset('public/uploads/users/'.$a->course?->instructor?->image)}}"
                                                 alt="client-image" class="rounded-circle" height="34" width="34" />
                                             <p class="font-para--md">{{$a->course?->instructor?->name_en}}</p>
                                         </a>

@@ -384,7 +384,7 @@
                                 <div class="contentCard-info d-flex align-items-center justify-content-between">
                                     <a href="{{route('instructorProfile', encryptor('encrypt', $c->instructor?->id))}}"
                                         class="contentCard-user d-flex align-items-center">
-                                        <img src="{{asset('public/uploads/instructors/'.$c->instructor?->image)}}"
+                                        <img src="{{asset('public/uploads/users/'.$c->instructor?->image)}}"
                                             alt="Instructor Image" class="rounded-circle" height="34" width="34" />
                                         <p class="font-para--md">{{$c->instructor?->name_en}}</p>
                                     </a>
