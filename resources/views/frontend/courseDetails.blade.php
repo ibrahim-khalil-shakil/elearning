@@ -35,7 +35,7 @@
                     </div>
                     <div class="created-by-text">
                         <p>Created by</p>
-                        <h6><a href="instructor-profile.html">{{$course->instructor?->name_en}}</a></h6>
+                        <h6><a href="{{route('instructorProfile', encryptor('encrypt', $course->instructor->id))}}">{{$course->instructor?->name_en}}</a></h6>
                     </div>
                 </div>
             </div>
