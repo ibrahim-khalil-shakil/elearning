@@ -121,10 +121,12 @@
                                     <div class="col-md-6 col-12 mx-auto text-center">
                                         <h5 class="font-title--sm">Invest in your career with Us</h5>
                                         <p class="my-4 font-para--lg">
-                                            Duis posuere maximus arcu eu tincidunt. Nam rutrum, nibh vitae tempus venenatis, ex tortor ultricies
+                                            Duis posuere maximus arcu eu tincidunt. Nam rutrum, nibh vitae tempus
+                                            venenatis, ex tortor ultricies
                                             magna, et faucibus magna eros quis arcu.
                                         </p>
-                                        <a href="{{route('searchCourse')}}" class="button button-md button--primary">Let’s Go</a>
+                                        <a href="{{route('searchCourse')}}"
+                                            class="button button-md button--primary">Let’s Go</a>
                                     </div>
                                 </div>
                             </div>
@@ -148,7 +150,7 @@
                                             class="font-title--card">{{$a->course?->title_en}}</a>
                                     </h5>
                                     <div class="contentCard-info d-flex align-items-center justify-content-between">
-                                        <a href="instructor-profile.html"
+                                        <a href="{{route('instructorProfile', encryptor('encrypt', $a->course?->instructor->id))}}"
                                             class="contentCard-user d-flex align-items-center">
                                             <img src="{{asset('public/uploads/users/'.$a->course?->instructor?->image)}}"
                                                 alt="client-image" class="rounded-circle" height="34" width="34" />
@@ -175,7 +177,8 @@
                                 <p class="my-4 font-para--lg">
                                     Your Course List is Empty!
                                 </p>
-                                <a href="{{route('searchCourse')}}" class="button button-md button--primary">Enroll Now!</a>
+                                <a href="{{route('searchCourse')}}" class="button button-md button--primary">Enroll
+                                    Now!</a>
                             </div>
                         </div>
                         @endforelse

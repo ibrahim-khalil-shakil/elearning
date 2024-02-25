@@ -30,12 +30,15 @@
                 </h3>
                 <div class="created-by d-flex align-items-center">
                     <div class="created-by-image me-3">
-                        <img src="{{asset('public/uploads/users/'.$course->instructor?->image)}}"
-                            class="rounded-circle" alt="Instructor Image" height="75" width="75" />
+                        <img src="{{asset('public/uploads/users/'.$course->instructor?->image)}}" class="rounded-circle"
+                            alt="Instructor Image" height="75" width="75" />
                     </div>
                     <div class="created-by-text">
                         <p>Created by</p>
-                        <h6><a href="{{route('instructorProfile', encryptor('encrypt', $course->instructor->id))}}">{{$course->instructor?->name_en}}</a></h6>
+                        <h6>
+                            <a href="{{route('instructorProfile', encryptor('encrypt', $course->instructor->id))}}">{{$course->instructor?->name_en}}
+                            </a>
+                        </h6>
                     </div>
                 </div>
             </div>
