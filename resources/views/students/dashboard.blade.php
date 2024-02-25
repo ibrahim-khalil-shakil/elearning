@@ -502,7 +502,9 @@
                                                     <h6>
                                                         <a href="#">{{$data->title_en}}</a>
                                                     </h6>
-                                                    <p> By <a href="#">{{$data->instructor}}</a>
+                                                    <p> By 
+                                                        <a href="#">
+                                                         {{$data->instructor}}</a>
                                                     </p>
                                                 </div>
                                                 <p class="ms-2">{{$data->price?('৳'.$data->price):'Free'}}</p>

@@ -261,7 +261,9 @@
                                                         alt="Instructor" />
                                                 </div>
                                                 <div class="instructor-text">
-                                                    <h6 class="font-title--xs"><a href="#">{{$course?->instructor?->name_en}}</a></h6>
+                                                    <h6 class="font-title--xs">
+                                                        <a href="{{route('instructorProfile', encryptor('encrypt', $course->instructor->id))}}">
+                                                            {{$course?->instructor?->name_en}}</a></h6>
                                                     <p>{{$course?->instructor?->designation}}</p>
                                                     <div class="d-flex align-items-center instructor-text-bottom">
                                                         <div class="d-flex align-items-center ratings-icon">
