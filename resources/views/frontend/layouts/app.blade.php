@@ -71,11 +71,11 @@
                         <li class="nav-item">
                             <a class="nav-link" aria-current="page" href="{{route('about')}}">About</a>
                         </li>
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a class="nav-link" href="http://localhost:8081/">
                                 Events
                             </a>
-                        </li>
+                        </li> --}}
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('contact')}}">Contact</a>
                         </li>
